@@ -14,8 +14,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~pdf to text~~
 - ~~Split into sections~~
 - Remove page headers
-    - 0 - Table Of Contents
-    - 1 - Introduction
+    - 0 - ~~Table Of Contents~~
+    - 1 - ~~Introduction~~
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
@@ -28,8 +28,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 11 - Porting Guide
     - 12 - Index
 - Format headers in each section
-    - 0 - Table Of Contents
-    - 1 - Introduction
+    - 0 - ~~Table Of Contents~~
+    - 1 - ~~Introduction~~
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
@@ -42,8 +42,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 11 - Porting Guide
     - 12 - Index
 - Split each section into files
-    - 0 - Table Of Contents
-    - 1 - Introduction
+    - 0 - ~~Table Of Contents~~
+    - 1 - ~~Introduction~~
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools

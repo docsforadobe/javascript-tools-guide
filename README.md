@@ -55,6 +55,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
     - 12 - Index
+- Remove line breaks in paragraphs
 - Format code examples
     - 0 - Table Of Contents
     - 1 - Introduction

@@ -35,7 +35,7 @@ to specify how they are handled.
 
 166
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Cross-DOM functions
 
@@ -84,7 +84,7 @@ an Illustrator CS5 script can directly call photoshop.photomerge(files).
 The only difference between cross-DOM functions and the application-specific exported functions is that
 all applications expose the same set of cross-DOM functions, whereas each application exposes its own set
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Cross-DOM functions
 
@@ -138,7 +138,7 @@ this should be a project file.
 Performs the equivalent of the target application’s File > Open command on the specified files.
 Returns undefined.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Cross-DOM functions
 
@@ -187,7 +187,7 @@ A File object or string specifying a file that can be opened in the target appli
 Gives the target application the operating-system focus, and, if the specified file is open in that
 application, brings it to the foreground. Returns undefined.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -237,7 +237,7 @@ example defines a message script that accesses the Adobe Bridge DOM to request t
 folders found in a specific folder:
 // create a new BridgeTalk message object
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -290,7 +290,7 @@ The complete script looks like this:
 #target "photoshop-11.0"
 // check that the target app is installed
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -341,7 +341,7 @@ similar mechanism. It creates a new message object, encapsulates the error infor
 body property of that object, and passes that object to the onError callback defined in the original
 message.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -392,7 +392,7 @@ response. In each case, the messaging framework packages the response in a new m
 target application is the sender. Your callback functions receive this response message object as an
 argument.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -442,7 +442,7 @@ bt.onResult = function( retObj ) {
 processFileCount(retObj.body);
 }
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -502,7 +502,7 @@ break;
 default: //"ExtendScript"
 return eval( message.body );
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -550,7 +550,7 @@ The BridgeTalk.onReceive static callback function can return values of any type.
 framework, however, packages the response into a response message, and passes any returned values in
 the message body, first converting the result to a UTF-8-encoded string.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -613,7 +613,7 @@ bt.onResult = function(resObj) {
 // use eval to reconstruct the array
 arr = eval(resObj.body);
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Communicating through messages
 
@@ -670,7 +670,7 @@ doSomething (tn.path, tn.uri);
 // send the message
 bt.send();
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Messaging framework API reference
 
@@ -730,7 +730,7 @@ NOTE: You must instantiate the BridgeTalk class to create the BridgeTalk message
 to send message packets between applications. Dynamic properties and methods can be accessed only in
 instances.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk class
 
@@ -811,7 +811,7 @@ to a message sent from this application. Response messages are processed
 by the onResult, onReceived, or onError callbacks associated with the
 sent message.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk class
 
@@ -848,7 +848,7 @@ example:
 BridgeTalk.getDisplayName("photoshop-10.0");
 => Adobe Photoshop CS4
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk class
 
@@ -894,7 +894,7 @@ BridgeTalk.getSpecifier ("photoshop", -9.2, "de_de");
 BridgeTalk.getSpecifier ("photoshop", 8);
 => ["photoshop-8.5-de_de"]
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk class
 
@@ -946,7 +946,7 @@ Returns an array of "Application specifiers" on page 191.
 If version is supplied, specifiers include the base name plus the version information.
 If locale is supplied, specifiers include the full name, with both version and locale information.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk class
 
@@ -999,7 +999,7 @@ Loads the startup script for an application from the common StartupScripts folde
 implement late loading of startup scripts.
 Returns true if the script was successfully loaded.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk message object
 
@@ -1043,7 +1043,7 @@ var bt = new BridgeTalk;
 Before you send a message to another application, you must set the target property to the receiving
 application, and the body property to the data message (typically a script) you want to send.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk message object
 
@@ -1107,7 +1107,7 @@ this time elapses, the message is discarded. If the sender has defined an
 onTimeout callback for the message, the target application sends a time-out
 message back to the sender.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 type
 
@@ -1159,7 +1159,7 @@ The target passes back the original message object, with the body property
 set to the empty string.
 The function returns undefined.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 onResult
 
@@ -1196,7 +1196,7 @@ bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
 // handler defined here
 };
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 BridgeTalk message object
 
@@ -1248,7 +1248,7 @@ This allows you to send multiple responses to messages.
 Returns true if the received message has an onResult callback defined and the response message
 can be sent, false otherwise.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Messaging error codes
 
@@ -1354,7 +1354,7 @@ No response
 
 190
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Application and namespace specifiers
 
@@ -1397,7 +1397,7 @@ running of multiple instances.
 For example, for a server launched with SOAP port 12345, the specifier would be
 indesignserver_configuration_12345.
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 version
 
@@ -1456,7 +1456,7 @@ appropriate available installation. It tries to match to available applications 
 4. Applications that match the current locale
 5. Applications for any locale
 
-CHAPTER 5: Interapplication Communication with Scripts
+CHAPTER 5: Interapplication Communication with Scripts
 
 Application and namespace specifiers
 

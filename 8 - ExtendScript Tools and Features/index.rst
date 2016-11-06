@@ -55,7 +55,7 @@ The character used in formatted numeric output for a decimal point, for
 the current locale. Read only.
 216
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Dollar ($) object
 
@@ -146,7 +146,7 @@ Number
 The current line of the currently executing script; the first line is number 1.
 Read only.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 locale
 
@@ -241,7 +241,7 @@ statement in the script, rather than this method.
 
 undefined
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Dollar ($) object
 
@@ -304,7 +304,7 @@ expired.
 
 undefined
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Dollar ($) object
 
@@ -329,7 +329,7 @@ text: One or more strings to write, which are concatenated to form a single stri
 
 undefined
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 ExtendScript reflection interface
 
@@ -403,7 +403,7 @@ property exists.
 Use this method to get information about dynamic properties that have not yet been accessed, but
 that are known to exist.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 ExtendScript reflection interface
 
@@ -438,7 +438,7 @@ the ReflectionInfo object for the method, by index:
 obj.reflect.methods["indexOf"].arguments[0];
 obj.reflect.methods.indexOf.arguments[0];
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 ExtendScript reflection interface
 
@@ -534,7 +534,7 @@ object.
 
 method: A method.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Localizing ExtendScript strings
 
@@ -583,7 +583,7 @@ function. For example:
 msg = { en: "Yes", de: "Ja", fr: "Oui" };
 alert (msg);
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Localizing ExtendScript strings
 
@@ -636,7 +636,7 @@ How locale names are resolved
 3. It looks for a matching property, and if found, returns the value string.
 4. If not found, it removes the platform identifier (for example, en_US) and retries.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Localizing ExtendScript strings
 
@@ -691,7 +691,7 @@ contains a path to the localized string in an installed ZString dictionary. For
 example:
 w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 User notification dialogs
 
@@ -736,7 +736,7 @@ Returns undefined
 Examples
 This figure shows simple alert dialogs in Windows and in Mac OS.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 User notification dialogs
 
@@ -769,7 +769,7 @@ This figure shows simple confirmation dialogs on Windows and Mac OS.
 
 This figure shows confirmation dialogs with No as the default button.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 User notification dialogs
 
@@ -800,7 +800,7 @@ This figure shows simple prompt dialogs on Windows and Mac OS.
 
 This figure shows confirmation dialogs with a title value specified.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Specifying measurement values
 
@@ -945,7 +945,7 @@ baseless (see below)
 If an unknown unit type is supplied, the type is set to "?", and the UnitValue object prints as "UnitValue
 0.00000".
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Specifying measurement values
 
@@ -1008,7 +1008,7 @@ To convert pixels into length units, you must know the size of a single pixel. T
 on the display resolution. A common resolution measurement is 72 dpi, which means that there are 72
 pixels to the inch. The conversion base for pixels at 72 dpi is 0.013889 inches (1/72 inch).
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Specifying measurement values
 
@@ -1065,7 +1065,7 @@ The numeric value is converted to a 32-bit integer with inverted bits.
 
 Result is true if the numeric value is nonzero, false if it is not.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 +unitValue
 
@@ -1127,7 +1127,7 @@ When a directive takes one or more arguments, and an argument contains any nonal
 characters, the argument must be enclosed in single or double quotes. This is generally the case with
 paths and file names, for example, which contain dots and slashes.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 #include file
 
@@ -1193,7 +1193,7 @@ unique name generated from a number.
 
 Turns on strict error checking. See the Dollar ($) object’s strict property.
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 #target name
 
@@ -1244,7 +1244,7 @@ Result: [object Object]
 obj + 10;
 Result: 15
 
-CHAPTER 8: ExtendScript Tools and Features
+CHAPTER 8: ExtendScript Tools and Features
 
 Operator overloading
 

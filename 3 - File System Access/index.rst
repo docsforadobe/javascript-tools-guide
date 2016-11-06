@@ -36,7 +36,7 @@ Use the fsName property to obtain the platform-specific file name.
 
 39
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Using File and Folder objects
 
@@ -93,7 +93,7 @@ A space, for example, is encoded as %20, so the file name "my file" is specified
 the character ä is encoded as %E4, so the file name "Bräun" is specified as "Br%E4un".
 This encoding scheme is compatible with the global JavaScript functions encodeURI and decodeURI.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Using File and Folder objects
 
@@ -160,7 +160,7 @@ to the Windows path C:\temp\file.
 If a drive exists with a name matching the first part of the path, that part is always interpreted as that drive.
 It is possible for there to be a folder in the root that has the same name as the drive; imagine, for example,
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Using File and Folder objects
 
@@ -221,7 +221,7 @@ If your application will run on multiple platforms, use relative path names, or 
 from the home directory. If that is not possible, work with Mac OS X and UNIX aliases, and store your files
 on a machine that is remote to your Windows machine so that you can use UNC names.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Using File and Folder objects
 
@@ -260,7 +260,7 @@ string. You can set the property, but setting it only causes the error message t
 assigning an arbitrary value to the property also resets its error flag.
 For a complete list of supported error messages, see "File access error messages" on page 44.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File access error messages
 
@@ -344,7 +344,7 @@ Unable to execute the specified file.
 
 44
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File- and Folder-supported encoding names
 
@@ -391,7 +391,7 @@ Mac OS directly for an encoder. As far as Mac OS character sets are identical wi
 Mac OS also knows the Windows code page numbers.
 In UNIX, the number of available encoders depends on the installation of the iconv library.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File- and Folder-supported encoding names
 
@@ -447,7 +447,7 @@ ISO-2022-KR
 
 46
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -492,7 +492,7 @@ If the path refers to an existing folder:
 The File function returns a Folder object instead of a File object.
 The new operator returns a File object for a nonexisting file with the same name.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -546,7 +546,7 @@ String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -626,7 +626,7 @@ String
 
 The localized name of the referenced file, without the path. Read only.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 encoding
 
@@ -746,7 +746,7 @@ alias, not on the original file.
 
 50
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -804,7 +804,7 @@ Returns true if the operation was successful, false otherwise.
 
 51
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -864,7 +864,7 @@ UTF-8). If everything fails, the encoding property is set to the system encoding
 NOTE: Be careful about opening a file more than once. The operating system usually permits you to
 do so, but if you start writing to the file using two different File objects, you can destroy your data.
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -919,7 +919,7 @@ Returns a string that contains the text.
 
 53
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -967,7 +967,7 @@ If the user clicks OK, returns a File object for the selected file. If the user 
 
 54
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 File object
 
@@ -1020,7 +1020,7 @@ Returns true on success.
 
 55
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Folder object
 
@@ -1081,7 +1081,7 @@ string containing the new path name to set the current folder.
 
 56
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 desktop
 
@@ -1149,7 +1149,7 @@ In Mac OS, ~/Library/Application Support
 
 57
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Folder object
 
@@ -1204,7 +1204,7 @@ cancels, returns null.
 
 58
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Folder object
 
@@ -1315,7 +1315,7 @@ Returns true on success.
 
 59
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Folder object
 
@@ -1370,7 +1370,7 @@ Returns true if the folder is deleted successfully.
 
 60
 
-CHAPTER 3: File System Access
+CHAPTER 3: File System Access
 
 Folder object
 

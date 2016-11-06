@@ -3,7 +3,7 @@ JAVASCRIPT TOOLS GUIDE
 ======================
 
 --------
-Contents
+Contents
 --------
 
 Introduction

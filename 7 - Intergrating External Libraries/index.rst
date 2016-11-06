@@ -41,7 +41,7 @@ defined in a C++ library. For each C++ class defined in the library, a correspon
 
 200
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 ExternalObject object
 
@@ -92,7 +92,7 @@ Optional. Any number of arguments to pass to the library’s initialization rout
 For example:
 var mylib = new ExternalObject( "lib:myLibrary" );
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 ExternalObject object
 
@@ -150,7 +150,7 @@ It can be helpful to force a shutdown of the external library if termination of 
 the shutdown of the hosting application does not occur in the correct order.
 Returns undefined.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for direct access
 
@@ -200,7 +200,7 @@ double
 
 203
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for direct access
 
@@ -263,7 +263,7 @@ s
 
 String
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for direct access
 
@@ -285,7 +285,7 @@ library. When the reference count for a library reaches 0, the library is automa
 termination function is called, and the ExternalObject instance is deleted. Note that deleting the
 ExternalObject instance does not unload the library if there are remaining references.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -339,7 +339,7 @@ Your shared-library C/C++ code defines its interface to JavaScript in two sets o
 SoServerInterface and SoObjectInterface function-pointer structures.
 Return values from most functions are integer constants. The error code kESErrOK == 0 indicates success.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -416,7 +416,7 @@ Prints the contents of this object to the JavaScript Console in the ExtendScript
 debugging.
 Returns an error code, kESErrOK on success.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -496,7 +496,7 @@ Returns an error code, kESErrOK on success.
 
 208
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -573,7 +573,7 @@ Returns an error code, kESErrOK on success.
 
 209
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -645,7 +645,7 @@ valueOf;
 toString;
 finalize;
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -709,7 +709,7 @@ alert(xx.myproperty);
 
 Returns an error code, kESErrOK on success.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -773,7 +773,7 @@ Required. Called when JavaScript deletes an instance of this class. Use this fun
 memory you have allocated.
 Returns an error code, kESErrOK on success.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -825,7 +825,7 @@ desc
 
 A descriptive string or NULL.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 Defining entry points for indirect access
 
@@ -871,7 +871,7 @@ release the object.
 When a function returns an object of type kTypeLiveObjectRelease, ExtendScript
 releases the object.
 
-CHAPTER 7: Integrating External Libraries
+CHAPTER 7: Integrating External Libraries
 
 type
 

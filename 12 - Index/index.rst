@@ -94,7 +94,7 @@ external tools, 194
 
 295
 
-296
+296
 
 Index
 
@@ -201,7 +201,7 @@ DropDownList objects, 71
 creating, 125
 dynamic content, creating, 94
 
-297
+297
 
 Index
 
@@ -311,7 +311,7 @@ access classes, 39
 aliases, 42
 error handling, 43
 
-298
+298
 
 Index
 
@@ -415,7 +415,7 @@ predefined for ScriptUI dialogs, 75
 script-defined for user-interface elements, 81
 KeyboardEvent object, 151
 
-299
+299
 
 Index
 
@@ -525,7 +525,7 @@ mouse
 getting help tips, 33
 navigation and shortcuts, 21
 
-300
+300
 
 Index
 
@@ -634,7 +634,7 @@ pens, customizing, 163
 percentage values, converting, 231
 pixels, converting, 231
 
-301
+301
 
 Index
 
@@ -743,7 +743,7 @@ shared libraries
 function API, 206
 loading and using, 200
 
-302
+302
 
 Index
 
@@ -851,7 +851,7 @@ creation properties, 66
 customizing appearance, 157
 display and user interaction, 68
 
-303
+303
 
 Index
 
@@ -960,7 +960,7 @@ XMPFile object, 267
 XMPFileInfo object, 271
 XMPIterator object, 272
 
-304
+304
 
 Index
 
@@ -975,4 +975,4 @@ loading, 257
 usage, 258
 XMPUtils object, 288
 
-
+

@@ -41,7 +41,7 @@ endless loop, waiting for any incoming connection request. Therefore, you can as
 incoming connection by calling the poll() method of a Socket object. This call would just check the
 194
 
-CHAPTER 6: External Communication Tools
+CHAPTER 6: External Communication Tools
 
 Socket object
 
@@ -98,7 +98,7 @@ writeln ("Chat server listening on port 1234");
 if (tcp.listen (1234)) {
 for (;;) {
 
-CHAPTER 6: External Communication Tools
+CHAPTER 6: External Communication Tools
 // poll for a new connection
 var connection = tcp.poll();
 if (connection != null) {
@@ -150,7 +150,7 @@ Socket object
 
 196
 
-CHAPTER 6: External Communication Tools
+CHAPTER 6: External Communication Tools
 
 Socket object reference
 
@@ -208,7 +208,7 @@ JavaScript garbage-collects the object. The connection might stay open longer th
 do not close it explicitly.
 Returns true if the connection was closed, false on I/O errors.
 
-CHAPTER 6: External Communication Tools
+CHAPTER 6: External Communication Tools
 
 Socket object reference
 
@@ -267,7 +267,7 @@ CR characters unless encoding is set to BINARY.
 Returns a string that contains up to the number of characters that were supposed to be read, or the
 number of characters read before the connection closed or timed out.
 
-CHAPTER 6: External Communication Tools
+CHAPTER 6: External Communication Tools
 
 Socket object reference
 

@@ -29,7 +29,7 @@ Panels
 
 13
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Configuring the Toolkit window
 
@@ -64,7 +64,7 @@ the upper right corner. The JavaScript Console has a right-click menu that allow
 text.
 The individual panels are discussed in detail in the following sections.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Configuring the Toolkit window
 
@@ -99,7 +99,7 @@ CTRL-click to split the window, the second appears below the original.
 For more information about the document windows and the Script Editor, see "The Script Editor" on
 page 18.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Configuring the Toolkit window
 
@@ -137,7 +137,7 @@ the dialog.
 To make these dialogs display again, click Reset Dialogs on the User Interface page in the Preferences
 dialog (Edit > Preferences).
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Selecting scripts
 
@@ -175,7 +175,7 @@ using the flyout menu.
 
 flyout menu
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -204,7 +204,7 @@ see "Navigation aids" on page 19.
 General editing and coding support such as undo-redo, and specific JavaScript coding support such
 as syntax checking; see "Coding aids" on page 22.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -238,7 +238,7 @@ The Functions panel, and the flyout menu at the top right of the document window
 functions defined in the current document. When you select a function in either list, the document jumps
 directly to that function definition in the code.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -257,7 +257,7 @@ number if it is shown). This is the same place where a breakpoint is marked with
 breakpoints" on page 31). If you have both a breakpoint and a bookmark set in the same line, the blue
 arrow is superimposed on the breakpoint dot.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -306,7 +306,7 @@ Left arrow
 
 Move insertion point left one character
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -384,7 +384,7 @@ When you position the cursor in a document and begin typing, the Toolkit offers 
 among keywords, global functions, functions that are defined in the current document, and functions
 defined in the object-model dictionary that is currently selected from the flyout menu.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -427,7 +427,7 @@ A special comment format is reserved for a code versioning statement, which is u
 scripts, but is available to all scripters. Use Edit > Insert Version Tag to insert a comment containing the
 file name and current date-time, in this format:
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -476,7 +476,7 @@ specific search string or regular expression. You can choose to search in:
 The current document, or the current selection in the current document
 All open documents
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -514,7 +514,7 @@ Matches the start of a word using the editor's current definition of words.
 
 Matches the end of a word using the editor's current definition of words.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 The Script Editor
 
@@ -565,7 +565,7 @@ automatically set to match the file extension, or you can choose the language fr
 Highlighting menu.
 The style of highlighting is configurable, using the Fonts and Colors page of the Preferences dialog.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -593,7 +593,7 @@ are shown in a drop-down list to the right of the application list, with an icon
 debugging status of that engine. A target application can have more than one JavaScript engine, and
 more than one engine can be active, although only one is current. An active engine is one that is currently
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -623,7 +623,7 @@ The JavaScript console
 The JavaScript console is a command shell and output window for the currently selected JavaScript
 engine. It connects you to the global namespace of that engine.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -704,7 +704,7 @@ Ctrl U (Mac OS)
 When paused outside the body of a function, resumes script
 execution until the script terminates.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -729,7 +729,7 @@ of such errors using the catch clause, rather than breaking into the debugger. T
 Debug > Don’t Break On Guarded Exceptions. Some runtime errors, such as Out Of Memory, always
 cause the termination of the script, regardless of this setting.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -765,7 +765,7 @@ panel’s flyout menu to add, change, or remove a breakpoint.
 You can edit a breakpoint by double-clicking it, or by selecting it and choosing Add or Modify from the
 panel menu. A dialog allows you to change the line number, the breakpoint’s enabled state, and the
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -796,7 +796,7 @@ Conditional breakpoint. Execution stops if the attached JavaScript expression ev
 to true.
 Conditional breakpoint, disabled. Execution does not stop.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -837,7 +837,7 @@ Prototype Elements toggles the display of the JavaScript object prototype chain.
 Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an
 object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Debugging in the Toolkit
 
@@ -867,7 +867,7 @@ the function call that led to that point of execution is marked with a green bac
 when you select the run() function in the call stack, the Document Window highlights the line in that
 function where the RGBColorPicker() function was called.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Code profiling for optimization
 
@@ -915,7 +915,7 @@ No Profiler Data
 
 When selected, do not display profiler data.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Inspecting object models
 
@@ -953,7 +953,7 @@ Inspecting object models
 The ExtendScript Toolkit offers the ability to inspect the object model of any loaded dictionary, using the
 Object Model Viewer that you invoke from the Help menu.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Inspecting object models
 
@@ -969,7 +969,7 @@ The Core JavaScript Classes dictionary includes Adobe tools and utilities such a
 The ScriptUI Classes dictionary shows the interface elements defined in the ScriptUI JavaScript
 module.
 
-CHAPTER 2: The ExtendScript Toolkit
+CHAPTER 2: The ExtendScript Toolkit
 
 Inspecting object models
 

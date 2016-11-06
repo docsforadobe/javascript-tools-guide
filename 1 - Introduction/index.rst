@@ -20,7 +20,10 @@ Adobe Scripting, Chandler McWilliams, Wiley Publishing, Inc., 2003. ISBN 0-7645-
 NOTE: Check for updated versions of this document at Adobe Developer Center,
 http://www.adobe.com/devnet/scripting.
 
+=====================
 ExtendScript overview
+=====================
+
 Adobe provides an extended implementation of JavaScript, called ExtendScript, that is used by many
 Adobe applications that provide a scripting interface. In addition to implementing the JavaScript
 language according to the ECMA JavaScript specification, ExtendScript provides certain additional
@@ -35,13 +38,6 @@ The Adobe ExtendScript SDK, which contains this document, also contains a set of
 demonstrate how to use features of ScriptUI, interapplication communication, and external
 communication. This book refers to these samples by name for illustration of concepts and techniques.
 You can download the SDK from Adobe Developer Center, http://www.adobe.com/devnet/scripting/.
-9
-
-CHAPTER 1: Introduction
-
-ExtendScript overview
-
-10
 
 The samples are located under the ExtendScript SDK root directory:
 SDKroot/Samples/javascript/
@@ -84,12 +80,6 @@ Cross-DOM functions are a limited set of basic functions common across all messa
 applications, which allow your script to, for example, open or print files in other applications, simply by
 calling the open or print function for that application.
 
-CHAPTER 1: Introduction
-
-ExtendScript overview
-
-11
-
 In addition to the basic set of common functions, some applications provide more extensive sets of
 exported JavaScript functions to other applications.
 The interapplication messaging framework is an application programming interface (API) that allows
@@ -125,13 +115,10 @@ JavaScript scripts. For complete details, see Chapter 9, "Integrating XML into J
 Scripting support for XMP metadata manipulation: XMPScript provides a JavaScript API for the Adobe
 XMP Toolkit. For complete details, see Chapter 10, "Scripting Access to XMP Metadata."
 
-CHAPTER 1: Introduction
-
+===================================
 Scripting for specific applications
+===================================
 
-12
-
-Scripting for specific applications
 On startup, all Adobe JavaScript-enabled applications execute JSX files that they find in their startup
 directories; some of these are installed by applications, and some can be installed by scripters. The policies
 of different applications vary as to the locations, write access, and loading order.

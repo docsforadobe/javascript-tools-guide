@@ -1,4 +1,7 @@
+============
 Introduction
+============
+
 JavaScript is a platform-independent scripting language that you can use to control many features and
 automate many tasks in Adobe® applications. Scripting is easier to learn and use than many other kinds of
 programming, and provides a convenient way of automating repetitive tasks or extending applications to

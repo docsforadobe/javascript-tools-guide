@@ -12,7 +12,10 @@ JavaScript-enabled Adobe applications.
 NOTE: Some modules, and features of some modules, are optional. Check the product documentation for
 each application for details of which modules and features are implemented.
 
+------------
 Example code
+------------
+
 The Adobe ExtendScript SDK, which contains this document, also contains a set of code samples that
 demonstrate how to use features of ScriptUI, interapplication communication, and external
 communication. This book refers to these samples by name for illustration of concepts and techniques.
@@ -25,7 +28,10 @@ SDKroot/Samples//javascript/resources/
 sample scripts
 resources, such as image or flash files
 
+-------------------------------
 Development and debugging tools
+-------------------------------
+
 For help in developing, debugging, and testing scripts, Adobe provides the ExtendScript Toolkit, an
 interactive development and testing environment for ExtendScript, which is installed with all
 JavaScript-enabled applications. For complete details, see Chapter 2, "The ExtendScript Toolkit."
@@ -34,12 +40,18 @@ A global debugging object, the Dollar ($) object.
 A reporting utility for ExtendScript elements, the ExtendScript reflection interface.
 For complete details, see Chapter 8, "ExtendScript Tools and Features."
 
+---------------------------------
 Cross-platform file-system access
+---------------------------------
+
 Adobe ExtendScript defines File and Folder classes that simplify cross-platform file-system access. These
 classes are available to all applications that support a JavaScript interface.
 For complete details, see Chapter 3, "File System Access."
 
+--------------------------------
 User-interface development tools
+--------------------------------
+
 Adobe provides the ScriptUI module, which works with the ExtendScript JavaScript interpreter to provide
 JavaScript scripts with the ability to create and interact with user interface elements. It provides an object
 model for windows and user-interface control elements within an Adobe application. For complete details,
@@ -51,7 +63,10 @@ page 227.
 An object type for specifying measurement values together with their units; see "Specifying
 measurement values" on page 230.
 
+--------------------------------------------
 Interapplication communication and messaging
+--------------------------------------------
+
 ExtendScript provides a common scripting environment for all Adobe JavaScript-enabled applications,
 and allows interapplication communication through scripts.
 Different levels of communication are provided through the cross-DOM and the messaging framework.
@@ -68,19 +83,27 @@ results. Typically the data passed between applications are JavaScript scripts. 
 framework is extensible. It allows you to define different types of data to send between applications,
 and to specify how they are handled.
 For complete details, see Chapter 5, "Interapplication Communication with Scripts."
-
+----------------------
 External communication
+----------------------
+
 ExtendScript offers tools for communicating with other computers or the internet using standard
 protocols. The Socket object supports low-level TCP connections.
 For complete details, see Chapter 6, "External Communication Tools."
 
+-----------------------------------
 External shared-library integration
+-----------------------------------
+
 You can extend the JavaScript DOM for an application by writing a C or C++ shared library, compiling it for
 the platform you are using, and loading it into JavaScript as an ExternalObject instance. A shared library
 is implemented by a DLL in Windows, a bundle or framework in Mac OS, or a SharedObject in UNIX.
 For complete details, see Chapter 7, "Integrating External Libraries."
 
+---------------------------------
 Additional utilities and features
+---------------------------------
+
 ExtendScript provides these utilities and features:
 JavaScript language enhancements:
 Tools for combining scripts, such as a #include directive. See "Preprocessor directives" on

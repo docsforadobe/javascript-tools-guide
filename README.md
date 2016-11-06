@@ -11,8 +11,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 
 ### To do ###
 
-- -pdf to text-
-- -Split into sections-
+- ~~pdf to text~~
+- ~~Split into sections~~
 - Remove page headers
     - 0 - Table Of Contents
     - 1 - Introduction

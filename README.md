@@ -27,7 +27,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
     - 12 - Index
-- Format headers in each section (Use 1 - Introduction/index.rst) to find headers)
+- Format headers in each section (Use 0 - Table Of Contents/index.rst) to find headers)
     - 0 - ~~Table Of Contents~~
     - 1 - ~~Introduction~~
     - 2 - ExtendScript Toolkit

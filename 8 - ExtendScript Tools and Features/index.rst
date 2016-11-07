@@ -53,11 +53,6 @@ String
 
 The character used in formatted numeric output for a decimal point, for
 the current locale. Read only.
-216
-
-CHAPTER 8: ExtendScript Tools and Features
-
-Dollar ($) object
 
 engineName
 
@@ -146,15 +141,9 @@ Number
 The current line of the currently executing script; the first line is number 1.
 Read only.
 
-CHAPTER 8: ExtendScript Tools and Features
-
 locale
 
 String
-
-Dollar ($) object
-
-218
 
 Gets or sets the current locale. The string contains five characters in the
 form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO
@@ -241,12 +230,6 @@ statement in the script, rather than this method.
 
 undefined
 
-CHAPTER 8: ExtendScript Tools and Features
-
-Dollar ($) object
-
-219
-
 Function
 
 Return type
@@ -304,12 +287,6 @@ expired.
 
 undefined
 
-CHAPTER 8: ExtendScript Tools and Features
-
-Dollar ($) object
-
-220
-
 Function
 
 Return type
@@ -328,12 +305,6 @@ Writes the specified text to the JavaScript Console and appends a linefeed seque
 text: One or more strings to write, which are concatenated to form a single string.
 
 undefined
-
-CHAPTER 8: ExtendScript Tools and Features
-
-ExtendScript reflection interface
-
-221
 
 ExtendScript reflection interface
 ExtendScript provides a reflection interface that allows you to find out everything about an object,
@@ -403,12 +374,6 @@ property exists.
 Use this method to get information about dynamic properties that have not yet been accessed, but
 that are known to exist.
 
-CHAPTER 8: ExtendScript Tools and Features
-
-ExtendScript reflection interface
-
-222
-
 Examples
 This code determines the class name of an object:
 obj = new String ("hi");
@@ -437,12 +402,6 @@ You can access the ReflectionInfo objects for the arguments of a method in the a
 the ReflectionInfo object for the method, by index:
 obj.reflect.methods["indexOf"].arguments[0];
 obj.reflect.methods.indexOf.arguments[0];
-
-CHAPTER 8: ExtendScript Tools and Features
-
-ExtendScript reflection interface
-
-223
 
 ReflectionInfo object properties
 arguments
@@ -534,12 +493,6 @@ object.
 
 method: A method.
 
-CHAPTER 8: ExtendScript Tools and Features
-
-Localizing ExtendScript strings
-
-224
-
 Localizing ExtendScript strings
 Localization is the process of translating and otherwise manipulating an interface so it looks as if it were
 originally designed for a particular language. ExtendScript enables you to localize the strings in your
@@ -582,12 +535,6 @@ object directly as the value of any property that takes a localizable string, wi
 function. For example:
 msg = { en: "Yes", de: "Ja", fr: "Oui" };
 alert (msg);
-
-CHAPTER 8: ExtendScript Tools and Features
-
-Localizing ExtendScript strings
-
-225
 
 To use automatic translation of localization objects, you must enable localization in your script with this
 statement:
@@ -635,12 +582,6 @@ How locale names are resolved
 2. It appends the platform identifier; for example, en_US_Win.
 3. It looks for a matching property, and if found, returns the value string.
 4. If not found, it removes the platform identifier (for example, en_US) and retries.
-
-CHAPTER 8: ExtendScript Tools and Features
-
-Localizing ExtendScript strings
-
-226
 
 5. If not found, it removes the region identifier (for example, en) and retries.
 6. If not found, it tries the identifier en (that is, the default language is English).
@@ -691,12 +632,6 @@ contains a path to the localized string in an installed ZString dictionary. For
 example:
 w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));
 
-CHAPTER 8: ExtendScript Tools and Features
-
-User notification dialogs
-
-227
-
 For example:
 today = {
 en: "Today is %1/%2",
@@ -736,12 +671,6 @@ Returns undefined
 Examples
 This figure shows simple alert dialogs in Windows and in Mac OS.
 
-CHAPTER 8: ExtendScript Tools and Features
-
-User notification dialogs
-
-228
-
 This figure shows alert dialogs with error icons.
 
 Global confirm function
@@ -769,12 +698,6 @@ This figure shows simple confirmation dialogs on Windows and Mac OS.
 
 This figure shows confirmation dialogs with No as the default button.
 
-CHAPTER 8: ExtendScript Tools and Features
-
-User notification dialogs
-
-229
-
 Global prompt function
 Displays a platform-standard dialog containing a short message, a text edit field, and two buttons labeled
 OK and Cancel.
@@ -799,12 +722,6 @@ Examples
 This figure shows simple prompt dialogs on Windows and Mac OS.
 
 This figure shows confirmation dialogs with a title value specified.
-
-CHAPTER 8: ExtendScript Tools and Features
-
-Specifying measurement values
-
-230
 
 Specifying measurement values
 ExtendScript provides the UnitValue object to represent measurement values. The properties and
@@ -945,12 +862,6 @@ baseless (see below)
 If an unknown unit type is supplied, the type is set to "?", and the UnitValue object prints as "UnitValue
 0.00000".
 
-CHAPTER 8: ExtendScript Tools and Features
-
-Specifying measurement values
-
-231
-
 For example, all the following formats are equivalent:
 myVal = new UnitValue (12, "cm");
 myVal = new UnitValue ("12 cm");
@@ -1008,12 +919,6 @@ To convert pixels into length units, you must know the size of a single pixel. T
 on the display resolution. A common resolution measurement is 72 dpi, which means that there are 72
 pixels to the inch. The conversion base for pixels at 72 dpi is 0.013889 inches (1/72 inch).
 
-CHAPTER 8: ExtendScript Tools and Features
-
-Specifying measurement values
-
-232
-
 Percentage values are relative to a total measurement. For example, 10% of 100 inches is 10 inches,
 while 10% of 1 meter is 0.1 meters. The conversion base of a percentage is the unit value
 corresponding to 100%.
@@ -1065,7 +970,6 @@ The numeric value is converted to a 32-bit integer with inverted bits.
 
 Result is true if the numeric value is nonzero, false if it is not.
 
-CHAPTER 8: ExtendScript Tools and Features
 
 +unitValue
 
@@ -1075,9 +979,6 @@ Result is the numeric value.
 
 Result is the negated numeric value.
 
-Preprocessor directives
-
-233
 
 Binary operators (+, -, *, /, %)
 If one operand is unitValue object and the other is a number, the operation is applied to the number
@@ -1127,13 +1028,10 @@ When a directive takes one or more arguments, and an argument contains any nonal
 characters, the argument must be enclosed in single or double quotes. This is generally the case with
 paths and file names, for example, which contain dots and slashes.
 
-CHAPTER 8: ExtendScript Tools and Features
 
 #include file
 
-Preprocessor directives
 
-234
 
 Includes a JavaScript source file from another location. Inserts the contents of the
 named file into this file at the location of this statement. The file argument is an
@@ -1193,13 +1091,7 @@ unique name generated from a number.
 
 Turns on strict error checking. See the Dollar ($) object’s strict property.
 
-CHAPTER 8: ExtendScript Tools and Features
-
 #target name
-
-Operator overloading
-
-235
 
 Defines the target application for this JSX file. The name value is an application
 specifier; see Application and namespace specifiers. Enclosing quotes are optional.
@@ -1243,12 +1135,6 @@ var obj = new MyClass (5);
 Result: [object Object]
 obj + 10;
 Result: 15
-
-CHAPTER 8: ExtendScript Tools and Features
-
-Operator overloading
-
-236
 
 You can override the following operators:
 Unary

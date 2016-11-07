@@ -39,13 +39,7 @@ Establishing an Internet server is a bit more complicated. A typical server prog
 incoming connections, which it then processes. Usually, you would not want your application to run in an
 endless loop, waiting for any incoming connection request. Therefore, you can ask a Socket object for an
 incoming connection by calling the poll() method of a Socket object. This call would just check the
-194
 
-CHAPTER 6: External Communication Tools
-
-Socket object
-
-195
 
 incoming connections and then return immediately. If there is a connection request, the call to poll()
 would return another Socket object containing the brand new connection. Use this connection object to
@@ -98,7 +92,6 @@ writeln ("Chat server listening on port 1234");
 if (tcp.listen (1234)) {
 for (;;) {
 
-CHAPTER 6: External Communication Tools
 // poll for a new connection
 var connection = tcp.poll();
 if (connection != null) {
@@ -147,14 +140,6 @@ c.writeln (text);
 }
 
 Socket object
-
-196
-
-CHAPTER 6: External Communication Tools
-
-Socket object reference
-
-197
 
 Socket object reference
 This section provides details of the object’s properties and methods.
@@ -207,12 +192,6 @@ Terminates the open connection. Deleting the object also closes the connection, 
 JavaScript garbage-collects the object. The connection might stay open longer than you wish if you
 do not close it explicitly.
 Returns true if the connection was closed, false on I/O errors.
-
-CHAPTER 6: External Communication Tools
-
-Socket object reference
-
-198
 
 listen()
 socketObj.listen (port [, encoding]);
@@ -267,8 +246,6 @@ CR characters unless encoding is set to BINARY.
 Returns a string that contains up to the number of characters that were supposed to be read, or the
 number of characters read before the connection closed or timed out.
 
-CHAPTER 6: External Communication Tools
-
 Socket object reference
 
 readln()
@@ -297,5 +274,3 @@ string to be written.
 Concatenates all arguments into a single string, appends a Line Feed character, and writes that
 string to the connection.
 Returns true on success.
-
-199

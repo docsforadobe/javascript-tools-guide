@@ -128,12 +128,6 @@ Initially, new windows are hidden. The show method makes them visible and respon
 interaction; for example:
 dlg.show();
 
-CHAPTER 4: User-Interface Tools
-
-ScriptUI programming model
-
-64
-
 Container elements
 All Windows are containers-that is, they contain other elements within their bounds. Within a Window, you
 can create other types of container elements: Panels and Groups. These can contain control elements,
@@ -175,12 +169,6 @@ win.location = "x:10, y:50";
 
 The size of an element’s region is defined by a Dimension object containing a width and height in
 pixels.
-
-CHAPTER 4: User-Interface Tools
-
-ScriptUI programming model
-
-65
 
 The following examples show equivalent ways of changing an existing window’s width and height to
 200 and 100:
@@ -228,12 +216,6 @@ container, in an optional bounds parameter. Different types of elements have dif
 parameters. For elements which display text, for example, you can specify the initial text. See the ScriptUI
 Classes dictionary in the ExtendScript Toolkit’s Object Model Viewer for details.
 
-CHAPTER 4: User-Interface Tools
-
-ScriptUI programming model
-
-66
-
 The order of optional parameters must be maintained. Use the value undefined for a parameter you do
 not wish to set. For example, if you want to use automatic layout to determine the bounds, but still set the
 title and text in a panel and button, the following creates Panel and Button elements with an initial text
@@ -278,12 +260,6 @@ object at index 0 of the parent’s children property to set the text for the ti
 var dlg = new Window('dialog', 'Alert Box Builder');
 dlg.msgPnl = dlg.add('panel');
 dlg.children[0].text = 'Messages';
-
-CHAPTER 4: User-Interface Tools
-
-Types of controls
-
-67
 
 If you use a creation property to assign a name to a newly created element, you can access that child by its
 name, either in the children array of its parent, or directly as a property of its parent. For example, the
@@ -547,15 +523,7 @@ You can specify the choice items on creation of the list object, or afterward us
 list object’s add() method. You can remove items programmatically with the list
 object’s remove() and removeAll() methods.
 
-71
-
-CHAPTER 4: User-Interface Tools
-
 ListItem
-
-Types of controls
-
-72
 
 Items added to or inserted into any type of list control are ListItem objects, with
 properties that can be manipulated from a script. ListItem elements can be of the
@@ -608,12 +576,6 @@ Step4Icon
 SourceFolderIcon
 DestinationFolderIcon
 
-CHAPTER 4: User-Interface Tools
-
-Types of controls
-
-73
-
 If a script does not explicitly set the preferredSize or size property of an element that displays a icon
 image, the value of preferredSize is determined by the dimensions of the iconic image. If the size values
 are explicitly set to dimensions smaller than those of the actual image graphic, the displayed image is
@@ -655,12 +617,6 @@ item2.subItems[0].image = File ("~/Desktop/Step1.png");
 
 This creates a control that looks like this:
 
-CHAPTER 4: User-Interface Tools
-
-Types of controls
-
-74
-
 Notice that the columns have headers, and the label in the second column of the second row has both text
 and an image.
 
@@ -697,12 +653,6 @@ display an alert to inform the user of errors.
 Sometimes, a modal dialog presents choices to the user that must be correct before your script allows the
 dialog to be dismissed. If your script needs to validate the state of a dialog after the user clicks OK, you can
 define an onClose event handler for the dialog. This callback function is invoked whenever a window is
-
-CHAPTER 4: User-Interface Tools
-
-Types of controls
-
-75
 
 closed. If the function returns true, the window is closed, but if it returns false, the close operation is
 cancelled and the window remains open.
@@ -749,12 +699,6 @@ If you do not set the defaultElement and cancelElement properties explicitly, Sc
 reasonable defaults when the dialog is about to be shown for the first time. For the default element, it
 looks for a button whose name or text value is "ok" (disregarding case). For the cancel element, it looks for
 
-CHAPTER 4: User-Interface Tools
-
-Size and location objects
-
-76
-
 a button whose name or text value is "cancel" (disregarding case). Because it looks at the name value first,
 this works even if the text value is localized. If there is no suitable button in the dialog, the property value
 remains null, which means that the keyboard shortcut has no effect in that dialog.
@@ -791,13 +735,7 @@ Size and location object types
 The following table shows the property-value object types, the element properties that create and contain
 them, and their array and object-property formats.
 
-CHAPTER 4: User-Interface Tools
-
 Bounds
-
-Drawing objects
-
-77
 
 Defines the boundaries of a window within the screen’s coordinate space, or of a
 user-interface element within the container’s coordinate space. Contains an array, [left,
@@ -873,7 +811,6 @@ ScriptUIPen
 
 Describes the pen used to draw lines in a control.
 
-78
 
 For details of these objects, see "Graphic customization objects" on page 155.
 The ScriptUIGraphics object contains methods that create the other graphics objects; for example,
@@ -913,12 +850,6 @@ var myDialog = new Window ( myResource );
 Controls are defined as properties within windows and other containers. For each control, give the class
 name of the control, followed by the properties of the control enclosed in braces. For example, the
 following specifies a button:
-
-CHAPTER 4: User-Interface Tools
-
-Resource specifications
-
-79
 
 testBtn: Button { text: ’Test’ }
 
@@ -964,12 +895,6 @@ method) to specify all of the dialog contents for the user-input dialog.
 
 The two Alert Box Builder examples create the same dialog to collect values from the user.
 
-CHAPTER 4: User-Interface Tools
-
-Defining behavior with event callbacks and listeners
-
-80
-
 The Build button event handler builds a resource string from the collected values, and returns it from the
 dialog invocation function; the script then saves the resource string to a file. That resource string can later
 be used to create and display the user-configured alert box.
@@ -996,12 +921,6 @@ to different actions, or events:
 Windows generate events when the user moves or resizes the window. To handle these events, define
 callback functions for onMove, onMoving, onResize, and onResizing. To respond to the user opening
 or closing the window, define callback functions for onShow and onClose.
-
-CHAPTER 4: User-Interface Tools
-
-Defining behavior with event callbacks and listeners
-
-81
 
 Button, RadioButton, and Checkbox controls generate events when the user clicks within the control
 bounds. To handle the event, define a callback function for onClick.
@@ -1043,12 +962,6 @@ returning different values to the show method that invoked the dialog, so the ca
 button was clicked:
 buildBtn.onClick = function () { this.parent.parent.close(1); };
 cancelBtn.onClick = function () { this.parent.parent.close(2); };
-
-CHAPTER 4: User-Interface Tools
-
-Defining behavior with event callbacks and listeners
-
-82
 
 Simulating user events
 You can simulate user actions by sending an event notification directly to a window or control with the
@@ -1095,12 +1008,6 @@ propagation at some level.
 You can register:
 The name of a handler function defined in the extension that takes one argument, the event object.
 For example:
-
-CHAPTER 4: User-Interface Tools
-
-Defining behavior with event callbacks and listeners
-
-83
 
 myButton.addEventListener( ’click’, myFunction );
 
@@ -1180,12 +1087,6 @@ In ScriptUI, the W3C AbstractView object is a UI element (such as Button, Window
 None of the "namespace" properties or methods are supported (such as initEventNS and
 initMouseEventNS).
 
-CHAPTER 4: User-Interface Tools
-
-Defining behavior with event callbacks and listeners
-
-84
-
 The ScriptUI implementation of W3C mouse events follows the W3C DOM level 3 functional specification
 (http://www.w3.org/TR/DOM-Level-3-Events/events.html#Events-eventgroupings-mouseevents), with
 these differences:
@@ -1228,12 +1129,6 @@ the button object’s handler (during the at-target phase). Finally, ScriptUI ca
 the group object (during the bubble phase).
 If you register a handler at an ancestor object of the actual event target, you can specify the third
 argument to addEventListener(), so that the ancestor’s handler responds only in the capture phase, not in
-
-CHAPTER 4: User-Interface Tools
-
-Communicating with the Flash application
-
-85
 
 the bubbling phase. For example, the following click handler, registered with the parent dialog object,
 responds only in the capture phase:
@@ -1278,12 +1173,6 @@ For example, in order for the SWF code to call an ExtendScript function named my
 define a function with the name myExtendScriptFunction as a method of your FlashPlayer control
 object. There are no special requirements for function names, but the function must take and return only
 data of the supported types.
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-86
 
 You do not need to register the ExtendScript function in the ActionScript environment. Your ActionScript
 script can simply call the external function using the ExternalInterface.call() method:
@@ -1331,12 +1220,6 @@ Automatic layout is easier to program than explicit layout. It makes a script ea
 and easier to localize for different languages. It also makes the script automatically adapt to the default
 font and font size used by the host application for ScriptUI windows.
 
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-87
-
 The script programmer has considerable control over the automatic layout process. Each container has an
 associated layout manager object, specified in the layout property. The layout manager controls the sizes
 and positions of the contained elements, and also sizes the container itself.
@@ -1381,12 +1264,6 @@ orientation: ’row’, \
 st: StaticText { }, \
 pb: Button { text: ’OK’ }, \
 
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-88
-
 et: EditText { characters:4, justify:’right’ } \
 }");
 w.show();
@@ -1428,12 +1305,6 @@ You can also set the value using the corresponding constants from the Alignment 
 class; for example:
 myGroup.alignment = [ScriptUI.Alignment.LEFT,
 ScriptUI.Alignment.TOP]
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-89
 
 If you set the alignment value using a constant and then query the property, it returns an index number
 corresponding to the constant, rather than a string value.
@@ -1481,12 +1352,6 @@ The following figure shows the results of creating the sample window with column
 right, left, and fill alignment settings in the parent’s alignChildren property. Notice how in the
 fill case, each element is made as wide as the widest element in the container:
 
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-90
-
 You can override the container’s child alignment, as specified by alignChildren, by setting the
 alignment property of a particular child element. The following diagram shows the result of setting
 alignment to right for the EditText element, when the parent’s alignChildren value is left:
@@ -1504,12 +1369,6 @@ position, using an alignment value such as ['left', 'center'] for each element:
 The vertical alignment example creates four columns, and places the controls within each column
 along the vertical axis. It uses alignment values such as ['fill', 'top'] to distribute controls within
 the column, while still controlling the relative vertical positions:
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-91
 
 Setting margins
 The margins property of a container specifies the number of pixels between the edges of a container and
@@ -1530,12 +1389,6 @@ pixels, respectively:
 
 This figure shows the results of creating the sample window with column orientation, and spacing of 20
 pixels:
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-92
 
 Determining a preferred size
 Each element has a preferredSize property, which is initially defined with reasonable default
@@ -1572,12 +1425,6 @@ with row orientation. These groups contain the control rows. A third Group, outs
 row of buttons.
 res =
 "dialog { \
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-93
 
 info: Panel { orientation: ’column’, \
 text: ’Personal Info’, \
@@ -1618,12 +1465,6 @@ name: Group { orientation: ’row’, \
 s: StaticText { text:’Name:’ }, \
 e: EditText { characters: 30 } \
 
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-94
-
 } \
 }, \
 workInfo: Panel { orientation: ’column’, \
@@ -1656,12 +1497,6 @@ The following script creates this dialog. It compresses the "Personal Info" and 
 previous example into a single Panel that has two Groups arranged in a stack. A DropDownList allows the
 user to choose which set of information to view. When the user makes a choice in the list, its onChange
 function shows one group, and hides the other.
-
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-95
 
 res =
 "dialog { \
@@ -1760,13 +1595,7 @@ cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
 } \
 }";
 
-96
 
-CHAPTER 4: User-Interface Tools
-
-Automatic layout
-
-97
 
 // Create window using resource spec
 win = new Window (res);
@@ -1816,12 +1645,6 @@ All the per-child information is collected for later use.
 4. Based on the orientation, calculate the trial location of each child in the row or column, using
 inter-element spacing and the container’s margins.
 
-CHAPTER 4: User-Interface Tools
-
-Managing control titles
-
-98
-
 5. Determine the column, row, or stack dimensions, based on the dimensions of the children.
 6. Using the desired alignment for each child element, adjust its trial location relative to the edges of its
 container.
@@ -1861,12 +1684,6 @@ container is an imaginary line surrounding the title and the separate element. F
 appears inside the bounds of the button, and the virtual container is defined by the outer bounds of the
 element. The same principles apply in both cases.
 
-CHAPTER 4: User-Interface Tools
-
-Managing control titles
-
-99
-
 The title property is a String that defines a text label for a UI element. The title can appear to the left or
 right of the graphic element, above or below it, or superimposed over the center of the graphic
 element; the placement is controlled by the titleLayout property.
@@ -1891,12 +1708,6 @@ To achieve a row orientation where the title appears to the left or right of the
 horizontal alignment as left or right and vertical alignment as center, top, or bottom:
 button.titleLayout = { alignment: ['right', 'center'] };
 
-CHAPTER 4: User-Interface Tools
-
-Managing control titles
-
-100
-
 To achieve a column orientation where the title appears above or below the graphic element, define
 vertical alignment as top or bottom, and horizontal alignment as center:
 image.titleLayout = { alignment: ['center', 'bottom'] };
@@ -1911,12 +1722,6 @@ button.titleLayout = { alignment: ['center', 'center'] };
 With row orientation, you can control whether the title aligns to the top, center, or bottom of the
 graphic element. In this example, the title is placed to the left of the image, aligned at the top edge:
 image.titleLayout = { alignment: ['left', 'top'] };
-
-CHAPTER 4: User-Interface Tools
-
-Managing control titles
-
-101
 
 Use spacing to override the default number of pixels separating the title from the graphic element. In
 this example, titleLayout is configured to place the title 15 pixels above the panel:
@@ -1939,12 +1744,6 @@ middle of the space, dividing any blank space evenly on both sides of the text.
 droplist.titleLayout = { alignment: ['left', 'center'],
 characters: 20,
 justify: 'right' };
-
-CHAPTER 4: User-Interface Tools
-
-Managing control titles
-
-102
 
 This example demonstrates using characters and justify to vertically align the colons at the ends
 of all the dropdownlist control titles in a group. The same characters value is used for each
@@ -1972,12 +1771,6 @@ w.btn3 = w.add("iconbutton { title: 'Start 123456 End', image: 'SystemWarningIco
 w.btn1.titleLayout = { characters: 8, truncate: 'middle' };
 w.btn2.titleLayout = { characters: 8, truncate: 'end' };
 w.btn3.titleLayout = { characters: 8, truncate: 'none' };
-
-CHAPTER 4: User-Interface Tools
-
-Localization in ScriptUI objects
-
-103
 
 Margins around the title and graphic object
 The margins property specifies the number of pixels separating each edge of an element from the visible
@@ -2008,13 +1801,7 @@ localize function. This function takes as its argument a localization object con
 versions of a string.
 For complete details of this ExtendScript feature, see "Localizing ExtendScript strings" on page 224.
 A localization object is a JavaScript object literal whose property names are locale names, and whose
-property values are the localized text strings. The locale name is an identifier as specified in the ISO 3166
-
-CHAPTER 4: User-Interface Tools
-
-Localization in ScriptUI objects
-
-104
+property values are the localized text strings. The locale name is an identifier as specified in the ISO 31
 
 standard. In this example, a btnText object contains localized text strings for several locales. This object
 supplies the text for a Button to be added to a window w:
@@ -2057,12 +1844,6 @@ b1 = w.add ("button", undefined, btnText);
 b1 = w.add ("button", undefined, localize (btnText));
 
 If you need to include variables in the localized strings, use the localize function.
-
-CHAPTER 4: User-Interface Tools
-
-ScriptUI object reference
-
-105
 
 ScriptUI object reference
 ScriptUI is a component that works with the ExtendScript JavaScript interpreter to provide JavaScript
@@ -2115,12 +1896,6 @@ applicationFonts Object
 Collects the enumerated values that specify the default application fonts.
 The available fonts vary according to the application and system
 configuration.
-
-CHAPTER 4: User-Interface Tools
-
-ScriptUI class
-
-106
 
 compatability
 
@@ -2182,12 +1957,6 @@ String
 
 The main version number of the ScriptUI component framework. Read
 only.
-
-CHAPTER 4: User-Interface Tools
-
-ScriptUI class
-
-107
 
 ScriptUI class functions
 events.createEvent()
@@ -2507,8 +2276,6 @@ Scrollbar
 Button
 
 x
-
-109
 
 RadioButton
 
@@ -3040,7 +2807,6 @@ StaticText
 
 Slider
 
-110
 
 x
 x
@@ -3427,12 +3193,6 @@ String
 
 Deprecated. Use ScriptUI.version instead.
 
-CHAPTER 4: User-Interface Tools
-
-Window class
-
-111
-
 Window class functions
 Access these function through the class. For example:
 Window.alert("Notification to user");
@@ -3499,12 +3259,6 @@ NOTE: Not supported in all ScriptUI implementations.
 Returns a Window object found or generated from the resource, or null if no such window or
 resource exists.
 
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-112
-
 prompt()
 Window.prompt (message, preset[, title ]);
 message
@@ -3568,12 +3322,6 @@ closeButton - When true, the title bar includes a button to close the
 
 window, if the platform and window type allow it. When false, it does not.
 Default is true. Not used for dialogs.
-
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-113
 
 maximizeButton - When true, the title bar includes a button to expand
 
@@ -3648,12 +3396,6 @@ Dimension
 A Dimension object for the size and location of the Window’s frame
 in screen coordinates. Read only.
 
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-114
-
 maximized
 
 Boolean
@@ -3681,12 +3423,6 @@ String
 
 The key sequence that invokes this window’s onShortcutKey callback
 (in Windows only).
-
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-115
 
 Container properties
 The following table shows properties that apply to Window objects and container objects (controls of type
@@ -3820,12 +3556,6 @@ A Point object for the location of the top left corner of the
 Window’s drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
 
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-117
-
 margins
 
 Margins
@@ -3918,12 +3648,6 @@ needed for a container. The default value is based on the type of
 container, and is chosen to match standard Adobe user-interface
 guidelines.
 
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-118
-
 text
 
 String
@@ -3986,12 +3710,6 @@ parameters" on page 124.
 Creates and returns a new control or container object and adds it to the children of this window or
 container.
 Returns the new object, or null if unable to create the object.
-
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-119
 
 addEventListener()
 windowObj.addEventListener (eventName, handler[, capturePhase]);
@@ -4114,13 +3832,7 @@ Removes the specified child control from this window’s or container’s childr
 results if the child does not exist.
 Returns undefined.
 
-120
 
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-121
 
 removeEventListener()
 windowObj.removeEventListener (eventName, handler[, capturePhase]);
@@ -4165,12 +3877,6 @@ being updated. The modal state allows drawing events for controls in other windo
 the case during a modal show() operation), so that the script does not prevent the update of other
 parts of the application's UI while in the operation loop.
 It is an error to call the update() method for a window that is not currently visible.
-
-CHAPTER 4: User-Interface Tools
-
-Window object
-
-122
 
 Window event-handling callbacks
 The following callback functions can be defined to respond to events in windows. To respond to an event,
@@ -4233,12 +3939,6 @@ Called when a request is made to open the window using the show() method, before
 the window is made visible, but after automatic layout is complete. A handler can
 modify the results of the automatic layout.
 
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-123
-
 Control objects
 UI elements that belong to windows can be containers or controls. Containers share some aspects of
 top-level windows, and some aspects of controls, and so are described here with controls.
@@ -4275,12 +3975,6 @@ parameters" on page 124.
 Creates and returns a new control or container object and adds it to the children of this window or
 container.
 Returns the new object, or null if unable to create the object.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-124
 
 Control types and creation parameters
 The following keywords can be used in string literals as the type specifier for the add method, available on
@@ -4344,8 +4038,6 @@ dropdownlist
 
 DropDownList A drop-down list with zero or more items. Calls the onChange
 
-125
-
 Description
 callback if the item selection is changed by a script or the user, or if
 the object’s notify() method is called.
@@ -4399,8 +4091,6 @@ noecho: When false (the default), the control displays input
 text. When true, the control does not display input text
 (used for password input fields).
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4408,8 +4098,6 @@ Control objects
 Class name
 
 edittext (cont’d)
-
-126
 
 Description
 enterKeySignalsOnChange: When false (the default), the
@@ -4459,12 +4147,6 @@ creation_properties: Optional. An object that contains any of
 the following properties:
 
 name: A unique name for the control.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-127
 
 Type keyword
 
@@ -4523,8 +4205,6 @@ clicked, and alternate with the unpressed appearance each
 time it is clicked. The toggle state is reflected in the control’s
 value property.
 
-CHAPTER 4: User-Interface Tools
-
 Control objects
 
 Type keyword
@@ -4538,8 +4218,6 @@ image
 Image
 
 Displays an icon or image.
-
-128
 
 To add to a window w:
 w.add ("image" [, bounds, icon, {creation_properties}]);
@@ -4589,8 +4267,6 @@ argument, or the items property in creation_properties, not
 
 both.
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4598,8 +4274,6 @@ Control objects
 Class name
 
 listbox (cont’d)
-
-129
 
 Description
 creation_properties: Optional. An object that contains any of
@@ -4648,8 +4322,6 @@ is 0 appears as a horizontal line.
 
 text: Optional. The text displayed in the border of the panel.
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4657,8 +4329,6 @@ Control objects
 Class name
 
 panel (cont’d)
-
-130
 
 Description
 creation_properties: Optional. An object that contains the
@@ -4706,12 +4376,6 @@ creation_properties: Optional. An object that contains the
 following property:
 
 name: A unique name for the control.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-131
 
 Type keyword
 
@@ -4761,8 +4425,6 @@ The jumpdelta property determines the scrolling unit for a
 jump (as when the bar is clicked outside the indicator or arrows);
 default is 20% of the range between minvalue and maxvalue.
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4770,8 +4432,6 @@ Control objects
 Class name
 
 scrollbar (cont’d)
-
-132
 
 Description
 To add to a window w:
@@ -4823,8 +4483,6 @@ following property:
 
 name: A unique name for the control.
 
-CHAPTER 4: User-Interface Tools
-
 Control objects
 
 Type keyword
@@ -4838,8 +4496,6 @@ statictext
 StaticText
 
 A text field that the user cannot change.
-
-133
 
 To add to a window w:
 w.add ("statictext" [, bounds, text,
@@ -4886,8 +4542,6 @@ determined by the parent.
 
 text: Optional. The text displayed in the tab.
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4895,8 +4549,6 @@ Control objects
 Class name
 
 tab (cont’d)
-
-134
 
 Description
 creation_properties: Optional. An object that contains the
@@ -4952,8 +4604,6 @@ argument, or the items property in creation_properties, not
 
 both.
 
-CHAPTER 4: User-Interface Tools
-
 Type keyword
 
 Control objects
@@ -4961,8 +4611,6 @@ Control objects
 Class name
 
 treeview (cont’d)
-
-135
 
 Description
 creation_properties: Optional. An object that contains any of
@@ -5026,13 +4674,9 @@ right
 center (default)
 fill
 
-CHAPTER 4: User-Interface Tools
-
 Control objects
 
 alignment (cont’d)
-
-136
 
 For an array value, the first string element defines the horizontal
 alignment and the second element defines the vertical alignment.
@@ -5125,15 +4769,11 @@ File
 
 Deprecated. Use image instead.
 
-CHAPTER 4: User-Interface Tools
-
 image
 
 Control objects
 
 Object
-
-137
 
 A ScriptUIImage object, or the name of an icon resource, or the
 pathname or File object for a file that contains a platform-specific
@@ -5201,15 +4841,11 @@ right
 NOTE: Justification only works if the value is set on creation, using a
 resource specification or creation parameters.
 
-CHAPTER 4: User-Interface Tools
-
 location
 
 Control objects
 
 Point
-
-138
 
 A Point object describing the location of the element as an array,
 
@@ -5362,15 +4998,12 @@ Number
 The amount by which to increment or decrement a Scrollbar
 element’s position when the user clicks a stepper button.
 
-CHAPTER 4: User-Interface Tools
 
 subitems
 
 Control objects
 
 Array
-
-140
 
 For ListItem objects only. When the parent is a multi-column ListBox,
 the ListItem.text and ListItem.image values describe the label in
@@ -5423,7 +5056,6 @@ right of the element, or above or below it, or you can superimpose the
 title over the center of the element. The placement is controlled by
 the titleLayout value.
 
-CHAPTER 4: User-Interface Tools
 
 titleLayout
 
@@ -5431,7 +5063,6 @@ Control objects
 
 Object
 
-141
 
 For a DropDownList, FlashPlayer, IconButton, Image, or TabbedPanel
 with a title value, the way the text label is shown in relation to the
@@ -5499,11 +5130,9 @@ When a container is hidden, its children are also hidden, but they
 retain their own visibility values, and are shown or hidden accordingly
 when the parent is next shown.
 
-CHAPTER 4: User-Interface Tools
 
 Control objects
 
-142
 
 window
 
@@ -5584,11 +5213,9 @@ object is itself the target.
 Registers an event handler for a particular type of event occurring in this control.
 Returns undefined.
 
-CHAPTER 4: User-Interface Tools
 
 Control objects
 
-143
 
 dispatchEvent()
 controlObj.dispatchEvent (eventObj)
@@ -5647,11 +5274,9 @@ Unregisters an event handler for a particular type of event occurring in this co
 must be identical to those that were used to register the event handler.
 Returns undefined.
 
-CHAPTER 4: User-Interface Tools
 
 Control objects
 
-144
 
 show()
 controlObj.show()
@@ -5693,12 +5318,6 @@ supplied, or greater than the current list length, the new item is added at the 
 For list objects (ListBox, DropDownList or TreeView) only. Adds an item to the items array at the
 given index.
 Returns the item control object for type=item, or null for type=separator.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-145
 
 remove()
 containerObj.remove(index)
@@ -5743,12 +5362,6 @@ Using stopMovie() from the player’s hosting environment has no effect on an SW
 ScriptUI Flash Player element. It is, however, possible to produce an SWF using Flash Authoring
 that can stop itself in response to user interaction.
 Do not call playMovie() when an SWF file is already playing.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-146
 
 invokePlayerFunction()
 flashPlayerObj.invokePlayerFunction(fnName, [arg1[,...argn]] )
@@ -5798,12 +5411,6 @@ flashPlayerObj.stopMovie()
 Halts playback of the current movie.
 NOTE: Does not work when called from the player’s hosting environment.
 Returns undefined.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-147
 
 Control event-handling callbacks
 The following events are signalled in certain types of controls. To handle the event, define a function with
@@ -5873,12 +5480,6 @@ onDraw
 Called when a container or control is about to be drawn. Allows the script to modify
 or control the appearance, using the control’s associated ScriptUIGraphics object.
 Handler takes one argument, a DrawState object.
-
-CHAPTER 4: User-Interface Tools
-
-Control objects
-
-148
 
 onExpand
 
@@ -5971,12 +5572,6 @@ Boolean
 
 When true, the SHIFT key was pressed.
 
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
-149
-
 Event handling
 Several helper classes provide low-level event-handling capabilities.
 Event objects are normally created by ScriptUI and passed to your event handler. However, you can
@@ -6055,12 +5650,6 @@ Object
 
 The container or control object that dispatched the event.
 
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
-150
-
 UIEvent object functions
 initUIEvent()
 eventObj.initUIEvent (eventName, bubble, isCancelable, view, detail)
@@ -6104,12 +5693,6 @@ eventObj.stopPropagation ( )
 Stops event propagation (bubbling and capturing) after executing the handler or handlers at the
 current target.
 Returns undefined.
-
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
-151
 
 KeyboardEvent object
 This type of object is passed to your registered event handler when a keyboard-input event occurs. The
@@ -6171,12 +5754,6 @@ The name of the event that occurred. Key events types are:
 keyup
 keydown
 
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
-152
-
 KeyboardEvent object functions
 In addition to the functions defined for UIEvent base class, a keyboard event has these functions.
 getModifierState()
@@ -6227,12 +5804,6 @@ A whitespace-separated string of modifier key names, such as "Control Alt".
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties. Returns undefined.
-
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
-153
 
 MouseEvent object
 This type of object is passed to your registered event handler when a mouse-input event occurs. The
@@ -6297,10 +5868,6 @@ screenY
 Number The horizontal and vertical coordinates at which the event occurred
 relative to the screen.
 
-CHAPTER 4: User-Interface Tools
-
-Event handling
-
 shiftKey
 
 Boolean When true, the SHIFT key was active. Value is undefined if the
@@ -6309,8 +5876,6 @@ keyIdentifier is for a modifier key.
 type
 
 String
-
-154
 
 The name of the event that occurred. Mouse events types are:
 mousedown
@@ -6388,12 +5953,6 @@ button
 
 Sets the mouse button.
 
-relatedTarget
-
-Optional. Sets the related target, if any, for a mouseover or mouseout event.
-
-155
-
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties.
 Returns undefined.
@@ -6438,12 +5997,6 @@ Most types of user-interface elements have a graphics property which contains an
 which allows you to customize aspects of the element’s appearance, such as the color and font. Use an
 onDraw callback function to set these properties or call the functions.
 All measurements are in pixels.
-
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-156
 
 ScriptUIGraphics class properties
 These static properties provide color type constants with which to create Pen and Brush objects.
@@ -6503,12 +6056,6 @@ foregroundColor
 
 Object The foreground color for a container, or the parent
 foreground color of a control element. A ScriptUIPen object.
-
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-157
 
 ScriptUIGraphics object functions
 These functions directly customize the appearance of the associated element by drawing on the screen, or
@@ -6624,13 +6171,7 @@ contains this graphics object.
 Adds a path segment to the currentPath, from the currentPoint to the specified point.
 Returns a Point object for the given destination point, which is the new current position.
 
-158
 
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-159
 
 measureString()
 controlObj.graphics.measureString (text, font[, boundingWidth])
@@ -6686,12 +6227,6 @@ controlObj.graphics.newPath( );
 Creates a new, empty drawing path in currentPath, replacing any existing path.
 Returns a ScriptUIPath object.
 
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-160
-
 newPen()
 controlObj.graphics.newPen( type, color, lineWidth);
 type
@@ -6746,12 +6281,6 @@ currentPath.
 
 Strokes the path segments of a path with a given drawing pen.
 Returns undefined.
-
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-161
 
 ScriptUIBrush object
 A helper object that encapsulates the qualities of a brush used to paint fill into a path in a control. Create
@@ -6820,8 +6349,6 @@ Graphic customization objects
 
 Object
 
-162
-
 The font style. One of these constants:
 ScriptUI.FontStyle.REGULAR
 ScriptUI.FontStyle.BOLD
@@ -6884,12 +6411,6 @@ Can be passed as an optional argument to fillPath() and strokePath() (which othe
 currentPath).
 The class defines no properties or methods.
 
-CHAPTER 4: User-Interface Tools
-
-Graphic customization objects
-
-163
-
 ScriptUIPen object
 A helper object that encapsulates the qualities of a pen used to stroke path segments in a control. Create
 with the newPen() method of the ScriptUIGraphics object.
@@ -6939,12 +6460,6 @@ Custom elements have the same common properties that other types of control elem
 The Custom element class has the following types of elements:
 
 CHAPTER 4: User-Interface Tools
-
-customBoundedValue
-
-Graphic customization objects
-
-164
 
 Can be used to implement controls whose 'value' can vary within minimum
 and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the
@@ -7003,12 +6518,6 @@ Redraw the button on mouseover and mouseout
 event.target.notify("onDraw");
 }
 catch (e) {
-
-CHAPTER 4: User-Interface Tools
-
-LayoutManager object
-
-165
 
 }
 }

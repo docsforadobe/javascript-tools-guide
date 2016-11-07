@@ -13,20 +13,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 
 - ~~pdf to text~~
 - ~~Split into sections~~
-- Remove page headers
-    - 0 - ~~Table Of Contents~~
-    - 1 - ~~Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
-    - 12 - Index
+- ~~Remove page headers~~
+    - There might be some left over, so if you see something seems like it shouldn't be there, it probably shouldn't
 - Format headers in each section (Use 0 - Table Of Contents/index.rst) to find headers)
     - 0 - ~~Table Of Contents~~
     - 1 - ~~Introduction~~

@@ -37,5 +37,3 @@ indesignserver
 photoshop
 premierepro
 soundbooth
-
-294

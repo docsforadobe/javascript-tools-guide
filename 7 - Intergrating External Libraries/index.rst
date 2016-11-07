@@ -39,13 +39,7 @@ For details of how to define functions for direct access through the ExternalObj
 Indirect access to library calls through JavaScript classes - Use the indirect style to access classes
 defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is
 
-200
 
-CHAPTER 7: Integrating External Libraries
-
-ExternalObject object
-
-201
 
 automatically defined, and you can access the properties and methods through an instance of that
 class. For example:
@@ -91,12 +85,6 @@ Optional. Any number of arguments to pass to the library’s initialization rout
 
 For example:
 var mylib = new ExternalObject( "lib:myLibrary" );
-
-CHAPTER 7: Integrating External Libraries
-
-ExternalObject object
-
-202
 
 ExternalObject class properties
 The ExternalObject class provides these static properties:
@@ -150,9 +138,6 @@ It can be helpful to force a shutdown of the external library if termination of 
 the shutdown of the hosting application does not occur in the correct order.
 Returns undefined.
 
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for direct access
 
 Defining entry points for direct access
 A library to be loaded and accessed directly through an ExternalObject instance must publish the
@@ -197,14 +182,6 @@ The variant data does not support JavaScript objects. The following data types a
 undefined
 Boolean
 double
-
-203
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for direct access
-
-204
 
 string - Must be UTF-8 encoded.
 
@@ -263,12 +240,6 @@ s
 
 String
 
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for direct access
-
-205
-
 For example, suppose your library defines these two entry points:
 One (Integer a, String b);
 Two ();
@@ -284,12 +255,6 @@ Whenever a JavaScript function makes a call to a library function, it increments
 library. When the reference count for a library reaches 0, the library is automatically unloaded; your
 termination function is called, and the ExternalObject instance is deleted. Note that deleting the
 ExternalObject instance does not unload the library if there are remaining references.
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-206
 
 Defining entry points for indirect access
 The C-client object interface for external libraries allows your C or C++ shared-library code to define,
@@ -338,12 +303,6 @@ Shared-library function API
 Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in
 SoServerInterface and SoObjectInterface function-pointer structures.
 Return values from most functions are integer constants. The error code kESErrOK == 0 indicates success.
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-207
 
 SoServerInterface
 SoServerInterface is a structure of function pointers which enable the shared-library code to call
@@ -415,10 +374,6 @@ The SoHObject reference for an instance of this class.
 Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for
 debugging.
 Returns an error code, kESErrOK on success.
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
 
 addClass()
 ESerror_t addClass (SoHServer hServer, char* name,
@@ -494,12 +449,6 @@ String. Optional. A descriptive string for the new property, or null.
 Adds new property to an instance.
 Returns an error code, kESErrOK on success.
 
-208
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
 addProperties()
 ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);
 hObject
@@ -571,14 +520,6 @@ A buffer in which to return a pointer to the library-defined data.
 Retrieves data that was stored with setClientData().
 Returns an error code, kESErrOK on success.
 
-209
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-210
-
 eval()
 ESerror_t eval (SohServer hServer, char* string, TaggedData* pTaggedData);
 hServer
@@ -645,12 +586,6 @@ valueOf;
 toString;
 finalize;
 
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-211
-
 All SoObjectInterface members must be valid function pointers, or NULL. You must implement
 initialize() and finalize(). The functions must conform to the following type definitions.
 initialize()
@@ -708,12 +643,6 @@ Called when JavaScript code accesses a property of this class:
 alert(xx.myproperty);
 
 Returns an error code, kESErrOK on success.
-
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-212
 
 call()
 ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv,
@@ -773,12 +702,6 @@ Required. Called when JavaScript deletes an instance of this class. Use this fun
 memory you have allocated.
 Returns an error code, kESErrOK on success.
 
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-213
-
 Support structures
 These support structures are passed to functions that you define for your JavaScript interface:
 SoHObject
@@ -825,12 +748,6 @@ desc
 
 A descriptive string or NULL.
 
-CHAPTER 7: Integrating External Libraries
-
-Defining entry points for indirect access
-
-214
-
 TaggedData
 The TaggedData structure is used to communicate data values between JavaScript and shared-library
 C/C++ code. Types are automatically converted as appropriate.
@@ -871,13 +788,10 @@ release the object.
 When a function returns an object of type kTypeLiveObjectRelease, ExtendScript
 releases the object.
 
-CHAPTER 7: Integrating External Libraries
 
 type
 
-Defining entry points for indirect access
 
-215
 
 The data type tag. One of:
 kTypeUndefined: a null value, equivalent of JavaScript undefined. The return value

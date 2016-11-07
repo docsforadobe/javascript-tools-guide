@@ -42,14 +42,6 @@ instances of that element. Each of these, in turn, contains an elementB property
 empty XML object:
 var elemB1 = myRoot.elementA[0].elementB[0];
 
-237
-
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-238
-
 If an element is empty in the XML, the corresponding property exists and contains an empty XML object; it
 is never null or undefined.
 
@@ -96,12 +88,6 @@ The statement bookstoreXML.book[0].author; returns all authors of the first book
 For additional ways of accessing elements in the tree, see "Retrieving contained elements" on page 241,
 and "Creating and accessing namespaces" on page 242.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-239
-
 Accessing XML attributes
 Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a
 preceding at-sign (@). An attribute property is a one-element list, which contains an XML object for the
@@ -146,12 +132,6 @@ COOKINGCHILDRENCHILDRENMUSIC
 The toXMLString() method serializes the entire element, including the tags, into a string. For example, for
 the element <x>text</x>, the method returns "<x>text</x>".
 
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-240
-
 Modifying XML elements and attributes
 You can change an element by assigning a value to the corresponding property.
 If the value assigned is an XML element, the element is simply replaced. If there are multiple elements
@@ -194,12 +174,6 @@ The result is this XML:
 
 This statement changes the value of the category attribute of the second book:
 bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
-
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-241
 
 The result is this XML:
 <book category="LITERATURE, FANTASY">
@@ -244,12 +218,6 @@ top text
 </top>
 
 Here are the results of the different calls.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-242
 
 The result of XML.children() contains 3 elements, the direct child tags <one> and <two>, and the
 directly contained text of the <top> tag:
@@ -301,12 +269,6 @@ namespace that maps the prefix "kids" to the namespace "http://kids.mybookstore.
 uses the prefix to place a particular book element in that namespace:
 <bookstore xmlns:kids="http://kids.mybookstore.com">
 
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-243
-
 <book category="COOKING">
 <title lang="en">The Boston Cooking-School Cookbook</title>
 <author>Fannie Merrit Farmer</author>
@@ -350,12 +312,6 @@ You can access elements that are in the default namespace directly, without usin
 object.
 If you have not set a default, you can use direct access for elements with no namespace specifier.
 If you have set a default, you can use direct access for elements in that namespace.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-244
 
 If you have assigned an element to a namespace, and have not made it the default, you must use a
 Namespace object to access those elements. For example:
@@ -401,21 +357,9 @@ XML lists
 ExtendScript defines an XMLList object, which is identical to the XML object except that you can create it
 by passing it an XML list, and it creates an XML list rather than an XML tag.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-The XML Object
-
-245
-
 All XML statements and functions that collect XML return the result as an XMLList, which can be empty if
 there is no match. For example, the following statement returns an empty list:
 bookstoreXML.magazine;
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-246
 
 XML Object Reference
 This section provides reference details for the properties and methods of the XML object itself, and for the
@@ -468,11 +412,6 @@ Boolean
 When true, white-space characters are stripped
 from the XML during parsing. Default is true.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-247
 
 prettyIndent
 
@@ -527,12 +466,6 @@ name.
 XML object Attribute properties are named with the attribute name prefixed
 with the at-sign, @.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-248
-
 XML object functions
 addNamespace()
 xmlObj.addNamespace (ns);
@@ -584,12 +517,6 @@ xmlObj.comments();
 Retrieves all XML comment elements from this node.
 Returns an XML object containing the comments.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-249
-
 contains()
 xmlObj.contains (element);
 element
@@ -638,12 +565,6 @@ attribute node, or an element without child elements (regardless of whether it a
 attributes, comments, processing instructions or text).
 Object representing comments and processing instructions do not have simple content.
 Returns true if this node contains no child elements.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-250
 
 inScopeNamespaces()
 xmlObj.inScopeNamespaces ();
@@ -697,12 +618,6 @@ xmlObj.name ();
 Retrieves the full name of this element, with the namespace information.
 Returns a QName object containing the element name and namespace URI.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-251
-
 namespace()
 xmlObj.namespace ();
 
@@ -744,12 +659,6 @@ Prepends a child element to this node, before any existing children. If you prep
 element, the result is two text elements; call normalize() to concatenate them into a single text
 string.
 Returns this XML object.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-252
 
 processingInstructions()
 xmlObj.processingInstructions ([name]);
@@ -805,12 +714,6 @@ A String, the new name.
 Replaces the full name of this object; that is, the element name and its namespace prefix.
 Returns this XML object.
 
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-253
-
 setNamespace()
 xmlObj.setNamespace(ns);
 
@@ -843,12 +746,6 @@ Creates an XML-encoded string representation of this XML object. This result inc
 attributes and end tag of the XML object, regardless of its content. Formats the string as specified
 by the global settings XML.prettyPrinting and XML.prettyIndent.
 Returns a String.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-254
 
 xpath()
 xmlObj.xpath (expression[, variables]);
@@ -898,12 +795,6 @@ default xml namespace = Namespace object
 default xml namespace = URL_string
 
 Returns undefined.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-255
 
 QName object
 This object encapsulates a fully qualified XML name, the combination of a local XML name and its
@@ -973,12 +864,6 @@ For example, this XML definition contains a namespace declaration:
 <?xml xmlns:adobe=http://www.adobe.com/test?>
 
 In the corresponding namespace, the prefix is adobe, and the URI is http://www.adobe.com/test.
-
-CHAPTER 9: Integrating XML into JavaScript
-
-XML Object Reference
-
-256
 
 Namespace object constructors
 The Namespace constructor takes several forms:

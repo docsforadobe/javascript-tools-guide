@@ -27,14 +27,6 @@ windows
 
 Panels
 
-13
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Configuring the Toolkit window
-
-14
-
 You can, for example, adjust the relative sizes of the panels by dragging the separators up or down, or right
 or left, and can rearrange the groupings. To move a tabbed panel, drag the tab into another pane.
 If you drag a tab so that the entire destination group is highlighted, it becomes another stacked panel in
@@ -63,13 +55,6 @@ Some panels also have a flyout menu, specific to that panel, which you access th
 the upper right corner. The JavaScript Console has a right-click menu that allows you to copy and paste
 text.
 The individual panels are discussed in detail in the following sections.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Configuring the Toolkit window
-
-15
-
 Document windows
 When you open scripts or text files, each file appears in its own Script Editor document window. By default,
 the document windows are docked; that is, shown as tabbed panes in the main window. However, like the
@@ -98,13 +83,6 @@ copy is, by default, positioned to the right of the original, docked window, as 
 CTRL-click to split the window, the second appears below the original.
 For more information about the document windows and the Script Editor, see "The Script Editor" on
 page 18.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Configuring the Toolkit window
-
-16
-
 Workspaces
 The Toolkit saves the current layout when you exit, and restores it at the next startup. It saves and restores
 the open documents, the current positions within the documents, any breakpoints that have been set, and
@@ -136,13 +114,6 @@ the choices made in this dialog, and next time it would appear, makes the same c
 the dialog.
 To make these dialogs display again, click Reset Dialogs on the User Interface page in the Preferences
 dialog (Edit > Preferences).
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Selecting scripts
-
-17
-
 Selecting scripts
 You can open multiple scripts (or text files, including programs in other languages). You can find and open
 scripts in a number of ways:
@@ -174,13 +145,6 @@ any other favorite locations that have been defined. You can create your own lis
 using the flyout menu.
 
 flyout menu
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-18
-
 The favorite script locations that you define are also available to the Find and Replace dialog; see
 "Searching in text" on page 24.
 You can also examine and set favorite locations using the Favorites page of the Preferences dialog (Edit >
@@ -203,13 +167,6 @@ Navigation aids and options applicable to any kind of text, and specific code na
 see "Navigation aids" on page 19.
 General editing and coding support such as undo-redo, and specific JavaScript coding support such
 as syntax checking; see "Coding aids" on page 22.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-19
-
 A full-featured text search tool that can search in multiple files; see "Searching in text" on page 24.
 Syntax marking (color and font styles for specific syntactic structures) for JavaScript and for many
 other computer languages. The marking styles are configurable; see "Syntax marking" on page 26.
@@ -237,13 +194,6 @@ Function finders
 The Functions panel, and the flyout menu at the top right of the document window, both offer lists of
 functions defined in the current document. When you select a function in either list, the document jumps
 directly to that function definition in the code.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-20
-
 Bookmarks
 The Edit > Bookmarks menu allows you to set and clear navigation points in your text. The F2 function
 key is the default shortcut key for the bookmark commands:
@@ -256,13 +206,6 @@ Bookmarks are marked with a blue, right-pointing arrow at the left of the line (
 number if it is shown). This is the same place where a breakpoint is marked with a dot (see "Setting
 breakpoints" on page 31). If you have both a breakpoint and a bookmark set in the same line, the blue
 arrow is superimposed on the breakpoint dot.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-21
-
 line numbers
 bookmark
 
@@ -365,13 +308,6 @@ Move insertion point to end of line
 CTRL + HOME
 
 Move insertion point to start of text
-
-CTRL + END
-
-Move insertion point to end of text
-
-22
-
 The Script Editor supports extended keyboard input via IME (Windows) or TMS (Mac OS). This is especially
 important for Far Eastern characters.
 
@@ -383,13 +319,6 @@ Code completion
 When you position the cursor in a document and begin typing, the Toolkit offers completion choices from
 among keywords, global functions, functions that are defined in the current document, and functions
 defined in the object-model dictionary that is currently selected from the flyout menu.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-23
-
 You can use the flyout menu at the upper right corner of the document window to choose an
 object-model dictionary to use for completion. Available dictionaries depend on which applications are
 loaded. See "Inspecting object models" on page 36.
@@ -426,13 +355,6 @@ Version comments
 A special comment format is reserved for a code versioning statement, which is used internally by Adobe
 scripts, but is available to all scripters. Use Edit > Insert Version Tag to insert a comment containing the
 file name and current date-time, in this format:
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-24
-
 /**
 * @@@BUILDINFO@@@ SnpCreateDialog.jsx !Version! Tue Dec 05 2006 08:03:38 GMT-0800
 */
@@ -475,13 +397,6 @@ The Find and Replace panel allows you to search through multiple documents for t
 specific search string or regular expression. You can choose to search in:
 The current document, or the current selection in the current document
 All open documents
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-25
-
 All scripts made public by the current target application
 Folders that you have defined as favorite locations; see "The Scripts panel and favorite script locations"
 on page 17.
@@ -544,13 +459,6 @@ Matches the end of a line.
 *
 
 Matches 0 or more times. For example, Sa*m matches Sm, Sam, Saam, Saaam etc.
-
-+
-
-Matches 1 or more times. For example, Sa+m matches Sam, Saam, Saaam and so on.
-
-26
-
 In a replace operation, you can use the captured regions of a match in the replacement expression by
 using the placeholders \1 through \9, where \1 refers to the first captured region, \2 to the second, and so
 on.
@@ -564,13 +472,6 @@ other kinds of code, and the syntax is highlighted according to the language. Th
 automatically set to match the file extension, or you can choose the language from the View > Syntax
 Highlighting menu.
 The style of highlighting is configurable, using the Fonts and Colors page of the Preferences dialog.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-27
-
 Select language for syntax
 highlighting in Script Editor
 Customize highlighting
@@ -592,13 +493,6 @@ Some applications use multiple JavaScript engines; all available engines in the 
 are shown in a drop-down list to the right of the application list, with an icon that shows the current
 debugging status of that engine. A target application can have more than one JavaScript engine, and
 more than one engine can be active, although only one is current. An active engine is one that is currently
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-28
-
 executing code, is halted at a breakpoint, or, having executed all scripts, is waiting to receive events. An
 icon by each engine name indicates whether it is running, halted, or waiting for input:
 running
@@ -622,13 +516,6 @@ and quits silently, rather than launching the target application. For example:
 The JavaScript console
 The JavaScript console is a command shell and output window for the currently selected JavaScript
 engine. It connects you to the global namespace of that engine.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-29
-
 The console is a JavaScript listener, that expects input text to be JavaScript code.
 You can use the console to evaluate expressions or call functions. Enter any JavaScript statement and
 execute it by pressing ENTER. The statement executes within the stack scope of the line highlighted in the
@@ -703,13 +590,6 @@ Ctrl U (Mac OS)
 
 When paused outside the body of a function, resumes script
 execution until the script terminates.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-30
-
 Visual indication of execution states
 When the execution of a script halts because the script reached a breakpoint, or when the script reaches
 the next line when stepping line by line, the document window displays the current script with the current
@@ -728,13 +608,6 @@ error programmatically rather than have the script terminate. You can choose to 
 of such errors using the catch clause, rather than breaking into the debugger. To set this behavior, choose
 Debug > Don’t Break On Guarded Exceptions. Some runtime errors, such as Out Of Memory, always
 cause the termination of the script, regardless of this setting.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-31
-
 Setting breakpoints
 When debugging a script, it is often helpful to make it stop at certain lines so that you can inspect the state
 of the environment, whether function calls are nested properly, or whether all variables contain the
@@ -764,13 +637,6 @@ panel’s flyout menu to add, change, or remove a breakpoint.
 
 You can edit a breakpoint by double-clicking it, or by selecting it and choosing Add or Modify from the
 panel menu. A dialog allows you to change the line number, the breakpoint’s enabled state, and the
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-32
-
 condition statement. You can also specify a hit count, which allows you to skip the breakpoint some
 number of times before entering the debugger. The default is 1, which breaks at the first execution.
 
@@ -795,13 +661,6 @@ Unconditional breakpoint, disabled. Execution does not stop.
 Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates
 to true.
 Conditional breakpoint, disabled. Execution does not stop.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-33
-
 Evaluation in help tips
 If you let your mouse pointer rest over a variable or function in a document window, the result of
 evaluating that variable or function is displayed as a help tip. When you are not debugging the program,
@@ -836,13 +695,6 @@ standard, such as the Array constructor or the Math object.
 Prototype Elements toggles the display of the JavaScript object prototype chain.
 Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an
 object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Debugging in the Toolkit
-
-34
-
 Boolean
 Number
 String
@@ -866,13 +718,6 @@ You can click any function in the call hierarchy to inspect it. In the document 
 the function call that led to that point of execution is marked with a green background. In the example,
 when you select the run() function in the call stack, the Document Window highlights the line in that
 function where the RGBColorPicker() function was called.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Code profiling for optimization
-
-35
-
 Switching between the functions in the call hierarchy allows you to trace how the current function was
 called. The Console and Data Browser panels coordinate with the Call Stack panel. When you select a
 function in the Call Stack:
@@ -952,13 +797,6 @@ into your computer.
 Inspecting object models
 The ExtendScript Toolkit offers the ability to inspect the object model of any loaded dictionary, using the
 Object Model Viewer that you invoke from the Help menu.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Inspecting object models
-
-37
-
 The Object Model Viewer (OMV) comes up as a separate, floating window. The OMV allows you to browse
 through the object hierarchy and inspect the type and description of each property, and the description
 and parameters for each method.
@@ -968,13 +806,6 @@ dictionary of objects. A dictionary provides access to the object model for one 
 The Core JavaScript Classes dictionary includes Adobe tools and utilities such as File and Folder.
 The ScriptUI Classes dictionary shows the interface elements defined in the ScriptUI JavaScript
 module.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-Inspecting object models
-
-38
-
 Each Adobe application defines a dictionary for that application’s Document Object Model (DOM). The
 dictionary for a particular application may not be available until you launch that application, or until
 you select it as a target in the Toolkit.

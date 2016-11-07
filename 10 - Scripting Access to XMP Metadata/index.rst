@@ -43,13 +43,6 @@ that allows iteration through properties.
 See "XMPScript object reference" on page 261 for details of the classes, their properties, and their
 methods.
 
-257
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-Accessing the XMP scripting API
-
-258
 
 Using the XMP scripting API
 The XMPMeta object is the primary means of access to the namespaces and properties of an XMP
@@ -96,12 +89,6 @@ which you could pass to an authoring tool, for example, or store in a file.
 xmp = new XMPMeta();
 xmp.setProperty(XMPConst.NS_XMP, "CreatorTool", "My Script");
 xmpStr = xmp.serialize(); // serialize the XMP packet to XML
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-Accessing the XMP scripting API
-
-259
 
 // retrieve property
 prop = xmp.getProperty(XMPConst.NS_XMP, "CreatorTool");
@@ -157,12 +144,6 @@ xmpFile.closeFile(XMPConst.CLOSE_UPDATE_SAFELY);
 }
 }
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-Accessing the XMP scripting API
-
-260
-
 Integrating XMPScript with Adobe Bridge
 This script adds a command to the context menu for Thumbnails that shows some of the XMP properties.
 It demonstrates how to retrieve the XMP metadata that is stored with the Thumbnail object, and use it to
@@ -212,12 +193,6 @@ else
 Window.alert("No thumbnail selected or no XMP contained");
 };
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-261
-
 XMPScript object reference
 The classes defined for the XMP JavaScript API, with their properties and methods, are listed here in
 alphabetical order.
@@ -259,12 +234,6 @@ Describes a file.
 XMPPacketInfo object
 
 Describes a raw XMP packet in a file.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-262
 
 XMPAliasInfo object
 This object is returned by XMPMeta.resolveAlias(). The read-only properties describe an XMP metadata
@@ -334,12 +303,6 @@ The XML namespace for the XMP basic schema.
 NS_XMP_RIGHTS
 
 The XML namespace for the XMP copyright schema.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-263
 
 NS_XMP_MM
 
@@ -449,9 +412,6 @@ TYPE_FONT
 The XML namespace for a structure containing the characteristics of a font
 used in a document.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
 
 TYPE_RESOURCE_EVENT
 
@@ -564,12 +524,6 @@ FILE_MPEG
 
 MPEG
 
-264
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
 FILE_MPEG2
 
 MP2
@@ -634,7 +588,6 @@ FILE_PREMIERE_TITLE
 
 PRTL, Premiere Title file
 
-265
 
 XMPDateTime object
 This class represents a date and time. Times include a time zone, and can have up to nanosecond
@@ -655,12 +608,6 @@ iso8601Date
 
 A string containing a date-time in ISO 8601 format; for example:
 "2007-04-10T17:54:50+01:00"
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-266
 
 XMPDateTime object properties
 All properties are read-write, and allow you to modify the date-time value. If values are set outside the
@@ -751,12 +698,6 @@ Sets the time zone in this object to UTC (coordinated universal time), adjusting
 the previous time zone, if necessary.
 Returns undefined.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-267
-
 getDate()
 XMPDateTimeObj.getDate()
 
@@ -783,12 +724,6 @@ The XMPScript API does not currently support retrieving thumbnails.
 NOTE: You can also use the Adobe Bridge Metadata object to access embedded metadata in files. It
 supports thumbnails and previews, and additional file formats such as PDF and Camera Raw. For details,
 see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-268
 
 XMPFile object constructors
 new XMPFile( filePath, format, openFlags)
@@ -831,12 +766,6 @@ version
 String
 
 The descriptive string for this version of the XMP Toolkit.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-269
 
 XMPFile class functions
 This function is available as a static method of the XMPFile class. It is not necessary to create an instance to
@@ -884,12 +813,6 @@ important if the packet size is increased.
 Considers only the length of the serialized packet; does not keep the provided XMP. Use putXMP() to
 actually update the XMP in the open file.
 Returns true if the given XMP can be put into this file.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-270
 
 closeFile()
 XMPFileObj.closeFile(closeFlags)
@@ -946,12 +869,6 @@ options provided when the file was opened determine whether that function reconc
 with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent
 with the XMP metadata.
 Returns undefined.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-271
 
 XMPFileInfo object
 This object is returned by XMPFile.getFileInfo(). The read-only properties describe the file represented by
@@ -1015,13 +932,9 @@ XMPConst.HANDLER_ALLOWS_SAFE_UPDATE - File handler allows
 
 crash-safe file updates.
 
-CHAPTER 10: Scripting Access to XMP Metadata
 
 openFlags
 
-XMPScript object reference
-
-272
 
 Number The options with which this file was opened. One of these constants:
 XMPConst.OPEN_FOR_READ - Open for read-only access.
@@ -1067,12 +980,6 @@ XMPMeta object
 This class provides the core services of the XMP Toolkit. The functions provide the ability to create and
 query metadata properties from an XMP namespace. The class also provides static functions that allow
 you to create and query namespaces and aliases.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-273
 
 There is one static property on the class that provides XMP version information; there are no JavaScript
 properties in the instance. The object encapsulates a set of metadata properties, which you access
@@ -1126,10 +1033,6 @@ nothing.
 NOTE: Not yet implemented in the XMP Toolkit.
 Returns undefined.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
 deleteNamespace()
 XMPMeta.deleteNamespace (namespaceURI)
 namespaceURI
@@ -1170,13 +1073,6 @@ The namespace prefix string.
 Retrieves the registered namespace URI associated with a namespace prefix.
 Returns the URI String.
 
-274
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-275
 
 registerAlias()
 XMPMeta.registerAlias (aliasNS, aliasProp, actualNS, actualProp, arrayForm )
@@ -1236,12 +1132,6 @@ Registers a namespace with a prefix. If the suggested prefix is already in use, 
 and returns a different prefix.
 Returns a String containing the actual registered prefix. This is the suggestedPrefix, unless that
 one is already assigned to another namespace.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-276
 
 resolveAlias()
 XMPMeta.resolveAlias (aliasNS, aliasProp)
@@ -1307,12 +1197,6 @@ The array-type property name string. Can be a general path expression.
 
 Reports the number of items in an array-type metadata property.
 Returns the number of items.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-277
 
 deleteArrayItem()
 XMPMetaObj.deleteArrayItem(schemaNS, arrayName,itemIndex)
@@ -1391,10 +1275,6 @@ Deletes the metadata tree that has the given qualifier as its root. If the quali
 nothing.
 Returns undefined.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
 doesArrayItemExist()
 XMPMetaObj.doesArrayItemExist(schemaNS, arrayName, itemIndex)
 schemaNS
@@ -1470,13 +1350,6 @@ The qualifier name string. Must be a simple XML name.
 Reports whether a qualifier with a given name currently exists for a given property.
 Returns true if the property and qualifier exist.
 
-278
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-279
 
 dumpObject()
 XMPMetaObj.dumpObject ( )
@@ -1526,12 +1399,6 @@ Retrieves the text value for a specific language from an alternate-text array. F
 specific language. If not found, tries to match the generic language, if specified. If not found, gets
 the x-default item, if any. Otherwise, gets the first item.
 Returns a String, or undefined if no matching value is not found.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-280
 
 getProperty()
 XMPMetaObj.getProperty(schemaNS, propName[, valueType])
@@ -1600,12 +1467,6 @@ String. The qualifier name. Must be a simple XML name.
 Retrieves a qualifier attached to a metadata property.
 Returns an XMPProperty object, or undefined if the property is not found.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-281
-
 insertArrayItem()
 XMPMetaObj.insertArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])
 schemaNS
@@ -1673,12 +1534,6 @@ metadata. Specify options, a namespace, and a property to limit the range and gr
 resulting items.
 Returns an XMPIterator object for this metadata object.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-282
-
 serialize()
 XMPMetaObj.serialize([options, padding, indent, newline, baseIndent])
 options
@@ -1738,12 +1593,6 @@ is 0.
 
 Serializes this XMP metadata into a string as RDF.
 Returns a String.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-283
 
 serializeToArray()
 XMPMetaObj.serializeToArray([options, padding, indent, newline, baseIndent])
@@ -1805,12 +1654,6 @@ is 0.
 Serializes this XMP metadata into a string as RDF, then converts that to an array of one-byte numeric
 values, the UTF-8 or UTF-16 encoded characters.
 Returns an Array of Numbers.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-284
 
 setArrayItem()
 XMPMetaObj.setArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])
@@ -1877,12 +1720,6 @@ Not used.
 Sets the text value for a specific language in an alternate-text array. Handles special cases for the
 x-default item.
 Returns undefined.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-285
 
 setStructField()
 XMPMetaObj.setStructField(schemaNS, structName, fieldNS, fieldName,
@@ -1960,12 +1797,6 @@ Attaches a new qualifier to a metadata property. A qualifier can be added to a s
 array item, a struct field, or another qualifier.
 Returns undefined.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-286
-
 setProperty()
 XMPMetaObj.setProperty(schemaNS, propName, propValue[, setOptions, valueType])
 schemaNS
@@ -2015,12 +1846,6 @@ Sorts unordered arrays of simple items by value.
 Sorts language alternative arrays by the xml:lang qualifiers, with the "x-default" item placed
 first.
 Returns undefined.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-287
 
 XMPPacketInfo object
 This object is returned by XMPFile.getPacketInfo(). The read-only properties describe the XMP packet for
@@ -2098,12 +1923,6 @@ XMPConst.PROP_IS_STRUCT - The property is a structure with nested
 
 fields.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-288
-
 path
 
 String
@@ -2158,12 +1977,6 @@ Default is 0.
 Copies properties from a source XMPMeta object and appends them to a destination XMPMeta
 object.
 Returns undefined.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-289
 
 catenateArrayItems()
 XMPUtils.catenateArrayItems(xmpObj, schemaNS, arrayName, separator, quotes, options)
@@ -2235,8 +2048,6 @@ arrayName
 
 The array property name string. Can be a general path expression.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
 fieldNS
 
 The field namespace URI string.
@@ -2248,10 +2059,6 @@ The field name. Must be a simple XML name.
 fieldValue
 
 The desired field value.
-
-XMPScript object reference
-
-290
 
 Creates and returns a string containing the path expression to select an alternate item by a field’s
 value, using the registered prefixes for the namespaces, in the form:
@@ -2320,13 +2127,7 @@ qualNS
 
 The qualifier namespace URI string.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
 qualName
-
-XMPScript object reference
-
-291
 
 The qualifier name. Must be a simple XML name.
 
@@ -2387,12 +2188,6 @@ Copies properties in the specified subtree from a source XMPMeta object and adds
 destination XMPMeta object.
 Returns undefined.
 
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-292
-
 removeProperties()
 XMPUtils.removeProperties(xmpObj, schemaNS, propName, options)
 xmpObj
@@ -2431,12 +2226,6 @@ If neither the namespace nor the property name are supplied, removes all externa
 and optionally all internal properties. Aliases are handled implicitly, because the associated
 actual is removed.
 Returns undefined.
-
-CHAPTER 10: Scripting Access to XMP Metadata
-
-XMPScript object reference
-
-293
 
 separateArrayItems()
 XMPUtils.separateArrayItems(xmpObj, schemaNS, arrayName, arrayOptions, concatString)

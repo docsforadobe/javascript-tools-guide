@@ -34,13 +34,6 @@ Use the toString method to obtain the name of the file or folder as string conta
 path name in URI notation.
 Use the fsName property to obtain the platform-specific file name.
 
-39
-
-CHAPTER 3: File System Access
-
-Using File and Folder objects
-
-40
 
 Absolute and relative path names
 An absolute path name in URI notation describes the full path from a root directory down to a specific file
@@ -92,13 +85,6 @@ not one of the characters:
 A space, for example, is encoded as %20, so the file name "my file" is specified as "my%20file". Similarly,
 the character ä is encoded as %E4, so the file name "Bräun" is specified as "Br%E4un".
 This encoding scheme is compatible with the global JavaScript functions encodeURI and decodeURI.
-
-CHAPTER 3: File System Access
-
-Using File and Folder objects
-
-41
-
 The home directory
 A path name can start with a tilde (~) to indicate the user’s home directory. It corresponds to the platform’s
 HOME environment variable.
@@ -159,13 +145,6 @@ On Windows, volume names correspond to drive letters. The URI path /c/temp/file 
 to the Windows path C:\temp\file.
 If a drive exists with a name matching the first part of the path, that part is always interpreted as that drive.
 It is possible for there to be a folder in the root that has the same name as the drive; imagine, for example,
-
-CHAPTER 3: File System Access
-
-Using File and Folder objects
-
-42
-
 a folder C:\C on Windows. A path starting with /c always addresses the drive C:, so in this case, to access
 the folder by name, you must use both the drive name and the folder name, for example /c/c for C:\C.
 If the current drive contains a root folder with the same name as another drive letter, that name is
@@ -220,13 +199,6 @@ Portability issues
 If your application will run on multiple platforms, use relative path names, or try to originate path names
 from the home directory. If that is not possible, work with Mac OS X and UNIX aliases, and store your files
 on a machine that is remote to your Windows machine so that you can use UNC names.
-
-CHAPTER 3: File System Access
-
-Using File and Folder objects
-
-43
-
 As an example, suppose you use the UNIX machine myServer for data storage. If you set up an alias share
 in the root directory of myServer, and if you set up a Windows-accessible share at share pointing to the
 same data location, the path name //myServer/share/file would work for all three platforms.
@@ -259,10 +231,6 @@ property contains a message describing the type of the error. On success, the pr
 string. You can set the property, but setting it only causes the error message to be cleared. If a file is open,
 assigning an arbitrary value to the property also resets its error flag.
 For a complete list of supported error messages, see "File access error messages" on page 44.
-
-CHAPTER 3: File System Access
-
-File access error messages
 
 File access error messages
 The following messages can be returned in the error property.
@@ -342,14 +310,6 @@ Cannot execute
 
 Unable to execute the specified file.
 
-44
-
-CHAPTER 3: File System Access
-
-File- and Folder-supported encoding names
-
-45
-
 File- and Folder-supported encoding names
 The following list of names is a basic set of encoding names supported by the File object. Some of the
 character encoders are built in, while the operating system is queried for most of the other encoders.
@@ -390,10 +350,6 @@ In Mac OS, you can select encoders by name rather than by code page number. The 
 Mac OS directly for an encoder. As far as Mac OS character sets are identical with Windows code pages,
 Mac OS also knows the Windows code page numbers.
 In UNIX, the number of available encoders depends on the installation of the iconv library.
-
-CHAPTER 3: File System Access
-
-File- and Folder-supported encoding names
 
 Common encoding names
 The following encoding names are implemented both in Windows and in Mac OS:
@@ -445,13 +401,6 @@ KOI-8U
 ISO-2022-JP
 ISO-2022-KR
 
-46
-
-CHAPTER 3: File System Access
-
-File object
-
-47
 
 Additional Mac OS encoding names
 These names are alias names for encodings that Mac OS might know.
@@ -491,13 +440,6 @@ The path need not refer to an existing file. If not supplied, a temporary name i
 If the path refers to an existing folder:
 The File function returns a Folder object instead of a File object.
 The new operator returns a File object for a nonexisting file with the same name.
-
-CHAPTER 3: File System Access
-
-File object
-
-48
-
 File class properties
 This property is available as a static property of the File class. It is not necessary to create an instance to
 access it.
@@ -545,13 +487,6 @@ String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See
 
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
-
-CHAPTER 3: File System Access
-
-File object
-
-49
-
 openDialog()
 File.openDialog ([prompt, filter, multiSelect])
 prompt
@@ -626,11 +561,8 @@ String
 
 The localized name of the referenced file, without the path. Read only.
 
-CHAPTER 3: File System Access
 
 encoding
-
-File object
 
 String
 
@@ -744,12 +676,6 @@ When true, prevents the file from being altered or deleted. If the
 referenced file is a file-system alias or shortcut, the flag is altered on the
 alias, not on the original file.
 
-50
-
-CHAPTER 3: File System Access
-
-File object
-
 relativeURI
 
 String
@@ -802,13 +728,6 @@ Makes this file a file-system alias or shortcut to the specified file. The refer
 must not yet exist on disk.
 Returns true if the operation was successful, false otherwise.
 
-51
-
-CHAPTER 3: File System Access
-
-File object
-
-52
 
 execute()
 fileObj.execute ()
@@ -864,10 +783,6 @@ UTF-8). If everything fails, the encoding property is set to the system encoding
 NOTE: Be careful about opening a file more than once. The operating system usually permits you to
 do so, but if you start writing to the file using two different File objects, you can destroy your data.
 
-CHAPTER 3: File System Access
-
-File object
-
 openDlg()
 fileObj.OpenDlg ([prompt][,filter][,multiSelect])
 prompt
@@ -917,12 +832,6 @@ are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple 
 create single Unicode characters.
 Returns a string that contains the text.
 
-53
-
-CHAPTER 3: File System Access
-
-File object
-
 remove()
 fileObj.remove ()
 
@@ -964,12 +873,6 @@ location to which to save information, and creates a new File object to represen
 Differs from the class method saveDialog() in that it presets the current folder to this File object’s
 parent folder and the file to this object’s associated file.
 If the user clicks OK, returns a File object for the selected file. If the user cancels, returns null.
-
-54
-
-CHAPTER 3: File System Access
-
-File object
 
 seek()
 fileObj.seek (pos[, mode])
@@ -1017,10 +920,6 @@ write multiple bytes.
 NOTE: Be careful not to write to a file that is open in another application or object, as this can
 overwrite existing data.
 Returns true on success.
-
-55
-
-CHAPTER 3: File System Access
 
 Folder object
 
@@ -1079,13 +978,7 @@ Folder
 A Folder object for the current folder. Assign either a Folder object or a
 string containing the new path name to set the current folder.
 
-56
-
-CHAPTER 3: File System Access
-
 desktop
-
-Folder object
 
 Folder
 
@@ -1147,12 +1040,6 @@ In Windows, the value of %USERDATA% (by default, C:\Documents and
 Settings\username\Application Data)
 In Mac OS, ~/Library/Application Support
 
-57
-
-CHAPTER 3: File System Access
-
-Folder object
-
 Folder class functions
 These functions are available as a static methods of the Folder class. It is not necessary to create an
 instance in order to call them.
@@ -1201,12 +1088,6 @@ for the selected file or folder. Differs from the object method selectDlg() in t
 preselect a folder.
 If the user clicks OK, returns a File or Folder object for the selected file or folder. If the user
 cancels, returns null.
-
-58
-
-CHAPTER 3: File System Access
-
-Folder object
 
 Folder object properties
 These properties are available for Folder objects.
@@ -1313,12 +1194,6 @@ A string containing the new path, absolute or relative to the current parent fol
 Changes the path specification of the referenced folder.
 Returns true on success.
 
-59
-
-CHAPTER 3: File System Access
-
-Folder object
-
 create()
 folderObj.create ()
 
@@ -1366,13 +1241,7 @@ the system trash. Folders must be empty before they can be deleted. Does not res
 instead, deletes the referenced alias or shortcut file itself.
 NOTE: Cannot be undone. It is recommended that you prompt the user for permission before
 deleting.
-Returns true if the folder is deleted successfully.
-
-60
-
-CHAPTER 3: File System Access
-
-Folder object
+Returns true if the folder is deleted successfully.Folder object
 
 rename()
 folderObj.rename (newName)
@@ -1400,5 +1269,3 @@ for the selected file or folder. Differs from the class method selectDialog() in
 this folder.
 If the user clicks OK, returns a File or Folder object for the selected file or folder. If the user
 cancels, returns null.
-
-61

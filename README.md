@@ -16,6 +16,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Remove page headers~~
     - There might be some left over, so if you see something seems like it shouldn't be there, it probably shouldn't
 - Format headers in each section (Use 0 - Table Of Contents/index.rst) to find headers)
+    - Labels should also be added to headers, they look like: `.. _my-header-name:` and are placed above the header ( see 11 - Porting Guide/index.rst for example )
     - 0 - ~~Table Of Contents~~
     - 1 - ~~Introduction~~
     - 2 - ExtendScript Toolkit
@@ -76,7 +77,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-- Format text into **bold**, *italics*, `code`.
+- Format text into **bold**, *italics*, `code` and add links.
     - 0 - Table Of Contents
     - 1 - Introduction
     - 2 - ExtendScript Toolkit

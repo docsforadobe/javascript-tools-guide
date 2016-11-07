@@ -28,7 +28,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Split each section into files
     - 0 - ~~Table Of Contents~~
     - 1 - ~~Introduction~~
@@ -42,7 +41,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Remove line breaks in paragraphs
 - Format code examples
     - 0 - Table Of Contents
@@ -57,7 +55,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Format tables
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -71,7 +68,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Format bullet lists
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -85,7 +81,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Format text into **bold**, *italics*, `code`.
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -99,7 +94,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Format notes, warnings and tips.
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -113,7 +107,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index
 - Extract images from the pdf and put into the text files
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -127,4 +120,3 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
     - 11 - Porting Guide
-    - 12 - Index

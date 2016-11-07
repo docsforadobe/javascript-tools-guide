@@ -1,6 +1,4 @@
 .. _porting-guide:
-
-=============
 Porting Guide
 =============
 

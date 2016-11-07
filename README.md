@@ -27,7 +27,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Split each section into files
     - 0 - ~~Table Of Contents~~
     - 1 - ~~Introduction~~
@@ -40,7 +39,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Remove line breaks in paragraphs
 - Format code examples
     - 0 - Table Of Contents
@@ -54,7 +52,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Format tables
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -67,7 +64,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Format bullet lists
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -80,7 +76,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Format text into **bold**, *italics*, `code`.
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -93,7 +88,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Format notes, warnings and tips.
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -106,7 +100,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide
 - Extract images from the pdf and put into the text files
     - 0 - Table Of Contents
     - 1 - Introduction
@@ -119,4 +112,3 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-    - 11 - Porting Guide

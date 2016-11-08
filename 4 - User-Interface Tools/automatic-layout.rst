@@ -42,9 +42,10 @@ type and variable characteristics such as a displayed text string, and the font 
 A value of -1 for either the width or height in the preferredSize value causes the layout manager to
 calculate that dimension, while using the specified value for the other.
 For details of how you can set these property values to affect the automatic layout, see :ref:`automatic-layout-properties`.
-NOTE: The default font and font size are chosen differently on different platforms, and by different
-applications on the same platform, so ScriptUI windows that are created the same way can appear
-different in different contexts.
+
+.. note:: The default font and font size are chosen differently on different platforms, and by different
+  applications on the same platform, so ScriptUI windows that are created the same way can appear
+  different in different contexts.
 
 .. _automatic-layout-properties:
 
@@ -465,4 +466,3 @@ the container.
 The layout mechanism does not track changes to element sizes after the initial layout has occurred.
 The script can initiate another layout by calling the layout manager’s layout method, and can force
 the manager to recalculate the sizes of all child containers by passing the optional argument as true.
-

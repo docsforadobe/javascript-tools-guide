@@ -86,7 +86,9 @@ The window title.
 
 Use this method to find an existing window. This includes windows already created by a script, and
 windows created by the application (if the application supports this case).
-NOTE: Not supported in all ScriptUI implementations.
+
+.. note:: Not supported in all ScriptUI implementations.
+
 Returns a Window object found or generated from the resource, or null if no such window or
 resource exists.
 
@@ -108,4 +110,3 @@ string is "Script Prompt."
 
 Displays a modal dialog that returns the user’s text input.
 Returns the value of the text edit field if the user clicked OK, null if the user clicked Cancel.
-

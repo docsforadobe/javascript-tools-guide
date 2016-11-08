@@ -50,7 +50,7 @@ In Windows®, the installation startup folders are:
 In Mac OS®, the installation startup folders are:
 /Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/
 
-NOTE: This is not the location in which to store your own startup scripts; see :ref:`scripting-for-specific-applications`.
+.. note:: This is not the location in which to store your own startup scripts; see :ref:`scripting-for-specific-applications`.
 
 .. _cross-dom-api-reference:
 
@@ -117,8 +117,10 @@ appspec.quit()
 
 Performs the equivalent of the target application’s File > Exit or File > Close command. Returns
 undefined.
-NOTE: This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the
-application.
+
+.. note:: This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the
+  application.
+
 reveal()
 appspec.reveal(file)
 file
@@ -127,4 +129,3 @@ A File object or string specifying a file that can be opened in the target appli
 
 Gives the target application the operating-system focus, and, if the specified file is open in that
 application, brings it to the foreground. Returns undefined.
-

@@ -10,9 +10,9 @@ You can access static properties and methods in the BridgeTalk class, which is a
 namespace. For example:
 var thisApp = BridgeTalk.appName;
 
-NOTE: You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used
-to send message packets between applications. Dynamic properties and methods can be accessed only in
-instances.
+.. note:: You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used
+  to send message packets between applications. Dynamic properties and methods can be accessed only in
+  instances.
 
 .. _bridgetalk-class-properties:
 
@@ -86,10 +86,11 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 
 The body property of the received message object contains the received
 data. The function can return any type. See :ref:`handling-unsolicited-messages`.
-NOTE: This function is not applied to a message that is received in response
-to a message sent from this application. Response messages are processed
-by the onResult, onReceived, or onError callbacks associated with the
-sent message.
+
+.. note:: This function is not applied to a message that is received in response
+  to a message sent from this application. Response messages are processed
+  by the onResult, onReceived, or onError callbacks associated with the
+  sent message.
 
 .. _bridgetalk-class-functions:
 
@@ -279,4 +280,3 @@ there are any.
 Returns true if any messages have been processed, false otherwise.
 (Most applications have a message processing loop that continually checks the message queues, so
 use of this method is rarely required.)
-

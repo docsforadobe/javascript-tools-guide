@@ -166,11 +166,12 @@ or true, execution stops.
 To set a conditional breakpoint in a loop, for example, the conditional expression could be "i >= 1000",
 which means that the program execution halts if the value of the iteration variable i is equal to or greater
 than 1000.
-TIP: It is often useful to check the boundary conditions for loops; to do this, you can set the condition for a
-breakpoint within a loop to trigger on the first and last iterations.
-You can set breakpoints on lines that do not contain any code, such as comment lines. When the Toolkit
-runs the program, it automatically moves such a breakpoint down to the next line that actually contains
-code.
+
+.. tip:: It is often useful to check the boundary conditions for loops; to do this, you can set the condition for a
+  breakpoint within a loop to trigger on the first and last iterations.
+  You can set breakpoints on lines that do not contain any code, such as comment lines. When the Toolkit
+  runs the program, it automatically moves such a breakpoint down to the next line that actually contains
+  code.
 
 The Breakpoints panel
 The Breakpoints panel displays all breakpoints set in the current document window. You can use the

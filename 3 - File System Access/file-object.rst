@@ -374,8 +374,9 @@ advanced behind the detected character and the encoding property is set to one o
 UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for
 zero bytes at the current location and makes an assumption about one of the above formats (except
 UTF-8). If everything fails, the encoding property is set to the system encoding.
-NOTE: Be careful about opening a file more than once. The operating system usually permits you to
-do so, but if you start writing to the file using two different File objects, you can destroy your data.
+
+.. note:: Be careful about opening a file more than once. The operating system usually permits you to
+  do so, but if you start writing to the file using two different File objects, you can destroy your data.
 
 openDlg()
 fileObj.OpenDlg ([prompt][,filter][,multiSelect])
@@ -431,8 +432,9 @@ fileObj.remove ()
 
 Deletes the file associated with this object from disk, immediately, without moving it to the system
 trash. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
-NOTE: Cannot be undone. It is recommended that you prompt the user for permission before
-deleting.
+
+.. note:: Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+
 Returns true if the file is deleted successfully.
 rename()
 fileObj.rename (newName)
@@ -499,8 +501,10 @@ One or more strings to write, which are concatenated to form a single string.
 
 Writes the specified text to the file at the current position. For encoded files, writing a single
 Unicode character may write multiple bytes.
-NOTE: Be careful not to write to a file that is open in another application or object, as this can
-overwrite existing data.
+
+.. note:: Be careful not to write to a file that is open in another application or object, as this can
+  overwrite existing data.
+
 Returns true on success.
 writeln()
 fileObj.writeln (text[, text...]...)
@@ -511,8 +515,10 @@ One or more strings to write, which are concatenated to form a single string.
 Writes the specified text to the file at the current position, and appends a Line Feed sequence in the
 style specified by the linefeed property.For encoded files, writing a single Unicode character may
 write multiple bytes.
-NOTE: Be careful not to write to a file that is open in another application or object, as this can
-overwrite existing data.
+
+.. note:: Be careful not to write to a file that is open in another application or object, as this can
+  overwrite existing data.
+
 Returns true on success.
 
 Folder object

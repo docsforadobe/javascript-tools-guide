@@ -81,10 +81,12 @@ is highlighted and has the input focus. You can select another document window b
 can switch between them with the commands Window > Next document and Window > Previous
 document. The default keyboard shortcuts for these commands are F6 and SHIFT-F6; you can change these
 using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences).
-NOTE: Because you can run scripts in the same application simultaneously, you should be careful not to
-interrupt the processing of one script with another. For example, if one script opens a modal dialog in
-Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second
-script is likely to generate an error.
+
+.. note:: Because you can run scripts in the same application simultaneously, you should be careful not to
+  interrupt the processing of one script with another. For example, if one script opens a modal dialog in
+  Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second
+  script is likely to generate an error.
+
 A button in the upper right corner of the document window allows you to split that window.
 
 Split document button

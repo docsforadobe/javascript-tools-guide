@@ -163,9 +163,10 @@ value, but no bounds value:
 dlg.btnPnl = dlg.add(’panel’, undefined, ’Build it’);
 dlg.btnPnl.testBtn = dlg.btnPnl.add(’button’, undefined, ’Test’);
 
-TIP: This example creates a dynamic property, btnPnl, on the parent window object, which contains the
-returned reference to the child control object. This is not required, but provides a useful way to access your
-controls.
+.. tip:: This example creates a dynamic property, btnPnl, on the parent window object, which contains the
+  returned reference to the child control object. This is not required, but provides a useful way to access your
+  controls.
+
 A new element is initially set to be visible, but is not shown unless its parent object is shown.
 
 Creation properties
@@ -181,15 +182,15 @@ All user-interface elements have an optional creation property called name, whic
 identifying that element. For example, the following creates a new Button element with the name ok:
 dlg.btnPnl.buildBtn = dlg.btnPnl.add(‘button’, undefined, ‘Build’, {name:’ok’});
 
-NOTE: In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
-but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This
-means that if you use the same values to set the vertical positions of child controls in a panel, the positions
-are slightly different in the two versions. When you add a panel to a window, you can choose to set a
-creation property (su1PanelCoordinates), which causes that panel to automatically adjust the positions
-of its children; see the add method for panel. When automatic adjustment is enabled, you provide
-position values that were correct for Photoshop CS, and the result is the same in Photoshop CS2, CS3, CS4,
-CS5, or CC. You can also set automatic adjustment for a window; in this case, it applies to all child panels of
-that window unless it is explicitly disabled in the child panel. See Window object constructor.
+.. note:: In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
+  but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This
+  means that if you use the same values to set the vertical positions of child controls in a panel, the positions
+  are slightly different in the two versions. When you add a panel to a window, you can choose to set a
+  creation property (su1PanelCoordinates), which causes that panel to automatically adjust the positions
+  of its children; see the add method for panel. When automatic adjustment is enabled, you provide
+  position values that were correct for Photoshop CS, and the result is the same in Photoshop CS2, CS3, CS4,
+  CS5, or CC. You can also set automatic adjustment for a window; in this case, it applies to all child panels of
+  that window unless it is explicitly disabled in the child panel. See Window object constructor.
 
 Accessing child elements
 A reference to each element added to a container is appended to the container’s children property. You
@@ -225,4 +226,3 @@ the container or window. The results of any further references by a script to th
 element are undefined.
 To remove list items from a list, use the parent list control’s remove method in the same way. It removes the
 item from the parent’s items list, hides it from view, and deletes the item object.
-

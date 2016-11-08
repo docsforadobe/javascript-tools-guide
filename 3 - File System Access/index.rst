@@ -29,9 +29,9 @@ File and Folder objects can be used anywhere that a path name is required, such 
 
 arguments for files and folders.
 
-NOTE: When you create two File objects that refer to the same disk file, they are treated as distinct
-objects. If you open one of them for I/O, the operating system may inhibit access from the other object,
-because the disk file already is open.
+.. note:: When you create two File objects that refer to the same disk file, they are treated as distinct
+  objects. If you open one of them for I/O, the operating system may inhibit access from the other object,
+  because the disk file already is open.
 
 .. _specifying-paths:
 
@@ -105,9 +105,10 @@ On Windows, the HOME environment variable is optional. If it is assigned, its va
 name or a path name referring to a remote server (such as \\myhost\mydir). If the HOME environment
 variable is undefined, the ExtendScript default is the user’s home directory, usually the C:\Documents and
 Settings\username folder.
-NOTE: A script can access many of the folders that are specified with platform-specific variables through
-static, globally available Folder class properties; for instance, appData contains the folder that stores
-application data for all users.
+
+.. note:: A script can access many of the folders that are specified with platform-specific variables through
+  static, globally available Folder class properties; for instance, appData contains the folder that stores
+  application data for all users.
 
 Volume and drive names
 A volume or drive name can be the first part of an absolute path in URI notation. The values are interpreted

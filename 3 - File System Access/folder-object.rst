@@ -307,10 +307,11 @@ asterisk (*) wild cards. Default is "*", which matches all file names.
 Can also be the name of a function that takes a File or Folder object as its argument.
 It is called for each file or folder found in the search; if it returns true, the object is added
 to the return array.
-NOTE: In Windows, all aliases end with the extension .lnk; ExtendScript strips this from
-the file name when found, in order to preserve compatibility with other operating
-systems. You can search for all aliases by supplying the search mask "*.lnk", but note
-that such code is not portable.
+
+.. note:: In Windows, all aliases end with the extension .lnk; ExtendScript strips this from
+  the file name when found, in order to preserve compatibility with other operating
+  systems. You can search for all aliases by supplying the search mask "*.lnk", but note
+  that such code is not portable.
 
 Retrieves the contents of this folder, filtered by the supplied mask.
 Returns an array of File and Folder objects, or null if this object’s referenced folder does not exist.
@@ -330,8 +331,9 @@ folderObj.remove ()
 Deletes the empty folder associated with this object from disk, immediately, without moving it to
 the system trash. Folders must be empty before they can be deleted. Does not resolve aliases;
 instead, deletes the referenced alias or shortcut file itself.
-NOTE: Cannot be undone. It is recommended that you prompt the user for permission before
-deleting.
+
+.. note:: Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+
 Returns true if the folder is deleted successfully.Folder object
 
 rename()

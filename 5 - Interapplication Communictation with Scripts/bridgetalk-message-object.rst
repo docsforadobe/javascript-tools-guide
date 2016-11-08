@@ -92,7 +92,9 @@ that type.
 
 BridgeTalk message object callbacks
 -----------------------------------
-NOTE: The message callbacks are optional, and are not implemented by all message-enabled applications.
+
+.. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
+
 onError
 
 Function
@@ -211,4 +213,3 @@ can be sent, false otherwise.
 CHAPTER 5: Interapplication Communication with Scripts
 
 Messaging error codes
-

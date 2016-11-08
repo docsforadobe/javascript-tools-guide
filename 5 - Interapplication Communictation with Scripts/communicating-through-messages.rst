@@ -59,13 +59,15 @@ Step 3: Specify how to handle a response
 If you want to handle a response for this message, or use the data that is returned from the script’s
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
 by defining the onResult callback in the message object.
-NOTE: The message callbacks are optional, and are not implemented by all message-enabled applications.
-The response to a message is, by default, the result of evaluation of the script contained in that message’s
-body property. The target application might define some different kind of response; see :ref:`receiving-messages`.
-When the target has finished processing this message, it looks for an onResult callback in the message
-object it received. If it is found, the target automatically invokes it, passing it the response. The response is
-packaged into a string, which is in turn packaged into the body property of a new message object. That
-message object is the argument to your onResult callback function.
+
+.. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
+  The response to a message is, by default, the result of evaluation of the script contained in that message’s
+  body property. The target application might define some different kind of response; see :ref:`receiving-messages`.
+  When the target has finished processing this message, it looks for an onResult callback in the message
+  object it received. If it is found, the target automatically invokes it, passing it the response. The response is
+  packaged into a string, which is in turn packaged into the body property of a new message object. That
+  message object is the argument to your onResult callback function.
+
 This handler, for example, processes the returned result using a script-defined processResult function.
 bt.onResult = function(returnBtObj)
 { processResult(returnBtObj.body); }
@@ -73,9 +75,11 @@ bt.onResult = function(returnBtObj)
 If you want to handle errors that might arise during script processing, you can define an onError callback in
 the message object. Similarly, you can define a timeout value and onTimeout callback to handle the case
 where the target cannot process the message within a given time. For more information, see :ref:`handling-responses-from-the-message-target`.
-NOTE: If you define callbacks to handle a response, you must store the message in a variable that still exists
-when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the
-response would be lost.
+
+.. note:: If you define callbacks to handle a response, you must store the message in a variable that still exists
+  when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the
+  response would be lost.
+
 Step 4: Send the message
 To send the message, call the message object’s send method. You do not need to specify where to send
 the message to, since the target application is set in the message itself.
@@ -183,7 +187,9 @@ Handling responses from the message target
 To handle responses to a message you have sent, you define callback handler functions in the message
 object itself. The target application cannot send a response message back to the sender unless the
 message object it received has the appropriate callback defined.
-NOTE: The message callbacks are optional, and are not implemented by all message-enabled applications.
+
+.. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
+
 When your message is received by its target, the target application’s static BridgeTalk object’s onReceive
 method processes that message, and can invoke one of the message object’s callbacks to return a
 response. In each case, the messaging framework packages the response in a new message object, whose
@@ -439,4 +445,3 @@ doSomething (tn.path, tn.uri);
 }
 // send the message
 bt.send();
-

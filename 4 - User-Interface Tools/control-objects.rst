@@ -906,8 +906,8 @@ left (default)
 center
 right
 
-NOTE: Justification only works if the value is set on creation, using a
-resource specification or creation parameters.
+.. note:: Justification only works if the value is set on creation, using a
+  resource specification or creation parameters.
 
 location
 
@@ -1110,8 +1110,9 @@ value of the text property. If there is no current selection, inserts the
 new value into the text string at the current insertion point. The
 textselection value is reset to an empty string after it modifies the
 text value.
-NOTE: Setting the textselection property before the edittext
-control’s parent Window exists is an undefined operation.
+
+.. note:: Setting the textselection property before the edittext
+  control’s parent Window exists is an undefined operation.
 
 title
 
@@ -1232,8 +1233,9 @@ undefined
 Object
 Array
 
-NOTE: The ActionScript class and date objects are not supported as
-parameter values.
+
+.. note:: The ActionScript class and date objects are not supported as
+  parameter values.
 
 .. _control-object-functions:
 
@@ -1421,9 +1423,11 @@ Returns undefined.
 
 FlashPlayer control functions
 These functions apply only to controls of type flashplayer.
-NOTE: There are limitations on how these functions can be used to control playback of Flash movies:
-Do not use stopMovie() and playMovie() to suspend and subsequently resume or restart an SWF
-file produced by Flex™.
+
+.. note:: There are limitations on how these functions can be used to control playback of Flash movies:
+  Do not use stopMovie() and playMovie() to suspend and subsequently resume or restart an SWF
+  file produced by Flex™.
+
 The stopMovie() and playMovie() sequence does not make sense for some SWF files produced by
 Flash Authoring, depending on the exact details of how they were implemented. The sequence
 may not correctly reset the file to the initial state (when the rewind argument to playMovie() is
@@ -1472,13 +1476,17 @@ When true, restarts the movie from the beginning; otherwise, starts playing from
 where it was stopped.
 
 Restarts a movie that has been stopped.
-NOTE: Do not call when a movie is currently playing.
+
+.. note:: Do not call when a movie is currently playing.
+
 Returns undefined.
 stopMovie()
 flashPlayerObj.stopMovie()
 
 Halts playback of the current movie.
-NOTE: Does not work when called from the player’s hosting environment.
+
+.. note:: Does not work when called from the player’s hosting environment.
+
 Returns undefined.
 
 .. _control-event-handling-callbacks:
@@ -1646,4 +1654,3 @@ shiftKeyPressed
 Boolean
 
 When true, the SHIFT key was pressed.
-

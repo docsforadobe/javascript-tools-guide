@@ -540,9 +540,10 @@ The XMP Toolkit also supplies the Packet Scanner as a fallback solution for unsu
 provides more limited accesses to all file formats by performing a dump file scan. It can update a file, but
 cannot extend the packet or reconcile other metadata formats.
 The XMPScript API does not currently support retrieving thumbnails.
-NOTE: You can also use the Adobe Bridge Metadata object to access embedded metadata in files. It
-supports thumbnails and previews, and additional file formats such as PDF and Camera Raw. For details,
-see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
+
+.. note:: You can also use the Adobe Bridge Metadata object to access embedded metadata in files. It
+  supports thumbnails and previews, and additional file formats such as PDF and Camera Raw. For details,
+  see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 
 XMPFile object constructors
 new XMPFile( filePath, format, openFlags)
@@ -695,8 +696,8 @@ XMPFileInfo object
 ------------------
 This object is returned by XMPFile.getFileInfo(). The read-only properties describe the file represented by
 the XMPFile object.
-NOTE: This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
-display metadata.
+.. note:: This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
+  display metadata.
 
 XMPFileInfo object properties
 filePath
@@ -856,7 +857,9 @@ The alias property string.
 
 Deletes the specified alias; does not delete the aliased property. If the alias does not exist, does
 nothing.
-NOTE: Not yet implemented in the XMP Toolkit.
+
+.. note:: Not yet implemented in the XMP Toolkit.
+
 Returns undefined.
 
 deleteNamespace()
@@ -866,7 +869,9 @@ namespaceURI
 The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 Deletes a registered prefix - namespace URI pair.
-NOTE: Not yet implemented in the XMP Toolkit.
+
+.. note:: Not yet implemented in the XMP Toolkit.
+
 Returns undefined.
 dumpAliases()
 XMPMeta.dumpAliases ( )
@@ -1883,7 +1888,10 @@ text array by language, using the registered prefix for the namespace, in the fo
 schemaNS:arrayName[@xml:lang=’langName’]
 
 Returns a String.
-NOTE: Do not use this in place of getLocalizedText() or setLocalizedText(). Those functions provide
+
+.. note:: Do not use this in place of getLocalizedText() or setLocalizedText().
+
+Those functions provide
 extra logic to choose the appropriate language and maintain consistency with the x-default value.
 This function provides a path expression for an explicit language, and only for that language.
 composeStructFieldPath()

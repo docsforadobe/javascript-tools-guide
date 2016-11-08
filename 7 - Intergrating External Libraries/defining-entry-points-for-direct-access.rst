@@ -59,8 +59,9 @@ arbitrarily complex data.
 
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to
 undefined and does not attempt to convert the data to the requested type.
-NOTE: The data type of a return value cannot be predefined; JavaScript functions can return any data type.
-The called function is free to return any of the listed data types.
+
+.. note:: The data type of a return value cannot be predefined; JavaScript functions can return any data type.
+  The called function is free to return any of the listed data types.
 
 .. _library-initialization:
 
@@ -113,8 +114,9 @@ One (Integer a, String b);
 Two ();
 
 The signature strings for these two functions would be "One_ds", "Two".
-NOTE: You cannot define function overloading by returning multiple different signatures for one function.
-Attempting to do so produces undefined results.
+
+.. note:: You cannot define function overloading by returning multiple different signatures for one function.
+  Attempting to do so produces undefined results.
 
 .. _library-termination:
 
@@ -126,4 +128,3 @@ Whenever a JavaScript function makes a call to a library function, it increments
 library. When the reference count for a library reaches 0, the library is automatically unloaded; your
 termination function is called, and the ExternalObject instance is deleted. Note that deleting the
 ExternalObject instance does not unload the library if there are remaining references.
-

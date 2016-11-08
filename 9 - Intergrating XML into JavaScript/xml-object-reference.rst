@@ -395,9 +395,10 @@ xmlObj.xpath (expression[, variables]);
 expression
 
 A String containing an XPath expression.
-NOTE: In this context, include the actual top level element. For example, an
-expression for the example XML must start with "/bookstore". This is unlike
-JavaScript property access, where the top level element is implied.
+
+.. note:: In this context, include the actual top level element. For example, an
+  expression for the example XML must start with "/bookstore". This is unlike
+  JavaScript property access, where the top level element is implied.
 
 variables
 
@@ -425,9 +426,11 @@ name
 A string.
 
 Reports whether a string contains a name that conforms to valid XML syntax.
-NOTE: This implementation uses the same rules as for a JavaScript name, except for the '$' character,
-which is disallowed, and the '-' character, which as added. It does not follow the W3C definition of an
-XML name, which adds more Unicode characters to the valid set of characters.
+
+.. note:: This implementation uses the same rules as for a JavaScript name, except for the '$' character,
+  which is disallowed, and the '-' character, which as added. It does not follow the W3C definition of an
+  XML name, which adds more Unicode characters to the valid set of characters.
+
 Returns true if the name is a valid XML name, false otherwise.
 setDefaultXMLNamespace()
 setDefaultXMLNamespace (Namespace ns)

@@ -121,9 +121,11 @@ number
 string
 Classname: The class name of an object.
 
-NOTE: Class names start with a capital letter. Thus, the value
-string stands for a JavaScript string, while String is a
-JavaScript String wrapper object.
+
+.. note:: Class names start with a capital letter. Thus, the value
+  string stands for a JavaScript string, while String is a
+  JavaScript String wrapper object.
+
 *: Any type. This is the default.
 null
 undefined: Return data type for a function that does not return
@@ -193,4 +195,3 @@ createonly: A property that is valid only during creation of an
 object.
 
 method: A method.
-

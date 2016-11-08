@@ -88,7 +88,8 @@ value.
 0x0200 (512): Enables the localization feature of the toString
 method. Equivalent to the localize property.
 
-NOTE: Other bit values are not public and should not be used.
+.. note:: Other bit values are not public and should not be used.
+
 global
 
 Global
@@ -296,4 +297,3 @@ Writes the specified text to the JavaScript Console and appends a linefeed seque
 text: One or more strings to write, which are concatenated to form a single string.
 
 undefined
-

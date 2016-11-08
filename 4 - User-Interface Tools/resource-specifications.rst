@@ -31,7 +31,7 @@ text:’<your message here>’ \
 } \
 }"
 
-The property with name properties specifies creation properties; see "Creation properties" on page 66.
+The property with name properties specifies creation properties; see :ref:`creation-properties`.
 A property value can be specified as null, true, false, a string, a number, an inline array, or an object.
 An inline array contains one or more values in the form:
 [value, value,...]

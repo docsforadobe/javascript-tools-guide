@@ -12,7 +12,7 @@ The pointer to and number of arguments passed to the constructor, in the form of
 TaggedData.
 
 Called when your library is loaded into memory.
-Returns a string of function signatures; see "Library initialization" on page 204.
+Returns a string of function signatures; see :ref:`library-initialization`.
 ESGetVersion()
 long ESGetVersion (void );
 
@@ -29,7 +29,7 @@ Returns nothing.
 ESTerminate()
 void ESTerminate (void );
 
-Called when your library is being unloaded. See "Library termination" on page 205.
+Called when your library is being unloaded. See :ref:`library-termination`.
 Takes no arguments, and returns nothing.
 
 .. _additional-functions:

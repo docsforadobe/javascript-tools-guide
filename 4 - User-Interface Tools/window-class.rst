@@ -76,7 +76,7 @@ application.
 
 type
 
-Optional. The window type (see "Window object constructor" on page 112) used if
+Optional. The window type (see :ref:`window-object-constructor`) used if
 there is more than one window with the same title. Can be null or the empty
 string.
 

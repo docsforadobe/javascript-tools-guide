@@ -21,7 +21,7 @@ window - Creates a simple window that can be used as a main window for
 an application. (Not supported by Photoshop CC.)
 
 This argument can be a ScriptUI resource specification; in this case, all other
-arguments are ignored. See "Resource specifications" on page 78.
+arguments are ignored. See :ref:`resource-specifications`.
 title
 
 Optional. The window title. A localizable string.
@@ -386,7 +386,7 @@ String
 
 The title, label, or displayed text. Does not apply to containers of
 type group or tabbedpanel. This is a localizable string: see
-"Localization in ScriptUI objects" on page 103.
+:ref:`localization-in-scriptui-objects`.
 
 visible
 
@@ -420,7 +420,7 @@ add()
 windowOrContainerObj.add (type [, bounds, text, { creation_props> } ]);
 type
 
-The control type. See "Control types and creation parameters" on page 124.
+The control type. See :ref:`control-types-and-creation-parameters`.
 
 bounds
 
@@ -439,8 +439,7 @@ the new object’s text property.
 creation_props
 
 Optional. Object. The properties of this object specify creation parameters,
-which are specific to each object type. See "Control types and creation
-parameters" on page 124.
+which are specific to each object type. See :ref:`control-types-and-creation-parameters`.
 
 Creates and returns a new control or container object and adds it to the children of this window or
 container.
@@ -473,8 +472,7 @@ handler
 The function to register for the specified event in this target. This can be the
 name of a function defined in the extension, or a locally defined handler
 function to be executed when the event occurs. A handler function takes one
-argument, the UIEvent base class. See "Registering event listeners for windows
-or controls" on page 82.
+argument, the UIEvent base class. See :ref:`registering-event-listeners-for-windows-or-controls`.
 
 capturePhase
 

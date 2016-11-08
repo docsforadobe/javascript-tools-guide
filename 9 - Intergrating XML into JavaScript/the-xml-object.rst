@@ -85,7 +85,7 @@ constructor. Each of the <book> elements is available as a member of the book pr
 The Javascript statement bookstoreXML.book; returns the entire list of books.
 The statement bookstoreXML.book[0]; returns the XML object for the first book.
 The statement bookstoreXML.book[0].author; returns all authors of the first book.
-For additional ways of accessing elements in the tree, see "Retrieving contained elements" on page 241,
+For additional ways of accessing elements in the tree, see :ref:`retrieving-contained-elements`,
 and "Creating and accessing namespaces" on page 242.
 
 .. _accessing-xml-attributes:

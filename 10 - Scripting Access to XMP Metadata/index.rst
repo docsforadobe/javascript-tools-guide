@@ -46,7 +46,7 @@ Additional top-level objects include array-handling utilities, a date-time objec
 that include namespace constants. The top-level objects provide access to additional support classes that
 encapsulate individual metadata properties, file information, and XMP packet information, and a utility
 that allows iteration through properties.
-See "XMPScript object reference" on page 261 for details of the classes, their properties, and their
+See :ref:`xmpscript-object-reference` for details of the classes, their properties, and their
 methods.
 
 
@@ -157,7 +157,7 @@ Integrating XMPScript with Adobe Bridge
 This script adds a command to the context menu for Thumbnails that shows some of the XMP properties.
 It demonstrates how to retrieve the XMP metadata that is stored with the Thumbnail object, and use it to
 create an XMPMeta object, then use that object to retrieve different types of property values.
-To use this script, place it in the "Startup Scripts" folder for Adobe Bridge (see "Startup scripts" on page 12).
+To use this script, place it in the "Startup Scripts" folder for Adobe Bridge (see :ref:`startup-scripts`).
 When you start Adobe Bridge, select a thumbnail for a document that contains XMP metadata, right click,
 and choose Show XMP Properties from the menu.
 $.writeln("XMPFiles batch processing example");

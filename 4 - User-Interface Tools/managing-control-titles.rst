@@ -34,7 +34,7 @@ How the title should be truncated if necessary;
 The orientation, alignment, and spacing of the title with respect to the object it identifies;
 The margins within the virtual container that surrounds the title and its related object.
 All titleLayout properties are optional; the element types that use this mechanism have default values
-for each property. Complete details are provided in the reference section; see "titleLayout" on page 141.
+for each property. Complete details are provided in the reference section; see :ref:`titlelayout`.
 The following sections provide examples that show how to use title layout to achieve many different
 layouts.
 
@@ -45,8 +45,7 @@ Title alignment and orientation
 Unlike automatic layout, title layout uses the alignment property to specify the orientation of the title and
 graphic element, and how the title aligns to the graphic element. This property contains a 2-element array,
 where the first element specifies horizontal alignment and the second specifies vertical alignment. The
-allowed values for these are the same as those used by automatic layout (see "Aligning children" on
-page 88), except that the fill value is not allowed.
+allowed values for these are the same as those used by automatic layout (see :ref:`aligning-children`), except that the fill value is not allowed.
 To achieve a row orientation where the title appears to the left or right of the graphic element, define
 horizontal alignment as left or right and vertical alignment as center, top, or bottom:
 button.titleLayout = { alignment: ['right', 'center'] };

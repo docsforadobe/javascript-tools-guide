@@ -13,19 +13,18 @@ AlertBoxBuilder1.jsx
 Shows a way to use resource specifications. Uses the add()
 method to build a dialog that collects values from the user,
 and creates a resource string from those values. Saves the
-string to a file, then uses it to build a new dialog. See "Using
-resource strings" on page 79.
+string to a file, then uses it to build a new dialog. See :ref:`using-resource-strings`.
 
 AlertBoxBuilder2.jsx
 
 Shows another way to use a resource specification, building
 the same user-input dialog itself from a resource string. See
-"Using resource strings" on page 79.
+:ref:`using-resource-strings`.
 
 SnpCustomLayoutManager.jsx
 
 Shows how to create a customized layout manager. See
-"Custom layout-manager example" on page 95.
+:ref:`custom-layout-manager-example`.
 
 63
 
@@ -81,8 +80,7 @@ the TabbedPanel.selection property.
 You might create a Panel and populate it with several Groups, each with their own elements. You can
 create nested containers, with different layout properties for different containers, in order to define a
 relatively complex layout without any explicit placement.
-You can add elements to any container using the add method (see "Adding elements to containers" on
-page 65). An element added to a container is considered a child of that container. Certain operations on a
+You can add elements to any container using the add method (see :ref:`adding-elements-to-containers`). An element added to a container is considered a child of that container. Certain operations on a
 container apply to its children; for example, when you hide a container, its children are also hidden.
 
 .. _window-layout:
@@ -176,9 +174,9 @@ normal properties of the element, in that they cannot be changed during the elem
 are only needed once. For these element types, you can supply an optional creation-properties
 argument to the add method. This argument is an object with one or more properties that control aspects
 of the element’s appearance, or special functions such as whether an edit text element is editable or Read
-only. See "Control object constructors" on page 123 for details.
+only. See :ref:`control-object-constructors` for details.
 You can also specify the creation properties for new objects using the resource specification format; for
-details, see "Resource specifications" on page 78.
+details, see :ref:`resource-specifications`.
 All user-interface elements have an optional creation property called name, which assigns a name for
 identifying that element. For example, the following creates a new Button element with the name ok:
 dlg.btnPnl.buildBtn = dlg.btnPnl.add(‘button’, undefined, ‘Build’, {name:’ok’});
@@ -221,7 +219,7 @@ Removing elements
 -----------------
 To remove elements from a Window, Panel, or Group, use the container’s remove method. This method
 accepts an object representing the element to be removed, or the name of the element, or the index of the
-element in the container’s children collection (see "Accessing child elements" on page 66).
+element in the container’s children collection (see :ref:`accessing-child-elements`).
 The specified element is removed from view if it was currently visible, and it is no longer accessible from
 the container or window. The results of any further references by a script to the object representing the
 element are undefined.

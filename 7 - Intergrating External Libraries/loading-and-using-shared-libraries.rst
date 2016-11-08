@@ -21,7 +21,7 @@ alert(a) ;
 mylib.unload() ;
 
 For details of how to define functions for direct access through the ExternalObject object, see
-"Defining entry points for direct access" on page 203.
+:ref:`defining-entry-points-for-direct-access`.
 Indirect access to library calls through JavaScript classes - Use the indirect style to access classes
 defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is
 
@@ -39,5 +39,5 @@ alert(a) ;
 anotherlib.unload() ;
 
 For details of how to define functions for direct access through the ExternalObject object, see
-"Defining entry points for indirect access" on page 206.
+:ref:`defining-entry-points-for-indirect-access`.
 

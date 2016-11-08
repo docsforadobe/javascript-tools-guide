@@ -17,7 +17,7 @@ new File ([path]); //always returns a File object
 path
 
 Optional. The absolute or relative path to the file associated with this object, specified in
-platform-specific or URI format; see "Specifying paths" on page 39. The value stored in the
+platform-specific or URI format; see :ref:`specifying-paths`. The value stored in the
 object is the absolute path.
 The path need not refer to an existing file. If not supplied, a temporary name is generated.
 If the path refers to an existing folder:
@@ -72,7 +72,7 @@ isEncodingAvailable()
 File.isEncodingAvailable (name)
 name
 
-String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See "Fileand Folder-supported encoding names" on page 45.
+String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See :ref:`file-and-folder-supported-encoding-names`.
 
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
@@ -178,8 +178,7 @@ error
 
 String
 
-A message describing the last file system error; see "File access error
-messages" on page 44. Typically set by the file system, but a script can set
+A message describing the last file system error; see :ref:`file-access-error-messages`. Typically set by the file system, but a script can set
 it. Setting this value clears any error message and resets the error bit for
 opened files. Contains the empty string if there is no error.
 
@@ -517,4 +516,3 @@ overwrite existing data.
 Returns true on success.
 
 Folder object
-

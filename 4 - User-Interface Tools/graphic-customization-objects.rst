@@ -498,7 +498,7 @@ script which creates a custom element is responsible for drawing it by defining 
 event handler function. This allows scripts to create any appearance for custom elements that can be
 rendered via the drawing functions defined for a UI element's graphics object.
 Custom elements have the same common properties that other types of control elements have (see
-"Common properties" on page 108). The different types of custom elements have additional properties.
+:ref:`common-properties`). The different types of custom elements have additional properties.
 The Custom element class has the following types of elements:
 
 CHAPTER 4: User-Interface Tools

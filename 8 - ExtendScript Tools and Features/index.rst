@@ -17,5 +17,5 @@ Support for extending or overriding math and logical operator behavior on a clas
 Operator overloading.
 ExtendScript also provides a common scripting environment for all Adobe JavaScript-enabled
 applications, and allows interapplication communication through scripts. For information on these
-features, see Chapter 5, "Interapplication Communication with Scripts."
+features, see Chapter 5, :ref:`interapplication-communication-with-scripts`.
 

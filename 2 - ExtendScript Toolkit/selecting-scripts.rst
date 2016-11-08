@@ -13,7 +13,7 @@ double-click on the file runs it in the target application or in the Toolkit. Fo
 locations, you must confirm that you want to run the script.
 Search for scripts containing particular text using Edit > Find and Replace. You can search in a
 particular document window, among all scripts open in document windows, or among scripts
-associated with an application, or kept in favorite locations. See "Searching in text" on page 24.
+associated with an application, or kept in favorite locations. See :ref:`searching-in-text`.
 Use the Scripts panel to display and open scripts made available by loaded Adobe applications, or
 those kept in favorite locations.
 
@@ -36,7 +36,7 @@ using the flyout menu.
 
 flyout menu
 The favorite script locations that you define are also available to the Find and Replace dialog; see
-"Searching in text" on page 24.
+:ref:`searching-in-text`.
 You can also examine and set favorite locations using the Favorites page of the Preferences dialog (Edit >
 Preferences). Use the Add, Modify, and Remove buttons to edit the list of folders.
 
@@ -57,12 +57,12 @@ Editor document windows; each displays one Unicode source code document.
 The Script Editor offers many useful and powerful text editing and navigation features. Some are intended
 specifically for use with JavaScript, while others are useful for all kinds of text editing. Features include:
 Navigation aids and options applicable to any kind of text, and specific code navigation for JavaScript;
-see "Navigation aids" on page 19.
+see :ref:`navigation-aids`.
 General editing and coding support such as undo-redo, and specific JavaScript coding support such
-as syntax checking; see "Coding aids" on page 22.
-A full-featured text search tool that can search in multiple files; see "Searching in text" on page 24.
+as syntax checking; see :ref:`coding-aids`.
+A full-featured text search tool that can search in multiple files; see :ref:`searching-in-text`.
 Syntax marking (color and font styles for specific syntactic structures) for JavaScript and for many
-other computer languages. The marking styles are configurable; see "Syntax marking" on page 26.
+other computer languages. The marking styles are configurable; see :ref:`syntax-marking`.
 
 .. _navigation-aids:
 
@@ -81,8 +81,7 @@ A line-wrapping mode, where there is no horizontal scroll bar, and lines are wra
 View > Word Wrap toggles line-wrapping on and off.
 Syntax marking, which uses color and font styles to highlight specific syntactic structures. View >
 Syntax Highlighting allows you to turn syntax marking off, or set it to mark a particular language,
-JavaScript or many other computer languages. The marking styles are configurable; see "Syntax
-marking" on page 26.
+JavaScript or many other computer languages. The marking styles are configurable; see :ref:`syntax-marking`.
 You can set the default values for any of these states using the Documents page of the Preferences dialog
 (Edit > Preferences).
 
@@ -99,8 +98,7 @@ wrap, so that the first follows the last.
 Use SHIFT-CTRL-F2 to clear all bookmarks in the current text.
 When you navigate to a bookmark in a collapsed section of code, that section automatically opens.
 Bookmarks are marked with a blue, right-pointing arrow at the left of the line (to the right of the line
-number if it is shown). This is the same place where a breakpoint is marked with a dot (see "Setting
-breakpoints" on page 31). If you have both a breakpoint and a bookmark set in the same line, the blue
+number if it is shown). This is the same place where a breakpoint is marked with a dot (see :ref:`setting-breakpoints`). If you have both a breakpoint and a bookmark set in the same line, the blue
 arrow is superimposed on the breakpoint dot.
 line numbers
 bookmark
@@ -220,7 +218,7 @@ among keywords, global functions, functions that are defined in the current docu
 defined in the object-model dictionary that is currently selected from the flyout menu.
 You can use the flyout menu at the upper right corner of the document window to choose an
 object-model dictionary to use for completion. Available dictionaries depend on which applications are
-loaded. See "Inspecting object models" on page 36.
+loaded. See :ref:`inspecting-object-models`.
 
 flyout menu
 Select object
@@ -300,7 +298,7 @@ specific search string or regular expression. You can choose to search in:
 The current document, or the current selection in the current document
 All open documents
 All scripts made public by the current target application
-Folders that you have defined as favorite locations; see "The Scripts panel and favorite script locations"
+Folders that you have defined as favorite locations; see :ref:`the-scripts-panel-and-favorite-script-locations`
 on page 17.
 
 The results of a search are listed in the Find Results tab; by default, this is stacked with the Find and Replace
@@ -381,4 +379,3 @@ Select language for syntax
 highlighting in Script Editor
 Customize highlighting
 styles in Preferences dialog
-

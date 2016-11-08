@@ -17,7 +17,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - There might be some left over, so if you see something seems like it shouldn't be there, it probably shouldn't
 - ~~Format h1 and h2 headers in each section~~
 - ~~Split each section into files~~
-- Remove line breaks in paragraphs
+- ~~Convert 'see something on page' to links~~
+- Split into correct paragraphs
 - Format code examples
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
@@ -51,18 +52,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
 - Format h3 to h6 headers
-- Format links:
-    - 0 - Table Of Contents
-    - ~~1 - Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
 - Format text into **bold**, *italics*, `code`.
     - 0 - Table Of Contents
     - 1 - Introduction

@@ -43,18 +43,20 @@ def convert(theFile):
 
     modifiedlines = checklines(lines, askEachTime=False)
 
-    if not ask("Is this correct?"):
-        modifiedlines = checklines(lines, askEachTime=True)
+    if modifiedlines != lines:
+        if not ask("Is this correct?"):
+            modifiedlines = checklines(lines, askEachTime=True)
 
-    filename = os.path.basename(theFile)
-    # Split string at extension and get first element
-    name = os.path.splitext(filename)[0]
-    writefile(name, modifiedlines)
+    if modifiedlines != lines:
+        filename = os.path.basename(theFile)
+
+        # Split string at extension and get first element
+        name = os.path.splitext(filename)[0]
+        writefile(name, modifiedlines)
 
 def checklines(lines, askEachTime):
-    linkRegex = re.compile( r"(see (?:Chapter \d\d?, )?(\"(.+?)\.?\"(?: on page \d\d?\d?)?))", re.I|re.S)
+    linkRegex = re.compile( r"(see\s(?:Chapter \d\d?,\s)?(\"(.+?)\.?\"(?:\son\spage\s\d\d?\d?)?))", re.I|re.S)
     matches = linkRegex.findall(lines)
-    print matches
     for match in matches:
         converted = convertmatch(match)
         print match[0],

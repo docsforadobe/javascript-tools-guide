@@ -123,6 +123,7 @@ Ctrl U (Mac OS)
 
 When paused outside the body of a function, resumes script
 execution until the script terminates.
+
 .. _visual-indication-of-execution-states:
 
 Visual indication of execution states
@@ -144,6 +145,7 @@ error programmatically rather than have the script terminate. You can choose to 
 of such errors using the catch clause, rather than breaking into the debugger. To set this behavior, choose
 Debug > Don’t Break On Guarded Exceptions. Some runtime errors, such as Out Of Memory, always
 cause the termination of the script, regardless of this setting.
+
 .. _setting-breakpoints:
 
 Setting breakpoints
@@ -200,6 +202,7 @@ Unconditional breakpoint, disabled. Execution does not stop.
 Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates
 to true.
 Conditional breakpoint, disabled. Execution does not stop.
+
 .. _evaluation-in-help-tips:
 
 Evaluation in help tips
@@ -217,8 +220,7 @@ Tracking data
 The Data Browser panel is your window into the JavaScript engine. It displays all live data defined in the
 current context, as a list of variables with their current values. If execution has stopped at a breakpoint, it
 shows variables that have been defined using var in the current function, and the function arguments. To
-show variables defined in the global or calling scope, use the Call Stack to change the context (see "The
-call stack" on page 34).
+show variables defined in the global or calling scope, use the Call Stack to change the context (see :ref:`the-call-stack`).
 You can use the Data Browser to examine and set variable values.
 Click a variable name to show its current value in the edit field at the top of the panel.
 To change the value, enter a new value and press ENTER. If a variable is Read only, the edit field is
@@ -273,4 +275,3 @@ The Console panel switches its scope to the execution context of that function, 
 modify its local variables. These would otherwise be inaccessible to the running JavaScript program
 from within a called function.
 The Data Browser panel displays all data defined in the selected context.
-

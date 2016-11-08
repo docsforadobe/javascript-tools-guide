@@ -80,8 +80,7 @@ namespace
 
 String
 
-The namespace of the property to which the alias resolves. See "Schema
-namespace string constants" on page 262.
+The namespace of the property to which the alias resolves. See :ref:`schema-namespace-string-constants`.
 
 .. _xmpconst-object:
 
@@ -553,7 +552,7 @@ A string containing the file path of a document.
 
 format
 
-The file format constant. See "File format numeric constants" on page 264.
+The file format constant. See :ref:`file-format-numeric-constants`.
 
 openFlags
 
@@ -594,7 +593,7 @@ getFormatInfo()
 XMPFile.getFormatInfo(format)
 format
 
-The file format constant. See "File format numeric constants" on page 264.
+The file format constant. See :ref:`file-format-numeric-constants`.
 
 Reports the supported features for the given file format.
 Returns a logical OR of bit-flag constants, or 0 if the format is not handled. Constants are:
@@ -708,8 +707,7 @@ The absolute path of the file, in JavaScript notation.
 
 format
 
-Number One of the file-format constants. See "File format numeric constants" on
-page 264.
+Number One of the file-format constants. See :ref:`file-format-numeric-constants`.
 
 handlerFlags
 
@@ -850,8 +848,7 @@ deleteAlias()
 XMPMeta.deleteAlias (aliasNS, aliasProp)
 aliasNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 aliasProp
 
@@ -866,8 +863,7 @@ deleteNamespace()
 XMPMeta.deleteNamespace (namespaceURI)
 namespaceURI
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 Deletes a registered prefix - namespace URI pair.
 NOTE: Not yet implemented in the XMP Toolkit.
@@ -888,8 +884,7 @@ getNamespacePrefix()
 XMPMeta.getNamespacePrefix (namespaceURI)
 namespaceURI
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 Retrieves the prefix associated with a registered namespace URI.
 Returns the prefix string followed by a colon.
@@ -907,8 +902,7 @@ registerAlias()
 XMPMeta.registerAlias (aliasNS, aliasProp, actualNS, actualProp, arrayForm )
 aliasNS
 
-The alias namespace string. See "Schema namespace string constants" on
-page 262.
+The alias namespace string. See :ref:`schema-namespace-string-constants`.
 
 aliasProp
 
@@ -916,8 +910,7 @@ The alias property, a simple name string.
 
 actualNS
 
-The namespace string of the aliased property. See "Schema namespace string
-constants" on page 262.
+The namespace string of the aliased property. See :ref:`schema-namespace-string-constants`.
 
 actualProp
 
@@ -950,8 +943,7 @@ registerNamespace()
 XMPMeta.registerNamespace (namespaceURI, suggestedPrefix)
 namespaceURI
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 suggestedPrefix
 
@@ -966,8 +958,7 @@ resolveAlias()
 XMPMeta.resolveAlias (aliasNS, aliasProp)
 schemaNS
 
-The alias namespace URI string. See "Schema namespace string constants" on
-page 262.
+The alias namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 aliasProp
 
@@ -982,8 +973,7 @@ XMPMetaObj.appendArrayItem(schemaNS, arrayName[, itemOptions],
 itemValue[, arrayOptions])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1017,8 +1007,7 @@ countArrayItems()
 XMPMetaObj.countArrayItems(schemaNS, arrayName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1031,8 +1020,7 @@ deleteArrayItem()
 XMPMetaObj.deleteArrayItem(schemaNS, arrayName,itemIndex)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1049,8 +1037,7 @@ deleteProperty()
 XMPMetaObj.deleteProperty(schemaNS, propName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1063,8 +1050,7 @@ deleteStructField()
 XMPMetaObj.deleteStructField(schemaNS, structName, fieldNS, fieldName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1072,8 +1058,7 @@ The structure name string. Can be a general path expression.
 
 fieldNS
 
-The field type namespace string. See "Schema namespace string constants" on
-page 262.
+The field type namespace string. See :ref:`schema-namespace-string-constants`.
 
 fieldName
 
@@ -1085,8 +1070,7 @@ deleteQualifier()
 XMPMetaObj.deleteQualifier(schemaNS, structName, qualNS, qualName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1108,8 +1092,7 @@ doesArrayItemExist()
 XMPMetaObj.doesArrayItemExist(schemaNS, arrayName, itemIndex)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1126,8 +1109,7 @@ doesPropertyExist()
 XMPMetaObj.doesPropertyExist(schemaNS, propName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1139,8 +1121,7 @@ doesStructFieldExist()
 XMPMetaObj.deleteStructField(schemaNS, structName, fieldNS, fieldName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1148,8 +1129,7 @@ The structure name string. Can be a general path expression.
 
 fieldNS
 
-The field type namespace string. See "Type namespace string constants" on
-page 263.
+The field type namespace string. See :ref:`type-namespace-string-constants`.
 
 fieldName
 
@@ -1161,8 +1141,7 @@ doesQualifierExist()
 XMPMetaObj.deleteQualifier(schemaNS, structName, qualNS, qualName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1189,8 +1168,7 @@ getArrayItem()
 XMPMetaObj.getArrayItem(schemaNS, arrayName, itemIndex)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1207,8 +1185,7 @@ getLocalizedText()
 XMPMetaObj.getLocalizedText(schemaNS, altTextName, genericLang, specificLang)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 altTextName
 
@@ -1233,8 +1210,7 @@ getProperty()
 XMPMetaObj.getProperty(schemaNS, propName[, valueType])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1256,8 +1232,7 @@ getStructField()
 XMPMetaObj.getStructField(schemaNS, structName, fieldNS, fieldName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1265,8 +1240,7 @@ The structure name string. Can be a general path expression.
 
 fieldNS
 
-The field type namespace string. See "Type namespace string constants" on
-page 263.
+The field type namespace string. See :ref:`type-namespace-string-constants`.
 
 fieldName
 
@@ -1278,8 +1252,7 @@ getQualifier()
 XMPMetaObj.getQualifier(schemaNS, structName, qualNS, qualName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1300,8 +1273,7 @@ insertArrayItem()
 XMPMetaObj.insertArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1350,8 +1322,7 @@ considers only actual properties.
 XMPConst.ITERATOR_OMIT_QUALIFIERS - Omit qualifiers from iteration.
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1488,8 +1459,7 @@ setArrayItem()
 XMPMetaObj.setArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1520,8 +1490,7 @@ XMPMetaObj.setLocalizedText(schemaNS, altTextName, genericLang, specificLang,
 itemValue, setOptions)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 altTextName
 
@@ -1555,8 +1524,7 @@ XMPMetaObj.setStructField(schemaNS, structName, fieldNS, fieldName,
 fieldValue[, options])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1564,8 +1532,7 @@ The name string of an existing structure. Can be a general path expression.
 
 fieldNS
 
-The field type namespace string. See "Type namespace string constants" on
-page 263.
+The field type namespace string. See :ref:`type-namespace-string-constants`.
 
 fieldName
 
@@ -1592,8 +1559,7 @@ setQualifier()
 XMPMetaObj.setQualifier(schemaNS, propName, qualNS, qualName, qualValue[, options])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1630,8 +1596,7 @@ setProperty()
 XMPMetaObj.setProperty(schemaNS, propName, propValue[, setOptions, valueType])
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1745,8 +1710,7 @@ namespace
 
 String
 
-The namespace of the property; see "Schema namespace string constants" on
-page 262. Typically used when browsing metadata with an XMPIterator object.
+The namespace of the property; see :ref:`schema-namespace-string-constants`. Typically used when browsing metadata with an XMPIterator object.
 
 options
 
@@ -1824,8 +1788,7 @@ The XMPMeta object containing the array.
 
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1857,8 +1820,7 @@ composeArrayItemPath()
 XMPUtils.composeArrayItemPath(schemaNS, arrayName, itemIndex)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1879,8 +1841,7 @@ composeFieldSelector()
 XMPUtils.composeFieldSelector(schemaNS, arrayName, fieldNS, fieldName, fieldValue)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1907,8 +1868,7 @@ composeLanguageSelector()
 XMPUtils.composeLanguageSelector(schemaNS, arrayName, locale)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 
@@ -1930,8 +1890,7 @@ composeStructFieldPath()
 XMPUtils.composeStructFieldPath(schemaNS, structName, fieldNS, fieldName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 structName
 
@@ -1954,8 +1913,7 @@ composeQualifierPath()
 XMPUtils.composeQualifierPath(schemaNS, propName, qualNS, qualName)
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 propName
 
@@ -1987,8 +1945,7 @@ The destination XMPMeta object.
 
 sourceNS
 
-The source namespace URI string. See "Schema namespace string constants" on
-page 262.
+The source namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 sourceRoot
 
@@ -1997,8 +1954,7 @@ general path expression.
 
 destNS
 
-The destination namespace URI string. See "Schema namespace string constants"
-on page 262.
+The destination namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 destRoot
 
@@ -2034,8 +1990,7 @@ The XMPMeta object.
 
 schemaNS
 
-Optional. The namespace URI string. See "Schema namespace string constants"
-on page 262. Must be supplied if a property name is supplied.
+Optional. The namespace URI string. See :ref:`schema-namespace-string-constants`. Must be supplied if a property name is supplied.
 
 propName
 
@@ -2073,8 +2028,7 @@ The XMPMeta object containing the array.
 
 schemaNS
 
-The namespace URI string. See "Schema namespace string constants" on
-page 262.
+The namespace URI string. See :ref:`schema-namespace-string-constants`.
 
 arrayName
 

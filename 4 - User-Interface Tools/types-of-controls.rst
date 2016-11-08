@@ -4,7 +4,7 @@ Types of controls
 =================
 The following sections introduce the types of controls you can add to a Window or other container element
 (panel or group). For details of the properties and functions, and of how to create each type of element,
-see "Control object constructors" on page 123.
+see :ref:`control-object-constructors`.
 
 .. _containers:
 
@@ -32,7 +32,7 @@ Group
 Used to visually organize related controls. Unlike Panels, Groups have no title or
 visible border. You can use them to create hierarchies of controls, and for fine control
 over layout attributes of certain groups of controls within a larger panel. For examples,
-see "Creating more complex arrangements" on page 92.
+see :ref:`creating-more-complex-arrangements`.
 
 TabbedPanel
 
@@ -56,10 +56,9 @@ User-interface controls
 -----------------------
 These are types of Control objects that are contained in windows, panels, and groups, and that provide
 specific kinds of display and user interaction. Control instances are created by passing the corresponding
-type keyword to the add() method of a Window or container; see "Control types and creation parameters"
-on page 124.
+type keyword to the add() method of a Window or container; see :ref:`control-types-and-creation-parameters`.
 These examples do not set bounds explicitly on creation, because it is often more useful to set a preferred
-size, then allow the layout manager to set the bounds; see "Automatic layout" on page 86.
+size, then allow the layout manager to set the bounds; see :ref:`automatic-layout`.
 Button
 
 Typically used to initiate some action from a window when a user clicks the button;
@@ -80,8 +79,7 @@ IconButton
 
 A button that displays an icon, with or without a text label. Like a text button, typically
 initiates an action in response to a click.
-The image property identifies the icon image; see "Displaying images" on
-page 72.
+The image property identifies the icon image; see :ref:`displaying-images`.
 The title or text property provides an optional label; the titleLayout property
 places the label with respect to the image.
 The onClick callback method provides behavior.
@@ -93,8 +91,7 @@ Image
 Types of controls
 
 Displays an iconic image.
-The image property identifies the icon image; see "Displaying images" on
-page 72.
+The image property identifies the icon image; see :ref:`displaying-images`.
 The title property provides an optional label; the titleLayout property places
 the label with respect to the image.
 
@@ -233,7 +230,7 @@ A ListBox control displays a list of choices. When you create the object, you
 specify whether it allows the user to select only one or multiple items. If a list
 contains more items than can be displayed in the available area, a scrollbar may
 appear that allows the user to scroll through all the list items. A list box can
-display items in multiple columns; see "Creating multi-column lists" on page 73.
+display items in multiple columns; see :ref:`creating-multi-column-lists`.
 A DropDownList control displays a single visible item. When you click the control,
 a list drops down and allows you to select one of the other items in the list.
 Drop-down lists can have nonselectable separator items for visually separating
@@ -267,12 +264,10 @@ other ListItem objects, including other items of type node.
 FlashPlayer
 
 Runs a Flash movie within a ScriptUI window. Its control’s methods allow you to load a
-movie from an SWF file and control the playback. See "FlashPlayer control functions"
-on page 145.
+movie from an SWF file and control the playback. See :ref:`flashplayer-control-functions`.
 You can also use the control object to communicate with the Flash application, calling
 ActionScript methods, and making JavaScript methods defined in your Adobe
-application script available to the Flash ActionScript code. See "Calling ActionScript
-functions from a ScriptUI script" on page 86.
+application script available to the Flash ActionScript code. See :ref:`calling-actionscript-functions-from-a-scriptui-script`.
 The title property provides an optional label; the titleLayout property places the
 label with respect to the player.
 
@@ -284,7 +279,7 @@ You can display icon images in Image or IconButton controls, or display images i
 addition to strings as the selectable items in a Listbox or DropdownList control. In each case, the image
 is defined by setting the element’s image property. You can set it to a ScriptUIImage object; a named icon
 resource; a File object; or the pathname of a file containing the iconic image, or of an alias or shortcut to
-that file (see "Specifying paths" on page 39).
+that file (see :ref:`specifying-paths`).
 The image data for an icon can be in Portable Network Graphics (PNG) format, or in Joint Photographic
 Experts Group (JPEG) format. See http://www.libpng.org and http://www.jpeg.org/ for detailed
 information on these formats.
@@ -315,7 +310,7 @@ Creating multi-column lists
 ---------------------------
 In list controls (ListBox, DropDownList, TreeView), a set of ListItem objects represents the individual
 choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by
-the text and image properties of the ListItem (see "Displaying images" on page 72).
+the text and image properties of the ListItem (see :ref:`displaying-images`).
 You can define a ListBox to have multiple columns, by specifying the numberOfColumns creation
 parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the
 creation parameters to specify whether headers are shown, and the header text for each column.
@@ -370,8 +365,7 @@ until the dialog has been dismissed. The user can dismiss it by using a platform
 or by using one of the dialog controls that you supply, typically an OK or Cancel button. The onClick
 method of such a button must call the close or hide method to close the dialog. The close method
 allows you to pass a value to be returned by the show method.
-For an example of how to define such buttons and their behavior, see "Defining behavior with event
-callbacks and listeners" on page 80.
+For an example of how to define such buttons and their behavior, see :ref:`defining-behavior-with-event-callbacks-and-listeners`.
 
 Creating and using modal dialogs
 A dialog typically contains some controls that the user must interact with, to make selections or enter
@@ -405,8 +399,7 @@ You can define onClick callbacks for the buttons that close the parent dialog by
 You have the option of sending a value to the close method, which is in turn passed on to and returned
 from the show method that invoked the dialog. This return value allows your script to distinguish different
 closing events; for example, clicking OK can return 1, clicking Cancel can return 2. However, for this typical
-behavior, you do not need to define these callbacks explicitly; see "Default and cancel elements" on
-page 75.
+behavior, you do not need to define these callbacks explicitly; see :ref:`default-and-cancel-elements`.
 For some dialogs, such as a simple alert with only an OK button, you do not need to return any value. For
 more complex dialogs with several possible user actions, you might need to distinguish more outcomes. If
 you need to distinguish more than two closing states, you must define your own closing callbacks rather

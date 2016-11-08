@@ -3,8 +3,7 @@
 Drawing objects
 ===============
 ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling
-methods of the ScriptUIGraphics object in response to the onDraw event (see "Defining behavior with
-event callbacks and listeners" on page 80). These methods take as parameters a number of helper objects
+methods of the ScriptUIGraphics object in response to the onDraw event (see :ref:`defining-behavior-with-event-callbacks-and-listeners`). These methods take as parameters a number of helper objects
 that encapsulate drawing information, including the following:
 
 CHAPTER 4: User-Interface Tools
@@ -37,7 +36,7 @@ ScriptUIPen
 Describes the pen used to draw lines in a control.
 
 
-For details of these objects, see "Graphic customization objects" on page 155.
+For details of these objects, see :ref:`graphic-customization-objects`.
 The ScriptUIGraphics object contains methods that create the other graphics objects; for example,
 ScriptUIGraphics.newBrush()creates a ScriptUIBrush instance with a specific color. These graphic
 objects are then used as property values in the ScriptUIGraphics object, which controls how a

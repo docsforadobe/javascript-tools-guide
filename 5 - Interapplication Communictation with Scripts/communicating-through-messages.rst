@@ -14,8 +14,7 @@ addition to all cross-DOM and application exported functions.
 The messaging API defines the BridgeTalk class, whose globally available static properties and functions
 provide access to environmental information relevant for communication between applications. You can
 instantiate this class to create a BridgeTalk message object, which encapsulates a message and allows you
-to send it to another application. For details of these objects, see "Messaging framework API reference" on
-page 179.
+to send it to another application. For details of these objects, see :ref:`messaging-framework-api-reference`.
 
 .. _sending-messages:
 
@@ -62,8 +61,7 @@ evaluation, you must set up the response-handling mechanism before you send the 
 by defining the onResult callback in the message object.
 NOTE: The message callbacks are optional, and are not implemented by all message-enabled applications.
 The response to a message is, by default, the result of evaluation of the script contained in that message’s
-body property. The target application might define some different kind of response; see "Receiving
-messages" on page 172.
+body property. The target application might define some different kind of response; see :ref:`receiving-messages`.
 When the target has finished processing this message, it looks for an onResult callback in the message
 object it received. If it is found, the target automatically invokes it, passing it the response. The response is
 packaged into a string, which is in turn packaged into the body property of a new message object. That
@@ -74,8 +72,7 @@ bt.onResult = function(returnBtObj)
 
 If you want to handle errors that might arise during script processing, you can define an onError callback in
 the message object. Similarly, you can define a timeout value and onTimeout callback to handle the case
-where the target cannot process the message within a given time. For more information, see "Handling
-responses from the message target" on page 173.
+where the target cannot process the message within a given time. For more information, see :ref:`handling-responses-from-the-message-target`.
 NOTE: If you define callbacks to handle a response, you must store the message in a variable that still exists
 when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the
 response would be lost.
@@ -117,7 +114,7 @@ Receiving messages
 ------------------
 An application can be the target of a message; that is, it receives an unsolicited message from another
 application. An unsolicited message is handled by the static BridgeTalk.onReceive callback function in
-the target application. See "Handling unsolicited messages" on page 172.
+the target application. See :ref:`handling-unsolicited-messages`.
 An application that sends a message can receive response messages; that is, messages that come as the
 result of requesting a response when a message was sent. These can be:
 The result of an error in processing the message
@@ -126,8 +123,7 @@ A notification of receipt of the message
 Intermediate responses
 The final result of processing the message.
 All of these response messages are sent automatically by the target application, and are handled by
-callbacks defined in the sending message object. For details, see "Handling responses from the message
-target" on page 173.
+callbacks defined in the sending message object. For details, see :ref:`handling-responses-from-the-message-target`.
 
 .. _handling-unsolicited-messages:
 
@@ -214,14 +210,13 @@ to the sender.
 Intermediate responses. These are handled by the onResult callback.
 The script that you send can send back intermediate responses by invoking the original message
 object’s sendResult() method. It can send data of any type, but that data is packaged into a body string
-in a new message object, which is passed to your callback. See "Passing values between applications"
-on page 176.
+in a new message object, which is passed to your callback. See :ref:`passing-values-between-applications`.
 The final result of processing the message. This is handled by the onResult callback.
 When it finishes processing your message, the target application can send back a result of any type. If
 you have sent a script, and the target application is using the default BridgeTalk.onReceive callback
 to process messages, the return value is the final result of evaluating that script. In any case, the return
 value is packaged into a body string in a new message object, which is passed to your callback. See
-"Passing values between applications" on page 176.
+:ref:`passing-values-between-applications`.
 The following examples demonstrate how to handle simple responses and multiple responses, and how to
 integrate error handling with response handling.
 Example: Receiving a simple response

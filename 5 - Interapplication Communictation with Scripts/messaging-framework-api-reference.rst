@@ -10,7 +10,7 @@ send other kinds of data.
 The messaging API defines the BridgeTalk class. Static properties and methods of the class provide
 access to environmental information relevant for communication between applications. Instantiate the
 class to create a BridgeTalk message object, which encapsulates the message itself. For discussion and
-examples, see "Communicating through messages" on page 170, and the example code provided with the
+examples, see :ref:`communicating-through-messages`, and the example code provided with the
 Adobe ExtendScript SDK.
 Example code
 The sample code distributed with the Adobe ExtendScript SDK includes these code examples that

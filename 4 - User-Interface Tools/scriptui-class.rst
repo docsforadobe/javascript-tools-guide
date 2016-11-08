@@ -124,7 +124,7 @@ A KeyboardEvent object encapsulates information about keyboard input events.
 A MouseEvent object encapsulates information about mouse events.
 This object is passed to a function that you register to respond to events of a certain type that occur
 in a window or control. Use windowObj.addEventListener() or controlObj.addEventListener() to
-register a handler function. See "Registering event listeners for windows or controls" on page 82.
+register a handler function. See :ref:`registering-event-listeners-for-windows-or-controls`.
 getResourceText()
 ScriptUI.getResourceText (text)
 text

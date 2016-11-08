@@ -253,7 +253,7 @@ ExtendScript version of JavaScript that Adobe applications run.
 To open a Flash Player, add a control of type flashplayer to your ScriptUI window. A control object of this
 type contains functions that allow your script to load SWF files and control movie playback. It also contains
 functions that allow your Adobe application script to communicate with the ActionScript environment of
-the Flash application. See "FlashPlayer control functions" on page 145.
+the Flash application. See :ref:`flashplayer-control-functions`.
 A limited set of data types can be passed between the two scripting environments:
 Number
 String

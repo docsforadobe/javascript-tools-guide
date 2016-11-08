@@ -18,7 +18,7 @@ print function for that application.
 "Cross-DOM API reference" on page 168 provides reference details for the functions of the basic
 cross-DOM.
 Each message-enabled application can also export a set of functions to provide a selected set of
-application-specific functionality; see "Application-specific exported functions" on page 167. For example,
+application-specific functionality; see :ref:`application-specific-exported-functions`. For example,
 an Adobe Bridge script can request a photo merge in Photoshop by calling
 photoshop.photomerge(files). The set of functions available for each application varies widely.
 
@@ -44,13 +44,12 @@ Identifying applications
 When calling external functions or exchanging messages, you must identify particular applications using
 namespace specifiers. A specifier consists of a specific name string (such as photoshop), and optional
 additions that identify a particular release or locale version. Application specifiers are used occasionally in
-other contexts as well. For details of the syntax, see "Application and namespace specifiers" on page 191.
+other contexts as well. For details of the syntax, see :ref:`application-and-namespace-specifiers`.
 Regardless of which method you use to perform interapplication communication, you must place your
 script in a location where the application you want to run it can see it. There are different locations for the
 startup scripts of the applications themselves, and for scripts provided by developers.
 Because all JavaScript-enabled applications look in the same locations for scripts to run, the scripts
 themselves must be explicit about which application they are meant for. A script should check that all
 applications it needs to communicate with are installed with the correct version, and that any other
-applications that might be installed do not run the script. For details, see "Scripting for specific
-applications" on page 12.
+applications that might be installed do not run the script. For details, see :ref:`scripting-for-specific-applications`.
 

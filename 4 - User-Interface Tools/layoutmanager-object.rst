@@ -45,6 +45,6 @@ windowObj.layout.resize ()
 
 Resizes and moves the child elements of the managed container, according to the alignment values
 for each child of the container, after the container has been resized by the user or by a script.
-See "Automatic layout" on page 86 for details of how alignment affects an element’s size and
+See :ref:`automatic-layout` for details of how alignment affects an element’s size and
 location.
 Returns undefined.

@@ -25,7 +25,7 @@ String
 
 The instance identifier of an application launched by the messaging
 framework, the instance portion of an application specifier; see
-"Application specifiers" on page 191. Read only.
+:ref:`application-specifiers`. Read only.
 Used only for those applications, such as InDesign, that support launching
 and running multiple instances.
 
@@ -34,7 +34,7 @@ appLocale
 String
 
 The locale of this application, the locale portion of an application
-specifier; see "Application specifiers" on page 191. When a message is
+specifier; see :ref:`application-specifiers`. When a message is
 sent, this is the locale of the sending application. Read only.
 
 appName
@@ -42,7 +42,7 @@ appName
 String
 
 The name of this application, the appname portion of an application
-specifier; see "Application specifiers" on page 191. When a message is
+specifier; see :ref:`application-specifiers`. When a message is
 sent, this is the name of the sending application. Read only.
 
 appSpecifier
@@ -50,7 +50,7 @@ appSpecifier
 String
 
 A lower-case string containing the complete specifier for this application;
-see "Application specifiers" on page 191. Read/write.
+see :ref:`application-specifiers`. Read/write.
 
 appStatus
 
@@ -71,7 +71,7 @@ appVersion
 String
 
 The version number of this application, the version portion of an
-application specifier; see "Application specifiers" on page 191. When a
+application specifier; see :ref:`application-specifiers`. When a
 message is sent, this is the version of the sending application. Read only.
 
 onReceive
@@ -85,8 +85,7 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 };
 
 The body property of the received message object contains the received
-data. The function can return any type. See "Handling unsolicited
-messages" on page 172.
+data. The function can return any type. See :ref:`handling-unsolicited-messages`.
 NOTE: This function is not applied to a message that is received in response
 to a message sent from this application. Response messages are processed
 by the onResult, onReceived, or onError callbacks associated with the
@@ -101,7 +100,7 @@ bringToFront()
 BridgeTalk.bringToFront (app)
 app
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 Brings all windows of the specified application to the front of the screen.
 In Mac OS, an application can be running but have no windows open. In this case, calling this
@@ -111,7 +110,7 @@ getAppPath()
 BridgeTalk.getAppPath (app)
 app
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 Retrieves the full path of the executable file for a specified application.
 Returns a string.
@@ -119,7 +118,7 @@ getDisplayName()
 BridgeTalk.getSpecifier (app)
 app
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 Returns a localized display name for an application, or NULL if the application is not installed. For
 example:
@@ -149,7 +148,7 @@ If not supplied and multiple language versions are installed, prefers the versio
 the current locale.
 
 Retrieves a complete application specifier.
-Returns a complete specifier (see "Application specifiers" on page 191) for a messaging-enabled
+Returns a complete specifier (see :ref:`application-specifiers`) for a messaging-enabled
 application version installed on this computer, or null if the requested version of the application is
 not installed.
 For example, assuming installed applications include Photoshop CS4 11.0 en_us, Photoshop CS2
@@ -170,8 +169,7 @@ getStatus()
 BridgeTalk.getStatus (targetSpec)
 targetSpec
 
-Optional, a specifier for the target application; see "Application specifiers" on
-page 191.
+Optional, a specifier for the target application; see :ref:`application-specifiers`.
 If not supplied, returns the processing status of the current application.
 
 Retrieves the processing status of an application. Returns a string, one of:
@@ -213,8 +211,7 @@ If version is supplied, specifiers include the base name plus the version inform
 If locale is supplied, specifiers include the full name, with both version and locale information.
 
 If neither version nor locale is supplied, returns base specifiers with neither version nor locale
-information, but tries to find the most appropriate version and locale; see "Application
-specifiers" on page 191.
+information, but tries to find the most appropriate version and locale; see :ref:`application-specifiers`.
 For example, assuming installed applications include Photoshop CS3 10.0 en_US, Photoshop CS4
 11.0 en_us, and Illustrator CS4 14.0 de_de:
 BridgeTalk.getTargets();
@@ -231,14 +228,14 @@ isRunning()
 BridgeTalk.isRunning (specifier)
 specifier
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 Returns true if the given application is running and active on the local computer.
 launch()
 BridgeTalk.launch (specifier [, where])
 specifier
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 where
 
@@ -253,7 +250,7 @@ loadAppScript()
 BridgeTalk.loadAppScript (specifier)
 specifier
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 Loads the startup script for an application from the common StartupScripts folders. Use to
 implement late loading of startup scripts.
@@ -263,7 +260,7 @@ ping()
 BridgeTalk.ping (specifier, pingRequest)
 specifier
 
-A specifier for the target application; see "Application specifiers" on page 191.
+A specifier for the target application; see :ref:`application-specifiers`.
 
 pingRequest
 

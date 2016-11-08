@@ -23,7 +23,7 @@ Default layout behavior
 -----------------------
 By default, the autoLayoutManager object implements the default layout behavior. A script can modify
 the properties of the default layout manager object, or create a new, custom layout manager if it needs
-more specialized layout behavior. See "Custom layout-manager example" on page 95.
+more specialized layout behavior. See :ref:`custom-layout-manager-example`.
 Child elements of a container can be organized in a single row or column, or in a stack, where the elements
 overlap one other in the same region of the container, and only the top element is fully visible. This is
 controlled by the container’s orientation property, which can have the value row, column, or stack.
@@ -41,8 +41,7 @@ property. The value defaults to dimensions determined by ScriptUI based on chara
 type and variable characteristics such as a displayed text string, and the font and size used to display text.
 A value of -1 for either the width or height in the preferredSize value causes the layout manager to
 calculate that dimension, while using the specified value for the other.
-For details of how you can set these property values to affect the automatic layout, see "Automatic layout
-properties" on page 87.
+For details of how you can set these property values to affect the automatic layout, see :ref:`automatic-layout-properties`.
 NOTE: The default font and font size are chosen differently on different platforms, and by different
 applications on the same platform, so ScriptUI windows that are created the same way can appear
 different in different contexts.
@@ -196,7 +195,7 @@ If an element’s size property is not defined, the layout manager uses the valu
 determine the dimensions of each element during the layout process. Generally, you should avoid setting
 the preferredSize property explicitly, and let ScriptUI determine the best value based on the state of an
 element at layout time. This allows you to set the text properties of your user-interface elements using
-localizable strings (see "Localization in ScriptUI objects" on page 103). The width and height of each
+localizable strings (see :ref:`localization-in-scriptui-objects`). The width and height of each
 element are calculated at layout time based on the chosen language-specific text string, rather than
 relying on the script to specify a fixed size for each element.
 However, a script can explicitly set the preferredSize property to give hints to the layout manager about

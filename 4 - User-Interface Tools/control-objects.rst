@@ -15,7 +15,7 @@ add()
 containerObj.(type [, bounds, text, { creation_props> } ]);
 type
 
-The control type. See "Control types and creation parameters" on page 124.
+The control type. See :ref:`control-types-and-creation-parameters`.
 
 bounds
 
@@ -34,8 +34,7 @@ the new object’s text property.
 creation_props
 
 Optional. Object. The properties of this object specify creation parameters,
-which are specific to each object type. See "Control types and creation
-parameters" on page 124.
+which are specific to each object type. See :ref:`control-types-and-creation-parameters`.
 
 Creates and returns a new control or container object and adds it to the children of this window or
 container.
@@ -202,8 +201,7 @@ different implementation of JavaScript from the ExtendScript
 version of JavaScript that Adobe applications run.
 A control object of this type contains functions that allow your script
 to load SWF files, control movie playback, and communicate with the
-ActionScript environment. See "FlashPlayer control functions" on
-page 145.
+ActionScript environment. See :ref:`flashplayer-control-functions`.
 To add to a window w:
 w.add ("flashplayer" [, bounds, movieToLoad,
 {creation_properties}]);
@@ -227,7 +225,7 @@ group
 Group
 
 A container for other controls. Containers have additional properties
-that control the children; see "Container properties" on page 115.
+that control the children; see :ref:`container-properties`.
 Hiding a group hides all its children. Making it visible makes visible
 those children that are not individually hidden.
 To add to a window w:
@@ -378,7 +376,7 @@ Panel
 
 A container for other types of controls, with an optional frame.
 Containers have additional properties that control the children; see
-"Container properties" on page 115. Hiding a panel hides all its
+:ref:`container-properties`. Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 To add to a window w:
@@ -598,7 +596,7 @@ shown in the selection tab, and it does not have a script-definable
 border. The currently active tab is the value of the parent’s
 selection property.
 Containers have additional properties that control the children; see
-"Container properties" on page 115. Hiding a panel hides all its
+:ref:`container-properties`. Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 To add a tab to a tabbed panel t in window w:
@@ -631,7 +629,7 @@ TabbedPanel
 A container for selectable Tab containers. Differs from a Panel
 element in that it can contain only Tab elements as direct children.
 Containers have additional properties that control the children; see
-"Container properties" on page 115. Hiding a panel hides all its
+:ref:`container-properties`. Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 The selected tab child is the value of the parent’s selection
@@ -855,8 +853,7 @@ element.
 For a ListItem, the image is displayed to the left of the text.
 If the parent is a multi-column ListBox, this is the display image
 for the label in the first column, and labels for further columns are
-specified in the subitems array. See "Creating multi-column lists"
-on page 73.
+specified in the subitems array. See :ref:`creating-multi-column-lists`.
 
 indent
 
@@ -1099,9 +1096,8 @@ access the content.
 For ListItem objects, this is the display string for the list choice. If the
 parent is a multi-column list box, this is the display string for the label
 in the first column, and labels for further columns are specified in the
-subitems array. See "Creating multi-column lists" on page 73.
-This is a localizable string: see "Localization in ScriptUI objects" on
-page 103.
+subitems array. See :ref:`creating-multi-column-lists`.
+This is a localizable string: see :ref:`localization-in-scriptui-objects`.
 
 textselection
 
@@ -1140,7 +1136,7 @@ with a title value, the way the text label is shown in relation to the
 element. A JavaScript object with these properties:
 alignment -The position of the title relative to the element, an
 array of [horizontal_alignment, vertical_alignment]. For possible
-alignment values, see "alignment" on page 116. Note that fill is
+alignment values, see :ref:`alignment`. Note that fill is
 not a valid alignment value for either horizontal or vertical
 alignment in this context.
 characters - A number; if 1 or greater, reserves a title width
@@ -1275,7 +1271,7 @@ The function to register for the specified event in this target. This can be the
 of a function defined in the extension, or a locally defined handler function to be
 executed when the event occurs.
 A handler function takes one argument, an object of the UIEvent base class. See
-"Registering event listeners for windows or controls" on page 82.
+:ref:`registering-event-listeners-for-windows-or-controls`.
 
 capturePhase
 
@@ -1442,8 +1438,7 @@ flashPlayerObj.invokePlayerFunction(fnName, [arg1[,...argn]] )
 fnName
 
 String. The name of a Flash ActionScript function that has been registered with the
-ExternalInterface object by the currently loaded SWF file; see "Calling ActionScript
-functions from a ScriptUI script" on page 86.
+ExternalInterface object by the currently loaded SWF file; see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
 
 args
 
@@ -1492,7 +1487,7 @@ Control event-handling callbacks
 --------------------------------
 The following events are signalled in certain types of controls. To handle the event, define a function with
 the corresponding name in the control object. Handler functions take no arguments and have no
-expected return values; see "Defining behavior with event callbacks and listeners" on page 80.
+expected return values; see :ref:`defining-behavior-with-event-callbacks-and-listeners`.
 onActivate
 
 Called when the user gives a control the keyboard focus by clicking it or tabbing into

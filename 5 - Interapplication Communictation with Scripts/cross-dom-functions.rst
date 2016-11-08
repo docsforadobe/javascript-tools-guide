@@ -6,13 +6,12 @@ The cross-DOM is a small application programming interface (API), which provides
 are common across message-enabled applications. These include functions to open files, execute scripts,
 and print files. For details of the function set, see the "Cross-DOM API reference" on page 168.
 You can access cross-DOM functions in any script by prefixing the function name with the namespace
-specifier for the target application (see "Namespace specifiers" on page 193). For example, a Photoshop CC
+specifier for the target application (see :ref:`namespace-specifiers`). For example, a Photoshop CC
 script can call indesign.open(file) to open a file in Adobe InDesign® CC.
 The cross-DOM functions for each application are implemented in JavaScript. You can see the
 implementation for each installed application by reading its associated startup script in the Adobe startup
 folder. For example, Adobe Illustrator® CC defines illustrator.open() in the illustrator-14.jsx
-startup script (14 is the version number of the installed application). See "Startup folder locations" on
-page 168.
+startup script (14 is the version number of the installed application). See :ref:`startup-folder-locations`.
 Example code
 The sample code distributed with the Adobe ExtendScript SDK includes these code examples that
 specifically demonstrate the use of cross-DOM functions:
@@ -28,7 +27,7 @@ Application-specific exported functions
 In addition to the required base cross-DOM functions, each message-enabled application can provide
 application-specific functionality to all scripts through a simple syntax. You can access exported functions
 in any script by prefixing the function name with the namespace specifier for the target application (see
-"Namespace specifiers" on page 193). For example, Photoshop CS5 exports the photomerge function, so
+:ref:`namespace-specifiers`). For example, Photoshop CS5 exports the photomerge function, so
 an Illustrator CS5 script can directly call photoshop.photomerge(files).
 The only difference between cross-DOM functions and the application-specific exported functions is that
 all applications expose the same set of cross-DOM functions, whereas each application exposes its own set
@@ -37,7 +36,7 @@ of application-specific functions. Each application determines the extent of its
 Some applications provide extensive support for exported functions, others less.
 For details of additional functions that are exported by individual applications, refer to the startup scripts
 for those applications. The application startup scripts are named appname-n.jsx, where n is the version
-number of the installed application. See "Startup folder locations" on page 168.
+number of the installed application. See :ref:`startup-folder-locations`.
 
 .. _startup-folder-locations:
 
@@ -51,15 +50,14 @@ In Windows®, the installation startup folders are:
 In Mac OS®, the installation startup folders are:
 /Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/
 
-NOTE: This is not the location in which to store your own startup scripts; see "Scripting for specific
-applications" on page 12.
+NOTE: This is not the location in which to store your own startup scripts; see :ref:`scripting-for-specific-applications`.
 
 .. _cross-dom-api-reference:
 
 Cross-DOM API reference
 -----------------------
 All exported functions, including those of the cross-DOM API, are invoked through the exporting
-application, identified by its namespace specifier (see "Namespace specifiers" on page 193). For example:
+application, identified by its namespace specifier (see :ref:`namespace-specifiers`). For example:
 //execute an Illustrator script in version 12
 illustrator12.executeScript(myAIScript);
 

@@ -12,12 +12,13 @@ Inspect all data for a running script.
 Set and execute breakpoints.
 When you double click a JSX file in the platform’s windowing environment, the script runs in the Toolkit,
 unless it specifies a particular target application using the #target directive. For more information, see
-"Selecting a debugging target" on page 27 and "Preprocessor directives" on page 233.
-TIP: When you have completed editing and debugging your JavaScript script, you can choose to save it as
-a binary file (with the extension JSXBIN), using File > Export as Binary. The script loader recognizes both
-source code and compiled code. Any application can execute a compiled script. If an application
-recognizes the execution of compiled JavaScript, it lists JSXBIN files along with JSX files in any list of
-available scripts."
+:ref:`selecting-a-debugging-target` and :ref:`preprocessor-directives`.
+
+.. tip:: When you have completed editing and debugging your JavaScript script, you can choose to save it as
+  a binary file (with the extension JSXBIN), using ``File > Export as Binary``. The script loader recognizes both
+  source code and compiled code. Any application can execute a compiled script. If an application
+  recognizes the execution of compiled JavaScript, it lists JSXBIN files along with JSX files in any list of
+  available scripts.
 
 .. _configuring-the-toolkit-window:
 
@@ -44,7 +45,7 @@ You can open and close, or collapse and expand individual panels, regardless of 
 You can undock individual tabs or the entire control panel, making them floating panels. Floating
 panels can be docked to each other, or can be independent.
 There are predefined configurations, called workspaces, suitable for various uses, and you can save your
-favorite configurations as workspaces. See "Workspaces" on page 16.
+favorite configurations as workspaces. See :ref:`workspaces`.
 
 .. _panel-menus:
 
@@ -64,6 +65,7 @@ Some panels also have a flyout menu, specific to that panel, which you access th
 the upper right corner. The JavaScript Console has a right-click menu that allows you to copy and paste
 text.
 The individual panels are discussed in detail in the following sections.
+
 .. _document-windows:
 
 Document windows
@@ -93,8 +95,8 @@ When the window is split, the second window is another view of exactly the same 
 you make in the text, breakpoints that you add, and so on, appear simultaneously in both windows. The
 copy is, by default, positioned to the right of the original, docked window, as shown. However, if you use
 CTRL-click to split the window, the second appears below the original.
-For more information about the document windows and the Script Editor, see "The Script Editor" on
-page 18.
+For more information about the document windows and the Script Editor, see :ref:`the-script-editor`.
+
 .. _workspaces:
 
 Workspaces

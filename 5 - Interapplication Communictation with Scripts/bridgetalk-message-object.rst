@@ -33,7 +33,7 @@ model (DOM) is available within the script.
 If this message is a result returned from the static BridgeTalk onReceive
 method of a target application, directed to an onResult callback in this object,
 contains the return result from that method flattened into a string. See
-"Passing values between applications" on page 176.
+:ref:`passing-values-between-applications`.
 If this message contains an error notification for the onError callback, contains
 the error message.
 
@@ -49,7 +49,7 @@ notation (msgObj.headers.propName), or bracket notation
 (msgObj.headers[propName]). If the header name conforms to JavaScript symbol
 syntax, use the dot notation. If not, use the bracket notation.
 The predefined header ["Error-Code"] is used to return error messages to a
-sender; see "Messaging error codes" on page 190.
+sender; see :ref:`messaging-error-codes`.
 Examples of setting headers:
 bt.headers.info = "Additional Information";
 bt.headers ["Error-Code"] = 8;
@@ -61,15 +61,13 @@ sender
 
 String
 
-The application specifier for the sending application (see "Application specifiers"
-on page 191). Read/write.
+The application specifier for the sending application (see :ref:`application-specifiers`). Read/write.
 
 target
 
 String
 
-The application specifier for the target, or receiving, application (see "Application
-specifiers" on page 191). Read/write.
+The application specifier for the target, or receiving, application (see :ref:`application-specifiers`). Read/write.
 
 timeout
 
@@ -110,7 +108,7 @@ bridgeTalkObj.onError = function( errorMsgObject ) {
 
 The body property of the received message object contains the error
 message, and the headers property contains the error code in its
-Error-Code property. See "Messaging error codes" on page 190.
+Error-Code property. See :ref:`messaging-error-codes`.
 The function returns undefined.
 onReceived
 
@@ -147,8 +145,7 @@ bridgeTalkObj.onResult = function( responseMsgObject ) {
 
 The target passes a new message object, with the body property set to the
 result string. This is the result of the target application’s static BridgeTalk
-onReceive method, packaged as a UTF-8-encoded string. See "Passing
-values between applications" on page 176.
+onReceive method, packaged as a UTF-8-encoded string. See :ref:`passing-values-between-applications`.
 onTimeout
 
 Function
@@ -201,8 +198,7 @@ result
 
 You can send data of any type as the result value. The messaging framework
 creates a BridgeTalk message object, and flattens this value into a string
-which it stores in the body of that message. See "Passing values between
-applications" on page 176.
+which it stores in the body of that message. See :ref:`passing-values-between-applications`.
 
 When processing an unsolicited message, the static BridgeTalk onReceive method can return an
 intermediate result to the sender by calling this method in the received message object. It invokes

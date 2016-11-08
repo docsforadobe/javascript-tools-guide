@@ -4,6 +4,8 @@
 
 This is the repo for converting The Javascript Tools Guide pdf into a readthedocs.io doc.
 
+[WIP can be seen here](http://javascript-tools-guide.readthedocs.io/en/latest/)
+
 ### Contributing ###
 
 Contributions are very appreciated! Just pick any of the uncompleted todos below. If you start working on a todo, edit this file and put your name beside the todo so people know what is being worked on, and don't do unnecessary work.

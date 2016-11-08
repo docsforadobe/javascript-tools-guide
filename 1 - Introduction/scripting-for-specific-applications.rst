@@ -1,5 +1,5 @@
+.. _scripting-for-specific-applications:
 
-===================================
 Scripting for specific applications
 ===================================
 
@@ -12,10 +12,10 @@ and run scripts using the ExtendScript Toolkit.
 For details of how to load and run scripts for any individual application, see the JavaScript Scripting Guide
 for that application.
 
----------------
+.. _startup-scripts:
+
 Startup scripts
 ---------------
-
 A script in a startup directory might be executed on startup by multiple applications. If you place a script in
 such a directory, it must contain code to check whether it is being run by the intended application. You can
 do this using the appName static property of the BridgeTalk class. For example:
@@ -36,10 +36,10 @@ if( BridgeTalk.getSpecifier("photoshop",10)){
 For details of interapplication communication, see Chapter 5, "Interapplication Communication with
 Scripts."
 
---------------------
+.. _javascript-variables:
+
 JavaScript variables
 --------------------
-
 Scripting shares a global environment, so any script executed at startup can define variables and functions
 that are available to all scripts. In all cases, variables and functions, once defined by running a script that
 contains them, persist in subsequent scripts during a given application session. Once the application is

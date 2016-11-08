@@ -105,13 +105,14 @@ which you could pass to an authoring tool, for example, or store in a file.
 ::
 
     xmp = new XMPMeta();
-    xmp.setProperty(XMPConst.NS_XMP, "CreatorTool", "My Script");
+    xmp.setProperty( XMPConst.NS_XMP, "CreatorTool", "My Script" );
     xmpStr = xmp.serialize(); // Serialize the XMP packet to XML
 
     // Retrieve property
     prop = xmp.getProperty(XMPConst.NS_XMP, "CreatorTool");
-    $.writeln("namespace: " + prop.namespace + \n + "property path + name: " +
-    prop.path + \n + "value: " + prop); // same as prop.value
+    $.writeln( "namespace: " + prop.namespace + "\n" +
+        "property path + name: " + prop.path + "\n" +
+        "value: " + prop ); // same as prop.value
 
 Modifying existing metadata
 This code accesses an existing XMP packet, assuming the location has been assigned to a string variable. It

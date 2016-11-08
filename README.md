@@ -15,31 +15,8 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Split into sections~~
 - ~~Remove page headers~~
     - There might be some left over, so if you see something seems like it shouldn't be there, it probably shouldn't
-- Format headers in each section (Use 0 - Table Of Contents/index.rst) to find headers)
-    - Labels should also be added to headers, they look like: `.. _my-header-name:` and are placed above the header ( see 11 - Porting Guide/index.rst for example )
-    - 0 - ~~Table Of Contents~~
-    - 1 - ~~Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
-- Split each section into files
-    - 0 - ~~Table Of Contents~~
-    - 1 - ~~Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
+- ~~Format h1 and h2 headers in each section~~
+- ~~Split each section into files~~
 - Remove line breaks in paragraphs
 - Format code examples
     - 0 - Table Of Contents
@@ -77,6 +54,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
+- Format h3 to h6 headers
 - Format text into **bold**, *italics*, `code` and add links.
     - 0 - Table Of Contents
     - 1 - Introduction

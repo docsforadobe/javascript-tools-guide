@@ -19,8 +19,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Split each section into files~~
 - Remove line breaks in paragraphs
 - Format code examples
-    - 0 - Table Of Contents
-    - 1 - Introduction
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
@@ -31,8 +29,6 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
 - Format tables
-    - 0 - Table Of Contents
-    - 1 - Introduction
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
@@ -44,7 +40,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 10 - Scripting Access to XMP Metadata
 - Format bullet lists
     - 0 - Table Of Contents
-    - 1 - Introduction
+    - ~~1 - Introduction~~
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
@@ -55,7 +51,19 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
 - Format h3 to h6 headers
-- Format text into **bold**, *italics*, `code` and add links.
+- Format links:
+    - 0 - Table Of Contents
+    - ~~1 - Introduction~~
+    - 2 - ExtendScript Toolkit
+    - 3 - File System Access
+    - 4 - User-Interface Tools
+    - 5 - Interapplication Communictation with Scripts
+    - 6 - External Communication Tools
+    - 7 - Intergrating External Libraries
+    - 8 - ExtendScript Tools and Features
+    - 9 - Intergrating XML into JavaScript
+    - 10 - Scripting Access to XMP Metadata
+- Format text into **bold**, *italics*, `code`.
     - 0 - Table Of Contents
     - 1 - Introduction
     - 2 - ExtendScript Toolkit
@@ -69,7 +77,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 10 - Scripting Access to XMP Metadata
 - Format notes, warnings and tips.
     - 0 - Table Of Contents
-    - 1 - Introduction
+    - ~~1 - Introduction~~
     - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools

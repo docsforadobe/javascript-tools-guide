@@ -20,8 +20,9 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Format h1 and h2 headers in each section~~
 - ~~Split each section into files~~
 - ~~Convert 'see something on page' to links~~
-- Split into correct paragraphs
-    - ~~2 - ExtendScript Toolkit~~
+- Format text into **bold**, *italics*, `code`, headers, bullet lists, and paragraphs.
+    - ~~1 - Introduction~~
+    - 2 - ExtendScript Toolkit
     - 3 - File System Access
     - 4 - User-Interface Tools
     - 5 - Interapplication Communictation with Scripts
@@ -50,41 +51,56 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-- Format bullet lists
-    - ~~1 - Introduction~~
-    - ~~2 - ExtendScript Toolkit~~
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
-- Format h3 to h6 headers
-    - ~~1 - Introduction~~
-    - ~~2 - ExtendScript Toolkit~~
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
-- Format text into **bold**, *italics*, `code`.
-    - ~~1 - Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
 - ~~Format notes, warnings and tips~~
 - Extract images from the pdf and put into the text files
     - 2 - ExtendScript Toolkit
     - 4 - User-Interface Tools
     - 8 - ExtendScript Tools and Features
+
+### How to ###
+
+#### Text
+
+```
+**bold**, *italics*, ``code``
+``
+
+#### Headers
+
+```
+H1. line must be at least as long as text
+=========================================
+
+h2
+--
+
+h3
+**
+
+h4
+++
+```
+
+#### Bullet lists
+
+```
+- Bullet point lists must start with one empty line above
+  - Indented bullet points are indented with 2 spaces
+  - very long bullet point that goes over multiple lines 
+    have the additional lines indented one more level
+- Bullet point
+```
+
+#### Paragraphs
+
+```
+
+New paragraphs starts with an empty line above.
+If there are no empty line above. The line will be added to the end of the previous line.
+
+Correct way to start a new paragraph.
+
+Header
+======
+Paragraphs can start directly underneath headers, an empty line is not needed in that case.
+```

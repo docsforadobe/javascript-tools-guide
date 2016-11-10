@@ -31,6 +31,9 @@ If the path refers to an existing folder:
 - The File function returns a Folder object instead of a File object.
 - The new operator returns a File object for a nonexisting file with the same name.
 
+.. warning:: In After Effects on MacOS, if ``path.length`` is more than 1002, After Effects crashes.
+  This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
+
 .. _file-class-properties:
 
 File class properties

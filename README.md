@@ -63,7 +63,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 
 ```
 **bold**, *italics*, ``code``
-``
+```
 
 #### Headers
 

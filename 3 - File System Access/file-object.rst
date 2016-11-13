@@ -22,14 +22,14 @@ the encoding is preset to the default system encoding.
 ``path`` Optional. The absolute or relative path to the file associated with this object, specified in
          platform-specific or URI format; see :ref:`specifying-paths`. The value stored in the
          object is the absolute path.
+
+         The path need not refer to an existing file. If not supplied, a temporary name is generated.
+
+         If the path refers to an existing folder:
+
+         - The File function returns a Folder object instead of a File object.
+         - The new operator returns a File object for a nonexisting file with the same name.
 ======== ==============================================================================================
-
-The path need not refer to an existing file. If not supplied, a temporary name is generated.
-
-If the path refers to an existing folder:
-
-- The File function returns a Folder object instead of a File object.
-- The new operator returns a File object for a nonexisting file with the same name.
 
 .. warning:: In After Effects on MacOS, if ``path.length`` is more than 1002, After Effects crashes.
   This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
@@ -52,6 +52,8 @@ File class functions
 These functions are available as static methods of the File class. It is not necessary to create an instance to
 call them.
 
+.. _file-decode:
+
 decode()
 ********
 ``File.decode( uri )``
@@ -70,6 +72,8 @@ Decodes the specified string as required by RFC 2396.
 
 Returns the decoded string.
 
+.. _file-encode:
+
 encode()
 ********
 ``File.encode( name )``
@@ -85,6 +89,8 @@ Special characters are those with a numeric value greater than 127, except the f
 
 Returns the encoded string.
 
+.. _file-isEncodingAvailable:
+
 isEncodingAvailable()
 *********************
 
@@ -94,6 +100,8 @@ isEncodingAvailable()
 
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
+
+.. _file-openDialog:
 
 openDialog()
 ************
@@ -115,6 +123,8 @@ multiple files, and creates new File objects to represent the selected files.
 
 If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files
 are selected. If the user cancels, returns ``null``.
+
+.. _file-saveDialog:
 
 saveDialog()
 ************
@@ -204,6 +214,8 @@ File object functions
 ---------------------
 These functions are available for File objects.
 
+.. _file-changePath:
+
 changePath()
 ************
 ``fileObj.changePath( path )``
@@ -214,6 +226,8 @@ Changes the path specification of the referenced file.
 
 Returns true on success.
 
+.. _file-close:
+
 close()
 *******
 ``fileObj.close()``
@@ -221,6 +235,8 @@ close()
 Closes this open file.
 
 Returns true on success, false if there are I/O errors.
+
+.. _file-copy:
 
 copy()
 ******
@@ -234,6 +250,8 @@ source file. If a file exists at the target location, it is overwritten.
 
 Returns true if the copy was successful, false otherwise.
 
+.. _file-createAlias:
+
 createAlias()
 *************
 ``fileObj.createAlias( [path] )``
@@ -246,6 +264,8 @@ must not yet exist on disk.
 Returns true if the operation was successful, false otherwise.
 
 
+.. _file-execute:
+
 execute()
 *********
 ``fileObj.execute()``
@@ -254,6 +274,8 @@ Opens this file using the appropriate application, as if it had been double-clic
 You can use this method to run scripts, launch applications, and so on.
 
 Returns true immediately if the application launch was successful.
+
+.. _file-getRelativeURI:
 
 getRelativeURI()
 ****************
@@ -266,6 +288,8 @@ Retrieves the URI for this file, relative to the specified base path, in URI not
 supplied, the URI is relative to the path of the current folder.
 
 Returns a string containing the relative URI.
+
+.. _file-open:
 
 open()
 ******
@@ -299,6 +323,8 @@ UTF-8). If everything fails, the encoding property is set to the system encoding
 .. note:: Be careful about opening a file more than once. The operating system usually permits you to
   do so, but if you start writing to the file using two different File objects, you can destroy your data.
 
+.. _file-openDlg:
+
 openDlg()
 *********
 ``fileObj.OpenDlg( [prompt][,filter][,multiSelect] )``
@@ -320,6 +346,8 @@ file to this object’s associated file.
 If the user clicks **OK**, returns a File or Folder object for the selected file or folder, or an array of
 objects. If the user cancels, returns ``null``.
 
+.. _file-read:
+
 read()
 ******
 ``fileObj.read( [chars] )``
@@ -332,6 +360,8 @@ Reads the contents of the file starting at the current position.
 
 Returns a string that contains up to the specified number of characters.
 
+.. _file-readch:
+
 readch()
 ********
 ``fileObj.readch()``
@@ -342,6 +372,8 @@ characters.
 
 Returns a string that contains the character.
 
+.. _file-readln:
+
 readln()
 ********
 ``fileObj.readln()``
@@ -351,6 +383,8 @@ are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple 
 create single Unicode characters.
 
 Returns a string that contains the text.
+
+.. _file-remove:
 
 remove()
 ********
@@ -363,6 +397,8 @@ trash. Does not resolve aliases; instead, deletes the referenced alias or shortc
 
 Returns true if the file is deleted successfully.
 
+.. _file-rename:
+
 rename()
 ********
 ``fileObj.rename( newName )``
@@ -374,6 +410,8 @@ file itself.
 
 Returns true on success.
 
+.. _file-resolve:
+
 resolve()
 *********
 ``fileObj.resolve()``
@@ -383,6 +421,8 @@ object that references the file-system element to which the alias resolves.
 
 Returns the new File object, or null if this object does not reference an alias, or if the alias cannot
 be resolved.
+
+.. _file-saveDlg:
 
 saveDlg()
 *********
@@ -397,10 +437,12 @@ saveDlg()
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
 location to which to save information, and creates a new File object to represent the selected file.
 
-Differs from the class method ``saveDialog()`` in that it presets the current folder to this File object’s
+Differs from the class method :ref:`file-saveDialog` in that it presets the current folder to this File object’s
 parent folder and the file to this object’s associated file.
 
 If the user clicks **OK**, returns a File object for the selected file. If the user cancels, returns ``null``.
+
+.. _file-seek:
 
 seek()
 ******
@@ -420,6 +462,8 @@ current file size.
 
 Returns true if the position was changed.
 
+.. _file-tell:
+
 tell()
 ******
 ``fileObj.tell()``
@@ -427,6 +471,8 @@ tell()
 Retrieves the current position as a byte offset from the start of the file.
 
 Returns a number, the position index.
+
+.. _file-write:
 
 write()
 *******
@@ -441,6 +487,8 @@ Unicode character may write multiple bytes.
   overwrite existing data.
 
 Returns true on success.
+
+.. _file-writeln:
 
 writeln()
 *********

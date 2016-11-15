@@ -5,7 +5,7 @@ Event handling
 Several helper classes provide low-level event-handling capabilities.
 Event objects are normally created by ScriptUI and passed to your event handler. However, you can
 simulate a user action by constructing an event object using ScriptUI.events.events.createEvent(),
-and sending it to a target object’s dispatchEvent() function.
+and sending it to a target object's dispatchEvent() function.
 A helper object, Keyboard state object, provides global access to the keyboard state during function
 execution, outside the event-handling framework.
 
@@ -24,7 +24,7 @@ Boolean When true, the event supports the bubbling phase.
 
 cancelable
 
-Boolean When true, the handler can call this object’s preventDefault() method to
+Boolean When true, the handler can call this object's preventDefault() method to
 cancel the default action of the event.
 
 currentTarget

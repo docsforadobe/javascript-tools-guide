@@ -12,7 +12,7 @@ Adobe Bridge CS5 makes the XMP library available in its libraries folder. Script
 time to use the API; it is not automatically loaded when Adobe Bridge launches. The XMPScript API is
 separate from the Adobe Bridge DOM. You can use it independently, to get and set metadata in supported
 formats; or you can use it with the Adobe Bridge API to modify the metadata that you access from files
-using the Adobe Bridge DOM’s Thumbnail object.
+using the Adobe Bridge DOM's Thumbnail object.
 
 .. note:: Adobe Bridge provides a means of embedding metadata values in a script (to describe the script file
   itself) using XML delimited by special tags within a comment block. This is not related to metadata access
@@ -89,7 +89,7 @@ serialized XMP. Continuing the previous example::
     newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
     thumb.metadata = new Metadata( newPacket );
 
-To write metadata back to the file for a thumbnail, you can access the thumbnail’s file and create an
+To write metadata back to the file for a thumbnail, you can access the thumbnail's file and create an
 XMPFile object object to access the embedded metadata directly.
 
 ::

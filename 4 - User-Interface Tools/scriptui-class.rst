@@ -15,7 +15,7 @@ Object
 
 Collects the enumerated values that can be used in the alignment and
 alignChildren properties of controls and containers, and in the alignment
-property used to set a control’s titleLayout property. Read only.
+property used to set a control's titleLayout property. Read only.
 Use these constants to set the alignment. For example:
 myGroup.alignment = [ScriptUI.Alignment.LEFT,
 ScriptUI.Alignment.TOP]
@@ -131,7 +131,7 @@ text
 
 The text to match.
 
-Finds and returns the resource for a given text string from the host application’s resource data. If no
+Finds and returns the resource for a given text string from the host application's resource data. If no
 string resource matches the given text, the text itself is returned.
 Returns a String.
 newFont()

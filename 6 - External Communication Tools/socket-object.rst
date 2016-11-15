@@ -3,7 +3,7 @@
 Socket object
 =============
 TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a
-server and requests a new page, it opens a TCP connection to handle the request as well as the server’s
+server and requests a new page, it opens a TCP connection to handle the request as well as the server's
 reply. The JavaScript Socket object lets you connect to any server on the Internet and to exchange data
 with this server.
 The Socket object provides basic functionality to connect to a remote computer over a TCP/IP network or
@@ -17,11 +17,11 @@ sends a very simple HTTP GET request to obtain the home page of the WWW server, 
 reply, which is the home page together with a HTTP response header.
 reply = "";
 conn = new Socket;
-// access Adobe’s home page
+// access Adobe's home page
 if (conn.open ("www.adobe.com:80")) {
 // send a HTTP GET request
 conn.write ("GET /index.html HTTP/1.0\n\n");
-// and read the server’s reply
+// and read the server's reply
 reply = conn.read(999999);
 conn.close();
 }

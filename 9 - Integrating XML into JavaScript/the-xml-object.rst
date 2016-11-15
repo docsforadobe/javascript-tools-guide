@@ -61,7 +61,7 @@ This sample XML code is used for examples throughout this chapter:
 <price>39.95</price>
 </book>
 <book category="CHILDREN">
-<title lang="en">Alice’s Adventures in Wonderland</title>
+<title lang="en">Alice's Adventures in Wonderland</title>
 <author>Charles "Lewis Carroll" Dodgeson</author>
 <author>Charles Dodgeson</author>
 <author>Lewis Carroll</author>
@@ -152,12 +152,12 @@ You can change the values of attributes using the same technique.
 Modification examples
 In the sample XML, the third book has several <author> elements. This statement replaces all of them
 with a single element, containing a new string:
-bookstoreXML.book[2].author = "Charles ’Lewis Carroll’ Dodgeson";
+bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
 
 The result is this XML:
 <book category="CHILDREN">
-<title lang="en">Alice’s Adventures in Wonderland</title>
-<author>Charles ’Lewis Carroll’ Dodgeson</author>
+<title lang="en">Alice's Adventures in Wonderland</title>
+<author>Charles 'Lewis Carroll' Dodgeson</author>
 <year>1865</year>
 <price>29.99</price>
 </book>

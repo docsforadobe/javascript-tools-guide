@@ -28,7 +28,7 @@ Optional. The window title. A localizable string.
 
 bounds
 
-Optional. The window’s position and size.
+Optional. The window's position and size.
 
 creation_properties
 
@@ -42,7 +42,7 @@ su1PanelCoordinates - Photoshop only. When true, the child panels of
 this window automatically adjust the positions of their children for
 compatability with Photoshop CS (in which the vertical coordinate was
 measured from outside the frame). Default is false. Individual panels can
-override the parent window’s setting.
+override the parent window's setting.
 
 closeButton - When true, the title bar includes a button to close the
 
@@ -104,7 +104,7 @@ frameBounds
 
 Bounds
 
-A Bounds object for the boundaries of the Window’s frame in screen
+A Bounds object for the boundaries of the Window's frame in screen
 coordinates. The frame consists of the title bar and borders that
 enclose the content region of a window, depending on the
 windowing system. Read only.
@@ -113,7 +113,7 @@ frameLocation
 
 Point
 
-A Point object for the location of the top left corner of the Window’s
+A Point object for the location of the top left corner of the Window's
 frame. The same as [frameBounds.x, frameBounds.y]. Set this
 value to move the window frame to the specified location on the
 screen. The frameBounds value changes accordingly.
@@ -122,7 +122,7 @@ frameSize
 
 Dimension
 
-A Dimension object for the size and location of the Window’s frame
+A Dimension object for the size and location of the Window's frame
 in screen coordinates. Read only.
 
 maximized
@@ -150,7 +150,7 @@ shortcutKey
 
 String
 
-The key sequence that invokes this window’s onShortcutKey callback
+The key sequence that invokes this window's onShortcutKey callback
 (in Windows only).
 
 .. _container-properties:
@@ -248,7 +248,7 @@ bounds
 
 Bounds
 
-A Bounds object for the boundaries of the window’s drawable
+A Bounds object for the boundaries of the window's drawable
 area in screen coordinates. Compare frameBounds. Does not
 apply to containers of type tab, whose bounds are determined
 by the parent tabbedpanel container. Read only.
@@ -259,7 +259,7 @@ Array of Object
 
 The collection of user-interface elements that have been added
 to this window or container. An array indexed by number or by a
-string containing an element’s name. The length property of this
+string containing an element's name. The length property of this
 array is the number of child elements for container elements, and
 is zero for controls. Read only.
 
@@ -268,7 +268,7 @@ graphics
 Graphics
 
 A ScriptUIGraphics object that can be used to customize the
-window’s appearance, in response to the onDraw event.
+window's appearance, in response to the onDraw event.
 
 layout
 
@@ -285,7 +285,7 @@ location
 Point
 
 A Point object for the location of the top left corner of the
-Window’s drawable area, or the top left corner of the frame for a
+Window's drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
 
 margins
@@ -326,8 +326,8 @@ stack
 The default orientation depends on the type of container. For
 Window and Panel, the default is column, and for Group the
 default is row.
-The allowed values for the container’s alignChildren and its
-children’s alignment properties depend on the orientation.
+The allowed values for the container's alignChildren and its
+children's alignment properties depend on the orientation.
 parent
 
 Object
@@ -428,13 +428,13 @@ Optional. A bounds specification that describes the size and position of the new
 control or container, relative to its parent. See Bounds object for specification
 formats.
 If supplied, this value creates a new Bounds object which is assigned to the new
-object’s bounds property.
+object's bounds property.
 
 text
 
 Optional. String. Initial text to be displayed in the control as the title, label, or
 contents, depending on the control type. If supplied, this value is assigned to
-the new object’s text property.
+the new object's text property.
 
 creation_props
 
@@ -509,7 +509,7 @@ A UIEvent base class.
 
 Simulates the occurrence of an event in this target. A script can create a UIEvent base class for a
 specific event and pass it to this method to start the event propagation for the event.
-Returns false if any of the registered listeners that handled the event called the event object’s
+Returns false if any of the registered listeners that handled the event called the event object's
 preventDefault() method, true otherwise.
 
 CHAPTER 4: User-Interface Tools
@@ -561,7 +561,7 @@ child
 The child control to remove, specified by 0-based index, the contained text
 value, or as a control object.
 
-Removes the specified child control from this window’s or container’s children array. No error
+Removes the specified child control from this window's or container's children array. No error
 results if the child does not exist.
 Returns undefined.
 
@@ -643,7 +643,7 @@ closing it, or by clicking another window to change the keyboard focus.
 onDraw
 
 Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control’s associated ScriptUIGraphics object.
+or control the appearance, using the control's associated ScriptUIGraphics object.
 Handler takes one argument, a DrawState object.
 
 onMove

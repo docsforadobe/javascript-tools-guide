@@ -5,7 +5,7 @@ Debugging in the Toolkit
 You can debug the code in the currently active document window. Select one of the debugging
 commands to either run or to single-step through the program.
 
-When you run code from the document window, it runs in the current target application’s selected
+When you run code from the document window, it runs in the current target application's selected
 JavaScript engine. The Toolkit itself runs an independent JavaScript engine, so you can quickly edit and
 run a script without connecting to a target application.
 
@@ -31,7 +31,7 @@ running
 halted
 waiting
 
-The current engine is the one whose data and state is displayed in the Toolkit’s panes. If an application has
+The current engine is the one whose data and state is displayed in the Toolkit's panes. If an application has
 only one engine, its engine becomes current when you select the application as the target. If there is more
 than one engine available in the target application, you can select an engine in the list to make it current.
 
@@ -82,7 +82,7 @@ Call Stack panel, and the result appears in the next line.
 
 Controlling code execution
 --------------------------
-The debugging commands are available from the **Debug** menu, from the document window’s right-click
+The debugging commands are available from the **Debug** menu, from the document window's right-click
 context menu, through keyboard shortcuts, and from the toolbar buttons. Use these menu commands
 and buttons to control the execution of code when the JavaScript Debugger is active.
 
@@ -167,7 +167,7 @@ error message
 Scripts often use a try/catch clause to execute code that may cause a runtime error, in order to catch the
 error programmatically rather than have the script terminate. You can choose to allow regular processing
 of such errors using the catch clause, rather than breaking into the debugger. To set this behavior, choose
-**Debug > Don’t Break On Guarded Exceptions**. Some runtime errors, such as Out Of Memory, always
+**Debug > Don't Break On Guarded Exceptions**. Some runtime errors, such as Out Of Memory, always
 cause the termination of the script, regardless of this setting.
 
 .. _setting-breakpoints:
@@ -204,12 +204,12 @@ than 1000.
 The Breakpoints panel
 *********************
 The Breakpoints panel displays all breakpoints set in the current document window. You can use the
-panel’s flyout menu to add, change, or remove a breakpoint.
+panel's flyout menu to add, change, or remove a breakpoint.
 
 .. todo:: image
 
 You can edit a breakpoint by double-clicking it, or by selecting it and choosing **Add** or **Modify** from the
-panel menu. A dialog allows you to change the line number, the breakpoint’s enabled state, and the
+panel menu. A dialog allows you to change the line number, the breakpoint's enabled state, and the
 condition statement. You can also specify a hit count, which allows you to skip the breakpoint some
 number of times before entering the debugger. The default is 1, which breaks at the first execution.
 
@@ -270,7 +270,7 @@ flyout
 menu
 
 Examine or modify
-selected variable’s value
+selected variable's value
 Object opened to
 show properties
 
@@ -295,7 +295,7 @@ Object
 Method
 null
 
-You can inspect the contents of an object by clicking its icon. The list expands to show the object’s
+You can inspect the contents of an object by clicking its icon. The list expands to show the object's
 properties (and methods, if Functions display is enabled), and the triangle points down to indicate that
 the object is open.
 

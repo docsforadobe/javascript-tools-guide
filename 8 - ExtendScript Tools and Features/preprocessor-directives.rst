@@ -72,7 +72,7 @@ The name value is displayed in the Toolkit Editor tab. An unnamed script is assi
 unique name generated from a number.
 #strict on
 
-Turns on strict error checking. See the Dollar ($) object’s strict property.
+Turns on strict error checking. See the Dollar ($) object's strict property.
 
 #target name
 
@@ -82,7 +82,7 @@ If the Toolkit is registered as the handler for files with the .jsx extension (a
 default), opening the file opens the target application to run the script. If this
 directive is not present, the Toolkit loads and displays the script. A user can open a
 file by double-clicking it in a file browser, and a script can open a file using a File
-object’s execute method.
+object's execute method.
 
 #targetengine
 enginename

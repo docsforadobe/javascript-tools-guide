@@ -819,7 +819,7 @@ provides more specific functions for use with specific types of properties, such
 XMPMeta object constructors
 To create an XMPMeta object, use the new operator. The constructor accepts an RDF/XML serialized
 metadata packet as a string, or as an array of numbers that contain only byte values. It returns the new
-object. If no argument is supplied, the new object is empty; you can use the object’s functions to add
+object. If no argument is supplied, the new object is empty; you can use the object's functions to add
 namespaces and properties.
 The first call to any of these constructors initializes the library by registering the standard namespaces and
 aliases.
@@ -1687,7 +1687,7 @@ padSize
 
 Number
 
-The packet’s padding size in bytes, 0 if unknown.
+The packet's padding size in bytes, 0 if unknown.
 
 writeable
 
@@ -1864,9 +1864,9 @@ fieldValue
 
 The desired field value.
 
-Creates and returns a string containing the path expression to select an alternate item by a field’s
+Creates and returns a string containing the path expression to select an alternate item by a field's
 value, using the registered prefixes for the namespaces, in the form:
-schemaNS:arrayName[fieldNS:fieldName=’fieldValue’]
+schemaNS:arrayName[fieldNS:fieldName='fieldValue']
 
 Returns a String.
 composeLanguageSelector()
@@ -1885,7 +1885,7 @@ The RFC3066 locale code string for the desired language.
 
 Creates and returns a string containing the path expression to select an alternate item in an alt
 text array by language, using the registered prefix for the namespace, in the form:
-schemaNS:arrayName[@xml:lang=’langName’]
+schemaNS:arrayName[@xml:lang='langName']
 
 Returns a String.
 

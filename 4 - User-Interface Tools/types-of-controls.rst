@@ -20,8 +20,8 @@ An optional borderStyle creation property controls the appearance of the border
 drawn around the panel.
 You can use panels as separators: those with width of 0 appear as vertical lines and
 those with height of 0 appear as horizontal lines.
-var dlg = new Window(’dialog’, ’Alert Box Builder’);
-dlg.msgPnl = dlg.add(’panel’, [25,15,355,130], ’Messages’);
+var dlg = new Window('dialog', 'Alert Box Builder');
+dlg.msgPnl = dlg.add('panel', [25,15,355,130], 'Messages');
 
 CHAPTER 4: User-Interface Tools
 
@@ -62,17 +62,17 @@ size, then allow the layout manager to set the bounds; see :ref:`automatic-layou
 Button
 
 Typically used to initiate some action from a window when a user clicks the button;
-for example, accepting a dialog’s current settings, canceling a dialog, bringing up a
+for example, accepting a dialog's current settings, canceling a dialog, bringing up a
 new dialog, and so on.
-Set the text property to assign a label to identify a Button’s function.
+Set the text property to assign a label to identify a Button's function.
 The onClick callback method provides behavior.
-var dlg = new Window(‘dialog’, ‘Alert Box Builder’);
-dlg.btnPnl = dlg.add(‘panel’, undefined, ‘Build it’);
-dlg.btnPnl.testBtn = dlg.btnPnl.add(‘button’, undefined, ‘Test’);
-dlg.btnPnl.buildBtn = dlg.btnPnl.add(‘button’, undefined, ‘Build’,
-{name:’ok’});
-dlg.btnPnl.cancelBtn = dlg.btnPnl.add(‘button’, undefined, ‘Cancel’,
-{name:’cancel’});
+var dlg = new Window('dialog', 'Alert Box Builder');
+dlg.btnPnl = dlg.add('panel', undefined, 'Build it');
+dlg.btnPnl.testBtn = dlg.btnPnl.add('button', undefined, 'Test');
+dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build',
+{name:'ok'});
+dlg.btnPnl.cancelBtn = dlg.btnPnl.add('button', undefined, 'Cancel',
+{name:'cancel'});
 dlg.show();
 
 IconButton
@@ -100,12 +100,12 @@ StaticText
 Typically used to display text strings that are not intended for direct manipulation by
 a user, such as informative messages or labels.
 This example creates a Panel and adds several StaticText elements:
-var dlg = new Window(‘dialog’, ‘Alert Box Builder’);
-dlg.msgPnl = dlg.add(‘panel’, undefined, ‘Messages’);
-dlg.msgPnl.titleSt = dlg.msgPnl.add(‘statictext’, undefined,
-‘Alert box title:’);
-dlg.msgPnl.msgSt = dlg.msgPnl.add(‘statictext’, undefined,
-‘Alert message:’);
+var dlg = new Window('dialog', 'Alert Box Builder');
+dlg.msgPnl = dlg.add('panel', undefined, 'Messages');
+dlg.msgPnl.titleSt = dlg.msgPnl.add('statictext', undefined,
+'Alert box title:');
+dlg.msgPnl.msgSt = dlg.msgPnl.add('statictext', undefined,
+'Alert message:');
 dlg.show();
 
 EditText
@@ -119,16 +119,16 @@ or to insert text at the cursor (insertion point). Read this property to obtain 
 current selection, if any.
 This example adds some EditText elements, with initial values that a user can accept
 or replace:
-var dlg = new Window(‘dialog’, ‘Alert Box Builder’);
-dlg.msgPnl = dlg.add(‘panel’, undefined, ‘Messages’);
-dlg.msgPnl.titleSt = dlg.msgPnl.add(‘statictext’, undefined,
-‘Alert box title:’);
-dlg.msgPnl.titleEt = dlg.msgPnl.add(‘edittext’, undefined,
-‘Sample Alert’);
-dlg.msgPnl.msgSt = dlg.msgPnl.add(‘statictext’, undefined,
-‘Alert message:’);
-dlg.msgPnl.msgEt = dlg.msgPnl.add(‘edittext’, undefined,
-‘<your message here>’, {multiline:true});
+var dlg = new Window('dialog', 'Alert Box Builder');
+dlg.msgPnl = dlg.add('panel', undefined, 'Messages');
+dlg.msgPnl.titleSt = dlg.msgPnl.add('statictext', undefined,
+'Alert box title:');
+dlg.msgPnl.titleEt = dlg.msgPnl.add('edittext', undefined,
+'Sample Alert');
+dlg.msgPnl.msgSt = dlg.msgPnl.add('statictext', undefined,
+'Alert message:');
+dlg.msgPnl.msgEt = dlg.msgPnl.add('edittext', undefined,
+'<your message here>', {multiline:true});
 dlg.show();
 
 Note the creation property on the second EditText field, where multiline:true
@@ -151,8 +151,8 @@ selected. The value is true when it is selected (checked) and false when it is n
 When you create a Checkbox, you can set its value property to specify its initial state
 and appearance.
 // Add a checkbox to control the buttons that dismiss an alert box
-dlg.hasBtnsCb = dlg.add(‘checkbox’, undefined,
-‘Should there be alert buttons?’);
+dlg.hasBtnsCb = dlg.add('checkbox', undefined,
+'Should there be alert buttons?');
 dlg.hasBtnsCb.value = true;
 
 RadioButton
@@ -163,17 +163,17 @@ clickable button.
 The value is true when the button is selected. The button shows the state in a
 platform-specific manner, with a filled or empty dot, for example.
 You group a related set of radio buttons by creating all the related elements one after
-another. When any button’s value becomes true, the value of all other buttons in the
+another. When any button's value becomes true, the value of all other buttons in the
 group becomes false. When you create a group of radio buttons, you should set the
 state of one of them true:
-var dlg = new Window(‘dialog’, ‘Alert Box Builder’);
-dlg.alertBtnsPnl = dlg.add(‘panel’, undefined, ‘Button alignment’);
-dlg.alertBtnsPnl.alignLeftRb = dlg.alertBtnsPnl.add(‘radiobutton’,
-undefined, ‘Left’);
-dlg.alertBtnsPnl.alignCenterRb = dlg.alertBtnsPnl.add(‘radiobutton’,
-undefined, ‘Center’);
-dlg.alertBtnsPnl.alignRightRb = dlg.alertBtnsPnl.add(‘radiobutton’,
-undefined, ‘Right’);
+var dlg = new Window('dialog', 'Alert Box Builder');
+dlg.alertBtnsPnl = dlg.add('panel', undefined, 'Button alignment');
+dlg.alertBtnsPnl.alignLeftRb = dlg.alertBtnsPnl.add('radiobutton',
+undefined, 'Left');
+dlg.alertBtnsPnl.alignCenterRb = dlg.alertBtnsPnl.add('radiobutton',
+undefined, 'Center');
+dlg.alertBtnsPnl.alignRightRb = dlg.alertBtnsPnl.add('radiobutton',
+undefined, 'Right');
 dlg.alertBtnsPnl.alignCenterRb.value = true;
 dlg.show();
 
@@ -210,15 +210,15 @@ than height, it is horizontal, otherwise it is vertical. Arguments to the add me
 that creates the scrollbar define values for the value, minvalue and maxvalue
 properties.
 Scrollbars are often created with an associated EditText field to display the current
-value of the scrollbar, and to allow setting the scrollbar’s position to a specific value.
+value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
 This example creates a scrollbar with associated StaticText and EditText elements
 within a panel:
-dlg.sizePnl = dlg.add(‘panel’, undefined, ‘Dimensions’);
-dlg.sizePnl.widthSt = dlg.sizePnl.add(‘statictext’, undefined,
-‘Width:’);
-dlg.sizePnl.widthScrl = dlg.sizePnl.add(‘scrollbar’, undefined,
+dlg.sizePnl = dlg.add('panel', undefined, 'Dimensions');
+dlg.sizePnl.widthSt = dlg.sizePnl.add('statictext', undefined,
+'Width:');
+dlg.sizePnl.widthScrl = dlg.sizePnl.add('scrollbar', undefined,
 300, 300, 800);
-dlg.sizePnl.widthEt = dlg.sizePnl.add(‘edittext’);
+dlg.sizePnl.widthEt = dlg.sizePnl.add('edittext');
 
 ListBox
 DropDownList
@@ -241,8 +241,8 @@ items. Child items can in turn contain children.
 The title property provides an optional label; the titleLayout property places
 the label with respect to the list.
 You can specify the choice items on creation of the list object, or afterward using the
-list object’s add() method. You can remove items programmatically with the list
-object’s remove() and removeAll() methods.
+list object's add() method. You can remove items programmatically with the list
+object's remove() and removeAll() methods.
 
 ListItem
 
@@ -250,7 +250,7 @@ Items added to or inserted into any type of list control are ListItem objects, w
 properties that can be manipulated from a script. ListItem elements can be of the
 following types:
 item: the typical item in any type of list. It displays text or an image, and can be
-selected. To display an image, set the item object’s image property; see
+selected. To display an image, set the item object's image property; see
 
 "Displaying images" on page 72.
 
@@ -263,7 +263,7 @@ node: a displayable and selectable item in a TreeView control which can contain
 other ListItem objects, including other items of type node.
 FlashPlayer
 
-Runs a Flash movie within a ScriptUI window. Its control’s methods allow you to load a
+Runs a Flash movie within a ScriptUI window. Its control's methods allow you to load a
 movie from an SWF file and control the playback. See :ref:`flashplayer-control-functions`.
 You can also use the control object to communicate with the Flash application, calling
 ActionScript methods, and making JavaScript methods defined in your Adobe
@@ -277,7 +277,7 @@ Displaying images
 -----------------
 You can display icon images in Image or IconButton controls, or display images in place of strings or in
 addition to strings as the selectable items in a Listbox or DropdownList control. In each case, the image
-is defined by setting the element’s image property. You can set it to a ScriptUIImage object; a named icon
+is defined by setting the element's image property. You can set it to a ScriptUIImage object; a named icon
 resource; a File object; or the pathname of a file containing the iconic image, or of an alias or shortcut to
 that file (see :ref:`specifying-paths`).
 The image data for an icon can be in Portable Network Graphics (PNG) format, or in Joint Photographic
@@ -285,7 +285,7 @@ Experts Group (JPEG) format. See http://www.libpng.org and http://www.jpeg.org/ 
 information on these formats.
 You can set or reset the image property at any time to change the image displayed in the element.
 The scripting environment can define icon resources, which are available to scripts by name. To specify an
-icon resource, set a control’s image property to the resource’s JavaScript name, or refer to the resource by
+icon resource, set a control's image property to the resource's JavaScript name, or refer to the resource by
 name when creating the control. For example, to create a button with an application-defined icon
 resource:
 myWin.upBtn = myWin.add ("iconbutton", undefined, "SourceFolderIcon");
@@ -371,7 +371,7 @@ Creating and using modal dialogs
 A dialog typically contains some controls that the user must interact with, to make selections or enter
 values that your script will use. In some cases, the result of the user action is stored in the object, and you
 can retrieve it after the dialog has been dismissed. For example, if the user changes the state of a Checkbox
-or RadioButton, the new state is found in the control’s value property.
+or RadioButton, the new state is found in the control's value property.
 However, if you need to respond to a user action while the dialog is still active, you must assign the control
 a callback function for the interaction event, either onClick or onChange. The callback function is the
 value of the onClick or onChange property of the control.
@@ -406,7 +406,7 @@ you need to distinguish more than two closing states, you must define your own c
 than relying on the default behavior.
 If, by mistake, you create a modal dialog with no buttons to dismiss it, or if your dialog does have buttons,
 but their onClick handlers do not function properly, a user can still dismiss the dialog by typing ESC. In this
-case, the system will execute a call to the dialog’s close method, passing a value of 2. This is not, of course,
+case, the system will execute a call to the dialog's close method, passing a value of 2. This is not, of course,
 a recommended way to design your dialogs, but is provided as an escape hatch to prevent the application
 from hanging in case of an error in the operations of your dialog.
 
@@ -415,14 +415,14 @@ The user can typically dismiss a modal dialog by clicking an OK or Cancel button
 keyboard shortcuts. By convention, typing ENTER is the same as clicking OK or the default button, and
 typing ESC is the same as clicking Cancel. The keyboard shortcut has the same effect as calling notify for
 the associated button control.
-To determine which control is notified by which keyboard shortcut, set the Dialog object’s
+To determine which control is notified by which keyboard shortcut, set the Dialog object's
 defaultElement and cancelElement properties. The value is the control object that should be notified
 when the user types the associated keyboard shortcut.
 For buttons assigned as the defaultElement, if there is no onClick handler associated with the
-button, clicking the button or typing ENTER calls the parent dialog’s close method, passing a value of 1
+button, clicking the button or typing ENTER calls the parent dialog's close method, passing a value of 1
 to be returned by the show call that opened the dialog.
 For buttons assigned as the cancelElement, if there is no onClick handler associated with the
-button, clicking the button or typing ESC calls the parent dialog’s close method, passing a value of 2
+button, clicking the button or typing ESC calls the parent dialog's close method, passing a value of 2
 to be returned by the show call that opened the dialog.
 If you do not set the defaultElement and cancelElement properties explicitly, ScriptUI tries to choose
 reasonable defaults when the dialog is about to be shown for the first time. For the default element, it

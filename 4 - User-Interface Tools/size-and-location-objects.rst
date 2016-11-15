@@ -17,7 +17,7 @@ as shown in the table below. For example:
 
 The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left
 corner of the screen:
-var dlg = new Window(’dialog’, ’Alert Box Builder’);
+var dlg = new Window('dialog', 'Alert Box Builder');
 dlg.bounds = {x:100, y:100, width:380, height:390}; //object
 dlg.bounds = {left:100, top:100, right:480, bottom:490}; //object
 dlg.bounds = "x:100, y:100, width:380, height:390"; //string
@@ -36,11 +36,11 @@ them, and their array and object-property formats.
 
 Bounds
 
-Defines the boundaries of a window within the screen’s coordinate space, or of a
-user-interface element within the container’s coordinate space. Contains an array, [left,
+Defines the boundaries of a window within the screen's coordinate space, or of a
+user-interface element within the container's coordinate space. Contains an array, [left,
 top, right, bottom], that defines the coordinates of the upper left and lower right
 corners of the element.
-A Bounds object is created when you set an element’s bounds property, and this property
+A Bounds object is created when you set an element's bounds property, and this property
 returns a Bounds object.
 An object must contain properties named left, top, right, bottom, or x, y, width,
 height.
@@ -49,8 +49,8 @@ An array must have values in the order [left, top, right, bottom].
 Dimension
 
 Defines the size of a Window or user-interface element. Contains an array, [width,
-height], that defines the element’s size in pixels.
-A Dimension object is created when you set an element’s size or preferredSize
+height], that defines the element's size in pixels.
+A Dimension object is created when you set an element's size or preferredSize
 property. (A preferredSize of -1 causes the size to be calculated automatically.)
 An object must contain properties named width and height.
 An array must have values in the order [width, height].
@@ -60,7 +60,7 @@ Margins
 Defines the number of pixels between the edges of a container and its outermost child
 elements. Contains an array [left, top, right, bottom] whose elements define the
 margins between the left edge of a container and its leftmost child element, and so on.
-A Margins object is created when you set an element’s margins property.
+A Margins object is created when you set an element's margins property.
 An object must contain properties named left, top, right, and bottom.
 An array must have values in the order [left, top, right, bottom].
 You can also set the margins property to a number; all of the array values are then set to
@@ -71,7 +71,7 @@ Point
 Defines the location of a Window or user-interface element. Contains an array, [x, y],
 whose values represent the origin point of the element as horizontal and vertical pixel
 offsets from the origin of the element's coordinate space.
-A Point object is created when you set an element’s location property.
+A Point object is created when you set an element's location property.
 An object must contain properties named x and y.
 An array must have values in the order [x, y].
 

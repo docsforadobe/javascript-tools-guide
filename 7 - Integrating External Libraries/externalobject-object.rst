@@ -30,7 +30,7 @@ ExtendScript appends a file extension if necessary, according to the operating s
 The name of the library is case sensitive in UNIX.
 arg1...argn
 
-Optional. Any number of arguments to pass to the library’s initialization routine.
+Optional. Any number of arguments to pass to the library's initialization routine.
 
 For example:
 var mylib = new ExternalObject( "lib:myLibrary" );

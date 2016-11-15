@@ -41,7 +41,7 @@ nbytes
 The number of bytes to allocate.
 
 Provides a memory allocation routine to be used by JavaScript for managing memory associated
-with the library’s objects.
+with the library's objects.
 Returns a pointer to the allocated block of memory.
 
 .. _shared-library-function-api:
@@ -224,7 +224,7 @@ name_l
 
 Number. The size of the name buffer.
 
-Retrieves this object’s parent class name.
+Retrieves this object's parent class name.
 Returns an error code, kESErrOK on success.
 getServer()
 ESerror_t getServer (SoHObject hObject, SoHServer* phServer,

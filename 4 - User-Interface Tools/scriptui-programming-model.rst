@@ -140,7 +140,7 @@ In additions to windows, ScriptUI defines the following user-interface elements 
   parent's ``add`` method.
 
 You can specify the initial size and position of any new element relative to the working area of the parent
-container, in an optional ```bounds``` parameter. Different types of elements have different additional
+container, in an optional ``bounds`` parameter. Different types of elements have different additional
 parameters. For elements which display text, for example, you can specify the initial text. See the ScriptUI
 Classes dictionary in the ExtendScript Toolkit's Object Model Viewer for details.
 
@@ -173,7 +173,7 @@ You can also specify the creation properties for new objects using the resource 
 details, see :ref:`resource-specifications`.
 All user-interface elements have an optional creation property called name, which assigns a name for
 identifying that element. For example, the following creates a new Button element with the name ok:
-dlg.btnPnl.buildBtn = dlg.btnPnl.add(‘button', undefined, ‘Build', {name:'ok'});
+dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
 
 .. note:: In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
   but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This

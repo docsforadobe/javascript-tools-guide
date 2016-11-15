@@ -16,7 +16,7 @@ appEncoding
 
 String
 
-The Internet name of the application’s default character encoding, such as
+The Internet name of the application's default character encoding, such as
 "CP1252" or "X-SHIFT-JIS". Valid values are implementation- and
 OS-dependent.
 Set to change the default encoding for the application. The returned value

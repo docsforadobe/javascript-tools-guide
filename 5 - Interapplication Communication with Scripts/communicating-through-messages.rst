@@ -9,7 +9,7 @@ launch another messaging-enabled application, and send or receive scripts to eff
 example, from within Adobe Bridge, a script can launch Photoshop, and then send a script to Photoshop
 that requests a photomerge operation.
 While the exported functions allow specific access to certain capabilities of the application, the script in an
-interapplication message allows full access to the target application’s document object model (DOM), in
+interapplication message allows full access to the target application's document object model (DOM), in
 addition to all cross-DOM and application exported functions.
 The messaging API defines the BridgeTalk class, whose globally available static properties and functions
 provide access to environmental information relevant for communication between applications. You can
@@ -52,16 +52,16 @@ var bt = new BridgeTalk;
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 bt.target = targetApp;
 // the script to evaluate is contained in a string in the "body" property
-bt.body = "new Document(’C:\\BridgeScripts’);
+bt.body = "new Document('C:\\BridgeScripts');
 app.document.target.children.length;"
 
 Step 3: Specify how to handle a response
-If you want to handle a response for this message, or use the data that is returned from the script’s
+If you want to handle a response for this message, or use the data that is returned from the script's
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
 by defining the onResult callback in the message object.
 
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
-  The response to a message is, by default, the result of evaluation of the script contained in that message’s
+  The response to a message is, by default, the result of evaluation of the script contained in that message's
   body property. The target application might define some different kind of response; see :ref:`receiving-messages`.
   When the target has finished processing this message, it looks for an onResult callback in the message
   object it received. If it is found, the target automatically invokes it, passing it the response. The response is
@@ -81,7 +81,7 @@ where the target cannot process the message within a given time. For more inform
   response would be lost.
 
 Step 4: Send the message
-To send the message, call the message object’s send method. You do not need to specify where to send
+To send the message, call the message object's send method. You do not need to specify where to send
 the message to, since the target application is set in the message itself.
 bt.send();
 
@@ -103,7 +103,7 @@ var bt = new BridgeTalk;
 // the message is intended for Adobe Bridge CS4
 bt.target = targetApp;
 // the script to evaluate is contained in a string in the "body" property
-bt.body = "new Document(’C:\\BridgeScripts’);
+bt.body = "new Document('C:\\BridgeScripts');
 app.document.target.children.length;"
 // define result handler callback
 bt.onResult = function(returnBtObj) {
@@ -163,7 +163,7 @@ The result object is transmitted back to the sender if the sender has implemente
 the original message.
 Message-handling examples
 This example shows the default mechanism for handling unsolicited messages received from other
-applications. This simple handler executes the message’s data as a script and returns the results of that
+applications. This simple handler executes the message's data as a script and returns the results of that
 execution.
 BridgeTalk.onReceive = function (message) {
 return eval( message.body );
@@ -190,8 +190,8 @@ message object it received has the appropriate callback defined.
 
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
 
-When your message is received by its target, the target application’s static BridgeTalk object’s onReceive
-method processes that message, and can invoke one of the message object’s callbacks to return a
+When your message is received by its target, the target application's static BridgeTalk object's onReceive
+method processes that message, and can invoke one of the message object's callbacks to return a
 response. In each case, the messaging framework packages the response in a new message object, whose
 target application is the sender. Your callback functions receive this response message object as an
 argument.
@@ -209,13 +209,13 @@ that your message was actually received by the target application. If you want t
 receipt of your message, define the onReceived callback in the message object. The target sends back
 the original message object to this callback, first replacing the body value with an empty string.
 The result of a time-out. This is handled by the onTimeout callback.
-You can specify a number of seconds in a message object’s timeout property. If the message is not
+You can specify a number of seconds in a message object's timeout property. If the message is not
 removed from the input queue for processing before the time elapses, it is discarded. If the sender has
 defined an onTimeout callback for the message, the target application sends a time-out message back
 to the sender.
 Intermediate responses. These are handled by the onResult callback.
 The script that you send can send back intermediate responses by invoking the original message
-object’s sendResult() method. It can send data of any type, but that data is packaged into a body string
+object's sendResult() method. It can send data of any type, but that data is packaged into a body string
 in a new message object, which is passed to your callback. See :ref:`passing-values-between-applications`.
 The final result of processing the message. This is handled by the onResult callback.
 When it finishes processing your message, the target application can send back a result of any type. If
@@ -233,7 +233,7 @@ The onResult method saves that number in fileCountResult, a script-defined prope
 for later use.
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
-bt.body = "new Document(’C:\\BridgeScripts’);
+bt.body = "new Document('C:\\BridgeScripts');
 app.document.target.children.length;"
 bt.onResult = function( retObj ) {
 processFileCount(retObj.body);
@@ -256,7 +256,7 @@ handled by the onError method. For example, if the file requested is not an exis
 is returned to the onError method.
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
-bt.body = "var tn = new Thumbnail(’C/MyPhotos/temp.gif’);
+bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif');
 tn.core.immediate.size;"
 bt.onResult = function( resultMsg ) {
 processFileSize(resultMsg.body);
@@ -313,11 +313,11 @@ bt = new BridgeTalk;
 bt.target = "bridge";
 bt.type = "iterator";
 bt.body = "
-var fld = new Thumbnail(Folder(’C/Junk’));
+var fld = new Thumbnail(Folder('C/Junk'));
 if (i == (fld.children.length - 1))
 done = true; //no more files, end loop
 tn = fld.children[i];
-if (tn.spec.constructor.name == ’File’)
+if (tn.spec.constructor.name == 'File')
 md = tn.core.immediate.size;
 else md = -1;
 ";
@@ -339,7 +339,7 @@ framework, however, packages the response into a response message, and passes an
 the message body, first converting the result to a UTF-8-encoded string.
 
 Passing simple types
-When your message object’s onResult callback receives a response, it must interpret the string it finds in
+When your message object's onResult callback receives a response, it must interpret the string it finds in
 the body of the response message to obtain a result of the correct type. Results of various types can be
 identified and processed as follows:
 Number
@@ -410,7 +410,7 @@ var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 //the script passed to the target application
 // returns the object using "toSource"
-bt.body = "var tn = new Thumbnail(File(’C:\\Myphotos\\photo1.jpg’));
+bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
 var md = {fname:tn.core.immediate.name,
 fsize:tn.core.immediate.size};
 md.toSource();"
@@ -432,7 +432,7 @@ var bt = new BridgeTalk;
 bt.target = "bridge";
 //set up the script passed to the target application
 // to return the array using "toSource"
-bt.body = "var tn = new Thumbnail(File(’C:\\Myphotos\\photo1.jpg’));
+bt.body = "var tn = new Thumbnail(File('C:\\Myphotos\\photo1.jpg'));
 var p = tn.path; var u = tn.uri;
 tn.toSource();"
 //For the result, use eval to reconstruct the object

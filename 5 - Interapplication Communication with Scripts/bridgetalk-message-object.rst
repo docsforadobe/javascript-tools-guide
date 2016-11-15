@@ -28,7 +28,7 @@ String
 
 The data payload of the message. Read/write.
 If this is an unsolicited message to another application, typically contains a
-script packaged as a string. The target application’s full document object
+script packaged as a string. The target application's full document object
 model (DOM) is available within the script.
 If this message is a result returned from the static BridgeTalk onReceive
 method of a target application, directed to an onResult callback in this object,
@@ -146,7 +146,7 @@ bridgeTalkObj.onResult = function( responseMsgObject ) {
 };
 
 The target passes a new message object, with the body property set to the
-result string. This is the result of the target application’s static BridgeTalk
+result string. This is the result of the target application's static BridgeTalk
 onReceive method, packaged as a UTF-8-encoded string. See :ref:`passing-values-between-applications`.
 onTimeout
 

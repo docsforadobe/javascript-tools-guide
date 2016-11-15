@@ -16,7 +16,7 @@ btnText = { en: "Yes", de: "Ja", fr: "Oui" };
 b1 = w.add ("button", undefined, localize (btnText));
 
 The localize function extracts the proper string for the current locale. It matches the current locale and
-platform to one of the object’s properties and returns the associated string. On a German system, for
+platform to one of the object's properties and returns the associated string. On a German system, for
 example, the property de provides the string "Ja".
 When your script uses localization to provide language-appropriate strings for user-interface elements, it
 should also take advantage of the Automatic layout feature. The layout manager can determine the best

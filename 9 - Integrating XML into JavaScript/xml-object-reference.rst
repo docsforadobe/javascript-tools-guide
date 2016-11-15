@@ -126,7 +126,7 @@ An XML object or any value that can be converted to a String with toString().
 
 Appends a child element to this node, after any existing children. If the argument is not XML,
 creates a new XML element that contains the string as its text value, using the same element name
-as the last element currently contained in this object’s node.
+as the last element currently contained in this object's node.
 Returns this XML object.
 attributes()
 xmlObj.attributes (name);
@@ -140,7 +140,7 @@ child()
 xmlObj.child (which);
 which
 
-A String, the element name, or a Number, a 0-based index into this node’s child array.
+A String, the element name, or a Number, a 0-based index into this node's child array.
 
 Retrieves a list of all child elements of this node of a given type.
 Returns an XML object containing all child elements of the given type.
@@ -404,7 +404,7 @@ variables
 
 Optional. A JavaScript object containing variable definitions. The properties are used
 to look up XPath variables contained in the expression. For example, if the
-expression contains the variable $abc, the value is in the object’s abc property.
+expression contains the variable $abc, the value is in the object's abc property.
 
 Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML
 object as the context node. The context position and size are set to 1, and all variables are initially
@@ -499,13 +499,13 @@ name
 
 String
 
-The local element name portion of the XML element’s fully qualified XML name.
+The local element name portion of the XML element's fully qualified XML name.
 
 uri
 
 String
 
-The namespace prefix of the XML element’s fully qualified XML name.
+The namespace prefix of the XML element's fully qualified XML name.
 
 .. _namespace-object:
 

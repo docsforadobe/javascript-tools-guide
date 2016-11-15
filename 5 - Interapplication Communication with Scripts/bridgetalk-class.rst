@@ -240,7 +240,7 @@ A specifier for the target application; see :ref:`application-specifiers`.
 
 where
 
-Optional. If the value "background" is specified, the application’s main window is
+Optional. If the value "background" is specified, the application's main window is
 not brought to the front of the screen.
 
 Launches the given application on the local computer. It is not necessary to launch an application

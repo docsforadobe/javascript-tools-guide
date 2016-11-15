@@ -2,7 +2,7 @@
 
 Socket object reference
 =======================
-This section provides details of the object’s properties and methods.
+This section provides details of the object's properties and methods.
 
 Socket object constructor
 [new] Socket ();

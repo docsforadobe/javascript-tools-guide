@@ -13,7 +13,7 @@ The Toolkit includes a JavaScript debugger that allows you to:
 - Inspect all data for a running script.
 - Set and execute breakpoints.
 
-When you double click a JSX file in the platform’s windowing environment, the script runs in the Toolkit,
+When you double click a JSX file in the platform's windowing environment, the script runs in the Toolkit,
 unless it specifies a particular target application using the #target directive. For more information, see
 :ref:`selecting-a-debugging-target` and :ref:`preprocessor-directives`.
 
@@ -144,7 +144,7 @@ Current workspace name appears in this space
 
 Dialogs
 -------
-Some dialog windows offer the option "Don’t show again". If you select this option, the Toolkit remembers
+Some dialog windows offer the option "Don't show again". If you select this option, the Toolkit remembers
 the choices made in this dialog, and next time it would appear, makes the same choices without showing
 the dialog.
 

@@ -15,7 +15,7 @@ object. You can, for example, show the values of all the properties of an object
 var f = new File ("myfile");
 var props = f.reflect.properties;
 for (var i = 0; i < props.length; i++) {
-$.writeln(’this property ’ + props[i].name + ’ is ’ + f[props[i].name]);
+$.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
 }
 
 Reflection object properties
@@ -93,7 +93,7 @@ Math.reflect.find ("PI").type; // => number
 ReflectionInfo object
 ---------------------
 This object contains information about a property, a method, or a method argument.
-You can access ReflectionInfo objects in a Reflection object’s properties and methods arrays, by
+You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by
 name or index:
 obj = new String ("hi");
 obj.reflect.methods[0];

@@ -59,12 +59,12 @@ instance to access them.
                         - In Mac OS, ``/Library/Application Support``
 ``current``     Folder  A Folder object for the current folder. Assign either a Folder object or a
                         string containing the new path name to set the current folder.
-``desktop``     Folder  A Folder object for the folder that contains the user’s desktop. Read only.
+``desktop``     Folder  A Folder object for the folder that contains the user's desktop. Read only.
 
                         - In Windows, ``C:\Documents and Settings\username\Desktop``
                         - In Mac OS, ``~/Desktop``
 ``fs``          String  The name of the file system. Read only. One of ``Windows``, ``Macintosh``, or ``Unix``.
-``myDocuments`` Folder  A Folder object for the user’s default document folder. Read only.
+``myDocuments`` Folder  A Folder object for the user's default document folder. Read only.
 
                         - In Windows, ``C:\Documents and Settings\username\My Documents``
                         - In Mac OS, ``~/Documents``
@@ -180,7 +180,7 @@ These properties are available for Folder objects.
 ``fullName``      String    The full path name for the referenced folder in URI notation. Read only.
 ``localizedName`` String    A localized version of the folder name portion of the absolute URI for the
                             referenced file, without the path specification. Read only.
-``modified``      Date      The date of the referenced folder’s last modification, or ``null`` if the object
+``modified``      Date      The date of the referenced folder's last modification, or ``null`` if the object
                             does not refer to a folder on disk. Read only.
 ``name``          String    The folder name portion of the absolute URI for the referenced file,
                             without the path specification. Read only.
@@ -216,7 +216,7 @@ create()
 ********
 ``folderObj.create()``
 
-Creates a folder at the location given by this object’s path property.
+Creates a folder at the location given by this object's path property.
 
 Returns true if the folder was created successfully.
 
@@ -251,7 +251,7 @@ to the return array.
 
 Retrieves the contents of this folder, filtered by the supplied mask.
 
-Returns an array of File and Folder objects, or null if this object’s referenced folder does not exist.
+Returns an array of File and Folder objects, or null if this object's referenced folder does not exist.
 
 .. _folder-getRelativeURI:
 

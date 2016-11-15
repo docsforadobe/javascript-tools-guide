@@ -13,7 +13,7 @@ Resource specifications
 ScriptUIGraphics
 
 Encapsulates the drawing methods. The graphics object is associated with each
-control is found in the control object’s graphics property.
+control is found in the control object's graphics property.
 
 ScriptUIBrush
 

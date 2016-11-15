@@ -18,7 +18,7 @@ define completely customized UI elements that are rendered by the application in
 ScriptUIGraphics object
 -----------------------
 Most types of user-interface elements have a graphics property which contains an object of this type,
-which allows you to customize aspects of the element’s appearance, such as the color and font. Use an
+which allows you to customize aspects of the element's appearance, such as the color and font. Use an
 onDraw callback function to set these properties or call the functions.
 All measurements are in pixels.
 
@@ -121,10 +121,10 @@ width, height
 
 Optional. The width and height of the drawing region in pixels. If specified, the
 image is stretched or shrunk to fit into the given rectangular area. If omitted, the
-image’s original width or height is used.
+image's original width or height is used.
 
 Draws an image within the given rectangular region, using the image file from the given image
-object that is appropriate to the control’s current state.
+object that is appropriate to the control's current state.
 Returns undefined.
 drawOSControl()
 controlObj.graphics.drawOSControl ( )
@@ -537,21 +537,21 @@ In the following example, the script forces a visual update for a customButton e
 enters or leaves the button, by handling mouseover or mouseout events for the custom button:
 var res =
 """palette {
-text:’Custom elements demo’,
-properties:{ closeOnKey:’OSCmnd+W’, resizeable:true },
+text:'Custom elements demo',
+properties:{ closeOnKey:'OSCmnd+W', resizeable:true },
 customBtn: Custom {
-type:’customButton’,
-text:’Redraw original image’
+type:'customButton',
+text:'Redraw original image'
 },
 customImageViewer: Custom {
-type:’customView’,
-alignment:[’fill’,’fill’]
+type:'customView',
+alignment:['fill','fill']
 }
 }""";
 var w = new Window (res);
 w.customBtn.onDraw = drawButton;
-w.customBtn.addEventListener (’mouseover’, btnMouseEventHandler, false);
-w.customBtn.addEventListener (’mouseout’, btnMouseEventHandler, false);
+w.customBtn.addEventListener ('mouseover', btnMouseEventHandler, false);
+w.customBtn.addEventListener ('mouseout', btnMouseEventHandler, false);
 ...
 function btnMouseEventHandler (event) {
 try {

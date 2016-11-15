@@ -187,7 +187,7 @@ These properties are available for ``File`` objects.
                            ``Unix`` - UNIX style
 **localizedName**  String  A localized version of the file name portion of the absolute URI for the
                            referenced file, without the path specification. Read only.
-**modified**       Date    The date of the referenced file’s last modification, or null if the object
+**modified**       Date    The date of the referenced file's last modification, or null if the object
                            does not refer to a file on disk. Read only.
 **name**           String  The file name portion of the absolute URI for the referenced file, without
                            the path specification. Read only.
@@ -245,7 +245,7 @@ copy()
 - ``target``: A string with the URI path to the target location, or a File object that references the
   target location.
 
-Copies this object’s referenced file to the specified target location. Resolves any aliases to find the
+Copies this object's referenced file to the specified target location. Resolves any aliases to find the
 source file. If a file exists at the target location, it is overwritten.
 
 Returns true if the copy was successful, false otherwise.
@@ -340,8 +340,8 @@ openDlg()
 
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
 or files, and creates new File objects to represent the selected files. Differs from the class method
-openDialog() in that it presets the current folder to this File object’s parent folder and the current
-file to this object’s associated file.
+openDialog() in that it presets the current folder to this File object's parent folder and the current
+file to this object's associated file.
 
 If the user clicks **OK**, returns a File or Folder object for the selected file or folder, or an array of
 objects. If the user cancels, returns ``null``.
@@ -437,8 +437,8 @@ saveDlg()
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
 location to which to save information, and creates a new File object to represent the selected file.
 
-Differs from the class method :ref:`file-saveDialog` in that it presets the current folder to this File object’s
-parent folder and the file to this object’s associated file.
+Differs from the class method :ref:`file-saveDialog` in that it presets the current folder to this File object's
+parent folder and the file to this object's associated file.
 
 If the user clicks **OK**, returns a File object for the selected file. If the user cancels, returns ``null``.
 

@@ -299,7 +299,7 @@ You are responsible for manually updating the !Version! portion with your own ve
 
 Undo and redo
 *************
-Choose **Undo** or **Redo** from the **Edit** menu or from the document window’s right-click context menu to
+Choose **Undo** or **Redo** from the **Edit** menu or from the document window's right-click context menu to
 revoke and reinstate multiple editing changes sequentially. The change history is kept from when a file is
 created or loaded, and maintained through file-save operations.
 

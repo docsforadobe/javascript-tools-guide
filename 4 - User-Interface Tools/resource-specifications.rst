@@ -15,19 +15,19 @@ Controls are defined as properties within windows and other containers. For each
 name of the control, followed by the properties of the control enclosed in braces. For example, the
 following specifies a button:
 
-testBtn: Button { text: ’Test’ }
+testBtn: Button { text: 'Test' }
 
 The following resource string specifies a panel that contains grouped StaticText and EditText controls:
-"msgPnl: Panel { orientation:’column’, alignChildren:[’right’, ’top’],\
-text: ’Messages’, \
+"msgPnl: Panel { orientation:'column', alignChildren:['right', 'top'],\
+text: 'Messages', \
 title: Group { \
-st: StaticText { text:’Alert box title:’ }, \
-et: EditText { text:’Sample Alert’, characters:35 } \
+st: StaticText { text:'Alert box title:' }, \
+et: EditText { text:'Sample Alert', characters:35 } \
 }
 msg: Group { \
-st: StaticText { text:’Alert message:’ }, \
+st: StaticText { text:'Alert message:' }, \
 et: EditText { properties:{multiline:true}, \
-text:’<your message here>’ \
+text:'<your message here>' \
 } \
 }"
 
@@ -69,11 +69,11 @@ The resource specification format can also be used to create a single element or
 elements. For instance, if the alertBuilderResource in the example did not contain the panel
 btnPnlResource, you could define that resource separately, then add it to the dialog as follows:
 var btnPnlResource =
-"btnPnl: Panel { orientation:’row’, \
-text: ’Build it’, \
-testBtn: Button { text:’Test’ }, \
-buildBtn: Button { text:’Build’, properties:{name:’ok’} }, \
-cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
+"btnPnl: Panel { orientation:'row', \
+text: 'Build it', \
+testBtn: Button { text:'Test' }, \
+buildBtn: Button { text:'Build', properties:{name:'ok'} }, \
+cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 }";
 dlg = new Window(alertBuilderResource);
 dlg.btnPnl = dlg.add(btnPnlResource);

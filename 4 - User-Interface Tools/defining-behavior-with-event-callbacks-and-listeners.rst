@@ -24,7 +24,7 @@ The ListBox also generates an event when the user double-clicks an item. To hand
 callback function for the onDoubleClick event.
 Both containers and controls generate events just before they are drawn, that allow you to customize
 their appearance. To handle these events, define callback functions for onDraw. Your handler can
-modify or control how the container or control is drawn using the methods defined in the control’s
+modify or control how the container or control is drawn using the methods defined in the control's
 associated ScriptUIGraphics object.
 In Windows only, you can register a key sequence as a shortcutKey for a window or for most types of
 controls. To handle the key sequence, define a callback function for onShortcutKey in that control.
@@ -101,21 +101,21 @@ cascading of an event through a hierarchy of containers and controls.
 Use windowObj.addEventListener() or controlObj.addEventListener() to register a handler. The function
 you register receives an event object (from the UIEvent base class) that encapsulates the event
 information. As an event cascades down through a hierarchy and back up through the hierarchy, your
-handler can respond at any level, or use the UIEvent object’s stopPropagation() method to stop the event
+handler can respond at any level, or use the UIEvent object's stopPropagation() method to stop the event
 propagation at some level.
 You can register:
 The name of a handler function defined in the extension that takes one argument, the event object.
 For example:
 
-myButton.addEventListener( ’click’, myFunction );
+myButton.addEventListener( 'click', myFunction );
 
 A locally defined handler function that takes one argument, the event object. For example:
-myButton.addEventListener( ’click’, ’function(e){/*handler code*/}’);
+myButton.addEventListener( 'click', 'function(e){/*handler code*/}');
 
 The handler or registered code statement is executed when the specified event occurs in the target. A
 script can programmatically simulate an event by creating an event objects with
-ScriptUI.events.events.createEvent(), and passing it to an event target’s dispatchEvent() function.
-You can remove a handler that has been previously registered by calling the event target’s
+ScriptUI.events.events.createEvent(), and passing it to an event target's dispatchEvent() function.
+You can remove a handler that has been previously registered by calling the event target's
 removeEventListener() function. The parameters you pass to this function must be identical to those
 passed to the addEventListener() call that registered the handler. Typically, a script would register all event
 handlers during initialization, and unregister them during termination; however, unregistering handlers
@@ -225,18 +225,18 @@ propagation is complete.
 For example, suppose a dialog window contains a group which contains a button. A script registers an
 event handler function for the click event at the Window object, another handler at the group object, and
 a third handler at the button object (the actual target).
-When the user clicks the button, the Window object’s handler is called first (during the capture phase), then
-the button object’s handler (during the at-target phase). Finally, ScriptUI calls the handler registered with
+When the user clicks the button, the Window object's handler is called first (during the capture phase), then
+the button object's handler (during the at-target phase). Finally, ScriptUI calls the handler registered with
 the group object (during the bubble phase).
 If you register a handler at an ancestor object of the actual event target, you can specify the third
-argument to addEventListener(), so that the ancestor’s handler responds only in the capture phase, not in
+argument to addEventListener(), so that the ancestor's handler responds only in the capture phase, not in
 
 the bubbling phase. For example, the following click handler, registered with the parent dialog object,
 responds only in the capture phase:
 myDialog.addEventListener("click", handleAllItems, true);
 
 This value is false by default, so if it is not supplied, the handler can respond only in the bubbling phase
-when the object’s descendent is the target, or when the object is itself the target of the event (the
+when the object's descendent is the target, or when the object is itself the target of the event (the
 at-target phase).
 To distinguish which of multiple registered handlers is being executed at any given time, the event object
 provides the eventPhase property, and the currentTarget property, which In the capture and bubbling

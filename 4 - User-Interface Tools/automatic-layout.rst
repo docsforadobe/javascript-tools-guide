@@ -26,7 +26,7 @@ the properties of the default layout manager object, or create a new, custom lay
 more specialized layout behavior. See :ref:`custom-layout-manager-example`.
 Child elements of a container can be organized in a single row or column, or in a stack, where the elements
 overlap one other in the same region of the container, and only the top element is fully visible. This is
-controlled by the container’s orientation property, which can have the value row, column, or stack.
+controlled by the container's orientation property, which can have the value row, column, or stack.
 You can nest Panel and Group containers to create more complex organizations. For example, to display
 two columns of controls, you can create a panel with a row orientation that in turn contains two groups,
 each with a column orientation.
@@ -34,9 +34,9 @@ Containers have properties to control inter-element spacing and margins within t
 manager provides defaults if these are not set.
 The alignment of child elements within a container is controlled by the alignChildren property of the
 container, and the alignment property of the individual controls. The alignChildren property
-determines an overall strategy for the container, which can be overridden by a particular child element’s
+determines an overall strategy for the container, which can be overridden by a particular child element's
 alignment value.
-A layout manager can determine the best size for a child element through the element’s preferredSize
+A layout manager can determine the best size for a child element through the element's preferredSize
 property. The value defaults to dimensions determined by ScriptUI based on characteristics of the control
 type and variable characteristics such as a displayed text string, and the font and size used to display text.
 A value of -1 for either the width or height in the preferredSize value causes the layout manager to
@@ -57,11 +57,11 @@ combinations of values for these properties. The examples are based on a simple 
 StaticText, Button and EditText element, created (using Resource specifications) as follows:
 var w = new Window(
 "window { \
-orientation: ’row’, \
+orientation: 'row', \
 st: StaticText { }, \
-pb: Button { text: ’OK’ }, \
+pb: Button { text: 'OK' }, \
 
-et: EditText { characters:4, justify:’right’ } \
+et: EditText { characters:4, justify:'right' } \
 }");
 w.show();
 
@@ -106,52 +106,52 @@ ScriptUI.Alignment.TOP]
 If you set the alignment value using a constant and then query the property, it returns an index number
 corresponding to the constant, rather than a string value.
 Elements in a row can be aligned along the vertical axis, in these ways:
-top - The element’s top edge is located at the top margin of its container.
-bottom - element’s bottom edge is located at the bottom margin of its container.
+top - The element's top edge is located at the top margin of its container.
+bottom - element's bottom edge is located at the bottom margin of its container.
 center - The element is centered within the top and bottom margins of its container.
-fill - The element’s height is adjusted to fill the height of the container between the top and
+fill - The element's height is adjusted to fill the height of the container between the top and
 
 bottom margins.
 
 Elements in a column can be aligned along the horizontal axis, in these ways:
-left - The element’s left edge is located at the left margin of its container.
-right - The element’s right edge is located at the right margin of its container.
+left - The element's left edge is located at the left margin of its container.
+right - The element's right edge is located at the right margin of its container.
 center - The element is centered within the right and left margins of its container.
-fill - The element’s width is adjusted to fill the width of the container between the right and left
+fill - The element's width is adjusted to fill the width of the container between the right and left
 
 margins.
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
-top - The element’s top edge is located at the top margin of its container, and the element is
+top - The element's top edge is located at the top margin of its container, and the element is
 centered within the right and left margins of its container.
-bottom - element’s bottom edge is located at the bottom margin of its container, and the element is
+bottom - element's bottom edge is located at the bottom margin of its container, and the element is
 
 centered within the right and left margins of its container.
 
-left - element’s left edge is located at the left margin of its container, and the element is centered
+left - element's left edge is located at the left margin of its container, and the element is centered
 
 within the top and bottom margins of its container.
 
-right - The element’s right edge is located at the right margin of its container, and the element is
+right - The element's right edge is located at the right margin of its container, and the element is
 
 centered within the top and bottom margins of its container.
 
 center - The element is centered within the top, bottom, right and left margins of its container.
-fill - The element’s height is adjusted to fill the height of the container between the top and
+fill - The element's height is adjusted to fill the height of the container between the top and
 
-bottom margins., and the element’s width is adjusted to fill the width of the container between the
+bottom margins., and the element's width is adjusted to fill the width of the container between the
 right and left margins.
 
 The following figure shows the results of creating the sample window with row orientation and the
-bottom and top alignment settings in the parent’s alignChildren property:
+bottom and top alignment settings in the parent's alignChildren property:
 
 The following figure shows the results of creating the sample window with column orientation and the
-right, left, and fill alignment settings in the parent’s alignChildren property. Notice how in the
+right, left, and fill alignment settings in the parent's alignChildren property. Notice how in the
 fill case, each element is made as wide as the widest element in the container:
 
-You can override the container’s child alignment, as specified by alignChildren, by setting the
+You can override the container's child alignment, as specified by alignChildren, by setting the
 alignment property of a particular child element. The following diagram shows the result of setting
-alignment to right for the EditText element, when the parent’s alignChildren value is left:
+alignment to right for the EditText element, when the parent's alignChildren value is left:
 
 Alignment in two dimensions
 You can set the alignment property with a two-string array instead of a single string, where the first string
@@ -192,7 +192,7 @@ Each element has a preferredSize property, which is initially defined with reaso
 dimensions for the element. The default value is calculated by ScriptUI, and is based on constant
 characteristics of each type of element, and variable characteristics such as the text string to be displayed
 in a button or text element.
-If an element’s size property is not defined, the layout manager uses the value of preferredSize to
+If an element's size property is not defined, the layout manager uses the value of preferredSize to
 determine the dimensions of each element during the layout process. Generally, you should avoid setting
 the preferredSize property explicitly, and let ScriptUI determine the best value based on the state of an
 element at layout time. This allows you to set the text properties of your user-interface elements using
@@ -223,20 +223,20 @@ row of buttons.
 res =
 "dialog { \
 
-info: Panel { orientation: ’column’, \
-text: ’Personal Info’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Name:’ }, \
+info: Panel { orientation: 'column', \
+text: 'Personal Info', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Name:' }, \
 e: EditText { characters: 30 } \
 }, \
-addr: Group { orientation: ’row’, \
-s: StaticText { text:’Street / City:’ }, \
+addr: Group { orientation: 'row', \
+s: StaticText { text:'Street / City:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
-buttons: Group { orientation: ’row’, \
-okBtn: Button { text:’OK’, properties:{name:’ok’} }, \
-cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
+buttons: Group { orientation: 'row', \
+okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 } \
 }";
 win = new Window (res);
@@ -247,7 +247,7 @@ In this simplest example, the columns are not vertically aligned. When you are u
 in your rows, a simple way to get an attractive alignment of the StaticText labels for your EditText
 fields is to align the child rows in the Panel to the right of the panel. In the example, add the following to
 the Panel specification:
-info: Panel { orientation: ’column’, alignChildren:’right’, \
+info: Panel { orientation: 'column', alignChildren:'right', \
 
 This creates the following result:
 
@@ -255,25 +255,25 @@ Suppose now that you need two panels, and want each panel to have the same width
 can specify this at the level of the dialog window object, the parent of both panels. Specify
 alignChildren='fill', which makes each child of the dialog match its width to the widest child.
 res =
-"dialog { alignChildren: ’fill’, \
-info: Panel { orientation: ’column’, alignChildren:’right’, \
-text: ’Personal Info’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Name:’ }, \
+"dialog { alignChildren: 'fill', \
+info: Panel { orientation: 'column', alignChildren:'right', \
+text: 'Personal Info', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Name:' }, \
 e: EditText { characters: 30 } \
 
 } \
 }, \
-workInfo: Panel { orientation: ’column’, \
-text: ’Work Info’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Company name:’ }, \
+workInfo: Panel { orientation: 'column', \
+text: 'Work Info', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Company name:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
-buttons: Group { orientation: ’row’, alignment: ’right’, \
-okBtn: Button { text:’OK’, properties:{name:’ok’} }, \
-cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
+buttons: Group { orientation: 'row', alignment: 'right', \
+okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 } \
 }";
 win = new Window (res); win.center(); win.show();
@@ -288,7 +288,7 @@ A stack orientation of a container places child elements so they are centered in
 enough to hold the widest child element, and tall enough to contain the tallest child element. If you
 arrange groups or panels in such a stack, you can show and hide them in different combinations to display
 a different set of controls in the same space, depending on other choices in the dialog.
-For example, this dialog changes dynamically according to the user’s choice in the DropDownList.
+For example, this dialog changes dynamically according to the user's choice in the DropDownList.
 
 The following script creates this dialog. It compresses the "Personal Info" and "Work Info" panels from the
 previous example into a single Panel that has two Groups arranged in a stack. A DropDownList allows the
@@ -297,24 +297,24 @@ function shows one group, and hides the other.
 
 res =
 "dialog { \
-whichInfo: DropDownList { alignment:’left’ }, \
-allGroups: Panel { orientation:’stack’, \
-info: Group { orientation: ’column’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Name:’ }, \
+whichInfo: DropDownList { alignment:'left' }, \
+allGroups: Panel { orientation:'stack', \
+info: Group { orientation: 'column', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Name:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
-workInfo: Group { orientation: ’column’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Company name:’ }, \
+workInfo: Group { orientation: 'column', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Company name:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
 }, \
-buttons: Group { orientation: ’row’, alignment: ’right’, \
-okBtn: Button { text:’OK’, properties:{name:’ok’} }, \
-cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
+buttons: Group { orientation: 'row', alignment: 'right', \
+okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 } \
 }";
 win = new Window (res);
@@ -325,9 +325,9 @@ this.items[g].group.visible = false; //hide all other groups
 this.selection.group.visible = true;//show this group
 }
 }
-var item = win.whichInfo.add (’item’, ’Personal Info’);
+var item = win.whichInfo.add ('item', 'Personal Info');
 item.group = win.allGroups.info;
-item = win.whichInfo.add (’item’, ’Work Info’);
+item = win.whichInfo.add ('item', 'Work Info');
 item.group = win.allGroups.workInfo;
 win.whichInfo.selection = win.whichInfo.items[0];
 win.center();
@@ -348,9 +348,9 @@ CHAPTER 4: User-Interface Tools
 Automatic layout
 
 /* Define a custom layout manager that arranges the children
-** of ’container’ in a stair-step fashion.*/
+** of 'container' in a stair-step fashion.*/
 function StairStepButtonLayout (container) { this.initSelf(container); }
-// Define its ’method’ functions
+// Define its 'method' functions
 function SSBL_initSelf (container) { this.container = container; }
 function SSBL_layout() {
 var top = 0, left = 0;
@@ -369,29 +369,29 @@ left += hspacing;
 }
 this.container.preferredSize = [width, top - vspacing];
 }
-// Attach methods to Object’s prototype
+// Attach methods to Object's prototype
 StairStepButtonLayout.prototype.initSelf = SSBL_initSelf;
 StairStepButtonLayout.prototype.layout = SSBL_layout;
 // Define a string containing the resource specification for the controls
 res = "dialog { \
-whichInfo: DropDownList { alignment:’left’ }, \
-allGroups: Panel { orientation:’stack’, \
-info: Group { orientation: ’column’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Name:’ }, \
+whichInfo: DropDownList { alignment:'left' }, \
+allGroups: Panel { orientation:'stack', \
+info: Group { orientation: 'column', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Name:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
-workInfo: Group { orientation: ’column’, \
-name: Group { orientation: ’row’, \
-s: StaticText { text:’Company name:’ }, \
+workInfo: Group { orientation: 'column', \
+name: Group { orientation: 'row', \
+s: StaticText { text:'Company name:' }, \
 e: EditText { characters: 30 } \
 } \
 }, \
 }, \
-buttons: Group { orientation: ’row’, alignment: ’right’, \
-okBtn: Button { text:’OK’, properties:{name:’ok’} }, \
-cancelBtn: Button { text:’Cancel’, properties:{name:’cancel’} } \
+buttons: Group { orientation: 'row', alignment: 'right', \
+okBtn: Button { text:'OK', properties:{name:'ok'} }, \
+cancelBtn: Button { text:'Cancel', properties:{name:'cancel'} } \
 } \
 }";
 
@@ -407,12 +407,12 @@ this.items[g].group.visible = false;
 this.selection.group.visible = true;
 }
 }
-var item = win.whichInfo.add (’item’, ’Personal Info’);
+var item = win.whichInfo.add ('item', 'Personal Info');
 item.group = win.allGroups.info;
-item = win.whichInfo.add (’item’, ’Work Info’);
+item = win.whichInfo.add ('item', 'Work Info');
 item.group = win.allGroups.workInfo;
 win.whichInfo.selection = win.whichInfo.items[0];
-// Override the default layout manager for the ’buttons’ group
+// Override the default layout manager for the 'buttons' group
 // with custom layout manager
 win.buttons.layout = new StairStepButtonLayout(win.buttons);
 win.center();
@@ -425,16 +425,16 @@ The AutoLayoutManager algorithm
 When a script creates a Window object and its elements and shows it the first time, the visible
 user-interface-platform window and controls are created. At this point, if no explicit placement of controls
 was specified by the script, all the controls are located at [0, 0] within their containers, and have default
-dimensions. Before the window is made visible, the layout manager’s layout method is called to assign
+dimensions. Before the window is made visible, the layout manager's layout method is called to assign
 locations and sizes for all the elements and their containers.
-The default AutoLayoutManager’s layout method performs these steps when invoked during the initial
-call to a Window object’s show method:
+The default AutoLayoutManager's layout method performs these steps when invoked during the initial
+call to a Window object's show method:
 1. Read the bounds property for the managed container; if undefined, proceed with auto layout. If
 defined, assume that the script has explicitly placed the elements in this container, and cancel the
 layout operation (if both the location and size property have been set, this is equivalent to setting
 the bounds property, and layout does not proceed).
-2. Determine the container’s margins and inter-element spacing from its margins and spacing
-properties, and the orientation and alignment of its child elements from the container’s orientation
+2. Determine the container's margins and inter-element spacing from its margins and spacing
+properties, and the orientation and alignment of its child elements from the container's orientation
 and alignChildren properties. If any of these properties are undefined, use default settings obtained
 from platform and user-interface framework-specific default values.
 3. Enumerate the child elements, and for each child:
@@ -442,17 +442,17 @@ If the child is a container, call its layout manager (that is, execute this enti
 container).
 Read its alignment property; if defined, override the default alignment established by the parent
 container with its alignChildren property.
-Read its size property: if defined, use it to determine the child’s dimensions. If undefined, read its
-preferredSize property to get the child’s dimensions. Ignore the child’s location property.
+Read its size property: if defined, use it to determine the child's dimensions. If undefined, read its
+preferredSize property to get the child's dimensions. Ignore the child's location property.
 All the per-child information is collected for later use.
 4. Based on the orientation, calculate the trial location of each child in the row or column, using
-inter-element spacing and the container’s margins.
+inter-element spacing and the container's margins.
 
 5. Determine the column, row, or stack dimensions, based on the dimensions of the children.
 6. Using the desired alignment for each child element, adjust its trial location relative to the edges of its
 container.
 7. Set the bounds property for each child element.
-8. Set the container’s preferredSize property, based on the margins and dimensions of the row or
+8. Set the container's preferredSize property, based on the margins and dimensions of the row or
 column of child elements.
 
 .. _automatic-layout-restrictions:
@@ -464,5 +464,5 @@ The default layout manager does not attempt to lay out a container that has a de
 property. The script programmer can override this behavior by defining a custom layout manager for
 the container.
 The layout mechanism does not track changes to element sizes after the initial layout has occurred.
-The script can initiate another layout by calling the layout manager’s layout method, and can force
+The script can initiate another layout by calling the layout manager's layout method, and can force
 the manager to recalculate the sizes of all child containers by passing the optional argument as true.

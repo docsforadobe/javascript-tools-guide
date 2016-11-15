@@ -23,13 +23,13 @@ Optional. A bounds specification that describes the size and position of the new
 control or container, relative to its parent. See Bounds object for specification
 formats.
 If supplied, this value creates a new Bounds object which is assigned to the new
-object’s bounds property.
+object's bounds property.
 
 text
 
 Optional. String. Initial text to be displayed in the control as the title, label, or
 contents, depending on the control type. If supplied, this value is assigned to
-the new object’s text property.
+the new object's text property.
 
 creation_props
 
@@ -64,7 +64,7 @@ onClick callback if the control is clicked or if its notify() method is
 called.
 To add to a window w:
 w.add ("button" [, bounds, text, creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 text: Optional. The text displayed in the control.
 creation_properties: Optional. An object that contains any of
 
@@ -85,7 +85,7 @@ control is clicked or if its notify() method is called.
 To add to a window w:
 w.add ("checkbox" [, bounds, text,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 text: Optional. The text displayed in the control.
 creation_properties: Optional. An object that contains any of
 
@@ -107,11 +107,11 @@ DropDownList A drop-down list with zero or more items. Calls the onChange
 
 Description
 callback if the item selection is changed by a script or the user, or if
-the object’s notify() method is called.
+the object's notify() method is called.
 To add to a window w:
 w.add ("dropdownlist", bounds [, items,
 {creation_properties}]);
-bounds: The control’s position and size.
+bounds: The control's position and size.
 items: Optional. Supply this argument or the
 creation_properties argument, not both. An array of strings
 for the text of each list item. A ListItem object is created for
@@ -141,7 +141,7 @@ property contains currently selected text.
 To add to a window w:
 w.add ("edittext" [, bounds, text,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 text: Optional. The text displayed in the control.
 creation_properties: Optional. An object that contains any of
 
@@ -164,7 +164,7 @@ Control objects
 
 Class name
 
-edittext (cont’d)
+edittext (cont'd)
 
 Description
 enterKeySignalsOnChange: When false (the default), the
@@ -205,7 +205,7 @@ ActionScript environment. See :ref:`flashplayer-control-functions`.
 To add to a window w:
 w.add ("flashplayer" [, bounds, movieToLoad,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 movieToLoad: Optional. A path or URL string or File object for
 the SWF file to load into the player.
 creation_properties: Optional. An object that contains any of
@@ -230,7 +230,7 @@ Hiding a group hides all its children. Making it visible makes visible
 those children that are not individually hidden.
 To add to a window w:
 w.add ("group" [, bounds, {creation_properties}]);
-bounds: Optional. The element’s position and size.
+bounds: Optional. The element's position and size.
 creation_properties: Optional. An object that contains any of
 
 the following properties:
@@ -245,7 +245,7 @@ callback if the control is clicked or if its notify() method is called.
 To add to a window w:
 w.add ("iconbutton" [, bounds, icon,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 icon: Optional. The named resource for the icon or family of
 
 icons displayed in the button control, or a pathname or File
@@ -268,7 +268,7 @@ toggle: For a button-style control, a value of true causes it
 
 to get a button-pressed appearance the first time it is
 clicked, and alternate with the unpressed appearance each
-time it is clicked. The toggle state is reflected in the control’s
+time it is clicked. The toggle state is reflected in the control's
 value property.
 
 Control objects
@@ -287,7 +287,7 @@ Displays an icon or image.
 
 To add to a window w:
 w.add ("image" [, bounds, icon, {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 icon: Optional. The named resource for the icon or family of
 
 icons displayed in the image control, or a pathname or File
@@ -305,7 +305,7 @@ ListItem
 
 The choice items in a list box or drop-down list. The objects are
 created when items are specified on creation of the parent list
-object, or afterward using the list control’s add() method.
+object, or afterward using the list control's add() method.
 Items in a drop-down list can be of type separator, in which case
 they cannot be selected, and are shown as a horizontal line.
 Item objects have these properties which are not found in other
@@ -321,12 +321,12 @@ listbox
 ListBox
 
 A list box with zero or more items. Calls the onChange callback if the
-item selection is changed by a script or the user, or if the object’s
+item selection is changed by a script or the user, or if the object's
 notify() method is called. A double click on an item selects that item
 and calls the onDoubleClick callback.
 To add to a window w:
 w.add ("listbox", bounds [, items, {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 items: Optional. An array of strings for the text of each list item.
 A ListItem object is created for each item. Supply this
 argument, or the items property in creation_properties, not
@@ -339,7 +339,7 @@ Control objects
 
 Class name
 
-listbox (cont’d)
+listbox (cont'd)
 
 Description
 creation_properties: Optional. An object that contains any of
@@ -381,7 +381,7 @@ children. Making it visible makes visible those children that are not
 individually hidden.
 To add to a window w:
 w.add ("panel" [, bounds, text, {creation_properties}]);
-bounds: Optional. The element’s position and size. A panel
+bounds: Optional. The element's position and size. A panel
 
 whose width is 0 appears as a vertical line. A panel whose height
 is 0 appears as a horizontal line.
@@ -394,7 +394,7 @@ Control objects
 
 Class name
 
-panel (cont’d)
+panel (cont'd)
 
 Description
 creation_properties: Optional. An object that contains the
@@ -424,7 +424,7 @@ to set it to a different value are silently ignored.
 To add to a window w:
 w.add ("progressbar" [, bounds, value, minvalue,
 maxvalue, creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 value: Optional. The initial position of the progress indicator.
 
 Default is 0.
@@ -464,7 +464,7 @@ unsets the original one.
 To add to a window w:
 w.add ("radiobutton" [, bounds, text,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 text: Optional. The text displayed in the control.
 creation_properties: Optional. An object that contains the
 
@@ -483,7 +483,7 @@ Calls the onChange callback after the position of the indicator is
 changed or if its notify() method is called. Calls the onChanging
 callback repeatedly while the user is moving the indicator.
 The value property contains the current position of the
-scrollbar’s indicator within the scrolling area, within the range of
+scrollbar's indicator within the scrolling area, within the range of
 minvalue and maxvalue.
 The stepdelta property determines the scrolling unit for the up
 or down arrow; default is 1.
@@ -497,13 +497,13 @@ Control objects
 
 Class name
 
-scrollbar (cont’d)
+scrollbar (cont'd)
 
 Description
 To add to a window w:
 w.add ("scrollbar" [, bounds, value, minvalue, maxvalue,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 value: Optional. The initial position of the scroll indicator.
 
 Default is 0.
@@ -535,7 +535,7 @@ within the range of minvalue and maxvalue.
 To add to a window w:
 w.add ("slider" [, bounds, value, minvalue, maxvalue,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 value: Optional. The initial position of the indicator. Default is 0.
 minvalue: Optional. The minimum value that the value
 property can be set to. Default is 0. Together with maxvalue,
@@ -566,7 +566,7 @@ A text field that the user cannot change.
 To add to a window w:
 w.add ("statictext" [, bounds, text,
 {creation_properties}]);
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 text: Optional. The text displayed in the control.
 creation_properties: Optional. An object that contains any of
 
@@ -593,7 +593,7 @@ Tab
 A container for other types of controls. Differs from a Panel element
 in that is must be a direct child of a TabbedPanel element, the title is
 shown in the selection tab, and it does not have a script-definable
-border. The currently active tab is the value of the parent’s
+border. The currently active tab is the value of the parent's
 selection property.
 Containers have additional properties that control the children; see
 :ref:`container-properties`. Hiding a panel hides all its
@@ -614,7 +614,7 @@ Control objects
 
 Class name
 
-tab (cont’d)
+tab (cont'd)
 
 Description
 creation_properties: Optional. An object that contains the
@@ -632,7 +632,7 @@ Containers have additional properties that control the children; see
 :ref:`container-properties`. Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
-The selected tab child is the value of the parent’s selection
+The selected tab child is the value of the parent's selection
 property. One and only one of the tab children must be selected;
 selecting one deselects the others. When the value of the selection
 property changes, either by a user selecting a different tab, or by a
@@ -641,7 +641,7 @@ notification.
 To add to a window w:
 w.add ("tabbedpanel" [, bounds, text,
 {creation_properties}]);
-bounds: Optional. The element’s position and size. This
+bounds: Optional. The element's position and size. This
 
 determines the sizes and positions of the tab children.
 
@@ -658,11 +658,11 @@ TreeView
 A hierarchical list whose items can contain child items. Items at any
 level of the tree can be individually selected. Calls the onChange
 callback if the item selection is changed by a script or the user, or if
-the object’s notify() method is called.
+the object's notify() method is called.
 To add to a window w:
 w.add ("treeview" [, bounds, items,
 {creation_properties}])
-bounds: Optional. The control’s position and size.
+bounds: Optional. The control's position and size.
 items: Optional. An array of strings for the text of each top-level
 list item. A ListItem object is created for each item. An item
 with the type node can contain child items. Supply this
@@ -676,7 +676,7 @@ Control objects
 
 Class name
 
-treeview (cont’d)
+treeview (cont'd)
 
 Description
 creation_properties: Optional. An object that contains any of
@@ -745,7 +745,7 @@ fill
 
 Control objects
 
-alignment (cont’d)
+alignment (cont'd)
 
 For an array value, the first string element defines the horizontal
 alignment and the second element defines the vertical alignment.
@@ -761,8 +761,8 @@ Bounds
 A Bounds object describing the boundaries of the element, in screen
 coordinates for Window elements, and parent-relative coordinates for
 child elements (compare windowBounds). For windows, the bounds
-refer only to the window’s content region.
-Setting an element’s size or location changes its bounds property,
+refer only to the window's content region.
+Setting an element's size or location changes its bounds property,
 and vice-versa.
 
 characters
@@ -820,7 +820,7 @@ graphics
 
 Object
 
-A ScriptUIGraphics object that can be used to customize the control’s
+A ScriptUIGraphics object that can be used to customize the control's
 appearance, in response to the onDraw event.
 
 helpTip
@@ -892,7 +892,7 @@ jumpdelta
 
 Number
 
-The amount to increment or decrement a Scrollbar indicator’s
+The amount to increment or decrement a Scrollbar indicator's
 position when the user clicks ahead or behind the moveable element.
 Default is 20% of the range between the maxvalue and minvalue
 property values.
@@ -923,8 +923,8 @@ element. These are screen coordinates for Window elements, and
 parent-relative coordinates for other elements.
 
 The location is defined as [bounds.x, bounds.y]. Setting an
-element’s location changes its bounds property, and vice-versa. By
-default, location is undefined until the parent container’s layout
+element's location changes its bounds property, and vice-versa. By
+default, location is undefined until the parent container's layout
 manager is invoked.
 maximumSize
 
@@ -1056,7 +1056,7 @@ by a LayoutManager.
 Although a script can explicitly set size before the layout manager is
 invoked to establish an element size other than the preferredSize
 or the default size, this is not recommended.
-Defined as [bounds.width, bounds.height]. Setting an element’s
+Defined as [bounds.width, bounds.height]. Setting an element's
 size changes its bounds property, and vice-versa.
 
 stepdelta
@@ -1064,7 +1064,7 @@ stepdelta
 Number
 
 The amount by which to increment or decrement a Scrollbar
-element’s position when the user clicks a stepper button.
+element's position when the user clicks a stepper button.
 
 
 subitems
@@ -1112,7 +1112,7 @@ textselection value is reset to an empty string after it modifies the
 text value.
 
 .. note:: Setting the textselection property before the edittext
-  control’s parent Window exists is an undefined operation.
+  control's parent Window exists is an undefined operation.
 
 title
 
@@ -1213,7 +1213,7 @@ windowBounds
 Bounds
 
 A Bounds object that contains the bounds of this control in the
-containing window’s coordinates. Compare bounds, in which
+containing window's coordinates. Compare bounds, in which
 coordinates are relative to the immediate parent container. Read only.
 
 function_name
@@ -1298,7 +1298,7 @@ An object of the UIEvent base class.
 Simulates the occurrence of an event in this target. A script can create an event object for a specific
 event, using ScriptUI.events.events.createEvent(), and pass it to this method to start the event
 propagation for the event.
-Returns false if any of the registered listeners that handled the event called the event object’s
+Returns false if any of the registered listeners that handled the event called the event object's
 preventDefault() method, true otherwise.
 find()
 listObj.find(text)
@@ -1306,7 +1306,7 @@ text
 
 The text of the item to find.
 
-For list objects (ListBox, DropDownList or TreeView) only. Looks in this object’s items array for an
+For list objects (ListBox, DropDownList or TreeView) only. Looks in this object's items array for an
 item object with the given text value.
 Returns the item object if found; otherwise, returns null.
 hide()
@@ -1359,12 +1359,12 @@ Returns undefined.
 toString()
 listItemObj.toString()
 
-For ListItem controls only. Retrieves the value of this item’s text property as a string.
+For ListItem controls only. Retrieves the value of this item's text property as a string.
 Returns a String.
 valueOf()
 listItemObj.valueOf()
 
-For ListItem controls only. Retrieves the index number of this item in the parent list’s items array.
+For ListItem controls only. Retrieves the index number of this item in the parent list's items array.
 Returns a Number.
 
 List control object functions
@@ -1401,15 +1401,15 @@ child
 
 The item or child to remove, specified by 0-based index, text value, or as a control object.
 
-For containers (Panel, Group), removes the specified child control from the container’s children
+For containers (Panel, Group), removes the specified child control from the container's children
 array.
 For list objects (ListBox, DropDownList or TreeView) only, removes the specified item from this
-object’s items array. No error results if the item does not exist.
+object's items array. No error results if the item does not exist.
 Returns undefined.
 removeAll()
 listObj.removeAll()
 
-For list objects (ListBox, DropDownList or TreeView) only. Removes all items from the object’s items
+For list objects (ListBox, DropDownList or TreeView) only. Removes all items from the object's items
 array.
 Returns undefined.
 revealItem()
@@ -1432,7 +1432,7 @@ The stopMovie() and playMovie() sequence does not make sense for some SWF files 
 Flash Authoring, depending on the exact details of how they were implemented. The sequence
 may not correctly reset the file to the initial state (when the rewind argument to playMovie() is
 true) nor suspend then resume the execution of the file (when rewind is false).
-Using stopMovie() from the player’s hosting environment has no effect on an SWF file playing in a
+Using stopMovie() from the player's hosting environment has no effect on an SWF file playing in a
 ScriptUI Flash Player element. It is, however, possible to produce an SWF using Flash Authoring
 that can stop itself in response to user interaction.
 Do not call playMovie() when an SWF file is already playing.
@@ -1485,7 +1485,7 @@ flashPlayerObj.stopMovie()
 
 Halts playback of the current movie.
 
-.. note:: Does not work when called from the player’s hosting environment.
+.. note:: Does not work when called from the player's hosting environment.
 
 Returns undefined.
 
@@ -1552,13 +1552,13 @@ clicking outside it or tabbing out of it.
 
 onDoubleClick
 
-Called when the user double clicks an item in a ListBox control. The list’s selection
+Called when the user double clicks an item in a ListBox control. The list's selection
 property is set to the clicked item.
 
 onDraw
 
 Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control’s associated ScriptUIGraphics object.
+or control the appearance, using the control's associated ScriptUIGraphics object.
 Handler takes one argument, a DrawState object.
 
 onExpand

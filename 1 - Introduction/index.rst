@@ -22,7 +22,7 @@ provide additional tools for other users.
 but unfamiliar with JavaScript, see publicly available Web resources and documents, such as:
 
     - The public JavaScript standards organization web site: www.ecma-international.org
-    - JavaScript: The Definitive Guide, David Flanagan, O’Reily Media Inc, 2002. ISBN 0-596-00048-0
+    - JavaScript: The Definitive Guide, David Flanagan, O'Reily Media Inc, 2002. ISBN 0-596-00048-0
     - JavaScript Bible, Danny Goodman, Hungry Minds Inc, 2001. ISBN 0-7645-4718-6
     - Adobe Scripting, Chandler McWilliams, Wiley Publishing, Inc., 2003. ISBN 0-7645-2455-0
 

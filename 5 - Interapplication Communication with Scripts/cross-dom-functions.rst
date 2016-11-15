@@ -82,7 +82,7 @@ files
 A File object or array of File objects. For applications that use compound documents,
 this should be a project file.
 
-Performs the equivalent of the target application’s File > Open command on the specified files.
+Performs the equivalent of the target application's File > Open command on the specified files.
 Returns undefined.
 
 openAsNew()
@@ -102,7 +102,7 @@ Illustrator: creation options are:
 
 See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript
 Reference.
-Performs the equivalent of the target application’s File > New command. Returns true on success.
+Performs the equivalent of the target application's File > New command. Returns true on success.
 print()
 appspec.print(files)
 files
@@ -110,12 +110,12 @@ files
 A File object or array of File objects. For applications that use compound documents,
 this should be a project file.
 
-Performs the equivalent of the target application’s File > Print command on the specified files.
+Performs the equivalent of the target application's File > Print command on the specified files.
 Returns undefined.
 quit()
 appspec.quit()
 
-Performs the equivalent of the target application’s File > Exit or File > Close command. Returns
+Performs the equivalent of the target application's File > Exit or File > Close command. Returns
 undefined.
 
 .. note:: This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the

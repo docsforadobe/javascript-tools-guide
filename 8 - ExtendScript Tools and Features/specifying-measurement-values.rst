@@ -236,7 +236,7 @@ You can convert a unitValue from an absolute measurement to pixels or percents i
 myMeterVal = UnitValue (10, "m"); // 10 meters
 myBase = UnitValue (1, "km");
 myMeterVal.baseUnit = myBase; //as a percentage of 1 kilometer
-pctOfKm = myMeterVal.as (’%’); // => 1
+pctOfKm = myMeterVal.as ('%'); // => 1
 myVal = UnitValue ("1 in"); // Define measurement in inches
 // convert to pixels using default base
 myVal.convert ("px"); // => value=72 type=px
@@ -287,7 +287,7 @@ b + a;
 
 Comparisons (=, ==, <, >, <=, >=)
 If one operand is a unitValue object and the other is a number, JavaScript compares the number with
-the unitValue’s numeric value.
+the unitValue's numeric value.
 If both operands are unitValue objects, JavaScript converts both objects to the same unit, and
 compares the converted numeric values.
 For example:

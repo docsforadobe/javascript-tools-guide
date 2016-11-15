@@ -4,7 +4,7 @@ Localizing ExtendScript strings
 ===============================
 Localization is the process of translating and otherwise manipulating an interface so it looks as if it were
 originally designed for a particular language. ExtendScript enables you to localize the strings in your
-script’s user interface. The language is chosen by the application at startup, according to the current locale
+script's user interface. The language is chosen by the application at startup, according to the current locale
 provided by the operating system.
 For parts of your user interface that are displayed on the screen, you may want to localize the displayed
 text. You can localize any string explicitly, using the Global localize function, which takes as its argument a
@@ -17,7 +17,7 @@ an alert dialog.
 msg = { en: "Hello, world", de: "Hallo Welt" };
 alert (msg);
 
-ExtendScript matches the current locale and platform to one of the object’s properties and uses the
+ExtendScript matches the current locale and platform to one of the object's properties and uses the
 associated string. On a German system, for example, the property de: "Hallo Welt" is converted to the
 string "Hallo Welt".
 
@@ -95,7 +95,7 @@ en: "Press Ctrl-S to select a color."
 
 All these identifiers are case sensitive; for example, EN_US is not valid.
 How locale names are resolved
-1. ExtendScript gets the hosting application’s locale; for example, en_US.
+1. ExtendScript gets the hosting application's locale; for example, en_US.
 2. It appends the platform identifier; for example, en_US_Win.
 3. It looks for a matching property, and if found, returns the value string.
 4. If not found, it removes the platform identifier (for example, en_US) and retries.
@@ -144,7 +144,7 @@ args
 Optional. Additional JavaScript expressions matching variables in the string
 values supplied in the localization object. The first argument corresponds to
 the variable %1, the second to %2, and so on.
-Each expression is evaluated and the result inserted in the variable’s position
+Each expression is evaluated and the result inserted in the variable's position
 in the returned string.
 
 ZString

@@ -42,6 +42,7 @@ Welcome to The Javascript Tools Guide
     4 - User-Interface Tools/drawing-objects
     4 - User-Interface Tools/resource-specifications
     4 - User-Interface Tools/defining-behavior-with-event-callbacks-and-listeners
+    4 - User-Interface Tools/communicating-with-the-flash-application
     4 - User-Interface Tools/automatic-layout
     4 - User-Interface Tools/managing-control-titles
     4 - User-Interface Tools/localization-in-scriptui-objects

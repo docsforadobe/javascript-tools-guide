@@ -1,3 +1,6 @@
+.. todo::
+    Some formatting of inline text and links
+
 .. _automatic-layout:
 
 Automatic layout

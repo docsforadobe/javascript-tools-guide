@@ -36,6 +36,8 @@ Size and location object types
 The following table shows the property-value object types, the element properties that create and contain
 them, and their array and object-property formats.
 
+.. _bounds:
+
 Bounds
 ******
 Defines the boundaries of a window within the screen's coordinate space, or of a
@@ -50,6 +52,8 @@ returns a ``Bounds`` object.
   or ``x``, ``y``, ``width``, ``height``.
 - An array must have values in the order [left, top, right, bottom].
 
+.. _dimension:
+
 Dimension
 *********
 Defines the size of a Window or user-interface element. Contains an array, ``[ width, height ]``,
@@ -60,6 +64,8 @@ property. (A ``preferredSize`` of -1 causes the size to be calculated automatica
 
 - An object must contain properties named ``width`` and ``height``.
 - An array must have values in the order ``[ width, height ]``.
+
+.. _margins:
 
 Margins
 *******
@@ -74,6 +80,8 @@ A ``Margins`` object is created when you set an element's ``margins`` property.
 
 You can also set the margins property to a number; all of the array values are then set to
 this number.
+
+.. _point:
 
 Point
 *****

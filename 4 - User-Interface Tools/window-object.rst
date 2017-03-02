@@ -146,6 +146,8 @@ Container properties
 The following table shows properties that apply to Window objects and container objects (controls of type
 panel, tabbedpanel, tab, and group).
 
+.. _container-alignChildren:
+
 alignChildren
 *************
 Type: String, or Array of 2 Strings
@@ -189,6 +191,8 @@ Values are not case sensitive.
 
 CHAPTER 4: User-Interface Tools
 
+.. _container-alignment:
+
 alignment
 *********
 Type: String, or Array of 2 Strings
@@ -229,6 +233,8 @@ of top, bottom, center, or fill.
 
 Values are not case sensitive.
 
+.. _container-bounds:
+
 bounds
 ******
 Type: :ref:`Bounds`
@@ -239,6 +245,8 @@ apply to containers of type tab, whose bounds are determined
 by the parent tabbedpanel container.
 
 Read only.
+
+.. _container-children:
 
 children
 ********
@@ -255,12 +263,16 @@ Read only.
 .. todo::
     Add note about how to modify children array or a link to section about it
 
+.. _container-graphics:
+
 graphics
 ********
 Type: :ref:`Graphics <scriptuigraphics>`
 
 A ScriptUIGraphics object that can be used to customize the
 window's appearance, in response to the onDraw event.
+
+.. _container-layout:
 
 layout
 ******
@@ -272,6 +284,8 @@ manager by calling its layout function. Default is an instance of
 the LayoutManager class that is automatically created when the
 container element is created.
 
+.. _container-location:
+
 location
 ********
 Type: :ref:`Point`
@@ -279,6 +293,8 @@ Type: :ref:`Point`
 A Point object for the location of the top left corner of the
 Window's drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
+
+.. _container-margins:
 
 margins
 ***************
@@ -290,6 +306,8 @@ can specify different margins for each edge of the container. The
 default value is based on the type of container, and is chosen to
 match the standard Adobe user-interface guidelines.
 
+.. _container-maximumSize:
+
 maximumSize
 ***********
 Type: :ref:`Dimension`
@@ -297,12 +315,16 @@ Type: :ref:`Dimension`
 A Dimension object for the largest rectangle to which the
 window can be resized, used in automatic layout and resizing.
 
+.. _container-minimumSize:
+
 minimumSize
 ***********
 Type: :ref:`Dimension`
 
 A Dimension object for the smallest rectangle to which the
 window can be resized, used in automatic layout and resizing.
+
+.. _container-orientation:
 
 orientation
 ***********
@@ -323,6 +345,8 @@ default is ``row``.
 The allowed values for the container's alignChildren and its
 children's alignment properties depend on the orientation.
 
+.. _container-parent:
+
 parent
 ******
 Type: Object
@@ -332,6 +356,8 @@ container element. The value is ``null`` for Window objects.
 
 Read only.
 
+.. _container-preferredSize:
+
 preferredSize
 *************
 Type: :ref:`Dimension`
@@ -340,12 +366,16 @@ A Dimension object for the preferred size of the window, used in
 automatic layout and resizing. To set a specific value for only one
 dimension, specify other dimension as ``-1``.
 
+.. _container-properties-properties:
+
 properties
 **********
 Type: Object
 
 An object that contains one or more creation properties of the
 container (properties used only when the element is created).
+
+.. _container-selection:
 
 selection
 *********
@@ -358,12 +388,16 @@ When the value changes, either by a user selecting a different tab,
 or by a script setting the property, the :ref:`onChange` callback for the
 panel is called.
 
+.. _container-size:
+
 size
 ****
 Type: :ref:`Dimension`
 
 A Dimension object for the current size and location of a group or
 panel element, or of the content area of a window.
+
+.. _container-spacing:
 
 spacing
 *******
@@ -376,6 +410,8 @@ needed for a container. The default value is based on the type of
 container, and is chosen to match standard Adobe user-interface
 guidelines.
 
+.. _container-text:
+
 text
 ****
 Type: String
@@ -383,6 +419,8 @@ Type: String
 The title, label, or displayed text. Does not apply to containers of
 type group or tabbedpanel. This is a localizable string: see
 :ref:`localization-in-scriptui-objects`.
+
+.. _container-visible:
 
 visible
 *******
@@ -395,11 +433,15 @@ When a container is hidden, its children are also hidden, but they
 retain their own visibility values, and are shown or hidden
 accordingly when the parent is next shown.
 
+.. _container-window:
+
 window
 ******
 Type: :ref:`Window <window-object>`
 
 The top-level parent window of this container, a :ref:`Window object <window-object>`.
+
+.. _container-windowBounds:
 
 windowBounds
 ************
@@ -436,6 +478,8 @@ Creates and returns a new control or container object and adds it to the childre
 container.
 
 Returns the new object, or ``null`` if unable to create the object.
+
+.. _window-object-addeventlistener:
 
 addEventListener()
 ******************

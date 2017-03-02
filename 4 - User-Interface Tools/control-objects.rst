@@ -1124,12 +1124,11 @@ right of the element, or above or below it, or you can superimpose the
 title over the center of the element. The placement is controlled by
 the titleLayout value.
 
+.. _control-object-titlelayout:
 
 titleLayout
-
-Control objects
-
-Object
+***********
+``Object``
 
 
 For a DropDownList, FlashPlayer, IconButton, Image, or TabbedPanel
@@ -1243,7 +1242,11 @@ Control object functions
 ------------------------
 The following table shows the methods defined for each element type, and for specific control types as
 indicated.
+
+.. _control-object-addeventlistener:
+
 addEventListener()
+******************
 controlObj.addEventListener (eventName, handler, capturePhase);
 eventName
 

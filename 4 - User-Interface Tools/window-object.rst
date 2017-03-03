@@ -57,6 +57,8 @@ Window object properties
 ------------------------
 The following element properties apply specifically to Window elements:
 
+.. _window-active:
+
 active
 ******
 Type: Boolean
@@ -70,6 +72,8 @@ given control or dialog active.
   accepts keystrokes, or in the case of a Button, be selected when
   the user types RETURN or ENTER.
 
+.. _window-cancelelement:
+
 cancelElement
 *************
 Type: Object
@@ -78,6 +82,8 @@ For a window of type dialog, the control to notify when a user types
 the ESC key. By default, looks for a button whose name or text is
 ``"cancel"`` (case disregarded).
 
+.. _window-defaultelement:
+
 defaultElement
 **************
 Type: Object
@@ -85,6 +91,8 @@ Type: Object
 For a window of type dialog, the control to notify when a user types
 the ENTER key. By default, looks for a button whose name or text is
 ``"ok"`` (case disregarded).
+
+.. _window-framebounds:
 
 frameBounds
 ***********
@@ -95,6 +103,8 @@ coordinates. The frame consists of the title bar and borders that
 enclose the content region of a window, depending on the
 windowing system. Read only.
 
+.. _window-framelocation:
+
 frameLocation
 *************
 Type: :ref:`Point`
@@ -104,6 +114,8 @@ frame. The same as [frameBounds.x, frameBounds.y]. Set this
 value to move the window frame to the specified location on the
 screen. The frameBounds value changes accordingly.
 
+.. _window-framesize:
+
 frameSize
 *********
 Type: :ref:`Dimension`
@@ -111,17 +123,23 @@ Type: :ref:`Dimension`
 A Dimension object for the size and location of the Window's frame
 in screen coordinates. Read only.
 
+.. _window-maximized:
+
 maximized
 *********
 Type: Boolean
 
 When true, the window is expanded.
 
+.. _window-minimized:
+
 minimized
 *********
 Type: Boolean
 
 When true, the window is minimized or iconified.
+
+.. _window-opacity:
 
 opacity
 *******
@@ -131,6 +149,8 @@ The opacity of the window, in the range [0..1]. A value of 1.0 (the
 default) makes the window completely opaque, a value of 0 makes it
 completely transparent. Intermediate values make it partially
 transparent to any degree.
+
+.. _window-shortcutkey:
 
 shortcutKey
 ***********
@@ -570,6 +590,8 @@ again, the children retain their own visibility states.
 For a modal dialog, closes the dialog and sets its result to 0.
 
 Returns ``undefined``.
+
+.. _window-object-notify:
 
 notify()
 ********

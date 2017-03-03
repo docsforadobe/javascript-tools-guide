@@ -60,7 +60,7 @@ Class Name: ``Button``
 
 A pushbutton containing a mouse-sensitive text string. Calls the
 :ref:`control-event-onClick` callback if the control is clicked or if its
-:ref:`control-object-notify` method is called.
+:ref:`controlobj-notify` method is called.
 
 To add to a window ``w``::
 
@@ -86,7 +86,7 @@ Class Name: ``Checkbox``
 
 A dual-state control showing a box with a checkmark when value is
 true, empty when ``value`` is false. Calls the :ref:`control-event-onClick` callback if the
-control is clicked or if its :ref:`control-object-notify` method is called.
+control is clicked or if its :ref:`controlobj-notify` method is called.
 
 To add to a window `w`::
 
@@ -110,7 +110,7 @@ Class Name: ``DropDownList``
 
 A drop-down list with zero or more items. Calls the :ref:`control-event-onchange`
 callback if the item selection is changed by a script or the user, or if
-the object's :ref:`control-object-notify` method is called.
+the object's :ref:`controlobj-notify` method is called.
 
 To add to a window ``w``::
 
@@ -141,7 +141,7 @@ Class Name: ``EditText``
 
 An editable text field that the user can change. Calls the :ref:`control-event-onchange`
 callback if the text is changed and the user types ``ENTER`` or the control
-loses focus, or if its :ref:`control-object-notify` method is called. Calls the :ref:`control-event-onchanging`
+loses focus, or if its :ref:`controlobj-notify` method is called. Calls the :ref:`control-event-onchanging`
 callback when any change is made to the text. The ``textselection``
 property contains currently selected text.
 
@@ -246,7 +246,7 @@ iconbutton
 Class Name: ``IconButton``
 
 A mouse-sensitive pushbutton containing an icon. Calls the :ref:`control-event-onClick`
-callback if the control is clicked or if its :ref:`control-object-notify` method is called.
+callback if the control is clicked or if its :ref:`controlobj-notify` method is called.
 
 To add to a window ``w``::
 
@@ -326,7 +326,7 @@ Class Name: ``ListBox``
 
 A list box with zero or more items. Calls the :ref:`control-event-onChange` callback if the
 item selection is changed by a script or the user, or if the object's
-:ref:`control-object-notify` method is called. A double click on an item selects that item
+:ref:`controlobj-notify` method is called. A double click on an item selects that item
 and calls the :ref:`control-event-ondoubleclick` callback.
 
 To add to a window ``w``::
@@ -437,7 +437,7 @@ Class Name: ``RadioButton``
 A dual-state control, grouped with other radiobuttons, of which only
 one can be in the selected state. Shows the selected state when
 ``value`` is true, empty when value is false. Calls the :ref:`control-event-onClick`
-callback if the control is clicked or if its :ref:`control-object-notify` method
+callback if the control is clicked or if its :ref:`controlobj-notify` method
 is called.
 
 All radiobuttons in a group must be created sequentially, with no
@@ -470,7 +470,7 @@ orientation if the ``width`` is greater than the ``height`` at creation time,
 or vertical if its ``height`` is greater than its ``width``.
 
 Calls the :ref:`control-event-onChange` callback after the position of the indicator is
-changed or if its :ref:`control-object-notify` method is called. Calls the :ref:`control-event-onchanging`
+changed or if its :ref:`controlobj-notify` method is called. Calls the :ref:`control-event-onchanging`
 callback repeatedly while the user is moving the indicator.
 
 - The ``value`` property contains the current position of the
@@ -510,7 +510,7 @@ Class Name: ``Slider``
 
 A slider with a moveable position indicator. All ``slider`` controls have
 a horizontal orientation. Calls the :ref:`control-event-onChange` callback after the
-position of the indicator is changed or if its :ref:`control-object-notify` method is called.
+position of the indicator is changed or if its :ref:`controlobj-notify` method is called.
 Calls the onChanging callback repeatedly while the user is moving
 the indicator.
 
@@ -646,7 +646,7 @@ Class Name: ``TreeView``
 A hierarchical list whose items can contain child items. Items at any
 level of the tree can be individually selected. Calls the :ref:`control-event-onChange`
 callback if the item selection is changed by a script or the user, or if
-the object's :ref:`control-object-notify` method is called.
+the object's :ref:`controlobj-notify` method is called.
 
 To add to a window ``w``::
 
@@ -1402,7 +1402,7 @@ indicated.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-addeventlistener:
+.. _controlobj-addeventlistener:
 
 addEventListener()
 ******************
@@ -1448,7 +1448,7 @@ Returns undefined.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-dispatchEvent:
+.. _controlobj-dispatchEvent:
 
 dispatchEvent()
 ***************
@@ -1465,7 +1465,7 @@ the event object's :ref:`eventobj-preventDefault` method, true otherwise.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-hide:
+.. _controlobj-hide:
 
 hide()
 ******
@@ -1479,7 +1479,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-notify:
+.. _controlobj-notify:
 
 notify()
 ********
@@ -1500,7 +1500,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-removeEventListener:
+.. _controlobj-removeEventListener:
 
 removeEventListener()
 *********************
@@ -1517,7 +1517,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-show:
+.. _controlobj-show:
 
 show()
 ******
@@ -1531,7 +1531,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-toString:
+.. _controlobj-toString:
 
 toString()
 **********
@@ -1544,7 +1544,7 @@ Returns a String.
 
 --------------------------------------------------------------------------------
 
-.. _control-object-valueOf:
+.. _controlobj-valueOf:
 
 valueOf()
 *********

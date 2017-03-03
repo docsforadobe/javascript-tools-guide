@@ -363,7 +363,7 @@ The horizontal and vertical coordinates at which the event occurred
 relative to the screen.
 
 shiftKey
-
+++++++++
 Type: ``Boolean``
 
 When true, the ``SHIFT`` key was active. Value is ``undefined`` if the
@@ -406,7 +406,26 @@ Returns true if the given modifier was active when the event occurred, false oth
 
 initMouseEvent()
 ++++++++++++++++
-``eventObj.initMouseEvent (eventName, bubble, isCancelable, view, detail, screenX, screenY, clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget)``
+
+  ::
+
+    eventObj.initMouseEvent(
+        eventName,
+        bubble,
+        isCancelable,
+        view,
+        detail,
+        screenX,
+        screenY,
+        clientX,
+        clientY,
+        ctrlKey,
+        altKey,
+        shiftKey,
+        metaKey,
+        button,
+        relatedTarge
+    )
 
 - ``eventName``: The event name string.
 - ``bubble``: When true, the event should be triggered in ancestors of the target object

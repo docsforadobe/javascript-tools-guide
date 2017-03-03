@@ -142,6 +142,8 @@ Ignored at all other phases.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
 .. _eventobj-preventDefault:
 
 preventDefault()
@@ -153,6 +155,8 @@ example, the default click action of an OK button is to close the containing dia
 that behavior.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _eventobj-stopPropagation:
 
@@ -178,12 +182,16 @@ KeyboardEvent object properties
 In addition to the properties defined for :ref:`UIEvent-base-class`, a keyboard event has these properties. All
 properties are read-only.
 
+--------------------------------------------------------------------------------
+
 altKey
 ++++++
 Type: ``Boolean``
 
 When true, the ``ALT`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 ctrlKey
 +++++++
@@ -192,6 +200,8 @@ Type: ``Boolean``
 When true, the ``CTRL`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
 
+--------------------------------------------------------------------------------
+
 metaKey
 +++++++
 Type: ``Boolean``
@@ -199,12 +209,16 @@ Type: ``Boolean``
 When true, the ``META`` or ``COMMAND`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
 
+--------------------------------------------------------------------------------
+
 shiftKey
 ++++++++
 Type: ``Boolean``
 
 When true, the ``SHIFT`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 keyIdentifier
 +++++++++++++
@@ -215,6 +229,8 @@ contained in a string; for example, ``"U+0044"``. See
 http://www.w3.org/TR/DOM-Level-3-Events/keyset.html#KeySet-Set.
 
 .. todo:: fix link
+
+--------------------------------------------------------------------------------
 
 keyLocation
 +++++++++++
@@ -228,12 +244,16 @@ One of:
 - ``DOM_KEY_LOCATION_RIGHT``
 - ``DOM_KEY_LOCATION_NUMPAD``
 
+--------------------------------------------------------------------------------
+
 keyName
 +++++++
 Type: ``String``
 
 The key whose keypress generated the event, as a simple key name; for
 example ``"A"``.
+
+--------------------------------------------------------------------------------
 
 type
 ++++
@@ -263,6 +283,8 @@ Meta
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
+--------------------------------------------------------------------------------
+
 initKeyboardEvent()
 +++++++++++++++++++
 ``eventObj.initKeyboardEvent (eventName, bubble, isCancelable, view, keyID, keyLocation, modifiersList)``
@@ -278,6 +300,8 @@ initKeyboardEvent()
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties. Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _mouseevent-object:
 
@@ -295,12 +319,16 @@ MouseEvent object properties
 In addition to the properties defined for :ref:`UIEvent-base-class`, a mouse event has these properties. All
 properties are read-only.
 
+--------------------------------------------------------------------------------
+
 altKey
 ++++++
 Type: ``Boolean``
 
 When true, the ``ALT`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 button
 ++++++
@@ -316,6 +344,8 @@ Which mouse button changed state.
 Some mice may provide or simulate more buttons, and values higher than
 2 represent such buttons.
 
+--------------------------------------------------------------------------------
+
 clientX and clientY
 +++++++++++++++++++
 Type: ``Number``
@@ -324,12 +354,16 @@ The horizontal and vertical coordinates at which the event occurred
 relative to the target object. The origin is the top left of the control or
 window, inside any border decorations.
 
+--------------------------------------------------------------------------------
+
 ctrlKey
 +++++++
 Type: ``Boolean``
 
 When true, the ``CTRL`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 detail
 ++++++
@@ -339,12 +373,16 @@ Details of the event, which vary according to the event type. For the
 ``click``, ``mousedown``, and ``mouseup`` events, the value is ``1`` for a single click, or
 ``2`` for a double click.
 
+--------------------------------------------------------------------------------
+
 metaKey
 +++++++
 Type: ``Boolean``
 
 When true, the ``META`` or ``COMMAND``` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 relatedTarget
 +++++++++++++
@@ -355,6 +393,8 @@ Type: ``Object``
 
 Otherwise ``undefined``.
 
+--------------------------------------------------------------------------------
+
 screenX and screenY
 +++++++++++++++++++
 Type: ``Number``
@@ -362,12 +402,16 @@ Type: ``Number``
 The horizontal and vertical coordinates at which the event occurred
 relative to the screen.
 
+--------------------------------------------------------------------------------
+
 shiftKey
 ++++++++
 Type: ``Boolean``
 
 When true, the ``SHIFT`` key was active. Value is ``undefined`` if the
 ``keyIdentifier`` is for a modifier key.
+
+--------------------------------------------------------------------------------
 
 type
 ++++
@@ -403,6 +447,8 @@ getModifierState()
   - ``Shift``
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
+
+--------------------------------------------------------------------------------
 
 initMouseEvent()
 ++++++++++++++++
@@ -463,6 +509,8 @@ Type: ``String``
 
 The name of the key currently pressed. This is the JavaScript name, a
 string such as ``"A"`` or ``"a"``.
+
+--------------------------------------------------------------------------------
 
 shiftKey, ctrlKey, altKey, metaKey
 **********************************

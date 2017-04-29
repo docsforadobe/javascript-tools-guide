@@ -2,141 +2,161 @@
 
 The XML Object
 ==============
-The XML object represents an XML element node in an XML tree. The topmost XML object for an XML file
-represents the root node. It acts as a list, which contains additional XML objects for each element. These in
+The XML object represents an XML element node in an XML tree. The topmost ``XML`` object for an XML file
+represents the root node. It acts as a list, which contains additional ``XML`` objects for each element. These in
 turn contain XML objects for their own member elements, and so on.
-The child elements of an element tree are available as properties of the XML object for the parent. The
-name of the property corresponds to the name of the element. Each property contains an array of XML
-objects, each of which represents one element of the named type.
-For example, suppose you have the following, minimal XML code:
-<rootElement>
-<elementA>
-<elementB></elementB>
-</elementA>
-<elementA>
-<elementB></elementB>
-</elementA>
-</rootElement>
 
-In a JavaScript script, the XML object that you create from this XML code represents the root element:
-var myRoot = new XML ( "<rootElement> <elementA> <elementB></elementB> </elementA>
-<elementA> <elementB></elementB> </elementA>
-</rootElement>");
+The child elements of an element tree are available as properties of the ``XML`` object for the parent. The
+name of the property corresponds to the name of the element. Each property contains an array of ``XML``
+objects, each of which represents one element of the named type.
+
+For example, suppose you have the following, minimal XML code:
+
+.. code-block:: xml
+
+    <rootElement>
+        <elementA>
+            <elementB></elementB>
+        </elementA>
+        <elementA>
+            <elementB></elementB>
+        </elementA>
+    </rootElement>
+
+
+In a JavaScript script, the XML object that you create from this XML code represents the root element::
+
+    var myRoot = new XML( "<rootElement> <elementA> <elementB></elementB> </elementA> <elementA> <elementB></elementB> </elementA> </rootElement>");
 
 You can assign a constant to an XML value directly. The following implicitly creates the XML object
-assigned to myRoot:
-var myRoot = <rootElement>
-<elementA>
-<elementB></elementB>
-</elementA>
-<elementA>
-<elementB></elementB>
-</elementA>
-</rootElement> ;
+assigned to ``myRoot``::
 
-The object myRoot contains a property named elementA, which contains two XML objects for the two
-instances of that element. Each of these, in turn, contains an elementB property, which contains one
-empty XML object:
-var elemB1 = myRoot.elementA[0].elementB[0];
+    var myRoot = <rootElement>
+        <elementA>
+            <elementB></elementB>
+        </elementA>
+        <elementA>
+            <elementB></elementB>
+        </elementA>
+    </rootElement>;
+
+The object ``myRoot`` contains a property named ``elementA``, which contains two ``XML`` objects for the two
+instances of that element. Each of these, in turn, contains an ``elementB`` property, which contains one
+empty ``XML`` object::
+
+    var elemB1 = myRoot.elementA[0].elementB[0];
 
 If an element is empty in the XML, the corresponding property exists and contains an empty XML object; it
-is never null or undefined.
+is never ``null`` or ``undefined``.
 
 .. _accessing-xml-elements:
 
 Accessing XML elements
 ----------------------
 This sample XML code is used for examples throughout this chapter:
-<bookstore>
-<book category="COOKING">
-<title lang="en">The Boston Cooking-School Cookbook</title>
-<author>Fannie Merrit Farmer</author>
-<year>1896</year>
-<price>49.99</price>
-</book>
-<book category="CHILDREN">
-<title lang="en">The Wonderful Wizard of Oz</title>
-<author>L. Frank Baum</author>
-<year>1900</year>
-<price>39.95</price>
-</book>
-<book category="CHILDREN">
-<title lang="en">Alice's Adventures in Wonderland</title>
-<author>Charles "Lewis Carroll" Dodgeson</author>
-<author>Charles Dodgeson</author>
-<author>Lewis Carroll</author>
-<year>1865</year>
-<price>29.99</price>
-</book>
-<book category="MUSIC">
-<title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
-<author>H. M. Walbrook</author>
-<year>1922</year>
-<price>30.00</price>
-</book>
-</bookstore>
 
-To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor:
-var bookXmlStr = "...";
-var bookstoreXML = new XML (bookXmlStr);
+.. code-block:: xml
 
-Using this example, the root element <bookstore>, is represented by the XML object returned from the
-constructor. Each of the <book> elements is available as a member of the book property of the XML object.
-The Javascript statement bookstoreXML.book; returns the entire list of books.
-The statement bookstoreXML.book[0]; returns the XML object for the first book.
-The statement bookstoreXML.book[0].author; returns all authors of the first book.
+    <bookstore>
+        <book category="COOKING">
+            <title lang="en">The Boston Cooking-School Cookbook</title>
+            <author>Fannie Merrit Farmer</author>
+            <year>1896</year>
+            <price>49.99</price>
+        </book>
+        <book category="CHILDREN">
+            <title lang="en">The Wonderful Wizard of Oz</title>
+            <author>L. Frank Baum</author>
+            <year>1900</year>
+            <price>39.95</price>
+        </book>
+        <book category="CHILDREN">
+            <title lang="en">Alice's Adventures in Wonderland</title>
+            <author>Charles "Lewis Carroll" Dodgeson</author>
+            <author>Charles Dodgeson</author>
+            <author>Lewis Carroll</author>
+            <year>1865</year>
+            <price>29.99</price>
+        </book>
+        <book category="MUSIC">
+            <title lang="en">Gilbert and Sullivan Opera; A History and a Comment</title>
+            <author>H. M. Walbrook</author>
+            <year>1922</year>
+            <price>30.00</price>
+        </book>
+    </bookstore>
+
+To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor::
+    var bookXmlStr = "...";
+    var bookstoreXML = new XML (bookXmlStr);
+
+Using this example, the root element ``<bookstore>``, is represented by the XML object returned from the
+constructor. Each of the ``<book>`` elements is available as a member of the book property of the XML object.
+
+- The Javascript statement ``bookstoreXML.book;`` returns the entire list of books.
+- The statement ``bookstoreXML.book[0];`` returns the ``XML`` object for the first book.
+- The statement ``bookstoreXML.book[0].author;`` returns all authors of the first book.
+
 For additional ways of accessing elements in the tree, see :ref:`retrieving-contained-elements`,
-and "Creating and accessing namespaces" on page 242.
+and :ref:`creating-and-accessing-namespaces`
 
 .. _accessing-xml-attributes:
 
 Accessing XML attributes
 ------------------------
 Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a
-preceding at-sign (@). An attribute property is a one-element list, which contains an XML object for the
-value of the attribute. For example:
-bookstoreXML.book [0].@category;
+preceding at-sign (``@``). An attribute property is a one-element list, which contains an XML object for the
+value of the attribute. For example::
 
-This returns the category attribute of the first book, whose value is the string "COOKING".
-To access all category attributes of all books, use this statement:
-bookstoreXML.book.@category
+    bookstoreXML.book [0].@category;
 
-You can reference a set of elements with a particular attribute value, using a predicate in this form:
-element.(@attribute == value)
+This returns the category attribute of the first book, whose value is the string ``"COOKING"``.
+To access all category attributes of all books, use this statement::
+
+    bookstoreXML.book.@category
+
+You can reference a set of elements with a particular attribute value, using a predicate in this form::
+
+    element.(@attribute == value)
 
 For example, this statement returns only book elements that have a category attribute with the value
-"CHILDREN":
-bookstoreXML.book.(@category == "CHILDREN");
+``"CHILDREN"``::
+
+    bookstoreXML.book.(@category == "CHILDREN");
 
 .. _viewing-xml-objects:
 
 Viewing XML objects
 -------------------
-The XML object, like all ExtendScript objects, has a toString() method that serializes the contents into a
+The XML object, like all ExtendScript objects, has a ``toString()`` method that serializes the contents into a
 string. In this case, the string contains only the text content of the element, not the tags. For example, for
-the element <x>text</x>, the toString() method returns "text".
+the element ``<x>text</x>``, the ``toString()`` method returns ``"text"``.
+
 This method is called when you evaluate the object in the JavaScript Console of the ExtendScript Toolkit. It
 recreates the XML text that the object encapsulates. Thus, if you evaluate the object
-bookstoreXML.book[1] in the Console, you see the XML text for the encapsulated tree, formatted with
-line feeds and spaces:
-> bookstoreXML.book[1];
-<book category="CHILDREN">
-<title lang="en">The Wonderful Wizard of Oz</title>
-<author>L. Frank Baum</author>
-<year>1900</year>
-<price>39.95</price>
-</book>
+``bookstoreXML.book[1]`` in the Console, you see the XML text for the encapsulated tree, formatted with
+line feeds and spaces::
 
-If you evaluate an object with a text value, you see the text value. For example:
-> bookstoreXML.book[1].@category;
-CHILDREN
+    > bookstoreXML.book[1];
+        <book category="CHILDREN">
+            <title lang="en">The Wonderful Wizard of Oz</title>
+            <author>L. Frank Baum</author>
+            <year>1900</year>
+            <price>39.95</price>
+        </book>
 
-If you access multiple values, the values are concatenated:
-> bookstoreXML.book.@category
-COOKINGCHILDRENCHILDRENMUSIC
+If you evaluate an object with a text value, you see the text value. For example::
 
-The toXMLString() method serializes the entire element, including the tags, into a string. For example, for
-the element <x>text</x>, the method returns "<x>text</x>".
+    > bookstoreXML.book[1].@category;
+        CHILDREN
+
+If you access multiple values, the values are concatenated::
+
+    > bookstoreXML.book.@category
+        COOKINGCHILDRENCHILDRENMUSIC
+
+The ``toXMLString()`` method serializes the entire element, including the tags, into a string. For example, for
+the element ``<x>text</x>``, the method returns ``"<x>text</x>"``.
 
 .. _modifying-xml-elements-and-attributes:
 
@@ -147,6 +167,7 @@ If the value assigned is an XML element, the element is simply replaced. If ther
 of the same type, the first element is replaced, and all other elements are deleted.
 If the value assigned is not XML, it is converted to a string, and the content of the element is replaced
 with that string.
+
 If no element of this type is present, a new element is appended to the XML.
 You can change the values of attributes using the same technique.
 Modification examples
@@ -384,4 +405,3 @@ by passing it an XML list, and it creates an XML list rather than an XML tag.
 All XML statements and functions that collect XML return the result as an XMLList, which can be empty if
 there is no match. For example, the following statement returns an empty list:
 bookstoreXML.magazine;
-

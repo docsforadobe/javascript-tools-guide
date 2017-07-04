@@ -4,12 +4,14 @@ Graphic customization objects
 =============================
 These objects provide the ability to customize the appearance of user-interface controls before they are
 drawn:
-ScriptUIGraphics object
-ScriptUIBrush object
-ScriptUIFont object
-ScriptUIImage object
-ScriptUIPath object
-ScriptUIPen object
+
+- :ref:`scriptuigraphics-object`
+- :ref:`scriptuibrush-object`
+- :ref:`scriptuifont-object`
+- :ref:`scriptuiimage-object`
+- :ref:`scriptuipath-object`
+- :ref:`scriptuipen-object`
+
 In addition, the Custom element class (if supported by the Adobe application you are using) allows you to
 define completely customized UI elements that are rendered by the application in a manner you define.
 
@@ -20,12 +22,15 @@ ScriptUIGraphics object
 Most types of user-interface elements have a graphics property which contains an object of this type,
 which allows you to customize aspects of the element's appearance, such as the color and font. Use an
 onDraw callback function to set these properties or call the functions.
+
 All measurements are in pixels.
 
 ScriptUIGraphics class properties
+*********************************
 These static properties provide color type constants with which to create Pen and Brush objects.
-BrushType
 
+BrushType
++++++++++
 Object
 
 Contains the enumerated constants for the type argument of
@@ -34,7 +39,7 @@ SOLID_COLOR
 THEME_COLOR
 
 PenType
-
++++++++
 Object
 
 Contains the enumerated constants for the type argument of newPen().
@@ -44,48 +49,66 @@ THEME_COLOR
 
 ScriptUIGraphics object properties
 The object contains the following properties:
-backgroundColor
 
-Object The background color of a container, or the parent
+backgroundColor
++++++++++++++++
+Object
+
+The background color of a container, or the parent
 background color for a control element. A ScriptUIBrush
 object.
 
 currentPath
++++++++++++
+Object
 
-Object The current drawing path for this object, a ScriptUIPath
+The current drawing path for this object, a ScriptUIPath
 object.
 
 currentPoint
+++++++++++++
+Object
 
-Object The current position in the drawing path for this object, a
+The current position in the drawing path for this object, a
 Point object.
 
 disabledBackgroundColor
++++++++++++++++++++++++
+Object
 
-Object The background color for the disabled state of a container, or
+The background color for the disabled state of a container, or
 the parent background color for the disabled state of a
 control element. A ScriptUIBrush object.
 
 disabledForegroundColor
++++++++++++++++++++++++
+Object
 
-Object The foreground color for the disabled state of a container, or
+The foreground color for the disabled state of a container, or
 the parent foreground color for the disabled state of a control
 element. A ScriptUIPen object.
 
 font
+++++
+Object
 
-Object The default font to use in writing text, a ScriptUIFont object.
+The default font to use in writing text, a ScriptUIFont object.
 
 foregroundColor
++++++++++++++++
+Object
 
-Object The foreground color for a container, or the parent
+The foreground color for a container, or the parent
 foreground color of a control element. A ScriptUIPen object.
 
 ScriptUIGraphics object functions
+*********************************
 These functions directly customize the appearance of the associated element by drawing on the screen, or
 create the Pen and Brush objects used to populate the graphics object or pass to the drawing methods:
+
 closePath()
-controlObj.graphics.closePath ( )
++++++++++++
+``controlObj.graphics.closePath()``
 
 Defines a line from the current position to the start point of the current path (the value of
 currentPath), which closes the path.
@@ -566,4 +589,3 @@ catch (e) {
 function drawButton (drawingState) {
 ...
 }
-

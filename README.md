@@ -22,9 +22,11 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Convert 'see something on page' to links~~
 - Format text into **bold**, *italics*, `code`, headers, bullet lists, and paragraphs.
     - ~~1 - Introduction~~
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
+    - ~~2 - ExtendScript Toolkit~~
+    - ~~3 - File System Access~~
     - 4 - User-Interface Tools
+        - Common Properties
+        - Graphic Customization Objects
     - 5 - Interapplication Communictation with Scripts
     - 6 - External Communication Tools
     - 7 - Intergrating External Libraries
@@ -86,7 +88,7 @@ h4
 ```
 - Bullet point lists must start with one empty line above
   - Indented bullet points are indented with 2 spaces
-  - very long bullet point that goes over multiple lines 
+  - very long bullet point that goes over multiple lines
     have the additional lines indented one more level
 - Bullet point
 ```

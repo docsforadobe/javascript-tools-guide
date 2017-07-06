@@ -86,62 +86,28 @@ The debugging commands are available from the **Debug** menu, from the document 
 context menu, through keyboard shortcuts, and from the toolbar buttons. Use these menu commands
 and buttons to control the execution of code when the JavaScript Debugger is active.
 
-.. todo:: images and table
+.. todo:: images in table
 
-Run
-F5 (Windows)
-Continue Ctrl R (Mac OS)
+============  ================         ====================================================================
+Run/Continue  F5 (Windows)             Starts or resumes execution of a script.
+              Ctrl R (Mac OS)          Disabled when script is executing.
+Break         Ctrl F5 (Windows)        Halts the currently executing script temporarily and reactivates
+              Cmd . (Mac OS)           the JavaScript Debugger.
+                                       Enabled when a script is executing.
+Stop          Shift F5 (Windows)       Stops execution of the script and generates a runtime error.
+              Ctrl K (Mac OS)          Enabled when a script is executing.
+Step Over     F10 (Windows)            Halts after executing a single JavaScript line in the script. If the
+              Ctrl S (Mac OS)          statement calls a JavaScript function, executes the function in
+                                       its entirety before stopping (do not step into the function).
+Step Into     Step Into F11 (Windows)  Halts after executing a single JavaScript line statement in the
+              Ctrl T (Mac OS)          script or after executing a single statement in any JavaScript
+                                       function that the script calls.
+Step Out      Shift F11 (Windows)      When paused within the body of a JavaScript function, resumes
+              Ctrl U (Mac OS)          script execution until the function returns.
+                                       When paused outside the body of a function, resumes script
+                                       execution until the script terminates.
+============  ================         ====================================================================
 
-Starts or resumes execution of a script.
-
-Break
-
-Halts the currently executing script temporarily and reactivates
-the JavaScript Debugger.
-
-Ctrl F5 (Windows)
-Cmd . (Mac OS)
-
-Disabled when script is executing.
-
-Enabled when a script is executing.
-Stop
-
-Step
-Over
-
-Shift F5 (Windows)
-Ctrl K (Mac OS)
-
-Stops execution of the script and generates a runtime error.
-
-F10 (Windows)
-Ctrl S (Mac OS)
-
-Halts after executing a single JavaScript line in the script. If the
-statement calls a JavaScript function, executes the function in
-its entirety before stopping (do not step into the function).
-
-Enabled when a script is executing.
-
-Step Into F11 (Windows)
-Ctrl T (Mac OS)
-
-Halts after executing a single JavaScript line statement in the
-script or after executing a single statement in any JavaScript
-function that the script calls.
-
-Step Out
-
-When paused within the body of a JavaScript function, resumes
-script execution until the function returns.
-
-Shift F11
-(Windows)
-Ctrl U (Mac OS)
-
-When paused outside the body of a function, resumes script
-execution until the script terminates.
 
 .. _visual-indication-of-execution-states:
 
@@ -226,19 +192,17 @@ Each breakpoint is indicated by an icon to the left of the line number in the do
 icon and line number in the Breakpoints panel. Different icons are used in the document window and in
 the Breakpoints panel.
 
-.. todo:: images and table
+.. todo:: images in table
 
-Breakpoints
-panel
-
-Document
-window
-
-Unconditional breakpoint. Execution stops here.
-Unconditional breakpoint, disabled. Execution does not stop.
-Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates
-to true.
-Conditional breakpoint, disabled. Execution does not stop.
+===============  =================  ==================================================================
+Document window  Breakpoints panel  Description
+===============  =================  ==================================================================
+[todo: image]    [todo: image]      Unconditional breakpoint. Execution stops here.
+[todo: image]    [todo: image]      Unconditional breakpoint, disabled. Execution does not stop.
+[todo: image]    [todo: image]      Conditional breakpoint. Execution stops if the attached JavaScript
+                                    expression evaluates to true.
+[todo: image]    [todo: image]      Conditional breakpoint, disabled. Execution does not stop.
+===============  =================  ==================================================================
 
 .. _evaluation-in-help-tips:
 
@@ -261,8 +225,7 @@ show variables defined in the global or calling scope, use the Call Stack to cha
 
 You can use the Data Browser to examine and set variable values.
 - Click a variable name to show its current value in the edit field at the top of the panel.
-- To change the value, enter a new value and press ENTER. If a variable is Read only, the edit field is
-  disabled.
+- To change the value, enter a new value and press ENTER. If a variable is Read only, the edit field is disabled.
 
 .. todo:: image
 
@@ -286,14 +249,16 @@ The flyout menu for this panel lets you control the amount of data displayed:
 Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an
 object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.
 
-.. todo:: images and table
+.. todo:: images in table
 
-Boolean
-Number
-String
-Object
-Method
-null
+=======  =======
+[image]  Boolean
+[image]  Number
+[image]  String
+[image]  Object
+[image]  Method
+[image]  null
+=======  =======
 
 You can inspect the contents of an object by clicking its icon. The list expands to show the object's
 properties (and methods, if Functions display is enabled), and the triangle points down to indicate that

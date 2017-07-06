@@ -38,6 +38,8 @@ When you choose the target Favorites, the right-hand list shows the default favo
 any other favorite locations that have been defined. You can create your own list of favorite script locations
 using the flyout menu.
 
+.. todo:: image
+
 flyout menu
 
 The favorite script locations that you define are also available to the Find and Replace dialog; see
@@ -120,6 +122,8 @@ Bookmarks are marked with a blue, right-pointing arrow at the left of the line (
 number if it is shown). This is the same place where a breakpoint is marked with a dot (see :ref:`setting-breakpoints`). If you have both a breakpoint and a bookmark set in the same line, the blue
 arrow is superimposed on the breakpoint dot.
 
+.. todo:: image
+
 line numbers
 bookmark
 collapsible
@@ -152,84 +156,26 @@ In addition to the keyboard shortcuts specified for menu commands, and the usual
 document window accepts these special movement keys. You can also select text by using a movement
 key while pressing ``SHIFT``.
 
-
-.. todo:: table
-
-ENTER
-
-Insert a Line Feed character
-
-Backspace
-
-Delete character to the left
-
-DELETE
-
-Delete character to the right
-
-Left arrow
-
-Move insertion point left one character
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-Right arrow
-
-Move insertion point right one character
-
-Up arrow
-
-Move insertion point up one line; stay in column if possible
-
-Down arrow
-
-Move insertion point down one line; stay in column if possible
-
-Page up
-
-Move insertion point one page up
-
-Page down
-
-Move insertion point one page down
-
-CTRL + Up arrow
-
-Scroll up one line without moving the insertion point
-
-CTRL + Down arrow
-
-Scroll down one line without moving the insertion point
-
-CTRL + Page up
-
-Scroll one page up without moving the insertion point
-
-CTRL + page down
-
-Scroll one page down without moving the insertion point
-
-CTRL + Left arrow
-
-Move insertion point one word to the left
-
-CTRL + right arrow
-
-Move insertion point one word to the right
-
-HOME
-
-Move insertion point to start of line
-
-END
-
-Move insertion point to end of line
-
-CTRL + HOME
-
-Move insertion point to start of text
+======================  ==============================================================
+``ENTER``               Insert a Line Feed character
+``Backspace``           Delete character to the left
+``DELETE``              Delete character to the right
+``Left arrow``          Move insertion point left one character
+``Right arrow``         Move insertion point right one character
+``Up arrow``            Move insertion point up one line; stay in column if possible
+``Down arrow``          Move insertion point down one line; stay in column if possible
+``Page up``             Move insertion point one page up
+``Page down``           Move insertion point one page down
+``CTRL + Up arrow``     Scroll up one line without moving the insertion point
+``CTRL + Down arrow``   Scroll down one line without moving the insertion point
+``CTRL + Page up``      Scroll one page up without moving the insertion point
+``CTRL + page down``    Scroll one page down without moving the insertion point
+``CTRL + Left arrow``   Move insertion point one word to the left
+``CTRL + right arrow``  Move insertion point one word to the right
+``HOME``                Move insertion point to start of line
+``END``                 Move insertion point to end of line
+``CTRL + HOME``         Move insertion point to start of text
+======================  ==============================================================
 
 The Script Editor supports extended keyboard input via IME (Windows) or TMS (Mac OS). This is especially
 important for Far Eastern characters.
@@ -250,6 +196,8 @@ defined in the object-model dictionary that is currently selected from the flyou
 You can use the flyout menu at the upper right corner of the document window to choose an
 object-model dictionary to use for completion. Available dictionaries depend on which applications are
 loaded. See :ref:`inspecting-object-models`.
+
+.. todo:: image
 
 flyout menu
 Select object
@@ -358,58 +306,22 @@ Using regular-expression syntax
 *******************************
 The Toolkit supports a limited set of Regular Expression syntax for the Find and Replace dialog:
 
-.. todo:: table
-
-.
-
-Matches any character
-
-(
-
-Marks the start of a region for capturing a match.
-
-)
-
-Marks the end of a capturing region.
-
-\<
-
-Matches the start of a word using the editor's current definition of words.
-
-\>
-
-Matches the end of a word using the editor's current definition of words.
-
-CHAPTER 2: The ExtendScript Toolkit
-
-The Script Editor
-
-\x
-
-Escapes a character x that would otherwise have a special meaning. For example, \[ is
-interpreted as a left bracket, rather than the start of a character set.
-
-[...]
-
-A set of characters; for example, [abc] means any of the characters a, b or c. You can also use
-ranges, for example [a-z] for any lower case character.
-
-[^...]
-
-The complement of the characters in a set. For example, [^A-Za-z] means any character
-except an alphabetic character.
-
-^
-
-Matches the start of a line (unless used inside a set).
-
-$
-
-Matches the end of a line.
-
-*
-
-Matches 0 or more times. For example, Sa*m matches Sm, Sam, Saam, Saaam etc.
+==========  =====================================================================================
+``.``       Matches any character
+``(``       Marks the start of a region for capturing a match.
+``)``       Marks the end of a capturing region.
+``\<``      Matches the start of a word using the editor's current definition of words.
+``\>``      Matches the end of a word using the editor's current definition of words.
+``\x``      Escapes a character x that would otherwise have a special meaning. For example, \[ is
+            interpreted as a left bracket, rather than the start of a character set.
+``[...]``   A set of characters; for example, [abc] means any of the characters a, b or c.
+            You can also use ranges, for example [a-z] for any lower case character.
+``[^...]``  The complement of the characters in a set. For example, [^A-Za-z] means any character
+            except an alphabetic character.
+``^``       Matches the start of a line (unless used inside a set).
+``$``       Matches the end of a line.
+``*``       Matches 0 or more times. For example, Sa*m matches Sm, Sam, Saam, Saaam etc.
+==========  =====================================================================================
 
 In a replace operation, you can use the captured regions of a match in the replacement expression by
 using the placeholders ``\1`` through ``\9``, where ``\1`` refers to the first captured region, ``\2`` to the second, and so
@@ -429,6 +341,8 @@ automatically set to match the file extension, or you can choose the language fr
 **Highlighting** menu.
 
 The style of highlighting is configurable, using the Fonts and Colors page of the Preferences dialog.
+
+.. todo:: image
 
 Select language for syntax
 highlighting in Script Editor

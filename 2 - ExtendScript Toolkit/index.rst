@@ -32,6 +32,8 @@ configuration of tabbed panels and Script Editor document windows contained in a
 arrangement is highly configurable, through the Window menu, the context menus of individual panels
 and panel groups, or directly using drag and drop.
 
+.. todo:: image
+
 Document
 windows
 

@@ -131,11 +131,12 @@ ScriptUI.events.createEvent()
 *****************************
 ``ScriptUi.events.createEvent( eventType )``
 
-- ``eventType``: The type of event, one of:
-
-  - UIEvent
-  - KeyboardEvent
-  - MouseEvent
+=============  =============================
+``eventType``  The type of event, one of:
+                 - ``UIEvent``
+                 - ``KeyboardEvent``
+                 - ``MouseEvent``
+=============  =============================
 
 This function is in the JavaScript object contained in the :ref:`events <scriptui-events>` property. It returns an event object
 of the appropriate type:
@@ -157,7 +158,9 @@ ScriptUI.getResourceText()
 **************************
 ``ScriptUI.getResourceText( text )``
 
-- ``text``: The text to match.
+========  ==================
+``text``  The text to match.
+========  ==================
 
 Finds and returns the resource for a given text string from the host application's resource data. If no
 string resource matches the given text, the text itself is returned.
@@ -170,9 +173,11 @@ ScriptUI.newFont()
 ******************
 ``ScriptUI.newFont( name, style, size );``
 
-- ``name``: The font or font family name string.
-- ``style``: The font style string or an enumerated value from :ref:`scriptui-fontstyle`
-- ``size``: The font size in points, a number.
+=========  =============================================================================
+``name``   The font or font family name string.
+``style``  The font style string or an enumerated value from :ref:`scriptui-fontstyle`
+``size``   The font size in points, a number.
+=========  =============================================================================
 
 Creates a new font object for use in text controls and titles.
 
@@ -184,13 +189,12 @@ ScriptUI.newImage()
 *******************
 ``ScriptUI.newImage( normal, disabled, pressed, rollover );``
 
-- ``normal``: The resource name or path to the image to use for the normal or default state.
-- ``disabled``: The resource name or path to the image to use for the disabled state, shown when the
-  control containing the image is disabled (enabled=false).
-- ``pressed``: The resource name or path to the image to use for the pressed state, shown when the
-  user clicks on the image.
-- ``rollover``: The resource name or path to the image to use for the rollover state, which is shown
-  when the cursor moves over the image.
+============  ==============================================================================================================================================
+``normal``    The resource name or path to the image to use for the normal or default state.
+``disabled``  The resource name or path to the image to use for the disabled state, shown when the control containing the image is disabled (enabled=false).
+``pressed``   The resource name or path to the image to use for the pressed state, shown when the user clicks on the image.
+``rollover``  The resource name or path to the image to use for the rollover state, which is shown when the cursor moves over the image.
+============  ==============================================================================================================================================
 
 Creates a new image object for use in controls that can display images, loading the associated
 images from the specified resources or image files.

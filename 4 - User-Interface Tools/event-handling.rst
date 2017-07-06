@@ -128,13 +128,15 @@ initUIEvent()
 +++++++++++++
 ``eventObj.initUIEvent(eventName, bubble, isCancelable, view, detail)``
 
-- ``eventName``: The event name string.
-- ``bubble``: When true, the event should be triggered in ancestors of the target object during
-  the bubbling phase.
-- ``isCancelable``: When true, the event can be cancelled.
-- ``view``: The container or control object that dispatched the event.
-- ``detail``: Details of the event, which vary according to the event type. The value is 1 or 2 for
-  the click event, indicating a single or double click.
+================  ==============================================================
+``eventName``     The event name string.
+``bubble``        When true, the event should be triggered in ancestors
+                  of the target object during the bubbling phase.
+``isCancelable``  When true, the event can be cancelled.
+``view``          The container or control object that dispatched the event.
+``detail``        Details of the event, which vary according to the event type.
+                  The value is 1 or 2 for the click event, indicating a single or double click.
+================  ==============================================================
 
 Modifies an event before it is dispatched to its targets. Takes effect only if
 :ref:`UIEvent.eventPhase <eventobj-eventPhase>` is ``Event.NOT_DISPATCHING``.
@@ -272,14 +274,18 @@ getModifierState()
 ++++++++++++++++++
 ``eventObj.getModifierState(keyIdentifier)``
 
-- ``keyIdentifier``: A string containing a modifier key identifier, one of:
+=================  ======================================================
+``keyIdentifier``  A string containing a modifier key identifier, one of:
 
-========= =======
-Alt       NumLock
-CapsLock  Scroll
-Control   Shift
-Meta
-========= =======
+                     - ``Alt``
+                     - ``CapsLock``
+                     - ``Control``
+                     - ``Meta``
+                     - ``NumLock``
+                     - ``Scroll``
+                     - ``Shift``
+
+=================  ======================================================
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
@@ -289,14 +295,16 @@ initKeyboardEvent()
 +++++++++++++++++++
 ``eventObj.initKeyboardEvent (eventName, bubble, isCancelable, view, keyID, keyLocation, modifiersList)``
 
-- ``eventName``: The event name string.
-- ``bubble``: When true, the event should be triggered in ancestors of the target object
-  during the bubbling phase.
-- ``isCancelable``: When true, the event can be cancelled.
-- ``view``: The container or control object that dispatched the event.
-- ``keyID``: Sets the ``keyIdentifier`` value.
-- ``keyLocation``: Sets the ``keyLocation``. value.
-- ``modifiersList``: A whitespace-separated string of modifier key names, such as "Control Alt".
+=================  ===========================================================================
+``eventName``      The event name string.
+``bubble``         When true, the event should be triggered in ancestors of
+                   the target object during the bubbling phase.
+``isCancelable``   When true, the event can be cancelled.
+``view``           The container or control object that dispatched the event.
+``keyID``          Sets the ``keyIdentifier`` value.
+``keyLocation``    Sets the ``keyLocation``. value.
+``modifiersList``  A whitespace-separated string of modifier key names, such as "Control Alt".
+=================  ===========================================================================
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties. Returns ``undefined``.
@@ -336,10 +344,12 @@ Type: ``Number``
 
 Which mouse button changed state.
 
-- ``0``: The left button of a two- or three-button mouse or the one button
-  on a one-button mouse, used to activate a UI button or select text.
-- ``1``: The middle button of a three-button mouse, or the mouse wheel.
-- ``2``: The right button, used to display a context menu, if present.
+=====  ===================================================================
+``0``  The left button of a two- or three-button mouse or the one button
+       on a one-button mouse, used to activate a UI button or select text.
+``1``  The middle button of a three-button mouse, or the mouse wheel.
+``2``  The right button, used to display a context menu, if present.
+=====  ===================================================================
 
 Some mice may provide or simulate more buttons, and values higher than
 2 represent such buttons.
@@ -436,15 +446,18 @@ getModifierState()
 ++++++++++++++++++
 ``eventObj.getModifierState(keyIdentifier)``
 
-- ``keyIdentifier``: A string containing a modifier key identifier, one of:
+=================  ======================================================
+``keyIdentifier``  A string containing a modifier key identifier, one of:
 
-  - ``Alt``
-  - ``CapsLock``
-  - ``Control``
-  - ``Meta``
-  - ``NumLock``
-  - ``Scroll``
-  - ``Shift``
+                     - ``Alt``
+                     - ``CapsLock``
+                     - ``Control``
+                     - ``Meta``
+                     - ``NumLock``
+                     - ``Scroll``
+                     - ``Shift``
+
+=================  ======================================================
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
@@ -473,18 +486,20 @@ initMouseEvent()
         relatedTarge
     )
 
-- ``eventName``: The event name string.
-- ``bubble``: When true, the event should be triggered in ancestors of the target object
-  during the bubbling phase.
-- ``isCancelable``: When true, the event can be cancelled.
-- ``view``: The container or control object that dispatched the event.
-- ``detail``: Sets the single-double click value for the ``click`` event.
-- ``screenX, screenY``: Sets the event coordinates relative to the screen.
-- ``clientX, clientY``: Sets the event coordinates relative to the target object. The origin is the top left
-  of the control or window, inside any border decorations.
-- ``ctrlKey, altKey, metaKey``: Sets the modifier key states.
-- ``button``: Sets the mouse button.
-- ``relatedTarget``: Optional. Sets the related target, if any, for a ``mouseover`` or ``mouseout`` event.
+============================  ==============================================================================
+``eventName``                 The event name string.
+``bubble``                    When true, the event should be triggered in ancestors of
+                              the target object during the bubbling phase.
+``isCancelable``              When true, the event can be cancelled.
+``view``                      The container or control object that dispatched the event.
+``detail``                    Sets the single-double click value for the ``click`` event.
+``screenX, screenY``          Sets the event coordinates relative to the screen.
+``clientX, clientY``          Sets the event coordinates relative to the target object.
+                              The origin is the top left of the control or window, inside any border decorations.
+``ctrlKey, altKey, metaKey``  Sets the modifier key states.
+``button``                    Sets the mouse button.
+``relatedTarget``             Optional. Sets the related target, if any, for a ``mouseover`` or ``mouseout`` event.
+============================  ==============================================================================
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties.

@@ -33,8 +33,10 @@ layout()
 ********
 ``windowObj.layout.layout( recalculate )``
 
-- ``recalculate``: Optional. When true, forces the layout manager to recalculate the container size for
-  this and any child containers. Default is false.
+===============  ====================================================================================
+``recalculate``  Optional. When true, forces the layout manager to recalculate the container size for
+                 this and any child containers. Default is false.
+===============  ====================================================================================
 
 Invokes the automatic layout behavior for the managed container. Adjusts sizes and positions of the
 child elements of this window or container according to the placement and alignment property

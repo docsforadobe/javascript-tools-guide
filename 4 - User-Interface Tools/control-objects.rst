@@ -18,19 +18,21 @@ add()
 *****
 ``containerObj.(type [, bounds, text, { creation_props> } ]);``
 
-- ``type``: The control type. See :ref:`control-types-and-creation-parameters`.
-- ``bounds``: Optional. A bounds specification that describes the size and
-  position of the new control or container, relative to its parent. See
-  :ref:`Bounds` object for specification formats.
+==================  ============================================================================
+``type``            The control type. See :ref:`control-types-and-creation-parameters`.
+``bounds``          Optional. A bounds specification that describes the size and
+                    position of the new control or container, relative to its parent.
+                    See :ref:`Bounds` object for specification formats.
 
-  If supplied, this value creates a new :ref:`Bounds` object which is assigned
-  to the new object's ``bounds`` property.
-- ``text``: Optional. String. Initial text to be displayed in the control as the
-  title, label, or contents, depending on the control type. If supplied, this
-  value is assigned to the new object's ``text`` property.
-- ``creation_props``: Optional. Object. The properties of this object specify
-  creation parameters, which are specific to each object type. See
-  :ref:`control-types-and-creation-parameters`.
+                    If supplied, this value creates a new :ref:`Bounds` object which is assigned
+                    to the new object's ``bounds`` property.
+``text``            Optional. String. Initial text to be displayed in the control as the
+                    title, label, or contents, depending on the control type. If supplied, this
+                    value is assigned to the new object's ``text`` property.
+``creation_props``  Optional. Object. The properties of this object specify
+                    creation parameters, which are specific to each object type. See
+                    :ref:`control-types-and-creation-parameters`.
+==================  ============================================================================
 
 Creates and returns a new control or container object and adds it to the
 children of this window or container.
@@ -66,15 +68,15 @@ To add to a window ``w``::
 
   w.add ("button" [, bounds, text, creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``text``: Optional. The text displayed in the control.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control. For a modal dialog, the
-    special name "ok" makes this :ref:`window-defaultElement`, and the
-    special name "cancel" makes this the :ref:`window-cancelElement` of the
-    parent dialog.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``text``                 Optional. The text displayed in the control.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control. For a modal dialog, the
+                                       special name "ok" makes this :ref:`window-defaultElement`, and the
+                                       special name "cancel" makes this the :ref:`window-cancelElement` of the
+                                       parent dialog.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -92,12 +94,12 @@ To add to a window `w`::
 
   w.add ("checkbox" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``text``: Optional. The text displayed in the control.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``text``                 Optional. The text displayed in the control.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -116,20 +118,21 @@ To add to a window ``w``::
 
   w.add( "dropdownlist", bounds [, items, {creation_properties}] );
 
-- ``bounds``: The control's position and size.
-- ``items``: Optional. Supply this argument or the
-  ``creation_properties`` argument, not both. An array of strings
-  for the text of each list item. A :ref:`ListItem` object is created for
-  each item. An item with the text string ``"-"`` creates a separator item.
-- ``creation_properties``: Optional. Supply this argument or the
-  items argument, not both. This form is most useful for elements
-  defined using :ref:`Resource-specifications`. An object that contains
-  the following property:
-
-  - ``name``: A unique name for the control.
-  - ``items``: An array of strings for the text of each list item. A
-    ``ListItem`` object is created for each item. An item with the
-    text string ``"-"`` creates a separator item.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``items``                Optional. Supply this argument or the
+                         ``creation_properties`` argument, not both. An array of strings
+                         for the text of each list item.
+                         A :ref:`ListItem` object is created for each item.
+                         An item with the text string ``"-"`` creates a separator item.
+``creation_properties``  Optional. Supply this argument or the items argument, not both. This form is most useful
+                         for elements defined using :ref:`Resource-specifications`.
+                         An object that contains the following property:
+                           - ``name``: A unique name for the control.
+                           - ``items``: An array of strings for the text of each list item. A
+                                        ``ListItem`` object is created for each item. An item with the
+                                        text string ``"-"`` creates a separator item.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -149,38 +152,38 @@ To add to a window ``w``::
 
   w.add ("edittext" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``text``: Optional. The text displayed in the control.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
-  - ``readonly``: When false (the default), the control accepts text
-    input. When true, the control does not accept input but only
-    displays the contents of the ``text`` property.
-  - ``noecho``: When false (the default), the control displays input
-    text. When true, the control does not display input text
-    (used for password input fields).
-  - ``enterKeySignalsOnChange``: When false (the default), the
-    control signals an :ref:`control-event-onchange` event when the editable text is
-    changed and the control loses the keyboard focus (that is,
-    the user tabs to another control, clicks outside the control, or
-    types ``ENTER``). When true, the control only signals an
-    ``onChange`` event when the editable text is changed and the
-    user types ``ENTER``; other changes to the keyboard focus do
-    not signal the event.
-  - ``borderless``: When true, the control is drawn with no
-    border. Default is false.
-  - ``multiline``: When false (the default), the control accepts a
-    single line of text. When true, the control accepts multiple
-    lines, in which case the text wraps within the width of the
-    control.
-  - ``scrollable``: (For multiline elements only) When true (the
-    default), the text field has a vertical scrollbar that is enabled
-    when the element contains more text than fits in the visible
-    area. When false, no vertical scrollbar appears; if the element
-    contains more text than fits in the visible area, the arrow
-    keys can be used to scroll the text up and down.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``text``                 Optional. The text displayed in the control.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``readonly``: When false (the default), the control accepts text
+                             input. When true, the control does not accept input but only
+                             displays the contents of the ``text`` property.
+                           - ``noecho``: When false (the default), the control displays input
+                             text. When true, the control does not display input text
+                             (used for password input fields).
+                           - ``enterKeySignalsOnChange``: When false (the default), the
+                             control signals an :ref:`control-event-onchange` event when the editable text is
+                             changed and the control loses the keyboard focus (that is,
+                             the user tabs to another control, clicks outside the control, or
+                             types ``ENTER``). When true, the control only signals an
+                             ``onChange`` event when the editable text is changed and the
+                             user types ``ENTER``; other changes to the keyboard focus do
+                             not signal the event.
+                           - ``borderless``: When true, the control is drawn with no
+                             border. Default is false.
+                           - ``multiline``: When false (the default), the control accepts a
+                             single line of text. When true, the control accepts multiple
+                             lines, in which case the text wraps within the width of the
+                             control.
+                           - ``scrollable``: (For multiline elements only) When true (the
+                             default), the text field has a vertical scrollbar that is enabled
+                             when the element contains more text than fits in the visible
+                             area. When false, no vertical scrollbar appears; if the element
+                             contains more text than fits in the visible area, the arrow
+                             keys can be used to scroll the text up and down.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -206,13 +209,12 @@ To add to a window ``w``::
 
   w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- movieToLoad: Optional. A path or URL string or :ref:`File-object` for
-  the SWF file to load into the player.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``moveToLoad``           Optional. A path or URL string or :ref:`File-object` for the SWF file to load into the player.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -231,11 +233,11 @@ To add to a window ``w``::
 
   w.add ("group" [, bounds, {creation_properties}]);
 
-- ``bounds``: Optional. The element's position and size.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
+=======================  ==================================================================
+``bounds``               Optional. The control's position and size.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ==================================================================
 
 --------------------------------------------------------------------------------
 
@@ -252,22 +254,22 @@ To add to a window ``w``::
 
   w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``icon``: Optional. The named resource for the icon or family of
-  icons displayed in the button control, or a pathname or :ref:`File-object`
-  for an image file. Images must be in PNG format.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
-  - ``style``: A string for the visual style, one of:
-    - ``button``: Has a visible border with a raised or 3D appearance.
-    - ``toolbutton``: Has a flat appearance, appropriate for inclusion in a toolbar
-  - ``toggle``: For a button-style control, a value of true causes it
-    to get a button-pressed appearance the first time it is
-    clicked, and alternate with the unpressed appearance each
-    time it is clicked. The toggle state is reflected in the control's
-    ``value`` property.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``icon``                 Optional. The named resource for the icon or family of
+                         icons displayed in the button control, or a pathname or :ref:`File-object`
+                         for an image file. Images must be in PNG format.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``style``: A string for the visual style, one of:
+                             - ``button``: Has a visible border with a raised or 3D appearance.
+                             - ``toolbutton``: Has a flat appearance, appropriate for inclusion in a toolbar
+                           - ``toggle``: For a button-style control, a value of true causes it
+                             to get a button-pressed appearance the first time it is
+                             clicked, and alternate with the unpressed appearance each
+                             time it is clicked. The toggle state is reflected in the control's
+                             ``value`` property.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -283,14 +285,14 @@ To add to a window ``w``::
 
   w.add ("image" [, bounds, icon, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``icon``: Optional. The named resource for the icon or family of
-  icons displayed in the image control, or a pathname or :ref:`File-object`
-  for an image file. Images must be in PNG format.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``icon``                 Optional. The named resource for the icon or family of
+                         icons displayed in the button control, or a pathname or :ref:`File-object`
+                         for an image file. Images must be in PNG format.
+``creation_properties``  Optional. An object that contains the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -333,33 +335,32 @@ To add to a window ``w``::
 
   w.add ("listbox", bounds [, items, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``items``: Optional. An array of strings for the text of each list item.
-  A :ref:`ListItem` object is created for each item. Supply this
-  argument, or the items property in ``creation_properties``, not
-  both.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
-  - ``multiselect``: When false (the default), only one item can be
-  - ``selected``. When true, multiple items can be selected.
-  - ``items``: An array of strings for the text of each list item. A
-    :ref:`ListItem` object is created for each item. An item with the
-    text string ``"-"`` creates a separator item. Supply this
-    property, or the ``items`` argument, not both. This form is most
-    useful for elements defined using :ref:`Resource-specifications`.
-  - ``numberOfColumns``: A number of columns in which to display
-    the items; default is 1. When there are multiple columns,
-    each :ref:`ListItem` object represents a single selectable row. Its
-    :ref:`controlobj-text` and :ref:`controlobj-image` values supply the label
-    for the first column, and the ``controlobj-subitems`` property specifies
-    labels for additional columns.
-  - ``showHeaders``: True to display column titles.
-  - ``columnWidths``: An array of numbers for the preferred width
-    in pixels of each column.
-  - ``columnTitles``: A corresponding array of strings for the title
-    of each column, to be shown if ``showHeaders`` is true.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``items``                Optional. An array of strings for the text of each list item.
+                         A :ref:`ListItem` object is created for each item. Supply this argument,
+                         or the items property in ``creation_properties``, not both.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``multiselect``: When false (the default), only one item can be
+                           - ``selected``. When true, multiple items can be selected.
+                           - ``items``: An array of strings for the text of each list item. A
+                             :ref:`ListItem` object is created for each item. An item with the
+                             text string ``"-"`` creates a separator item. Supply this
+                             property, or the ``items`` argument, not both. This form is most
+                             useful for elements defined using :ref:`Resource-specifications`.
+                           - ``numberOfColumns``: A number of columns in which to display
+                             the items; default is 1. When there are multiple columns,
+                             each :ref:`ListItem` object represents a single selectable row. Its
+                             :ref:`controlobj-text` and :ref:`controlobj-image` values supply the label
+                             for the first column, and the ``controlobj-subitems`` property specifies
+                             labels for additional columns.
+                           - ``showHeaders``: True to display column titles.
+                           - ``columnWidths``: An array of numbers for the preferred width
+                             in pixels of each column.
+                           - ``columnTitles``: A corresponding array of strings for the title
+                             of each column, to be shown if ``showHeaders`` is true.
+=======================  ======================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -379,22 +380,22 @@ To add to a window ``w``::
 
   w.add ("panel" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The element's position and size. A panel
-  whose width is 0 appears as a vertical line. A panel whose height
-  is 0 appears as a horizontal line.
-- ``text``: Optional. The text displayed in the border of the panel.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
-  - ``borderStyle``: A string that specifies the appearance of the
-    border drawn around the panel. One of ``black``, ``etched``,
-    ``gray``, ``raised`` or ``sunken``. Default is ``etched``.
-  - ``su1PanelCoordinates``: When true, this panel automatically
-    adjusts the positions of its children for compatability with
-    Photoshop CS. Default is false, meaning that the panel does
-    not adjust the positions of its children, even if the parent
-    window has automatic adjustment enabled.
+=======================  ==================================================================
+``bounds``               Optional. The element's position and size.
+                         A panel whose width is 0 appears as a vertical line.
+                         A panel whose height is 0 appears as a horizontal line.
+``text``                 Optional. The text displayed in the border of the panel.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``borderStyle``: A string that specifies the appearance of the
+                             border drawn around the panel. One of ``black``, ``etched``,
+                             ``gray``, ``raised`` or ``sunken``. Default is ``etched``.
+                           - ``subPanelCoordinates``: When true, this panel automatically
+                             adjusts the positions of its children for compatability with
+                             Photoshop CS. Default is false, meaning that the panel does
+                             not adjust the positions of its children, even if the parent
+                             window has automatic adjustment enabled.
+=======================  ==================================================================
 
 .. _control-type-progressbar:
 
@@ -412,19 +413,18 @@ To add to a window ``w``::
 
   w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``value``: Optional. The initial position of the progress indicator.
-  Default is 0.
-- ``minvalue``: Optional. The minimum value that the ``value``
-  property can be set to. Default is 0. Together with ``maxvalue``,
-  defines the scrolling range.
-- ``maxvalue``: Optional. The maximum value that the ``value``
-  property can be set to. Default is 100. Together with ``minvalue``,
-  defines the scrolling range.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  =======================================================================
+``bounds``               Optional. The control's position and size.
+``value``                Optional. The initial position of the progress indicator. Default is 0.
+``minvalue``             Optional. The minimum value that the ``value``
+                         property can be set to. Default is 0. Together with ``maxvalue``,
+                         defines the range.
+``maxvalue``             Optional. The maximum value that the ``value``
+                         property can be set to. Default is 100. Together with ``minvalue``,
+                         defines the range.
+``creation_properties``  Optional. An object that contains the following property:
+                           - ``name``: A unique name for the control.
+=======================  =======================================================================
 
 --------------------------------------------------------------------------------
 
@@ -449,12 +449,12 @@ To add to a window ``w``::
 
   w.add ("radiobutton" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``text``: Optional. The text displayed in the control.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  ==================================================================
+``bounds``               Optional. The element's position and size.
+``text``                 Optional. The text displayed in the control.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ==================================================================
 
 --------------------------------------------------------------------------------
 
@@ -473,32 +473,31 @@ Calls the :ref:`control-event-onChange` callback after the position of the indic
 changed or if its :ref:`controlobj-notify` method is called. Calls the :ref:`control-event-onchanging`
 callback repeatedly while the user is moving the indicator.
 
-- The ``value`` property contains the current position of the
-  scrollbar's indicator within the scrolling area, within the range of
-  ``minvalue`` and ``maxvalue``.
-- The ``stepdelta`` property determines the scrolling unit for the up
-  or down arrow; default is 1.
-- The ``jumpdelta`` property determines the scrolling unit for a
-  jump (as when the bar is clicked outside the indicator or arrows);
-  default is 20% of the range between ``minvalue`` and ``maxvalue``.
+=======================  =======================================================================
+``value``                Contains the current position of the scrollbar's indicator
+                         within the scrolling area, within the range of ``minvalue`` and ``maxvalue``.
+``stepdelta``            Determines the scrolling unit for the up or down arrow. Default is 1.
+``jumpdelta``            Determines the scrolling unit for a jump (as when the bar is clicked
+                         outside the indicator or arrows); default is 20% of the range between
+                        ``minvalue`` and ``maxvalue``.
+=======================  =======================================================================
 
 To add to a window ``w``::
 
   w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``value``: Optional. The initial position of the scroll indicator.
-  Default is 0.
-- ``minvalue``: Optional. The minimum value that the ``value``
-  property can be set to. Default is 0. Together with ``maxvalue``,
-  defines the scrolling range.
-- ``maxvalue``: Optional. The maximum value that the ``value``
-  property can be set to. Default is 100. Together with ``minvalue``,
-  defines the scrolling range.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  =======================================================================
+``bounds``               Optional. The control's position and size.
+``value``                Optional. The initial position of the scroll indicator. Default is 0.
+``minvalue``             Optional. The minimum value that the ``value``
+                         property can be set to. Default is 0. Together with ``maxvalue``,
+                         defines the scrolling range.
+``maxvalue``             Optional. The maximum value that the ``value``
+                         property can be set to. Default is 100. Together with ``minvalue``,
+                         defines the scrolling range.
+``creation_properties``  Optional. An object that contains the following property:
+                           - ``name``: A unique name for the control.
+=======================  =======================================================================
 
 --------------------------------------------------------------------------------
 
@@ -521,18 +520,18 @@ To add to a window ``w``::
 
   w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-- ``value``: Optional. The initial position of the indicator. Default is 0.
-- ``minvalue``: Optional. The minimum value that the ``value``
-  property can be set to. Default is 0. Together with ``maxvalue``,
-  defines the range.
-- ``maxvalue``: Optional. The maximum value that the ``value``
-  property can be set to. Default is 100. Together with ``minvalue``,
-  defines the range
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  =======================================================================
+``bounds``               Optional. The control's position and size.
+``value``                Optional. The initial position of the scroll indicator. Default is 0.
+``minvalue``             Optional. The minimum value that the ``value``
+                         property can be set to. Default is 0. Together with ``maxvalue``,
+                         defines the range.
+``maxvalue``             Optional. The maximum value that the ``value``
+                         property can be set to. Default is 100. Together with ``minvalue``,
+                         defines the range.
+``creation_properties``  Optional. An object that contains the following property:
+                           - ``name``: A unique name for the control.
+=======================  =======================================================================
 
 --------------------------------------------------------------------------------
 
@@ -548,26 +547,25 @@ To add to a window ``w``::
 
   w.add ("statictext" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The control's position and size.
-
-- ``text``: Optional. The text displayed in the control.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
-  - ``multiline``: When false (the default), the control displays a
-    single line of text. When true, the control displays multiple
-    lines, in which case the text wraps within the width of the
-    control.
-  - ``scrolling``: When false (the default), the displayed text
-    cannot be scrolled. When true, the displayed text can be
-    vertically scrolled using scrollbars; this case implies
-    ``multiline`` is true.
-  - ``truncate``: If ``middle`` or ``end``, defines where to remove
-    characters from the text and replace them with an ellipsis if
-    the specified title does not fit within the space reserved for
-    it. If ``none``, and the text does not fit, characters are removed
-    from the end, without any replacement ellipsis character.
+=======================  ==================================================================
+``bounds``               Optional. The element's position and size.
+``text``                 Optional. The text displayed in the control.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``multiline``: When false (the default), the control displays a
+                             single line of text. When true, the control displays multiple
+                             lines, in which case the text wraps within the width of the
+                             control.
+                           - ``scrolling``: When false (the default), the displayed text
+                             cannot be scrolled. When true, the displayed text can be
+                             vertically scrolled using scrollbars; this case implies
+                             ``multiline`` is true.
+                           - ``truncate``: If ``middle`` or ``end``, defines where to remove
+                             characters from the text and replace them with an ellipsis if
+                             the specified title does not fit within the space reserved for
+                             it. If ``none``, and the text does not fit, characters are removed
+                             from the end, without any replacement ellipsis character.
+=======================  ==================================================================
 
 --------------------------------------------------------------------------------
 
@@ -592,13 +590,12 @@ To add a tab to a tabbed panel ``t`` in window ``w``::
 
   w.t.add ("tab" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Not used, pass ``undefined``. The size and position is
-  determined by the parent.
-- ``text``: Optional. The text displayed in the tab.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  ==================================================================
+``bounds``               Not used, pass ``undefined``. The size and position is determined by the parent.
+``text``                 Optional. The text displayed in the tab.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ==================================================================
 
 --------------------------------------------------------------------------------
 
@@ -627,13 +624,13 @@ To add to a window ``w``::
 
   w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
 
-- ``bounds``: Optional. The element's position and size. This
-  determines the sizes and positions of the tab children.
-- ``text``: Ignored.
-- ``creation_properties``: Optional. An object that contains the
-  following property:
-
-  - ``name``: A unique name for the control.
+=======================  ==================================================================
+``bounds``               Optional. The element's position and size. This determines the sizes
+                         and positions of the tab children.
+``text``                 Ignored.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+=======================  ==================================================================
 
 --------------------------------------------------------------------------------
 
@@ -652,21 +649,20 @@ To add to a window ``w``::
 
   w.add ("treeview" [, bounds, items, {creation_properties}])
 
-- ``bounds``: Optional. The control's position and size.
-- ``items``: Optional. An array of strings for the text of each top-level
-  list item. A :ref:`ListItem` object is created for each item. An item
-  with the type node can contain child items. Supply this
-  argument, or the ``items`` property in ``creation_properties``, not
-  both.
-- ``creation_properties``: Optional. An object that contains any of
-  the following properties:
-
-  - ``name``: A unique name for the control.
-  - ``items``: An array of strings for the text of each top-level list
-    item. A :ref:`ListItem` object is created for each item. An item
-    with the type ``node``` can contain child items. Supply this
-    property, or the ``items`` argument, not both. This form is most
-    useful for elements defined using :ref:`Resource-specifications`.
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``items``                Optional. An array of strings for the text of each top-level
+                         list item. A :ref:`ListItem` object is created for each item. An item
+                         with the type node can contain child items. Supply this
+                         argument, or the ``items`` property in ``creation_properties``, not both.
+``creation_properties``  Optional. An object that contains any of the following properties:
+                           - ``name``: A unique name for the control.
+                           - ``items``: An array of strings for the text of each top-level list
+                             item. A :ref:`ListItem` object is created for each item. An item
+                             with the type ``node``` can contain child items. Supply this
+                             property, or the ``items`` argument, not both. This form is most
+                             useful for elements defined using :ref:`Resource-specifications`.
+=======================  ======================================================================================
 
 .. _control-object-properties:
 
@@ -791,10 +787,12 @@ Type: ``Object``
 For :ref:`ListBox` objects only. A JavaScript object with two read-only
 properties whose values are set by the creation parameters:
 
-- ``titles``: An array of column title strings, whose length matches
-  the number of columns specified at creation.
-- ``preferredWidths``: An array of column widths, whose length
-  matches the number of columns specified at creation.
+===================  ======================================================
+``titles``           An array of column title strings, whose length matches
+                     the number of columns specified at creation.
+``preferredWidths``  An array of column widths, whose length
+                     matches the number of columns specified at creation.
+===================  ======================================================
 
 --------------------------------------------------------------------------------
 
@@ -1010,8 +1008,8 @@ Type: ``Number``
 
 The maximum value that the ``value`` property can have.
 
-If ``maxvalue`` is reset less than ``value``, ``value`` is reset to ``maxvalue``. If ``maxvalue``
-is reset less than ``minvalue``, ``minvalue`` is reset to ``maxvalue``.
+If ``maxvalue`` is reset less than ``value``, ``value`` is reset to ``maxvalue``.
+If ``maxvalue`` is reset less than ``minvalue``, ``minvalue`` is reset to ``maxvalue``.
 
 --------------------------------------------------------------------------------
 
@@ -1023,8 +1021,8 @@ Type: ``Number``
 
 The minimum value that the ``value`` property can have.
 
-If ``minvalue`` is reset greater than ``value``, ``value`` is reset to ``minvalue``. If ``minvalue``
-is reset greater than ``maxvalue``, ``maxvalue`` is reset to ``minvalue``.
+If ``minvalue`` is reset greater than ``value``, ``value`` is reset to ``minvalue``.
+If ``minvalue`` is reset greater than ``maxvalue``, ``maxvalue`` is reset to ``minvalue``.
 
 --------------------------------------------------------------------------------
 
@@ -1198,8 +1196,10 @@ describing the label in the second column.
 
 Each object has two properties, of which one or both can be supplied:
 
-- ``text``: A localizable display string for this label.
-- ``image``: An Image object for this label.
+========   ============================================
+``text``   A localizable display string for this label.
+``image``  An Image object for this label.
+========   ============================================
 
 --------------------------------------------------------------------------------
 
@@ -1268,29 +1268,31 @@ For a :ref:`DropDownList`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
 or :ref:`TabbedPanel` with a title value, the way the text label is shown in
 relation to the element. A JavaScript object with these properties:
 
-- ``alignment``: The position of the title relative to the element, an
-  array of [horizontal_alignment, vertical_alignment]. For possible
-  alignment values, see :ref:`controlobj-alignment`. Note that ``fill`` is
-  not a valid alignment value for either horizontal or vertical
-  alignment in this context.
-- ``characters``: A number; if 1 or greater, reserves a title width
-  wide enough to hold the specified number of "X" characters in
-  the font for this element. If 0, the title width is calculated based
-  on the value of the ``title`` property during layout operations.
-- ``spacing``: A number; 0 or greater. The number of pixels
-  separating the title from the element.
-- ``margins``: An array of numbers, ``[left, top, right, bottom]``
-  for the number of pixels separating each edge of an element and
-  the visible content within that element. This overrides the default
-  margins.
-- ``justify``: One of ``'left'``, ``'center'``, or ``'right'``, how to justify
-  the text when the space allocated for the title width is greater
-  than the actual width of the text.
-- ``truncate``: If ``'middle'`` or ``'end'``, defines where to remove
-  characters from the text and replace them with an ellipsis (…) if
-  the specified title does not fit within the space reserved for it. If
-  ``'none'``, and the text does not fit, characters are removed from
-  the end, without any replacement ellipsis character.
+==============  ========================================================================
+``alignment``   The position of the title relative to the element, an
+                array of [horizontal_alignment, vertical_alignment]. For possible
+                alignment values, see :ref:`controlobj-alignment`. Note that ``fill`` is
+                not a valid alignment value for either horizontal or vertical
+                alignment in this context.
+``characters``  A number; if 1 or greater, reserves a title width
+                wide enough to hold the specified number of "X" characters in
+                the font for this element. If 0, the title width is calculated based
+                on the value of the ``title`` property during layout operations.
+``spacing``     A number; 0 or greater. The number of pixels
+                separating the title from the element.
+``margins``     An array of numbers, ``[left, top, right, bottom]``
+                for the number of pixels separating each edge of an element and
+                the visible content within that element. This overrides the default
+                margins.
+``justify``     One of ``'left'``, ``'center'``, or ``'right'``, how to justify
+                the text when the space allocated for the title width is greater
+                than the actual width of the text.
+``truncate``    If ``'middle'`` or ``'end'``, defines where to remove
+                characters from the text and replace them with an ellipsis (…) if
+                the specified title does not fit within the space reserved for it. If
+                ``'none'``, and the text does not fit, characters are removed from
+                the end, without any replacement ellipsis character.
+==============  ========================================================================
 
 --------------------------------------------------------------------------------
 
@@ -1408,39 +1410,41 @@ addEventListener()
 ******************
 ``controlObj.addEventListener(eventName, handler, capturePhase);``
 
-- ``eventName``: The event name string. Predefined event names include:
+================  =====================================================================================
+``eventName``     The event name string. Predefined event names include:
 
-  +-----------+------------+--------------------+
-  | change    | changing   |                    |
-  +-----------+------------+--------------------+
-  | move      | moving     |                    |
-  +-----------+------------+--------------------+
-  | resize    | resizing   |                    |
-  +-----------+------------+--------------------+
-  | show      | enterKey   |                    |
-  +-----------+------------+--------------------+
-  | focus     | blur       |                    |
-  +-----------+------------+--------------------+
-  | mousedown | mouseup    |                    |
-  +-----------+------------+--------------------+
-  | mousemove | mouseover  | mouseout           |
-  +-----------+------------+--------------------+
-  | keyup     | keydown    |                    |
-  +-----------+------------+--------------------+
-  | click (detail = 1 for single, 2 for double) |
-  +-----------+------------+--------------------+
+                    +-----------+------------+--------------------+
+                    | change    | changing   |                    |
+                    +-----------+------------+--------------------+
+                    | move      | moving     |                    |
+                    +-----------+------------+--------------------+
+                    | resize    | resizing   |                    |
+                    +-----------+------------+--------------------+
+                    | show      | enterKey   |                    |
+                    +-----------+------------+--------------------+
+                    | focus     | blur       |                    |
+                    +-----------+------------+--------------------+
+                    | mousedown | mouseup    |                    |
+                    +-----------+------------+--------------------+
+                    | mousemove | mouseover  | mouseout           |
+                    +-----------+------------+--------------------+
+                    | keyup     | keydown    |                    |
+                    +-----------+------------+--------------------+
+                    | click (detail = 1 for single, 2 for double) |
+                    +-----------+------------+--------------------+
 
-- ``handler``: The function to register for the specified event in this target. This can be the name
-  of a function defined in the extension, or a locally defined handler function to be
-  executed when the event occurs.
+``handler``       The function to register for the specified event in this target. This can be the name
+                  of a function defined in the extension, or a locally defined handler function to be
+                  executed when the event occurs.
 
-  A handler function takes one argument, an object of the UIEvent base class. See
-  :ref:`registering-event-listeners-for-windows-or-controls`.
+                  A handler function takes one argument, an object of the UIEvent base class. See
+                  :ref:`registering-event-listeners-for-windows-or-controls`.
 
-- ``capturePhase``: Optional. When true, the handler is called only in the capturing phase of the event
-  propagation. Default is false, meaning that the handler is called in the bubbling
-  phase if this object is an ancestor of the target, or in the at-target phase if this
-  object is itself the target.
+``capturePhase``  Optional. When true, the handler is called only in the capturing phase of the event
+                  propagation. Default is false, meaning that the handler is called in the bubbling
+                  phase if this object is an ancestor of the target, or in the at-target phase if this
+                  object is itself the target.
+================  =====================================================================================
 
 Registers an event handler for a particular type of event occurring in this control.
 
@@ -1454,7 +1458,9 @@ dispatchEvent()
 ***************
 ``controlObj.dispatchEvent (eventObj)``
 
-- ``eventObj``: An object of the UIEvent base class.
+============  ====================================
+``eventObj``  An object of the UIEvent base class.
+============  ====================================
 
 Simulates the occurrence of an event in this target. A script can create an event
 object for a specific event, using :ref:`ScriptUI-events-createEvent`, and pass
@@ -1485,14 +1491,16 @@ notify()
 ********
 ``controlObj.notify([event])``
 
-- ``event``: Optional. The name of the control event handler to call. One of:
+=========  ================================================================
+``event``  Optional. The name of the control event handler to call. One of:
+             - ``onClick``
+             - ``onChange``
+             - ``onChanging``
 
-  - ``onClick``
-  - ``onChange``
-  - ``onChanging``
-
-  By default, simulates the :ref:`control-event-onChange` event for an :ref:`EditText` control,
-  an :ref:`control-event-onClick` event for controls that support that event.
+           By default, simulates the :ref:`control-event-onChange` event for
+           an :ref:`EditText` control, an :ref:`control-event-onClick` event
+           for controls that support that event.
+=========  ================================================================
 
 Sends a notification message, simulating the specified user interaction event.
 
@@ -1506,9 +1514,11 @@ removeEventListener()
 *********************
 ``controlbj.removeEventListener (eventName, handler[, capturePhase]);``
 
-- ``eventName``: The event name string.
-- ``handler``: The function that was registered to handle the event.
-- ``capturePhase``: Optional. Whether the handler was to respond only in the capture phase.
+================  =======================================================================
+``eventName``     The event name string.
+``handler``       The function that was registered to handle the event.
+``capturePhase``  Optional. Whether the handler was to respond only in the capture phase.
+================  =======================================================================
 
 Unregisters an event handler for a particular type of event occurring in this control. All arguments
 must be identical to those that were used to register the event handler.
@@ -1567,15 +1577,15 @@ add()
 *****
 ``listObj.add (type, text[, index])``
 
-- ``type``: The type of item to add. One of:
-
-  - ``item``: A basic, selectable item with a text label.
-  - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
-    is ignored, and the method returns null.
-
-- ``text``: The localizable text label for the item.
-- ``index``: Optional. The index into the current item list after which this item is inserted. If not
-  supplied, or greater than the current list length, the new item is added at the end.
+========  ============================================================================================
+``type``  The type of item to add. One of:
+            - ``item``: A basic, selectable item with a text label.
+            - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
+              is ignored, and the method returns null.
+``text``  The localizable text label for the item.
+``index`` Optional. The index into the current item list after which this item is inserted. If not
+          supplied, or greater than the current list length, the new item is added at the end.
+========  ============================================================================================
 
 For list objects (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView`) only.
 Adds an ``item`` to the items array at the given index.
@@ -1611,8 +1621,11 @@ remove()
 ``containerObj.remove(text)``
 ``containerObj.remove(child)``
 
-- ``index`` / ``text`` / ``child``: The item or child to remove, specified by
-  0-based index, ``text`` value, or as a ``control`` object.
+=========  ====================================================================================================
+``index``  The item or child to remove, specified by 0-based index, ``text`` value, or as a ``control`` object.
+``text``
+``child``
+=========  ====================================================================================================
 
 For containers (:ref:`Panel`, :ref:`Group`), removes the specified child control from
 the container's ``children`` array.
@@ -1643,7 +1656,9 @@ revealItem()
 ************
 ``listObj.revealItem(item)``
 
-- ``item``: The item or child to reveal, a control object.
+========  ==============================================
+``item``  The item or child to reveal, a control object.
+========  ==============================================
 
 For :ref:`ListBox` only. Scrolls the list to make the specified item visible,
 if necessary.
@@ -1680,18 +1695,20 @@ invokePlayerFunction()
 **********************
 ``flashPlayerObj.invokePlayerFunction(fnName, [arg1[,…argN]] )``
 
-- ``fnName``: String. The name of a Flash ActionScript function that has been
-  registered with the ExternalInterface object by the currently loaded SWF file;
-  see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
-- ``args``: Optional. One or more arguments to pass through to the function, of
-  these types:
+==========  ==============================================================================
+``fnName``  String. The name of a Flash ActionScript function that has been
+            registered with the ExternalInterface object by the currently loaded SWF file;
+            see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
+``args``    Optional. One or more arguments to pass through to the function, of
+            these types:
+              ======= =========
+              Number  undefined
+              String  Object
+              Boolean Array
+              Null
+              ======= =========
+==========  ==============================================================================
 
-======= =========
-Number  undefined
-String  Object
-Boolean Array
-Null
-======= =========
 
 Invokes an ActionScript function defined in the Flash application.
 
@@ -1706,7 +1723,9 @@ loadMovie()
 ***********
 ``flashPlayerObj.loadMovie(file)``
 
-- ``file``: The :ref:`File-object` for the SWF file.
+========  ========================================
+``file``  The :ref:`File-object` for the SWF file.
+========  ========================================
 
 Loads a movie into the Flash Player, and begins playing it. If you do not specify an associated movie file
 when creating the control, you must use this function to load one.
@@ -1721,8 +1740,10 @@ playMovie()
 ***********
 ``flashPlayerObj.playMovie(rewind)``
 
-- ``rewind``: When true, restarts the movie from the beginning; otherwise, starts playing from the point
-  where it was stopped.
+==========  ==============================================================
+``rewind``  When true, restarts the movie from the beginning;
+            otherwise, starts playing from the point where it was stopped.
+==========  ==============================================================
 
 Restarts a movie that has been stopped.
 

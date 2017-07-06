@@ -263,13 +263,15 @@ Items added to or inserted into any type of list control are ``ListItem`` object
 properties that can be manipulated from a script. ListItem elements can be of the
 following types:
 
-- ``item``: the typical item in any type of list. It displays text or an image, and can be
-  selected. To display an image, set the item object's image property; :ref:`displaying-images`.
-- ``separator``: a separator is a nonselectable visual element in a drop-down list.
-  Although it has a text property, the value is ignored, and the item is displayed as
-  a horizontal line.
-- ``node``: a displayable and selectable item in a ``TreeView`` control which can contain
-  other ``ListItem`` objects, including other items of type node.
+=============  ==============================================================================================
+``item``       The typical item in any type of list. It displays text or an image, and can be
+               selected. To display an image, set the item object's image property; :ref:`displaying-images`.
+``separator``  A separator is a nonselectable visual element in a drop-down list.
+               Although it has a text property, the value is ignored, and the item is displayed as
+               a horizontal line.
+``node``       A displayable and selectable item in a ``TreeView`` control which can contain
+               other ``ListItem`` objects, including other items of type node.
+=============  ==============================================================================================
 
 .. _flashplayer:
 

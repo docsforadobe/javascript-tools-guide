@@ -12,44 +12,44 @@ The constructor creates and returns a new Window object, or null if window creat
 
 	new Window (type [, title, bounds, {creation_properties}]);
 
-- ``type`` The window type. The value is:
-    - ``dialog`` - Creates a modal dialog.
-    - ``palette`` - Creates a modeless dialog, also called a floating palette. (Not
-      supported by Photoshop CC.)
-    - ``window`` - Creates a simple window that can be used as a main window for
-      an application. (Not supported by Photoshop CC.)
+=======================  ===================================================================================
+``type``                 The window type. The value is:
+                           - ``dialog`` - Creates a modal dialog.
+                           - ``palette`` - Creates a modeless dialog, also called a floating palette.
+                             (Not supported by Photoshop CC.)
+                           - ``window`` - Creates a simple window that can be used as a main window for
+                             an application. (Not supported by Photoshop CC.)
 
-  This argument can be a ScriptUI resource specification; in this case, all other
-  arguments are ignored. See :ref:`resource-specifications`.
-
-- ``title`` Optional. The window title. A localizable string.
-- ``bounds`` Optional. The window's position and size.
-- ``creation_properties`` Optional. An object that can contain any of these properties:
-
-  - ``resizeable`` - When true, the window can be resized by the user. Default
-    is false.
-  - ``su1PanelCoordinates`` - Photoshop only. When true, the child panels of
-    this window automatically adjust the positions of their children for
-    compatability with Photoshop CS (in which the vertical coordinate was
-    measured from outside the frame). Default is false. Individual panels can
-    override the parent window's setting.
-  - ``closeButton`` - When true, the title bar includes a button to close the
-    window, if the platform and window type allow it. When false, it does not.
-    Default is true. Not used for dialogs.
-  - ``maximizeButton`` - When true, the title bar includes a button to expand
-    the window to its maximum size (typically, the entire screen), if the
-    platform and window type allow it. When false, it does not. Default is false
-    for type palette, true for type window. Not used for dialogs.
-  - ``minimizeButton`` - When true, the title bar includes a button to minimize
-    or iconify the window, if the platform and window type allow it. When
-    false, it does not. Default is false for type palette, true for type window.
-    Main windows cannot have a minimize button in Mac OS. Not used for
-    dialogs.
-  - ``independent`` - When true, a window of type window is independent of
-    other application windows, and can be hidden behind them in Windows.
-    In Mac OS, has no effect. Default is false.
-  - ``borderless`` - When true, the window has no title bar or borders.
-    Properties that control those features are ignored.
+                         This argument can be a ScriptUI resource specification; in this case, all other
+                         arguments are ignored. See :ref:`resource-specifications`.
+``title``                Optional. The window title. A localizable string.
+``bounds``               Optional. The window's position and size.
+``creation_properties``  Optional. An object that can contain any of these properties:
+                           - ``resizeable`` - When true, the window can be resized by the user. Default
+                             is false.
+                           - ``su1PanelCoordinates`` - Photoshop only. When true, the child panels of
+                             this window automatically adjust the positions of their children for
+                             compatability with Photoshop CS (in which the vertical coordinate was
+                             measured from outside the frame). Default is false. Individual panels can
+                             override the parent window's setting.
+                           - ``closeButton`` - When true, the title bar includes a button to close the
+                             window, if the platform and window type allow it. When false, it does not.
+                             Default is true. Not used for dialogs.
+                           - ``maximizeButton`` - When true, the title bar includes a button to expand
+                             the window to its maximum size (typically, the entire screen), if the
+                             platform and window type allow it. When false, it does not. Default is false
+                             for type palette, true for type window. Not used for dialogs.
+                           - ``minimizeButton`` - When true, the title bar includes a button to minimize
+                             or iconify the window, if the platform and window type allow it. When
+                             false, it does not. Default is false for type palette, true for type window.
+                             Main windows cannot have a minimize button in Mac OS. Not used for
+                             dialogs.
+                           - ``independent`` - When true, a window of type window is independent of
+                             other application windows, and can be hidden behind them in Windows.
+                             In Mac OS, has no effect. Default is false.
+                           - ``borderless`` - When true, the window has no title bar or borders.
+                             Properties that control those features are ignored.
+=======================  ===================================================================================
 
 .. _window-object-properties:
 
@@ -177,30 +177,30 @@ should be aligned within a column or row. Order of creation
 determines which children are at the top of a column or the left of
 a row; the earlier a child is created, the closer it is to the top or left
 of its column or row.
-If defined, alignment for a child element overrides the
 
-alignChildren setting for the parent container.
+If defined, alignment for a child element overrides the alignChildren setting for the parent container.
 
-For a single string value, allowed values depend on the
-orientation value. For orientation=row:
-top
-bottom
-center (default)
-fill
+For a single string value, allowed values depend on the orientation value.
 
-For orientation=column:
-left
-right
-center (default)
-fill
+For ``orientation=row``:
+  - ``top``
+  - ``bottom``
+  - ``center`` (default)
+  - ``fill``
 
-For orientation=stack:
-top
-bottom
-left
-right
-center (default)
-fill
+For ``orientation=column``:
+  - ``left``
+  - ``right``
+  - ``center`` (default)
+  - ``fill``
+
+For ``orientation=stack``:
+  - ``top``
+  - ``bottom``
+  - ``left``
+  - ``right``
+  - ``center`` (default)
+  - ``fill``
 
 For an array value, the first string element defines the horizontal
 alignment and the second element defines the vertical
@@ -208,8 +208,6 @@ alignment. The horizontal alignment value must be one of left,
 right, center or fill. The vertical alignment value must be one
 of top, bottom, center, or fill.
 Values are not case sensitive.
-
-CHAPTER 4: User-Interface Tools
 
 .. _container-alignment:
 
@@ -223,27 +221,24 @@ For a single string value, allowed values depend on the
 ``orientation`` value.
 
 For ``orientation = row``:
-
-- top
-- bottom
-- center (default)
-- fill
+  - ``top``
+  - ``bottom``
+  - ``center`` (default)
+  - ``fill``
 
 For ``orientation=column``:
-
-- left
-- right
-- center (default)
-- fill
+  - ``left``
+  - ``right``
+  - ``center`` (default)
+  - ``fill``
 
 For ``orientation = stack``:
-
-- top
-- bottom
-- left
-- right
-- center (default)
-- fill
+  - ``top``
+  - ``bottom``
+  - ``left``
+  - ``right``
+  - ``center`` (default)
+  - ``fill``
 
 For an array value, the first string element defines the horizontal
 alignment and the second element defines the vertical
@@ -354,9 +349,9 @@ How elements are organized within this container. Interpreted by
 the layout manager for the container. The default LayoutManager
 object accepts the (case-insensitive) values:
 
-- row
-- column
-- stack
+  - ``row``
+  - ``column``
+  - ``stack``
 
 The default orientation depends on the type of container. For
 ``Window`` and ``Panel``, the default is ``column``, and for ``Group`` the
@@ -479,20 +474,22 @@ Group.
 
 add()
 *****
-windowOrContainerObj.add (type [, bounds, text, { creation_props> } ]);
+``windowOrContainerObj.add (type [, bounds, text, { creation_props> } ]);``
 
-- ``type``: The control type. See :ref:`control-types-and-creation-parameters`.
-- ``bounds``: Optional. A bounds specification that describes the size and position of the new
-  control or container, relative to its parent. See Bounds object for specification
-  formats.
+==================  ====================================================================================
+``type``            The control type. See :ref:`control-types-and-creation-parameters`.
+``bounds``          Optional. A bounds specification that describes the size and position of the new
+                    control or container, relative to its parent. See Bounds object for specification
+                    formats.
 
-  If supplied, this value creates a new Bounds object which is assigned to the new
-  object's bounds property.
-- ``text``: Optional. String. Initial text to be displayed in the control as the title, label, or
-  contents, depending on the control type. If supplied, this value is assigned to
-  the new object's text property.
-- ``creation_props`` Optional. Object. The properties of this object specify creation parameters,
-  which are specific to each object type. See :ref:`control-types-and-creation-parameters`.
+                    If supplied, this value creates a new Bounds object which is assigned to the new
+                    object's bounds property.
+``text``            Optional. String. Initial text to be displayed in the control as the title, label, or
+                    contents, depending on the control type. If supplied, this value is assigned to
+                    the new object's text property.
+``creation_props``  Optional. Object. The properties of this object specify creation parameters,
+                    which are specific to each object type. See :ref:`control-types-and-creation-parameters`.
+==================  ====================================================================================
 
 Creates and returns a new control or container object and adds it to the children of this window or
 container.
@@ -503,33 +500,35 @@ Returns the new object, or ``null`` if unable to create the object.
 
 addEventListener()
 ******************
-windowObj.addEventListener (eventName, handler[, capturePhase]);
+``windowObj.addEventListener (eventName, handler[, capturePhase]);``
 
-- ``eventName``: The event name string. Predefined event names include:
-  - ``change``
-  - ``changing``
-  - ``move``
-  - ``moving``
-  - ``resize``
-  - ``resizing``
-  - ``show``
-  - ``enterKey``
-  - ``focus``
-  - ``blur``
-  - ``mousedown``
-  - ``mouseup``
-  - ``mousemove``
-  - ``mouseover``
-  - ``mouseout``
-  - ``click`` (detail = 1 for single, 2 for double)
-- ``handler`` The function to register for the specified event in this target. This can be the
-  name of a function defined in the extension, or a locally defined handler
-  function to be executed when the event occurs. A handler function takes one
-  argument, the UIEvent base class. See :ref:`registering-event-listeners-for-windows-or-controls`.
-- ``capturePhase``: Optional. When true, the handler is called only in the capturing phase of the
-  event propagation. Default is false, meaning that the handler is called in the
-  bubbling phase if this object is an ancestor of the target, or in the at-target
-  phase if this object is itself the target.
+================  =================================================================================================
+``eventName``     The event name string. Predefined event names include:
+                    - ``change``
+                    - ``changing``
+                    - ``move``
+                    - ``moving``
+                    - ``resize``
+                    - ``resizing``
+                    - ``show``
+                    - ``enterKey``
+                    - ``focus``
+                    - ``blur``
+                    - ``mousedown``
+                    - ``mouseup``
+                    - ``mousemove``
+                    - ``mouseover``
+                    - ``mouseout``
+                    - ``click`` (detail = 1 for single, 2 for double)
+``handler``       The function to register for the specified event in this target. This can be the
+                  name of a function defined in the extension, or a locally defined handler
+                  function to be executed when the event occurs. A handler function takes one
+                  argument, the UIEvent base class. See :ref:`registering-event-listeners-for-windows-or-controls`.
+``capturePhase``  Optional. When true, the handler is called only in the capturing phase of the
+                  event propagation. Default is false, meaning that the handler is called in the
+                  bubbling phase if this object is an ancestor of the target, or in the at-target
+                  phase if this object is itself the target.
+================  =================================================================================================
 
 Registers an event handler for a particular type of event occurring in this window.
 
@@ -537,9 +536,11 @@ Returns ``undefined``.
 
 center()
 ********
-windowObj.center ([window])
+``windowObj.center ([window])``
 
-window: Optional. A Window object.
+==========  ==========================
+``window``  Optional. A Window object.
+==========  ==========================
 
 Centers this window on the screen, or with respect to another specified window.
 
@@ -547,10 +548,12 @@ Returns ``undefined``.
 
 close()
 *******
-windowObj.close ([result])
+``windowObj.close ([result])``
 
-- result: Optional. A number to be returned from the show method that invoked this
-  window as a modal dialog.
+==========  ========================================================================
+``result``  Optional. A number to be returned from the show method that invoked this
+            window as a modal dialog.
+==========  ========================================================================
 
 Closes this window. If an onClose callback is defined for the window, calls that function before
 closing the window.
@@ -559,9 +562,11 @@ Returns undefined.
 
 dispatchEvent()
 ***************
-windowObj.dispatchEvent(eventObj)
+``windowObj.dispatchEvent(eventObj)``
 
-- eventObj: A UIEvent base class.
+============  =====================
+``eventObj``  A UIEvent base class.
+============  =====================
 
 Simulates the occurrence of an event in this target. A script can create a UIEvent base class for a
 specific event and pass it to this method to start the event propagation for the event.
@@ -571,9 +576,11 @@ Returns ``false`` if any of the registered listeners that handled the event call
 
 findElement()
 *************
-windowOrContainerObj.findElement(name)
+``windowOrContainerObj.findElement(name)``
 
-- name: The name of the element, as specified in the name creation property.
+========  ====================================================================
+``name``  The name of the element, as specified in the name creation property.
+========  ====================================================================
 
 Searches for the named element among the children of this window or container, and returns the
 object if found.
@@ -582,7 +589,7 @@ Returns the control object or ``null``.
 
 hide()
 ******
-windowObj.hide()
+``windowObj.hide()``
 
 Hides this window. When a window is hidden, its children are also hidden, but when it is shown
 again, the children retain their own visibility states.
@@ -595,15 +602,17 @@ Returns ``undefined``.
 
 notify()
 ********
-windowObj.notify([event])
+``windowObj.notify([event])``
 
-- event: Optional. The name of the window event handler to call. One of:
-  - onClose_
-  - onMove_
-  - onMoving_
-  - onResize_
-  - onResizing_
-  - onShow_
+=========  =================================================================
+``event``  Optional. The name of the window event handler to call. One of:
+             - ``onClose_``
+             - ``onMove_``
+             - ``onMoving_``
+             - ``onResize_``
+             - ``onResizing_``
+             - ``onShow_``
+=========  =================================================================
 
 Sends a notification message, simulating the specified user interaction event. For example, to
 simulate a dialog being moved by a user::
@@ -614,14 +623,16 @@ Returns ``undefined``.
 
 remove()
 ********
-windowOrContainerObj.remove(index)
+``windowOrContainerObj.remove(index)``
+``windowOrContainerObj.remove(text)``
+``windowOrContainerObj.remove(child)``
 
-windowOrContainerObj.remove(text)
-
-windowOrContainerObj.remove(child)
-
-- ``index``, ``text``, ``child``: The child control to remove, specified by 0-based index, the contained text
-  value, or as a control object.
+==========  ===========================================================================
+``index``
+``text``
+``child``   The child control to remove, specified by 0-based index, the contained text
+            value, or as a control object.
+==========  ===========================================================================
 
 Removes the specified child control from this window's or container's children array. No error
 results if the child does not exist.
@@ -630,11 +641,13 @@ Returns ``undefined``.
 
 removeEventListener()
 *********************
-windowObj.removeEventListener(eventName, handler[, capturePhase]);
+``windowObj.removeEventListener(eventName, handler[, capturePhase])``
 
-- ``eventName``: The event name string.
-- ``handler``: The function that was registered to handle the event.
-- ``capturePhase``: Optional. Whether the handler was to respond only in the capture phase.
+================  ========================================================================
+``eventName``     The event name string.
+``handler``       The function that was registered to handle the event.
+``capturePhase``  Optional. Whether the handler was to respond only in the capture phase.
+================  ========================================================================
 
 Unregisters an event handler for a particular type of event occurring in this window. All arguments
 must be identical to those that were used to register the event handler.
@@ -643,7 +656,7 @@ Returns ``undefined``.
 
 show()
 ******
-windowObj.show()
+``windowObj.show()``
 
 Shows this window, container, or control. If an onShow_ callback is defined for a window, calls that
 function before showing the window.
@@ -657,7 +670,7 @@ Otherwise, returns 0.
 
 update()
 ********
-windowObj.update()
+``windowObj.update()``
 
 Allows a script to run a long operation (such as copying a large file) and update UI elements to show
 the status of the operation.

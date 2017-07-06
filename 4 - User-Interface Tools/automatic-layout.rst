@@ -86,16 +86,18 @@ Container orientation
 The ``orientation`` property of a container specifies the organization of child elements within it. It can have
 these values:
 
-- ``row`` - Child elements are arranged next to each other, in a single row from left to right across the
-  container. The height of the container is based on the height of the tallest child element in the row,
-  and the width of the container is based on the combined widths of all the child elements.
-- ``column`` - Child elements are arranged above and below each other, in a single column from top to
-  bottom across the container. The height of the container is based on the combined heights of all the
-  child elements, and the width of the container is based on the widest child element in the column.
-- ``stack`` - Child elements are arranged overlapping one another, as in a stack of papers. The elements
-  overlie one another in the same region of the container. Only the top element is fully visible. The
-  height of the container is based on the height of the tallest child element in the stack, and the width of
-  the container is based on the widest child element in the stack.
+==========  ==========================================================================================================
+``row``     Child elements are arranged next to each other, in a single row from left to right across the
+            container. The height of the container is based on the height of the tallest child element in the row,
+            and the width of the container is based on the combined widths of all the child elements.
+``column``  Child elements are arranged above and below each other, in a single column from top to
+            bottom across the container. The height of the container is based on the combined heights of all the
+            child elements, and the width of the container is based on the widest child element in the column.
+``stack``   Child elements are arranged overlapping one another, as in a stack of papers. The elements
+            overlie one another in the same region of the container. Only the top element is fully visible. The
+            height of the container is based on the height of the tallest child element in the stack, and the width of
+            the container is based on the widest child element in the stack.
+==========  ==========================================================================================================
 
 The following figure shows the results of laying out the sample window with each of these orientations:
 
@@ -124,34 +126,41 @@ corresponding to the constant, rather than a string value.
 
 Elements in a row can be aligned along the vertical axis, in these ways:
 
-- ``top`` - The element's top edge is located at the top margin of its container.
-- ``bottom`` - element's bottom edge is located at the bottom margin of its container.
-- ``center`` - The element is centered within the top and bottom margins of its container.
-- ``fill`` - The element's height is adjusted to fill the height of the container between the top and
-  bottom margins.
+==========  ===========================================================================
+``top``     The element's top edge is located at the top margin of its container.
+``bottom``  The element's bottom edge is located at the bottom margin of its container.
+``center``  The element is centered within the top and bottom margins of its container.
+``fill``    The element's height is adjusted to fill the height of the container
+            between the top and bottom margins.
+==========  ===========================================================================
 
 Elements in a column can be aligned along the horizontal axis, in these ways:
 
-- ``left`` - The element's left edge is located at the left margin of its container.
-- ``right`` - The element's right edge is located at the right margin of its container.
-- ``center`` - The element is centered within the right and left margins of its container.
-- ``fill`` - The element's width is adjusted to fill the width of the container between the right and left
-  margins.
+==========  ===========================================================================
+``left``    The element's left edge is located at the left margin of its container.
+``right``   The element's right edge is located at the right margin of its container.
+``center``  The element is centered within the right and left margins of its container.
+``fill``    The element's width is adjusted to fill the width of the container
+            between the right and left margins.
+==========  ===========================================================================
+
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
 
-- ``top`` - The element's top edge is located at the top margin of its container, and the element is
-  centered within the right and left margins of its container.
-- ``bottom`` - element's bottom edge is located at the bottom margin of its container, and the element is
-  centered within the right and left margins of its container.
-- ``left`` - element's left edge is located at the left margin of its container, and the element is centered
-  within the top and bottom margins of its container.
-- ``right`` - The element's right edge is located at the right margin of its container, and the element is
-  centered within the top and bottom margins of its container.-
-- ``center`` - The element is centered within the top, bottom, right and left margins of its container.
-- ``fill`` - The element's height is adjusted to fill the height of the container between the top and
-  bottom margins., and the element's width is adjusted to fill the width of the container between the
-  right and left margins.
+=======    ===================================================================================================
+``top``    The element's top edge is located at the top margin of its container, and the element is
+           centered within the right and left margins of its container.
+``bottom`` The element's bottom edge is located at the bottom margin of its container, and the element is
+           centered within the right and left margins of its container.
+``left``   The element's left edge is located at the left margin of its container, and the element is centered
+           within the top and bottom margins of its container.
+``right``  The element's right edge is located at the right margin of its container, and the element is
+           centered within the top and bottom margins of its container.-
+``center`` The element is centered within the top, bottom, right and left margins of its container.
+``fill``   The element's height is adjusted to fill the height of the container between the top and
+           bottom margins., and the element's width is adjusted to fill the width of the container between the
+           right and left margins.
+=======    ===================================================================================================
 
 The following figure shows the results of creating the sample window with row orientation and the
 ``bottom`` and ``top`` alignment settings in the parent's ``alignChildren`` property:

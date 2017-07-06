@@ -102,16 +102,21 @@ decode()
 ********
 ``Folder.decode( uri )``
 
-- ``uri``: String. The encoded string to decode. All special characters must be encoded in UTF-8
-  and stored as escaped characters starting with the percent sign followed by two
-  hexadecimal digits. For example, the string ``"my%20file"`` is decoded as ``"my file"``.
-  Special characters are those with a numeric value greater than 127, except the following::
+=======  ==========================================================================================
+``uri``  String. The encoded string to decode. All special characters must be encoded in UTF-8
+         and stored as escaped characters starting with the percent sign followed by two
+         hexadecimal digits. For example, the string ``"my%20file"`` is decoded as ``"my file"``.
+=======  ==========================================================================================
 
-      / - _ . ! ~ * ' ( )
+Special characters are those with a numeric value greater than 127, except the following::
+
+  ``/ - _ . ! ~ * ' ( )``
 
 Decodes the specified string as required by RFC 2396.
 
 Returns the decoded string.
+
+--------------------------------------------------------------------------------
 
 .. _folder-encode:
 
@@ -119,16 +124,20 @@ encode()
 ********
 ``Folder.encode( name )``
 
-- ``name``: String. The string to encode.
+========  =============================
+``name``  String. The string to encode.
+========  =============================
 
 Encodes the specified string as required by RFC 2396. All special characters are encoded in UTF-8
 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits.
 For example, the string ``"my file"`` is encoded as ``"my%20file"``.
 Special characters are those with a numeric value greater than 127, except the following::
 
-    / - _ . ! ~ * ' ( )
+    ``/ - _ . ! ~ * ' ( )``
 
 Returns the encoded string.
+
+--------------------------------------------------------------------------------
 
 .. _folder-isEncodingAvailable:
 
@@ -136,7 +145,10 @@ isEncodingAvailable()
 *********************
 ``Folder.isEncodingAvailable( name )``
 
-- ``name``: String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See :ref:`file-and-folder-supported-encoding-names`.
+========  ============================================================================
+``name``  String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8."
+          See :ref:`file-and-folder-supported-encoding-names`.
+========  ============================================================================
 
 Checks whether a given encoding is available.
 
@@ -144,11 +156,15 @@ Returns true if your system supports the specified encoding, false otherwise.
 
 .. _folder-selectDialog:
 
+--------------------------------------------------------------------------------
+
 selectDialog()
 **************
 ``Folder.selectDialog( [prompt] )``
 
-- ``prompt``: Optional. A string containing the prompt text, if the dialog allows a prompt.
+==========  =============================================================================
+``prompt``  Optional. A string containing the prompt text, if the dialog allows a prompt.
+==========  =============================================================================
 
 Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object
 for the selected file or folder. Differs from the object method :ref:`folder-selectDlg` in that it does not
@@ -156,6 +172,8 @@ preselect a folder.
 
 If the user clicks ``OK``, returns a File or Folder object for the selected file or folder. If the user
 cancels, returns null.
+
+--------------------------------------------------------------------------------
 
 .. _folder-object-properties:
 
@@ -198,17 +216,23 @@ Folder object functions
 -----------------------
 These functions are available for Folder objects.
 
+--------------------------------------------------------------------------------
+
 .. _folder-changePath:
 
 changePath()
 ************
 ``folderObj.changePath( path )``
 
-- ``path``: A string containing the new path, absolute or relative to the current parent folder.
+========  ====================================================================================
+``path``  A string containing the new path, absolute or relative to the current parent folder.
+========  ====================================================================================
 
 Changes the path specification of the referenced folder.
 
 Returns true on success.
+
+--------------------------------------------------------------------------------
 
 .. _folder-create:
 
@@ -219,6 +243,8 @@ create()
 Creates a folder at the location given by this object's path property.
 
 Returns true if the folder was created successfully.
+
+--------------------------------------------------------------------------------
 
 .. _folder-execute:
 
@@ -231,14 +257,18 @@ browser).
 
 Returns true immediately if the folder was opened successfully.
 
+--------------------------------------------------------------------------------
+
 .. _folder-getFiles:
 
 getFiles()
 **********
 ``folderObj.getFiles( [mask] )``
 
-- ``mask``: Optional. A search mask for file names. A string that can contain question mark (``?``) and
-  asterisk (``*``) wild cards. Default is "``*``", which matches all file names.
+========  ===========================================================================================
+``mask``  Optional. A search mask for file names. A string that can contain question mark (``?``) and
+          asterisk (``*``) wild cards. Default is "``*``", which matches all file names.
+========  ===========================================================================================
 
 Can also be the name of a function that takes a File or Folder object as its argument.
 It is called for each file or folder found in the search; if it returns true, the object is added
@@ -253,19 +283,25 @@ Retrieves the contents of this folder, filtered by the supplied mask.
 
 Returns an array of File and Folder objects, or null if this object's referenced folder does not exist.
 
+--------------------------------------------------------------------------------
+
 .. _folder-getRelativeURI:
 
 getRelativeURI()
 ****************
 ``folderObj.getRelativeURI( [basePath] )``
 
-- ``basePath``: Optional. A string containing the base path for the relative URI. Default is the current
-  folder.
+============  =================================================================
+``basePath``  Optional. A string containing the base path for the relative URI.
+              Default is the current folder.
+============  =================================================================
 
 Retrieves the path for this folder relative to the specified base path or the current folder, in URI
 notation.
 
 Returns a string containing the relative URI.
+
+--------------------------------------------------------------------------------
 
 .. _folder-remove:
 
@@ -279,7 +315,9 @@ instead, deletes the referenced alias or shortcut file itself.
 
 .. note:: Cannot be undone. It is recommended that you prompt the user for permission before deleting.
 
-Returns true if the folder is deleted successfully.Folder object
+Returns true if the folder is deleted successfully.
+
+--------------------------------------------------------------------------------
 
 .. _folder-rename:
 
@@ -287,12 +325,16 @@ rename()
 ********
 ``folderObj.rename( newName )``
 
-- ``newName``: The new folder name, with no path.
+===========  ==================================
+``newName``  The new folder name, with no path.
+===========  ==================================
 
 Renames the associated folder. Does not resolve aliases; instead, renames the referenced alias or
 shortcut file itself.
 
 Returns true on success.
+
+--------------------------------------------------------------------------------
 
 .. _folder-resolve:
 
@@ -305,13 +347,17 @@ If this object references an alias or shortcut, this method resolves that alias
 Returns a new Folder object that references the file-system element to which the alias resolves, or
 null if this object does not reference an alias, or if the alias cannot be resolved.
 
+--------------------------------------------------------------------------------
+
 .. _folder-selectDlg:
 
 selectDlg()
 ***********
 ``folderObj.selectDlg( prompt )``
 
-- ``prompt``: A string containing the prompt text, if the dialog allows a prompt.
+==========  ===================================================================
+``prompt``  A string containing the prompt text, if the dialog allows a prompt.
+==========  ===================================================================
 
 Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object
 for the selected file or folder. Differs from the class method selectDialog() in that it preselects
@@ -319,3 +365,5 @@ this folder.
 
 If the user clicks ``OK``, returns a File or Folder object for the selected file or folder. If the user
 cancels, returns ``null``.
+
+--------------------------------------------------------------------------------

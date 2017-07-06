@@ -58,19 +58,21 @@ decode()
 ********
 ``File.decode( uri )``
 
-- ``uri``: String. The encoded string to decode. All special characters must be encoded in
-  UTF-8 and stored as escaped characters starting with the percent sign followed by
-  two hexadecimal digits. For example, the string ``"my%20file"`` is decoded as ``"my
-  file"``.
+=======  ===================================================================================
+``uri``  String. The encoded string to decode. All special characters must be encoded in
+         UTF-8 and stored as escaped characters starting with the percent sign followed by
+         two hexadecimal digits. For example, the string ``"my%20file"`` is decoded as ``"my
+         file"``.
+=======  ===================================================================================
 
-  Special characters are those with a numeric value greater than 127, except the
-  following::
+Special characters are those with a numeric value greater than 127, except the following::
 
-      / - _ . ! ~ * ' ( )
+    ``/ - _ . ! ~ * ' ( )``
 
 Decodes the specified string as required by RFC 2396.
 
 Returns the decoded string.
+
 
 .. _file-encode:
 
@@ -78,7 +80,9 @@ encode()
 ********
 ``File.encode( name )``
 
-- ``name``: String. The string to encode.
+========  =============================
+``name``  String. The string to encode.
+========  =============================
 
 Encodes the specified string as required by RFC 2396. All special characters are encoded in UTF-8
 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits.
@@ -89,6 +93,7 @@ Special characters are those with a numeric value greater than 127, except the f
 
 Returns the encoded string.
 
+
 .. _file-isEncodingAvailable:
 
 isEncodingAvailable()
@@ -96,7 +101,10 @@ isEncodingAvailable()
 
 ``File.isEncodingAvailable( name )``
 
-- ``name``: String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8." See :ref:`file-and-folder-supported-encoding-names`.
+========  ============================================================================
+``name``  String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8."
+          See :ref:`file-and-folder-supported-encoding-names`.
+========  ============================================================================
 
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
@@ -107,16 +115,15 @@ openDialog()
 ************
 ``File.openDialog( [prompt, filter, multiSelect] )``
 
-- ``prompt``: Optional. A string containing the prompt text, if the dialog allows a prompt.
-- ``filter``: Optional. A filter that limits the types of files displayed in the dialog.
-
-  In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
-
-  In Mac OS, a filter function that takes a File instance and returns true if the file
-  should be included in the display, false if it should not.
-
-- ``multiSelect``: Optional. Boolean. When true, the user can select multiple files and the return
-  value is an array. Default is false.
+===============  ===================================================================================
+``prompt``       Optional. A string containing the prompt text, if the dialog allows a prompt.
+``filter``       Optional. A filter that limits the types of files displayed in the dialog.
+                   - In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+                   - In Mac OS, a filter function that takes a File instance and returns true if the file
+                     should be included in the display, false if it should not.
+``multiSelect``  Optional. Boolean. When true, the user can select multiple files and the return
+                 value is an array. Default is false.
+===============  ===================================================================================
 
 Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or
 multiple files, and creates new File objects to represent the selected files.
@@ -124,16 +131,19 @@ multiple files, and creates new File objects to represent the selected files.
 If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files
 are selected. If the user cancels, returns ``null``.
 
+
 .. _file-saveDialog:
 
 saveDialog()
 ************
 ``File.saveDialog( prompt[, preset] )``
 
-- ``prompt``: A string containing the prompt text, if the dialog allows a prompt.
-- ``filter``:  Optional, in Windows only. A filter that limits the types of files displayed in the
-  dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
-  Not used in Mac OS.
+==========  ===================================================================================
+``prompt``  A string containing the prompt text, if the dialog allows a prompt.
+``filter``  Optional, in Windows only. A filter that limits the types of files displayed in the
+            dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+            Not used in Mac OS.
+==========  ===================================================================================
 
 Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file
 location to which to save information, and creates a new File object to represent the selected file
@@ -141,6 +151,7 @@ location.
 
 If the user clicks **OK**, returns a File object for the selected file location. If the user cancels, returns
 ``null``.
+
 
 .. _file-object-properties:
 
@@ -210,6 +221,7 @@ These properties are available for ``File`` objects.
 
 .. _file-object-functions:
 
+
 File object functions
 ---------------------
 These functions are available for File objects.
@@ -220,7 +232,9 @@ changePath()
 ************
 ``fileObj.changePath( path )``
 
-- ``path``: A string containing the new path, absolute or relative to the current folder.
+========  =============================================================================
+``path``  A string containing the new path, absolute or relative to the current folder.
+========  =============================================================================
 
 Changes the path specification of the referenced file.
 
@@ -242,8 +256,10 @@ copy()
 ******
 ``fileObj.copy( target )``
 
-- ``target``: A string with the URI path to the target location, or a File object that references the
-  target location.
+==========  ===================================================================
+``target``  A string with the URI path to the target location, or a File object
+            that references the target location.
+==========  ===================================================================
 
 Copies this object's referenced file to the specified target location. Resolves any aliases to find the
 source file. If a file exists at the target location, it is overwritten.
@@ -256,7 +272,9 @@ createAlias()
 *************
 ``fileObj.createAlias( [path] )``
 
-- ``path``: A string containing the path of the target file.
+========  ================================================
+``path``  A string containing the path of the target file.
+========  ================================================
 
 Makes this file a file-system alias or shortcut to the specified file. The referenced file for this object
 must not yet exist on disk.
@@ -281,8 +299,10 @@ getRelativeURI()
 ****************
 ``fileObj.getRelativeURI( [basePath] )``
 
-- ``basePath``: Optional. A string containing the base path for the relative URI. Default is the current
-  folder.
+============  =================================================================
+``basePath``  Optional. A string containing the base path for the relative URI.
+              Default is the current folder.
+============  =================================================================
 
 Retrieves the URI for this file, relative to the specified base path, in URI notation. If no base path is
 supplied, the URI is relative to the path of the current folder.
@@ -295,18 +315,21 @@ open()
 ******
 ``fileObj.open( mode [,type] [,creator] )``
 
-- ``mode``: A string indicating the read/write mode. One of:
-    - ``r``: (read) Opens for reading. If the file does not exist or cannot be found, the call
-      fails.
-    - ``w``: (write) Opens a file for writing. If the file exists, its contents are destroyed. If
-      the file does not exist, creates a new, empty file.
-    - ``e``: (edit) Opens an existing file for reading and writing.
-    - ``a``: (append) Opens the file in Append mode, and moves the current position to
-      the end of the file.
-- ``type``: Optional. In Mac OS, the type of a newly created file, a 4-character string. Ignored in
-  Windows and UNIX.
-- ``creator``: Optional. In Mac OS, the creator of a newly created file, a 4-character string. Ignored
-  in Windows and UNIX.
+========  ==========================================================================
+``mode``  A string indicating the read/write mode. One of:
+            - ``r``: (read) Opens for reading. If the file does not exist
+                     or cannot be found, the call fails.
+            - ``w``: (write) Opens a file for writing. If the file exists,
+                     its contents are destroyed. If the file does not exist,
+                    creates a new, empty file.
+            - ``e``: (edit) Opens an existing file for reading and writing.
+            - ``a``: (append) Opens the file in Append mode, and moves the
+                     current position to the end of the file.
+            - ``type``: Optional. In Mac OS, the type of a newly created file,
+                        a 4-character string. Ignored in Windows and UNIX.
+            - ``creator``: Optional. In Mac OS, the creator of a newly created file,
+                           a 4-character string. Ignored in Windows and UNIX.
+========  ==========================================================================
 
 Opens the referenced file for subsequent read/write operations. The method resolves any aliases to
 find the file.
@@ -329,14 +352,14 @@ openDlg()
 *********
 ``fileObj.OpenDlg( [prompt][,filter][,multiSelect] )``
 
-- ``prompt``: Optional. A string containing the prompt text, if the dialog allows a prompt.
-- ``filter``: Optional. A filter that limits the types of files displayed in the dialog.
-
-    - In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
-    - In Mac OS, a filter function that takes a File instance and returns true if the file
-      should be included in the display, false if it should not.
-- ``multiSelect``: Optional. Boolean. When true, the user can select multiple files and the return value
-  is an array. Default is false.
+===============  ====================================================================================================================
+``prompt``       Optional. A string containing the prompt text, if the dialog allows a prompt.
+``filter``       Optional. A filter that limits the types of files displayed in the dialog.
+                   - In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+                   - In Mac OS, a filter function that takes a File instance and returns true if the file
+                     should be included in the display, false if it should not.
+``multiSelect``  Optional. Boolean. When true, the user can select multiple files and the return value is an array. Default is false.
+===============  ====================================================================================================================
 
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
 or files, and creates new File objects to represent the selected files. Differs from the class method
@@ -352,9 +375,11 @@ read()
 ******
 ``fileObj.read( [chars] )``
 
-- ``chars``: Optional. An integer specifying the number of characters to read. By default, reads
-  from the current position to the end of the file. If the file is encoded, multiple bytes
-  might be read to create single Unicode characters.
+=========  ========================================================================================
+``chars``  Optional. An integer specifying the number of characters to read. By default, reads
+           from the current position to the end of the file. If the file is encoded, multiple bytes
+           might be read to create single Unicode characters.
+=========  ========================================================================================
 
 Reads the contents of the file starting at the current position.
 
@@ -403,7 +428,9 @@ rename()
 ********
 ``fileObj.rename( newName )``
 
-- ``newName``: The new file name, with no path.
+===========  ================================
+``newName``  The new file name, with no path.
+===========  ================================
 
 Renames the associated file. Does not resolve aliases, but renames the referenced alias or shortcut
 file itself.
@@ -428,11 +455,12 @@ saveDlg()
 *********
 ``fileObj.saveDlg( [prompt][, preset] )``
 
-- ``prompt``: Optional. A string containing the prompt text, if the dialog allows a prompt.
-- ``preset``: Optional, in Windows only. A filter that limits the types of files displayed in the
-  dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
-
-  Not used in Mac OS.
+==========  ===================================================================================
+``prompt``  Optional. A string containing the prompt text, if the dialog allows a prompt.
+``preset``  Optional, in Windows only. A filter that limits the types of files displayed in the
+            dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+            Not used in Mac OS.
+==========  ===================================================================================
 
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
 location to which to save information, and creates a new File object to represent the selected file.
@@ -448,14 +476,15 @@ seek()
 ******
 ``fileObj.seek( pos[, mode] )``
 
-- ``pos``: The new current position in the file as an offset in bytes from the start, current
-  position, or end, depending on the mode.
-- ``mode``: Optional. The seek mode, one of:
-
-    - 0: Seek to absolute position, where pos=0 is the first byte of the file. This is the
-      default.
-    - 1: Seek relative to the current position.
-    - 2: Seek backward from the end of the file.
+=======   ==================================================================================
+``pos``   The new current position in the file as an offset in bytes from the start, current
+          position, or end, depending on the mode.
+``mode``  Optional. The seek mode, one of:
+            - ``0``: Seek to absolute position, where pos=0 is the first byte of the file. This is the
+              default.
+            - ``1``: Seek relative to the current position.
+            - ``2``: Seek backward from the end of the file.
+=======   ==================================================================================
 
 Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the
 current file size.
@@ -478,7 +507,9 @@ write()
 *******
 ``fileObj.write( text[, text...]... )``
 
-- ``text``: One or more strings to write, which are concatenated to form a single string.
+========  =============================================================================
+``text``  One or more strings to write, which are concatenated to form a single string.
+========  =============================================================================
 
 Writes the specified text to the file at the current position. For encoded files, writing a single
 Unicode character may write multiple bytes.
@@ -494,7 +525,9 @@ writeln()
 *********
 ``fileObj.writeln (text[, text...]...)``
 
-- ``text``: One or more strings to write, which are concatenated to form a single string.
+========  =============================================================================
+``text``  One or more strings to write, which are concatenated to form a single string.
+========  =============================================================================
 
 Writes the specified text to the file at the current position, and appends a Line Feed sequence in the
 style specified by the linefeed property.For encoded files, writing a single Unicode character may

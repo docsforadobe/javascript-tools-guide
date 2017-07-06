@@ -64,24 +64,13 @@ the special names dot (``.``) for the current directory, or dot dot (``..``) for
 slash (``/``) separates path elements. For example, the following paths describe various relative locations for
 the file ``myFile.jsx``:
 
-.. todo:: Table
-
-myFile.jsx
+==================  ====================================================
+myFile.jsx          In the current directory.
 ./myFile.jsx
-
-In the current directory.
-
-../myFile.jsx
-
-In the parent of the current directory.
-
-../../myFile.jsx
-
-In the grandparent of the current directory.
-
-../dir1/myFile.jsx
-
-In dir1, which is parallel to the current directory.
+../myFile.jsx       In the parent of the current directory.
+../../myFile.jsx    In the grandparent of the current directory.
+../dir1/myFile.jsx  In dir1, which is parallel to the current directory.
+==================  ====================================================
 
 Relative path names are independent of different volume names on different machines and operating
 systems, and therefore make your code considerably more portable. You can, for example, use an absolute
@@ -149,35 +138,14 @@ Mac OS 9 is not supported as an operating system, but the use of the colon as a 
 supported and corresponds to URI and to Mac OS X paths as shown in the following table. These examples
 assume that the startup volume is ``MacOSX``, and that there is a mounted volume ``Remote``.
 
-.. todo:: Table
-
-URI path name
-
-Mac OS 9 path name
-
-Mac OS X path name
-
-/MacOSX/dir/file
-
-MacOSX:dir:file
-
-/dir/file
-
-/Remote/dir/file
-
-Remote:dir:file
-
-/Volumes/Remote/dir/file
-
-/root/dir/file
-
-Root:dir:file
-
-/root/dir/file
-
-~/dir/file
-
-/Users/jdoe/dir/file
+================  ==================  ========================
+URI path name     Mac OS 9 path name  Mac OS X path name
+================  ==================  ========================
+/MacOSX/dir/file  MacOSX:dir:file     /dir/file
+/Remote/dir/file  Remote:dir:file     /Volumes/Remote/dir/file
+/root/dir/file    Root:dir:file       /root/dir/file
+~/dir/file                            /Users/jdoe/dir/file
+================  ==================  ========================
 
 Windows drives
 +++++++++++++++
@@ -199,27 +167,14 @@ To access a remote volume, use a uniform naming convention (UNC) path name of th
 multiple slash characters. Note that on Windows, UNC names do not work for local volumes.
 These examples assume that the current drive is ``D:``
 
-.. todo:: Table
-
-URI path name
-
-Windows path name
-
-/c/dir/file
-
-c:\dir\file
-
-/remote/dir/file
-
-D:\remote\dir\file
-
-/root/dir/file
-
-D:\root\dir\file
-
-~/dir/file
-
-C:\Documents and Settings\jdoe\dir\file
+=============     =======================================
+URI path name     Windows path name
+=============     =======================================
+/c/dir/file       c:\dir\file
+/remote/dir/file  D:\remote\dir\file
+/root/dir/file    D:\root\dir\file
+~/dir/file        C:\Documents and Settings\jdoe\dir\file
+=============     =======================================
 
 Aliases
 +++++++

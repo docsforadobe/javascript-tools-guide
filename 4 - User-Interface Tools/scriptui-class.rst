@@ -16,15 +16,15 @@ ScriptUI.Alignment
 ******************
 ``Object``
 
-Collects the enumerated values that can be used in the :ref:`container-alignment` and
-:ref:`container-alignChildren` properties of controls and containers, and in the alignment
+Collects the enumerated values that can be used in the :ref:`container-properties-alignment` and
+:ref:`container-properties-alignChildren` properties of controls and containers, and in the alignment
 property used to set a control's :ref:`controlobj-titlelayout` property. Read only.
 
 Use these constants to set the alignment. For example::
 
   myGroup.alignment = [ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 
-When you query the :ref:`container-alignment` property, it returns index values that
+When you query the :ref:`container-properties-alignment` property, it returns index values that
 correspond to the constants as shown. Constant values are:
 
 - ``ScriptUI.Alignment.TOP`` (1)
@@ -33,6 +33,8 @@ correspond to the constants as shown. Constant values are:
 - ``ScriptUI.Alignment.RIGHT`` (4)
 - ``ScriptUI.Alignment.FILL`` (5)
 - ``ScriptUI.Alignment.CENTER`` (6)
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-applicationfonts:
 
@@ -164,7 +166,7 @@ of the appropriate type:
 - A :ref:`MouseEvent-object` encapsulates information about mouse events.
 
 This object is passed to a function that you register to respond to events of a certain type that occur
-in a window or control. Use :ref:`windowObj.addEventListener() <window-object-addeventlistener>`
+in a window or control. Use :ref:`windowObj.addEventListener() <window-object-functions-addeventlistener>`
 or :ref:`controlObj.addEventListener() <controlobj-addeventlistener>`
 to register a handler function. See :ref:`registering-event-listeners-for-windows-or-controls`.
 

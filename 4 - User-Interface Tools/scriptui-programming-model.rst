@@ -38,6 +38,8 @@ interaction; for example::
 
     dlg.show();
 
+--------------------------------------------------------------------------------
+
 .. _container-elements:
 
 Container elements
@@ -63,6 +65,8 @@ relatively complex layout without any explicit placement.
 
 You can add elements to any container using the add method (see :ref:`adding-elements-to-containers`). An element added to a container is considered a child of that container. Certain operations on a
 container apply to its children; for example, when you hide a container, its children are also hidden.
+
+--------------------------------------------------------------------------------
 
 .. _window-layout:
 
@@ -120,6 +124,8 @@ window system typically adds title bars and borders. The ``bounds`` property for
 content region. To determine the bounds of the frame surrounding the content region of a window, use
 the ``Window.frameBounds`` property.
 
+--------------------------------------------------------------------------------
+
 .. _adding-elements-to-containers:
 
 Adding elements to containers
@@ -158,6 +164,8 @@ value, but no ``bounds`` value::
 
 A new element is initially set to be visible, but is not shown unless its parent object is shown.
 
+--------------------------------------------------------------------------------
+
 .. _creation-properties:
 
 Creation properties
@@ -172,8 +180,9 @@ only. See :ref:`control-object-constructors` for details.
 You can also specify the creation properties for new objects using the resource specification format; for
 details, see :ref:`resource-specifications`.
 All user-interface elements have an optional creation property called name, which assigns a name for
-identifying that element. For example, the following creates a new Button element with the name ok:
-dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
+identifying that element. For example, the following creates a new Button element with the name ok::
+
+  dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
 
 .. note:: In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
   but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This
@@ -184,6 +193,8 @@ dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
   position values that were correct for Photoshop CS, and the result is the same in Photoshop CS2, CS3, CS4,
   CS5, or CC. You can also set automatic adjustment for a window; in this case, it applies to all child panels of
   that window unless it is explicitly disabled in the child panel. See Window object constructor.
+
+--------------------------------------------------------------------------------
 
 .. _accessing-child-elements:
 
@@ -213,6 +224,8 @@ You can also access named elements through the parent window's ``findElement()``
 
 For list controls (type ``list`` and ``dropdown``), you can access the child list-item objects through the ``items``
 array.
+
+--------------------------------------------------------------------------------
 
 .. _removing-elements:
 

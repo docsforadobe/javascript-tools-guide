@@ -14,7 +14,7 @@ Create an instance of the ``AutoLayoutManager`` class with the new operator::
     myWin.layout = new AutoLayoutManager( myWin );
 
 An instance is automatically created when you create a ``Window`` or container (``group`` or ``panel``) object, and
-referenced by the container's :ref:`container-layout` property. This instance implements the default layout behavior unless
+referenced by the container's :ref:`container-properties-layout` property. This instance implements the default layout behavior unless
 you override it.
 
 .. _autolayoutmanager-object-properties:

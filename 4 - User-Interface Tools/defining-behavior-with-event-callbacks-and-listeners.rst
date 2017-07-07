@@ -29,7 +29,7 @@ to different actions, or events:
   their appearance. To handle these events, define callback functions for :ref:`control-event-ondraw`.
   Your handler can modify or control how the container or control is drawn using the methods
   defined in the control's associated :ref:`scriptuigraphics-object`.
-- In Windows only, you can register a key sequence as a :ref:`control-event-shortcutKey` for a window or
+- In Windows only, you can register a key sequence as a :ref:`controlobj-shortcutKey` for a window or
   for most types of controls. To handle the key sequence, define a callback function for
   :ref:`control-event-onshortcutkey` in that control.
 
@@ -122,7 +122,7 @@ Another way to define the behavior of your windows and controls is register a ha
 responds to a specific type of event in that window or control. This technique allows you to respond to the
 cascading of an event through a hierarchy of containers and controls.
 
-Use :ref:`window-object-addeventlistener` or :ref:`controlobj-addeventlistener`
+Use :ref:`window-object-functions-addeventlistener` or :ref:`controlobj-addeventlistener`
 to register a handler. The function you register receives an event object (from the :ref:`uievent-base-class`)
 that encapsulates the event information. As an event cascades down through a hierarchy and back up
 through the hierarchy, your handler can respond at any level, or use the UIEvent object's

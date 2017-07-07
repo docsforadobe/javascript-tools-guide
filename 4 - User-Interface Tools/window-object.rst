@@ -188,7 +188,7 @@ panel, tabbedpanel, tab, and group).
 
 --------------------------------------------------------------------------------
 
-.. _container-alignChildren:
+.. _container-properties-alignChildren:
 
 alignChildren
 *************
@@ -233,7 +233,7 @@ Values are not case sensitive.
 
 --------------------------------------------------------------------------------
 
-.. _container-alignment:
+.. _container-properties-alignment:
 
 alignment
 *********
@@ -274,7 +274,7 @@ Values are not case sensitive.
 
 --------------------------------------------------------------------------------
 
-.. _container-bounds:
+.. _container-properties-bounds:
 
 bounds
 ******
@@ -289,7 +289,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. _container-children:
+.. _container-properties-children:
 
 children
 ********
@@ -308,7 +308,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. _container-graphics:
+.. _container-properties-graphics:
 
 graphics
 ********
@@ -319,7 +319,7 @@ window's appearance, in response to the onDraw event.
 
 --------------------------------------------------------------------------------
 
-.. _container-layout:
+.. _container-properties-layout:
 
 layout
 ******
@@ -333,7 +333,7 @@ container element is created.
 
 --------------------------------------------------------------------------------
 
-.. _container-location:
+.. _container-properties-location:
 
 location
 ********
@@ -345,7 +345,7 @@ panel. The same as [bounds.x, bounds.y].
 
 --------------------------------------------------------------------------------
 
-.. _container-margins:
+.. _container-properties-margins:
 
 margins
 ***************
@@ -359,7 +359,7 @@ match the standard Adobe user-interface guidelines.
 
 --------------------------------------------------------------------------------
 
-.. _container-maximumSize:
+.. _container-properties-maximumSize:
 
 maximumSize
 ***********
@@ -370,7 +370,7 @@ window can be resized, used in automatic layout and resizing.
 
 --------------------------------------------------------------------------------
 
-.. _container-minimumSize:
+.. _container-properties-minimumSize:
 
 minimumSize
 ***********
@@ -381,7 +381,7 @@ window can be resized, used in automatic layout and resizing.
 
 --------------------------------------------------------------------------------
 
-.. _container-orientation:
+.. _container-properties-orientation:
 
 orientation
 ***********
@@ -404,7 +404,7 @@ children's alignment properties depend on the orientation.
 
 --------------------------------------------------------------------------------
 
-.. _container-parent:
+.. _container-properties-parent:
 
 parent
 ******
@@ -417,7 +417,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. _container-preferredSize:
+.. _container-properties-preferredSize:
 
 preferredSize
 *************
@@ -429,7 +429,7 @@ dimension, specify other dimension as ``-1``.
 
 --------------------------------------------------------------------------------
 
-.. _container-properties-properties:
+.. _container-properties-properties-properties:
 
 properties
 **********
@@ -440,7 +440,7 @@ container (properties used only when the element is created).
 
 --------------------------------------------------------------------------------
 
-.. _container-selection:
+.. _container-properties-selection:
 
 selection
 *********
@@ -455,7 +455,7 @@ panel is called.
 
 --------------------------------------------------------------------------------
 
-.. _container-size:
+.. _container-properties-size:
 
 size
 ****
@@ -466,7 +466,7 @@ panel element, or of the content area of a window.
 
 --------------------------------------------------------------------------------
 
-.. _container-spacing:
+.. _container-properties-spacing:
 
 spacing
 *******
@@ -481,7 +481,7 @@ guidelines.
 
 --------------------------------------------------------------------------------
 
-.. _container-text:
+.. _container-properties-text:
 
 text
 ****
@@ -493,7 +493,7 @@ type group or tabbedpanel. This is a localizable string: see
 
 --------------------------------------------------------------------------------
 
-.. _container-visible:
+.. _container-properties-visible:
 
 visible
 *******
@@ -508,7 +508,7 @@ accordingly when the parent is next shown.
 
 --------------------------------------------------------------------------------
 
-.. _container-window:
+.. _container-properties-window:
 
 window
 ******
@@ -516,9 +516,9 @@ Type: :ref:`Window <window-object>`
 
 The top-level parent window of this container, a :ref:`Window object <window-object>`.
 
-.. _container-windowBounds:
-
 --------------------------------------------------------------------------------
+
+.. _container-properties-windowBounds:
 
 windowBounds
 ************
@@ -526,6 +526,8 @@ Type: :ref:`Bounds`
 
 A Bounds object for the size and location of this container relative
 to its top-level parent window.
+
+--------------------------------------------------------------------------------
 
 .. _window-object-functions:
 
@@ -536,7 +538,7 @@ Group.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-add:
+.. _window-object-functions-add:
 
 add()
 *****
@@ -564,7 +566,7 @@ Returns the new object, or ``null`` if unable to create the object.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-addeventlistener:
+.. _window-object-functions-addeventlistener:
 
 addEventListener()
 ******************
@@ -604,7 +606,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-center:
+.. _window-object-functions-center:
 
 center()
 ********
@@ -620,7 +622,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-close:
+.. _window-object-functions-close:
 
 close()
 *******
@@ -638,7 +640,7 @@ Returns undefined.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-dispatchevent:
+.. _window-object-functions-dispatchevent:
 
 dispatchEvent()
 ***************
@@ -656,7 +658,7 @@ Returns ``false`` if any of the registered listeners that handled the event call
 
 --------------------------------------------------------------------------------
 
-.. _window-object-findelement:
+.. _window-object-functions-findelement:
 
 findElement()
 *************
@@ -673,7 +675,7 @@ Returns the control object or ``null``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-hide:
+.. _window-object-functions-hide:
 
 hide()
 ******
@@ -688,7 +690,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-notify:
+.. _window-object-functions-notify:
 
 notify()
 ********
@@ -713,7 +715,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-remove:
+.. _window-object-functions-remove:
 
 remove()
 ********
@@ -721,12 +723,10 @@ remove()
 ``windowOrContainerObj.remove(text)``
 ``windowOrContainerObj.remove(child)``
 
-==========  ===========================================================================
-``index``
-``text``
-``child``   The child control to remove, specified by 0-based index, the contained text
-            value, or as a control object.
-==========  ===========================================================================
+============================  ===========================================================================
+``index``/``text``/``child``  The child control to remove, specified by 0-based index, the contained text
+                              value, or as a control object.
+============================  ===========================================================================
 
 Removes the specified child control from this window's or container's children array. No error
 results if the child does not exist.
@@ -735,7 +735,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-removeeventlistener:
+.. _window-object-functions-removeeventlistener:
 
 removeEventListener()
 *********************
@@ -754,7 +754,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-show:
+.. _window-object-functions-show:
 
 show()
 ******
@@ -767,12 +767,12 @@ When a window or container is hidden, its children are also hidden, but when it 
 children retain their own visibility states.
 
 For a modal dialog, opens the dialog and does not return until the dialog is dismissed. If it is
-dismissed via the :ref:`close() <window-object-close>` method, this method returns any result value passed to that method.
+dismissed via the :ref:`close() <window-object-functions-close>` method, this method returns any result value passed to that method.
 Otherwise, returns 0.
 
 --------------------------------------------------------------------------------
 
-.. _window-object-update:
+.. _window-object-functions-update:
 
 update()
 ********
@@ -790,7 +790,7 @@ cancel the current operation (by clicking a Cancel button, for instance).
 During the update() operation, the application is put into a modal state, so that it does not handle
 any events that would activate a different window, or give focus to a control outside the window
 being updated. The modal state allows drawing events for controls in other windows to occur (as is
-the case during a modal :ref:`show() <window-object-show>` operation), so that the script does not prevent the update of other
+the case during a modal :ref:`show() <window-object-functions-show>` operation), so that the script does not prevent the update of other
 parts of the application's UI while in the operation loop.
 
 It is an error to call the update() method for a window that is not currently visible.
@@ -821,7 +821,7 @@ the keyboard focus.
 onClose
 *******
 Called when a request is made to close the window, either by an explicit call to the
-:ref:`close() <window-object-close>` function or by a user action (clicking the OS-specific close icon in the title
+:ref:`close() <window-object-functions-close>` function or by a user action (clicking the OS-specific close icon in the title
 bar).
 
 The function is called before the window actually closes; it can return false to cancel
@@ -895,6 +895,6 @@ shortcutKey value for this window.
 
 onShow
 ******
-Called when a request is made to open the window using the :ref:`show() <window-object-show>` method, before
+Called when a request is made to open the window using the :ref:`show() <window-object-functions-show>` method, before
 the window is made visible, but after automatic layout is complete. A handler can
 modify the results of the automatic layout.

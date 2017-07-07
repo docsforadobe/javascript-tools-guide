@@ -5,55 +5,72 @@ Defining entry points for indirect access
 The C-client object interface for external libraries allows your C or C++ shared-library code to define,
 create, use, and manage JavaScript objects.
 The following entry points are required if you wish to use the object interface:
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-ESClientInterface:
+
 ESClientInterface()
-int ESClientInterface (SoCClient_e kReason, SoServerInterface* pServer,
-SoHServer hServer)
-kReason
+*******************
+``int ESClientInterface (SoCClient_e kReason, SoServerInterface* pServer, SoHServer hServer)``
 
-The reason for this call, one of these constants:
-kSoCClient_init: The function is being called for initialization upon load.
-kSoCClient_term.: The function is being called for termination upon unload.
+===========  ===================================================================================
+``kReason``  The reason for this call, one of these constants:
+             - ``kSoCClient_init``: The function is being called for initialization upon load.
+             - ``kSoCClient_term``.: The function is being called for termination upon unload.
+``pServer``  A pointer to an :ref:`shared-library-SoServerInterface` containing function pointers for the entry points,
+             which enable the shared-library code to call into JavaScript to create and access
+             JavaScript classes and objects.
 
-pServer
+             The shared-library code is responsible for storing this structure between the
+             initialization and termination call, and retrieving it to access the functions.
+``hServer``  An :ref:`SoHServer <missing link>` reference for this shared library. The server is an object factory that
+             creates and manages :ref:`SoHObject <missing link>` objects.
 
-A pointer to an SoServerInterface containing function pointers for the entry points,
-which enable the shared-library code to call into JavaScript to create and access
-JavaScript classes and objects.
-The shared-library code is responsible for storing this structure between the
-initialization and termination call, and retrieving it to access the functions.
-
-hServer
-
-An SoHServer reference for this shared library. The server is an object factory that
-creates and manages SoHObject objects.
-The shared-library code is responsible for storing this structure between the
-initialization and termination calls. You must pass it to taggedDataInit() and
-taggedDataFree().
+             The shared-library code is responsible for storing this structure between the
+             initialization and termination calls. You must pass it to :ref:`taggedDataInit() <missing link>` and
+             :ref:`taggedDataFree() <missing link>`.
+===========  ===================================================================================
 
 Your library must define this global function in order to use the object interface to JavaScript. The
 function is called twice in each session, immediately upon loading the library, and again when
 unloading it.
-Returns an error code, kESErrOK on success.
-ESMallocMem()
-void * ESMallocMem ( size_t nbytes)
-nbytes
 
-The number of bytes to allocate.
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-ESMallocMem:
+
+ESMallocMem()
+*************
+``void * ESMallocMem ( size_t nbytes)``
+
+==========  ===================================================================================
+``nbytes``  The number of bytes to allocate.
+==========  ===================================================================================
 
 Provides a memory allocation routine to be used by JavaScript for managing memory associated
 with the library's objects.
+
 Returns a pointer to the allocated block of memory.
+
+--------------------------------------------------------------------------------
 
 .. _shared-library-function-api:
 
 Shared-library function API
 ---------------------------
 Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in
-SoServerInterface and SoObjectInterface function-pointer structures.
-Return values from most functions are integer constants. The error code kESErrOK == 0 indicates success.
+:ref:`shared-library-SoServerInterface` and :ref:`shared-library-SoObjectInterface` function-pointer structures.
+Return values from most functions are integer constants. The error code ``kESErrOK == 0`` indicates success.
+
+.. _shared-library-SoServerInterface
 
 SoServerInterface
-SoServerInterface is a structure of function pointers which enable the shared-library code to call
+*****************
+
+``SoServerInterface`` is a structure of function pointers which enable the shared-library code to call
 
 JavaScript objects. It is passed to the global ESClientInterface() function for initialization when the library is
 loaded, and again for cleanup when the library is unloaded. Between these calls, your shared-library code
@@ -61,503 +78,555 @@ must store the structure and use it to access the communication functions.
 You can store information for every object and class in your C code. The recommended method is to create
 a data structure during the initialize() and free it during finalize(). You can then access that data with
 setClientData() and getClientData().
-The SoServerInterface structure contains these function pointers:
-SoServerInterface {
-SoServerDumpServer_f
-SoServerDumpObject_f
 
-dumpServer; //debugging, show server in console
-dumpObject; //debugging, show object in console
+The SoServerInterface structure contains these function pointers::
 
-SoServerAddClass_f
+    SoServerInterface {
+        SoServerDumpServer_f
+        SoServerDumpObject_f
 
-addClass; //define a JS class
+        dumpServer; //debugging, show server in console
+        dumpObject; //debugging, show object in console
 
-SoServerAddMethod_f
-SoServerAddMethods_f
-SoServerAddProperty_f
-SoServerAddProperties_f
+        SoServerAddClass_f
 
-addMethod; // define a method
-addMethods; // define a set of methods
-addProperty; // define a property
-addProperties; // define a set of properties
+        addClass; //define a JS class
 
-SoServerGetClass_f
-SoServerGetServer_f
+        SoServerAddMethod_f
+        SoServerAddMethods_f
+        SoServerAddProperty_f
+        SoServerAddProperties_f
 
-getClass; // get class for an instance
-getServer; // get server for an instance
+        addMethod; // define a method
+        addMethods; // define a set of methods
+        addProperty; // define a property
+        addProperties; // define a set of properties
 
-SoServerSetClientData_f
-SoServerGetClientData_f
+        SoServerGetClass_f
+        SoServerGetServer_f
 
-setClientData; //set data in instance
-getClientData; //get data from instance
+        getClass; // get class for an instance
+        getServer; // get server for an instance
 
-SoServerEval_f
-eval; // call JavaScript interpreter
-SoServerTaggedDataInit_f taggedDataInit; // init tagged data
-SoServerTaggedDataFree_f taggedDataFree; // free tagged data
-}
+        SoServerSetClientData_f
+        SoServerGetClientData_f
+
+        setClientData; //set data in instance
+        getClientData; //get data from instance
+
+        SoServerEval_f
+        eval; // call JavaScript interpreter
+        SoServerTaggedDataInit_f taggedDataInit; // init tagged data
+        SoServerTaggedDataFree_f taggedDataFree; // free tagged data
+    }
 
 These functions allow your C/C++ shared library code to create, modify, and access JavaScript classes and
 objects. The functions must conform to the following type definitions.
-dumpServer()
-ESerror_t dumpServer (SoHServer hServer);
-hServer
 
-The SoHServer reference for this shared library, as passed to your global
-ESClientInterface() function on initialization.
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-dumpServer:
+
+dumpServer()
+************
+``ESerror_t dumpServer (SoHServer hServer);``
+
+===========  ===================================================================================
+``hServer``  The :ref:`SoHServer <missing link>` reference for this shared library, as passed to your global
+             :ref:`ESClientInterface() <missing link>` function on initialization.
+===========  ===================================================================================
 
 Prints the contents of this server to the JavaScript Console in the ExtendScript Toolkit, for
 debugging.
-Returns an error code, kESErrOK on success.
-dumpObject()
-ESerror_t dumpObject (SoHObject hObject);
-hObject
 
-The SoHObject reference for an instance of this class.
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-dumpObject:
+
+dumpObject()
+************
+``ESerror_t dumpObject (SoHObject hObject);``
+
+===========  ===================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+===========  ===================================================================================
 
 Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for
 debugging.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-addClass:
 
 addClass()
-ESerror_t addClass (SoHServer hServer, char* name,
-SoObjectInterface_p pObjectInterface);
-hServer
+**********
+``ESerror_t addClass (SoHServer hServer, char* name, SoObjectInterface_p pObjectInterface);``
 
-The SoHServer reference for this shared library, as passed to your global
-ESClientInterface() function on initialization.
-
-name
-
-String. The unique name of the new class. The name must begin with an
-uppercase alphabetic character.
-
-pObjectInterface
-
-A pointer to an SoObjectInterface. A structure containing pointers to the
-object interface methods for instances of this class.
+====================  ===================================================================================
+``hServer``           The :ref:`SoHServer <missing link>` reference for this shared library, as passed to your global
+                      :ref:`ESClientInterface() <missing link>` function on initialization.
+``name``              String. The unique name of the new class. The name must begin with an
+                      uppercase alphabetic character.
+``pObjectInterface``  A pointer to an :ref:`SoObjectInterface <mising link>`. A structure containing pointers to the
+                      object interface methods for instances of this class.
+====================  ===================================================================================
 
 Creates a new JavaScript class.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-addMethod:
+
 addMethod()
-ESerror_t addMethod (SoHObject hObject, const char* name, int id, char* desc);
-hObject
+***********
+``ESerror_t addMethod (SoHObject hObject, const char* name, int id, char* desc);``
 
-The SoHObject reference for an instance of this class.
-
-name
-
-String. The unique name of the new method.
-
-id
-
-Number. The unique identifier for the new method.
-
-desc
-
-String. A descriptive string for the new method.
+===========  ===================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``     String. The unique name of the new method.
+``id``       Number. The unique identifier for the new method.
+``desc``     String. A descriptive string for the new method.
+===========  ===================================================================================
 
 Adds new method to an instance.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-addMethods:
+
 addMethods()
-ESerror_t addMethods (SoHObject hObject, SoCClientName_p pNames);
-hObject
+************
+``ESerror_t addMethods (SoHObject hObject, SoCClientName_p pNames);``
 
-The SoHObject reference for an instance of this class.
-
-pNames[]
-
-SoCClientName. A structure containing the names and identifiers of
-methods to be added.
+============  ===================================================================================
+``hObject``   The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pNames[]``  :ref:`SoCClientName <missing link>`. A structure containing the names and identifiers of
+              methods to be added.
+============  ===================================================================================
 
 Adds a set of new methods to an instance.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-addProperty:
+
 addProperty()
-ESerror_t addProperty (SoHObject hObject, const char* name, int id, char* desc);
-hObject
+*************
+``ESerror_t addProperty (SoHObject hObject, const char* name, int id, char* desc);``
 
-The SoHObject reference for an instance of this class.
-
-name
-
-String. The unique name of the new property.
-
-id
-
-Number. The unique identifier for the new property.
-
-desc
-
-String. Optional. A descriptive string for the new property, or null.
+===========  ===================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``     String. The unique name of the new property.
+``id``       Number. The unique identifier for the new property.
+``desc``     String. Optional. A descriptive string for the new property, or null.
+===========  ===================================================================================
 
 Adds new property to an instance.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-addProperties:
 
 addProperties()
-ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);
-hObject
+***************
+``ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);``
 
-The SoHObject reference for an instance of this class.
-
-pNames[]
-
-SoCClientName. A structure containing the names and identifiers of
-properties to be added.
+============  ===================================================================================
+``hObject``   The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pNames[]``  :ref:`SoCClientName <missing link>`. A structure containing the names and identifiers of
+              properties to be added.
+============  ===================================================================================
 
 Adds a set of new properties to an instance.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-getClass:
+
 getClass()
-ESerror_t getClass (SoHObject hObject, char* name, int name_l);
-hObject
+**********
+``ESerror_t getClass (SoHObject hObject, char* name, int name_l);``
 
-The SoHObject reference for an instance of the class.
-
-name
-
-String. A buffer in which to return the unique name of the class.
-
-name_l
-
-Number. The size of the name buffer.
+===========  ===================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``     String. A buffer in which to return the unique name of the class.
+``name_1``   Number. The size of the name buffer.
+===========  ===================================================================================
 
 Retrieves this object's parent class name.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-getServer:
+
 getServer()
-ESerror_t getServer (SoHObject hObject, SoHServer* phServer,
-SoServerInterface_p* ppServerInterface);
-hObject
+***********
+``ESerror_t getServer (SoHObject hObject, SoHServer* phServer, SoServerInterface_p* ppServerInterface);``
 
-The SoHObject reference for an instance of the class.
-
-phServer
-
-A buffer in which to return theSoHServer reference for this object.
-
-ppServerInterface
-
-A buffer in which to return the SoServerInterface reference for this object.
+=====================  =================================================================================================
+``hObject``            The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``phServer``           A buffer in which to return the :ref:`SoHServer <missing link>` reference for this object.
+``ppServerInterface``  A buffer in which to return the :ref:`SoServerInterface <missing link>` reference for this object.
+=====================  =================================================================================================
 
 Retrieves the interface methods for this object, and the server object that manages it.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-setClientData:
+
 setClientData()
-ESerror_t setClientData (SoHObject hObject, void* pData);
-hObject
+***************
+``ESerror_t setClientData (SoHObject hObject, void* pData);``
 
-The SoHObject reference for an instance of the class.
-
-pData
-
-A pointer to the library-defined data.
+===========  =================================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pData``    A pointer to the library-defined data.
+===========  =================================================================================================
 
 Sets your own data to be stored with an object.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-getClientData:
+
 getClientData()
-ESerror_t setClientData (SoHObject hObject, void** pData);
-hObject
+***************
+``ESerror_t setClientData (SoHObject hObject, void** pData);``
 
-The SoHObject reference for an instance of the class.
+===========  =================================================================================================
+``hObject``  The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pData``    A buffer in which to return a pointer to the library-defined data.
+===========  =================================================================================================
 
-pData
+Retrieves data that was stored with :ref:`setClientData() <externalobject-functions-setClientData>`.
 
-A buffer in which to return a pointer to the library-defined data.
+Returns an error code, ``kESErrOK`` on success.
 
-Retrieves data that was stored with setClientData().
-Returns an error code, kESErrOK on success.
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-eval:
 
 eval()
-ESerror_t eval (SohServer hServer, char* string, TaggedData* pTaggedData);
-hServer
+******
+``ESerror_t eval (SohServer hServer, char* string, TaggedData* pTaggedData);``
 
-The SoHServer reference for this shared library, as passed to your global
-ESClientInterface() function on initialization.
-
-string
-
-A string containing the JavaScript expression to evaluate.
-
-pTaggedData
-
-A pointer to a TaggedData object in which to return the result of evaluation.
+===============  =================================================================================================
+``hServer``      The :ref:`SoHServer <missing link>` reference for this shared library, as passed to your global
+                 :ref:`ESClientInterface() <missing link>` function on initialization.
+``string``       A string containing the JavaScript expression to evaluate.
+``pTaggedData``  A pointer to a :ref:`TaggedData <missing link>` object in which to return the result of evaluation.
+===============  =================================================================================================
 
 Calls the JavaScript interpreter to evaluate a JavaScript expression.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-taggedDataInit:
+
 taggedDataInit()
-ESerror_t taggedDataInit (SoHSever hServer, TaggedData* pTaggedData);
-hServer
+****************
+``ESerror_t taggedDataInit (SoHSever hServer, TaggedData* pTaggedData);``
 
-The SoHServer reference for this shared library, as passed to your global
-ESClientInterface() function on initialization.
-
-pTaggedData
-
-A pointer to the TaggedData.
+===============  =================================================================================================
+``hServer``      The :ref:`SoHServer <missing link>` reference for this shared library, as passed to your global
+                 :ref:`ESClientInterface() <missing link>` function on initialization.
+``pTaggedData``  A pointer to a :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
 Initializes a TaggedData structure.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-taggedDataFree:
+
 taggedDataFree()
-ESerror_t setClientData (SoHServer hServer, TaggedData* pTaggedData);
-hServer
+****************
+``ESerror_t setClientData (SoHServer hServer, TaggedData* pTaggedData);``
 
-The SoHServer reference for this shared library, as passed to your global
-ESClientInterface() function on initialization.
-
-pTaggedData
-
-A pointer to the TaggedData.
+===============  =================================================================================================
+``hServer``      The :ref:`SoHServer <missing link>` reference for this shared library, as passed to your global
+                 :ref:`ESClientInterface() <missing link>` function on initialization.
+``pTaggedData``  A pointer to a :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
 Frees memory being used by a TaggedData structure.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _shared-library-SoObjectInterface
 
 SoObjectInterface
+*****************
+
 When you add a JavaScript class with SoServerInterface.addClass(), you must provide this interface.
 JavaScript calls the provided functions to interact with objects of the new class.
-The SoObjectInterface is an array of function pointers defined as follows:
-SoObjectInterface {
-SoObjectInitialize_f
-SoObjectPut_f
-SoObjectGet_f
-SoObjectCall_f
-SoObjectValueOf_f
-SoObjectToString_f
-SoObjectFinalize_f
-}
+The SoObjectInterface is an array of function pointers defined as follows::
 
-initialize;
-put;
-get;
-call;
-valueOf;
-toString;
-finalize;
+    SoObjectInterface {
+        SoObjectInitialize_f initialize;
+        SoObjectPut_f        put;
+        SoObjectGet_f        get;
+        SoObjectCall_f       call;
+        SoObjectValueOf_f    valueOf;
+        SoObjectToString_f   toString;
+        SoObjectFinalize_f   finalize;
+    }
 
-All SoObjectInterface members must be valid function pointers, or NULL. You must implement
-initialize() and finalize(). The functions must conform to the following type definitions.
+All ``SoObjectInterface`` members must be valid function pointers, or NULL. You must implement
+``initialize()`` and ``finalize()``. The functions must conform to the following type definitions.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-initialize:
+
 initialize()
-ESerror_t initialize (SoHObject hObject, int argc, TaggedData* argv);
-hObject
+************
+``ESerror_t initialize (SoHObject hObject, int argc, TaggedData* argv);``
 
-The SoHObject reference for this instance.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``argc, argv``   The number of and pointer to arguments passed to the constructor, in the form of :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
-argc, argv
+Required. Called when JavaScript code instantiates this class with the new operator::
 
-The number of and pointer to arguments passed to the constructor, in the form of
-TaggedData.
-
-Required. Called when JavaScript code instantiates this class with the new operator:
-var xx = New MyClass(arg1, ...)
+    var xx = New MyClass(arg1, ...)
 
 The initialization function typically adds properties and methods to the object. Objects of the same
-class can offer different properties and methods, which you can add with the addMethod() and
-addProperty() functions in the stored SoServerInterface.
-Returns an error code, kESErrOK on success.
+class can offer different properties and methods, which you can add with the :ref:`addMethod() <missing link>` and
+:ref:`addProperty() <missing link>` functions in the stored SoServerInterface.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-put:
+
 put()
-ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);
-hObject
+*****
+``ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);``
 
-The SoHObject reference for this instance.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``         The name of the property, a pointer to an :ref:`SoCClientName <missing link>`.
+``pValue``       The new value, a pointer to a :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
-name
+Called when JavaScript code sets a property of this class::
 
-The name of the property, a pointer to an SoCClientName.
+    xx.myproperty = "abc" ;
 
-pValue
+If you provide ``NULL`` for this function, the JavaScript object is read-only.
 
-The new value, a pointer to a TaggedData.
+Returns an error code, ``kESErrOK`` on success.
 
-Called when JavaScript code sets a property of this class:
-xx.myproperty = "abc" ;
+--------------------------------------------------------------------------------
 
-If you provide NULL for this function, the JavaScript object is read-only.
-Returns an error code, kESErrOK on success.
+.. _externalobject-functions-get:
+
 get()
-ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);
-hObject
+*****
+``ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);``
 
-The SoHObject reference for this instance.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``         The name of the property, a pointer to an :ref:`SoCClientName <missing link>`.
+``pValue``       A buffer in which to return the property value, a :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
-name
+Called when JavaScript code accesses a property of this class::
 
-The name of the property, a pointer to an SoCClientName.
+    alert(xx.myproperty);
 
-pValue
+Returns an error code, ``kESErrOK`` on success.
 
-A buffer in which to return the property value, a TaggedData.
+--------------------------------------------------------------------------------
 
-Called when JavaScript code accesses a property of this class:
-alert(xx.myproperty);
-
-Returns an error code, kESErrOK on success.
+.. _externalobject-functions-call:
 
 call()
-ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv,
-TaggedData* pResult);
-hObject
+******
+``ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv, TaggedData* pResult);``
 
-The SoHObject reference for this instance.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``name``         The name of the property, a pointer to an :ref:`SoCClientName <missing link>`.
+``argc, argv``   The number and pointer to arguments passed to the call, in the form of :ref:`TaggedData <missing link>`s.
+``pResult``      A buffer in which to return the result of the call, in the form of :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
-name
+Called when JavaScript code calls a method of this class::
 
-The name of the method, an SoCClientName.
-
-argc, argv
-
-The number and pointer to arguments passed to the call, in the form of TaggedDatas.
-
-pResult
-
-A buffer in which to return the result of the call, in the form of TaggedDatas.
-
-Called when JavaScript code calls a method of this class:
-xx.mymethod()
+    xx.mymethod()
 
 Required in order for JavaScript to call any methods of this class.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-valueOf:
+
 valueOf()
-ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);
-hObject
+*********
+``ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);``
 
-The SoHObject reference for this instance.
-
-pResult
-
-A buffer in which to return the result of the value, in the form of TaggedDatas.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pResult``      A buffer in which to return the result of the value, in the form of :ref:`TaggedData <missing link>`.
+===============  =================================================================================================
 
 Creates and returns the value of the object, with no type conversion.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-toString:
+
 toString()
-ESerror_t toString (SoHObject hObject, TaggedData* pResult);
-hObject
+**********
+``ESerror_t toString (SoHObject hObject, TaggedData* pResult);``
 
-The SoHObject reference for this instance.
-
-pResult
-
-A buffer in which to return the result of the string, in the form of TaggedDatas.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+``pResult``      A buffer in which to return the result of the string, in the form of :ref:`TaggedData <missing link>`s.
+===============  =================================================================================================
 
 Creates and returns a string representing the value of this object.
-Returns an error code, kESErrOK on success.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
+
+.. _externalobject-functions-finalize:
+
 finalize()
-ESerror_t finalize (SoHObject hObject);
-hObject
+**********
+``ESerror_t finalize (SoHObject hObject);``
 
-The SoHObject reference for this instance.
+===============  =================================================================================================
+``hObject``      The :ref:`SoHObject <missing link>` reference for an instance of this class.
+===============  =================================================================================================
 
-Required. Called when JavaScript deletes an instance of this class. Use this function to free any
-memory you have allocated.
-Returns an error code, kESErrOK on success.
+Required. Called when JavaScript deletes an instance of this class.
+Use this function to free any memory you have allocated.
+
+Returns an error code, ``kESErrOK`` on success.
+
+--------------------------------------------------------------------------------
 
 .. _support-structures:
 
 Support structures
 ------------------
 These support structures are passed to functions that you define for your JavaScript interface:
-SoHObject
 
-An opaque pointer (long *) to the C/C++ representation of a JavaScript object.
+=================  ====================================================================================
+``SoHObject``      An opaque pointer (long *) to the C/C++ representation of a JavaScript object.
+``SoHServer``      An opaque pointer (long *) to the server object, which acts as an object factory for
+                   the shared library.
+``SoCClientName``  A structure that uniquely identifies methods and properties.
+``TaggedData``     A structure that encapsulates data values with type information, to be passed
+                   between C/C++ and JavaScript.
+=================  ====================================================================================
 
-SoHServer
+.. _SoCClientName:
 
-An opaque pointer (long *) to the server object, which acts as an object factory for
-the shared library.
+**SoCClientName**
 
-SoCClientName
-
-A structure that uniquely identifies methods and properties.
-
-TaggedData
-
-A structure that encapsulates data values with type information, to be passed
-between C/C++ and JavaScript.
-
-SoCClientName
 The SoCClientName data structure stores identifying information for methods and properties of
-JavaScript objects created by shared-library C/C++ code. It is defined as follows:
-SoCClientName {
-char* name_sig ;
-uint32_t id ;
-char* desc ;
-}
-name_sig
+JavaScript objects created by shared-library C/C++ code. It is defined as follows::
 
-The name of the property or method, unique within the class.
-Optionally contains a signature following an underscore, which identifies the types of
-arguments to methods; see Function signatures. When names are passed back to your
-SoObjectInterface functions, the signature portion is omitted.
+    SoCClientName {
+        char* name_sig ;
+        uint32_t id ;
+        char* desc ;
+    }
 
-id
+============  ===========================================================================================
+``name_sig``  The name of the property or method, unique within the class.
+              Optionally contains a signature following an underscore, which identifies the types of
+              arguments to methods; see Function signatures. When names are passed back to your
+              SoObjectInterface functions, the signature portion is omitted.
+``id``        A unique identifying number for the property or method, or 0 to assign a generated UID.
+              If you assign the UID, your C/C++ code can use it to avoid string comparisons when
+              identifying JavaScript properties and methods. It is recommended that you either assign all
+              UIDs explicitly, or allow them all to be generated.
+``desc``      A descriptive string or ``NULL``.
+============  ===========================================================================================
 
-A unique identifying number for the property or method, or 0 to assign a generated UID.
-If you assign the UID, your C/C++ code can use it to avoid string comparisons when
-identifying JavaScript properties and methods. It is recommended that you either assign all
-UIDs explicitly, or allow them all to be generated.
+.. _TaggedData:
 
-desc
+**TaggedData**
 
-A descriptive string or NULL.
-
-TaggedData
 The TaggedData structure is used to communicate data values between JavaScript and shared-library
-C/C++ code. Types are automatically converted as appropriate.
-typedef struct {
-union {
-long intval;
-double fltval;
-char* string;
-SoHObject* hObject;
-} data;
-long type;
-long filler;
-} TaggedData;
-intval
+C/C++ code. Types are automatically converted as appropriate::
 
-Integer and boolean data values. Type is kTypeInteger, kTypeUInteger, or kTypeBool.
+    typedef struct {
+        union {
+            long intval;
+            double fltval;
+            char* string;
+            SoHObject* hObject;
+        } data;
+        long type;
+        long filler;
+    } TaggedData;
 
-fltval
-
-Floating-point numeric data values. Type is kTypeDouble.
-
-string
-
-String data values. All strings are UTF-8 encoded and null-terminated. Type is
-kTypeString or kTypeScript.
-The library must define an entry point ESFreeMem(), which ExtendScript calls to
-release a returned string pointer. If this entry point is missing, ExtendScript does not
-attempt to release any returned string data.
-When a function returns a string of type kTypeScript, ExtendScript evaluates the
-script and returns the result of evaluation as the result of the function call.
-
-hObject
-
-A C/C++ representation of a JavaScript object data value. Type is kTypeLiveObject or
-kTypeLiveObjectRelease.
-When a function returns an object of type kTypeLiveObject, ExtendScript does not
-release the object.
-When a function returns an object of type kTypeLiveObjectRelease, ExtendScript
-releases the object.
-
-
-type
-
-
-
-The data type tag. One of:
-kTypeUndefined: a null value, equivalent of JavaScript undefined. The return value
-for a function is always set to this by default.
-kTypeBool: a boolean value, 0 for false, 1 for true.
-kTypeDouble: a 64-bit floating-point number.
-kTypeString: a character string.
-kTypeLiveObject: a pointer to an internal representation of an object (SoHObject).
-kTypeLiveObjectRelease: a pointer to an internal representation of an object
-
-(SoHObject).
-
-kTypeInteger: a 32-bit signed integer value.
-kTypeUInteger: a 32-bit unsigned integer value.
-kTypeScript: a string containing an executable JavaScript script.
-filler
-
-A 4-byte filler for 8-byte alignment.
+===========  ==========================================================================================
+``intval``   Integer and boolean data values. Type is kTypeInteger, kTypeUInteger, or kTypeBool.
+``fltval``   Floating-point numeric data values. Type is kTypeDouble.
+``string``   String data values. All strings are UTF-8 encoded and null-terminated. Type is
+             kTypeString or kTypeScript.
+             - The library must define an entry point ESFreeMem(), which ExtendScript calls to
+               release a returned string pointer. If this entry point is missing, ExtendScript does not
+               attempt to release any returned string data.
+             - When a function returns a string of type kTypeScript, ExtendScript evaluates the
+               script and returns the result of evaluation as the result of the function call.
+``hObject``  A C/C++ representation of a JavaScript object data value. Type is kTypeLiveObject or
+             kTypeLiveObjectRelease.
+             - When a function returns an object of type kTypeLiveObject, ExtendScript does not
+               release the object.
+             - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript
+               releases the object.
+``type``     The data type tag. One of:
+             - ``kTypeUndefined``: a null value, equivalent of JavaScript ``undefined``. The return value
+               for a function is always set to this by default.
+             - ``kTypeBool``: a boolean value, 0 for false, 1 for true.
+             - ``kTypeDouble``: a 64-bit floating-point number.
+             - ``kTypeString``: a character string.
+             - ``kTypeLiveObject``: a pointer to an internal representation of an object (SoHObject).
+             - ``kTypeLiveObjectRelease``: a pointer to an internal representation of an object (SoHObject).
+             - ``kTypeInteger``: a 32-bit signed integer value.
+             - ``kTypeUInteger``: a 32-bit unsigned integer value.
+             - ``kTypeScript``: a string containing an executable JavaScript script.
+``filler``   A 4-byte filler for 8-byte alignment.
+===========  ==========================================================================================

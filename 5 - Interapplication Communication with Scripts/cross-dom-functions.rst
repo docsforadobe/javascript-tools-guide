@@ -141,11 +141,11 @@ openAsNew()
              - Photoshop: none
              - InDesign: creation options are:
                ``(Boolean:showingWindow, ObjectOrString:documentPresets)``
-                See the arguments for ``documents.add()`` in the Adobe InDesign CS5 Scripting
-                Reference.
+               See the arguments for ``documents.add()`` in the Adobe InDesign CS5 Scripting
+               Reference.
              - Illustrator: creation options are:
                ``([DocumentColorSpace:colorspace][, Number:width, Number:height])``
-                See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript
+               See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript
                Reference.
 ===========  ============================================================================
 

@@ -2,8 +2,9 @@
 
 ExternalObject object
 =====================
+
 You specify the name of the library in the constructor. The constructor searches for the named library
-using the paths defined in the static property :ref:`ExternalObject.searchFolders <missing link>`.
+using the paths defined in the static property :ref:`ExternalObject.searchFolders <externalobject-class-properties>`.
 
 If you are having difficulty loading your library as an ExternalObject, set the property
 ``ExternalObject.log`` to ``true``, then call ``ExternalObject.search('lib:myLibrary')``. This function
@@ -48,23 +49,23 @@ ExternalObject class properties
 -------------------------------
 The ExternalObject class provides these static properties:
 
-=============  =======  ============================================================================
-log            Boolean  Set to true to write status information to standard output (the
-                        JavaScript Console in the ExtendScript Toolkit). Set to false to turn
-                        logging off. Default is false.
-searchFolders  String   A set of alternate paths in which to search for the shared library files, a
-                        single string with multiple path specifications delimited by semicolons
-                        (;). Paths can be absolute or relative to the :ref:`Folder.startup <missing link>` location.
-                        Default value is:
+=================  =======  ============================================================================
+**log**            Boolean  Set to true to write status information to standard output (the
+                            JavaScript Console in the ExtendScript Toolkit). Set to false to turn
+                            logging off. Default is false.
+**searchFolders**  String   A set of alternate paths in which to search for the shared library files, a
+                            single string with multiple path specifications delimited by semicolons
+                            (;). Paths can be absolute or relative to the :ref:`Folder.startup <folder-class-properties>` location.
+                            Default value is:
 
-                        - In Windows, ``"Plugins;Plug-Ins;."``
-                        - In Mac OS,
-                          ``"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;
-                          ../../../Plug-ins;../../../Frameworks;../../..;"``
-                        - In UNIX, ``"Plugins;Plug-Ins;plugins;."``
+                            - In Windows, ``"Plugins;Plug-Ins;."``
+                            - In Mac OS,
+                              ``"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;
+                              ../../../Plug-ins;../../../Frameworks;../../..;"``
+                            - In UNIX, ``"Plugins;Plug-Ins;plugins;."``
 
-version        Number   The version of the library, as returned by :ref:`ESGetVersion() <missing link>`.
-=============  =======  ============================================================================
+**version**        Number   The version of the library, as returned by :ref:`ESGetVersion() <externalobject-functions-ESGetVersion>`.
+=================  =======  ============================================================================
 
 --------------------------------------------------------------------------------
 

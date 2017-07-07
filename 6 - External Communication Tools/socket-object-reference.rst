@@ -15,7 +15,7 @@ Creates and returns a new ``Socket`` object.
 .. _socket-object-properties:
 
 Socket object properties
------------------------
+------------------------
 
 =============  =======  =================================================================
 ``connected``  Boolean  When true, the connection is active. Read only.
@@ -37,8 +37,6 @@ Socket object properties
 
 Socket object functions
 -----------------------
-
---------------------------------------------------------------------------------
 
 .. _socket-object-functions-close:
 

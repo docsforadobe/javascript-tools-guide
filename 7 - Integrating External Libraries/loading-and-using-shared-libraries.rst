@@ -2,7 +2,7 @@
 
 Loading and using shared libraries
 ==================================
-To load an external shared library into JavaScript, create a new :ref:`ExternalObject object <missing link>`. The instance acts as
+To load an external shared library into JavaScript, create a new :ref:`externalobject-object`. The instance acts as
 a container and manager for the JavaScript interface to the library. It provides a logging facility that prints
 status information to the JavaScript Console in the ExtendScript Toolkit, to help you debug your external
 library use.

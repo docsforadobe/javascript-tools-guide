@@ -146,7 +146,7 @@ The BridgeTalk class provides these static methods, which are available in the g
 .. _bridgetalk-bringtofront:
 
 bringToFront()
-********
+**************
 ``BridgeTalk.bringToFront (app)``
 
 =======  ==========================================================================
@@ -163,7 +163,7 @@ it opens a new browser window.
 .. _bridgetalk-getapppath:
 
 getAppPath()
-********
+************
 ``BridgeTalk.getAppPath (app)``
 
 =======  ==========================================================================
@@ -179,7 +179,7 @@ Returns a string.
 .. _bridgetalk-getdisplayname:
 
 getDisplayName()
-********
+****************
 ``BridgeTalk.getDisplayName (app)``
 
 =======  ==========================================================================
@@ -197,7 +197,7 @@ For example::
 .. _bridgetalk-getspecifier:
 
 getSpecifier()
-********
+**************
 ``BridgeTalk.getSpecifier (appName,[version],[locale])``
 
 ===========  =======================================================================================
@@ -245,7 +245,7 @@ en_US::
 .. _bridgetalk-getstatus:
 
 getStatus()
-********
+***********
 ``BridgeTalk.getStatus (targetSpec)``
 
 ==============  ==========================================================================
@@ -268,7 +268,7 @@ Retrieves the processing status of an application. Returns a string, one of:
 .. _bridgetalk-gettargets:
 
 getTargets()
-********
+************
 ``BridgeTalk.getTargets ([version],[locale])``
 
 ===========  =======================================================================================
@@ -324,7 +324,7 @@ For example, assuming installed applications include Photoshop CS3 10.0 en_US, P
 .. _bridgetalk-isrunning:
 
 isRunning()
-********
+***********
 ``BridgeTalk.isRunning (specifier)``
 
 =============  =======================================================================================
@@ -358,7 +358,7 @@ Returns true if the application has already been launched, false if it was launc
 .. _bridgetalk-loadappscript:
 
 loadAppScript()
-********
+***************
 ``BridgeTalk.loadAppScript (specifier)``
 
 =============  =======================================================================================
@@ -375,7 +375,7 @@ Returns true if the script was successfully loaded.
 .. _bridgetalk-ping:
 
 ping()
-********
+******
 ``BridgeTalk.ping (specifier, pingRequest)``
 
 ===============  =======================================================================================
@@ -395,7 +395,7 @@ Returns a string whose meaning is defined by the ping-request key.
 .. _bridgetalk-pump:
 
 pump()
-********
+******
 ``BridgeTalk.pump ()``
 
 Checks all active messaging interfaces for outgoing and incoming messages, and processes them if
@@ -407,5 +407,3 @@ there are any.
   so use of this method is rarely required.
 
 Returns true if any messages have been processed, false otherwise.
-
---------------------------------------------------------------------------------

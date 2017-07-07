@@ -16,9 +16,9 @@ ScriptUI.Alignment
 ******************
 ``Object``
 
-Collects the enumerated values that can be used in the :ref:`alignment <container-alignment>` and
-:ref:`alignchildren <container-alignchildren>` properties of controls and containers, and in the alignment
-property used to set a control's :ref:`titleLayout <control-object-titleLayout>` property. Read only.
+Collects the enumerated values that can be used in the :ref:`container-alignment` and
+:ref:`container-alignChildren` properties of controls and containers, and in the alignment
+property used to set a control's :ref:`controlobj-titlelayout` property. Read only.
 
 Use these constants to set the alignment. For example::
 
@@ -44,6 +44,8 @@ Collects the enumerated values that specify the default application fonts.
 The available fonts vary according to the application and system
 configuration.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-compatability:
 
 ScriptUI.compatability
@@ -56,6 +58,8 @@ supported by the host application. For example, the presence of
 application allows backward compatibility with the coordinate system of
 Panel elements in ScriptUI version 1.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-coreversion:
 
 ScriptUI.coreVersion
@@ -63,6 +67,8 @@ ScriptUI.coreVersion
 ``String``
 
 The internal core version number of the ScriptUI components. Read only.
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-environment:
 
@@ -75,6 +81,8 @@ environment; contains a Keyboard state object that reports the active
 state of the keyboard at any time, independent of the event-handling
 framework.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-events:
 
 ScriptUI.events
@@ -84,6 +92,8 @@ ScriptUI.events
 A JavaScript object that contains one function, :ref:`scriptui-events-createevent`,
 which allows you to create event objects in order to simulate
 user-interaction events.
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-fontstyle:
 
@@ -103,6 +113,8 @@ Read only. Values are:
 - ``ITALIC``
 - ``BOLDITALIC``
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-frameworkname:
 
 ScriptUI.frameworkName
@@ -112,6 +124,8 @@ ScriptUI.frameworkName
 The name of the user-interface framework with which this ScriptUI
 component is compatible. Read only.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-version:
 
 ScriptUI.version
@@ -119,6 +133,8 @@ ScriptUI.version
 ``String``
 
 The main version number of the ScriptUI component framework. Read only.
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-class-functions:
 
@@ -149,8 +165,10 @@ of the appropriate type:
 
 This object is passed to a function that you register to respond to events of a certain type that occur
 in a window or control. Use :ref:`windowObj.addEventListener() <window-object-addeventlistener>`
-or :ref:`controlObj.addEventListener() <control-object-addeventlistener>`
+or :ref:`controlObj.addEventListener() <controlobj-addeventlistener>`
 to register a handler function. See :ref:`registering-event-listeners-for-windows-or-controls`.
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-getresourcetext:
 
@@ -167,6 +185,8 @@ string resource matches the given text, the text itself is returned.
 
 Returns a String.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-newfont:
 
 ScriptUI.newFont()
@@ -182,6 +202,8 @@ ScriptUI.newFont()
 Creates a new font object for use in text controls and titles.
 
 Returns a :ref:`ScriptUIFont-object`.
+
+--------------------------------------------------------------------------------
 
 .. _scriptui-newimage:
 
@@ -200,6 +222,8 @@ Creates a new image object for use in controls that can display images, loading 
 images from the specified resources or image files.
 
 Returns a :ref:`ScriptUIImage-object`.
+
+--------------------------------------------------------------------------------
 
 .. _environment-object:
 

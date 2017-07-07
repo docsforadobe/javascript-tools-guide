@@ -67,7 +67,7 @@ decode()
 
 Special characters are those with a numeric value greater than 127, except the following::
 
-    ``/ - _ . ! ~ * ' ( )``
+    / - _ . ! ~ * ' ( )
 
 Decodes the specified string as required by RFC 2396.
 
@@ -318,17 +318,17 @@ open()
 ========  ==========================================================================
 ``mode``  A string indicating the read/write mode. One of:
             - ``r``: (read) Opens for reading. If the file does not exist
-                     or cannot be found, the call fails.
+              or cannot be found, the call fails.
             - ``w``: (write) Opens a file for writing. If the file exists,
-                     its contents are destroyed. If the file does not exist,
-                    creates a new, empty file.
+              its contents are destroyed. If the file does not exist,
+              creates a new, empty file.
             - ``e``: (edit) Opens an existing file for reading and writing.
             - ``a``: (append) Opens the file in Append mode, and moves the
-                     current position to the end of the file.
+              current position to the end of the file.
             - ``type``: Optional. In Mac OS, the type of a newly created file,
-                        a 4-character string. Ignored in Windows and UNIX.
+              a 4-character string. Ignored in Windows and UNIX.
             - ``creator``: Optional. In Mac OS, the creator of a newly created file,
-                           a 4-character string. Ignored in Windows and UNIX.
+              a 4-character string. Ignored in Windows and UNIX.
 ========  ==========================================================================
 
 Opens the referenced file for subsequent read/write operations. The method resolves any aliases to
@@ -476,7 +476,7 @@ seek()
 ******
 ``fileObj.seek( pos[, mode] )``
 
-=======   ==================================================================================
+========  ==================================================================================
 ``pos``   The new current position in the file as an offset in bytes from the start, current
           position, or end, depending on the mode.
 ``mode``  Optional. The seek mode, one of:
@@ -484,7 +484,7 @@ seek()
               default.
             - ``1``: Seek relative to the current position.
             - ``2``: Seek backward from the end of the file.
-=======   ==================================================================================
+========  ==================================================================================
 
 Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the
 current file size.

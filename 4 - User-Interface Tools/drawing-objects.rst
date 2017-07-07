@@ -2,8 +2,9 @@
 
 Drawing objects
 ===============
+
 ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling
-methods of the :ref:`scriptuigraphics-object` in response to the :ref:`ondraw` event (see :ref:`defining-behavior-with-event-callbacks-and-listeners`).
+methods of the :ref:`scriptuigraphics-object` in response to the :ref:`control-event-ondraw` event (see :ref:`defining-behavior-with-event-callbacks-and-listeners`).
 These methods take as parameters a number of helper objects
 that encapsulate drawing information, including the following:
 
@@ -42,4 +43,4 @@ ColorPicker.jsx     A more complex version of the color-selection dialog shows h
 =================== ==================================================================================
 
 In addition, the :ref:`custom-element-class` allows you to define completely customized elements of several
-types (ranges, buttons, lists), whose appearance is rendered entirely by your :ref:`ondraw` implementation.
+types (ranges, buttons, lists), whose appearance is rendered entirely by your :ref:`control-event-ondraw` implementation.

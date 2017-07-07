@@ -24,8 +24,6 @@ application, and the body property to the data message (typically a script) you 
 BridgeTalk message object properties
 ------------------------------------
 
---------------------------------------------------------------------------------
-
 .. _bridgetalk-message-object-body:
 
 body
@@ -35,14 +33,14 @@ Type: ``String``
 The data payload of the message.
 
 - If this is an unsolicited message to another application, typically contains a
-script packaged as a string. The target application's full document object
-model (DOM) is available within the script.
+  script packaged as a string. The target application's full document object
+  model (DOM) is available within the script.
 - If this message is a result returned from the static BridgeTalk onReceive
-method of a target application, directed to an onResult callback in this object,
-contains the return result from that method flattened into a string. See
-:ref:`passing-values-between-applications`.
+  method of a target application, directed to an onResult callback in this object,
+  contains the return result from that method flattened into a string. See
+  :ref:`passing-values-between-applications`.
 - If this message contains an error notification for the onError callback, contains
-the error message.
+  the error message.
 
 Read/write.
 
@@ -153,7 +151,7 @@ BridgeTalk message object callbacks
 .. _bridgetalk-message-object-onerror:
 
 onError()
-********
+*********
 ``bridgeTalkObj.onError ()``
 
 A callback function that the target application invokes to return an error
@@ -178,7 +176,7 @@ The function returns ``undefined``.
 .. _bridgetalk-message-object-onreceived:
 
 onReceived()
-********
+************
 ``bridgeTalkObj.onReceived ()``
 
 A callback function that the target application invokes to confirm that the
@@ -202,7 +200,7 @@ The function returns ``undefined``.
 .. _bridgetalk-message-object-onresult:
 
 onResult()
-********
+**********
 ``bridgeTalkObj.onResult ()``
 
 A callback function that the target application invokes to return a response
@@ -224,7 +222,7 @@ packaged as a UTF-8-encoded string. See :ref:`passing-values-between-application
 .. _bridgetalk-message-object-ontimeout:
 
 onTimeout()
-********
+***********
 ``bridgeTalkObj.onTimeout ()``
 
 A callback function that the target application invokes with a time-out
@@ -249,12 +247,10 @@ the following form::
 BridgeTalk message object functions
 -----------------------------------
 
---------------------------------------------------------------------------------
-
 .. _bridgetalk-message-object-send:
 
 send()
-********
+******
 ``bridgeTalkObj.send ([timoutInSecs[, launchParameters]])``
 
 ====================  ===========================================================================
@@ -291,7 +287,7 @@ for sending later.
 .. _bridgetalk-message-object-sendresult:
 
 sendResult()
-********
+************
 ``bridgeTalkObj.sendResult (result)``
 
 ==========  ===========================================================================
@@ -309,5 +305,3 @@ This allows you to send multiple responses to messages.
 
 Returns ``true`` if the received message has an onResult callback defined and the response message
 can be sent, ``false`` otherwise.
-
---------------------------------------------------------------------------------

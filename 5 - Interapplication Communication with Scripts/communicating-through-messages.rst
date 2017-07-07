@@ -136,6 +136,7 @@ the target application. See :ref:`handling-unsolicited-messages`.
 
 An application that sends a message can receive response messages; that is, messages that come as the
 result of requesting a response when a message was sent. These can be:
+
   - The result of an error in processing the message
   - The result of a timeout when attempting to process the message
   - A notification of receipt of the message
@@ -197,6 +198,7 @@ execution::
   }
 
 This example shows how you might extend the receive handler to process a new type of message::
+
   BridgeTalk.onReceive = function (message) {
     switch (message.type) {
       case "Data":

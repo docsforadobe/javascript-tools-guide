@@ -480,19 +480,19 @@ The Custom element class has the following types of elements:
 customBoundedValue  Can be used to implement controls whose 'value' can vary within minimum
                     and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the
                     same additional properties as those controls:
-                      - ``value``
-                      - ``minvalue``
-                      - ``maxvalue``
-                      - ``shortcutKey``
+                    - ``value``
+                    - ``minvalue``
+                    - ``maxvalue``
+                    - ``shortcutKey``
                     If the value property is changed, the control receives an onChange event
                     notification, followed by an onDraw event notification, so the element can
                     redraw itself with the changed state.
 customButton        Can be used to implement various types of button controls, like the ``Button``,
                     ``IconButton`` with text, ``Checkbox``, and so on. Additional properties are:
-                      - ``image``
-                      - ``shortcutKey``
-                      - ``text``
-                      - ``value``
+                    - ``image``
+                    - ``shortcutKey``
+                    - ``text``
+                    - ``value``
 customView          Has an ``image`` property that allows a script to define an image to display.
 
                     If no ``onDraw`` function is defined and the image property is set, the default

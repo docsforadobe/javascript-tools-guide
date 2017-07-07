@@ -113,6 +113,7 @@ ExtendScript provides these utilities and features:
     - Tools for combining scripts, such as a ``#include`` directive. See :ref:`preprocessor-directives`.
     - Support for extending or overriding math and logical operator behavior on a class-by-class basis.
       See :ref:`operator-overloading`.
+
     For complete details, see Chapter 8, :ref:`extendscript-tools-and-features`.
 - JavaScript compilation, through the ExtendScript Toolkit. See Chapter 2, :ref:`the-extendscript-toolkit`.
 - XML integration: ExtendScript defines the XML object, which allows you to process XML with your

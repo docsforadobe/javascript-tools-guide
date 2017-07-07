@@ -12,7 +12,7 @@ Control object constructors
 ---------------------------
 Use the ``add`` method to create new containers and controls. The ``add`` method
 is available on ``window`` and container (``panel`` and ``group``) objects.
-(See also :ref:`listobj-add` for :ref:`dropdownlist` and :ref:`listbox` controls.)
+(See also :ref:`listobj-add` for :ref:`control-type-dropdownlist` and :ref:`control-type-listbox` controls.)
 
 add()
 *****
@@ -107,7 +107,6 @@ To add to a window `w`::
 
 dropdownlist
 ************
-
 Class Name: ``DropDownList``
 
 A drop-down list with zero or more items. Calls the :ref:`control-event-onchange`
@@ -123,15 +122,15 @@ To add to a window ``w``::
 ``items``                Optional. Supply this argument or the
                          ``creation_properties`` argument, not both. An array of strings
                          for the text of each list item.
-                         A :ref:`ListItem` object is created for each item.
+                         A :ref:`listitem` object is created for each item.
                          An item with the text string ``"-"`` creates a separator item.
 ``creation_properties``  Optional. Supply this argument or the items argument, not both. This form is most useful
                          for elements defined using :ref:`Resource-specifications`.
                          An object that contains the following property:
-                           - ``name``: A unique name for the control.
-                           - ``items``: An array of strings for the text of each list item. A
-                                        ``ListItem`` object is created for each item. An item with the
-                                        text string ``"-"`` creates a separator item.
+                         - ``name``: A unique name for the control.
+                         - ``items``: An array of strings for the text of each list item. A
+                         ``ListItem`` object is created for each item. An item with the
+                         text string ``"-"`` creates a separator item.
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -299,7 +298,7 @@ To add to a window ``w``::
 .. _control-type-item:
 
 item
-*****
+****
 Class Name: ``Array of ListItem``
 
 The choice items in a list box or drop-down list. The objects are
@@ -338,20 +337,20 @@ To add to a window ``w``::
 =======================  ======================================================================================
 ``bounds``               Optional. The control's position and size.
 ``items``                Optional. An array of strings for the text of each list item.
-                         A :ref:`ListItem` object is created for each item. Supply this argument,
+                         A :ref:`listitem` object is created for each item. Supply this argument,
                          or the items property in ``creation_properties``, not both.
 ``creation_properties``  Optional. An object that contains any of the following properties:
                            - ``name``: A unique name for the control.
                            - ``multiselect``: When false (the default), only one item can be
                            - ``selected``. When true, multiple items can be selected.
                            - ``items``: An array of strings for the text of each list item. A
-                             :ref:`ListItem` object is created for each item. An item with the
+                             :ref:`listitem` object is created for each item. An item with the
                              text string ``"-"`` creates a separator item. Supply this
                              property, or the ``items`` argument, not both. This form is most
                              useful for elements defined using :ref:`Resource-specifications`.
                            - ``numberOfColumns``: A number of columns in which to display
                              the items; default is 1. When there are multiple columns,
-                             each :ref:`ListItem` object represents a single selectable row. Its
+                             each :ref:`listitem` object represents a single selectable row. Its
                              :ref:`controlobj-text` and :ref:`controlobj-image` values supply the label
                              for the first column, and the ``controlobj-subitems`` property specifies
                              labels for additional columns.
@@ -479,7 +478,7 @@ callback repeatedly while the user is moving the indicator.
 ``stepdelta``            Determines the scrolling unit for the up or down arrow. Default is 1.
 ``jumpdelta``            Determines the scrolling unit for a jump (as when the bar is clicked
                          outside the indicator or arrows); default is 20% of the range between
-                        ``minvalue`` and ``maxvalue``.
+                         ``minvalue`` and ``maxvalue``.
 =======================  =======================================================================
 
 To add to a window ``w``::
@@ -572,11 +571,11 @@ To add to a window ``w``::
 .. _control-type-tab:
 
 tab
-****
+***
 Class Name: ``Tab``
 
-A container for other types of controls. Differs from a :ref:`Panel` element
-in that is must be a direct child of a :ref:`TabbedPanel` element, the title is
+A container for other types of controls. Differs from a :ref:`control-type-panel` element
+in that is must be a direct child of a :ref:`control-type-tabbedpanel` element, the title is
 shown in the selection tab, and it does not have a script-definable
 border. The currently active tab is the value of the parent's
 ``selection`` property.
@@ -605,8 +604,8 @@ tabbedpanel
 ***********
 Class Name: ``TabbedPanel``
 
-A container for selectable :ref:`Tab` containers. Differs from a :ref:`Panel`
-element in that it can contain only :ref:`Tab` elements as direct children.
+A container for selectable :ref:`control-type-tab` containers. Differs from a :ref:`control-type-panel`
+element in that it can contain only :ref:`control-type-tab` elements as direct children.
 
 Containers have additional properties that control the children; see
 :ref:`container-properties`. Hiding a panel hides all its
@@ -652,13 +651,13 @@ To add to a window ``w``::
 =======================  ======================================================================================
 ``bounds``               Optional. The control's position and size.
 ``items``                Optional. An array of strings for the text of each top-level
-                         list item. A :ref:`ListItem` object is created for each item. An item
+                         list item. A :ref:`listitem` object is created for each item. An item
                          with the type node can contain child items. Supply this
                          argument, or the ``items`` property in ``creation_properties``, not both.
 ``creation_properties``  Optional. An object that contains any of the following properties:
                            - ``name``: A unique name for the control.
                            - ``items``: An array of strings for the text of each top-level list
-                             item. A :ref:`ListItem` object is created for each item. An item
+                             item. A :ref:`listitem` object is created for each item. An item
                              with the type ``node``` can contain child items. Supply this
                              property, or the ``items`` argument, not both. This form is most
                              useful for elements defined using :ref:`Resource-specifications`.
@@ -770,7 +769,7 @@ checked
 *******
 Type: ``Boolean``
 
-For :ref:`ListItem` objects only. When true, the item is marked with the
+For :ref:`listitem` objects only. When true, the item is marked with the
 platform-appropriate checkmark. When false, no checkmark is drawn,
 but space is reserved for it in the left margin, so that the item lines up
 with other checkable items. When ``undefined``, no space is reserved
@@ -784,7 +783,7 @@ columns
 *******
 Type: ``Object``
 
-For :ref:`ListBox` objects only. A JavaScript object with two read-only
+For :ref:`control-type-listbox` objects only. A JavaScript object with two read-only
 properties whose values are set by the creation parameters:
 
 ===================  ======================================================
@@ -804,8 +803,8 @@ Type: ``Boolean``
 
 When true, the control is enabled, meaning that it accepts input.
 When false, control elements do not accept input, and all types of
-elements have a dimmed appearance. A disabled :ref:`ListItem` is not
-selectable in a :ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView` list.
+elements have a dimmed appearance. A disabled :ref:`listitem` is not
+selectable in a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list.
 
 --------------------------------------------------------------------------------
 
@@ -815,7 +814,7 @@ expanded
 ********
 Type: ``Boolean``
 
-For :ref:`ListItem` objects of type ``node`` in :ref:`TreeView` list controls. When true,
+For :ref:`listitem` objects of type ``node`` in :ref:`control-type-treeview` list controls. When true,
 the item is in the expanded state and its children are shown, when
 false, it is collapsed and children are hidden.
 
@@ -866,9 +865,9 @@ image in PNG or JPEG format, or for a shortcut or alias to such a file.
 
 - For an :ref:`IconButton`, the icon appears as the content of the button.
 - For an :ref:`Image`, the image is the entire content of the image element.
-- For a :ref:`ListItem`, the image is displayed to the left of the text.
+- For a :ref:`listitem`, the image is displayed to the left of the text.
 
-  If the parent is a multi-column :ref:`ListBox`, this is the display image
+  If the parent is a multi-column :ref:`control-type-listbox`, this is the display image
   for the label in the first column, and labels for further columns are
   specified in the :ref:`controlobj-subitems` array.
   See :ref:`creating-multi-column-lists`.
@@ -893,7 +892,7 @@ index
 *****
 Type: ``Number``
 
-For :ref:`ListItem` objects only. The index of this item in the ``items``
+For :ref:`listitem` objects only. The index of this item in the ``items``
 collection of its parent list control. Read only.
 
 --------------------------------------------------------------------------------
@@ -904,8 +903,8 @@ items
 *****
 Type: ``Array of Object``
 
-For a list object (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView` list), a collection
-of :ref:`ListItem` objects for the items in the list. Access by 0-based index. To
+For a list object (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list), a collection
+of :ref:`listitem` objects for the items in the list. Access by 0-based index. To
 obtain the number of items in the list, use ``items.length``. Read only.
 
 --------------------------------------------------------------------------------
@@ -916,7 +915,7 @@ itemSize
 ********
 Type: ``Dimension``
 
-For a list object (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView` list),
+For a list object (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list),
 a :ref:`Dimension` object describing the width and height in pixels of each item in the
 list. Used by auto-layout to determine the ``preferredSize`` of the list,
 if not otherwise specified.
@@ -1073,7 +1072,7 @@ selected
 ********
 Type: ``Boolean``
 
-For :ref:`ListItem` objects only. When true, the item is part of the ``selection``
+For :ref:`listitem` objects only. When true, the item is part of the ``selection``
 for its parent list. When false, the item is not selected. Set
 to true to select this item in a single-selection list, or to add it to the
 selection array for a multi-selection list.
@@ -1088,7 +1087,7 @@ selection
 
 Type: ``Array of ListItem``
 
-For a :ref:`ListBox`, an array of :ref:`ListItem` objects for the current selection in a
+For a :ref:`control-type-listbox`, an array of :ref:`listitem` objects for the current selection in a
 multi-selection list. Setting this value causes the selected item to be
 highlighted and to be scrolled into view if necessary. If no items are
 selected, the value is ``null``. Set to ``null`` to deselect all items.
@@ -1119,8 +1118,8 @@ selection
 
 Type: ``ListItem``
 
-For a :ref:`DropDownList` or :ref:`TreeView` list object, the currently selected
-:ref:`ListItem` object.
+For a :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list object, the currently selected
+:ref:`listitem` object.
 
 Setting this value causes the selected item to be highlighted and to
 be scrolled into view if necessary. If no item is selected, the value is ``null``.
@@ -1184,7 +1183,7 @@ subitems
 ********
 Type: ``Array``
 
-For :ref:`ListItem` objects only. When the parent is a multi-column :ref:`ListBox`,
+For :ref:`listitem` objects only. When the parent is a multi-column :ref:`control-type-listbox`,
 the :ref:`ListItem.text <controlobj-text>` and :ref:`ListItem.image <controlobj-image>`
 values describe the label in the first column, and this specifies additional
 labels for that row in the remaining columns.
@@ -1196,10 +1195,10 @@ describing the label in the second column.
 
 Each object has two properties, of which one or both can be supplied:
 
-========   ============================================
+=========  ============================================
 ``text``   A localizable display string for this label.
 ``image``  An Image object for this label.
-========   ============================================
+=========  ============================================
 
 --------------------------------------------------------------------------------
 
@@ -1214,7 +1213,7 @@ For controls, the meaning depends on the control type. Buttons use
 the ``text`` as a label, for example, while edit fields use the text to
 access the content.
 
-For :ref:`ListItem` objects, this is the display string for the list choice. If the
+For :ref:`listitem` objects, this is the display string for the list choice. If the
 parent is a multi-column list box, this is the display string for the label
 in the first column, and labels for further columns are specified in the
 :ref:`controlobj-subitems` array. See :ref:`creating-multi-column-lists`.
@@ -1249,8 +1248,8 @@ title
 *****
 Type: ``String``
 
-For a :ref:`DropDownList`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
-or :ref:`TabbedPanel` only, a text label for the element. The title can appear
+For a :ref:`control-type-dropdownlist`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
+or :ref:`control-type-tabbedpanel` only, a text label for the element. The title can appear
 to the left or right of the element, or above or below it, or you can superimpose
 the title over the center of the element. The placement is controlled by
 the :ref:`controlobj-titlelayout` value.
@@ -1264,8 +1263,8 @@ titleLayout
 ``Object``
 
 
-For a :ref:`DropDownList`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
-or :ref:`TabbedPanel` with a title value, the way the text label is shown in
+For a :ref:`control-type-dropdownlist`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
+or :ref:`control-type-tabbedpanel` with a title value, the way the text label is shown in
 relation to the element. A JavaScript object with these properties:
 
 ==============  ========================================================================
@@ -1547,7 +1546,7 @@ toString()
 **********
 ``listItemObj.toString()``
 
-For :ref:`ListItem` controls only. Retrieves the value of this item's text
+For :ref:`listitem` controls only. Retrieves the value of this item's text
 property as a string.
 
 Returns a String.
@@ -1560,7 +1559,7 @@ valueOf()
 *********
 ``listItemObj.valueOf()``
 
-For :ref:`ListItem` controls only. Retrieves the index number of this item in
+For :ref:`listitem` controls only. Retrieves the index number of this item in
 the parent list's items array.
 
 Returns a Number.
@@ -1577,17 +1576,17 @@ add()
 *****
 ``listObj.add (type, text[, index])``
 
-========  ============================================================================================
-``type``  The type of item to add. One of:
-            - ``item``: A basic, selectable item with a text label.
-            - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
-              is ignored, and the method returns null.
-``text``  The localizable text label for the item.
-``index`` Optional. The index into the current item list after which this item is inserted. If not
-          supplied, or greater than the current list length, the new item is added at the end.
-========  ============================================================================================
+=========  ============================================================================================
+``type``   The type of item to add. One of:
+             - ``item``: A basic, selectable item with a text label.
+             - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
+               is ignored, and the method returns null.
+``text``   The localizable text label for the item.
+``index``  Optional. The index into the current item list after which this item is inserted. If not
+           supplied, or greater than the current list length, the new item is added at the end.
+=========  ============================================================================================
 
-For list objects (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView`) only.
+For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
 Adds an ``item`` to the items array at the given index.
 
 Returns the ``item`` control object for ``type = 'item'``, or ``null`` for
@@ -1605,7 +1604,7 @@ text
 
 The text of the item to find.
 
-For list objects (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView`) only.
+For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
 Looks in this object's ``items`` array for an item object with the given ``text``
 value.
 
@@ -1627,10 +1626,10 @@ remove()
 ``child``
 =========  ====================================================================================================
 
-For containers (:ref:`Panel`, :ref:`Group`), removes the specified child control from
+For containers (:ref:`control-type-panel`, :ref:`control-type-group`), removes the specified child control from
 the container's ``children`` array.
 
-For list objects (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView`) only, removes the specified item from this
+For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only, removes the specified item from this
 object's items array. No error results if the item does not exist.
 
 Returns ``undefined``.
@@ -1643,7 +1642,7 @@ removeAll()
 ***********
 ``listObj.removeAll()``
 
-For list objects (:ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView`) only.
+For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
 Removes all items from the object's ``items`` array.
 
 Returns ``undefined``.
@@ -1660,7 +1659,7 @@ revealItem()
 ``item``  The item or child to reveal, a control object.
 ========  ==============================================
 
-For :ref:`ListBox` only. Scrolls the list to make the specified item visible,
+For :ref:`control-type-listbox` only. Scrolls the list to make the specified item visible,
 if necessary.
 
 Returns ``undefined``.
@@ -1701,12 +1700,13 @@ invokePlayerFunction()
             see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
 ``args``    Optional. One or more arguments to pass through to the function, of
             these types:
-              ======= =========
-              Number  undefined
-              String  Object
-              Boolean Array
-              Null
-              ======= =========
+            - ``Array``
+            - ``Boolean``
+            - ``Null``
+            - ``Number``
+            - ``Object``
+            - ``String``
+            - ``undefined``
 ==========  ==============================================================================
 
 
@@ -1805,11 +1805,11 @@ onChange
 Called when the user finishes making a change in one of the following control
 types:
 
-=================== ================
-:ref:`DropDownList` :ref:`Scrollbar`
-:ref:`EditText`     :ref:`Slider`
-:ref:`ListBox`      :ref:`TreeView`
-=================== ================
+================================  ================
+:ref:`control-type-dropdownlist`  :ref:`Scrollbar`
+:ref:`EditText`                   :ref:`Slider`
+:ref:`control-type-listbox`       :ref:`control-type-treeview`
+================================  ================
 
 - For an :ref:`EditText` control, called only when the change is complete-that is, when
   focus moves to another control, or the user types ``ENTER``. The exact behavior
@@ -1817,7 +1817,7 @@ types:
   :ref:`edittext <control-type-edittext>` description.
 - For a :ref:`Slider` or :ref:`Scrollbar`, called when the user has finished
   dragging the position marker or has clicked the control.
-- For a :ref:`ListBox`, :ref:`DropDownList` or :ref:`TreeView` control, called
+- For a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` control, called
   whenever the selection property changes. This can happen when a script sets the
   property directly or removes a selected item from the list, or when the user
   changes the selection.
@@ -1843,8 +1843,8 @@ Called for each incremental change in one of the following control types:
 
 onCollapse
 **********
-Called when the user collapses (closes) a node in a :ref:`TreeView` control.
-The parameter to this function is the :ref:`ListItem` node object that was
+Called when the user collapses (closes) a node in a :ref:`control-type-treeview` control.
+The parameter to this function is the :ref:`listitem` node object that was
 collapsed.
 
 --------------------------------------------------------------------------------
@@ -1862,7 +1862,7 @@ clicking outside it or tabbing out of it.
 
 onDoubleClick
 *************
-Called when the user double clicks an item in a :ref:`ListBox` control.
+Called when the user double clicks an item in a :ref:`control-type-listbox` control.
 The list's ``selection`` property is set to the clicked item.
 
 --------------------------------------------------------------------------------
@@ -1881,8 +1881,8 @@ Handler takes one argument, a :ref:`DrawState-object`.
 
 onExpand
 ********
-Called when the user expands (opens) a node in a :ref:`TreeView` control. The parameter
-to this function is the :ref:`ListItem` node object that was expanded.
+Called when the user expands (opens) a node in a :ref:`control-type-treeview` control. The parameter
+to this function is the :ref:`listitem` node object that was expanded.
 
 --------------------------------------------------------------------------------
 

@@ -22,6 +22,8 @@ There is a default layout manager object, or you can create a new one::
 
   myWin.layout = new AutoLayoutManager( myWin );
 
+--------------------------------------------------------------------------------
+
 .. _default-layout-behavior:
 
 Default layout behavior
@@ -58,6 +60,8 @@ For details of how you can set these property values to affect the automatic lay
   applications on the same platform, so ScriptUI windows that are created the same way can appear
   different in different contexts.
 
+--------------------------------------------------------------------------------
+
 .. _automatic-layout-properties:
 
 Automatic layout properties
@@ -81,6 +85,10 @@ Each example shows the effects of setting particular layout properties in variou
 text is set so that the window title shows which property is being varied, and w.st.text is set to display
 the particular property value being demonstrated.
 
+--------------------------------------------------------------------------------
+
+.. _container-orientation:
+
 Container orientation
 *********************
 The ``orientation`` property of a container specifies the organization of child elements within it. It can have
@@ -103,6 +111,10 @@ The following figure shows the results of laying out the sample window with each
 
 .. todo::
     image
+
+--------------------------------------------------------------------------------
+
+.. _aligning-children:
 
 Aligning children
 *****************
@@ -147,20 +159,20 @@ Elements in a column can be aligned along the horizontal axis, in these ways:
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
 
-=======    ===================================================================================================
-``top``    The element's top edge is located at the top margin of its container, and the element is
-           centered within the right and left margins of its container.
-``bottom`` The element's bottom edge is located at the bottom margin of its container, and the element is
-           centered within the right and left margins of its container.
-``left``   The element's left edge is located at the left margin of its container, and the element is centered
-           within the top and bottom margins of its container.
-``right``  The element's right edge is located at the right margin of its container, and the element is
-           centered within the top and bottom margins of its container.-
-``center`` The element is centered within the top, bottom, right and left margins of its container.
-``fill``   The element's height is adjusted to fill the height of the container between the top and
-           bottom margins., and the element's width is adjusted to fill the width of the container between the
-           right and left margins.
-=======    ===================================================================================================
+==========  ===================================================================================================
+``top``     The element's top edge is located at the top margin of its container, and the element is
+            centered within the right and left margins of its container.
+``bottom``  The element's bottom edge is located at the bottom margin of its container, and the element is
+            centered within the right and left margins of its container.
+``left``    The element's left edge is located at the left margin of its container, and the element is centered
+            within the top and bottom margins of its container.
+``right``   The element's right edge is located at the right margin of its container, and the element is
+            centered within the top and bottom margins of its container.-
+``center``  The element is centered within the top, bottom, right and left margins of its container.
+``fill``    The element's height is adjusted to fill the height of the container between the top and
+            bottom margins., and the element's width is adjusted to fill the width of the container between the
+            right and left margins.
+==========  ===================================================================================================
 
 The following figure shows the results of creating the sample window with row orientation and the
 ``bottom`` and ``top`` alignment settings in the parent's ``alignChildren`` property:
@@ -181,6 +193,10 @@ alignment to right for the EditText element, when the parent's ``alignChildren``
 
 .. todo::
     image
+
+--------------------------------------------------------------------------------
+
+.. _alignment-in-two-dimensions:
 
 Alignment in two dimensions
 ***************************
@@ -205,6 +221,10 @@ how to specify alignment in two dimensions.
   .. todo::
       image
 
+--------------------------------------------------------------------------------
+
+.. _setting-margins:
+
 Setting margins
 ***************
 The margins property of a container specifies the number of pixels between the edges of a container and
@@ -224,6 +244,10 @@ pixels, a bottom margin of 20 pixels, and left and right margins of 15 pixels:
 .. todo::
     image
 
+--------------------------------------------------------------------------------
+
+.. _spacing-between-children:
+
 Spacing between children
 ************************
 The spacing property of a container specifies the number of pixels separating one child element from its
@@ -241,8 +265,13 @@ pixels:
 .. todo::
     image
 
+--------------------------------------------------------------------------------
+
+.. _determining-a-preferred-size:
+
 Determining a preferred size
 ****************************
+
 Each element has a preferredSize property, which is initially defined with reasonable default
 dimensions for the element. The default value is calculated by ScriptUI, and is based on constant
 characteristics of each type of element, and variable characteristics such as the text string to be displayed
@@ -267,10 +296,15 @@ There is a default maximum size that prevents automatic layout from creating ele
 screen.
 
 You can explicitly resize the controls in a window to fit the current text contents, or after the window is
-resized by the user, using the :ref:`resize() <missing link>` method of the layout object.
+resized by the user, using the :ref:`autolayoutmanager-object-resize` method of the layout object.
+
+--------------------------------------------------------------------------------
+
+.. _creating-more-complex-arrangements:
 
 Creating more complex arrangements
 **********************************
+
 You can easily create more complex arrangements by nesting Group containers within Panel containers
 and other ``Group`` containers.
 
@@ -353,6 +387,10 @@ alignChildren='fill', which makes each child of the dialog match its width to th
 To make the buttons to appear at the right of the dialog, the ``buttons`` group overrides the ``fill`` alignment
 of its parent (the dialog), and specifies ``alignment='right'``.
 
+--------------------------------------------------------------------------------
+
+.. _creating-dynamic-content:
+
 Creating dynamic content
 ************************
 Many dialogs need to present different sets of information based on the user selecting some option within
@@ -421,6 +459,8 @@ function shows one group, and hides the other.
 
     win.center();
     win.show();
+
+--------------------------------------------------------------------------------
 
 .. _custom-layout-manager-example:
 
@@ -527,6 +567,8 @@ buttons are staggered rather than in a straight line.
     win.center();
     win.show();
 
+--------------------------------------------------------------------------------
+
 .. _the-autolayoutmanager-algorithm:
 
 The AutoLayoutManager algorithm
@@ -566,6 +608,8 @@ call to a Window object's show method:
 7. Set the bounds property for each child element.
 8. Set the container's preferredSize property, based on the margins and dimensions of the row or
    column of child elements.
+
+--------------------------------------------------------------------------------
 
 .. _automatic-layout-restrictions:
 

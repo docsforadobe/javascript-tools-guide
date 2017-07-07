@@ -14,7 +14,7 @@ Create an instance of the ``AutoLayoutManager`` class with the new operator::
     myWin.layout = new AutoLayoutManager( myWin );
 
 An instance is automatically created when you create a ``Window`` or container (``group`` or ``panel``) object, and
-referenced by the container's :ref:`layout <layout-property>` property. This instance implements the default layout behavior unless
+referenced by the container's :ref:`container-layout` property. This instance implements the default layout behavior unless
 you override it.
 
 .. _autolayoutmanager-object-properties:
@@ -28,6 +28,8 @@ creates, to store data needed by the script-defined layout algorithm.
 
 AutoLayoutManager object functions
 ----------------------------------
+
+.. _autolayoutmanager-object-layout:
 
 layout()
 ********
@@ -46,6 +48,10 @@ Invoked automatically the first time the window is displayed. Thereafter, the sc
 explicitly to change the layout in case of changes in the size or position of the parent or children.
 
 Returns ``undefined``
+
+--------------------------------------------------------------------------------
+
+.. _autolayoutmanager-object-resize:
 
 resize()
 ********

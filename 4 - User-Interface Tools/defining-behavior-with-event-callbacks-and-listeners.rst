@@ -2,6 +2,7 @@
 
 Defining behavior with event callbacks and listeners
 ====================================================
+
 You must define the behavior of your controls in order for them to respond to user interaction. You can do
 this by defining event-handling callback functions as part of the definition of the control or window. To
 respond to a specific event, define a handler function for it, and assign a reference to that function in the
@@ -9,28 +10,28 @@ corresponding property of the window or control object. Different types of windo
 to different actions, or events:
 
 - Windows generate events when the user moves or resizes the window. To handle these events, define
-  callback functions for :ref:`onMove <missing link>`, :ref:`onMoving <missing link>`,
-  :ref:`onResize <missing link>`, and :ref:`onResizing <missing link>`.
+  callback functions for :ref:`window-event-onmove`, :ref:`window-event-onmoving`,
+  :ref:`window-event-onresize`, and :ref:`window-event-onresizing`.
   To respond to the user opening or closing the window, define callback functions for
-  :ref:`onShow <missing link>` and :ref:`onClose <missing link>`.
+  :ref:`window-event-onshow` and :ref:`window-event-onclose`.
 - Button, RadioButton, and Checkbox controls generate events when the user clicks within the control
-  bounds. To handle the event, define a callback function for :ref:`onClick <missing link>`.
+  bounds. To handle the event, define a callback function for :ref:`control-event-onclick`.
 - EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is,
   when the user types into an edit field, or moves the scroll or slider indicator. To handle these events,
-  define callback functions for :ref:`onChange <missing link>` and :ref:`onChanging <missing link>`.
+  define callback functions for :ref:`control-event-onchange` and :ref:`control-event-onchanging`.
 - ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list
-  changes. To handle the event, define a callback function for :ref:`onChange <missing link>`.
+  changes. To handle the event, define a callback function for :ref:`control-event-onchange`.
   The TreeView control also generates events when the user expands or collapses a node,
-  handled by the :ref:`onExpand <missing link>` and :ref:`onCollapse <missing link>` callback functions.
+  handled by the :ref:`control-event-onexpand` and :ref:`control-event-oncollapse` callback functions.
 - The ListBox also generates an event when the user double-clicks an item. To handle it, define a
-  callback function for the :ref:`onDoubleClick <missing link>` event.
+  callback function for the :ref:`control-event-ondoubleclick` event.
 - Both containers and controls generate events just before they are drawn, that allow you to customize
-  their appearance. To handle these events, define callback functions for :ref:`onDraw <missing link>`.
+  their appearance. To handle these events, define callback functions for :ref:`control-event-ondraw`.
   Your handler can modify or control how the container or control is drawn using the methods
   defined in the control's associated :ref:`scriptuigraphics-object`.
-- In Windows only, you can register a key sequence as a :ref:`shortcutKey <missing link>` for a window or
+- In Windows only, you can register a key sequence as a :ref:`control-event-shortcutKey` for a window or
   for most types of controls. To handle the key sequence, define a callback function for
-  :ref:`onShortcutKey <missing link>` in that control.
+  :ref:`control-event-onshortcutkey` in that control.
 
 .. _defining-event-handler-callback-functions:
 
@@ -121,11 +122,11 @@ Another way to define the behavior of your windows and controls is register a ha
 responds to a specific type of event in that window or control. This technique allows you to respond to the
 cascading of an event through a hierarchy of containers and controls.
 
-Use :ref:`windowObj.addEventListener() <missing link>` or :ref:`controlObj.addEventListener() <missing link>`
+Use :ref:`window-object-addeventlistener` or :ref:`controlobj-addeventlistener`
 to register a handler. The function you register receives an event object (from the :ref:`uievent-base-class`)
 that encapsulates the event information. As an event cascades down through a hierarchy and back up
 through the hierarchy, your handler can respond at any level, or use the UIEvent object's
-:ref:`stopPropagation() <missing link>` method to stop the event propagation at some level.
+:ref:`eventobj-stopPropagation` method to stop the event propagation at some level.
 
 You can register:
 
@@ -143,12 +144,12 @@ You can register:
 
 The handler or registered code statement is executed when the specified event occurs in the target. A
 script can programmatically simulate an event by creating an event objects with
-:ref:`ScriptUI.events.events.createEvent() <missing link>`, and passing it to an event target's
-:ref:`dispatchEvent() <missing link>` function.
+:ref:`scriptui-events-createevent`, and passing it to an event target's
+:ref:`controlobj-dispatchEvent` function.
 
 You can remove a handler that has been previously registered by calling the event target's
-:ref:`removeEventListener() <missing link>` function. The parameters you pass to this function must be identical to those
-passed to the :ref:`addEventListener() <missing link>` call that registered the handler. Typically, a script would register all event
+:ref:`controlobj-removeEventListener` function. The parameters you pass to this function must be identical to those
+passed to the :ref:`controlobj-addeventlistener` call that registered the handler. Typically, a script would register all event
 handlers during initialization, and unregister them during termination; however, unregistering handlers
 on termination is not required.
 
@@ -241,7 +242,7 @@ the button object's handler (during the at-target phase). Finally, ScriptUI call
 the group object (during the bubble phase).
 
 If you register a handler at an ancestor object of the actual event target, you can specify the third
-argument to :ref:`addEventListener() <missing link>`, so that the ancestor's handler responds only in the
+argument to :ref:`controlobj-addeventlistener`, so that the ancestor's handler responds only in the
 capture phase, not in the bubbling phase. For example, the following click handler, registered with the
 parent dialog object, responds only in the capture phase::
 
@@ -252,6 +253,6 @@ when the object's descendent is the target, or when the object is itself the tar
 at-target phase).
 
 To distinguish which of multiple registered handlers is being executed at any given time, the event object
-provides the :ref:`eventPhase property <missing link>`, and the :ref:`currentTarget property <missing link>`, which In the capture and bubbling
+provides the :ref:`eventobj-eventPhase`, and the :ref:`eventobj-currentTarget`, which In the capture and bubbling
 phases contains the ancestor of the target object at which the currently executing handler was
 registered.

@@ -80,7 +80,7 @@ A button that displays an icon, with or without a text label. Like a text button
 initiates an action in response to a click.
 
 - The ``image`` property identifies the icon image; see :ref:`displaying-images`.
-- The ``title`` or ``text`` property provides an optional label; the :ref:`titlelayout` property
+- The ``title`` or ``text`` property provides an optional label; the :ref:`controlobj-titlelayout` property
   places the label with respect to the image.
 - The ``onClick`` callback method provides behavior.
 
@@ -91,7 +91,7 @@ Image
 Displays an iconic image.
 
 - The ``image`` property identifies the icon image; see :ref:`displaying-images`.
-- The ``title`` property provides an optional label; the :ref:`titlelayout` property places
+- The ``title`` property provides an optional label; the :ref:`controlobj-titlelayout` property places
   the label with respect to the image.
 
 .. _statictext:
@@ -226,9 +226,6 @@ dlg.sizePnl.widthSt = dlg.sizePnl.add( "statictext", undefined, "Width:" );
 dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 );
 dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 
-.. _listbox:
-.. _dropdownlist:
-.. _treeview:
 .. _listbox-dropdownlist-treeview:
 
 ListBox, DropDownList and TreeView
@@ -248,7 +245,7 @@ the ``items`` property. You can access the items in this array using a 0-based i
 - A ``TreeView`` control is similar to a ListBox, except that the items can have child
   items. Items with children can be expanded or collapsed to show or hide the child
   items. Child items can in turn contain children.
-- The ``title`` property provides an optional label; the :ref:`titlelayout` property places
+- The ``title`` property provides an optional label; the :ref:`controlobj-titlelayout` property places
   the label with respect to the list.
 
 You can specify the choice items on creation of the list object, or afterward using the
@@ -284,7 +281,7 @@ You can also use the control object to communicate with the Flash application, c
 ActionScript methods, and making JavaScript methods defined in your Adobe
 application script available to the Flash ActionScript code. See :ref:`calling-actionscript-functions-from-a-scriptui-script`.
 
-The ``title`` property provides an optional label; the :ref:`titlelayout` property places the
+The ``title`` property provides an optional label; the :ref:`controlobj-titlelayout` property places the
 label with respect to the player.
 
 .. _displaying-images:
@@ -331,17 +328,17 @@ Creating multi-column lists
 ---------------------------
 In list controls (:ref:`listbox-dropdownlist-treeview`), a set of :ref:`listitem` objects represents the individual
 choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by
-the :ref:`text <text-property>` and :ref:`image <image-property>` properties of the :ref:`listitem` (see :ref:`displaying-images`).
+the :ref:`controlobj-text` and :ref:`controlobj-image` properties of the :ref:`listitem` (see :ref:`displaying-images`).
 
-You can define a :ref:`ListBox <listbox>` to have multiple columns, by specifying the ``numberOfColumns`` creation
+You can define a :ref:`ListBox <control-type-listbox>` to have multiple columns, by specifying the ``numberOfColumns`` creation
 parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the
 creation parameters to specify whether headers are shown, and the header text for each column.
 
 If you specify more than one column, each `ListItem`_ object that you add to the box specifies one selectable
-row. The ``text`` and ``image`` of the `ListItem`_ object specifies the label in the first column, and the :ref:`subitems`
+row. The ``text`` and ``image`` of the `ListItem`_ object specifies the label in the first column, and the :ref:`controlobj-subitems`
 property specifies labels that appear in that row for the remaining columns.
 
-The :ref:`subitems` value is an array, whose length is one less than the number of columns. That is, the first
+The :ref:`controlobj-subitems` value is an array, whose length is one less than the number of columns. That is, the first
 member, ``ListItem.subitems[0]``, specifies the label in the second column. Each member specifies one
 label, as a JavaScript object with two properties::
 

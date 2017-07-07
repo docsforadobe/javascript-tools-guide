@@ -696,6 +696,7 @@ XMPFileInfo object
 ------------------
 This object is returned by XMPFile.getFileInfo(). The read-only properties describe the file represented by
 the XMPFile object.
+
 .. note:: This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
   display metadata.
 

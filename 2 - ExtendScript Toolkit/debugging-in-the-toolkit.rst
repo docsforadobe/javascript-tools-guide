@@ -88,7 +88,7 @@ and buttons to control the execution of code when the JavaScript Debugger is act
 
 .. todo:: images in table
 
-============  ================         ====================================================================
+============  =======================  ====================================================================
 Run/Continue  F5 (Windows)             Starts or resumes execution of a script.
               Ctrl R (Mac OS)          Disabled when script is executing.
 Break         Ctrl F5 (Windows)        Halts the currently executing script temporarily and reactivates
@@ -106,7 +106,7 @@ Step Out      Shift F11 (Windows)      When paused within the body of a JavaScri
               Ctrl U (Mac OS)          script execution until the function returns.
                                        When paused outside the body of a function, resumes script
                                        execution until the script terminates.
-============  ================         ====================================================================
+============  =======================  ====================================================================
 
 
 .. _visual-indication-of-execution-states:

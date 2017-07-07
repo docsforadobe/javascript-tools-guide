@@ -51,6 +51,8 @@ The constructor creates and returns a new Window object, or null if window creat
                              Properties that control those features are ignored.
 =======================  ===================================================================================
 
+--------------------------------------------------------------------------------
+
 .. _window-object-properties:
 
 Window object properties
@@ -72,6 +74,8 @@ given control or dialog active.
   accepts keystrokes, or in the case of a Button, be selected when
   the user types RETURN or ENTER.
 
+--------------------------------------------------------------------------------
+
 .. _window-cancelelement:
 
 cancelElement
@@ -82,6 +86,8 @@ For a window of type dialog, the control to notify when a user types
 the ESC key. By default, looks for a button whose name or text is
 ``"cancel"`` (case disregarded).
 
+--------------------------------------------------------------------------------
+
 .. _window-defaultelement:
 
 defaultElement
@@ -91,6 +97,8 @@ Type: Object
 For a window of type dialog, the control to notify when a user types
 the ENTER key. By default, looks for a button whose name or text is
 ``"ok"`` (case disregarded).
+
+--------------------------------------------------------------------------------
 
 .. _window-framebounds:
 
@@ -103,6 +111,8 @@ coordinates. The frame consists of the title bar and borders that
 enclose the content region of a window, depending on the
 windowing system. Read only.
 
+--------------------------------------------------------------------------------
+
 .. _window-framelocation:
 
 frameLocation
@@ -114,6 +124,8 @@ frame. The same as [frameBounds.x, frameBounds.y]. Set this
 value to move the window frame to the specified location on the
 screen. The frameBounds value changes accordingly.
 
+--------------------------------------------------------------------------------
+
 .. _window-framesize:
 
 frameSize
@@ -123,6 +135,8 @@ Type: :ref:`Dimension`
 A Dimension object for the size and location of the Window's frame
 in screen coordinates. Read only.
 
+--------------------------------------------------------------------------------
+
 .. _window-maximized:
 
 maximized
@@ -130,6 +144,8 @@ maximized
 Type: Boolean
 
 When true, the window is expanded.
+
+--------------------------------------------------------------------------------
 
 .. _window-minimized:
 
@@ -150,6 +166,8 @@ default) makes the window completely opaque, a value of 0 makes it
 completely transparent. Intermediate values make it partially
 transparent to any degree.
 
+--------------------------------------------------------------------------------
+
 .. _window-shortcutkey:
 
 shortcutKey
@@ -159,12 +177,16 @@ Type: String
 The key sequence that invokes this window's `onShortcutKey`_ callback
 (in Windows only).
 
+--------------------------------------------------------------------------------
+
 .. _container-properties:
 
 Container properties
 --------------------
 The following table shows properties that apply to Window objects and container objects (controls of type
 panel, tabbedpanel, tab, and group).
+
+--------------------------------------------------------------------------------
 
 .. _container-alignChildren:
 
@@ -209,6 +231,8 @@ right, center or fill. The vertical alignment value must be one
 of top, bottom, center, or fill.
 Values are not case sensitive.
 
+--------------------------------------------------------------------------------
+
 .. _container-alignment:
 
 alignment
@@ -248,6 +272,8 @@ of top, bottom, center, or fill.
 
 Values are not case sensitive.
 
+--------------------------------------------------------------------------------
+
 .. _container-bounds:
 
 bounds
@@ -260,6 +286,8 @@ apply to containers of type tab, whose bounds are determined
 by the parent tabbedpanel container.
 
 Read only.
+
+--------------------------------------------------------------------------------
 
 .. _container-children:
 
@@ -278,26 +306,32 @@ Read only.
 .. todo::
     Add note about how to modify children array or a link to section about it
 
+--------------------------------------------------------------------------------
+
 .. _container-graphics:
 
 graphics
 ********
-Type: :ref:`Graphics <scriptuigraphics>`
+Type: :ref:`scriptuigraphics-object`
 
 A ScriptUIGraphics object that can be used to customize the
 window's appearance, in response to the onDraw event.
+
+--------------------------------------------------------------------------------
 
 .. _container-layout:
 
 layout
 ******
-Type: :ref:`LayoutManager`
+Type: :ref:`layoutmanager-object`
 
 A LayoutManager object for a window or container. The first time
 a container object is made visible, ScriptUI invokes this layout
 manager by calling its layout function. Default is an instance of
 the LayoutManager class that is automatically created when the
 container element is created.
+
+--------------------------------------------------------------------------------
 
 .. _container-location:
 
@@ -308,6 +342,8 @@ Type: :ref:`Point`
 A Point object for the location of the top left corner of the
 Window's drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
+
+--------------------------------------------------------------------------------
 
 .. _container-margins:
 
@@ -321,6 +357,8 @@ can specify different margins for each edge of the container. The
 default value is based on the type of container, and is chosen to
 match the standard Adobe user-interface guidelines.
 
+--------------------------------------------------------------------------------
+
 .. _container-maximumSize:
 
 maximumSize
@@ -330,6 +368,8 @@ Type: :ref:`Dimension`
 A Dimension object for the largest rectangle to which the
 window can be resized, used in automatic layout and resizing.
 
+--------------------------------------------------------------------------------
+
 .. _container-minimumSize:
 
 minimumSize
@@ -338,6 +378,8 @@ Type: :ref:`Dimension`
 
 A Dimension object for the smallest rectangle to which the
 window can be resized, used in automatic layout and resizing.
+
+--------------------------------------------------------------------------------
 
 .. _container-orientation:
 
@@ -360,6 +402,8 @@ default is ``row``.
 The allowed values for the container's alignChildren and its
 children's alignment properties depend on the orientation.
 
+--------------------------------------------------------------------------------
+
 .. _container-parent:
 
 parent
@@ -371,6 +415,8 @@ container element. The value is ``null`` for Window objects.
 
 Read only.
 
+--------------------------------------------------------------------------------
+
 .. _container-preferredSize:
 
 preferredSize
@@ -381,6 +427,8 @@ A Dimension object for the preferred size of the window, used in
 automatic layout and resizing. To set a specific value for only one
 dimension, specify other dimension as ``-1``.
 
+--------------------------------------------------------------------------------
+
 .. _container-properties-properties:
 
 properties
@@ -390,18 +438,22 @@ Type: Object
 An object that contains one or more creation properties of the
 container (properties used only when the element is created).
 
+--------------------------------------------------------------------------------
+
 .. _container-selection:
 
 selection
 *********
-Type: :ref:`Tab`
+Type: :ref:`control-type-tab`
 
-For a :ref:`TabbedPanel` only, the currently active :ref:`Tab` child. Setting
+For a :ref:`control-type-tabbedpanel` only, the currently active :ref:`control-type-tab` child. Setting
 this property changes the active tab. The value can only be ``null``
 when the panel has no children; setting it to ``null`` is an error.
 When the value changes, either by a user selecting a different tab,
-or by a script setting the property, the :ref:`onChange` callback for the
+or by a script setting the property, the :ref:`control-event-onChange` callback for the
 panel is called.
+
+--------------------------------------------------------------------------------
 
 .. _container-size:
 
@@ -411,6 +463,8 @@ Type: :ref:`Dimension`
 
 A Dimension object for the current size and location of a group or
 panel element, or of the content area of a window.
+
+--------------------------------------------------------------------------------
 
 .. _container-spacing:
 
@@ -425,6 +479,8 @@ needed for a container. The default value is based on the type of
 container, and is chosen to match standard Adobe user-interface
 guidelines.
 
+--------------------------------------------------------------------------------
+
 .. _container-text:
 
 text
@@ -434,6 +490,8 @@ Type: String
 The title, label, or displayed text. Does not apply to containers of
 type group or tabbedpanel. This is a localizable string: see
 :ref:`localization-in-scriptui-objects`.
+
+--------------------------------------------------------------------------------
 
 .. _container-visible:
 
@@ -448,6 +506,8 @@ When a container is hidden, its children are also hidden, but they
 retain their own visibility values, and are shown or hidden
 accordingly when the parent is next shown.
 
+--------------------------------------------------------------------------------
+
 .. _container-window:
 
 window
@@ -457,6 +517,8 @@ Type: :ref:`Window <window-object>`
 The top-level parent window of this container, a :ref:`Window object <window-object>`.
 
 .. _container-windowBounds:
+
+--------------------------------------------------------------------------------
 
 windowBounds
 ************
@@ -471,6 +533,10 @@ Window object functions
 -----------------------
 These functions are defined for Window instances, and as indicated for container objects of type Panel and
 Group.
+
+--------------------------------------------------------------------------------
+
+.. _window-object-add:
 
 add()
 *****
@@ -495,6 +561,8 @@ Creates and returns a new control or container object and adds it to the childre
 container.
 
 Returns the new object, or ``null`` if unable to create the object.
+
+--------------------------------------------------------------------------------
 
 .. _window-object-addeventlistener:
 
@@ -534,6 +602,10 @@ Registers an event handler for a particular type of event occurring in this wind
 
 Returns ``undefined``.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-center:
+
 center()
 ********
 ``windowObj.center ([window])``
@@ -545,6 +617,10 @@ center()
 Centers this window on the screen, or with respect to another specified window.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
+
+.. _window-object-close:
 
 close()
 *******
@@ -560,6 +636,10 @@ closing the window.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-dispatchevent:
+
 dispatchEvent()
 ***************
 ``windowObj.dispatchEvent(eventObj)``
@@ -572,7 +652,11 @@ Simulates the occurrence of an event in this target. A script can create a UIEve
 specific event and pass it to this method to start the event propagation for the event.
 
 Returns ``false`` if any of the registered listeners that handled the event called the event object's
-:ref:`preventDefault() <preventDefault>` method, ``true`` otherwise.
+:ref:`preventDefault() <eventobj-preventDefault>` method, ``true`` otherwise.
+
+--------------------------------------------------------------------------------
+
+.. _window-object-findelement:
 
 findElement()
 *************
@@ -587,6 +671,10 @@ object if found.
 
 Returns the control object or ``null``.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-hide:
+
 hide()
 ******
 ``windowObj.hide()``
@@ -597,6 +685,8 @@ again, the children retain their own visibility states.
 For a modal dialog, closes the dialog and sets its result to 0.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _window-object-notify:
 
@@ -621,6 +711,10 @@ simulate a dialog being moved by a user::
 
 Returns ``undefined``.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-remove:
+
 remove()
 ********
 ``windowOrContainerObj.remove(index)``
@@ -639,6 +733,10 @@ results if the child does not exist.
 
 Returns ``undefined``.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-removeeventlistener:
+
 removeEventListener()
 *********************
 ``windowObj.removeEventListener(eventName, handler[, capturePhase])``
@@ -654,6 +752,10 @@ must be identical to those that were used to register the event handler.
 
 Returns ``undefined``.
 
+--------------------------------------------------------------------------------
+
+.. _window-object-show:
+
 show()
 ******
 ``windowObj.show()``
@@ -665,8 +767,12 @@ When a window or container is hidden, its children are also hidden, but when it 
 children retain their own visibility states.
 
 For a modal dialog, opens the dialog and does not return until the dialog is dismissed. If it is
-dismissed via the :ref:`close` method, this method returns any result value passed to that method.
+dismissed via the :ref:`close() <window-object-close>` method, this method returns any result value passed to that method.
 Otherwise, returns 0.
+
+--------------------------------------------------------------------------------
+
+.. _window-object-update:
 
 update()
 ********
@@ -684,10 +790,12 @@ cancel the current operation (by clicking a Cancel button, for instance).
 During the update() operation, the application is put into a modal state, so that it does not handle
 any events that would activate a different window, or give focus to a control outside the window
 being updated. The modal state allows drawing events for controls in other windows to occur (as is
-the case during a modal :ref:`show() <show>` operation), so that the script does not prevent the update of other
+the case during a modal :ref:`show() <window-object-show>` operation), so that the script does not prevent the update of other
 parts of the application's UI while in the operation loop.
 
 It is an error to call the update() method for a window that is not currently visible.
+
+--------------------------------------------------------------------------------
 
 .. _window-event-handling-callbacks:
 
@@ -697,56 +805,96 @@ The following callback functions can be defined to respond to events in windows.
 define a function with the corresponding name in the Window instance. These callbacks are not available
 for other container types (controls of type panel or group).
 
+--------------------------------------------------------------------------------
+
+.. _window-event-onactivate:
+
 onActivate
 **********
 Called when the user make the window active by clicking it or otherwise making it
 the keyboard focus.
 
+--------------------------------------------------------------------------------
+
+.. _window-event-onclose:
+
 onClose
 *******
 Called when a request is made to close the window, either by an explicit call to the
-:ref:`close() <close>` function or by a user action (clicking the OS-specific close icon in the title
+:ref:`close() <window-object-close>` function or by a user action (clicking the OS-specific close icon in the title
 bar).
 
 The function is called before the window actually closes; it can return false to cancel
 the close operation.
+
+--------------------------------------------------------------------------------
+
+.. _window-event-ondeactivate:
 
 onDeactivate
 ************
 Called when the user makes a previously active window inactive; for instance by
 closing it, or by clicking another window to change the keyboard focus.
 
+--------------------------------------------------------------------------------
+
+.. _window-event-ondraw:
+
 onDraw
 ******
 Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control's associated :ref:`ScriptUIGraphics` object.
-Handler takes one argument, a :ref:`DrawState` object.
+or control the appearance, using the control's associated :ref:`scriptuigraphics-object` object.
+Handler takes one argument, a :ref:`drawstate-object` object.
+
+--------------------------------------------------------------------------------
+
+.. _window-event-onmove:
 
 onMove
 ******
 Called when the window has been moved.
+
+--------------------------------------------------------------------------------
+
+.. _window-event-onmoving:
 
 onMoving
 ********
 Called while a window in being moved, each time the position changes. A handler
 can monitor the move operation.
 
+--------------------------------------------------------------------------------
+
+.. _window-event-onresize:
+
 onResize
 ********
 Called when the window has been resized.
+
+--------------------------------------------------------------------------------
+
+.. _window-event-onresizing:
 
 onResizing
 **********
 Called while a window is being resized, each time the height or width changes. A
 handler can monitor the resize operation.
 
+--------------------------------------------------------------------------------
+
+.. _window-event-onshortcutkey:
+
 onShortcutKey
 *************
 (In Windows only) Called when a shortcut-key sequence is typed that matches the
 shortcutKey value for this window.
 
+--------------------------------------------------------------------------------
+
+.. _window-event-onshow:
+
 onShow
 ******
-Called when a request is made to open the window using the :ref:`show() <show>` method, before
+Called when a request is made to open the window using the :ref:`show() <window-object-show>` method, before
 the window is made visible, but after automatic layout is complete. A handler can
 modify the results of the automatic layout.

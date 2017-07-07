@@ -19,7 +19,7 @@ provide additional tools for other users.
   all Adobe applications that support JavaScript.
 
 - This document does not teach JavaScript. If you are familiar with scripting or programming in general,
-but unfamiliar with JavaScript, see publicly available Web resources and documents, such as:
+  but unfamiliar with JavaScript, see publicly available Web resources and documents, such as:
 
     - The public JavaScript standards organization web site: www.ecma-international.org
     - JavaScript: The Definitive Guide, David Flanagan, O'Reily Media Inc, 2002. ISBN 0-596-00048-0

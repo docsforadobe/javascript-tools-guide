@@ -10,27 +10,27 @@ relative to the element it identifies.
 The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It
 allows you to define an element's title and its spacial relationship with the graphic representation of the
 object it identifies, without the need for additional ``statictext`` and container elements. Title layout
-operates on an element's optional :ref:`title <missing link>` and :ref:`titleLayout <missing link>` properties.
+operates on an element's optional :ref:`controlobj-title` and :ref:`controlobj-titlelayout` properties.
 It treats this title and the element's graphic representation as two separate objects whose relative positions
 are controlled according to layout rules within a virtual container that encloses both objects. This is
 similar to the operation of the automatic layout mechanism, but within a more limited scope.
 
 Title layout is available for these types of UI elements:
-- :ref:`dropdownlist`
-- :ref:`flashplayer`
+- :ref:`control-type-dropdownlist`
+- :ref:`control-type-flashplayer`
 - :ref:`iconbutton`
 - :ref:`image`
-- :ref:`tabbedpanel`
+- :ref:`control-type-tabbedpanel`
 
 For most of these element types, the title typically appears outside the element itself, and the virtual
 container is an imaginary line surrounding the title and the separate element. For the IconButton, the title
 appears inside the bounds of the button, and the virtual container is defined by the outer bounds of the
 element. The same principles apply in both cases.
 
-- The :ref:`title <missing link>` property is a String that defines a text label for a UI element. The title can appear to the left or
+- The :ref:`controlobj-title` property is a String that defines a text label for a UI element. The title can appear to the left or
   right of the graphic element, above or below it, or superimposed over the center of the graphic
-  element; the placement is controlled by the :ref:`titleLayout <missing link>` property.
-- The :ref:`titleLayout <missing link>` property is an Object containing properties that specify:
+  element; the placement is controlled by the :ref:`controlobj-titlelayout` property.
+- The :ref:`controlobj-titlelayout` property is an Object containing properties that specify:
 
   - The title's character width;
   - The title's justification within the character width;
@@ -39,7 +39,7 @@ element. The same principles apply in both cases.
   - The margins within the virtual container that surrounds the title and its related object.
 
 All ``titleLayout`` properties are optional; the element types that use this mechanism have default values
-for each property. Complete details are provided in the reference section; see :ref:`titlelayout`.
+for each property. Complete details are provided in the reference section; see :ref:`controlobj-titlelayout`.
 
 The following sections provide examples that show how to use title layout to achieve many different
 layouts.
@@ -48,7 +48,7 @@ layouts.
 
 Title alignment and orientation
 -------------------------------
-Unlike automatic layout, title layout uses the :ref:`alignment <missing link>` property to specify the orientation of the title and
+Unlike automatic layout, title layout uses the :ref:`controlobj-alignment` property to specify the orientation of the title and
 graphic element, and how the title aligns to the graphic element. This property contains a 2-element array,
 where the first element specifies horizontal alignment and the second specifies vertical alignment. The
 allowed values for these are the same as those used by automatic layout (see :ref:`aligning-children`),

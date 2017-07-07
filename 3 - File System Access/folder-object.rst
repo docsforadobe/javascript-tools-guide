@@ -365,5 +365,3 @@ this folder.
 
 If the user clicks ``OK``, returns a File or Folder object for the selected file or folder. If the user
 cancels, returns ``null``.
-
---------------------------------------------------------------------------------

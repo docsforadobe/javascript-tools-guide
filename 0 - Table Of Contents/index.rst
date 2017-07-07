@@ -17,6 +17,7 @@ ExtendScript overview
     External communication
     External shared-library integration
     Additional utilities and features
+    Copyright
 Scripting for specific applications
     Startup scripts
     JavaScript variables

@@ -29,8 +29,11 @@ application::
 
   import flash.external.ExternalInterface;
 
+.. _calling-actionscript-functions-from-actionscript:
+
 Calling ExtendScript functions from ActionScript
 ************************************************
+
 The ActionScript ``ExternalInterface`` class allows you to call an ExtendScript function that has been
 defined in the ``FlashPlayer`` element in the Adobe application script, and run it in the ActionScript
 environment. You must define the method in your :ref:`flashplayer` element with a matching function name.
@@ -49,8 +52,14 @@ When the Flash Player executes the ExternalInterface call, ScriptUI looks for a 
 name as a method of the FlashPlayer element, and invokes it with the specified arguments. In the
 context of the function, the JavaScript this object refers to the ``FlashPlayer`` object.
 
+--------------------------------------------------------------------------------
+
+.. _calling-actionscript-functions-from-a-scriptui-script:
+
 Calling ActionScript functions from a ScriptUI script
-From the ExtendScript side, use the ``FlashPlayer`` method :ref:`invokePlayerFunction() <missing link>` to call ActionScript
+*****************************************************
+
+From the ExtendScript side, use the ``FlashPlayer`` method :ref:`flashplayerobj-invokePlayerFunction` to call ActionScript
 methods that have been defined within the Flash application::
 
   var result = flashElement.invokePlayerFunction( "ActionScript_function_name", [ arg1, ..., argN ] );
@@ -66,6 +75,10 @@ register a function, use the ``ExternalInterface.addCallback()`` method::
 This registers a function defined in your Adobe application script named ``getActionScriptArray()``::
 
   ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArray );
+
+--------------------------------------------------------------------------------
+
+.. _flash-examples:
 
 Flash Examples
 **************

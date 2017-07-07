@@ -47,7 +47,7 @@ relative path in a platform-independent format known as universal resource ident
 path stored in the object is always an absolute, full path name that points to a fixed location on the disk.
 
 - Use the toString method to obtain the name of the file or folder as string containing an absolute
-path name in URI notation.
+  path name in URI notation.
 - Use the ``fsName`` property to obtain the platform-specific file name.
 
 Absolute and relative path names
@@ -167,14 +167,14 @@ To access a remote volume, use a uniform naming convention (UNC) path name of th
 multiple slash characters. Note that on Windows, UNC names do not work for local volumes.
 These examples assume that the current drive is ``D:``
 
-=============     =======================================
+================  =======================================
 URI path name     Windows path name
-=============     =======================================
+================  =======================================
 /c/dir/file       c:\dir\file
 /remote/dir/file  D:\remote\dir\file
 /root/dir/file    D:\root\dir\file
 ~/dir/file        C:\Documents and Settings\jdoe\dir\file
-=============     =======================================
+================  =======================================
 
 Aliases
 +++++++
@@ -220,7 +220,7 @@ Roman on Mac OS). The ``encoding`` property of a File object returns the current
 encoding property to the name of the desired encoding. The File object looks for the corresponding
 encoder in the operating system to use for subsequent I/O. The name is one of the standard Internet
 names that are used to describe the encoding of HTML files, such as ``ASCII``, ``X-SJIS``, or ``ISO-8859-1``. For a
-complete list, see :ref:`file-and-folder-supported encoding names`.
+complete list, see :ref:`file-and-folder-supported-encoding-names`.
 
 A special encoder, ``BINARY``, is provided for binary I/O. This encoder simply extends every 8-bit character it
 finds to a Unicode character between 0 and 255. When using this encoder to write binary files, the encoder

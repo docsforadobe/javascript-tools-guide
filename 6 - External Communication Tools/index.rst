@@ -6,9 +6,9 @@ ExtendScript offers tools for communicating with other computers or the Internet
 protocols.
 
 The Socket object supports low-level TCP connections. It is available in the following applications:
+
 - Adobe Bridge CS5
 - Adobe InDesign CS5
 - Adobe InCopy® CS5
 - Adobe After Effects® CS5
 - Adobe Photoshop CS5
-

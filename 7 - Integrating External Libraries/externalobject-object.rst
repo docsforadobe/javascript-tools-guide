@@ -27,6 +27,7 @@ ExternalObject constructor
 ``filespec``     The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries.
                  Concatenate this to the base name of the shared library, with or without an extension.
                  ExtendScript appends a file extension if necessary, according to the operating system:
+
                  - ``.dll`` in Windows
                  - ``.bundle`` or ``.framework`` in Mac OS (only Mach-O bundles are supported)
                  - ``.so`` in UNIX (except for HP/UX, where the extension is .sl )
@@ -55,11 +56,13 @@ searchFolders  String   A set of alternate paths in which to search for the shar
                         single string with multiple path specifications delimited by semicolons
                         (;). Paths can be absolute or relative to the :ref:`Folder.startup <missing link>` location.
                         Default value is:
+
                         - In Windows, ``"Plugins;Plug-Ins;."``
                         - In Mac OS,
                           ``"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;
                           ../../../Plug-ins;../../../Frameworks;../../..;"``
                         - In UNIX, ``"Plugins;Plug-Ins;plugins;."``
+
 version        Number   The version of the library, as returned by :ref:`ESGetVersion() <missing link>`.
 =============  =======  ============================================================================
 

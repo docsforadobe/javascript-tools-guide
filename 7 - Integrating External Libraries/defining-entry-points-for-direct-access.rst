@@ -38,9 +38,9 @@ The result is available in JavaScript as ExternalObject.version.
 
 .. _externalobject-functions-ESFreeMem:
 
-void ESFreeMem (void* p);
-**************
-``long ESGetVersion (void );``
+ESFreeMem()
+***********
+``void ESFreeMem (void* p);``
 
 =====  ========================
 ``p``  A pointer to the string.
@@ -55,7 +55,7 @@ Returns nothing.
 .. _externalobject-functions-ESTerminate:
 
 ESTerminate()
-**************
+*************
 ``void ESTerminate (void );``
 
 Called when your library is being unloaded. See :ref:`library-termination`.

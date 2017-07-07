@@ -24,6 +24,7 @@ code. They take the following form:
 ============  ==========================================================================================
 ``appname``   An Adobe application name. For example, these are the identifying strings for applications
               that can use the ExtendScript Toolkit in Creative Suite 4:
+
               - ``aftereffects``
               - ``bridge``
               - ``estoolkit``
@@ -32,6 +33,7 @@ code. They take the following form:
               - ``indesign``
               - ``indesignserver``
               - ``photoshop``
+
 ``instance``  Optional. An additional string appended with an underscore, that distinguishes the
               instance for those applications (such as InDesign Server) that support the launching and
               running of multiple instances.
@@ -46,6 +48,7 @@ code. They take the following form:
 
               This is the complete list of identifying names and version numbers for applications that can
               use interapplication messaging in Creative Suite 4:
+
               - ``acrobat-9.0``
               - ``aftereffects-9.0``
               - ``soundbooth-2.0``
@@ -66,6 +69,7 @@ code. They take the following form:
               - ``audition-4.0``
               - ``ame-1.0``
               - ``exman-2.0``
+
 ``locale``    Optional. An Adobe locale code, consisting of a 2-letter ISO-639 language code and an
               optional 2-letter ISO 3166 country code separated by an underscore. Case is significant.
 

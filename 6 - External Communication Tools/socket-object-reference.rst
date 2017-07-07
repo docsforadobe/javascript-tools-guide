@@ -17,19 +17,19 @@ Creates and returns a new ``Socket`` object.
 Socket object properties
 -----------------------
 
-=========  =======  =================================================================
-connected  Boolean  When true, the connection is active. Read only.
-encoding   String   Sets or retrieves the name of the encoding used to transmit data.
-                    Typical values are "ASCII," "BINARY," or "UTF-8."
-eof        Boolean  When true, the receive buffer is empty. Read only.
-error      String   A message describing the most recent error.
-                    Setting this value clears any error message.
-host       String   The name of the remote computer when a connection is established.
-                    If the connection is shut down or does not exist, the property
-                    contains the empty string. Read only.
-timeout    Number   The timeout in seconds to be applied to read or write operations.
-                    Default is 10.
-=========  =======  =================================================================
+=============  =======  =================================================================
+``connected``  Boolean  When true, the connection is active. Read only.
+``encoding``   String   Sets or retrieves the name of the encoding used to transmit data.
+                        Typical values are "ASCII," "BINARY," or "UTF-8."
+``eof``        Boolean  When true, the receive buffer is empty. Read only.
+``error``      String   A message describing the most recent error.
+                        Setting this value clears any error message.
+``host``       String   The name of the remote computer when a connection is established.
+                        If the connection is shut down or does not exist, the property
+                        contains the empty string. Read only.
+``timeout``    Number   The timeout in seconds to be applied to read or write operations.
+                        Default is 10.
+=============  =======  =================================================================
 
 --------------------------------------------------------------------------------
 

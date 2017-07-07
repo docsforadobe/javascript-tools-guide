@@ -86,7 +86,7 @@ example::
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions:
+.. _cross-dom-api-functions:
 
 Cross-DOM Functions
 -------------------
@@ -95,7 +95,7 @@ All message-enabled applications implement the following cross-DOM functions:
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-executeScript:
+.. _cross-dom-api-functions-executeScript:
 
 executeScript()
 ***************
@@ -112,7 +112,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-open:
+.. _cross-dom-api-functions-open:
 
 open()
 ******
@@ -129,7 +129,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-openAsNew:
+.. _cross-dom-api-functions-openAsNew:
 
 openAsNew()
 ***********
@@ -155,7 +155,7 @@ Returns ``true`` on success.
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-print:
+.. _cross-dom-api-functions-print:
 
 print()
 *******
@@ -172,7 +172,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-quit:
+.. _cross-dom-api-functions-quit:
 
 quit()
 ******
@@ -187,7 +187,7 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
-.. _cross-dom-functions-reveal:
+.. _cross-dom-api-functions-reveal:
 
 reveal()
 ********

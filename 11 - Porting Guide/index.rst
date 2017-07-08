@@ -15,24 +15,24 @@ aid you in porting applications to current versions.
 
 - Interapplication messaging
     - This is the complete list of identifying names for applications that can use interapplication messaging in Creative Suite 5::
-        aftereffects
-        ame
-        audition
-        bridge
-        contribute
-        devicecentral
-        dreamweaver
-        encore
-        estoolkit
-        exman
-        fireworks
-        flash
-        flashbuilder
-        flashcatalyst
-        illustrator
-        incopy
-        indesign
-        indesignserver
-        photoshop
-        premierepro
-        soundbooth
+        - ``aftereffects``
+        - ``ame``
+        - ``audition``
+        - ``bridge``
+        - ``contribute``
+        - ``devicecentral``
+        - ``dreamweaver``
+        - ``encore``
+        - ``estoolkit``
+        - ``exman``
+        - ``fireworks``
+        - ``flash``
+        - ``flashbuilder``
+        - ``flashcatalyst``
+        - ``illustrator``
+        - ``incopy``
+        - ``indesign``
+        - ``indesignserver``
+        - ``photoshop``
+        - ``premierepro``
+        - ``soundbooth``

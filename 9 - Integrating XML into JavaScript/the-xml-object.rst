@@ -277,9 +277,9 @@ Retrieving contained elements
 
 The ``XML`` object provides methods that allow you to retrieve elements contained at various levels of the
 tree:
-- ``XML.``:ref:`children() <missing link>` gets the direct child elements, including text elements.
-- ``XML.``:ref:`elements() <missing link>` gets the direct child elements that are XML tags, but does not get text.
-- ``XML.``:ref:`descendants() <missing link>` allows you to match a specific tag, and gets all matching elements at any level of
+- ``XML.``:ref:`xml-object-children` gets the direct child elements, including text elements.
+- ``XML.``:ref:`xml-object-elements` gets the direct child elements that are XML tags, but does not get text.
+- ``XML.``:ref:`xml-object-descendants` allows you to match a specific tag, and gets all matching elements at any level of
   nesting. You can also use a "double dot" notation to access descendants of an element. For example,
   these statements are equivalent::
 
@@ -301,7 +301,7 @@ For example, consider this XML code loaded into a top-level ``XML`` object named
 
 Here are the results of the different calls.
 
-- The result of ``XML.``:ref:`children() <missing link>` contains 3 elements, the direct child tags ``<one>`` and ``<two>``, and the
+- The result of ``XML.``:ref:`xml-object-children` contains 3 elements, the direct child tags ``<one>`` and ``<two>``, and the
   directly contained text of the ``<top>`` tag:
 
   .. code-block:: xml
@@ -317,7 +317,7 @@ Here are the results of the different calls.
     **> x.children().length()**
         3
 
-- The result of ``XML.``:ref:`elements() <missing link>` contains 2 elements, the direct child tags ``<one>`` and ``<two>``:
+- The result of ``XML.``:ref:`xml-object-elements` contains 2 elements, the direct child tags ``<one>`` and ``<two>``:
 
   .. code-block:: xml
 
@@ -330,7 +330,7 @@ Here are the results of the different calls.
     **> x.elements().length()**
         2
 
-- The result of ``XML.``:ref:`descendants() <missing link>` contains 7 elements, the direct child tags ``<one>`` and ``<two>``, the
+- The result of ``XML.``:ref:`xml-object-descendants` contains 7 elements, the direct child tags ``<one>`` and ``<two>``, the
   ``<inside>`` tag one level down, and the text contents of all the tags:
 
   .. code-block:: xml
@@ -357,7 +357,7 @@ Creating and accessing namespaces
 ---------------------------------
 
 Simple access statements access elements in the default namespace. If you need to define elements in
-more than one namespace, you must use a :ref:`Namespace object <missing link>` to access any elements that are NOT in the
+more than one namespace, you must use a :ref:`namespace-object` to access any elements that are NOT in the
 default namespace.
 
 .. _defining-a-namespace-within-the-tree:
@@ -391,9 +391,9 @@ uses the prefix to place a particular book element in that namespace:
 
 When this namespace is defined, the simple statement ``bookstoreXML.book`` no longer returns "The
 Wonderful Wizard of Oz", because that book is no longer in the default namespace. To access that book,
-you must define a :ref:`Namespace object <missing link>` for the namespace, and use it to access the element.
+you must define a :ref:`namespace-object` for the namespace, and use it to access the element.
 
-For example, this JavaScript code creates a :ref:`Namespace object <missing link>` for the namespace defined in the
+For example, this JavaScript code creates a :ref:`namespace-object` for the namespace defined in the
 <bookstore> element, and accesses the books in the namespace through that object::
 
   var ns = new Namespace ("http://kids.mybookstore.com");
@@ -409,11 +409,11 @@ Setting a default namespace
 By default, the default namespace is a namespace whose URI is the empty string. It is possible to set the
 default namespace; in this case, simple accessors access elements that are in that namespace.
 
-To set the default namespace, use the global function :ref:`setDefaultXMLNamespace() <missing link>`, or this syntax::
+To set the default namespace, use the global function :ref:`xml-setDefaultXMLNamespace`, or this syntax::
 
   default xml namespace = namespace_specifier;
 
-The namespace specifier can be either a :ref:`Namespace object <missing link>`, or a URL string. For example::
+The namespace specifier can be either a :ref:`namespace-object`, or a URL string. For example::
 
   default xml namespace = "http://books.mybookstore.com";
 
@@ -422,7 +422,7 @@ Once you have set the default namespace:
 - Elements that are meant to be in the default namespace (and thus accessible with simple accessors)
   must use the namespace prefix.
 - All elements that do not have a specific namespace assignment are in the empty namespace, rather
-  than the default namespace. In order to access them, you must use a :ref:`Namespace object <missing link>` with the
+  than the default namespace. In order to access them, you must use a :ref:`namespace-object` with the
   empty string as the URI.
 
 --------------------------------------------------------------------------------
@@ -432,11 +432,11 @@ Once you have set the default namespace:
 Accessing elements in namespaces
 ********************************
 
-- You can access elements that are in the default namespace directly, without using a :ref:`Namespace object <missing link>`.
+- You can access elements that are in the default namespace directly, without using a :ref:`namespace-object`.
   - If you have not set a default, you can use direct access for elements with no namespace specifier.
   - If you have set a default, you can use direct access for elements in that namespace.
 - If you have assigned an element to a namespace, and have not made it the default, you must use a
-  :ref:`Namespace object <missing link>` to access those elements. For example::
+  :ref:`namespace-object` to access those elements. For example::
 
     var ns = new Namespace (**"http://kids.mybookstore.com"**);
     bookstoreXML.**ns::book**;
@@ -444,7 +444,7 @@ Accessing elements in namespaces
   This returns all books that have been assigned to the "kids" namespace.
 
 - If you have set a default namespace, you can still access all objects that do not have any specific
-  namespace assignment by using a :ref:`Namespace object <missing link>` for the empty string, which is the default
+  namespace assignment by using a :ref:`namespace-object` for the empty string, which is the default
   creation case::
 
     var emptyNS = new Namespace ();

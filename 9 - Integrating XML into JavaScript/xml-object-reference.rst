@@ -415,7 +415,7 @@ name()
 
 Retrieves the full name of this element, with the namespace information.
 
-Returns a :ref:`QName <missing link>` object containing the element name and namespace URI.
+Returns a :ref:`qname-object` containing the element name and namespace URI.
 
 --------------------------------------------------------------------------------
 
@@ -708,6 +708,8 @@ Reports whether a string contains a name that conforms to valid XML syntax.
 Returns ``true`` if the name is a valid XML name, ``false`` otherwise.
 
 --------------------------------------------------------------------------------
+
+.. _xml-setDefaultXMLNamespace:
 
 setDefaultXMLNamespace()
 ++++++++++++++++++++++++

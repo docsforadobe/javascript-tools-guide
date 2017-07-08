@@ -2,6 +2,7 @@
 
 The XML Object
 ==============
+
 The XML object represents an XML element node in an XML tree. The topmost ``XML`` object for an XML file
 represents the root node. It acts as a list, which contains additional ``XML`` objects for each element. These in
 turn contain XML objects for their own member elements, and so on.
@@ -49,10 +50,13 @@ empty ``XML`` object::
 If an element is empty in the XML, the corresponding property exists and contains an empty XML object; it
 is never ``null`` or ``undefined``.
 
+--------------------------------------------------------------------------------
+
 .. _accessing-xml-elements:
 
 Accessing XML elements
 ----------------------
+
 This sample XML code is used for examples throughout this chapter:
 
 .. code-block:: xml
@@ -87,6 +91,7 @@ This sample XML code is used for examples throughout this chapter:
     </bookstore>
 
 To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor::
+
     var bookXmlStr = "...";
     var bookstoreXML = new XML (bookXmlStr);
 
@@ -100,10 +105,13 @@ constructor. Each of the ``<book>`` elements is available as a member of the boo
 For additional ways of accessing elements in the tree, see :ref:`retrieving-contained-elements`,
 and :ref:`creating-and-accessing-namespaces`
 
+--------------------------------------------------------------------------------
+
 .. _accessing-xml-attributes:
 
 Accessing XML attributes
 ------------------------
+
 Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a
 preceding at-sign (``@``). An attribute property is a one-element list, which contains an XML object for the
 value of the attribute. For example::
@@ -124,11 +132,14 @@ For example, this statement returns only book elements that have a category attr
 
     bookstoreXML.book.(@category == "CHILDREN");
 
+--------------------------------------------------------------------------------
+
 .. _viewing-xml-objects:
 
 Viewing XML objects
 -------------------
-The XML object, like all ExtendScript objects, has a ``toString()`` method that serializes the contents into a
+
+The XML object, like all ExtendScript objects, has a ref:`controlobj-toString` method that serializes the contents into a
 string. In this case, the string contains only the text content of the element, not the tags. For example, for
 the element ``<x>text</x>``, the ``toString()`` method returns ``"text"``.
 
@@ -155,223 +166,303 @@ If you access multiple values, the values are concatenated::
     > bookstoreXML.book.@category
         COOKINGCHILDRENCHILDRENMUSIC
 
-The ``toXMLString()`` method serializes the entire element, including the tags, into a string. For example, for
-the element ``<x>text</x>``, the method returns ``"<x>text</x>"``.
+The :ref:`toxmlstring` method serializes the entire element, including the tags, into a string.
+For example, for the element ``<x>text</x>``, the method returns ``"<x>text</x>"``.
+
+--------------------------------------------------------------------------------
 
 .. _modifying-xml-elements-and-attributes:
 
 Modifying XML elements and attributes
 -------------------------------------
+
 You can change an element by assigning a value to the corresponding property.
-If the value assigned is an XML element, the element is simply replaced. If there are multiple elements
-of the same type, the first element is replaced, and all other elements are deleted.
-If the value assigned is not XML, it is converted to a string, and the content of the element is replaced
-with that string.
 
-If no element of this type is present, a new element is appended to the XML.
+- If the value assigned is an XML element, the element is simply replaced. If there are multiple elements
+  of the same type, the first element is replaced, and all other elements are deleted.
+- If the value assigned is not XML, it is converted to a string, and the content of the element is replaced
+  with that string.
+- If no element of this type is present, a new element is appended to the XML.
+
 You can change the values of attributes using the same technique.
+
 Modification examples
-In the sample XML, the third book has several <author> elements. This statement replaces all of them
-with a single element, containing a new string:
-bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
+*********************
 
-The result is this XML:
-<book category="CHILDREN">
-<title lang="en">Alice's Adventures in Wonderland</title>
-<author>Charles 'Lewis Carroll' Dodgeson</author>
-<year>1865</year>
-<price>29.99</price>
-</book>
+- In the sample XML, the third book has several <author> elements. This statement replaces all of them
+  with a single element, containing a new string::
 
-To replace just the first author, leaving all the other authors in place, use this statement:
-bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
+    bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
 
-This statement changes the content of the <year> element in the second book. ExtendScript
-automatically converts the numeric value to a string:
-bookstoreXML.book[1].year = 1901;
+  The result is this XML:
 
-This following statement adds a new <rating> element to the second book:
-bookstoreXML.book[1].rating = "*****";
+  .. code-block:: xml
 
-The result is this XML:
-<book category="CHILDREN">
-<title lang="en">The Wonderful Wizard of Oz</title>
-<author>L. Frank Baum</author>
-<year>1900</year>
-<price>39.95</price>
-<rating>*****</rating>
-</book>
+    <book category="CHILDREN">
+        <title lang="en">Alice's Adventures in Wonderland</title>
+        <author>Charles 'Lewis Carroll' Dodgeson</author>
+        <year>1865</year>
+        <price>29.99</price>
+    </book>
 
-This statement changes the value of the category attribute of the second book:
-bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
+- To replace just the first author, leaving all the other authors in place, use this statement::
 
-The result is this XML:
-<book category="LITERATURE, FANTASY">
-<title lang="en">The Wonderful Wizard of Oz</title>
-...
+    bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
+
+- This statement changes the content of the <year> element in the second book. ExtendScript
+  automatically converts the numeric value to a string::
+
+    bookstoreXML.book[1].year = 1901;
+
+- This following statement adds a new <rating> element to the second book:
+
+    bookstoreXML.book[1].rating = "*****";
+
+  The result is this XML:
+
+  .. code-block:: xml
+
+    <book category="CHILDREN">
+        <title lang="en">The Wonderful Wizard of Oz</title>
+        <author>L. Frank Baum</author>
+        <year>1900</year>
+        <price>39.95</price>
+        <rating>*****</rating>
+    </book>
+
+- This statement changes the value of the category attribute of the second book::
+
+    bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
+
+  The result is this XML:
+
+  .. code-block:: xml
+
+      <book category="LITERATURE, FANTASY">
+      <title lang="en">The Wonderful Wizard of Oz</title>
+      ...
+
+--------------------------------------------------------------------------------
 
 .. _deleting-elements-and-attributes:
 
 Deleting elements and attributes
 --------------------------------
-To delete an element or attribute in the XML, use the JavaScript delete operator to delete the
+
+To delete an element or attribute in the XML, use the JavaScript ``delete`` operator to delete the
 corresponding element or attribute property. If there are multiple instances of an element, you can delete
 all, or refer to a single one by its index.
+
 Deletion examples
-This statement deletes all authors from the third book:
-delete bookstoreXML.book[2].author;
+*****************
 
-This statement deletes only the second author from the third book:
-delete bookstoreXML.book[2].author[1];
+This statement deletes all authors from the third book::
 
-This statement deletes the category attribute from the third book:
-delete bookstoreXML.book[2].@category;
+    delete bookstoreXML.book[2].author;
+
+This statement deletes only the second author from the third book::
+
+    delete bookstoreXML.book[2].author[1];
+
+This statement deletes the category attribute from the third book::
+
+    delete bookstoreXML.book[2].@category;
+
+--------------------------------------------------------------------------------
 
 .. _retrieving-contained-elements:
 
 Retrieving contained elements
 -----------------------------
-The XML object provides methods that allow you to retrieve elements contained at various levels of the
+
+The ``XML`` object provides methods that allow you to retrieve elements contained at various levels of the
 tree:
-XML.children() gets the direct child elements, including text elements.
-XML.elements() gets the direct child elements that are XML tags, but does not get text.
-XML.descendants() allows you to match a specific tag, and gets all matching elements at any level of
+- ``XML.``:ref:`children() <missing link>` gets the direct child elements, including text elements.
+- ``XML.``:ref:`elements() <missing link>` gets the direct child elements that are XML tags, but does not get text.
+- ``XML.``:ref:`descendants() <missing link>` allows you to match a specific tag, and gets all matching elements at any level of
+  nesting. You can also use a "double dot" notation to access descendants of an element. For example,
+  these statements are equivalent::
 
-nesting. You can also use a "double dot" notation to access descendants of an element. For example,
-these statements are equivalent:
+    xml..title
+    xml.descendants("title")
 
-xml..title
-xml.descendants("title")
+For example, consider this XML code loaded into a top-level ``XML`` object named ``x``:
 
-For example, consider this XML code loaded into a top-level XML object named x:
-<top>
-<one>one text</one>
-<two>
-two text
-<inside>inside text</inside>
-</two>
-top text
-</top>
+  .. code-block:: xml
+
+    <top>
+        <one>one text</one>
+        <two>
+            two text
+            <inside>inside text</inside>
+        </two>
+        top text
+    </top>
 
 Here are the results of the different calls.
 
-The result of XML.children() contains 3 elements, the direct child tags <one> and <two>, and the
-directly contained text of the <top> tag:
-> x.children()
-<one>one text</one>
-<two>
-two text
-<inside>inside text</inside>
-</two>
-top text
-> x.children().length()
-3
+- The result of ``XML.``:ref:`children() <missing link>` contains 3 elements, the direct child tags ``<one>`` and ``<two>``, and the
+  directly contained text of the ``<top>`` tag:
 
-The result of XML.elements() contains 2 elements, the direct child tags <one> and <two>:
-> x.elements()
-<one>one text</one>
-<two>
-two text
-<inside>inside text</inside>
-</two>
-> x.elements().length()
-2
+  .. code-block:: xml
 
-The result of XML.descendants() contains 7 elements, the direct child tags <one> and <two>, the
-<inside> tag one level down, and the text contents of all the tags:
-> x.descendants()
-<one>one text</one>
-one text
-<two>
-two text
-<inside>inside text</inside>
-</two>
-two text
-<inside>inside text</inside>
-inside text
-top text
-> x.descendants().length()
-7
+    **> x.children()**
+        <one>one text</one>
+        <two>
+        two text
+        <inside>inside text</inside>
+        </two>
+        top text
+
+    **> x.children().length()**
+        3
+
+- The result of ``XML.``:ref:`elements() <missing link>` contains 2 elements, the direct child tags ``<one>`` and ``<two>``:
+
+  .. code-block:: xml
+
+    **> x.elements()**
+        <one>one text</one>
+        <two>
+            two text
+            <inside>inside text</inside>
+        </two>
+    **> x.elements().length()**
+        2
+
+- The result of ``XML.``:ref:`descendants() <missing link>` contains 7 elements, the direct child tags ``<one>`` and ``<two>``, the
+  ``<inside>`` tag one level down, and the text contents of all the tags:
+
+  .. code-block:: xml
+
+    **> x.descendants()**
+        <one>one text</one>
+        one text
+        <two>
+            two text
+            <inside>inside text</inside>
+        </two>
+        two text
+        <inside>inside text</inside>
+        inside text
+        top text
+    **> x.descendants().length()**
+        7
+
+--------------------------------------------------------------------------------
 
 .. _creating-and-accessing-namespaces:
 
 Creating and accessing namespaces
 ---------------------------------
+
 Simple access statements access elements in the default namespace. If you need to define elements in
-more than one namespace, you must use a Namespace object to access any elements that are NOT in the
+more than one namespace, you must use a :ref:`Namespace object <missing link>` to access any elements that are NOT in the
 default namespace.
 
+.. _defining-a-namespace-within-the-tree:
+
 Defining a namespace within the tree
+************************************
+
 You can define a namespace within an XML element using the xmlns attribute, and define elements within
 the schema as belonging to that namespace. For example, these additions to the example XML add a
 namespace that maps the prefix "kids" to the namespace "http://kids.mybookstore.com", and then
 uses the prefix to place a particular book element in that namespace:
-<bookstore xmlns:kids="http://kids.mybookstore.com">
 
-<book category="COOKING">
-<title lang="en">The Boston Cooking-School Cookbook</title>
-<author>Fannie Merrit Farmer</author>
-<year>1896</year>
-<price>49.99</price>
-</book>
-<kids:book category="CHILDREN">
-<title lang="en">The Wonderful Wizard of Oz</title>
-<author>L. Frank Baum</author>
-<year>1900</year>
-<price>39.95</price>
-</kids:book>
-...
+  .. code-block:: xml
 
-When this namespace is defined, the simple statement bookstoreXML.book no longer returns "The
+    <bookstore **xmlns:kids="http://kids.mybookstore.com"**>
+
+    <book category="COOKING">
+        <title lang="en">The Boston Cooking-School Cookbook</title>
+        <author>Fannie Merrit Farmer</author>
+        <year>1896</year>
+        <price>49.99</price>
+    </book>
+
+    <**kids:**book category="CHILDREN">
+        <title lang="en">The Wonderful Wizard of Oz</title>
+        <author>L. Frank Baum</author>
+        <year>1900</year>
+        <price>39.95</price>
+    </**kids:**book>
+    ...
+
+When this namespace is defined, the simple statement ``bookstoreXML.book`` no longer returns "The
 Wonderful Wizard of Oz", because that book is no longer in the default namespace. To access that book,
-you must define a Namespace object for the namespace, and use it to access the element.
-For example, this JavaScript code creates a Namespace object for the namespace defined in the
-<bookstore> element, and accesses the books in the namespace through that object:
-var ns = new Namespace ("http://kids.mybookstore.com");
-bookstoreXML.ns::book;
+you must define a :ref:`Namespace object <missing link>` for the namespace, and use it to access the element.
+
+For example, this JavaScript code creates a :ref:`Namespace object <missing link>` for the namespace defined in the
+<bookstore> element, and accesses the books in the namespace through that object::
+
+  var ns = new Namespace ("http://kids.mybookstore.com");
+  bookstoreXML.ns::book;
+
+--------------------------------------------------------------------------------
+
+.. _setting-a-default-namespace:
 
 Setting a default namespace
+***************************
+
 By default, the default namespace is a namespace whose URI is the empty string. It is possible to set the
 default namespace; in this case, simple accessors access elements that are in that namespace.
-To set the default namespace, use the global function setDefaultXMLNamespace(), or this syntax:
-default xml namespace = namespace_specifier;
 
-The namespace specifier can be either a Namespace object, or a URL string. For example:
-default xml namespace = "http://books.mybookstore.com";
+To set the default namespace, use the global function :ref:`setDefaultXMLNamespace() <missing link>`, or this syntax::
+
+  default xml namespace = namespace_specifier;
+
+The namespace specifier can be either a :ref:`Namespace object <missing link>`, or a URL string. For example::
+
+  default xml namespace = "http://books.mybookstore.com";
 
 Once you have set the default namespace:
-Elements that are meant to be in the default namespace (and thus accessible with simple accessors)
-must use the namespace prefix.
-All elements that do not have a specific namespace assignment are in the empty namespace, rather
-than the default namespace. In order to access them, you must use a Namespace object with the
-empty string as the URI.
+
+- Elements that are meant to be in the default namespace (and thus accessible with simple accessors)
+  must use the namespace prefix.
+- All elements that do not have a specific namespace assignment are in the empty namespace, rather
+  than the default namespace. In order to access them, you must use a :ref:`Namespace object <missing link>` with the
+  empty string as the URI.
+
+--------------------------------------------------------------------------------
+
+.. _accessing-elements-in-namespaces:
 
 Accessing elements in namespaces
-You can access elements that are in the default namespace directly, without using a Namespace
-object.
-If you have not set a default, you can use direct access for elements with no namespace specifier.
-If you have set a default, you can use direct access for elements in that namespace.
+********************************
 
-If you have assigned an element to a namespace, and have not made it the default, you must use a
-Namespace object to access those elements. For example:
-var ns = new Namespace ("http://kids.mybookstore.com");
-bookstoreXML.ns::book;
+- You can access elements that are in the default namespace directly, without using a :ref:`Namespace object <missing link>`.
+  - If you have not set a default, you can use direct access for elements with no namespace specifier.
+  - If you have set a default, you can use direct access for elements in that namespace.
+- If you have assigned an element to a namespace, and have not made it the default, you must use a
+  :ref:`Namespace object <missing link>` to access those elements. For example::
 
-This returns all books that have been assigned to the "kids" namespace.
-If you have set a default namespace, you can still access all objects that do not have any specific
-namespace assignment by using a Namespace object for the empty string, which is the default
-creation case:
-var emptyNS = new Namespace ();
-bookstoreXML.emptyNS::book;
+    var ns = new Namespace (**"http://kids.mybookstore.com"**);
+    bookstoreXML.**ns::book**;
 
-This returns all books that have not been assigned to any namespace.
-To access all elements, regardless of the namespace assignment, you can use an asterisk (*) wild-card
-character or null as the namespace name:
-bookstoreXML.*::book;
+  This returns all books that have been assigned to the "kids" namespace.
 
-or
-var nullNS = null;
-bookstoreXML.nullNS::book;
+- If you have set a default namespace, you can still access all objects that do not have any specific
+  namespace assignment by using a :ref:`Namespace object <missing link>` for the empty string, which is the default
+  creation case::
+
+    var emptyNS = new Namespace ();
+    bookstoreXML.emptyNS::book;
+
+  This returns all books that have not been assigned to any namespace.
+
+- To access all elements, regardless of the namespace assignment, you can use an asterisk (*) wild-card
+  character or null as the namespace name::
+
+    bookstoreXML.*::book;
+
+  or
+
+    var nullNS = null;
+    bookstoreXML.nullNS::book;
+
+--------------------------------------------------------------------------------
 
 .. _mixing-xml-and-javascript:
 
@@ -379,29 +470,40 @@ Mixing XML and JavaScript
 -------------------------
 You can enclose JavaScript statements in curly brackets, and embed them into XML. The JavaScript part is
 evaluated during the construction of the XML.
-For example, this function returns an XML value, in which embedded JavaScript variables will be evaluated
-and included:
-function makeXML (first, last) {
-return <person first={first} last={last}>{first + " " + last}</person>;
-}
 
-Calling this function:
-makeXML ( "Jane", "Doe" );
+For example, this function returns an XML value, in which embedded JavaScript variables will be evaluated
+and included::
+
+  function makeXML (first, last) {
+      return <person first={first} last={last}>{first + " " + last}</person>;
+  }
+
+Calling this function::
+
+  makeXML ( "Jane", "Doe" );
 
 results in this XML:
-<person first="Jane" last="Doe">Jane Doe</person>
+
+  .. code-block:: xml
+
+    <person first="Jane" last="Doe">Jane Doe</person>
 
 You can also use these operators on XML elements:
-Use the plus operator, +, to combine XML elements into a list.
-Use the == operator to make an in-depth comparison of two XML trees.
+
+- Use the plus operator, +, to combine XML elements into a list.
+- Use the == operator to make an in-depth comparison of two XML trees.
+
+--------------------------------------------------------------------------------
 
 .. _xml-lists:
 
 XML lists
 ---------
-ExtendScript defines an XMLList object, which is identical to the XML object except that you can create it
+
+ExtendScript defines an ``XMLList`` object, which is identical to the :ref:`xml-object` except that you can create it
 by passing it an XML list, and it creates an XML list rather than an XML tag.
 
-All XML statements and functions that collect XML return the result as an XMLList, which can be empty if
-there is no match. For example, the following statement returns an empty list:
-bookstoreXML.magazine;
+All XML statements and functions that collect XML return the result as an ``XMLList``, which can be empty if
+there is no match. For example, the following statement returns an empty list::
+
+    bookstoreXML.magazine;

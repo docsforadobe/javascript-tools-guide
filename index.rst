@@ -121,7 +121,7 @@ Welcome to The Javascript Tools Guide
     :caption: Chapter 10 - Scripting Access to XMP Metadata
 
     10 - Scripting Access to XMP Metadata/index
-    10 - Scripting Access to XML Metadata/accessing-the-xmp-scripting-api
+    10 - Scripting Access to XMP Metadata/accessing-the-xmp-scripting-api
     10 - Scripting Access to XMP Metadata/xmpscript-object-reference
 
 .. toctree::

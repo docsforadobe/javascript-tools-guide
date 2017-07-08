@@ -18,9 +18,9 @@ scripts in a number of ways:
 - Use the Scripts panel to display and open scripts made available by loaded Adobe applications, or
   those kept in favorite locations.
 
-.. _the-scripts-panel-and-favorite-script-locations:
-
 --------------------------------------------------------------------------------
+
+.. _the-scripts-panel-and-favorite-script-locations:
 
 The Scripts panel and favorite script locations
 -----------------------------------------------

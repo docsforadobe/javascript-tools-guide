@@ -20,7 +20,7 @@ to send it to another application. For details of these objects, see :ref:`messa
 
 Sending messages
 ----------------
-To send a script or other data to another application, you must create and configure a :ref:`BridgeTalk message object`.
+To send a script or other data to another application, you must create and configure a :ref:`bridgetalk-message-object`.
 This object contains the data to be sent (generally a script to be executed in the target application),
 and also specifies how to handle the response.
 
@@ -32,7 +32,7 @@ Step 1: Check that the target application is installed
 
 Before you can actually send a message, you must check that the required version of the target application
 is installed. The function :ref:`getSpecifier() <bridgetalk-getspecifier>`, available in the global namespace through the
-:ref:`BridgeTalk class`, provides this information.
+:ref:`bridgetalk-class`, provides this information.
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed
 by Photoshop CS5, checks that the required version of Adobe Bridge is installed::

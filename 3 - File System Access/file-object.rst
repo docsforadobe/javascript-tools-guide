@@ -31,6 +31,7 @@ the encoding is preset to the default system encoding.
 
          - The File function returns a Folder object instead of a File object.
          - The new operator returns a File object for a nonexisting file with the same name.
+
 ======== ==============================================================================================
 
 .. warning:: In After Effects on MacOS, if ``path.length`` is more than 1002, After Effects crashes.

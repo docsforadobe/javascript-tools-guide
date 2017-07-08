@@ -484,8 +484,8 @@ call()
 ===============  =================================================================================================
 ``hObject``      The :ref:`SoHObject` reference for an instance of this class.
 ``name``         The name of the property, a pointer to an :ref:`SoCClientName`.
-``argc, argv``   The number and pointer to arguments passed to the call, in the form of :ref:`TaggedData`s.
-``pResult``      A buffer in which to return the result of the call, in the form of :ref:`TaggedData`.
+``argc, argv``   The number and pointer to arguments passed to the call, in the form of :ref:`TaggedData`
+``pResult``      A buffer in which to return the result of the call, in the form of :ref:`TaggedData`
 ===============  =================================================================================================
 
 Called when JavaScript code calls a method of this class::
@@ -506,7 +506,7 @@ valueOf()
 
 ===============  =================================================================================================
 ``hObject``      The :ref:`SoHObject` reference for an instance of this class.
-``pResult``      A buffer in which to return the result of the value, in the form of :ref:`TaggedData`.
+``pResult``      A buffer in which to return the result of the value, in the form of :ref:`TaggedData`
 ===============  =================================================================================================
 
 Creates and returns the value of the object, with no type conversion.
@@ -523,7 +523,7 @@ toString()
 
 ===============  =================================================================================================
 ``hObject``      The :ref:`SoHObject` reference for an instance of this class.
-``pResult``      A buffer in which to return the result of the string, in the form of :ref:`TaggedData`s.
+``pResult``      A buffer in which to return the result of the string, in the form of :ref:`TaggedData`
 ===============  =================================================================================================
 
 Creates and returns a string representing the value of this object.
@@ -559,8 +559,8 @@ Support structures
 These support structures are passed to functions that you define for your JavaScript interface:
 
 =================  ====================================================================================
-``SoHObject``      An opaque pointer (long *) to the C/C++ representation of a JavaScript object.
-``SoHServer``      An opaque pointer (long *) to the server object, which acts as an object factory for
+``SoHObject``      An opaque pointer ``(long *)`` to the C/C++ representation of a JavaScript object.
+``SoHServer``      An opaque pointer ``(long *)`` to the server object, which acts as an object factory for
                    the shared library.
 ``SoCClientName``  A structure that uniquely identifies methods and properties.
 ``TaggedData``     A structure that encapsulates data values with type information, to be passed
@@ -617,18 +617,23 @@ C/C++ code. Types are automatically converted as appropriate::
 ``fltval``   Floating-point numeric data values. Type is kTypeDouble.
 ``string``   String data values. All strings are UTF-8 encoded and null-terminated. Type is
              kTypeString or kTypeScript.
+
              - The library must define an entry point :ref:`ESFreeMem() <externalobject-functions-ESFreeMem>`,
                which ExtendScript calls to release a returned string pointer.
                If this entry point is missing, ExtendScript does not attempt to release any returned string data.
              - When a function returns a string of type kTypeScript, ExtendScript evaluates the
                script and returns the result of evaluation as the result of the function call.
+
 ``hObject``  A C/C++ representation of a JavaScript object data value. Type is kTypeLiveObject or
              kTypeLiveObjectRelease.
+
              - When a function returns an object of type kTypeLiveObject, ExtendScript does not
                release the object.
              - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript
                releases the object.
+
 ``type``     The data type tag. One of:
+
              - ``kTypeUndefined``: a null value, equivalent of JavaScript ``undefined``. The return value
                for a function is always set to this by default.
              - ``kTypeBool``: a boolean value, 0 for false, 1 for true.
@@ -639,5 +644,6 @@ C/C++ code. Types are automatically converted as appropriate::
              - ``kTypeInteger``: a 32-bit signed integer value.
              - ``kTypeUInteger``: a 32-bit unsigned integer value.
              - ``kTypeScript``: a string containing an executable JavaScript script.
+
 ``filler``   A 4-byte filler for 8-byte alignment.
 ===========  ==========================================================================================

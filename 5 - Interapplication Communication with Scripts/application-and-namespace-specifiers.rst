@@ -2,7 +2,7 @@
 
 Application and namespace specifiers
 ====================================
-All forms of interapplication communication use :ref:`Application specifiers` to identify Adobe applications.
+All forms of interapplication communication use :ref:`application-specifiers` to identify Adobe applications.
 In all ExtendScript scripts, the #target directive can use an specifier to identify the application that
 should run that script. See :ref:`preprocessor-directives`.
 
@@ -14,7 +14,7 @@ value of the ``document.owner`` property, to identify another application that c
 Adobe Bridge browser window. For details, see the *Adobe Bridge JavaScript Reference.*
 
 When a script for one application invokes cross-DOM or exported functions, it identifies the exporting
-application using :ref:`Namespace specifiers`.
+application using :ref:`namespace-specifiers`.
 
 --------------------------------------------------------------------------------
 

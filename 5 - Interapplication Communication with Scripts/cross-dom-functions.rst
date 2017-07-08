@@ -137,6 +137,7 @@ openAsNew()
 
 ===========  ============================================================================
 ``options``  Optional. Application-specific creation options:
+
              - Adobe Bridge: none
              - Photoshop: none
              - InDesign: creation options are:
@@ -147,6 +148,7 @@ openAsNew()
                ``([DocumentColorSpace:colorspace][, Number:width, Number:height])``
                See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript
                Reference.
+
 ===========  ============================================================================
 
 Performs the equivalent of the target application's File > New command.

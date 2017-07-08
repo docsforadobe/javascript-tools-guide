@@ -55,7 +55,7 @@ Contains the enumerated constants for the type argument of newPen(). Types are:
 .. _scriptuigraphics-object-properties:
 
 ScriptUIGraphics object properties
-----------------------------------
+**********************************
 
 The object contains the following properties:
 

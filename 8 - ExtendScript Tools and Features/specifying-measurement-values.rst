@@ -182,7 +182,7 @@ Computing with unit values
 UnitValue objects can be used in computational JavaScript expressions. The way the value is used
 depends on the type of operator.
 
-- Unary operators (~, !, +, -)
+- Unary operators ``(~, !, +, -)``
   ==========  ======================================================================
   ~unitValue  The numeric value is converted to a 32-bit integer with inverted bits.
   !unitValue  Result is true if the numeric value is nonzero, false if it is not.
@@ -190,7 +190,7 @@ depends on the type of operator.
   -unitValue  Result is the negated numeric value.
   ==========  ======================================================================
 
-- Binary operators (+, -, *, /, %)
+- Binary operators ``(+, -, *, /, %)``
   If one operand is unitValue object and the other is a number, the operation is applied to the number
   and the numeric value of the object. The expression returns a new unitValue object with the result as
   its value. For example::

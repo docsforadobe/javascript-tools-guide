@@ -28,7 +28,7 @@ string ``"Hallo Welt"``.
 
 --------------------------------------------------------------------------------
 
-.. _variable-values-in-localized-strings:
+.. _variable-values-in-localized-extendscript-strings:
 
 Variable values in localized strings
 ------------------------------------
@@ -53,7 +53,7 @@ correct position. For example::
 
 --------------------------------------------------------------------------------
 
-.. _enabling-automatic-localization:
+.. _enabling-automatic-extendscript-localization:
 
 Enabling automatic localization
 -------------------------------

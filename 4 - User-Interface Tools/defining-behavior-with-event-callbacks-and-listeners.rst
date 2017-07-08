@@ -10,10 +10,9 @@ corresponding property of the window or control object. Different types of windo
 to different actions, or events:
 
 - Windows generate events when the user moves or resizes the window. To handle these events, define
-  callback functions for :ref:`window-event-onmove`, :ref:`window-event-onmoving`,
-  :ref:`window-event-onresize`, and :ref:`window-event-onresizing`.
+  callback functions for ``onMove``, ``onMoving``, ``onResize``, ``onResizing``.
   To respond to the user opening or closing the window, define callback functions for
-  :ref:`window-event-onshow` and :ref:`window-event-onclose`.
+  ``onShow`` and ``onClose``.
 - Button, RadioButton, and Checkbox controls generate events when the user clicks within the control
   bounds. To handle the event, define a callback function for :ref:`control-event-onclick`.
 - EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is,

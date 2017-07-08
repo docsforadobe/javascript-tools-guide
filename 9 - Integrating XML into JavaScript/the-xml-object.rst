@@ -166,7 +166,7 @@ If you access multiple values, the values are concatenated::
     > bookstoreXML.book.@category
         COOKINGCHILDRENCHILDRENMUSIC
 
-The :ref:`toxmlstring` method serializes the entire element, including the tags, into a string.
+The :ref:`xml-object-toXMLString` method serializes the entire element, including the tags, into a string.
 For example, for the element ``<x>text</x>``, the method returns ``"<x>text</x>"``.
 
 --------------------------------------------------------------------------------
@@ -277,6 +277,7 @@ Retrieving contained elements
 
 The ``XML`` object provides methods that allow you to retrieve elements contained at various levels of the
 tree:
+
 - ``XML.``:ref:`xml-object-children` gets the direct child elements, including text elements.
 - ``XML.``:ref:`xml-object-elements` gets the direct child elements that are XML tags, but does not get text.
 - ``XML.``:ref:`xml-object-descendants` allows you to match a specific tag, and gets all matching elements at any level of

@@ -338,7 +338,7 @@ inScopeNamespaces()
 
 Retrieves the current list of valid namespaces in this element.
 
-Returns an Array of :ref:`namespace-object`s, in which the last member is the default namespace.
+Returns an Array of :ref:`namespace-object`, in which the last member is the default namespace.
 
 --------------------------------------------------------------------------------
 
@@ -457,7 +457,7 @@ namespaceDeclarations()
 
 Retrieves all of the namespace declarations contained in this node.
 
-Returns an Array of :ref:`namespace-object`s.
+Returns an Array of :ref:`namespace-object`.
 
 --------------------------------------------------------------------------------
 
@@ -529,11 +529,13 @@ replace()
 
 =====  ======================================================================================
 name   An element or attribute name, with or without the 0-based position index of a
-       specific element, or the wildcard string "*".
+       specific element, or the wildcard string ``"*"``.
+
        - If no position index is supplied, replaces the value of all matching elements.
        - If the wildcard is supplied, replaces the value of all contained elements. When an
          element contain subelements, those are removed, and only the replacement
          value remains.
+
 value  An :ref:`xml-object` or any value that can be converted to a String with ``toString()``.
 =====  ======================================================================================
 
@@ -692,7 +694,7 @@ These functions are available in the JavaScript global namespace.
 .. _xml-isXMLName:
 
 isXMLName()
-+++++++++++
+***********
 ``isXMLName (String name)``
 
 ====  =========
@@ -712,7 +714,7 @@ Returns ``true`` if the name is a valid XML name, ``false`` otherwise.
 .. _xml-setDefaultXMLNamespace:
 
 setDefaultXMLNamespace()
-++++++++++++++++++++++++
+************************
 ``setDefaultXMLNamespace (Namespace ns)``
 
 ==  ==========================================
@@ -751,7 +753,7 @@ The constructor takes several forms::
 
 When no arguments are supplies, creates a ``QName`` object with an empty local name and no URI.
 
-=========  =======    ================================================================================
+=========  =========  ================================================================================
 name       String     Creates a ``QName`` object with the given local name and the URI of the default
                       namespace. Can be the wildcard character, "*".
 name       QName      Creates a copy of an existing :ref:`qname-object`.
@@ -760,7 +762,7 @@ uri, name  String     Create a ``QName`` object with the given namespace URI and
 
                       If the local name is supplied as the wildcard character, "*", the ``uri`` argument
                       is ignored, and the URI value is that of the default namespace.
-=========  =======    ================================================================================
+=========  =========  ================================================================================
 
 --------------------------------------------------------------------------------
 
@@ -808,7 +810,7 @@ The Namespace constructor takes several forms::
 
 When no argument is supplied, creates a namespace with an empty prefix and URI.
 
-===========  ========   ========================================================================
+===========  =========  ========================================================================
 uri          String     Creates a Namespace object with an empty prefix and the given URI.
 prefix       QName      Creates a namespace with an empty prefix and the URI set to the URI of the
                         :ref:`qname-object` (if the QName object contains a URI).
@@ -818,7 +820,7 @@ ns           Namespace  Creates a copy of the given :ref:`namespace-object`.
                         argument is a ``Namespace`` object, the function simply returns that object,
                         rather than creating a copy.
 prefix, uri  String     Creates a ``Namespace`` object with the given prefix and the given URI.
-===========  ========   ========================================================================
+===========  =========  ========================================================================
 
 --------------------------------------------------------------------------------
 

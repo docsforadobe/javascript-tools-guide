@@ -136,7 +136,7 @@ Constant values for the field-type namespace URI strings used in all structured 
 ``TYPE_PDFA_TYPE``
 ``TYPE_PDFA_FIELD``
 ``TYPE_PDFA_ID``
-``TYPE_PDFA_EXTENSION``  The XML namespaces for PDF subtypes
+``TYPE_PDFA_EXTENSION``   The XML namespaces for PDF subtypes
 ========================  ======================================================================
 
 --------------------------------------------------------------------------------
@@ -448,6 +448,7 @@ closeFile()
 
 ==========  ================================================================================
 closeFlags  A close-option constant, or 0. Close options are:
+
             - XMPConst.``CLOSE_UPDATE_SAFELY`` -  Write into a temporary file then swap for
               crash safety.
 ==========  ================================================================================
@@ -863,17 +864,21 @@ appendArrayItem()
 schemaNS      The namespace URI string. See :ref:`schema-namespace-string-constants`.
 arrayName     The array-type property name string. Can be a general path expression.
 itemOptions   Optional. A flag that describes the new item, if it is being created. One of:
+
               - 0: The default. A simple item, or the type implied by the arrayOptions value.
               - ``XMPConst.PROP_IS_ARRAY``: The item is an array (of type alt, bag, or seq).
               - ``XMPConst.PROP_IS_STRUCT``: The item is a structure with nested fields.
+
 itemValue     The new item value string. Pass ``null`` for array items that do not have values.
 arrayOptions  Optional. A flag that describes the array form. Must be provided if the array is
               being created; ignored if the array already exists. One of:
+
               - ``XMPConst.ARRAY_IS_ORDERED`` - Item order is significant. Implies
                 ``XMPConst.PROP_IS_ARRAY``.
               - ``XMPConst.ARRAY_IS_ALTERNATIVE`` - Items are mutually exclusive
                 alternates. Implies ``XMPConst.PROP_IS_ARRAY`` and
                 `XMPConst.ARRAY_IS_ORDERED``.
+
 ============  ==========================================================================================
 
 Appends an item to an existing array, or creates a new array-type property if the named array does
@@ -1200,11 +1205,13 @@ iterator()
 ============  ==========================================================================================
 options       The set of options that control how the iteration is performed, and how values are
               returned. A logical OR of these bit-flag constants:
+
               - ``XMPConst.ITERATOR_JUST_CHILDREN`` - Limit iteration to immediate children of the root property. By default, iterates into subtrees.
               - ``XMPConst.ITERATOR_JUST_LEAFNODES`` - Limit iteration to leaf nodes. By default, iterates into all nodes of a subtree.
               - ``XMPConst.ITERATOR_JUST_LEAFNAMES`` - Return only the leaf part of the path. By default, returns a full path.
               - ``XMPConst.ITERATOR_INCLUDE_ALIASES`` - Include aliases. By default, considers only actual properties.
               - ``XMPConst.ITERATOR_OMIT_QUALIFIERS`` - Omit qualifiers from iteration.
+
 schemaNS      The namespace URI string. See :ref:`schema-namespace-string-constants`.
 propName      The array-type property name string. Can be a general path expression.
 ============  ==========================================================================================
@@ -1227,6 +1234,7 @@ serialize()
 options       Optional. The set of options that control how the serialization is performed. The
               options must be logically consistent; if they conflict, the function throws an
               exception. A logical OR of these bit-flag constants:
+
               - ``XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER`` - Do not include an XML packet wrapper.
               - ``XMPConst.SERIALIZE_READ_ONLY_PACKET`` - Create a read-only XML packet wrapper.
               - ``XMPConst.SERIALIZE_USE_COMPACT_FORMAT`` - Use a highly compact RDF syntax and layout.
@@ -1234,13 +1242,17 @@ options       Optional. The set of options that control how the serialization is
               - ``XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD`` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.
               - ``XMPConst.SERIALIZE_EXACT_PACKET_LENGTH`` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length.
               - ``XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS`` - Include XML comments for aliases.
+
 padding       Optional, Number.
+
               - If the options value is ``SERIALIZE_EXACT_PACKET_LENGTH``, this the exact
                 length of the packet, including padding characters that are added to meet this
                 length.
               - If the options value is not ``SERIALIZE_EXACT_PACKET_LENGTH``, this is a
                 number of padding characters to add.
-                Default is 0, meaning to use the appropriate amount of padding.
+
+              Default is 0, meaning to use the appropriate amount of padding.
+
 indent        Optional, String. The string to use as an indent. Default is two spaces.
 newline       Optional, String. The newline character to use. Default is U+000A.
 baseIndent    Optional, Number. The level of indentation of the outermost XML element. Default is 0.
@@ -1262,6 +1274,7 @@ serializeToArray()
 options       Optional. The set of options that control how the serialization is performed. The
               options must be logically consistent; if they conflict, the function throws an
               exception. A logical OR of these bit-flag constants:
+
               - ``XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER`` - Do not include an XML packet wrapper.
               - ``XMPConst.SERIALIZE_READ_ONLY_PACKET`` - Create a read-only XML packet wrapper.
               - ``XMPConst.SERIALIZE_USE_COMPACT_FORMAT`` - Use a highly compact RDF syntax and layout.
@@ -1269,13 +1282,17 @@ options       Optional. The set of options that control how the serialization is
               - ``XMPConst.SERIALIZE_INCLUDE_THUMBNAIL_PAD`` - Include typical space for a JPEG thumbnail in the padding if no xmp:Thumbnail property is present.
               - ``XMPConst.SERIALIZE_EXACT_PACKET_LENGTH`` - Compute padding to meet the overall packet length provided by the padding parameter. Throws an exception if the unpadded packet exceeds this length.
               - ``XMPConst.SERIALIZE_WRITE_ALIAS_COMMENTS`` - Include XML comments for aliases.
+
 padding       Optional, Number.
+
               - If the options value is ``SERIALIZE_EXACT_PACKET_LENGTH``, this the exact
                 length of the packet, including padding characters that are added to meet this
                 length.
               - If the options value is not ``SERIALIZE_EXACT_PACKET_LENGTH``, this is a
                 number of padding characters to add.
-                Default is 0, meaning to use the appropriate amount of padding.
+
+              Default is 0, meaning to use the appropriate amount of padding.
+
 indent        Optional, String. The string to use as an indent. Default is two spaces.
 newline       Optional, String. The newline character to use. Default is U+000A.
 baseIndent    Optional, Number. The level of indentation of the outermost XML element. Default is 0.
@@ -1301,9 +1318,11 @@ itemIndex     Number. The 1-based position index at which to insert the new item
               ``XMPConst.ARRAY_LAST_ITEM`` to replace the last existing item in the array.
 itemValue     String. The new item value string. Pass ``null`` for array items that do not have values.
 itemOptions   Optional. A flag that describes the new item, if it is being created. One of:
+
               - 0: A simple item, the default.
               - ``XMPConst.PROP_IS_ARRAY``: The item is an array (of type alt, bag, or seq).
               - ``XMPConst.PROP_IS_STRUCT``: The item is a structure with nested fields.
+
 ============  ==========================================================================================
 
 Replaces an item within an array, or appends an item. The array must exist. To create an item,
@@ -1351,9 +1370,11 @@ fieldName   The field name string. Must be a simple XML name.
 fieldValue  The new field value string. Pass null for fields that do not have values.
 options     Optional, option flags that describe a new structure. Used only if the structure is
             being created. One of:
+
             - 0 - A simple item, the default.
             - ``XMPConst.PROP_IS_ARRAY`` - The item is an array (of type alt, bag, or seq).
             - ``XMPConst.PROP_IS_STRUCT`` - The item is a structure with nested fields.
+
 ==========  ==========================================================================================
 
 Sets the value of a field within a structure-type property, or creates a new field if the named field
@@ -1378,9 +1399,11 @@ qualName    String. The name of the qualifier. Must be a simple XML name. Has th
 qualValue   The new qualifier value string. Pass null for qualifiers that do not have values.
 options     Optional, option flags that describe the qualifier. Used only if the qualifier is being
             created. One of:
+
             - 0 - A simple item, the default.
             - ``XMPConst.PROP_IS_ARRAY`` - The item is an array (of type alt, bag, or seq).
             - ``XMPConst.PROP_IS_STRUCT`` - The item is a structure with nested fields.
+
 ==========  ==========================================================================================
 
 Attaches a new qualifier to a metadata property. A qualifier can be added to a simple property, an
@@ -1402,15 +1425,19 @@ propName      The property name string. Can be a general path expression.
 propValue     The new property value string. Pass null to create an array or non-leaf level structure property.
 setOptions    Optional. The type of property to create, if the named property does not exist.
               Default is 0, a simple-valued property. Other constant values are:
+
               - 0 - A simple item, the default.
               - ``XMPConst.PROP_IS_ARRAY`` - The item is an array (of type alt, bag, or seq).
               - ``XMPConst.PROP_IS_STRUCT`` - The item is a structure with nested fields.
+
 valueType     Optional. The property data type. If supplied, the value is converted to this type. One of:
+
               - ``XMPConst.STRING``
               - ``XMPConst.INTEGER``
               - ``XMPConst.NUMBER``
               - ``XMPConst.BOOLEAN``
               - ``XMPConst.XMPDATE``
+
 ============  ==========================================================================================
 
 Sets the value of a simple metadata property, creating the property if necessary, or creates a new
@@ -1435,7 +1462,7 @@ Sorts the XMP contents alphabetically.
 - Within a struct, sorts fields by their qualified name (that is, the XML ``prefix:local`` form.)
 - Sorts unordered arrays of simple items by value.
 - Sorts language alternative arrays by the ``xml:lang`` qualifiers, with the ``"x-default"`` item placed
-first.
+  first.
 
 Returns ``undefined``.
 
@@ -1458,11 +1485,13 @@ XMPPacketInfo object properties
 
 =========  =======  ========================================================================
 charForm   Number   The character encoding in the packet, one of:
+
                     - 0 - UTF8
                     - 2 - UTF-16, MSB-first (big-endian)
                     - 3 - UTF-16, LSB-first (little-endian)
                     - 4 - UTF 32, MSB-first (big-endian)
                     - 5 - UTF 32, LSB-first (little-endian)
+
 length     Number   The length of the packet in bytes.
 offset     Number   The byte-offset from the start of the file where the packet begins.
 packet     String   The raw packet data.
@@ -1493,8 +1522,10 @@ locale     String   The language of the property value. This value is set by cal
                     item, if an appropriate item is found.
 namespace  String   The namespace of the property; see :ref:`schema-namespace-string-constants`. Typically used when browsing metadata with an :ref:`xmpiterator-object`.
 options    Number   A constant that describes the property type, 0 for a simple property. Constants are:
+
                     - ``XMPConst.PROP_IS_ARRAY`` - The property is an array (of type alt, bag, or seq).
                     - ``XMPConst.PROP_IS_STRUCT`` - The property is a structure with nested fields.
+
 path       String   The property path, including the property name. For a simple property, the
                     entire path is the property name.
 value      Variant  The value of the property, if any. Arrays and non-leaf levels of structures do not
@@ -1533,6 +1564,7 @@ appendProperties()
 source   The source XMPMeta object.
 dest     The destination XMPMeta object.
 options  Option flags that control the copying operation. A logical OR of these bit-flag constants:
+
          - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
            properties. By default, copies only external properties. This applies only to
            top-level properties.
@@ -1541,6 +1573,7 @@ options  Option flags that control the copying operation. A logical OR of these 
            are retained. This applies to properties at all levels of hierarchy.
          - ``XMPConst.APPEND_DELETE_EMPTY_VALUES`` - Delete properties if the new
            value is empty.
+
 =======  =======================================================================================
 
 Default is 0.
@@ -1568,9 +1601,11 @@ separator  The string used to separate the items in the result string. Default i
 quotes     The character used to quote items that contain a separator. Default is '"', an ASCII
            double quote (U+0022).
 options    Option flag that controls the concatenation. This constant value:
+
            - ``XMPConst.SEPARATE_ALLOW_COMMAS`` - Allow commas in item values (such
              as "LastName, FirstName"). This option must be set the same way in this
              function and in :ref:`xmputils-separateArrayItems` to reconstruct the items correctly.
+
 =========  ======================================================================================
 
 Default is 0.
@@ -1716,6 +1751,7 @@ destNS        The destination namespace URI string. See :ref:`schema-namespace-s
 destRoot      Optional. The property name string for the root location of the destination
               subtree. Can be a general path expression. Default is the source root location.
 options       Option flags that control the copying operation. A logical OR of these bit-flag constants:
+
               - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
                 properties. By default, copies only external properties. This applies only to
                 top-level properties.
@@ -1746,6 +1782,7 @@ schemaNS   Optional. The namespace URI string. See :ref:`schema-namespace-string
            Must be supplied if a property name is supplied.
 propName   Optional. The property name string. Can be a general path expression.
 options    Option flags that control the deletion operation. A logical OR of these bit-flag constants:
+
            - ``XMPConst.REMOVE_ALL_PROPERTIES`` - Remove internal and external
              properties. By default, removes only external properties. Applies only to
              top-level properties.
@@ -1787,6 +1824,7 @@ arrayName     The array property name string. Can be a general path expression. 
               the array must be a simple string value.
 arrayOptions  Option flags that control how the array property is updated from the separated
               string. A logical OR of these bit-flag constants:
+
               - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
                 properties. By default, copies only external properties. This applies only to
                 top-level properties.

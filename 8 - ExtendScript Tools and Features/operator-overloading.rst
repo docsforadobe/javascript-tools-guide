@@ -27,11 +27,11 @@ This allows you to perform the "+" operation with any object of this class::
 You can override the following operators:
 
 ======  =============
-Unary   +, ~
-Binary  +, *, /, %, ^
-        <, <=, ==
-        <<, >>, >>>
-        &, |, ===
+Unary   ``+, ~``
+Binary  ``+, *, /, %, ^``
+        ``<, <=, ==``
+        ``<<, >>, >>>``
+        ``&, |, ===``
 ======  =============
 
 - The operators ``>`` and ``>=`` are implemented by executing NOT operator ``<=`` and NOT operator ``<``.

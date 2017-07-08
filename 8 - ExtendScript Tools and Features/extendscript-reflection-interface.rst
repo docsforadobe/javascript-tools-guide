@@ -28,25 +28,25 @@ Reflection object properties
 
 All properties are read only.
 
-===========  ==============  =======================================================================
-description  String          Short text describing the reflected object, or undefined if no
-                             description is available.
-help         String          Longer text describing the reflected object more completely, or
-                             ``undefined`` if no description is available.
-methods      Array of        An Array of :ref:`reflectioninfo-object`s containing all methods of the
-             ReflectionInfo  reflected object, defined in the class or in the specific instance.
-name         String          The class name of the reflected object.
-properties   Array of        An Array of :ref:`reflectioninfo-object`s containing all properties of the
-             ReflectionInfo  reflected object, defined in the class or in the specific instance. For
-                             objects with dynamic properties (defined at runtime) the list contains
-                             only those dynamic properties that have already been accessed by
-                             the script. For example, in an object wrapping an HTML tag, the
-                             names of the HTML attributes are determined at run time.
-===========  ==============  =======================================================================
+===========  =======================  =======================================================================
+description  String                   Short text describing the reflected object, or undefined if no
+                                      description is available.
+help         String                   Longer text describing the reflected object more completely, or
+                                      ``undefined`` if no description is available.
+methods      Array of ReflectionInfo  An Array of :ref:`reflectioninfo-object` containing all methods of the
+                                      reflected object, defined in the class or in the specific instance.
+name         String                   The class name of the reflected object.
+properties   Array of ReflectionInfo  An Array of :ref:`reflectioninfo-object` containing all properties of the
+                                      reflected object, defined in the class or in the specific instance. For
+                                      objects with dynamic properties (defined at runtime) the list contains
+                                      only those dynamic properties that have already been accessed by
+                                      the script. For example, in an object wrapping an HTML tag, the
+                                      names of the HTML attributes are determined at run time.
+===========  =======================  =======================================================================
 
 --------------------------------------------------------------------------------
 
-.. _reflection-object-functions
+.. _reflection-object-functions:
 
 Reflection object functions
 ****************************
@@ -121,20 +121,22 @@ ReflectionInfo object properties
 arguments     Array of        For a reflected method, an array of ReflectionInfo objects describing
               ReflectionInfo  each method argument.
 dataType      String          The data type of the reflected element. One of:
+
                               - ``boolean``
                               - ``number``
                               - ``string``
                               - ``Classname``: The class name of an object.
 
-                              .. note:: Class names start with a capital letter. Thus, the value
-                                ``string`` stands for a JavaScript string, while ``String`` is a
-                                JavaScript ``String`` wrapper object.
+                                .. note:: Class names start with a capital letter. Thus, the value
+                                  ``string`` stands for a JavaScript string, while ``String`` is a
+                                  JavaScript ``String`` wrapper object.
 
-                              - *: Any type. This is the default.
+                              - ``*``: Any type. This is the default.
                               - ``null``
                               - ``undefined``: Return data type for a function that does not return
                                 any value.
                               - ``unknown``
+
 defaultValue  any             The default value for a reflected property or method argument, or
                               ``undefined`` if there is no default value, if the property is undefined, or
                               if the element is a method.
@@ -151,9 +153,11 @@ min           Number          The minimum numeric value for the reflected elemen
 name          String          The name of the reflected element. A string, or a number for an array
               Number          index.
 type          String          The type of the reflected element. One of:
+
                               - ``readonly``: A Read only property.
                               - ``readwrite``: A read-write property.
                               - ``createonly``: A property that is valid only during creation of an
                                 object.
                               - ``method``: A method.
+
 ============  ==============  ===========================================================================

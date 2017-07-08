@@ -41,6 +41,7 @@ metadata packet. Through this object, you can create and delete namespaces and p
 examine and modify property values.
 
 You can obtain or create an :ref:`xmpmeta-object` in several ways:
+
 - You can use an :ref:`xmpfile-object` to retrieve existing metadata directly from a file. The
   ``XMPFile.``:ref:`xmpfile-getXMP` method creates an :ref:`xmpmeta-object`, which you can use to examine or modify the
   properties and their values. You can then use ``XMPFile.``:ref:`xmpfile-putXMP` to write the modified metadata back

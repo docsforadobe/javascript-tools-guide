@@ -155,6 +155,8 @@ Type: Boolean
 
 When true, the window is minimized or iconified.
 
+--------------------------------------------------------------------------------
+
 .. _window-opacity:
 
 opacity
@@ -174,7 +176,7 @@ shortcutKey
 ***********
 Type: String
 
-The key sequence that invokes this window's `onShortcutKey`_ callback
+The key sequence that invokes this window's ref:`control-event-onshortcutkey` callback
 (in Windows only).
 
 --------------------------------------------------------------------------------
@@ -760,7 +762,7 @@ show()
 ******
 ``windowObj.show()``
 
-Shows this window, container, or control. If an onShow_ callback is defined for a window, calls that
+Shows this window, container, or control. If an :ref:`onShow <window-event-handling-callbacks>` callback is defined for a window, calls that
 function before showing the window.
 
 When a window or container is hidden, its children are also hidden, but when it is shown again, the

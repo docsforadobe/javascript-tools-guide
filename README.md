@@ -40,7 +40,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 5 - Interapplication Communictation with Scripts
     ~~6 - External Communication Tools~~
     ~~7 - Intergrating External Libraries~~
-    - 8 - ExtendScript Tools and Features
+    ~~8 - ExtendScript Tools and Features~~
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
 - Format tables
@@ -50,7 +50,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     ~~5 - Interapplication Communication with Scripts~~
     ~~6 - External Communication Tools~~
     ~~7 - Intergrating External Libraries~~
-    - 8 - ExtendScript Tools and Features
+    ~~8 - ExtendScript Tools and Features~~
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
 - ~~Format notes, warnings and tips~~

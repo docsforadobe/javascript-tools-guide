@@ -22,7 +22,7 @@ BridgeTalk class properties
 ---------------------------
 The BridgeTalk class provides these static properties, which are available in the global namespace:
 
-.. bridgetalk-appinstance:
+.. _bridgetalk-appinstance:
 
 appInstance
 ***********
@@ -39,7 +39,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-applocale:
+.. _bridgetalk-applocale:
 
 appLocale
 *********
@@ -53,7 +53,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-appname:
+.. _bridgetalk-appname:
 
 appName
 *******
@@ -67,7 +67,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-appspecifier:
+.. _bridgetalk-appspecifier:
 
 appSpecifier
 ************
@@ -80,7 +80,7 @@ Read/write.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-appstatus:
+.. _bridgetalk-appstatus:
 
 appStatus
 *********
@@ -95,7 +95,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-appversion:
+.. _bridgetalk-appversion:
 
 appVersion
 **********
@@ -109,7 +109,7 @@ Read only.
 
 --------------------------------------------------------------------------------
 
-.. bridgetalk-onreceive:
+.. _bridgetalk-onreceive:
 
 onReceive
 *********

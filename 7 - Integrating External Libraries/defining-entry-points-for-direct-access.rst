@@ -91,7 +91,7 @@ The variant data does not support JavaScript objects. The following data types a
 - ``Boolean``
 - ``double``
 - ``string`` - Must be UTF-8 encoded.
-  The library must define an entry point :ref:`ESFreeMem() <missing link>`, which ExtendScript calls to release a returned
+  The library must define an entry point :ref:`externalobject-functions-ESFreeMem`, which ExtendScript calls to release a returned
   string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned
   string data.
 - ``Script`` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define

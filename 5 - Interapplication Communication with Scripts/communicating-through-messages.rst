@@ -31,7 +31,7 @@ Step 1: Check that the target application is installed
 ******************************************************
 
 Before you can actually send a message, you must check that the required version of the target application
-is installed. The function :ref:`getSpecifier() <missing link>`, available in the global namespace through the
+is installed. The function :ref:`getSpecifier() <bridgetalk-getspecifier>`, available in the global namespace through the
 :ref:`BridgeTalk class`, provides this information.
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed
@@ -70,7 +70,7 @@ Step 3: Specify how to handle a response
 
 If you want to handle a response for this message, or use the data that is returned from the script's
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
-by defining the :ref:`onResult() <missing link>` callback in the message object.
+by defining the :ref:`bridgetalk-message-object-onresult` callback in the message object.
 
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
   The response to a message is, by default, the result of evaluation of the script contained in that message's
@@ -86,8 +86,8 @@ This handler, for example, processes the returned result using a script-defined 
     processResult(returnBtObj.body);
   }
 
-If you want to handle errors that might arise during script processing, you can define an :ref:`onError() <missing link>` callback in
-the message object. Similarly, you can define a :ref:`timeout <missing link>` value and :ref:`onTimeout() <missing link>` callback to handle the case
+If you want to handle errors that might arise during script processing, you can define an :ref:`bridgetalk-message-object-onerror` callback in
+the message object. Similarly, you can define a :ref:`bridgetalk-message-object-timeout` value and :ref:`bridgetalk-message-object-ontimeout` callback to handle the case
 where the target cannot process the message within a given time. For more information, see :ref:`handling-responses-from-the-message-target`.
 
 .. note:: If you define callbacks to handle a response, you must store the message in a variable that still exists
@@ -139,7 +139,7 @@ The complete script looks like this::
 Receiving messages
 ------------------
 An application can be the target of a message; that is, it receives an unsolicited message from another
-application. An unsolicited message is handled by the static :ref:`BridgeTalk.onReceive <missing link>` callback function in
+application. An unsolicited message is handled by the static :ref:`BridgeTalk.onReceive <bridgetalk-onreceive>` callback function in
 the target application. See :ref:`handling-unsolicited-messages`.
 
 An application that sends a message can receive response messages; that is, messages that come as the
@@ -161,18 +161,18 @@ callbacks defined in the sending message object. For details, see :ref:`handling
 Handling unsolicited messages
 -----------------------------
 To specify how the application should handle unsolicited incoming messages, define a callback handler
-function in the static :ref:`onReceive <missing link>` property of the ``BridgeTalk`` class. This function takes a single argument, a
-:ref:`BridgeTalk message object <missing link>`.
+function in the static :ref:`bridgetalk-onreceive` property of the ``BridgeTalk`` class. This function takes a single argument, a
+:ref:`bridgetalk-message-object`.
 
 The default behavior of the ``onReceive`` handler is to evaluate the body of the received message with
 JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last
 line of the script.) To return the result, it creates a new message object, encapsulates the result in a string in
-the body property of that object, and passes that object to the :ref:`onResult <missing link>` callback defined in the original
+the body property of that object, and passes that object to the :ref:`bridgetalk-message-object-onresult` callback defined in the original
 message.
 
 If an error occurs on evaluation, the default ``onReceive`` handler returns the error information using a
 similar mechanism. It creates a new message object, encapsulates the error information in a string in the
-body property of that object, and passes that object to the :ref:`onError <missing link>` callback defined in the original
+body property of that object, and passes that object to the :ref:`bridgetalk-message-object-onerror` callback defined in the original
 message.
 
 To change the default behavior set the ``BridgeTalk.onReceive`` property to a function definition in the

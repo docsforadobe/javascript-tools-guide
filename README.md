@@ -42,7 +42,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - ~~7 - Intergrating External Libraries~~
     - ~~8 - ExtendScript Tools and Features~~
     - ~~9 - Intergrating XML into JavaScript~~
-    - 10 - Scripting Access to XMP Metadata
+    - ~~10 - Scripting Access to XMP Metadata~~
 - Format tables
     - ~~2 - ExtendScript Toolkit~~
     - ~~3 - File System Access~~
@@ -52,7 +52,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - ~~7 - Intergrating External Libraries~~
     - ~~8 - ExtendScript Tools and Features~~
     - ~~9 - Intergrating XML into JavaScript~~
-    - 10 - Scripting Access to XMP Metadata
+    - ~~10 - Scripting Access to XMP Metadata~~
 - ~~Format notes, warnings and tips~~
 - Extract images from the pdf and put into the text files
     - 2 - ExtendScript Toolkit

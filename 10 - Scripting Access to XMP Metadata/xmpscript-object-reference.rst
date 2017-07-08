@@ -634,7 +634,7 @@ There is one static property on the class that provides XMP version information;
 properties in the instance. The object encapsulates a set of metadata properties, which you access
 through the object functions.
 
-The generic functions :ref:`getProperty() <missing link>`, :ref:`setProperty() <missing link>`, and :ref:`deleteProperty() <missing link>` allow you to manipulate all types
+The generic functions :ref:`xmpmetaobj-getProperty`, :ref:`xmpmetaobj-setProperty`, and :ref:`xmpmetaobj-deleteProperty` allow you to manipulate all types
 of properties, when used with appropriately composed path expressions. For convenience, the object also
 provides more specific functions for use with specific types of properties, such as arrays.
 
@@ -1445,136 +1445,104 @@ Returns ``undefined``.
 
 XMPPacketInfo object
 --------------------
-This object is returned by XMPFile.getPacketInfo(). The read-only properties describe the XMP packet for
-the file represented by the XMPFile object.
+
+This object is returned by XMPFile.:ref:`xmpfile-getpacketinfo`. The read-only properties describe the XMP packet for
+the file represented by the :ref:`xmpfile-object`.
+
+--------------------------------------------------------------------------------
+
+.. _xmppacketinfo-object-properties:
 
 XMPPacketInfo object properties
-charForm
+*******************************
 
-Number
+=========  =======  ========================================================================
+charForm   Number   The character encoding in the packet, one of:
+                    - 0 - UTF8
+                    - 2 - UTF-16, MSB-first (big-endian)
+                    - 3 - UTF-16, LSB-first (little-endian)
+                    - 4 - UTF 32, MSB-first (big-endian)
+                    - 5 - UTF 32, LSB-first (little-endian)
+length     Number   The length of the packet in bytes.
+offset     Number   The byte-offset from the start of the file where the packet begins.
+packet     String   The raw packet data.
+padSize    Number   The packet's padding size in bytes, 0 if unknown.
+writeable  Boolean  If true, the packet is writeable.
+=========  =======  ========================================================================
 
-The character encoding in the packet, one of:
-0 - UTF8
-2 - UTF-16, MSB-first (big-endian)
-3 - UTF-16, LSB-first (little-endian)
-4 - UTF 32, MSB-first (big-endian)
-5 - UTF 32, LSB-first (little-endian)
-
-length
-
-Number
-
-The length of the packet in bytes.
-
-offset
-
-Number
-
-The byte-offset from the start of the file where the packet begins.
-
-packet
-
-String
-
-The raw packet data.
-
-padSize
-
-Number
-
-The packet's padding size in bytes, 0 if unknown.
-
-writeable
-
-Boolean
-
-If true, the packet is writeable.
+--------------------------------------------------------------------------------
 
 .. _xmpproperty-object:
 
 XMPProperty object
 ------------------
-This object is returned by various property accessor functions of the XMPMeta object, such as
-getProperty(). The read-only properties describe a metadata property.
+
+This object is returned by various property accessor functions of the :ref:`xmpmeta-object`, such as
+:`xmpmetaobj-getProperty`. The read-only properties describe a metadata property.
+
+--------------------------------------------------------------------------------
+
+.. _xmpproperty-object-properties:
 
 XMPProperty object properties
-locale
+*****************************
 
-String
+=========  =======  ==============================================================================
+locale     String   The language of the property value. This value is set by calls to
+                    :ref:`xmpmetaobj-getLocalizedText`, which assigns the language of the selected alternative text
+                    item, if an appropriate item is found.
+namespace  String   The namespace of the property; see :ref:`schema-namespace-string-constants`. Typically used when browsing metadata with an :ref:`xmpiterator-object`.
+options    Number   A constant that describes the property type, 0 for a simple property. Constants are:
+                    - ``XMPConst.PROP_IS_ARRAY`` - The property is an array (of type alt, bag, or seq).
+                    - ``XMPConst.PROP_IS_STRUCT`` - The property is a structure with nested fields.
+path       String   The property path, including the property name. For a simple property, the
+                    entire path is the property name.
+value      Variant  The value of the property, if any. Arrays and non-leaf levels of structures do not
+                    have values.
+=========  =======  ==============================================================================
 
-The language of the property value. This value is set by calls to
-getLocalizedText(), which assigns the language of the selected alternative text
-item, if an appropriate item is found.
-
-namespace
-
-String
-
-The namespace of the property; see :ref:`schema-namespace-string-constants`. Typically used when browsing metadata with an XMPIterator object.
-
-options
-
-Number A constant that describes the property type, 0 for a simple property. Constants
-are:
-XMPConst.PROP_IS_ARRAY - The property is an array (of type alt, bag, or
-seq).
-XMPConst.PROP_IS_STRUCT - The property is a structure with nested
-
-fields.
-
-path
-
-String
-
-The property path, including the property name. For a simple property, the
-entire path is the property name.
-
-value
-
-Variant
-
-The value of the property, if any. Arrays and non-leaf levels of structures do not
-have values.
+--------------------------------------------------------------------------------
 
 .. _xmputils-object:
 
 XMPUtils object
 ---------------
+
 This class provides additional utility functions for the XMP Toolkit, layered upon the functionality of the
-XMPMeta object. It has only static functions, you cannot create an instance.
-Path-composition functions such as composeArrayItemPath(), provide support for composing path
+:ref:`xmpmeta-object`. It has only static functions, you cannot create an instance.
+
+Path-composition functions such as :ref:`xmputils-composeArrayItemPath`, provide support for composing path
 expressions to deeply nested properties, which you can then pass to the accessor functions in
-XMPMeta object, such as getProperty().
-Higher-level functions such as duplicateSubtree() allow you to manipulate the metadata tree in an
+XMPMeta object, such as `xmpmetaobj-getProperty`.
+
+Higher-level functions such as `xmputils-duplicateSubtree` allow you to manipulate the metadata tree in an
 XMPMeta object.
 
+--------------------------------------------------------------------------------
+
 XMPUtils class functions
+************************
+
+.. _xmputils-appendProperties:
 
 appendProperties()
-XMPUtils.appendProperties(source, dest, options)
-source
+++++++++++++++++++
+``XMPUtils.appendProperties(source, dest, options)``
 
-The source XMPMeta object.
+=======  =======================================================================================
+source   The source XMPMeta object.
+dest     The destination XMPMeta object.
+options  Option flags that control the copying operation. A logical OR of these bit-flag constants:
+         - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
+           properties. By default, copies only external properties. This applies only to
+           top-level properties.
+         - ``XMPConst.APPEND_REPLACE_OLD_VALUES`` - Replace the values of existing
+           properties with the value from the source object. By default, existing values
+           are retained. This applies to properties at all levels of hierarchy.
+         - ``XMPConst.APPEND_DELETE_EMPTY_VALUES`` - Delete properties if the new
+           value is empty.
+=======  =======================================================================================
 
-dest
-
-The destination XMPMeta object.
-
-options
-
-Option flags that control the copying operation. A logical OR of these bit-flag
-constants:
-XMPConst.APPEND_ALL_PROPERTIES - Include both internal and external
-properties. By default, copies only external properties. This applies only to
-top-level properties.
-XMPConst.APPEND_REPLACE_OLD_VALUES - Replace the values of existing
-
-properties with the value from the source object. By default, existing values
-are retained. This applies to properties at all levels of hierarchy.
-
-XMPConst.APPEND_DELETE_EMPTY_VALUES - Delete properties if the new
-
-value is empty.
 Default is 0.
 
 Copies properties from a source XMPMeta object and appends them to a destination XMPMeta
@@ -1584,262 +1552,220 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-catenateArrayItems:
+
 catenateArrayItems()
-XMPUtils.catenateArrayItems(xmpObj, schemaNS, arrayName, separator, quotes, options)
-xmpObj
+++++++++++++++++++++
+``XMPUtils.catenateArrayItems(xmpObj, schemaNS, arrayName, separator, quotes, options)``
 
-The XMPMeta object containing the array.
-
-schemaNS
-
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-arrayName
-
-The array property name string. Can be a general path expression. Each item in
-the array must be a simple string value.
-
-separator
-
-The string used to separate the items in the result string. Default is '; ', an ASCII
-semicolon and space (U+003B,U+0020).
-
-quotes
-
-The character used to quote items that contain a separator. Default is '"', an ASCII
-double quote (U+0022).
-
-options
-
-Option flag that controls the concatenation. This constant value:
-XMPConst.SEPARATE_ALLOW_COMMAS - Allow commas in item values (such
-as "LastName, FirstName"). This option must be set the same way in this
-function and in separateArrayItems() to reconstruct the items correctly.
+=========  ======================================================================================
+xmpObj     The XMPMeta object containing the array.
+schemaNS   The namespace URI string. See :ref:`schema-namespace-string-constants`.
+arrayName  The array property name string. Can be a general path expression. Each item in
+           the array must be a simple string value.
+separator  The string used to separate the items in the result string. Default is '; ', an ASCII
+           semicolon and space (U+003B,U+0020).
+quotes     The character used to quote items that contain a separator. Default is '"', an ASCII
+           double quote (U+0022).
+options    Option flag that controls the concatenation. This constant value:
+           - ``XMPConst.SEPARATE_ALLOW_COMMAS`` - Allow commas in item values (such
+             as "LastName, FirstName"). This option must be set the same way in this
+             function and in :ref:`xmputils-separateArrayItems` to reconstruct the items correctly.
+=========  ======================================================================================
 
 Default is 0.
+
 Concatenates a set of array item values into a single string. The resulting string can be separated
-back out into array items using separateArrayItems().
+back out into array items using :ref:`xmputils-separateArrayItems`.
+
 Returns the concatenated String.
+
+--------------------------------------------------------------------------------
+
+.. _xmputils-composeArrayItemPath:
+
 composeArrayItemPath()
-XMPUtils.composeArrayItemPath(schemaNS, arrayName, itemIndex)
-schemaNS
+++++++++++++++++++++++
+``XMPUtils.composeArrayItemPath(schemaNS, arrayName, itemIndex)``
 
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-arrayName
-
-The array property name string. Can be a general path expression.
-
-itemIndex
-
-Number. The 1-based position index of the item. Use
-XMPConst.ARRAY_LAST_ITEM to reference the last existing item in the array. In
-this case, the resulting path is ns:arrayName[last()].
+=========  ======================================================================================
+schemaNS   The namespace URI string. See :ref:`schema-namespace-string-constants`.
+arrayName  The array property name string. Can be a general path expression.
+itemIndex  Number. The 1-based position index of the item. Use
+           ``XMPConst.ARRAY_LAST_ITEM`` to reference the last existing item in the array. In
+           this case, the resulting path is ``ns:arrayName[last()]``.
+=========  ======================================================================================
 
 Creates and returns a string containing the path expression for an item in an array, using the
-registered prefix for the namespace, in the form:
-schemaNS:arrayName[itemIndex]
+registered prefix for the namespace, in the form::
+
+  schemaNS:arrayName[itemIndex]
 
 Returns a String.
 
 --------------------------------------------------------------------------------
+
+.. _xmputils-composeFieldSelector:
 
 composeFieldSelector()
-XMPUtils.composeFieldSelector(schemaNS, arrayName, fieldNS, fieldName, fieldValue)
-schemaNS
+++++++++++++++++++++++
+``XMPUtils.composeFieldSelector(schemaNS, arrayName, fieldNS, fieldName, fieldValue)``
 
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-arrayName
-
-The array property name string. Can be a general path expression.
-
-fieldNS
-
-The field namespace URI string.
-
-fieldName
-
-The field name. Must be a simple XML name.
-
-fieldValue
-
-The desired field value.
+==========  ======================================================================================
+schemaNS    The namespace URI string. See :ref:`schema-namespace-string-constants`.
+arrayName   The array property name string. Can be a general path expression.
+fieldNS     The field namespace URI string.
+fieldName   The field name. Must be a simple XML name.
+fieldValue  The desired field value.
+==========  ======================================================================================
 
 Creates and returns a string containing the path expression to select an alternate item by a field's
-value, using the registered prefixes for the namespaces, in the form:
-schemaNS:arrayName[fieldNS:fieldName='fieldValue']
+value, using the registered prefixes for the namespaces, in the form::
+
+  schemaNS:arrayName[fieldNS:fieldName='fieldValue']
 
 Returns a String.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-composeLanguageSelector:
+
 composeLanguageSelector()
-XMPUtils.composeLanguageSelector(schemaNS, arrayName, locale)
-schemaNS
++++++++++++++++++++++++++
+``XMPUtils.composeLanguageSelector(schemaNS, arrayName, locale)``
 
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-arrayName
-
-The array property name string. Can be a general path expression.
-
-locale
-
-The RFC3066 locale code string for the desired language.
+==========  ======================================================================================
+schemaNS    The namespace URI string. See :ref:`schema-namespace-string-constants`.
+arrayName   The array property name string. Can be a general path expression.
+locale      The RFC3066 locale code string for the desired language.
+==========  ======================================================================================
 
 Creates and returns a string containing the path expression to select an alternate item in an alt
-text array by language, using the registered prefix for the namespace, in the form:
-schemaNS:arrayName[@xml:lang='langName']
+text array by language, using the registered prefix for the namespace, in the form::
+
+  schemaNS:arrayName[@xml:lang='langName']
 
 Returns a String.
 
 .. note:: Do not use this in place of getLocalizedText() or setLocalizedText().
-
-Those functions provide
-extra logic to choose the appropriate language and maintain consistency with the x-default value.
-This function provides a path expression for an explicit language, and only for that language.
+   Those functions provide
+   extra logic to choose the appropriate language and maintain consistency with the x-default value.
+   This function provides a path expression for an explicit language, and only for that language.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-composeStructFieldPath:
+
 composeStructFieldPath()
-XMPUtils.composeStructFieldPath(schemaNS, structName, fieldNS, fieldName)
-schemaNS
+++++++++++++++++++++++++
+``XMPUtils.composeStructFieldPath(schemaNS, structName, fieldNS, fieldName)``
 
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-structName
-
-The structure property name string. Can be a general path expression.
-
-fieldNS
-
-The field namespace URI string.
-
-fieldName
+==========  ======================================================================================
+schemaNS    The namespace URI string. See :ref:`schema-namespace-string-constants`.
+structName  The structure property name string. Can be a general path expression.
+fieldNS     The field namespace URI string.
+fieldName   The field name. Must be a simple XML name.
+==========  ======================================================================================
 
 The field name. Must be a simple XML name.
 
 Creates and returns a string containing the path expression for a field in a structure, using the
-registered prefixes for the namespaces, in the form:
-schemaNS:structName/fieldNS:fieldName
+registered prefixes for the namespaces, in the form::
+
+  schemaNS:structName/fieldNS:fieldName
 
 Returns a String.
 
 --------------------------------------------------------------------------------
+
+.. _xmputils-composeQualifierPath:
 
 composeQualifierPath()
-XMPUtils.composeQualifierPath(schemaNS, propName, qualNS, qualName)
-schemaNS
+++++++++++++++++++++++
+``XMPUtils.composeQualifierPath(schemaNS, propName, qualNS, qualName)``
 
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-propName
-
-The property name string. Can be a general path expression.
-
-qualNS
-
-The qualifier namespace URI string.
-
-qualName
-
-The qualifier name. Must be a simple XML name.
+==========  ======================================================================================
+schemaNS    The namespace URI string. See :ref:`schema-namespace-string-constants`.
+propName    The property name string. Can be a general path expression.
+qualNS      The qualifier namespace URI string.
+qualName    The qualifier name. Must be a simple XML name.
+==========  ======================================================================================
 
 Creates and returns a string containing the path expression for a qualifier attached to a property,
-using the registered prefix for the namespace, in the form:
-schemaNS:propName/?qualNS:qualName
+using the registered prefix for the namespace, in the form::
+
+  schemaNS:propName/?qualNS:qualName
 
 Returns a String.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-duplicateSubtree:
+
 duplicateSubtree()
-XMPUtils.duplicateSubtree(source, dest, sourceNS, sourceRoot,
-destNS, destRoot, options)
-source
+++++++++++++++++++
+``XMPUtils.duplicateSubtree(source, dest, sourceNS, sourceRoot, destNS, destRoot, options)``
 
-The source XMPMeta object.
+============  ======================================================================================
+source        The source XMPMeta object.
+dest          The destination XMPMeta object.
+sourceNS      The source namespace URI string. See :ref:`schema-namespace-string-constants`.
+sourceRoot    The property name string for the root location of the source subtree. Can be a
+              general path expression.
+destNS        The destination namespace URI string. See :ref:`schema-namespace-string-constants`.
+destRoot      Optional. The property name string for the root location of the destination
+              subtree. Can be a general path expression. Default is the source root location.
+options       Option flags that control the copying operation. A logical OR of these bit-flag constants:
+              - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
+                properties. By default, copies only external properties. This applies only to
+                top-level properties.
+              - ``XMPConst.APPEND_REPLACE_OLD_VALUES`` - Replace the values of existing
+                properties with the value from the source object. By default, existing values
+                are retained. This applies to properties at all levels of hierarchy.
+              - ``XMPConst.APPEND_DELETE_EMPTY_VALUES`` - Delete properties if the new value is empty.
 
-dest
+              Default is 0.
+============  ======================================================================================
 
-The destination XMPMeta object.
-
-sourceNS
-
-The source namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-sourceRoot
-
-The property name string for the root location of the source subtree. Can be a
-general path expression.
-
-destNS
-
-The destination namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-destRoot
-
-Optional. The property name string for the root location of the destination
-subtree. Can be a general path expression. Default is the source root location.
-
-options
-
-Option flags that control the copying operation. A logical OR of these bit-flag
-constants:
-XMPConst.APPEND_ALL_PROPERTIES - Include both internal and external
-properties. By default, copies only external properties. This applies only to
-top-level properties.
-XMPConst.APPEND_REPLACE_OLD_VALUES - Replace the values of existing
-
-properties with the value from the source object. By default, existing values
-are retained. This applies to properties at all levels of hierarchy.
-
-XMPConst.APPEND_DELETE_EMPTY_VALUES - Delete properties if the new
-
-value is empty.
-Default is 0.
-
-Copies properties in the specified subtree from a source XMPMeta object and adds them into a
-destination XMPMeta object.
+Copies properties in the specified subtree from a source :ref:`xmpmeta-object` and adds them into a
+destination :ref:`xmpmeta-object`.
 
 Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-removeProperties:
+
 removeProperties()
-XMPUtils.removeProperties(xmpObj, schemaNS, propName, options)
-xmpObj
+++++++++++++++++++
+``XMPUtils.removeProperties(xmpObj, schemaNS, propName, options)``
 
-The XMPMeta object.
+=========  ======================================================================================
+xmpObj     The :ref:`xmpmeta-object`.
+schemaNS   Optional. The namespace URI string. See :ref:`schema-namespace-string-constants`.
+           Must be supplied if a property name is supplied.
+propName   Optional. The property name string. Can be a general path expression.
+options    Option flags that control the deletion operation. A logical OR of these bit-flag constants:
+           - ``XMPConst.REMOVE_ALL_PROPERTIES`` - Remove internal and external
+             properties. By default, removes only external properties. Applies only to
+             top-level properties.
+           - ``XMPConst.REMOVE_INCLUDE_ALIASES`` - Remove aliases defined in the
+             namespace. If the property name is supplied, removes it regardless of this
+             option.
 
-schemaNS
+           Default is 0.
+=========  ======================================================================================
 
-Optional. The namespace URI string. See :ref:`schema-namespace-string-constants`. Must be supplied if a property name is supplied.
+Removes multiple properties from an :ref:`xmpmeta-object`.
 
-propName
-
-Optional. The property name string. Can be a general path expression.
-
-options
-
-Option flags that control the deletion operation. A logical OR of these bit-flag
-constants:
-XMPConst.REMOVE_ALL_PROPERTIES - Remove internal and external
-properties. By default, removes only external properties. Applies only to
-top-level properties.
-XMPConst.REMOVE_INCLUDE_ALIASES - Remove aliases defined in the
-namespace. If the property name is supplied, removes it regardless of this
-option.
-
-Default is 0.
-Removes multiple properties from an XMPMeta object.
 If both the namespace and property name are supplied, removes the property if it is external,
-even if it is an alias. If it is internal, removes it if the option XMPConst.REMOVE_ALL_PROPERTIES
+even if it is an alias. If it is internal, removes it if the option ``XMPConst.REMOVE_ALL_PROPERTIES``
 is specified.
+
 If the namespace is supplied and the property name is not, removes all external properties in
 the namespace, and optionally all internal properties. Removes aliases only if the option
-XMPConst.REMOVE_INCLUDE_ALIASES is specified.
+``XMPConst.REMOVE_INCLUDE_ALIASES`` is specified.
+
 If neither the namespace nor the property name are supplied, removes all external properties,
 and optionally all internal properties. Aliases are handled implicitly, because the associated
 actual is removed.
@@ -1848,49 +1774,38 @@ Returns ``undefined``.
 
 --------------------------------------------------------------------------------
 
+.. _xmputils-separateArrayItems:
+
 separateArrayItems()
-XMPUtils.separateArrayItems(xmpObj, schemaNS, arrayName, arrayOptions, concatString)
-xmpObj
+++++++++++++++++++++
+``XMPUtils.separateArrayItems(xmpObj, schemaNS, arrayName, arrayOptions, concatString)``
 
-The XMPMeta object containing the array.
+============  ==========================================================================================
+xmpObj        The XMPMeta object containing the array.
+schemaNS      The namespace URI string. See :ref:`schema-namespace-string-constants`.
+arrayName     The array property name string. Can be a general path expression. Each item in
+              the array must be a simple string value.
+arrayOptions  Option flags that control how the array property is updated from the separated
+              string. A logical OR of these bit-flag constants:
+              - ``XMPConst.APPEND_ALL_PROPERTIES`` - Include both internal and external
+                properties. By default, copies only external properties. This applies only to
+                top-level properties.
+              - ``XMPConst.APPEND_REPLACE_OLD_VALUES`` - Replace the values of existing
+                properties with the value from the source object. By default, existing values
+                are retained. This applies to properties at all levels of hierarchy.
+              - ``XMPConst.APPEND_DELETE_EMPTY_VALUES`` - Delete properties if the new
+                value is empty.
+              - ``XMPConst.SEPARATE_ALLOW_COMMAS`` - Allow commas in item values. If not
+                specified, an item containing a comma (such as "LastName, FirstName") is
+                separated into two array items.
 
-schemaNS
-
-The namespace URI string. See :ref:`schema-namespace-string-constants`.
-
-arrayName
-
-The array property name string. Can be a general path expression. Each item in
-the array must be a simple string value.
-
-arrayOptions
-
-Option flags that control how the array property is updated from the separated
-string. A logical OR of these bit-flag constants:
-XMPConst.APPEND_ALL_PROPERTIES - Include both internal and external
-properties. By default, copies only external properties. This applies only to
-top-level properties.
-XMPConst.APPEND_REPLACE_OLD_VALUES - Replace the values of existing
-
-properties with the value from the source object. By default, existing values
-are retained. This applies to properties at all levels of hierarchy.
-
-XMPConst.APPEND_DELETE_EMPTY_VALUES - Delete properties if the new
-
-value is empty.
-
-XMPConst.SEPARATE_ALLOW_COMMAS - Allow commas in item values. If not
-specified, an item containing a comma (such as "LastName, FirstName") is
-separated into two array items.
-
-Default is 0.
-concatString
-
-The string containing the concatenated array values, as returned by
-catenateArrayItems().
+              Default is 0.
+concatString  The string containing the concatenated array values, as returned by
+              :ref:`xmputils-catenateArrayItems`.
+============  ==========================================================================================
 
 Updates individual array item strings in the XMPMeta object from a concatenated string returned by
-catenateArrayItems(). Recognizes a large set of separator characters, including semicolons, commas,
+:ref:`xmputils-catenateArrayItems`. Recognizes a large set of separator characters, including semicolons, commas,
 tab, return, linefeed, and multiple spaces.
 
 Returns ``undefined``.

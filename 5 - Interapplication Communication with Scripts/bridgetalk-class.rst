@@ -14,13 +14,13 @@ var thisApp = BridgeTalk.appName;
   to send message packets between applications. Dynamic properties and methods can be accessed only in
   instances.
 
+--------------------------------------------------------------------------------
+
 .. _bridgetalk-class-properties:
 
 BridgeTalk class properties
 ---------------------------
 The BridgeTalk class provides these static properties, which are available in the global namespace:
-
---------------------------------------------------------------------------------
 
 .. bridgetalk-appinstance:
 
@@ -139,6 +139,7 @@ data. The function can return any type. See :ref:`handling-unsolicited-messages`
 
 BridgeTalk class functions
 --------------------------
+
 The BridgeTalk class provides these static methods, which are available in the global namespace:
 
 --------------------------------------------------------------------------------

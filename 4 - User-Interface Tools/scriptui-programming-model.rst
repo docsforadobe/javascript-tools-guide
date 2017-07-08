@@ -7,6 +7,8 @@ such as ``Button`` and ``StaticText``, that represent user-interface controls. T
 of properties and methods that allow you to query the type, move the element around, set the title,
 caption or content, and so on. Many element types also have properties unique to that class of elements.
 
+--------------------------------------------------------------------------------
+
 .. _creating-a-window:
 
 Creating a window

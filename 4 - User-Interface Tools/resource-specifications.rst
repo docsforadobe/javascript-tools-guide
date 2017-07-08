@@ -53,6 +53,8 @@ A property value can be specified as ``null``, true, false, a string, a number, 
 
     { propertyName: propertyValue, propertyName: propertyValue, ... }
 
+--------------------------------------------------------------------------------
+
 .. _using-resource-strings:
 
 Using resource strings

@@ -44,6 +44,8 @@ for each property. Complete details are provided in the reference section; see :
 The following sections provide examples that show how to use title layout to achieve many different
 layouts.
 
+--------------------------------------------------------------------------------
+
 .. _title-alignment-and-orientation:
 
 Title alignment and orientation
@@ -99,6 +101,8 @@ except that the ``fill`` value is not allowed.
   .. todo::
       image
 
+--------------------------------------------------------------------------------
+
 .. _title-character-width-and-justification:
 
 Title character width and justification
@@ -148,6 +152,8 @@ Title character width and justification
   .. todo::
       image
 
+--------------------------------------------------------------------------------
+
 .. _title-truncation:
 
 Title truncation
@@ -169,6 +175,8 @@ This example demonstrates the effect of all three options on the same title stri
 
 .. todo::
     image
+
+--------------------------------------------------------------------------------
 
 .. _margins-around-the-title-and-graphic-object:
 

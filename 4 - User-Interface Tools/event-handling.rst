@@ -10,6 +10,8 @@ Several helper classes provide low-level event-handling capabilities.
 - A helper object, :ref:`Keyboard-state-object`, provides global access to the keyboard state during function
   execution, outside the event-handling framework.
 
+--------------------------------------------------------------------------------
+
 .. _uievent-base-class:
 
 UIEvent base class
@@ -119,6 +121,8 @@ Type: ``Object``
 
 The container or control object that dispatched the event.
 
+--------------------------------------------------------------------------------
+
 UIEvent object functions
 ************************
 
@@ -170,6 +174,8 @@ Stops event propagation (bubbling and capturing) after executing the handler or 
 current target.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _keyboardevent-object:
 
@@ -266,9 +272,17 @@ The name of the event that occurred. Key events types are:
 - ``keyup``
 - ``keydown``
 
+--------------------------------------------------------------------------------
+
+.. _keyboardevent-object-functions:
+
 KeyboardEvent object functions
 ******************************
 In addition to the functions defined for :ref:`UIEvent-base-class`, a keyboard event has these functions.
+
+--------------------------------------------------------------------------------
+
+.. _keyboardevent-object-getModifierState:
 
 getModifierState()
 ++++++++++++++++++
@@ -290,6 +304,8 @@ getModifierState()
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
 --------------------------------------------------------------------------------
+
+.. _keyboardevent-object-initKeyboardEvent:
 
 initKeyboardEvent()
 +++++++++++++++++++
@@ -438,9 +454,17 @@ The name of the event that occurred. Mouse events types are:
 
 The sequence of click events is: ``mousedown``, ``mouseup``, ``click``.
 
+--------------------------------------------------------------------------------
+
+.. _mouseevent-object-functions:
+
 MouseEvent object functions
 ***************************
 In addition to the functions defined for :ref:`UIEvent-base-class`, a mouse event has these functions.
+
+--------------------------------------------------------------------------------
+
+.. _mouseevent-object-getModifierState:
 
 getModifierState()
 ++++++++++++++++++
@@ -462,6 +486,8 @@ getModifierState()
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
 --------------------------------------------------------------------------------
+
+.. _mouseevent-object-initMouseEvent:
 
 initMouseEvent()
 ++++++++++++++++
@@ -505,6 +531,8 @@ Reinitializes the object, allowing you to change the event properties after cons
 set the corresponding properties.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _keyboard-state-object:
 

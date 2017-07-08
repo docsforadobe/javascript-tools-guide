@@ -11,7 +11,7 @@ Once the library has been loaded, its exported symbols become available to JavaS
 code, you can call the functions defined in the library directly in the ``ExternalObject`` instance, or indirectly
 through library-defined object types.
 
-- Direct access to library calls through the ExternalObject instance - Use the direct-access style
+- **Direct access to library calls through the ExternalObject instance** - Use the direct-access style
   for C-language libraries. For each function defined in the C library, there is a corresponding method in
   the ExternalObject object. You can pass data to these methods and receive the return value directly.
 
@@ -27,7 +27,7 @@ through library-defined object types.
     For details of how to define functions for direct access through the ExternalObject object, see
     :ref:`defining-entry-points-for-direct-access`.
 
-- Indirect access to library calls through JavaScript classes - Use the indirect style to access classes
+- **Indirect access to library calls through JavaScript classes** - Use the indirect style to access classes
   defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is automatically defined,
   and you can access the properties and methods through an instance of that class. For example::
 

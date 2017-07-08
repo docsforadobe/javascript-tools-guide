@@ -15,7 +15,9 @@ Welcome to The Javascript Tools Guide
     :caption: Chapter 2 - The ExtendScript Toolkit
 
     2 - ExtendScript Toolkit/index
+    2 - ExtendScript Toolkit/configuring-the-toolkit-window
     2 - ExtendScript Toolkit/selecting-scripts
+    2 - ExtendScript Toolkit/the-script-editor
     2 - ExtendScript Toolkit/debugging-in-the-toolkit
     2 - ExtendScript Toolkit/code-profiling-for-optimization
     2 - ExtendScript Toolkit/inspecting-object-models
@@ -25,6 +27,7 @@ Welcome to The Javascript Tools Guide
     :caption: Chapter 3 - File System Access
 
     3 - File System Access/index
+    3 - File System Access/using-file-and-folder-objects
     3 - File System Access/file-access-error-messages
     3 - File System Access/file-and-folder-supported-encoding-names
     3 - File System Access/file-object

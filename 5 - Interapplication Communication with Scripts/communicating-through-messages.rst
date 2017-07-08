@@ -20,17 +20,19 @@ to send it to another application. For details of these objects, see :ref:`messa
 
 Sending messages
 ----------------
-To send a script or other data to another application, you must create and configure a BridgeTalk message
-object. This object contains the data to be sent (generally a script to be executed in the target application),
+To send a script or other data to another application, you must create and configure a :ref:`BridgeTalk message object`.
+This object contains the data to be sent (generally a script to be executed in the target application),
 and also specifies how to handle the response.
+
 This simple example walks through the steps of sending a script from Adobe Bridge CS5 to Photoshop
 CS5, and receiving a response.
 
-*Step 1: Check that the target application is installed*
+Step 1: Check that the target application is installed
+******************************************************
 
 Before you can actually send a message, you must check that the required version of the target application
-is installed. The function ``getSpecifier()``, available in the global namespace through the BridgeTalk
-class, provides this information.
+is installed. The function :ref:`getSpecifier() <missing link>`, available in the global namespace through the
+:ref:`BridgeTalk class`, provides this information.
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed
 by Photoshop CS5, checks that the required version of Adobe Bridge is installed::
@@ -43,7 +45,8 @@ by Photoshop CS5, checks that the required version of Adobe Bridge is installed:
 When you send the message, the messaging framework automatically launches the target application, if it
 is not already running.
 
-*Step 2: Construct a message object*
+Step 2: Construct a message object
+**********************************
 
 The next step is to construct a message to send to the application. You do this by creating a BridgeTalk
 message object, and assigning values to its properties. You must specify the target application and the
@@ -62,11 +65,12 @@ folders found in a specific folder::
   bt.body = "new Document('C:\\BridgeScripts');
   app.document.target.children.length;"
 
-*Step 3: Specify how to handle a response*
+Step 3: Specify how to handle a response
+****************************************
 
 If you want to handle a response for this message, or use the data that is returned from the script's
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
-by defining the onResult callback in the message object.
+by defining the :ref:`onResult() <missing link>` callback in the message object.
 
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
   The response to a message is, by default, the result of evaluation of the script contained in that message's
@@ -82,25 +86,27 @@ This handler, for example, processes the returned result using a script-defined 
     processResult(returnBtObj.body);
   }
 
-If you want to handle errors that might arise during script processing, you can define an onError callback in
-the message object. Similarly, you can define a timeout value and onTimeout callback to handle the case
+If you want to handle errors that might arise during script processing, you can define an :ref:`onError() <missing link>` callback in
+the message object. Similarly, you can define a :ref:`timeout <missing link>` value and :ref:`onTimeout() <missing link>` callback to handle the case
 where the target cannot process the message within a given time. For more information, see :ref:`handling-responses-from-the-message-target`.
 
 .. note:: If you define callbacks to handle a response, you must store the message in a variable that still exists
   when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the
   response would be lost.
 
-*Step 4: Send the message*
+Step 4: Send the message
+************************
 
-To send the message, call the message object's send method. You do not need to specify where to send
+To send the message, call the message object's ``send`` method. You do not need to specify where to send
 the message to, since the target application is set in the message itself::
 
   bt.send();
 
 You can optionally specify a timeout value, which makes the call synchronous; when you do this, the
 method waits for a response from the target application, or for the timeout value to expire, before
-returning. When a timeout is not specified, as in this example, the call is asynchronous and the send()
+returning. When a timeout is not specified, as in this example, the call is asynchronous and the ``send()``
 method returns immediately.
+
 A second optional parameter allows you to specify launch parameters, in case the target application is not
 currently running, and the messaging framework needs to launch it.
 
@@ -126,12 +132,14 @@ The complete script looks like this::
     bt.send();
   }
 
+--------------------------------------------------------------------------------
+
 .. _receiving-messages:
 
 Receiving messages
 ------------------
 An application can be the target of a message; that is, it receives an unsolicited message from another
-application. An unsolicited message is handled by the static ``BridgeTalk.onReceive`` callback function in
+application. An unsolicited message is handled by the static :ref:`BridgeTalk.onReceive <missing link>` callback function in
 the target application. See :ref:`handling-unsolicited-messages`.
 
 An application that sends a message can receive response messages; that is, messages that come as the
@@ -146,23 +154,25 @@ result of requesting a response when a message was sent. These can be:
 All of these response messages are sent automatically by the target application, and are handled by
 callbacks defined in the sending message object. For details, see :ref:`handling-responses-from-the-message-target`.
 
+--------------------------------------------------------------------------------
+
 .. _handling-unsolicited-messages:
 
 Handling unsolicited messages
 -----------------------------
 To specify how the application should handle unsolicited incoming messages, define a callback handler
-function in the static ``onReceive`` property of the ``BridgeTalk`` class. This function takes a single argument, a
-``BridgeTalk`` message object.
+function in the static :ref:`onReceive <missing link>` property of the ``BridgeTalk`` class. This function takes a single argument, a
+:ref:`BridgeTalk message object <missing link>`.
 
 The default behavior of the ``onReceive`` handler is to evaluate the body of the received message with
 JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last
 line of the script.) To return the result, it creates a new message object, encapsulates the result in a string in
-the body property of that object, and passes that object to the onResult callback defined in the original
+the body property of that object, and passes that object to the :ref:`onResult <missing link>` callback defined in the original
 message.
 
 If an error occurs on evaluation, the default ``onReceive`` handler returns the error information using a
 similar mechanism. It creates a new message object, encapsulates the error information in a string in the
-body property of that object, and passes that object to the onError callback defined in the original
+body property of that object, and passes that object to the :ref:`onError <missing link>` callback defined in the original
 message.
 
 To change the default behavior set the ``BridgeTalk.onReceive`` property to a function definition in the
@@ -187,7 +197,7 @@ The result object is transmitted back to the sender if the sender has implemente
 the original message.
 
 Message-handling examples
--------------------------
+*************************
 
 This example shows the default mechanism for handling unsolicited messages received from other
 applications. This simple handler executes the message's data as a script and returns the results of that
@@ -209,6 +219,8 @@ This example shows how you might extend the receive handler to process a new typ
     }
   }
 
+--------------------------------------------------------------------------------
+
 .. _handling-responses-from-the-message-target:
 
 Handling responses from the message target
@@ -228,26 +240,35 @@ argument.
 A response message can be:
 
 - The result of an error in processing the message. This is handled by the onError callback.
+
   If an error occurs in processing the message body (as the result of a JavaScript syntax error, for
   instance), the target application invokes the onError callback, passing a response message that
   contains the error code and error message. If you do not have an onError callback defined, the error is
   completely transparent. It can appear that the message has not been processed, since no result is ever
   returned to the onResult callback.
+
 - A notification of receipt of the message. This is handled by the onReceived callback.
+
   Message sending is asynchronous. Getting a true result from the send method does not guarantee
   that your message was actually received by the target application. If you want to be notified of the
   receipt of your message, define the onReceived callback in the message object. The target sends back
   the original message object to this callback, first replacing the body value with an empty string.
+
 - The result of a time-out. This is handled by the onTimeout callback.
+
   You can specify a number of seconds in a message object's timeout property. If the message is not
   removed from the input queue for processing before the time elapses, it is discarded. If the sender has
   defined an onTimeout callback for the message, the target application sends a time-out message back
   to the sender.
+
 - Intermediate responses. These are handled by the onResult callback.
+
   The script that you send can send back intermediate responses by invoking the original message
   object's sendResult() method. It can send data of any type, but that data is packaged into a body string
   in a new message object, which is passed to your callback. See :ref:`passing-values-between-applications`.
+
 - The final result of processing the message. This is handled by the onResult callback.
+
   When it finishes processing your message, the target application can send back a result of any type. If
   you have sent a script, and the target application is using the default BridgeTalk.onReceive callback
   to process messages, the return value is the final result of evaluating that script. In any case, the return
@@ -258,11 +279,12 @@ The following examples demonstrate how to handle simple responses and multiple r
 integrate error handling with response handling.
 
 Example: Receiving a simple response
-------------------------------------------
+************************************
 
 In this example, an application script asks Adobe Bridge to find out how many files and folders are in a
 certain folder, which the evaluation of the script returns. (The default BridgeTalk.onReceive method
 processes this correctly.)
+
 The ``onResult`` method saves that number in ``fileCountResult``, a script-defined property of the message,
 for later use::
 
@@ -277,7 +299,7 @@ for later use::
   bt.send();
 
 Example: Handling any error
----------------------------
+***************************
 
 In this example, the onError handler re-throws the error message within the sending application::
 
@@ -288,7 +310,7 @@ In this example, the onError handler re-throws the error message within the send
   }
 
 Example: Handling expected errors and responses
------------------------------------------------
+***********************************************
 
 This example creates a message that asks Adobe Bridge to return XMP metadata for a specific file. The
 onResult method processes the data using a script-defined processFileSize function. Any errors are
@@ -311,7 +333,7 @@ is returned to the onError method::
   bt.send();
 
 Example: Setting up a target to send multiple responses
--------------------------------------------------------
+*******************************************************
 
 This example integrates the sending of multiple responses with the evaluation of a message body. It sets
 up a handler for a message such as the one sent in the following example.
@@ -344,7 +366,7 @@ message.body has finished processing its task, it sets a flag to end the while l
   }
 
 Example: Setting up a sender to receive multiple responses
-----------------------------------------------------------
+**********************************************************
 
 This example sends a message of the type iterator, to be handled by the onReceive handler in the
 previous example, and processes the responses received from that target.
@@ -388,6 +410,8 @@ resArr, and processes it immediately using a script-defined function processInte
 
   bt.send();
 
+--------------------------------------------------------------------------------
+
 .. _passing-values-between-applications:
 
 Passing values between applications
@@ -397,7 +421,7 @@ framework, however, packages the response into a response message, and passes an
 the message body, first converting the result to a UTF-8-encoded string.
 
 Passing simple types
---------------------
+********************
 
 When your message object's onResult callback receives a response, it must interpret the string it finds in
 the body of the response message to obtain a result of the correct type. Results of various types can be
@@ -425,13 +449,14 @@ Array    The result string contains a comma delimited list of the elements of th
 =======  =========================================================================================================
 
 Passing complex types
----------------------
+**********************
 
 When returning complex types (arrays and objects), the script that you send must construct a result string,
 using the toSource method to serialize the array or object. In this case, the sender must reconstitute the
 array or object by using the eval method on the result string in the response body.
 
-**Passing an array with toSource and eval**
+Passing an array with toSource and eval
++++++++++++++++++++++++++++++++++++++++
 
 For example, the following code sends a script that returns an array in this way. The onResult callback that
 receives the response uses eval to reconstruct the array::
@@ -460,7 +485,9 @@ receives the response uses eval to reconstruct the array::
   // send the message
   bt.send();
 
-**Passing an object with toSource and eval**
+
+Passing an object with toSource and eval
+++++++++++++++++++++++++++++++++++++++++
 
 This technique is the only way to pass objects between applications. For example, this
 code sends a script that returns an object containing some of the metadata for a
@@ -486,7 +513,9 @@ specific file and defines an onResult callback that receives the object::
   // send the message
   bt.send();
 
-**Passing a DOM object**
+
+Passing a DOM object
+++++++++++++++++++++
 
 You can send a script that returns a DOM object, but the resulting object contains only those properties
 that were accessed within the script. For example, the following script requests the return of the Adobe

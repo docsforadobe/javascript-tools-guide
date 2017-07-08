@@ -16,7 +16,8 @@ class to create a BridgeTalk message object, which encapsulates the message itse
 examples, see :ref:`communicating-through-messages`, and the example code provided with the
 Adobe ExtendScript SDK.
 
-**Example code**
+Example code
+************
 
 The sample code distributed with the Adobe ExtendScript SDK includes these code examples that
 specifically demonstrate the use of interapplication messaging:

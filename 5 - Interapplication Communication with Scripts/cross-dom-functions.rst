@@ -15,13 +15,13 @@ implementation for each installed application by reading its associated startup 
 folder. For example, Adobe Illustrator® CC defines illustrator.open() in the illustrator-14.jsx
 startup script (14 is the version number of the installed application). See :ref:`startup-folder-locations`.
 
-*Example code*
+**Example code**
 
 The sample code distributed with the Adobe ExtendScript SDK includes these code examples that
 specifically demonstrate the use of cross-DOM functions:
 
 ========================  ==========================================================
-Cross-DOM calls
+**Cross-DOM calls**
 ========================  ==========================================================
 OpenImageInPhotoshop.jsx  Shows how to send an image file to be opened in Photoshop.
 ========================  ==========================================================

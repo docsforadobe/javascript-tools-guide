@@ -4,9 +4,15 @@ Defining entry points for indirect access
 =========================================
 The C-client object interface for external libraries allows your C or C++ shared-library code to define,
 create, use, and manage JavaScript objects.
-The following entry points are required if you wish to use the object interface:
 
 --------------------------------------------------------------------------------
+
+.. _indirect-access-entry-points:
+
+Entry Points
+------------
+
+The following entry points are required if you wish to use the object interface:
 
 .. _externalobject-functions-ESClientInterface:
 
@@ -128,7 +134,7 @@ objects. The functions must conform to the following type definitions.
 .. _externalobject-functions-dumpServer:
 
 dumpServer()
-************
+++++++++++++
 ``ESerror_t dumpServer (SoHServer hServer);``
 
 ===========  ===================================================================================
@@ -146,7 +152,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-dumpObject:
 
 dumpObject()
-************
+++++++++++++
 ``ESerror_t dumpObject (SoHObject hObject);``
 
 ===========  ===================================================================================
@@ -163,7 +169,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-addClass:
 
 addClass()
-**********
+++++++++++
 ``ESerror_t addClass (SoHServer hServer, char* name, SoObjectInterface_p pObjectInterface);``
 
 ====================  ===================================================================================
@@ -171,7 +177,7 @@ addClass()
                       :ref:`ESClientInterface() <externalobject-functions-ESClientInterface>` function on initialization.
 ``name``              String. The unique name of the new class. The name must begin with an
                       uppercase alphabetic character.
-``pObjectInterface``  A pointer to an :ref:`SoObjectInterface <mising link>`. A structure containing pointers to the
+``pObjectInterface``  A pointer to an :ref:`shared-library-SoObjectInterface`. A structure containing pointers to the
                       object interface methods for instances of this class.
 ====================  ===================================================================================
 
@@ -184,7 +190,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-addMethod:
 
 addMethod()
-***********
++++++++++++
 ``ESerror_t addMethod (SoHObject hObject, const char* name, int id, char* desc);``
 
 ===========  ===================================================================================
@@ -203,7 +209,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-addMethods:
 
 addMethods()
-************
+++++++++++++
 ``ESerror_t addMethods (SoHObject hObject, SoCClientName_p pNames);``
 
 ============  ===================================================================================
@@ -221,7 +227,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-addProperty:
 
 addProperty()
-*************
++++++++++++++
 ``ESerror_t addProperty (SoHObject hObject, const char* name, int id, char* desc);``
 
 ===========  ===================================================================================
@@ -240,7 +246,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-addProperties:
 
 addProperties()
-***************
++++++++++++++++
 ``ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);``
 
 ============  ===================================================================================
@@ -258,7 +264,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-getClass:
 
 getClass()
-**********
+++++++++++
 ``ESerror_t getClass (SoHObject hObject, char* name, int name_l);``
 
 ===========  ===================================================================================
@@ -276,7 +282,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-getServer:
 
 getServer()
-***********
++++++++++++
 ``ESerror_t getServer (SoHObject hObject, SoHServer* phServer, SoServerInterface_p* ppServerInterface);``
 
 =====================  =================================================================================================
@@ -294,7 +300,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-setClientData:
 
 setClientData()
-***************
++++++++++++++++
 ``ESerror_t setClientData (SoHObject hObject, void* pData);``
 
 ===========  =================================================================================================
@@ -311,7 +317,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-getClientData:
 
 getClientData()
-***************
++++++++++++++++
 ``ESerror_t setClientData (SoHObject hObject, void** pData);``
 
 ===========  =================================================================================================
@@ -328,7 +334,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-eval:
 
 eval()
-******
+++++++
 ``ESerror_t eval (SohServer hServer, char* string, TaggedData* pTaggedData);``
 
 ===============  =================================================================================================
@@ -347,7 +353,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-taggedDataInit:
 
 taggedDataInit()
-****************
+++++++++++++++++
 ``ESerror_t taggedDataInit (SoHSever hServer, TaggedData* pTaggedData);``
 
 ===============  =================================================================================================
@@ -365,7 +371,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-taggedDataFree:
 
 taggedDataFree()
-****************
+++++++++++++++++
 ``ESerror_t setClientData (SoHServer hServer, TaggedData* pTaggedData);``
 
 ===============  =================================================================================================
@@ -407,7 +413,7 @@ All ``SoObjectInterface`` members must be valid function pointers, or NULL. You 
 .. _externalobject-functions-initialize:
 
 initialize()
-************
+++++++++++++
 ``ESerror_t initialize (SoHObject hObject, int argc, TaggedData* argv);``
 
 ===============  =================================================================================================
@@ -430,7 +436,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-put:
 
 put()
-*****
++++++
 ``ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);``
 
 ===============  =================================================================================================
@@ -452,7 +458,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-get:
 
 get()
-*****
++++++
 ``ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);``
 
 ===============  =================================================================================================
@@ -472,7 +478,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-call:
 
 call()
-******
+++++++
 ``ESerror_t call (SoHObject hObject, SoCClientName* name, int argc, TaggedData* argv, TaggedData* pResult);``
 
 ===============  =================================================================================================
@@ -495,7 +501,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-valueOf:
 
 valueOf()
-*********
++++++++++
 ``ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);``
 
 ===============  =================================================================================================
@@ -512,7 +518,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-toString:
 
 toString()
-**********
+++++++++++
 ``ESerror_t toString (SoHObject hObject, TaggedData* pResult);``
 
 ===============  =================================================================================================
@@ -529,7 +535,7 @@ Returns an error code, ``kESErrOK`` on success.
 .. _externalobject-functions-finalize:
 
 finalize()
-**********
+++++++++++
 ``ESerror_t finalize (SoHObject hObject);``
 
 ===============  =================================================================================================
@@ -549,6 +555,7 @@ Returns an error code, ``kESErrOK`` on success.
 
 Support structures
 ------------------
+
 These support structures are passed to functions that you define for your JavaScript interface:
 
 =================  ====================================================================================
@@ -562,7 +569,8 @@ These support structures are passed to functions that you define for your JavaSc
 
 .. _SoCClientName:
 
-**SoCClientName**
+SoCClientName
+*************
 
 The SoCClientName data structure stores identifying information for methods and properties of
 JavaScript objects created by shared-library C/C++ code. It is defined as follows::
@@ -587,7 +595,8 @@ JavaScript objects created by shared-library C/C++ code. It is defined as follow
 
 .. _TaggedData:
 
-**TaggedData**
+TaggedData
+**********
 
 The TaggedData structure is used to communicate data values between JavaScript and shared-library
 C/C++ code. Types are automatically converted as appropriate::

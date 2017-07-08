@@ -25,6 +25,8 @@ should also take advantage of the Automatic layout feature. The layout manager c
 size for each user-interface element based on its localized ``text`` value, automatically adjusting the layout
 of your script-defined dialogs to allow for the varying widths of strings for different languages.
 
+--------------------------------------------------------------------------------
+
 .. _variable-values-in-localized-strings:
 
 Variable values in localized strings
@@ -38,6 +40,8 @@ the result of evaluating an additional argument. For example::
     };
     var date = new Date();
     Window.alert( localize( today, date.getMonth() + 1, date.getDate() ) );
+
+--------------------------------------------------------------------------------
 
 .. _enabling-automatic-localization:
 

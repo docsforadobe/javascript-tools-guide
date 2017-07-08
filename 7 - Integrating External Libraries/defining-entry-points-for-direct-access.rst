@@ -7,6 +7,13 @@ following entry points. These must be exported as C functions, not C++ functions
 
 --------------------------------------------------------------------------------
 
+.. _direct-access-entry-points:
+
+Entry Points
+------------
+
+The following entry points are required if you wish to use an ExternalObject instance:
+
 .. _externalobject-functions-ESInitialize:
 
 ESInitialize()
@@ -74,7 +81,7 @@ run-time error.
 
 Each function must accept the following arguments:
 
-- An array of ``TaggedData``.
+- An array of :ref:`TaggedData`.
 - An argument count.
 - A variant data structure that takes the return value.
 
@@ -84,7 +91,7 @@ The variant data does not support JavaScript objects. The following data types a
 - ``Boolean``
 - ``double``
 - ``string`` - Must be UTF-8 encoded.
-  The library must define an entry point ESFreeMem(), which ExtendScript calls to release a returned
+  The library must define an entry point :ref:`ESFreeMem() <missing link>`, which ExtendScript calls to release a returned
   string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned
   string data.
 - ``Script`` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define
@@ -112,6 +119,7 @@ ExtendScript reflection interface, and to cast function arguments to specific ty
 define a signature for a function in order to make it callable in JavaScript.
 
 Function signatures
+*******************
 
 If you choose to return a set of function name-signature strings, each string associates a function name
 with that function's parameter types, if any. For example::
@@ -144,6 +152,8 @@ The signature strings for these two functions would be ``"One_ds"``, ``"Two"``.
 
 .. note:: You cannot define function overloading by returning multiple different signatures for one function.
   Attempting to do so produces undefined results.
+
+--------------------------------------------------------------------------------
 
 .. _library-termination:
 

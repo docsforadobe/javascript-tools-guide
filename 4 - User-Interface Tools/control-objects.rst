@@ -39,6 +39,8 @@ children of this window or container.
 
 Returns the new object, or ``null`` if unable to create the object.
 
+--------------------------------------------------------------------------------
+
 .. _control-types-and-creation-parameters:
 
 Control types and creation parameters
@@ -663,6 +665,8 @@ To add to a window ``w``::
                              useful for elements defined using :ref:`Resource-specifications`.
 =======================  ======================================================================================
 
+--------------------------------------------------------------------------------
+
 .. _control-object-properties:
 
 Control object properties
@@ -676,7 +680,7 @@ of particular types, as indicated. See Container properties for properties that 
 .. _controlobj-active:
 
 active
-*******
+******
 Type: ``Boolean``
 
 When true, the object is active, false otherwise. Set to true to make a
@@ -1564,6 +1568,8 @@ the parent list's items array.
 
 Returns a Number.
 
+--------------------------------------------------------------------------------
+
 List control object functions
 -----------------------------
 The following table shows the methods defined for list objects only.
@@ -1664,6 +1670,8 @@ if necessary.
 
 Returns ``undefined``.
 
+--------------------------------------------------------------------------------
+
 .. _flashplayer-control-functions:
 
 FlashPlayer control functions
@@ -1708,7 +1716,6 @@ invokePlayerFunction()
             - ``String``
             - ``undefined``
 ==========  ==============================================================================
-
 
 Invokes an ActionScript function defined in the Flash application.
 
@@ -1764,6 +1771,8 @@ Halts playback of the current movie.
 .. note:: Does not work when called from the player's hosting environment.
 
 Returns ``undefined``.
+
+--------------------------------------------------------------------------------
 
 .. _control-event-handling-callbacks:
 
@@ -1893,6 +1902,8 @@ onShortcutKey
 (In Windows only) Called when a shortcut-key sequence is typed that matches the
 :ref:`controlobj-shortcutKey` value for an element in the active window.
 
+--------------------------------------------------------------------------------
+
 .. _drawstate-object:
 
 DrawState object
@@ -1903,7 +1914,7 @@ has the input focus, and the particular mouse button and key-press state.
 There is no object constructor.
 
 DrawState object properties
----------------------------
+***************************
 The object contains the following read-only properties:
 
 =================== =========== ==================================================================

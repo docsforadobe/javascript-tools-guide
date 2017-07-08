@@ -11,7 +11,8 @@ interface that allows your C/C++ code to create and access JavaScript classes an
 
 All Adobe Creative Suite 4 applications support this feature.
 
-**Example code**
+Example code
+++++++++++++
 
 The sample code distributed with the Adobe ExtendScript SDK includes an example that demonstrates
 how write a C/C++ shared library to be integrated with JavaScript. It is in the directory::

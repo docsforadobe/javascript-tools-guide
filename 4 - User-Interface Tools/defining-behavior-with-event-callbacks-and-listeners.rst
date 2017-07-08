@@ -33,6 +33,8 @@ to different actions, or events:
   for most types of controls. To handle the key sequence, define a callback function for
   :ref:`control-event-onshortcutkey` in that control.
 
+--------------------------------------------------------------------------------
+
 .. _defining-event-handler-callback-functions:
 
 Defining event-handler callback functions
@@ -69,6 +71,8 @@ button was clicked::
   cancelBtn.onClick = function() {
     this.parent.parent.close( 2 );
   };
+
+--------------------------------------------------------------------------------
 
 .. _simulating-user-events:
 
@@ -113,6 +117,8 @@ clicked. For example, if the value of a checkbox ``hasBtnsCb`` is true, this cod
   if ( dlg.hasBtnsCb.value == true ) {
     dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now false
   }
+
+--------------------------------------------------------------------------------
 
 .. _registering-event-listeners-for-windows-or-controls:
 
@@ -199,6 +205,8 @@ these differences:
 
 The ScriptUI implementation of W3C keyboard events follows the `W3C DOM level 3 functional
 specification <http://www.w3.org/TR/DOM-Level-3-Events/events.html#Events-KeyboardEvent>`_.
+
+--------------------------------------------------------------------------------
 
 .. _how-registered-event-handlers-are-called:
 

@@ -58,6 +58,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 2 - ExtendScript Toolkit
     - 4 - User-Interface Tools
     - 8 - ExtendScript Tools and Features
+- Replace all "see 'X' on page Y" text with refs
 
 ### How to ###
 

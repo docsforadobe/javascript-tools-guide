@@ -93,9 +93,8 @@ The following encoding names are implemented both in Windows and in Mac OS::
     X-MAC-ICELANDIC
     X-MAC-TURKISH
 
-Additional Windows encoding names:
+Additional Windows encoding names::
 ***********************************
-::
 
     CP437,IBM850,WINDOWS-437
     CP709,WINDOWS-709,ASMO-449,BCONV4
@@ -107,7 +106,8 @@ Additional Windows encoding names:
 
 
 Additional Mac OS encoding names
-***********************************
+********************************
+
 These names are alias names for encodings that Mac OS might know::
 
     TIS-620,TIS620,TIS620-0,TIS620.2529-1,TIS620.2533-0,TIS620.2533-1,ISO-IR-166
@@ -123,6 +123,8 @@ These names are alias names for encodings that Mac OS might know::
     EUC-TW,EUCTW,X-EUC-TW
 
 UNIX encodings
-In UNIX, the File object looks for the presence of the iconv library, and uses whatever encoding it finds
-there. If you need a special encoding in UNIX, make sure that there is an iconv encoding module installed
-that converts between UTF-16 (the internal format that the File object uses) and the desired encoding.
+**************
+
+In UNIX, the ``File`` object looks for the presence of the ``iconv`` library, and uses whatever encoding it finds
+there. If you need a special encoding in UNIX, make sure that there is an ``iconv`` encoding module installed
+that converts between UTF-16 (the internal format that the ``File`` object uses) and the desired encoding.

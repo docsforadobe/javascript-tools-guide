@@ -5,6 +5,8 @@ Folder object
 Represents a file-system folder or directory in a platform-independent manner. All properties and
 methods resolve file system aliases automatically and act on the original file unless otherwise noted.
 
+--------------------------------------------------------------------------------
+
 .. _folder-object-constructors:
 
 Folder object constructors
@@ -31,6 +33,8 @@ partial path names, and returns the new object.
 
 .. warning:: In After Effects on MacOS, if ``path.length`` is more than 1002, After Effects crashes.
   This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
+
+--------------------------------------------------------------------------------
 
 .. _folder-class-properties:
 
@@ -88,6 +92,8 @@ instance to access them.
                           Settings\username\Application Data``)
                         - In Mac OS, ``~/Library/Application Support``
 =============== ======= =========================================================================================
+
+--------------------------------------------------------------------------------
 
 .. _folder-class-functions:
 
@@ -209,6 +215,8 @@ These properties are available for Folder objects.
 ``relativeURI``   String    The path name for the referenced folder in URI notation, relative to the
                             current folder. Read only.
 ================= ========= ==============================================================================================
+
+--------------------------------------------------------------------------------
 
 .. _folder-object-functions:
 

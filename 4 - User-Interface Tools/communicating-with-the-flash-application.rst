@@ -29,6 +29,8 @@ application::
 
   import flash.external.ExternalInterface;
 
+--------------------------------------------------------------------------------
+
 .. _calling-actionscript-functions-from-actionscript:
 
 Calling ExtendScript functions from ActionScript

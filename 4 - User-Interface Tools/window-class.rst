@@ -5,6 +5,8 @@ Window class
 The Window class defines these static properties and functions. Window instances created with new
 Window() do not have these properties and functions defined.
 
+--------------------------------------------------------------------------------
+
 .. _window-class-properties:
 
 Window class properties
@@ -14,6 +16,8 @@ Window class properties
 **frameworkName**   ``String``  Deprecated. Use ScriptUI.frameworkName instead.
 **version**         ``String``  Deprecated. Use ScriptUI.version instead.
 =================== =========== ===============================================
+
+--------------------------------------------------------------------------------
 
 .. _window-class-functions:
 

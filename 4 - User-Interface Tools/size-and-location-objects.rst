@@ -29,6 +29,8 @@ corner of the screen::
 You can access the resulting object as an array with values in the order defined for the type, or as an object
 with the properties supported for the type.
 
+--------------------------------------------------------------------------------
+
 .. _size-and-location-object-types:
 
 Size and location object types

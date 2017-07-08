@@ -6,6 +6,8 @@ The following sections introduce the types of controls you can add to a ``Window
 (``panel`` or ``group``). For details of the properties and functions, and of how to create each type of element,
 see :ref:`control-object-constructors`.
 
+--------------------------------------------------------------------------------
+
 .. _containers:
 
 Containers
@@ -40,6 +42,8 @@ controls.
 **Tab**         A general container whose parent is a TabbedPanel, with a selectable tab showing a
                 localizable text value. Its size and position are determined by the parent.
 =============== ==========================================================================================
+
+--------------------------------------------------------------------------------
 
 .. _user-interface-controls:
 
@@ -284,6 +288,8 @@ application script available to the Flash ActionScript code. See :ref:`calling-a
 The ``title`` property provides an optional label; the :ref:`controlobj-titlelayout` property places the
 label with respect to the player.
 
+--------------------------------------------------------------------------------
+
 .. _displaying-images:
 
 Displaying images
@@ -321,6 +327,8 @@ image, the value of ``preferredSize`` is determined by the dimensions of the ico
 are explicitly set to dimensions smaller than those of the actual image graphic, the displayed image is
 clipped. If they are set to dimensions larger than those of the image graphic, the displayed image is
 centered in the larger space. An image is never scaled to fit the available space.
+
+--------------------------------------------------------------------------------
 
 .. _creating-multi-column-lists:
 
@@ -370,6 +378,8 @@ This creates a control that looks like this:
 Notice that the columns have headers, and the label in the second column of the second row has both text
 and an image.
 
+--------------------------------------------------------------------------------
+
 .. _prompts-and-alerts:
 
 Prompts and alerts
@@ -380,6 +390,8 @@ alert and message boxes displayed by the application. You can often use these st
 interactions with your users, rather than designing special-purpose dialogs of your own.
 Use the static functions ``alert``, ``confirm``, and ``prompt`` on the ``Window`` class to invoke these dialogs with your
 own messages. You do not need to create a Window object to call these functions.
+
+--------------------------------------------------------------------------------
 
 .. _modal-dialogs:
 

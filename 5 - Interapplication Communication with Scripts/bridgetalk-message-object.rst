@@ -8,6 +8,8 @@ body), and the type of data that is sent. The messaging protocol is extensible; 
 types of data for the type property, and to send and receive arbitrary additional information with the
 headers property.
 
+--------------------------------------------------------------------------------
+
 .. _bridgetalk-message-object-constructor:
 
 BridgeTalk message object constructor
@@ -18,6 +20,8 @@ Create a new message object using a simple constructor::
 
 Before you send a message to another application, you must set the target property to the receiving
 application, and the body property to the data message (typically a script) you want to send.
+
+--------------------------------------------------------------------------------
 
 .. _bridgetalk-message-object-properties:
 
@@ -239,6 +243,7 @@ the following form::
   };
 
 --------------------------------------------------------------------------------
+
 
 
 

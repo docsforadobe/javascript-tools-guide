@@ -5,6 +5,8 @@ File object
 Represents a file in the local file system in a platform-independent manner. All properties and methods
 resolve file system aliases automatically and act on the original file unless otherwise noted.
 
+--------------------------------------------------------------------------------
+
 .. _file-object-constructors:
 
 File object constructors
@@ -34,6 +36,8 @@ the encoding is preset to the default system encoding.
 .. warning:: In After Effects on MacOS, if ``path.length`` is more than 1002, After Effects crashes.
   This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
 
+--------------------------------------------------------------------------------
+
 .. _file-class-properties:
 
 File class properties
@@ -44,6 +48,8 @@ access it.
 ====== ====== =======================================================================================
 **fs** String The name of the file system. Read only. One of ``Windows``, ``Macintosh``, or ``Unix``.
 ====== ====== =======================================================================================
+
+--------------------------------------------------------------------------------
 
 .. _file-class-functions:
 
@@ -73,7 +79,6 @@ Decodes the specified string as required by RFC 2396.
 
 Returns the decoded string.
 
-
 .. _file-encode:
 
 encode()
@@ -92,7 +97,6 @@ Special characters are those with a numeric value greater than 127, except the f
     / - _ . ! ~ * ' ( )
 
 Returns the encoded string.
-
 
 .. _file-isEncodingAvailable:
 
@@ -131,7 +135,6 @@ multiple files, and creates new File objects to represent the selected files.
 If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files
 are selected. If the user cancels, returns ``null``.
 
-
 .. _file-saveDialog:
 
 saveDialog()
@@ -152,6 +155,7 @@ location.
 If the user clicks **OK**, returns a File object for the selected file location. If the user cancels, returns
 ``null``.
 
+--------------------------------------------------------------------------------
 
 .. _file-object-properties:
 
@@ -219,8 +223,9 @@ These properties are available for ``File`` objects.
                            If the file does not exist, the value is "????". Read only.
 ================== ======= ==========================================================================================
 
-.. _file-object-functions:
+--------------------------------------------------------------------------------
 
+.. _file-object-functions:
 
 File object functions
 ---------------------

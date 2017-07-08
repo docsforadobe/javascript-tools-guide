@@ -17,6 +17,8 @@ executable file.
 - In Mac OS, the current directory is set to the bundle or framework folder for the library.
 - In Windows and UNIX, the current directory is set to the folder that contains the library.
 
+--------------------------------------------------------------------------------
+
 .. _externalobject-constructor:
 
 ExternalObject constructor

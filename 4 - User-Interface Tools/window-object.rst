@@ -802,99 +802,34 @@ It is an error to call the update() method for a window that is not currently vi
 Window event-handling callbacks
 -------------------------------
 The following callback functions can be defined to respond to events in windows. To respond to an event,
-define a function with the corresponding name in the Window instance. These callbacks are not available
-for other container types (controls of type panel or group).
+define a function with the corresponding name in the ``Window`` instance. These callbacks are not available
+for other container types (controls of type ``panel`` or ``group``).
 
---------------------------------------------------------------------------------
+=================  =========================================================================================
+Callback           Description
+=================  =========================================================================================
+**onActivate**     Called when the user make the window active by clicking it or otherwise making it
+                   the keyboard focus.
+**onClose**        Called when a request is made to close the window, either by an explicit call to the
+                   :ref:`close() <window-object-functions-close>` function or by a user action
+                   (clicking the OS-specific close icon in the title bar).
 
-.. _window-event-onactivate:
-
-onActivate
-**********
-Called when the user make the window active by clicking it or otherwise making it
-the keyboard focus.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onclose:
-
-onClose
-*******
-Called when a request is made to close the window, either by an explicit call to the
-:ref:`close() <window-object-functions-close>` function or by a user action (clicking the OS-specific close icon in the title
-bar).
-
-The function is called before the window actually closes; it can return false to cancel
-the close operation.
-
---------------------------------------------------------------------------------
-
-.. _window-event-ondeactivate:
-
-onDeactivate
-************
-Called when the user makes a previously active window inactive; for instance by
-closing it, or by clicking another window to change the keyboard focus.
-
---------------------------------------------------------------------------------
-
-.. _window-event-ondraw:
-
-onDraw
-******
-Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control's associated :ref:`scriptuigraphics-object` object.
-Handler takes one argument, a :ref:`drawstate-object` object.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onmove:
-
-onMove
-******
-Called when the window has been moved.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onmoving:
-
-onMoving
-********
-Called while a window in being moved, each time the position changes. A handler
-can monitor the move operation.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onresize:
-
-onResize
-********
-Called when the window has been resized.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onresizing:
-
-onResizing
-**********
-Called while a window is being resized, each time the height or width changes. A
-handler can monitor the resize operation.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onshortcutkey:
-
-onShortcutKey
-*************
-(In Windows only) Called when a shortcut-key sequence is typed that matches the
-shortcutKey value for this window.
-
---------------------------------------------------------------------------------
-
-.. _window-event-onshow:
-
-onShow
-******
-Called when a request is made to open the window using the :ref:`show() <window-object-functions-show>` method, before
-the window is made visible, but after automatic layout is complete. A handler can
-modify the results of the automatic layout.
+                   The function is called before the window actually closes; it can return false to cancel
+                   the close operation.
+**onDeactivate**   Called when the user makes a previously active window inactive; for instance by
+                   closing it, or by clicking another window to change the keyboard focus.
+**onDraw**         Called when a container or control is about to be drawn. Allows the script to modify
+                   or control the appearance, using the control's associated :ref:`scriptuigraphics-object` object.
+                   Handler takes one argument, a :ref:`drawstate-object` object.
+**onMove**         Called when the window has been moved.
+**onMoving**       Called while a window in being moved, each time the position changes. A handler
+                   can monitor the move operation.
+**onResize**       Called when the window has been resized.
+**onResizing**     Called while a window is being resized, each time the height or width changes. A
+                   handler can monitor the resize operation.
+**onShortcutKey**  (In Windows only) Called when a shortcut-key sequence is typed that matches the
+                   shortcutKey value for this window.
+**onShow**         Called when a request is made to open the window using the :ref:`show() <window-object-functions-show>` method, before
+                   the window is made visible, but after automatic layout is complete. A handler can
+                   modify the results of the automatic layout.
+=================  =========================================================================================

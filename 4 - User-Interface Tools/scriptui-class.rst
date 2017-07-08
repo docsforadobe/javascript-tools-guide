@@ -5,6 +5,8 @@ ScriptUI class
 The globally available ScriptUI class provides central information about the ScriptUI module. This object
 is not instantiable.
 
+--------------------------------------------------------------------------------
+
 .. _scriptui-class-properties:
 
 ScriptUI class properties

@@ -15,6 +15,8 @@ drawn:
 In addition, the Custom element class (if supported by the Adobe application you are using) allows you to
 define completely customized UI elements that are rendered by the application in a manner you define.
 
+--------------------------------------------------------------------------------
+
 .. _scriptuigraphics-object:
 
 ScriptUIGraphics object
@@ -48,7 +50,13 @@ Contains the enumerated constants for the type argument of newPen(). Types are:
 - ``SOLID_COLOR``
 - ``THEME_COLOR``
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-object-properties:
+
 ScriptUIGraphics object properties
+----------------------------------
+
 The object contains the following properties:
 
 backgroundColor
@@ -102,11 +110,18 @@ Object
 The foreground color for a container, or the parent
 foreground color of a control element. A ScriptUIPen object.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-object-functions:
 
 ScriptUIGraphics object functions
 *********************************
 These functions directly customize the appearance of the associated element by drawing on the screen, or
 create the Pen and Brush objects used to populate the graphics object or pass to the drawing methods:
+
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-closePath:
 
 closePath()
 +++++++++++
@@ -117,6 +132,9 @@ currentPath), which closes the path.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-drawFocusRing:
 
 drawFocusRing()
 +++++++++++++++
@@ -135,6 +153,9 @@ control.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-drawImage:
 
 drawImage()
 +++++++++++
@@ -154,6 +175,9 @@ object that is appropriate to the control's current state.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-drawOSControl:
 
 drawOSControl()
 +++++++++++++++
@@ -163,6 +187,9 @@ Draws the platform-specific control associated with this element.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-drawString:
 
 drawString()
 ++++++++++++
@@ -181,6 +208,9 @@ Draws a string of text starting at a given point, using the given pen and font.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-ellipsePath:
 
 ellipsePath()
 +++++++++++++
@@ -197,6 +227,9 @@ filled using fillPath() or stroked using strokePath().
 
 Returns a Point object for the upper left corner of the area, which is the new currentPoint.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-fillPath:
 
 fillPath()
 ++++++++++
@@ -212,6 +245,9 @@ Fills a path using a given painting brush.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-lineto:
 
 lineto()
 ++++++++
@@ -226,6 +262,9 @@ Adds a path segment to the currentPath, from the currentPoint to the specified p
 
 Returns a Point object for the given destination point, which is the new current position.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-measureString:
 
 measureString()
 +++++++++++++++
@@ -244,6 +283,9 @@ Calculates the size needed to draw a text string in a given font.
 
 Returns a Dimension object containing the height and width of the string in pixels.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-moveto:
 
 moveto()
 ++++++++
@@ -258,6 +300,9 @@ Adds a given point to the currentPath, and makes it the currentPoint.
 
 Returns a Point object for the given destination point, which is the new current position.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-newBrush:
 
 newBrush()
 ++++++++++
@@ -282,6 +327,9 @@ Creates a new painting brush.
 
 Returns a ScriptUIBrush object.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-newPath:
 
 newPath()
 +++++++++
@@ -291,6 +339,9 @@ Creates a new, empty drawing path in currentPath, replacing any existing path.
 
 Returns a ScriptUIPath object.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-newPen:
 
 newPen()
 ++++++++
@@ -317,6 +368,9 @@ Creates a new drawing pen.
 
 Returns a ScriptUIPen object.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-rectPath:
 
 rectPath()
 ++++++++++
@@ -333,6 +387,9 @@ using strokePath().
 
 Returns a Point object for the upper left corner of the rectangle, which is the new currentPoint.
 
+--------------------------------------------------------------------------------
+
+.. _scriptuigraphics-strokePath:
 
 strokePath()
 ++++++++++++
@@ -348,6 +405,7 @@ Strokes the path segments of a path with a given drawing pen.
 
 Returns undefined.
 
+--------------------------------------------------------------------------------
 
 .. _scriptuibrush-object:
 
@@ -358,7 +416,11 @@ with the newBrush() method of the ScriptUIGraphics object.
 Used as a value of backgroundColor and disabledBackgroundColor.
 Passed as an argument to fillPath().
 
+
+.. _scriptuibrush-object-properties:
+
 ScriptUIBrush object properties
+*******************************
 
 The object contains the following properties:
 
@@ -374,6 +436,8 @@ type   Number           The brush type, one of these constants:
                           - ``ScriptUIGraphics.BrushType.THEME_COLOR``
 =====  ===============  ===============================================================================
 
+--------------------------------------------------------------------------------
+
 .. _scriptuifont-object:
 
 ScriptUIFont object
@@ -383,7 +447,11 @@ newFont() method of the ScriptUI class.
 Used as a value of font.
 Passed as an argument to drawString() and measureString().
 
+
+.. _scriptuifont-object-properties:
+
 ScriptUIFont object properties
+******************************
 
 The object contains the following properties:
 
@@ -400,6 +468,8 @@ substitute  String  The name of a substitution font, a fallback font to substitu
                     if the requested font family or style is not available.
 ==========  ======  ============================================================================
 
+--------------------------------------------------------------------------------
+
 .. _scriptuiimage-object:
 
 ScriptUIImage object
@@ -409,12 +479,18 @@ image can reflect the state, such as a dimmed version for a disabled control.
 An object of this type is created automatically when a script uses a pathname or File object to set the
 image property of an Image, IconButton, or ListItem object; the new object becomes the value of that
 property.
+
 You can create this object explicitly using the newImage() method of the ScriptUI class. When you do this,
 you can specify alternate versions of the image to be used for different control states, such as enabled,
 disabled, and rollover.
+
 This object is passed as an argument to drawImage().
 
+
+.. _scriptuiimage-object-properties:
+
 ScriptUIImage object properties
+*******************************
 
 The object contains the following read-only properties:
 
@@ -425,6 +501,8 @@ name      String     The image name, either a file name or resource name.
 pathname  String     The full path to the file that contains the image.
 size      Dimension  A Dimension object that defines the size of the image in pixels.
 ========  =========  ===========================================================================
+
+--------------------------------------------------------------------------------
 
 .. _scriptuipath-object:
 
@@ -438,6 +516,8 @@ Can be passed as an optional argument to fillPath() and strokePath() (which othe
 currentPath).
 The class defines no properties or methods.
 
+--------------------------------------------------------------------------------
+
 .. _scriptuipen-object:
 
 ScriptUIPen object
@@ -447,7 +527,12 @@ with the newPen() method of the ScriptUIGraphics object.
 Used as a value of foregroundColor and disabledForegroundColor.
 Passed as an argument to drawString() and strokePath().
 
+
+.. _scriptuipen-object-properties:
+
 ScriptUIPen object properties
+*****************************
+
 The object contains the following properties:
 
 =========  ===============  ==========================================================================
@@ -462,6 +547,8 @@ type       Number           The pen type, one of these constants:
                               - ``ScriptUIGraphics.PenType.SOLID_COLOR``
                               - ``ScriptUIGraphics.PenType.THEME_COLOR``
 =========  ===============  ==========================================================================
+
+--------------------------------------------------------------------------------
 
 .. _custom-element-class:
 

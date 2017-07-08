@@ -30,17 +30,15 @@ additional XML objects for all contained elements.
 
 .. _xmlCode:
 
-xmlCode
-+++++++
-String or XML
+=======  =============  ========================================================================
+xmlCode  String or XML  A string containing valid XML code, or an existing XML object.
 
-A string containing valid XML code, or an existing XML object.
-
-- If a valid string is supplied, returns a new XML object
-  encapsulating the XML code. If the XML code cannot be parsed,
-  throws a JavaScript error.
-- If an existing object is supplied and the ``new`` operator is used,
-  returns a copy of the object; otherwise, returns the object itself.
+                          - If a valid string is supplied, returns a new XML object
+                            encapsulating the XML code. If the XML code cannot be parsed,
+                            throws a JavaScript error.
+                          - If an existing object is supplied and the ``new`` operator is used,
+                            returns a copy of the object; otherwise, returns the object itself.
+=======  =============  ========================================================================
 
 --------------------------------------------------------------------------------
 

@@ -24,6 +24,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - ~~1 - Introduction~~
     - ~~2 - ExtendScript Toolkit~~
     - ~~3 - File System Access~~
+        - Encoding page needs formatting on the encoding blocks
     - 4 - User-Interface Tools
         - Common Properties
         - Graphic Customization Objects

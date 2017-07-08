@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'jstools'
+project = u'JavaScript Tools Guide CC'
 copyright = u'2016, Adobe Systems Incorporated'
 author = u'Adobe Systems Incorporated'
 

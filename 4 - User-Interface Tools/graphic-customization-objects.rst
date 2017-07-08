@@ -310,8 +310,10 @@ newBrush()
 
 =====  ==========================================================================
 type   The brush type, one of these constants:
+
          - ``ScriptUIGraphics.BrushType.SOLID_COLOR``
          - ``ScriptUIGraphics.BrushType.THEME_COLOR``
+
 color  The brush color. If type is SOLID_COLOR, the color expressed as an array
        of three or four values, in the form ``[R, B, G, A]`` specifying
        the red, green, and blue values of the color and, optionally,
@@ -349,8 +351,10 @@ newPen()
 
 =========  ==========================================================================
 type       The pen type, one of these constants:
+
              - ``ScriptUIGraphics.PenType.SOLID_COLOR``
              - ``ScriptUIGraphics.PenType.THEME_COLOR``
+
 color      The pen color. If type is SOLID_COLOR, the color expressed as an array
            of three or four values, in the form ``[R, B, G, A]`` specifying the
            red, green, and blue values of the color and, optionally, the opacity (alpha channel).
@@ -432,8 +436,10 @@ color  Array of Number  The paint color to use when the type is SOLID_COLOR. An 
 theme  String           The name of a color theme to use as a painting texture
                         when the type is THEME_COLOR. Theme colors are defined by the host application.
 type   Number           The brush type, one of these constants:
+
                           - ``ScriptUIGraphics.BrushType.SOLID_COLOR``
                           - ``ScriptUIGraphics.BrushType.THEME_COLOR``
+
 =====  ===============  ===============================================================================
 
 --------------------------------------------------------------------------------
@@ -460,10 +466,12 @@ family      String  The font family name.
 name        String  The complete font name, consisting of the family and style, if specified.
 size        Number  The font point size.
 style       Object  The font style. One of these constants:
+
                       - ``ScriptUI.FontStyle.REGULAR``
                       - ``ScriptUI.FontStyle.BOLD``
                       - ``ScriptUI.FontStyle.ITALIC``
                       - ``ScriptUI.FontStyle.BOLDITALIC``
+
 substitute  String  The name of a substitution font, a fallback font to substitute for this font
                     if the requested font family or style is not available.
 ==========  ======  ============================================================================
@@ -544,8 +552,10 @@ lineWidth  Number           The pixel width of the drawing line.
 theme      String           The name of a color theme to use for drawing when the type is
                             ``THEME_COLOR``. Theme colors are defined by the host application.
 type       Number           The pen type, one of these constants:
+
                               - ``ScriptUIGraphics.PenType.SOLID_COLOR``
                               - ``ScriptUIGraphics.PenType.THEME_COLOR``
+
 =========  ===============  ==========================================================================
 
 --------------------------------------------------------------------------------
@@ -567,19 +577,23 @@ The Custom element class has the following types of elements:
 customBoundedValue  Can be used to implement controls whose 'value' can vary within minimum
                     and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the
                     same additional properties as those controls:
-                    - ``value``
-                    - ``minvalue``
-                    - ``maxvalue``
-                    - ``shortcutKey``
+
+                      - ``value``
+                      - ``minvalue``
+                      - ``maxvalue``
+                      - ``shortcutKey``
+
                     If the value property is changed, the control receives an onChange event
                     notification, followed by an onDraw event notification, so the element can
                     redraw itself with the changed state.
 customButton        Can be used to implement various types of button controls, like the ``Button``,
                     ``IconButton`` with text, ``Checkbox``, and so on. Additional properties are:
-                    - ``image``
-                    - ``shortcutKey``
-                    - ``text``
-                    - ``value``
+
+                      - ``image``
+                      - ``shortcutKey``
+                      - ``text``
+                      - ``value``
+
 customView          Has an ``image`` property that allows a script to define an image to display.
 
                     If no ``onDraw`` function is defined and the image property is set, the default

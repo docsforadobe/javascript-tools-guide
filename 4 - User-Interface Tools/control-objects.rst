@@ -74,6 +74,7 @@ To add to a window ``w``::
 ``bounds``               Optional. The control's position and size.
 ``text``                 Optional. The text displayed in the control.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control. For a modal dialog, the
                                        special name "ok" makes this :ref:`window-defaultElement`, and the
                                        special name "cancel" makes this the :ref:`window-cancelElement` of the
@@ -100,7 +101,9 @@ To add to a window `w`::
 ``bounds``               Optional. The control's position and size.
 ``text``                 Optional. The text displayed in the control.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -129,10 +132,12 @@ To add to a window ``w``::
 ``creation_properties``  Optional. Supply this argument or the items argument, not both. This form is most useful
                          for elements defined using :ref:`Resource-specifications`.
                          An object that contains the following property:
-                         - ``name``: A unique name for the control.
-                         - ``items``: An array of strings for the text of each list item. A
-                         ``ListItem`` object is created for each item. An item with the
-                         text string ``"-"`` creates a separator item.
+
+                           - ``name``: A unique name for the control.
+                           - ``items``: An array of strings for the text of each list item. A
+                             ``ListItem`` object is created for each item. An item with the
+                             text string ``"-"`` creates a separator item.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -157,6 +162,7 @@ To add to a window ``w``::
 ``bounds``               Optional. The control's position and size.
 ``text``                 Optional. The text displayed in the control.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``readonly``: When false (the default), the control accepts text
                              input. When true, the control does not accept input but only
@@ -184,6 +190,7 @@ To add to a window ``w``::
                              area. When false, no vertical scrollbar appears; if the element
                              contains more text than fits in the visible area, the arrow
                              keys can be used to scroll the text up and down.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -214,7 +221,9 @@ To add to a window ``w``::
 ``bounds``               Optional. The control's position and size.
 ``moveToLoad``           Optional. A path or URL string or :ref:`File-object` for the SWF file to load into the player.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -237,7 +246,9 @@ To add to a window ``w``::
 =======================  ==================================================================
 ``bounds``               Optional. The control's position and size.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ==================================================================
 
 --------------------------------------------------------------------------------
@@ -261,6 +272,7 @@ To add to a window ``w``::
                          icons displayed in the button control, or a pathname or :ref:`File-object`
                          for an image file. Images must be in PNG format.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``style``: A string for the visual style, one of:
                              - ``button``: Has a visible border with a raised or 3D appearance.
@@ -270,6 +282,7 @@ To add to a window ``w``::
                              clicked, and alternate with the unpressed appearance each
                              time it is clicked. The toggle state is reflected in the control's
                              ``value`` property.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -292,7 +305,9 @@ To add to a window ``w``::
                          icons displayed in the button control, or a pathname or :ref:`File-object`
                          for an image file. Images must be in PNG format.
 ``creation_properties``  Optional. An object that contains the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -342,6 +357,7 @@ To add to a window ``w``::
                          A :ref:`listitem` object is created for each item. Supply this argument,
                          or the items property in ``creation_properties``, not both.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``multiselect``: When false (the default), only one item can be
                            - ``selected``. When true, multiple items can be selected.
@@ -361,6 +377,7 @@ To add to a window ``w``::
                              in pixels of each column.
                            - ``columnTitles``: A corresponding array of strings for the title
                              of each column, to be shown if ``showHeaders`` is true.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -387,6 +404,7 @@ To add to a window ``w``::
                          A panel whose height is 0 appears as a horizontal line.
 ``text``                 Optional. The text displayed in the border of the panel.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``borderStyle``: A string that specifies the appearance of the
                              border drawn around the panel. One of ``black``, ``etched``,
@@ -396,6 +414,7 @@ To add to a window ``w``::
                              Photoshop CS. Default is false, meaning that the panel does
                              not adjust the positions of its children, even if the parent
                              window has automatic adjustment enabled.
+
 =======================  ==================================================================
 
 .. _control-type-progressbar:
@@ -424,7 +443,9 @@ To add to a window ``w``::
                          property can be set to. Default is 100. Together with ``minvalue``,
                          defines the range.
 ``creation_properties``  Optional. An object that contains the following property:
+
                            - ``name``: A unique name for the control.
+
 =======================  =======================================================================
 
 --------------------------------------------------------------------------------
@@ -454,7 +475,9 @@ To add to a window ``w``::
 ``bounds``               Optional. The element's position and size.
 ``text``                 Optional. The text displayed in the control.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ==================================================================
 
 --------------------------------------------------------------------------------
@@ -497,7 +520,9 @@ To add to a window ``w``::
                          property can be set to. Default is 100. Together with ``minvalue``,
                          defines the scrolling range.
 ``creation_properties``  Optional. An object that contains the following property:
+
                            - ``name``: A unique name for the control.
+
 =======================  =======================================================================
 
 --------------------------------------------------------------------------------
@@ -531,7 +556,9 @@ To add to a window ``w``::
                          property can be set to. Default is 100. Together with ``minvalue``,
                          defines the range.
 ``creation_properties``  Optional. An object that contains the following property:
+
                            - ``name``: A unique name for the control.
+
 =======================  =======================================================================
 
 --------------------------------------------------------------------------------
@@ -552,6 +579,7 @@ To add to a window ``w``::
 ``bounds``               Optional. The element's position and size.
 ``text``                 Optional. The text displayed in the control.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``multiline``: When false (the default), the control displays a
                              single line of text. When true, the control displays multiple
@@ -566,6 +594,7 @@ To add to a window ``w``::
                              the specified title does not fit within the space reserved for
                              it. If ``none``, and the text does not fit, characters are removed
                              from the end, without any replacement ellipsis character.
+
 =======================  ==================================================================
 
 --------------------------------------------------------------------------------
@@ -595,7 +624,9 @@ To add a tab to a tabbed panel ``t`` in window ``w``::
 ``bounds``               Not used, pass ``undefined``. The size and position is determined by the parent.
 ``text``                 Optional. The text displayed in the tab.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ==================================================================
 
 --------------------------------------------------------------------------------
@@ -630,7 +661,9 @@ To add to a window ``w``::
                          and positions of the tab children.
 ``text``                 Ignored.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
+
 =======================  ==================================================================
 
 --------------------------------------------------------------------------------
@@ -657,12 +690,14 @@ To add to a window ``w``::
                          with the type node can contain child items. Supply this
                          argument, or the ``items`` property in ``creation_properties``, not both.
 ``creation_properties``  Optional. An object that contains any of the following properties:
+
                            - ``name``: A unique name for the control.
                            - ``items``: An array of strings for the text of each top-level list
                              item. A :ref:`listitem` object is created for each item. An item
                              with the type ``node``` can contain child items. Supply this
                              property, or the ``items`` argument, not both. This form is most
                              useful for elements defined using :ref:`Resource-specifications`.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -1416,25 +1451,24 @@ addEventListener()
 ================  =====================================================================================
 ``eventName``     The event name string. Predefined event names include:
 
-                    +-----------+------------+--------------------+
-                    | change    | changing   |                    |
-                    +-----------+------------+--------------------+
-                    | move      | moving     |                    |
-                    +-----------+------------+--------------------+
-                    | resize    | resizing   |                    |
-                    +-----------+------------+--------------------+
-                    | show      | enterKey   |                    |
-                    +-----------+------------+--------------------+
-                    | focus     | blur       |                    |
-                    +-----------+------------+--------------------+
-                    | mousedown | mouseup    |                    |
-                    +-----------+------------+--------------------+
-                    | mousemove | mouseover  | mouseout           |
-                    +-----------+------------+--------------------+
-                    | keyup     | keydown    |                    |
-                    +-----------+------------+--------------------+
-                    | click (detail = 1 for single, 2 for double) |
-                    +-----------+------------+--------------------+
+                    - ``change``
+                    - ``changing``
+                    - ``move``
+                    - ``moving``
+                    - ``resize``
+                    - ``resizing``
+                    - ``show``
+                    - ``enterKey``
+                    - ``focus``
+                    - ``blur``
+                    - ``mousedown``
+                    - ``mouseup``
+                    - ``mousemove``
+                    - ``mouseover``
+                    - ``mouseout``
+                    - ``keyup``
+                    - ``keydown``
+                    - ``click`` (detail = 1 for single, 2 for double)
 
 ``handler``       The function to register for the specified event in this target. This can be the name
                   of a function defined in the extension, or a locally defined handler function to be
@@ -1496,6 +1530,7 @@ notify()
 
 =========  ================================================================
 ``event``  Optional. The name of the control event handler to call. One of:
+
              - ``onClick``
              - ``onChange``
              - ``onChanging``
@@ -1584,9 +1619,11 @@ add()
 
 =========  ============================================================================================
 ``type``   The type of item to add. One of:
+
              - ``item``: A basic, selectable item with a text label.
              - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
                is ignored, and the method returns null.
+
 ``text``   The localizable text label for the item.
 ``index``  Optional. The index into the current item list after which this item is inserted. If not
            supplied, or greater than the current list length, the new item is added at the end.
@@ -1708,13 +1745,15 @@ invokePlayerFunction()
             see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
 ``args``    Optional. One or more arguments to pass through to the function, of
             these types:
-            - ``Array``
-            - ``Boolean``
-            - ``Null``
-            - ``Number``
-            - ``Object``
-            - ``String``
-            - ``undefined``
+
+              - ``Array``
+              - ``Boolean``
+              - ``Null``
+              - ``Number``
+              - ``Object``
+              - ``String``
+              - ``undefined``
+
 ==========  ==============================================================================
 
 Invokes an ActionScript function defined in the Flash application.

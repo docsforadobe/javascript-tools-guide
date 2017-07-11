@@ -61,16 +61,16 @@ except that the ``fill`` value is not allowed.
 
       button.titleLayout = { alignment: ['right', 'center'] };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg
+     :alt: Row orientation: title aligned right
 
 - To achieve a column orientation where the title appears above or below the graphic element, define
   vertical alignment as ``top`` or ``bottom``, and horizontal alignment as ``center``::
 
       image.titleLayout = { alignment: ['center', 'bottom'] };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg
+     :alt: Column orientation: center / bottom alignment
 
 - To achieve a stack orientation where the title appears superimposed upon the graphic element, define
   both vertical and horizontal alignment as ``center``. This orientation is mainly useful with the
@@ -80,8 +80,8 @@ except that the ``fill`` value is not allowed.
       button.title = 'Get information';
       button.titleLayout = { alignment: ['center', 'center'] };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg
+     :alt: Stack orientation: center / center alignment
 
 
 - With row orientation, you can control whether the title aligns to the top, center, or bottom of the
@@ -89,8 +89,8 @@ except that the ``fill`` value is not allowed.
 
       image.titleLayout = { alignment: ['left', 'top'] };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg
+     :alt: Row orientation: top left alignment
 
 - Use ``spacing`` to override the default number of pixels separating the title from the graphic element. In
   this example, titleLayout is configured to place the title 15 pixels above the panel::
@@ -98,8 +98,8 @@ except that the ``fill`` value is not allowed.
       panel.title = 'Image format';
       panel.titleLayout = { alignment: ['center', 'top'], spacing: 15 };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-alignment_column-offset.jpg
+     :alt: Column orientation: title offset by 15px
 
 --------------------------------------------------------------------------------
 
@@ -117,8 +117,8 @@ Title character width and justification
 
         droplist.titleLayout = { alignment: ['left', 'center'], characters: 20 };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg
+     :alt: Wider character width: left justified
 
 - When a ``characters`` value specifies a width greater than the default title width, you can set the
   ``justify`` property to control how the text of the title is justified within the space reserved for it. The
@@ -132,8 +132,8 @@ Title character width and justification
                                characters: 20,
                                justify: 'right' };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg
+     :alt: Wider character width: right justified
 
 - This example demonstrates using ``characters`` and ``justify`` to vertically align the colons at the ends
   of all the dropdownlist control titles in a group. The same ``characters`` value is used for each
@@ -149,8 +149,8 @@ Title character width and justification
     w.ddl3.titleLayout = { alignment: ['left', 'center'], spacing: 3,
                            characters: 16, justify: 'right' };
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_managing-control-titles_title-width-justification_align-titles.jpg
+     :alt: Using characters and justify to align titles
 
 --------------------------------------------------------------------------------
 
@@ -173,8 +173,8 @@ This example demonstrates the effect of all three options on the same title stri
     w.btn2.titleLayout = { characters: 8, truncate: 'end' };
     w.btn3.titleLayout = { characters: 8, truncate: 'none' };
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_managing-control-titles_title-truncation.jpg
+   :alt: Show effect of truncate options
 
 --------------------------------------------------------------------------------
 
@@ -205,5 +205,5 @@ The lists are enclosed in panels to create artificial borders around them::
     w.panel2 = w.add("panel { margins: 0, ddl2: DropDownList { title: 'Extra L/R margins' } }");
     w.panel2.ddl2.titleLayout = { margins: [15, 0, 15, 0] };
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_managing-control-titles_margins-around-title.jpg
+   :alt: Show effect of changing default margins

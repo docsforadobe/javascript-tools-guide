@@ -109,8 +109,14 @@ these values:
 
 The following figure shows the results of laying out the sample window with each of these orientations:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg
+   :alt: Orientation = Row
+
+.. image:: _static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg
+   :alt: Orientation = Column
+
+.. image:: _static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg
+   :alt: Orientation = Stack
 
 --------------------------------------------------------------------------------
 
@@ -177,22 +183,31 @@ Elements in a stack can be aligned along either the vertical or the horizontal a
 The following figure shows the results of creating the sample window with row orientation and the
 ``bottom`` and ``top`` alignment settings in the parent's ``alignChildren`` property:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg
+   :alt: alignChildren = bottom
+
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg
+   :alt: alignChildren = top
 
 The following figure shows the results of creating the sample window with column orientation and the
 right, left, and fill alignment settings in the parent's alignChildren property. Notice how in the
 fill case, each element is made as wide as the widest element in the container:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg
+   :alt: alignChildren = left
+
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg
+   :alt: alignChildren = right
+
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg
+   :alt: alignChildren = fill
 
 You can override the container's child alignment, as specified by ``alignChildren``, by setting the
 alignment property of a particular child element. The following diagram shows the result of setting
 alignment to right for the EditText element, when the parent's ``alignChildren`` value is left:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg
+   :alt: override alignChildren = left
 
 --------------------------------------------------------------------------------
 
@@ -211,15 +226,15 @@ how to specify alignment in two dimensions.
 - In the first, each control is centered vertically within its row, and placed at a specific horizontal
   position, using an alignment value such as ['left', 'center'] for each element:
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg
+     :alt: Horizontal Alignment
 
 - The vertical alignment example creates four columns, and places the controls within each column
   along the vertical axis. It uses alignment values such as ['fill', 'top'] to distribute controls within
   the column, while still controlling the relative vertical positions:
 
-  .. todo::
-      image
+  .. image:: _static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg
+     :alt: Vertical Alignment
 
 --------------------------------------------------------------------------------
 
@@ -235,14 +250,17 @@ container.
 The following figure shows the results of creating the sample window with row orientation and margins of
 5 and 15 pixels:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_margins_margin5.jpg
+   :alt: margins = 5
+
+.. image:: _static/04_user-interface-tools_automatic-layout_margins_margin15.jpg
+   :alt: margins = 15
 
 This figure shows the results of creating the sample window with column orientation, a top margin of 0
 pixels, a bottom margin of 20 pixels, and left and right margins of 15 pixels:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_margins_mixed.jpg
+   :alt: margins = 15,0,15,20
 
 --------------------------------------------------------------------------------
 
@@ -256,14 +274,17 @@ adjacent sibling element.
 This figure shows the results of creating the sample window with row orientation, and spacing of 15 and 5
 pixels, respectively:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg
+   :alt: spacing = 5
+
+.. image:: _static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg
+   :alt: spacing = 15
 
 This figure shows the results of creating the sample window with column orientation, and spacing of 20
 pixels:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg
+   :alt: spacing = 20
 
 --------------------------------------------------------------------------------
 
@@ -339,6 +360,9 @@ row of buttons.
     win.center();
     win.show();
 
+.. image:: _static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg
+   :alt: Unaligned
+
 In this simplest example, the columns are not vertically aligned. When you are using fixed-width controls
 in your rows, a simple way to get an attractive alignment of the StaticText labels for your EditText
 fields is to align the child rows in the Panel to the right of the panel. In the example, add the following to
@@ -348,8 +372,8 @@ the Panel specification::
 
 This creates the following result:
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg
+   :alt: Aligned
 
 Suppose now that you need two panels, and want each panel to have the same width in the dialog. You
 can specify this at the level of the dialog window object, the parent of both panels. Specify
@@ -381,8 +405,8 @@ alignChildren='fill', which makes each child of the dialog match its width to th
     win.center();
     win.show();
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg
+   :alt: Groups
 
 To make the buttons to appear at the right of the dialog, the ``buttons`` group overrides the ``fill`` alignment
 of its parent (the dialog), and specifies ``alignment='right'``.
@@ -403,8 +427,11 @@ a different set of controls in the same space, depending on other choices in the
 
 For example, this dialog changes dynamically according to the user's choice in the ``DropDownList``.
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg
+   :alt: Personal Info
+
+.. image:: _static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg
+   :alt: Work Info
 
 The following script creates this dialog. It compresses the "Personal Info" and "Work Info" panels from the
 previous example into a single ``Panel`` that has two ``Groups`` arranged in a stack. A ``DropDownList`` allows the
@@ -473,8 +500,8 @@ the dialog. (The example also demonstrates the technique for defining a reusable
 This script-defined layout manager positions elements in its container in a stair-step fashion, so that the
 buttons are staggered rather than in a straight line.
 
-.. todo::
-    image
+.. image:: _static/04_user-interface-tools_automatic-layout_custom-layoutmanager-example.jpg
+   :alt: Custom layout-manager example
 
 .. todo::
     Make this example into a separate link? Since it is so long

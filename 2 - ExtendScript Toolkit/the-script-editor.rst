@@ -48,6 +48,9 @@ The Functions panel, and the flyout menu at the top right of the document window
 functions defined in the current document. When you select a function in either list, the document jumps
 directly to that function definition in the code.
 
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_function-finder.png
+   :alt: Function finder
+
 Bookmarks
 *********
 The Edit > Bookmarks menu allows you to set and clear navigation points in your text. The F2 function
@@ -64,14 +67,8 @@ Bookmarks are marked with a blue, right-pointing arrow at the left of the line (
 number if it is shown). This is the same place where a breakpoint is marked with a dot (see :ref:`setting-breakpoints`). If you have both a breakpoint and a bookmark set in the same line, the blue
 arrow is superimposed on the breakpoint dot.
 
-.. todo:: image
-
-line numbers
-bookmark
-collapsible
-code sections
-bookmark and
-breakpoint
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_bookmarks.png
+   :alt: Bookmarks
 
 Mouse navigation and selection
 ******************************
@@ -137,16 +134,15 @@ When you position the cursor in a document and begin typing, the Toolkit offers 
 among keywords, global functions, functions that are defined in the current document, and functions
 defined in the object-model dictionary that is currently selected from the flyout menu.
 
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_coding-aids_code-completion.jpg
+   :alt: Code Completion
+
 You can use the flyout menu at the upper right corner of the document window to choose an
 object-model dictionary to use for completion. Available dictionaries depend on which applications are
 loaded. See :ref:`inspecting-object-models`.
 
-.. todo:: image
-
-flyout menu
-Select object
-model dictionary
-for completion
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_coding-aids_object-model-dictionary.png
+   :alt: Code Completion
 
 Brace matching
 **************
@@ -242,8 +238,14 @@ specific search string or regular expression. You can choose to search in:
 - All scripts made public by the current target application
 - Folders that you have defined as favorite locations; see :ref:`the-scripts-panel-and-favorite-script-locations`.
 
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_search.jpg
+   :alt: Search
+
 The results of a search are listed in the Find Results tab; by default, this is stacked with the Find and Replace
 panel, but you can drag it to another stack, or display it as an independent floating panel.
+
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_find-results.png
+   :alt: Find Results
 
 Double-click a result line in the Find Results panel to jump directly to the document and line where the
 text was found.
@@ -288,9 +290,5 @@ automatically set to match the file extension, or you can choose the language fr
 
 The style of highlighting is configurable, using the Fonts and Colors page of the Preferences dialog.
 
-.. todo:: image
-
-Select language for syntax
-highlighting in Script Editor
-Customize highlighting
-styles in Preferences dialog
+.. image:: _static/02_the-extendscript-toolkit_the-script-editor_syntax-marking.png
+   :alt: Syntax Marking

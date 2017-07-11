@@ -373,7 +373,8 @@ column for the two choices::
 
 This creates a control that looks like this:
 
-.. todo: Image
+.. image:: _static/04_user-interface-tools_types-of-controls_multi-column-lists.jpg
+   :alt: Multi-Column Lists
 
 Notice that the columns have headers, and the label in the second column of the second row has both text
 and an image.

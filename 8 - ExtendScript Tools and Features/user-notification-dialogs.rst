@@ -40,13 +40,24 @@ Returns ``undefined``
 Examples
 ********
 
-.. todo: image
-
 This figure shows simple alert dialogs in Windows and in Mac OS.
 
-.. todo: image
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_alert_win1.jpg
+   :alt: Windows Alert
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_alert_win2.jpg
+   :alt: Windows Alert
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_alert_macos.jpg
+   :alt: MacOS Alert
 
 This figure shows alert dialogs with error icons.
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_alert_win-icon.jpg
+   :alt: Windows Alert w/ Icon
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_alert_macos-icon.jpg
+   :alt: MacOS Alert w/ Icon
 
 --------------------------------------------------------------------------------
 
@@ -75,13 +86,21 @@ Returns ``true`` if the user clicked **Yes**, ``false`` if the user clicked **No
 Examples
 ********
 
-.. todo: image
-
 This figure shows simple confirmation dialogs on Windows and Mac OS.
 
-.. todo: image
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_confirmation_win.jpg
+   :alt: Windows Confirmation
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_confirmation_macos.jpg
+   :alt: MacOS Confirmation
 
 This figure shows confirmation dialogs with No as the default button.
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_confirmation_win-no-default.jpg
+   :alt: Windows Confirmation w/ 'No' as default
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_confirmation_macos-no-default.jpg
+   :alt: MacOS Confirmation w/ 'No' as default
 
 --------------------------------------------------------------------------------
 
@@ -110,10 +129,18 @@ Returns the value of the text edit field if the user clicked **OK**, ``null`` if
 Examples
 ********
 
-.. todo: image
-
 This figure shows simple prompt dialogs on Windows and Mac OS.
 
-.. todo: image
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_prompt_win.jpg
+   :alt: Windows prompt
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_prompt_macos.jpg
+   :alt: MacOS prompt
 
 This figure shows confirmation dialogs with a title value specified.
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_prompt_win-title.jpg
+   :alt: Windows prompt w/ title
+
+.. image:: _static/08_extendscript-tools_user-notification-dialogs_prompt_macos-title.jpg
+   :alt: MacOS prompt w/ title

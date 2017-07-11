@@ -37,10 +37,12 @@ information in the Document Window, line by line. The profiling data is color co
 
 This example shows number-of-hits information:
 
-.. todo:: image
+.. image:: _static/02_the-extendscript-toolkit_code-profiling_number-of-hits.jpg
+   :alt: Number of Hits
 
 This example displays timing information for the program, in microseconds. The timing might not be
 accurate down to the microsecond; it depends on the resolution and accuracy of the hardware timers built
 into your computer.
 
-.. todo:: image
+.. image:: _static/02_the-extendscript-toolkit_code-profiling_timing-info.jpg
+   :alt: Timing Info

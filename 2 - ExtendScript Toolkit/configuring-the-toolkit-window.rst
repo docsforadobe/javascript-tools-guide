@@ -7,12 +7,8 @@ configuration of tabbed panels and Script Editor document windows contained in a
 arrangement is highly configurable, through the Window menu, the context menus of individual panels
 and panel groups, or directly using drag and drop.
 
-.. todo:: image
-
-Document
-windows
-
-Panels
+.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window.png
+   :alt: ExtendScript Toolkit Window
 
 You can, for example, adjust the relative sizes of the panels by dragging the separators up or down, or right
 or left, and can rearrange the groupings. To move a tabbed panel, drag the tab into another pane.
@@ -38,9 +34,8 @@ Panel groups have a context menu, which you invoke with a right click in the tab
 the title bar. These menus have panel-control commands, including Close Panel and Close Group to hide
 the individual panel or entire group.
 
-Right click in top bar for panel-group menu
-
-Panel-specific flyout menu
+.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_panel-menus_panel.png
+   :alt: A Panel
 
 - You can also show or hide specific panels by toggling them on or off in the Window menu. Use the
   Window menu to show a hidden panel, or to bring a floating panel to the front.
@@ -77,9 +72,8 @@ using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences)
 
 A button in the upper right corner of the document window allows you to split that window.
 
-Split document button
-
-Second view of document
+.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png
+   :alt: Split-Document Button
 
 When the window is split, the second window is another view of exactly the same source. Any changes
 you make in the text, breakpoints that you add, and so on, appear simultaneously in both windows. The
@@ -103,7 +97,8 @@ other preferences that have been set in the Preferences dialog.
   upper right corner of the Toolkit. When you choose a workspace, its name appears here. You can also
   add and remove workspaces from this menu.
 
-Current workspace name appears in this space
+.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png
+   :alt: Current Workspace Name
 
 - You can save any configuration as a named workspace, using the Create new Workspace menu
   command, or the Add button on the Workspaces page in the Preferences dialog (Edit > Preferences).

@@ -40,15 +40,17 @@ When you choose the target Favorites, the right-hand list shows the default favo
 any other favorite locations that have been defined. You can create your own list of favorite script locations
 using the flyout menu.
 
-.. todo:: image
-
-flyout menu
+.. image:: _static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_panel.png
+   :alt: Scripts panel
 
 The favorite script locations that you define are also available to the Find and Replace dialog; see
 :ref:`searching-in-text`.
 
 You can also examine and set favorite locations using the Favorites page of the Preferences dialog (Edit >
 Preferences). Use the Add, Modify, and Remove buttons to edit the list of folders.
+
+.. image:: _static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_favourites.jpg
+   :alt: Scripts favourites
 
 Adobe Scripts folder
 ********************

@@ -61,8 +61,6 @@ Using resource strings
 ----------------------
 These examples in the Adobe ExtendScript SDK demonstrate how to use resource specification strings:
 
-.. todo: examples
-
 ======================  ===============================================================================
 AlertBoxBuilder1.jsx    Demonstrates one way to use resource strings, creating a dialog that allows
                         the user to enter some values, and then using those values to construct the
@@ -73,7 +71,8 @@ AlertBoxBuilder2.jsx    Constructs the same dialog, using a resource string (rat
 
 The two Alert Box Builder examples create the same dialog to collect values from the user.
 
-.. todo: image
+.. image:: _static/04_user-interface-tools_defining-behavior_resource-strings.jpg
+   :alt: Resource Strings Window
 
 The Build button event handler builds a resource string from the collected values, and returns it from the
 dialog invocation function; the script then saves the resource string to a file. That resource string can later

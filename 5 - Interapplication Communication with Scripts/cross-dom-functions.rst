@@ -4,7 +4,7 @@ Cross-DOM functions
 ===================
 The cross-DOM is a small application programming interface (API), which provides a set of functions that
 are common across message-enabled applications. These include functions to open files, execute scripts,
-and print files. For details of the function set, see the "Cross-DOM API reference" on page 168.
+and print files. For details of the function set, see :ref:`cross-dom-api-reference`.
 
 You can access cross-DOM functions in any script by prefixing the function name with the namespace
 specifier for the target application (see :ref:`namespace-specifiers`). For example, a Photoshop CC

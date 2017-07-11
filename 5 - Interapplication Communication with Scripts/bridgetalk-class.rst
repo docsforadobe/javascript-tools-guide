@@ -295,7 +295,8 @@ getTargets()
 ===========  =======================================================================================
 
 Retrieves a list of messaging-enabled applications installed on this computer.
-Returns an array of "Application specifiers" on page 191.
+Returns an array of :ref:`application-specifiers`.
+
 If version is supplied, specifiers include the base name plus the version information.
 If locale is supplied, specifiers include the full name, with both version and locale information.
 

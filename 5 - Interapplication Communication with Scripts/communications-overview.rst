@@ -17,8 +17,8 @@ A limited set of basic functions (the cross-DOM) are common across all message-e
 allow your script to, for example, open or print files in other applications, simply by calling the open or
 print function for that application.
 
-"Cross-DOM functions" on page 167 describes the usage of this feature.
-"Cross-DOM API reference" on page 168 provides reference details for the functions of the basic
+:ref:`cross-dom-functions` describes the usage of this feature.
+:ref:`cross-dom-api-reference` provides reference details for the functions of the basic
 cross-DOM.
 
 Each message-enabled application can also export a set of functions to provide a selected set of
@@ -40,8 +40,8 @@ results. Typically the data passed between applications are JavaScript scripts. 
 framework is extensible. It allows you to define different types of data to send between applications, and
 to specify how they are handled.
 
-"Communicating through messages" on page 170 describes the usage of this feature.
-"Messaging framework API reference" on page 179 provides complete reference details.
+:ref:`communicating-through-messages` describes the usage of this feature.
+:ref:`messaging-framework-api-reference` provides complete reference details.
 
 --------------------------------------------------------------------------------
 

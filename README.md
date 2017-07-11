@@ -44,7 +44,7 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - ~~8 - ExtendScript Tools and Features~~
     - ~~9 - Intergrating XML into JavaScript~~
     - ~~10 - Scripting Access to XMP Metadata~~
-- Format tables
+- ~~Format tables~~
     - ~~2 - ExtendScript Toolkit~~
     - ~~3 - File System Access~~
     - ~~4 - User-Interface Tools~~
@@ -55,11 +55,11 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - ~~9 - Intergrating XML into JavaScript~~
     - ~~10 - Scripting Access to XMP Metadata~~
 - ~~Format notes, warnings and tips~~
-- Extract images from the pdf and put into the text files
-    - 2 - ExtendScript Toolkit
-    - 4 - User-Interface Tools
-    - 8 - ExtendScript Tools and Features
-- Replace all "see 'X' on page Y" text with refs
+- ~~Extract images from the pdf and put into the text files~~
+    - ~~2 - ExtendScript Toolkit~~
+    - ~~4 - User-Interface Tools~~
+    - ~~8 - ExtendScript Tools and Features~~
+- ~~Replace all "see 'X' on page Y" text with refs~~
 
 ### How to ###
 

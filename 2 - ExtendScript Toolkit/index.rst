@@ -19,6 +19,6 @@ unless it specifies a particular target application using the #target directive.
 
 .. tip:: When you have completed editing and debugging your JavaScript script, you can choose to save it as
   a binary file (with the extension JSXBIN), using ``File > Export as Binary``. The script loader recognizes both
-  source code and compiled code. Any application can execute a compiled script. If an application
+  source code and compiled code. Photoshop and After Effects can execute compiled scripts. If an application
   recognizes the execution of compiled JavaScript, it lists JSXBIN files along with JSX files in any list of
   available scripts.

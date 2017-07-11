@@ -123,9 +123,16 @@ openDialog()
 ===============  ===================================================================================
 ``prompt``       Optional. A string containing the prompt text, if the dialog allows a prompt.
 ``filter``       Optional. A filter that limits the types of files displayed in the dialog.
+
                    - In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+
+                     .. note::
+                        - Separate expression with a semicolon (``;``) to filter by all these types at once; (show ``jsx`` AND ``all``)
+                        - Separate with a comma (``,``) to populate the filter dropdown, to select one type at a time (show ``jsx`` OR ``all``)
+
                    - In Mac OS, a filter function that takes a File instance and returns true if the file
                      should be included in the display, false if it should not.
+
 ``multiSelect``  Optional. Boolean. When true, the user can select multiple files and the return
                  value is an array. Default is false.
 ===============  ===================================================================================
@@ -147,6 +154,11 @@ saveDialog()
 ``filter``  Optional, in Windows only. A filter that limits the types of files displayed in the
             dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
             Not used in Mac OS.
+
+            .. note::
+               - Separate expression with a semicolon (``;``) to filter by all these types at once; (show ``jsx`` AND ``all``)
+               - Separate with a comma (``,``) to populate the filter dropdown, to select one type at a time (show ``jsx`` OR ``all``)
+
 ==========  ===================================================================================
 
 Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file
@@ -361,6 +373,11 @@ openDlg()
 ``prompt``       Optional. A string containing the prompt text, if the dialog allows a prompt.
 ``filter``       Optional. A filter that limits the types of files displayed in the dialog.
                    - In Windows, a filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
+
+                   .. note::
+                      - Separate expression with a semicolon (``;``) to filter by all these types at once; (show ``jsx`` AND ``all``)
+                      - Separate with a comma (``,``) to populate the filter dropdown, to select one type at a time (show ``jsx`` OR ``all``)
+
                    - In Mac OS, a filter function that takes a File instance and returns true if the file
                      should be included in the display, false if it should not.
 ``multiSelect``  Optional. Boolean. When true, the user can select multiple files and the return value is an array. Default is false.
@@ -465,6 +482,11 @@ saveDlg()
 ``preset``  Optional, in Windows only. A filter that limits the types of files displayed in the
             dialog. A filter expression, such as ``"JavaScript:*.jsx;All files:*.*"``
             Not used in Mac OS.
+
+            .. note::
+               - Separate expression with a semicolon (``;``) to filter by all these types at once; (show ``jsx`` AND ``all``)
+               - separate with a comma (``,``) to populate the filter dropdown, to select one type at a time (show ``jsx`` OR ``all``)
+
 ==========  ===================================================================================
 
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
@@ -485,10 +507,12 @@ seek()
 ``pos``   The new current position in the file as an offset in bytes from the start, current
           position, or end, depending on the mode.
 ``mode``  Optional. The seek mode, one of:
+
             - ``0``: Seek to absolute position, where pos=0 is the first byte of the file. This is the
               default.
             - ``1``: Seek relative to the current position.
             - ``2``: Seek backward from the end of the file.
+
 ========  ==================================================================================
 
 Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the

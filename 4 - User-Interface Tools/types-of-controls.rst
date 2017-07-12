@@ -23,11 +23,11 @@ controls.
                   drawn around the panel.
 
                 You can use panels as separators: those with width of 0 appear as vertical lines and
-                those with height of 0 appear as horizontal lines.
+                those with height of 0 appear as horizontal lines::
 
-                ::
                     var dlg = new Window( "dialog", "Alert Box Builder" );
                     dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );
+
 **Group**       Used to visually organize related controls. Unlike ``Panels``, ``Groups`` have no title or
                 visible border. You can use them to create hierarchies of controls, and for fine control
                 over layout attributes of certain groups of controls within a larger panel. For examples,

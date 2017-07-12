@@ -26,6 +26,8 @@ destination group is highlighted), that group splits to show the panels in a til
 There are predefined configurations, called workspaces, suitable for various uses, and you can save your
 favorite configurations as workspaces. See :ref:`workspaces`.
 
+--------------------------------------------------------------------------------
+
 .. _panel-menus:
 
 Panel menus
@@ -46,6 +48,8 @@ the upper right corner. The JavaScript Console has a right-click menu that allow
 text.
 
 The individual panels are discussed in detail in the following sections.
+
+--------------------------------------------------------------------------------
 
 .. _document-windows:
 
@@ -82,6 +86,8 @@ CTRL-click to split the window, the second appears below the original.
 
 For more information about the document windows and the Script Editor, see :ref:`the-script-editor`.
 
+--------------------------------------------------------------------------------
+
 .. _workspaces:
 
 Workspaces
@@ -111,6 +117,8 @@ other preferences that have been set in the Preferences dialog.
   previous command.
 - You can restore all preferences to their default values by holding the SHIFT key down while the Toolkit
   loads.
+
+--------------------------------------------------------------------------------
 
 .. _dialogs:
 

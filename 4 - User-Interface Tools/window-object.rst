@@ -14,6 +14,7 @@ The constructor creates and returns a new Window object, or null if window creat
 
 =======================  ===================================================================================
 ``type``                 The window type. The value is:
+
                            - ``dialog`` - Creates a modal dialog.
                            - ``palette`` - Creates a modeless dialog, also called a floating palette.
                              (Not supported by Photoshop CC.)
@@ -25,6 +26,7 @@ The constructor creates and returns a new Window object, or null if window creat
 ``title``                Optional. The window title. A localizable string.
 ``bounds``               Optional. The window's position and size.
 ``creation_properties``  Optional. An object that can contain any of these properties:
+
                            - ``resizeable`` - When true, the window can be resized by the user. Default
                              is false.
                            - ``su1PanelCoordinates`` - Photoshop only. When true, the child panels of
@@ -49,6 +51,7 @@ The constructor creates and returns a new Window object, or null if window creat
                              In Mac OS, has no effect. Default is false.
                            - ``borderless`` - When true, the window has no title bar or borders.
                              Properties that control those features are ignored.
+
 =======================  ===================================================================================
 
 --------------------------------------------------------------------------------
@@ -207,18 +210,21 @@ If defined, alignment for a child element overrides the alignChildren setting fo
 For a single string value, allowed values depend on the orientation value.
 
 For ``orientation=row``:
+
   - ``top``
   - ``bottom``
   - ``center`` (default)
   - ``fill``
 
 For ``orientation=column``:
+
   - ``left``
   - ``right``
   - ``center`` (default)
   - ``fill``
 
 For ``orientation=stack``:
+
   - ``top``
   - ``bottom``
   - ``left``
@@ -247,18 +253,21 @@ For a single string value, allowed values depend on the
 ``orientation`` value.
 
 For ``orientation = row``:
+
   - ``top``
   - ``bottom``
   - ``center`` (default)
   - ``fill``
 
 For ``orientation=column``:
+
   - ``left``
   - ``right``
   - ``center`` (default)
   - ``fill``
 
 For ``orientation = stack``:
+
   - ``top``
   - ``bottom``
   - ``left``
@@ -576,6 +585,7 @@ addEventListener()
 
 ================  =================================================================================================
 ``eventName``     The event name string. Predefined event names include:
+
                     - ``change``
                     - ``changing``
                     - ``move``
@@ -592,6 +602,7 @@ addEventListener()
                     - ``mouseover``
                     - ``mouseout``
                     - ``click`` (detail = 1 for single, 2 for double)
+
 ``handler``       The function to register for the specified event in this target. This can be the
                   name of a function defined in the extension, or a locally defined handler
                   function to be executed when the event occurs. A handler function takes one
@@ -700,12 +711,14 @@ notify()
 
 =========  =================================================================
 ``event``  Optional. The name of the window event handler to call. One of:
-             - ``onClose_``
-             - ``onMove_``
-             - ``onMoving_``
-             - ``onResize_``
-             - ``onResizing_``
-             - ``onShow_``
+
+             - ``onClose``
+             - ``onMove``
+             - ``onMoving``
+             - ``onResize``
+             - ``onResizing``
+             - ``onShow``
+
 =========  =================================================================
 
 Sends a notification message, simulating the specified user interaction event. For example, to

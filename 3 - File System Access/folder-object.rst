@@ -50,10 +50,12 @@ instance to access them.
                         - In Windows, the value of ``%APPDATA%`` (by default, ``C:\Documents and
                           Settings\All Users\Application Data``)
                         - In Mac OS, ``/Library/Application Support``
-``appPackage``  String  In Mac OS, the Folder object for the folder that contains the bundle of the
+
+``appPackage``  String  The Folder object for the folder that contains the bundle of the
                         running application. Read only.
 
-                        .. todo:: Note on windows location
+                        - In Windows, for example: ``C:\Program Files (x86)\Adobe\Adobe ExtendScript Toolkit CC\``
+                        - In Mac OS, for example: ``/Applications/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.app``
 
 ``commonFiles`` Folder  A Folder object for the folder that contains files common to all programs.
                         Read only.
@@ -61,17 +63,20 @@ instance to access them.
                         - In Windows, the value of ``%CommonProgramFiles%`` (by default,
                           ``C:\Program Files\Common Files``)
                         - In Mac OS, ``/Library/Application Support``
+
 ``current``     Folder  A Folder object for the current folder. Assign either a Folder object or a
                         string containing the new path name to set the current folder.
 ``desktop``     Folder  A Folder object for the folder that contains the user's desktop. Read only.
 
                         - In Windows, ``C:\Documents and Settings\username\Desktop``
                         - In Mac OS, ``~/Desktop``
+
 ``fs``          String  The name of the file system. Read only. One of ``Windows``, ``Macintosh``, or ``Unix``.
 ``myDocuments`` Folder  A Folder object for the user's default document folder. Read only.
 
                         - In Windows, ``C:\Documents and Settings\username\My Documents``
                         - In Mac OS, ``~/Documents``
+
 ``startup``     Folder  A Folder object for the folder containing the executable image of the running
                         application. Read only.
 ``system``      Folder  A Folder object for the folder containing the operating system files. Read
@@ -79,10 +84,11 @@ instance to access them.
 
                         - In Windows, the value of ``%windir%`` (by default, ``C:\Windows``)
                         - In Mac OS, ``/System``
+
 ``temp``        Folder  A Folder object for the default folder for temporary files. Read only.
 ``trash``       Folder  - In Mac OS, a Folder object for the folder containing deleted items.
                         - In Windows, where the Recycle Bin is a database rather than a folder, value
-                          is null.
+                          is ``null``.
 
                         Read only.
 ``userData``    Folder  A Folder object for the folder that contains application data for the current
@@ -137,6 +143,7 @@ encode()
 Encodes the specified string as required by RFC 2396. All special characters are encoded in UTF-8
 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits.
 For example, the string ``"my file"`` is encoded as ``"my%20file"``.
+
 Special characters are those with a numeric value greater than 127, except the following::
 
     ``/ - _ . ! ~ * ' ( )``
@@ -352,7 +359,7 @@ resolve()
 
 If this object references an alias or shortcut, this method resolves that alias
 
-Returns a new Folder object that references the file-system element to which the alias resolves, or
+Returns a new ``Folder`` object that references the file-system element to which the alias resolves, or
 null if this object does not reference an alias, or if the alias cannot be resolved.
 
 --------------------------------------------------------------------------------

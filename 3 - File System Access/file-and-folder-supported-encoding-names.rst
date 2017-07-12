@@ -13,6 +13,8 @@ surrogate pair (two characters in the range between 0xD700-0xDFFF).
 
 Built-in encodings are:
 
+.. code-block:: none
+
     US-ASCII, ASCII,ISO646-US,I SO-646.IRV:1991, ISO-IR-6,
     ANSI-X3.4-1968,CP367,IBM367,US,ISO646.1991-IRV
     UCS-2,UCS2, ISO-10646-UCS-2
@@ -34,6 +36,8 @@ The ASCII encoder raises errors for characters greater than 127, and the BINARY 
 between bytes and Unicode characters by using the lower 8 bits. The latter encoder is convenient for
 reading and writing binary data.
 
+--------------------------------------------------------------------------------
+
 .. _additional-encodings:
 
 Additional encodings
@@ -50,9 +54,12 @@ Mac OS also knows the Windows code page numbers.
 
 In UNIX, the number of available encoders depends on the installation of the ``iconv`` library.
 
+
 Common encoding names
 *********************
-The following encoding names are implemented both in Windows and in Mac OS::
+The following encoding names are implemented both in Windows and in Mac OS:
+
+.. code-block:: none
 
     UTF-7,UTF7,UNICODE-1-1-UTF-7,X-UNICODE-2-0-UTF-7
     ISO-8859-2,ISO-8859-2,ISO-8859-2:1987,ISO-IR-101,LATIN2
@@ -93,8 +100,11 @@ The following encoding names are implemented both in Windows and in Mac OS::
     X-MAC-ICELANDIC
     X-MAC-TURKISH
 
-Additional Windows encoding names::
+
+Additional Windows encoding names:
 ***********************************
+
+.. code-block:: none
 
     CP437,IBM850,WINDOWS-437
     CP709,WINDOWS-709,ASMO-449,BCONV4
@@ -108,7 +118,9 @@ Additional Windows encoding names::
 Additional Mac OS encoding names
 ********************************
 
-These names are alias names for encodings that Mac OS might know::
+These names are alias names for encodings that Mac OS might know:
+
+.. code-block:: none
 
     TIS-620,TIS620,TIS620-0,TIS620.2529-1,TIS620.2533-0,TIS620.2533-1,ISO-IR-166
     CP874,WINDOWS-874
@@ -121,6 +133,7 @@ These names are alias names for encodings that Mac OS might know::
     KSC-5601,KS-C-5601-1987,KS-C-5601-1989,ISO-IR-149
     EUC-CN,EUCCN,GB2312,CN-GB
     EUC-TW,EUCTW,X-EUC-TW
+
 
 UNIX encodings
 **************

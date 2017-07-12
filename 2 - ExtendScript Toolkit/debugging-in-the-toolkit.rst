@@ -27,17 +27,20 @@ more than one engine can be active, although only one is current. An active engi
 executing code, is halted at a breakpoint, or, having executed all scripts, is waiting to receive events. An
 icon by each engine name indicates whether it is running, halted, or waiting for input:
 
+.. |running| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg
+   :alt: running
 
-======================================================================================================  ===========
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg  running
-   :alt: Running
+.. |halted| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg
+   :alt: halted
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg   halted
-   :alt: Halted
+.. |waiting| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg
+   :alt: waiting
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg  waiting
-   :alt: Waiting
-======================================================================================================  ===========
+=========  ========
+|running|  running
+|halted|   halted
+|waiting|  waiting
+=========  ========
 
 The current engine is the one whose data and state is displayed in the Toolkit's panes. If an application has
 only one engine, its engine becomes current when you select the application as the target. If there is more

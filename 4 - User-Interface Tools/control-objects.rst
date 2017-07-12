@@ -76,9 +76,10 @@ To add to a window ``w``::
 ``creation_properties``  Optional. An object that contains any of the following properties:
 
                            - ``name``: A unique name for the control. For a modal dialog, the
-                                       special name "ok" makes this :ref:`window-defaultElement`, and the
-                                       special name "cancel" makes this the :ref:`window-cancelElement` of the
-                                       parent dialog.
+                             special name "ok" makes this :ref:`window-defaultElement`, and the
+                             special name "cancel" makes this the :ref:`window-cancelElement` of the
+                             parent dialog.
+
 =======================  ======================================================================================
 
 --------------------------------------------------------------------------------
@@ -1046,8 +1047,8 @@ Type: ``Number``
 
 The maximum value that the ``value`` property can have.
 
-If ``maxvalue`` is reset less than ``value``, ``value`` is reset to ``maxvalue``.
-If ``maxvalue`` is reset less than ``minvalue``, ``minvalue`` is reset to ``maxvalue``.
+- If ``maxvalue`` is reset less than ``value``, ``value`` is reset to ``maxvalue``.
+- If ``maxvalue`` is reset less than ``minvalue``, ``minvalue`` is reset to ``maxvalue``.
 
 --------------------------------------------------------------------------------
 
@@ -1059,8 +1060,8 @@ Type: ``Number``
 
 The minimum value that the ``value`` property can have.
 
-If ``minvalue`` is reset greater than ``value``, ``value`` is reset to ``minvalue``.
-If ``minvalue`` is reset greater than ``maxvalue``, ``maxvalue`` is reset to ``minvalue``.
+- If ``minvalue`` is reset greater than ``value``, ``value`` is reset to ``minvalue``.
+- If ``minvalue`` is reset greater than ``maxvalue``, ``maxvalue`` is reset to ``minvalue``.
 
 --------------------------------------------------------------------------------
 
@@ -1663,11 +1664,9 @@ remove()
 ``containerObj.remove(text)``
 ``containerObj.remove(child)``
 
-=========  ====================================================================================================
-``index``  The item or child to remove, specified by 0-based index, ``text`` value, or as a ``control`` object.
-``text``
-``child``
-=========  ====================================================================================================
+==============================  ====================================================================================================
+``index``, ``text``, ``child``  The item or child to remove, specified by 0-based index, ``text`` value, or as a ``control`` object.
+==============================  ====================================================================================================
 
 For containers (:ref:`control-type-panel`, :ref:`control-type-group`), removes the specified child control from
 the container's ``children`` array.

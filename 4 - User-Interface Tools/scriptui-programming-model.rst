@@ -179,8 +179,10 @@ are only needed once. For these element types, you can supply an optional creati
 argument to the add method. This argument is an object with one or more properties that control aspects
 of the element's appearance, or special functions such as whether an edit text element is editable or Read
 only. See :ref:`control-object-constructors` for details.
+
 You can also specify the creation properties for new objects using the resource specification format; for
 details, see :ref:`resource-specifications`.
+
 All user-interface elements have an optional creation property called name, which assigns a name for
 identifying that element. For example, the following creates a new Button element with the name ok::
 

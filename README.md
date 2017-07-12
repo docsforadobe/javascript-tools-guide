@@ -20,11 +20,10 @@ This project uses reStructuredText for a reference on how to write reStructuredT
 - ~~Format h1 and h2 headers in each section~~
 - ~~Split each section into files~~
 - ~~Convert 'see something on page' to links~~
-- Format text into **bold**, *italics*, `code`, headers, bullet lists, and paragraphs.
+- Format text into **bold**, *italics*, `code`, ~~headers~~ , ~~bullet lists~~ , and ~~paragraphs~~ .
     - ~~1 - Introduction~~
     - ~~2 - ExtendScript Toolkit~~
     - ~~3 - File System Access~~
-        - Encoding page needs formatting on the encoding blocks
     - 4 - User-Interface Tools
         - Common Properties
         - Graphic Customization Objects
@@ -34,11 +33,11 @@ This project uses reStructuredText for a reference on how to write reStructuredT
     - 8 - ExtendScript Tools and Features
     - 9 - Intergrating XML into JavaScript
     - 10 - Scripting Access to XMP Metadata
-- Format code examples
-    - 2 - ExtendScript Toolkit
-    - 3 - File System Access
-    - 4 - User-Interface Tools
-    - 5 - Interapplication Communictation with Scripts
+- ~~Format code examples~~
+    - ~~2 - ExtendScript Toolkit~~
+    - ~~3 - File System Access~~
+    - ~~4 - User-Interface Tools~~
+    - ~~5 - Interapplication Communictation with Scripts~~
     - ~~6 - External Communication Tools~~
     - ~~7 - Intergrating External Libraries~~
     - ~~8 - ExtendScript Tools and Features~~

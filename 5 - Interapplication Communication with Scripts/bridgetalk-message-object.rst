@@ -64,6 +64,7 @@ headers are name/value pairs, and can be accessed with the JavaScript dot
 notation (``msgObj.headers.propName``), or bracket notation
 (``msgObj.headers[propName]``). If the header name conforms to JavaScript symbol
 syntax, use the dot notation. If not, use the bracket notation.
+
 The predefined header ``["Error-Code"]`` is used to return error messages to a
 sender; see :ref:`messaging-error-codes`.
 
@@ -115,7 +116,7 @@ The number of seconds before the message times out.
 
 If a message has not been removed from the input queue for processing before
 this time elapses, the message is discarded. If the sender has defined an
-onTimeout callback for the message, the target application sends a time-out
+:ref:`bridgetalk-message-object-ontimeout` callback for the message, the target application sends a time-out
 message back to the sender.
 
 Read/write.
@@ -149,8 +150,6 @@ BridgeTalk message object callbacks
 -----------------------------------
 
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
-
---------------------------------------------------------------------------------
 
 .. _bridgetalk-message-object-onerror:
 
@@ -218,7 +217,7 @@ To handle the response, set this to a function definition in the following form:
   };
 
 The target passes a new message object, with the body property set to the result string.
-This is the result of the target application's static ``BridgeTalk`` ``onReceive_`` method,
+This is the result of the target application's static BridgeTalk :ref:`bridgetalk-onreceive` method,
 packaged as a UTF-8-encoded string. See :ref:`passing-values-between-applications`.
 
 --------------------------------------------------------------------------------

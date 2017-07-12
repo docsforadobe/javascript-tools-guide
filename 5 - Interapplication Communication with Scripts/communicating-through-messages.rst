@@ -8,9 +8,11 @@ general mechanism for communication between applications. A messaging-enabled ap
 launch another messaging-enabled application, and send or receive scripts to effect certain actions. For
 example, from within Adobe Bridge, a script can launch Photoshop, and then send a script to Photoshop
 that requests a photomerge operation.
+
 While the exported functions allow specific access to certain capabilities of the application, the script in an
 interapplication message allows full access to the target application's document object model (DOM), in
 addition to all cross-DOM and application exported functions.
+
 The messaging API defines the BridgeTalk class, whose globally available static properties and functions
 provide access to environmental information relevant for communication between applications. You can
 instantiate this class to create a BridgeTalk message object, which encapsulates a message and allows you
@@ -56,11 +58,12 @@ example defines a message script that accesses the Adobe Bridge DOM to request t
 folders found in a specific folder::
 
   // create a new BridgeTalk message object
-
   var bt = new BridgeTalk;
+
   // send this msg to the Adobe Bridge CS4 application
   var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
   bt.target = targetApp;
+
   // the script to evaluate is contained in a string in the "body" property
   bt.body = "new Document('C:\\BridgeScripts');
   app.document.target.children.length;"
@@ -75,6 +78,7 @@ by defining the :ref:`bridgetalk-message-object-onresult` callback in the messag
 .. note:: The message callbacks are optional, and are not implemented by all message-enabled applications.
   The response to a message is, by default, the result of evaluation of the script contained in that message's
   body property. The target application might define some different kind of response; see :ref:`receiving-messages`.
+
   When the target has finished processing this message, it looks for an onResult callback in the message
   object it received. If it is found, the target automatically invokes it, passing it the response. The response is
   packaged into a string, which is in turn packaged into the body property of a new message object. That
@@ -114,20 +118,25 @@ The complete script looks like this::
 
   // script to be executed in Photoshop CS4
   #target "photoshop-11.0"
-  // check that the target app is installed
 
+  // check that the target app is installed
   var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
+
   if( targetApp ) {
     // construct a message object
     var bt = new BridgeTalk;
+
     // the message is intended for Adobe Bridge CS4
     bt.target = targetApp;
+
     // the script to evaluate is contained in a string in the "body" property
     bt.body = "new Document('C:\\BridgeScripts');
     app.document.target.children.length;"
+
     // define result handler callback
     bt.onResult = function(returnBtObj) {
     processResult(returnBtObj.body); } //fn defined elsewhere
+
     // send the message asynchronously
     bt.send();
   }
@@ -239,41 +248,32 @@ argument.
 
 A response message can be:
 
-- The result of an error in processing the message. This is handled by the onError callback.
-
-  If an error occurs in processing the message body (as the result of a JavaScript syntax error, for
-  instance), the target application invokes the onError callback, passing a response message that
-  contains the error code and error message. If you do not have an onError callback defined, the error is
-  completely transparent. It can appear that the message has not been processed, since no result is ever
-  returned to the onResult callback.
-
-- A notification of receipt of the message. This is handled by the onReceived callback.
-
-  Message sending is asynchronous. Getting a true result from the send method does not guarantee
-  that your message was actually received by the target application. If you want to be notified of the
-  receipt of your message, define the onReceived callback in the message object. The target sends back
-  the original message object to this callback, first replacing the body value with an empty string.
-
-- The result of a time-out. This is handled by the onTimeout callback.
-
-  You can specify a number of seconds in a message object's timeout property. If the message is not
-  removed from the input queue for processing before the time elapses, it is discarded. If the sender has
-  defined an onTimeout callback for the message, the target application sends a time-out message back
-  to the sender.
-
-- Intermediate responses. These are handled by the onResult callback.
-
-  The script that you send can send back intermediate responses by invoking the original message
-  object's sendResult() method. It can send data of any type, but that data is packaged into a body string
-  in a new message object, which is passed to your callback. See :ref:`passing-values-between-applications`.
-
-- The final result of processing the message. This is handled by the onResult callback.
-
-  When it finishes processing your message, the target application can send back a result of any type. If
-  you have sent a script, and the target application is using the default BridgeTalk.onReceive callback
-  to process messages, the return value is the final result of evaluating that script. In any case, the return
-  value is packaged into a body string in a new message object, which is passed to your callback. See
-  :ref:`passing-values-between-applications`.
+- The result of an error in processing the message. This is handled by the :ref:`bridgetalk-message-object-onerror` callback.
+    If an error occurs in processing the message body (as the result of a JavaScript syntax error, for
+    instance), the target application invokes the :ref:`bridgetalk-message-object-onerror` callback, passing a response message that
+    contains the error code and error message. If you do not have an :ref:`bridgetalk-message-object-onerror` callback defined, the error is
+    completely transparent. It can appear that the message has not been processed, since no result is ever
+    returned to the :ref:`bridgetalk-message-object-onresult` callback.
+- A notification of receipt of the message. This is handled by the :ref:`bridgetalk-message-object-onreceived` callback.
+    Message sending is asynchronous. Getting a true result from the send method does not guarantee
+    that your message was actually received by the target application. If you want to be notified of the
+    receipt of your message, define the :ref:`bridgetalk-message-object-onreceived` callback in the message object. The target sends back
+    the original message object to this callback, first replacing the body value with an empty string.
+- The result of a time-out. This is handled by the :ref:`bridgetalk-message-object-ontimeout` callback.
+    You can specify a number of seconds in a message object's :ref:`bridgetalk-message-object-timeout` property. If the message is not
+    removed from the input queue for processing before the time elapses, it is discarded. If the sender has
+    defined an :ref:`bridgetalk-message-object-ontimeout` callback for the message, the target application sends a time-out message back
+    to the sender.
+- Intermediate responses. These are handled by the :ref:`bridgetalk-message-object-onresult` callback.
+    The script that you send can send back intermediate responses by invoking the original message
+    object's :ref:`bridgetalk-message-object-sendresult` method. It can send data of any type, but that data is packaged into a body string
+    in a new message object, which is passed to your callback. See :ref:`passing-values-between-applications`.
+- The final result of processing the message. This is handled by the :ref:`bridgetalk-message-object-onresult` callback.
+    When it finishes processing your message, the target application can send back a result of any type. If
+    you have sent a script, and the target application is using the default BridgeTalk :ref:`bridgetalk-onreceive` callback
+    to process messages, the return value is the final result of evaluating that script. In any case, the return
+    value is packaged into a body string in a new message object, which is passed to your callback. See
+    :ref:`passing-values-between-applications`.
 
 The following examples demonstrate how to handle simple responses and multiple responses, and how to
 integrate error handling with response handling.

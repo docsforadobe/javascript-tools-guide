@@ -367,7 +367,7 @@ UTF-8). If everything fails, the encoding property is set to the system encoding
 
 openDlg()
 *********
-``fileObj.OpenDlg( [prompt][,filter][,multiSelect] )``
+``fileObj.openDlg( [prompt][,filter][,multiSelect] )``
 
 ===============  ====================================================================================================================
 ``prompt``       Optional. A string containing the prompt text, if the dialog allows a prompt.

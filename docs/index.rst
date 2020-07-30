@@ -11,6 +11,14 @@ Welcome to The Javascript Tools Guide
 
 .. toctree::
     :maxdepth: 2
+    :caption: The VS Code ExtendScript Debugger
+
+    vscode-debugger/index
+    vscode-debugger/getting-started-with-vscode-debugger
+    vscode-debugger/vscode-extension-features
+
+.. toctree::
+    :maxdepth: 2
     :caption: The ExtendScript Toolkit
 
     extendscript-toolkit/index

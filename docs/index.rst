@@ -127,9 +127,3 @@ Welcome to The Javascript Tools Guide
     scripting-xmp/index
     scripting-xmp/accessing-the-xmp-scripting-api
     scripting-xmp/xmpscript-object-reference
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Porting Guide
-
-    porting-guide/index

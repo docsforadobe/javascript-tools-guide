@@ -19,4 +19,4 @@ and features:
 ExtendScript also provides a common scripting environment for all Adobe JavaScript-enabled
 applications, and allows interapplication communication through scripts.
 
-For information on these features, see Chapter 5, :ref:`interapplication-communication-with-scripts`.
+For information on these features, see :ref:`interapplication-communication-with-scripts`.

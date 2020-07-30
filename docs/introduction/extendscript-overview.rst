@@ -34,14 +34,14 @@ Development and debugging tools
 -------------------------------
 For help in developing, debugging, and testing scripts, Adobe provides the ExtendScript Toolkit, an
 interactive development and testing environment for ExtendScript, which is installed with all
-JavaScript-enabled applications. For complete details, see Chapter 2, :ref:`the-extendscript-toolkit`.
+JavaScript-enabled applications. For complete details, see :ref:`the-extendscript-toolkit`.
 
 ExtendScript also provides global objects that support development and debugging:
 
 - A global debugging object, the Dollar ($) object.
 - A reporting utility for ExtendScript elements, the ExtendScript reflection interface.
 
-For complete details, see Chapter 8, :ref:`extendscript-tools-and-features`.
+For complete details, see :ref:`extendscript-tools-and-features`.
 
 .. _cross-platform-file-system-access:
 
@@ -50,7 +50,7 @@ Cross-platform file-system access
 Adobe ExtendScript defines File and Folder classes that simplify cross-platform file-system access. These
 classes are available to all applications that support a JavaScript interface.
 
-For complete details, see Chapter 3, :ref:`file-system-access`.
+For complete details, see :ref:`file-system-access`.
 
 .. _user-interface-development-tools:
 
@@ -59,7 +59,7 @@ User-interface development tools
 Adobe provides the ScriptUI module, which works with the ExtendScript JavaScript interpreter to provide
 JavaScript scripts with the ability to create and interact with user interface elements. It provides an object
 model for windows and user-interface control elements within an Adobe application. For complete details,
-see Chapter 4, :ref:`user-interface-tools`.
+see :ref:`user-interface-tools`.
 In addition, ExtendScript provides:
 
 - Global functions for localization of display strings; see :ref:`localizing-extendscript-strings`
@@ -82,7 +82,7 @@ Different levels of communication are provided through the cross-DOM and the mes
   framework is extensible. It allows you to define different types of data to send between applications,
   and to specify how they are handled.
 
-For complete details, see Chapter 5, :ref:`interapplication-communication-with-scripts`.
+For complete details, see :ref:`interapplication-communication-with-scripts`.
 
 .. _external-communication:
 
@@ -91,7 +91,7 @@ External communication
 ExtendScript offers tools for communicating with other computers or the internet using standard
 protocols. The Socket object supports low-level TCP connections.
 
-For complete details, see Chapter 6, :ref:`external-communication-tools`.
+For complete details, see :ref:`external-communication-tools`.
 
 .. _external-shared-library-integration:
 
@@ -101,7 +101,7 @@ You can extend the JavaScript DOM for an application by writing a C or C++ share
 the platform you are using, and loading it into JavaScript as an ExternalObject instance. A shared library
 is implemented by a DLL in Windows, a bundle or framework in Mac OS, or a SharedObject in UNIX.
 
-For complete details, see Chapter 7, :ref:`integrating-external-libraries`.
+For complete details, see :ref:`integrating-external-libraries`.
 
 .. _additional-utilities-and-features:
 
@@ -114,8 +114,8 @@ ExtendScript provides these utilities and features:
     - Support for extending or overriding math and logical operator behavior on a class-by-class basis.
       See :ref:`operator-overloading`.
 
-    For complete details, see Chapter 8, :ref:`extendscript-tools-and-features`.
-- JavaScript compilation, through the ExtendScript Toolkit. See Chapter 2, :ref:`the-extendscript-toolkit`.
+    For complete details, see :ref:`extendscript-tools-and-features`.
+- JavaScript compilation, through the ExtendScript Toolkit. See :ref:`the-extendscript-toolkit`.
 - XML integration: ExtendScript defines the XML object, which allows you to process XML with your
-- JavaScript scripts. For complete details, see Chapter 9, :ref:`integrating-xml-into-javascript`.
+- JavaScript scripts. For complete details, see :ref:`integrating-xml-into-javascript`.
 - Scripting support for XMP metadata manipulation: XMPScript provides a JavaScript API for the Adobe

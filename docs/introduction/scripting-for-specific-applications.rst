@@ -35,7 +35,7 @@ can do this using the ```BridgeTalk.getSpecifier()`` static function. For exampl
         }
     }
 
-For details of interapplication communication, see Chapter 5, :ref:`interapplication-communication-with-scripts`.
+For details of interapplication communication, see :ref:`interapplication-communication-with-scripts`.
 
 .. _javascript-variables:
 

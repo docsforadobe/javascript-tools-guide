@@ -1,109 +1,57 @@
-# README #
+# README
 
-### What is this repository for? ###
+## What is this repository for?
 
-This is the repo for converting The Javascript Tools Guide pdf into a readthedocs.io doc.
+Repo hosting the Javascript Tools Guide RST docs, linked into a http://readthedocs.io system hosted at http://estk.aenhancers.com
 
-[WIP can be seen here](http://javascript-tools-guide.readthedocs.io/en/latest/)
+----
 
-### Contributing ###
+## Contributing ###
 
-Contributions are very appreciated! Just pick any of the uncompleted todos below. If you start working on a todo, edit this file and put your name beside the todo so people know what is being worked on, and don't do unnecessary work.
-This project uses reStructuredText for a reference on how to write reStructuredText check out this [quickref](http://docutils.sourceforge.net/docs/user/rst/quickref.html).
+Contributors are welcome and encouraged to suggest fixes, adjustments, notes/warnings, and anything else that may help the project.
 
-### To do ###
+This project uses reStructuredText. For a reference on how to write reStructuredText check out this [quickref](http://docutils.sourceforge.net/docs/user/rst/quickref.html).
 
-- ~~pdf to text~~
-- ~~Split into sections~~
-- ~~Remove page headers~~
-    - There might be some left over, so if you see something seems like it shouldn't be there, it probably shouldn't
-- ~~Format h1 and h2 headers in each section~~
-- ~~Split each section into files~~
-- ~~Convert 'see something on page' to links~~
-- Format text into **bold**, *italics*, `code`, ~~headers~~ , ~~bullet lists~~ , and ~~paragraphs~~ .
-    - ~~1 - Introduction~~
-    - ~~2 - ExtendScript Toolkit~~
-    - ~~3 - File System Access~~
-    - 4 - User-Interface Tools
-        - Common Properties
-        - Graphic Customization Objects
-    - 5 - Interapplication Communictation with Scripts
-    - 6 - External Communication Tools
-    - 7 - Intergrating External Libraries
-    - 8 - ExtendScript Tools and Features
-    - 9 - Intergrating XML into JavaScript
-    - 10 - Scripting Access to XMP Metadata
-- ~~Format code examples~~
-    - ~~2 - ExtendScript Toolkit~~
-    - ~~3 - File System Access~~
-    - ~~4 - User-Interface Tools~~
-    - ~~5 - Interapplication Communictation with Scripts~~
-    - ~~6 - External Communication Tools~~
-    - ~~7 - Intergrating External Libraries~~
-    - ~~8 - ExtendScript Tools and Features~~
-    - ~~9 - Intergrating XML into JavaScript~~
-    - ~~10 - Scripting Access to XMP Metadata~~
-- ~~Format tables~~
-    - ~~2 - ExtendScript Toolkit~~
-    - ~~3 - File System Access~~
-    - ~~4 - User-Interface Tools~~
-    - ~~5 - Interapplication Communication with Scripts~~
-    - ~~6 - External Communication Tools~~
-    - ~~7 - Intergrating External Libraries~~
-    - ~~8 - ExtendScript Tools and Features~~
-    - ~~9 - Intergrating XML into JavaScript~~
-    - ~~10 - Scripting Access to XMP Metadata~~
-- ~~Format notes, warnings and tips~~
-- ~~Extract images from the pdf and put into the text files~~
-    - ~~2 - ExtendScript Toolkit~~
-    - ~~4 - User-Interface Tools~~
-    - ~~8 - ExtendScript Tools and Features~~
-- ~~Replace all "see 'X' on page Y" text with refs~~
+----
 
-### How to ###
+## Build HTML Locally
 
-#### Text
+You may want to build the HTML locally before pushing, in order to ensure that the result is what you'd expect. These files aren't included in the git repo, nor are they used online; this is solely to create a local, offline version of the online docs.
 
-```
-**bold**, *italics*, ``code``
-```
+- Install ``Python 2.7``
+- Install ``pip``
+- Navigate to the project directory and use the command ``pip install -r requirements.txt``
+- Build the docs using ``make html``
 
-#### Headers
+----
 
-```
-H1. line must be at least as long as text
-=========================================
+## Admonitions Usage
 
-h2
---
 
-h3
-**
+Currently, the following `admonitions <http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions>`_ are in use in this project. Try to keep one piece of data per note, for easier parsing.
 
-h4
-++
-```
+	.. note::
+		Notes detail version added, and/or relevant pieces of information.
 
-#### Bullet lists
+	.. tip::
+		Tips supply helpful suggestions on usage or behaviours.
 
-```
-- Bullet point lists must start with one empty line above
-  - Indented bullet points are indented with 2 spaces
-  - very long bullet point that goes over multiple lines
-    have the additional lines indented one more level
-- Bullet point
-```
+	.. warning::
+		Warnings convey negative behaviours, or when something won't work the way you'd expect.
 
-#### Paragraphs
+----
 
-```
+## Adding undocumented attributes or methods
 
-New paragraphs starts with an empty line above.
-If there are no empty line above. The line will be added to the end of the previous line.
+If you find attributes or methods that are not mentioned in this documentation, and they are not publically announced by Adobe, please add this warning to attribute/method so the user knows to use it at their own risk.
 
-Correct way to start a new paragraph.
+	.. warning::
+	  	This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 
-Header
-======
-Paragraphs can start directly underneath headers, an empty line is not needed in that case.
-```
+----
+
+## Licensing & Ownership
+
+This project exists for educational purposes only.
+
+All content is copyright Adobe Systems Incorporated.

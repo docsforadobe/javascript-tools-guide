@@ -233,7 +233,7 @@ keyIdentifier
 Type: ``String``
 
 The key whose keypress generated the event, as a W3C identifier
-contained in a string; for example, ``"U+0044"``. See :ref:`W3 Keyset Article <https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/keyset.html>`.
+contained in a string; for example, ``"U+0044"``. See `W3 Keyset Article <https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/keyset.html>`_.
 
 --------------------------------------------------------------------------------
 

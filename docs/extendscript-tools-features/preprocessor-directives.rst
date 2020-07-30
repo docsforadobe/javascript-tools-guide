@@ -4,10 +4,12 @@ Preprocessor directives
 =======================
 
 ExtendScript provides preprocessor directives for including external scripts, naming scripts, specifying a
-JavaScript engine, and setting certain flags. Specify these with a C-style statement starting with the #
-character::
+JavaScript engine, and setting certain flags.
+
+Specify these with either a C-style statement starting with the # character, or a comment followed by @::
 
     #include "file.jsxinc"
+    //@include "file.jsxinc"
 
 When a directive takes one or more arguments, and an argument contains any nonalphanumeric
 characters, the argument must be enclosed in single or double quotes. This is generally the case with
@@ -26,6 +28,7 @@ As a convention, use the file extension .jsxinc for JavaScript include files. Fo
 example::
 
     #include "../include/lib.jsxinc"
+    //@include "../include/file.jsxinc"
 
 To set one or more paths for the #include statement to scan, use the ``#includepath``
 preprocessor directive.
@@ -49,6 +52,8 @@ For example::
 
     #includepath "include;../include"
     #include "file.jsxinc"
+    //@includepath "include;../include"
+    //@include "file.jsxinc"
 
 Multiple ``#includepath`` statements are allowed; the list of paths changes each time
 an ``#includepath`` statement is executed.

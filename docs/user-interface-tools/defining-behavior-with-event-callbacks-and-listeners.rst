@@ -179,11 +179,8 @@ onActivate          focus
 onDeactivate        blur
 =================== =====================
 
-.. todo::
-    Fix broken w3 links.
-
 In addition, ScriptUI implements all types of W3C events according to the `W3C DOM level 3 functional
-specification <http://www.w3.org/TR/DOM-Level-3-Events/events.html>`_, with these modifications and
+specification <https://www.w3.org/TR/uievents/>`_, with these modifications and
 exceptions:
 
 - ScriptUI does not implement the ``hasFeature()`` method of the ``DOMImplementation`` interface; there
@@ -195,7 +192,7 @@ exceptions:
   ``initMouseEventNS``).
 
 The ScriptUI implementation of W3C mouse events follows the `W3C DOM level 3 functional specification
-<http://www.w3.org/TR/DOM-Level-3-Events/events.html#Events-eventgroupings-mouseevents>`_, with
+<https://www.w3.org/TR/uievents/#mouseevent>`_, with
 these differences:
 
 - To create a ``MouseEvent`` instance, call ``ScriptUI.events.createEvent( "MouseEvent" )``, rather than
@@ -203,7 +200,7 @@ these differences:
 - The ``getModifierState`` method of the ``MouseEvent`` interface is not supported.
 
 The ScriptUI implementation of W3C keyboard events follows the `W3C DOM level 3 functional
-specification <http://www.w3.org/TR/DOM-Level-3-Events/events.html#Events-KeyboardEvent>`_.
+specification <https://www.w3.org/TR/uievents/#keyboardevent>`_.
 
 --------------------------------------------------------------------------------
 

@@ -58,6 +58,7 @@ Welcome to The Javascript Tools Guide
     user-interface-tools/localization-in-scriptui-objects
     user-interface-tools/scriptui-object-reference
     user-interface-tools/scriptui-class
+    user-interface-tools/environment
     user-interface-tools/common-properties
     user-interface-tools/window-class
     user-interface-tools/window-object

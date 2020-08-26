@@ -7,7 +7,7 @@ Several helper classes provide low-level event-handling capabilities.
 - Event objects are normally created by ScriptUI and passed to your event handler. However, you can
   simulate a user action by constructing an event object using :ref:`ScriptUI-events-createEvent`,
   and sending it to a target object's `controlobj-dispatchEvent` function.
-- A helper object, :ref:`Keyboard-state-object`, provides global access to the keyboard state during function
+- A helper object, :ref:`environment-keyboard-state`, provides global access to the keyboard state during function
   execution, outside the event-handling framework.
 
 --------------------------------------------------------------------------------
@@ -300,6 +300,10 @@ getModifierState()
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
+.. note::
+
+  If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see :ref:`environment-keyboard-state`.
+
 --------------------------------------------------------------------------------
 
 .. _keyboardevent-object-initKeyboardEvent:
@@ -528,33 +532,3 @@ Reinitializes the object, allowing you to change the event properties after cons
 set the corresponding properties.
 
 Returns ``undefined``.
-
---------------------------------------------------------------------------------
-
-.. _keyboard-state-object:
-
-Keyboard state object
----------------------
-This JavaScript object reports the active state of the keyboard at any time; that is, the current key that is
-down and any modifiers that are pressed. It is independent of the event-handling system, and is available
-through the :ref:`ScriptUI-environment` object::
-
-  myKeyState = ScriptUI.environment.keyboardState;
-
-The object has the following properties:
-
-keyName
-*******
-Type: ``String``
-
-The name of the key currently pressed. This is the JavaScript name, a
-string such as ``"A"`` or ``"a"``.
-
---------------------------------------------------------------------------------
-
-shiftKey, ctrlKey, altKey, metaKey
-**********************************
-Type: ``Boolean``
-
-True if the named modifier key is currently active.
-

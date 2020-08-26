@@ -85,6 +85,8 @@ environment; contains a Keyboard state object that reports the active
 state of the keyboard at any time, independent of the event-handling
 framework.
 
+See: :ref:`environment-object` for more information.
+
 --------------------------------------------------------------------------------
 
 .. _scriptui-events:
@@ -226,19 +228,3 @@ Creates a new image object for use in controls that can display images, loading 
 images from the specified resources or image files.
 
 Returns a :ref:`ScriptUIImage-object`.
-
---------------------------------------------------------------------------------
-
-.. _environment-object:
-
-Environment object
-------------------
-This global object is available through the :ref:`ScriptUI.environment <scriptui-environment>` property. It defines attributes of the
-ScriptUI environment. In the current release, it contains one property:
-
-keyboardState
-*************
-``Object``
-
-A :ref:`Keyboard-state-object` that reports the active state of the keyboard at
-any time, independent of the event-handling framework.

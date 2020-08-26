@@ -25,6 +25,3 @@ provide additional tools for other users.
     - JavaScript: The Definitive Guide, David Flanagan, O'Reily Media Inc, 2002. ISBN 0-596-00048-0
     - JavaScript Bible, Danny Goodman, Hungry Minds Inc, 2001. ISBN 0-7645-4718-6
     - Adobe Scripting, Chandler McWilliams, Wiley Publishing, Inc., 2003. ISBN 0-7645-2455-0
-
-.. note:: Check for updated versions of this document at Adobe Developer Center,
-  http://www.adobe.com/devnet/scripting.

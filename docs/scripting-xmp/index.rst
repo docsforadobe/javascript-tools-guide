@@ -7,8 +7,7 @@ libraries. This chapter provides reference information for the JavaScript object
 properties and methods.
 
 This chapter is not intended to provide complete details of the XMP metadata technology. For more
-information about XMP metadata, see the XMP Specification at Adobe Developer Center,
-http://www.adobe.com/devnet/.
+information about XMP metadata, see the `XMP Specification at Adobe Developer Center <https://www.adobe.com/devnet/xmp.html>`_.
 
 Adobe Bridge CS5 makes the XMP library available in its libraries folder. Scripts must load the library at run
 time to use the API; it is not automatically loaded when Adobe Bridge launches. The XMPScript API is

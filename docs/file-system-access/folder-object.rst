@@ -47,8 +47,7 @@ instance to access them.
 ``appData``     Folder  A Folder object for the folder that contains application data for all users. Read
                         only.
 
-                        - In Windows, the value of ``%APPDATA%`` (by default, ``C:\Documents and
-                          Settings\All Users\Application Data``)
+                        - In Windows, the value of ``%PROGRAMDATA%`` (by default, ``C:\ProgramData``)
                         - In Mac OS, ``/Library/Application Support``
 
 ``appPackage``  String  The Folder object for the folder that contains the bundle of the
@@ -94,8 +93,7 @@ instance to access them.
 ``userData``    Folder  A Folder object for the folder that contains application data for the current
                         user. Read only.
 
-                        - In Windows, the value of %USERDATA% (by default, ``C:\Documents and
-                          Settings\username\Application Data``)
+                        - In Windows, the value of %APPDATA% (by default, ``C:\Users\[username]\Appdata\Roaming``)
                         - In Mac OS, ``~/Library/Application Support``
 =============== ======= =========================================================================================
 

@@ -67,13 +67,13 @@ instance to access them.
                         string containing the new path name to set the current folder.
 ``desktop``     Folder  A Folder object for the folder that contains the user's desktop. Read only.
 
-                        - In Windows, ``C:\Documents and Settings\username\Desktop``
+                        - In Windows, ``C:\Users\[username]\Desktop``
                         - In Mac OS, ``~/Desktop``
 
 ``fs``          String  The name of the file system. Read only. One of ``Windows``, ``Macintosh``, or ``Unix``.
 ``myDocuments`` Folder  A Folder object for the user's default document folder. Read only.
 
-                        - In Windows, ``C:\Documents and Settings\username\My Documents``
+                        - In Windows, ``C:\Users\[username]\Documents``
                         - In Mac OS, ``~/Documents``
 
 ``startup``     Folder  A Folder object for the folder containing the executable image of the running

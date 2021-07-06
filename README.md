@@ -2,7 +2,7 @@
 
 ## What is this repository for?
 
-Repo hosting the Javascript Tools Guide RST docs, linked into a http://readthedocs.io system hosted at http://estk.aenhancers.com
+Repo hosting the Javascript Tools Guide RST docs, linked into a http://readthedocs.io system hosted at https://extendscript.docsforadobe.dev/
 
 ----
 
@@ -28,7 +28,7 @@ You may want to build the HTML locally before pushing, in order to ensure that t
 ## Admonitions Usage
 
 
-Currently, the following `admonitions <http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions>`_ are in use in this project. Try to keep one piece of data per note, for easier parsing.
+Currently, the following [admonitions](http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions) are in use in this project. Try to keep one piece of data per note, for easier parsing.
 
 	.. note::
 		Notes detail version added, and/or relevant pieces of information.

@@ -23,10 +23,16 @@ communication. This book refers to these samples by name for illustration of con
 
 You can download the SDK from Adobe Developer Center, http://www.adobe.com/devnet/scripting/.
 
+ESTK 3.8 is included with CS6, while ES3.5 is available as a standalone download:
+
+- Windows: http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.zip
+
+- MacOS: http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.dmg
+
 The samples are located under the ExtendScript SDK root directory:
 
 - ``SDKroot/Samples/javascript/``: sample scripts
-- ``SDKroot/Samples//javascript/resources/``: resources, such as image or flash files
+- ``SDKroot/Samples/resources/``: resources, such as image or flash files
 
 .. _development-and-debugging-tools:
 

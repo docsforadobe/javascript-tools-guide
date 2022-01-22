@@ -25,9 +25,9 @@ You can download the SDK from Adobe Developer Center, http://www.adobe.com/devne
 
 ESTK 3.8 is included with CS6, while ES3.5 is available as a standalone download:
 
-- Windows: http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.zip
+- Windows: `AdobeExtendScriptToolkit3.5.0-mul.zip <http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.zip>`_ (`mirror <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_)
 
-- MacOS: http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.dmg
+- MacOS: `AdobeExtendScriptToolkit3.5.0-mul.dmg <http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.dmg>`_ (`mirror <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_)
 
 The samples are located under the ExtendScript SDK root directory:
 

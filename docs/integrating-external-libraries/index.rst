@@ -14,7 +14,7 @@ All Adobe Creative Suite 4 applications support this feature.
 Example code
 ++++++++++++
 
-The sample code distributed with the Adobe ExtendScript SDK includes an example that demonstrates
+The sample code distributed with the `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_ includes an example that demonstrates
 how write a C/C++ shared library to be integrated with JavaScript. It is in the directory::
 
     sdkInstall/sdksamples/cpp/

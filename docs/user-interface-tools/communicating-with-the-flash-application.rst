@@ -84,15 +84,14 @@ This registers a function defined in your Adobe application script named ``getAc
 
 Flash Examples
 **************
-These examples in the Adobe ExtendScript SDK demonstrate how to use the Flash Player:
+These examples in the `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_ demonstrate how to use the Flash Player:
 
 .. todo::
     Examples
 
-======================= ====================================================================
-UsingFlashPlayer.jsx    Shows how to create a Flash Player, and use it to load a play back a
-                        movie defined in an SWF file.
-ActionScriptDemo.jsx    Shows how to communicate between the Adobe application scripting
-                        environment and the ActionScript scripting environment of the Flash
-                        Player.
-======================= ====================================================================
+.. list-table::
+
+  * - `UsingFlashPlayer.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx>`_
+    - Shows how to create a Flash® Player, and use it to load a play back a movie defined in an SWF file.
+  * - `ActionScriptDemo.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ActionScriptDemo.jsx>`_
+    - Shows how to communicate between the Adobe application scripting environment and the ActionScript™ scripting environment of the Flash Player.

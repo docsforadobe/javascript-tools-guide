@@ -31,16 +31,16 @@ To make the background of a window light gray, you could use this code::
     myBrush = g.newBrush( g.BrushType.SOLID_COLOR, [ 0.75, 0.75, 0.75, 1 ] );
     g.backgroundColor = myBrush;
 
-These examples in the Adobe ExtendScript SDK demonstrates how to use graphic customization objects:
+These examples in the `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_ demonstrates how to use graphic customization objects:
 
 .. todo: Examples
 
-=================== ==================================================================================
-ColorSelector.jsx   Uses graphic objects to change the background color of a window as the user
-                    selects the color value with a slider.
-ColorPicker.jsx     A more complex version of the color-selection dialog shows how to use
-                    additional graphics objects, including fonts and paths.
-=================== ==================================================================================
+.. list-table::
+
+  * - `ColorSelector.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorSelector.jsx>`_
+    - Uses graphic objects to change the background color of a window as the user selects the color value with a slider.
+  * - `ColorPicker.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ColorPicker.jsx>`_
+    - A more complex version of the color-selection dialog shows how to use additional graphics objects, including fonts and paths.
 
 In addition, the :ref:`custom-element-class` allows you to define completely customized elements of several
 types (ranges, buttons, lists), whose appearance is rendered entirely by your :ref:`control-event-ondraw` implementation.

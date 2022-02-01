@@ -17,14 +17,15 @@ startup script (14 is the version number of the installed application). See :ref
 
 **Example code**
 
-The sample code distributed with the Adobe ExtendScript SDK includes these code examples that
+The sample code distributed with the `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_ includes these code examples that
 specifically demonstrate the use of cross-DOM functions:
+ 
+.. list-table::
 
-========================  ==========================================================
-**Cross-DOM calls**
-========================  ==========================================================
-OpenImageInPhotoshop.jsx  Shows how to send an image file to be opened in Photoshop.
-========================  ==========================================================
+  * - **Cross-DOM calls**
+    -
+  * - `OpenImageInPhotoshop.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/OpenImageInPhotoshop.jsx>`_
+    - Shows how to send an image file to be opened in Photoshop.
 
 --------------------------------------------------------------------------------
 

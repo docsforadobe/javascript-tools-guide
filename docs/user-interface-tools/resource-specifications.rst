@@ -59,15 +59,14 @@ A property value can be specified as ``null``, true, false, a string, a number, 
 
 Using resource strings
 ----------------------
-These examples in the Adobe ExtendScript SDK demonstrate how to use resource specification strings:
+These examples in the `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_ demonstrate how to use resource specification strings:
 
-======================  ===============================================================================
-AlertBoxBuilder1.jsx    Demonstrates one way to use resource strings, creating a dialog that allows
-                        the user to enter some values, and then using those values to construct the
-                        resource string for a customizable alert dialog.
-AlertBoxBuilder2.jsx    Constructs the same dialog, using a resource string (rather than the ``add()``
-                        method) to specify all of the dialog contents for the user-input dialog.
-======================  ===============================================================================
+.. list-table::
+    
+  * - `AlertBoxBuilder1.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder1.jsx>`_
+    - Demonstrates one way to use resource strings, creating a dialog that allows the user to enter some values, and then using those values to construct the resource string for a customizable alert dialog.
+  * - `AlertBoxBuilder2.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/AlertBoxBuilder2.jsx>`_
+    - Constructs the same dialog, using a resource string (rather than the ``add()`` method) to specify all of the dialog contents for the user-input dialog.
 
 The two Alert Box Builder examples create the same dialog to collect values from the user.
 

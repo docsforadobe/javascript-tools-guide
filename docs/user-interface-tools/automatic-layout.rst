@@ -220,7 +220,7 @@ is the horizontal alignment and the second is the vertical alignment. This allow
 horizontal placement of children in a container with row orientation, and the vertical placement of
 children in a container with column orientation.
 
-The following figures show the results of the sample script SnpAlignElements.jsx, that demonstrates
+The following figures show the results of the sample script `SnpAlignElements.jsx <https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpAlignElements.jsx>`_, that demonstrates
 how to specify alignment in two dimensions.
 
 - In the first, each control is centered vertically within its row, and placed at a specific horizontal

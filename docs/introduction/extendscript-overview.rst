@@ -17,17 +17,11 @@ JavaScript-enabled Adobe applications.
 
 Example code
 ------------
-The Adobe ExtendScript SDK, which contains this document, also contains a set of code samples that
+The `Adobe ExtendScript SDK <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_, which contains this document, also contains a set of code samples that
 demonstrate how to use features of ScriptUI, interapplication communication, and external
 communication. This book refers to these samples by name for illustration of concepts and techniques.
 
-You can download the SDK from Adobe Developer Center, http://www.adobe.com/devnet/scripting/.
-
-ESTK 3.8 is included with CS6, while ES3.5 is available as a standalone download:
-
-- Windows: `AdobeExtendScriptToolkit3.5.0-mul.zip <http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.zip>`_ (`mirror <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_)
-
-- MacOS: `AdobeExtendScriptToolkit3.5.0-mul.dmg <http://download.adobe.com/pub/adobe/devnet/scripting/estk/AdobeExtendScriptToolkit3.5.0-mul.dmg>`_ (`mirror <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_)
+You can download the latest (and last) SDK from `Github <https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit>`_. Earlier versions might still be accessible through `direct links <https://github.com/aenhancers/javascript-tools-guide/issues/2#issuecomment-1019312237>`_.
 
 The samples are located under the ExtendScript SDK root directory:
 
@@ -40,7 +34,9 @@ Development and debugging tools
 -------------------------------
 For help in developing, debugging, and testing scripts, Adobe provides the ExtendScript Toolkit, an
 interactive development and testing environment for ExtendScript, which is installed with all
-JavaScript-enabled applications. For complete details, see :ref:`the-extendscript-toolkit`.
+JavaScript-enabled applications. 
+
+For complete details, see :ref:`the-extendscript-toolkit`.
 
 ExtendScript also provides global objects that support development and debugging:
 

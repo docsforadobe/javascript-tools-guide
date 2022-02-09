@@ -16,7 +16,10 @@ def setup(app):
 
 extensions = [
   'sphinx.ext.todo',
+  'sphinx_rtd_dark_mode'
 ]
+
+default_dark_mode = False
 
 templates_path = ['_templates']
 

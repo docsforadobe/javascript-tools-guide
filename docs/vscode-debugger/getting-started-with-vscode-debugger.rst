@@ -57,42 +57,19 @@ In your project directory:
   - paste in the following code
     ::
 
-      {
+    {
         "version": "0.2.0",
-        "configurations": [
-          {
-            "type": "extendscript-debug",
-            "request": "launch",
-            "name": "Run Current Script",
-            "program": "${file}",
-            "stopOnEntry": false,
-            "excludes": [
-              "undefined",
-              "builtin",
-              // "Function",
-              "prototype"
-            ],
-          }
+        "configurations": [ 
+            {
+                "type": "extendscript-debug",
+                "request": "attach",
+                "name": "extendScript-Debug attach",
+            }
         ]
-      }
+    }
 
-  - this will let you run the debugger on the *currently open file*
-  - it also keeps functions included in the default object browser during breakpoints, which are otherwise excluded
-
-If you wanted to run a task on a specific file, not necessarily the currently-open one, you'd replace the `program` entry with something like:
-
-  - For a specific script::
-
-    "${workspaceFolder}/path/to/my/script.jsx"
-
-  - To be prompted for the filename / path to a jsx folder::
-
-    "${workspaceFolder}/${command:AskForScriptName}"
-
---------------------------------------------------------------------------------
-
-.. _attaching-the-debugger:
-
+This creates a config for VSCode's debugger that attaches to the host app of your choice.
+ 
 Attaching the debugger
 ----------------------
 
@@ -100,8 +77,10 @@ Once the extension is installed:
 
 - Open a JS workspace
 - Launch your Adobe app of choice
-- At the bottom of your VS Code window, at the far right of the status bar, you should see 'Select the target application' glowing yellow
-- Click this and pick the application you want to debug for
+- Select the run and Debug tab from the sidebar or hit Ctrl+Shift+D, then in the drop-down menu choose "extendScript-Debug attach"
+- Choose the host app from the drop-down that appears
+
+The bottom Status bar will turn orange indicating that the debugger is now attached to the host app. You can use the debug console to evaluate commands and query variables, even if a script is not running.
 
 --------------------------------------------------------------------------------
 
@@ -112,7 +91,7 @@ Running the debugger
 
 Once you've set up your environment and built your script:
 
-- In VS Code, Debug > Start Debugging > 'Run Current Script' (or the task name you specified in :ref:`creating-a-debug-launch-task`
+- Click on the status bar button labelled "▷ Eval in `host app name`" to launch the current script, or use the command pallette and choose `ExtendScript - Evaluate Script In Attached Host`.
 - If the script throws any errors, you'll be able to view variables & a call stack
 
 .. note::

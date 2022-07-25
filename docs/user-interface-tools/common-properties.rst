@@ -53,7 +53,7 @@ size            x       x      x            x    x      x       x         x     
 spacing         x       x      x            x    x
 stepdelta                                                                                                                                                                      x
 subitems                                                                                                                                   x
-text            x       x      x            x           x       x         x             x                                                  x         x            x                       x       x
+text            x       x      x            x           x       x         x             x                      x                           x         x            x                       x       x
 textselection                                                             x             x
 title                                                                                                          x
 titleLayout                    x                                          x                       x            x           x

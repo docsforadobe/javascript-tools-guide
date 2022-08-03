@@ -143,6 +143,53 @@ To add to a window ``w``::
 
 --------------------------------------------------------------------------------
 
+.. _control-type-editnumber:
+
+editnumber
+**********
+Class Name: ``EditNumber``
+
+An editable text field the user can enter decimal numbers into. Fractions are allowed.
+Calls the :ref:`control-event-onchange` callback if the text is changed and the user types
+``ENTER`` or the control loses focus, or if its :ref:`controlobj-notify` method is called.
+Calls the :ref:`control-event-onchanging` callback when any change is made to the text.
+The ``textselection`` property contains currently selected text.
+
+To add to a window ``w``::
+
+  w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}]);
+
+=======================  ======================================================================================
+``bounds``               Optional. The control's position and size.
+``text``                 Optional. The text displayed in the control.
+``minValue``             Optional. Minimum accepted value of number to be entered.
+``maxValue``             Optional. Maximum accepted value of number to be entered.
+``creation_properties``  Optional. An object that contains any of the following properties:
+
+                           - ``name``: A unique name for the control.
+                           - ``readonly``: When false (the default), the control accepts text
+                             input. When true, the control does not accept input but only
+                             displays the contents of the ``text`` property.
+                           - ``noecho``: When false (the default), the control displays input
+                             text. When true, the control does not display input text
+                             (used for password input fields).
+                           - ``enterKeySignalsOnChange``: When false (the default), the
+                             control signals an :ref:`control-event-onchange` event when the editable text is
+                             changed and the control loses the keyboard focus (that is,
+                             the user tabs to another control, clicks outside the control, or
+                             types ``ENTER``). When true, the control only signals an
+                             ``onChange`` event when the editable text is changed and the
+                             user types ``ENTER``; other changes to the keyboard focus do
+                             not signal the event.
+                           - ``borderless``: When true, the control is drawn with no
+                             border. Default is false.
+
+=======================  ======================================================================================
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
+
+--------------------------------------------------------------------------------
+
 .. _control-type-edittext:
 
 edittext
@@ -796,7 +843,8 @@ characters
 Type: ``Number``
 
 Used by the :ref:`LayoutManager-object` to determine the default
-:ref:`controlobj-preferredSize` for a :ref:`StaticText` or :ref:`EditText` control. The control will be made wide enough to display the given number of `X` characters in
+:ref:`controlobj-preferredSize` for a :ref:`StaticText` or :ref:`EditText` control.
+The control will be made wide enough to display the given number of `X` characters in
 the font used by the control. Setting this property is the best way to
 reserve space in a control for a maximum number of characters to
 display.
@@ -1277,7 +1325,7 @@ new value into the ``text`` string at the current insertion point. The
 ``textselection`` value is reset to an empty string after it modifies the
 ``text`` value.
 
-.. note:: Setting the ``textselection`` property before the edittext
+.. note:: Setting the ``textselection`` property before the :ref:`EditText`
   control's parent Window exists is an undefined operation.
 
 --------------------------------------------------------------------------------
@@ -1852,22 +1900,25 @@ onChange
 Called when the user finishes making a change in one of the following control
 types:
 
-================================  ================
-:ref:`control-type-dropdownlist`  :ref:`Scrollbar`
-:ref:`EditText`                   :ref:`Slider`
-:ref:`control-type-listbox`       :ref:`control-type-treeview`
-================================  ================
+============================ ================
+:ref:`EditNumber`            :ref:`EditText`
+:ref:`Scrollbar`             :ref:`Slider`
+:ref:`control-type-listbox`  :ref:`control-type-dropdownlist`
+:ref:`control-type-treeview`
+============================ ================
 
-- For an :ref:`EditText` control, called only when the change is complete-that is, when
-  focus moves to another control, or the user types ``ENTER``. The exact behavior
-  depends on the creation parameter ``enterKeySignalsOnChange``; see the
-  :ref:`edittext <control-type-edittext>` description.
+- For :ref:`EditNumber` and :ref:`EditText` controls, called only when the change is
+  complete-that is, when focus moves to another control, or the user types ``ENTER``.
+  The exact behavior depends on the creation parameter ``enterKeySignalsOnChange``; see
+  the :ref:`edittext <control-type-edittext>` description.
 - For a :ref:`Slider` or :ref:`Scrollbar`, called when the user has finished
   dragging the position marker or has clicked the control.
-- For a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` control, called
-  whenever the selection property changes. This can happen when a script sets the
+- For a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`
+  control, called whenever the selection property changes. This can happen when a script sets the
   property directly or removes a selected item from the list, or when the user
   changes the selection.
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 
@@ -1877,12 +1928,14 @@ onChanging
 **********
 Called for each incremental change in one of the following control types:
 
-=============== ================ =============
-:ref:`EditText` :ref:`Scrollbar` :ref:`Slider`
-=============== ================ =============
+================= =============== ================ =============
+:ref:`EditNumber` :ref:`EditText` :ref:`Scrollbar` :ref:`Slider`
+================= =============== ================ =============
 
-- For an :ref:`EditText` control, called for each keypress while the control has focus.
+- For :ref:`EditNumber` and :ref:`EditText` controls, called for each keypress while the control has focus.
 - For a :ref:`Slider` or :ref:`Scrollbar`, called for any motion of the position marker.
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 

@@ -15,8 +15,8 @@ to different actions, or events:
   ``onShow`` and ``onClose``.
 - Button, RadioButton, and Checkbox controls generate events when the user clicks within the control
   bounds. To handle the event, define a callback function for :ref:`control-event-onclick`.
-- EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is,
-  when the user types into an edit field, or moves the scroll or slider indicator. To handle these events,
+- EditNumber, EditText, Scrollbar, and Slider controls generate events when the content or value changes-that
+  is, when the user types into an edit field, or moves the scroll or slider indicator. To handle these events,
   define callback functions for :ref:`control-event-onchange` and :ref:`control-event-onchanging`.
 - ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list
   changes. To handle the event, define a callback function for :ref:`control-event-onchange`.
@@ -31,6 +31,8 @@ to different actions, or events:
 - In Windows only, you can register a key sequence as a :ref:`controlobj-shortcutKey` for a window or
   for most types of controls. To handle the key sequence, define a callback function for
   :ref:`control-event-onshortcutkey` in that control.
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 
@@ -95,6 +97,7 @@ The following controls generate the ``onClick`` event:
 The following controls generate the ``onChange`` event:
 
 - ``DropDownList``
+- ``EditNumber``
 - ``EditText``
 - ``ListBox``
 - ``Scrollbar``
@@ -103,6 +106,7 @@ The following controls generate the ``onChange`` event:
 
 The following controls generate the ``onChanging`` event:
 
+- ``EditNumber``
 - ``EditText``
 - ``Scrollbar``
 - ``Slider``
@@ -116,6 +120,8 @@ clicked. For example, if the value of a checkbox ``hasBtnsCb`` is true, this cod
   if ( dlg.hasBtnsCb.value == true ) {
     dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now false
   }
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 

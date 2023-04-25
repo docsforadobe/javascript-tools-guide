@@ -98,8 +98,7 @@ ExtendScript assigns the home directory value directly from the platform value.
 
 On Windows, the ``HOME`` environment variable is optional. If it is assigned, its value must be a Windows path
 name or a path name referring to a remote server (such as ``\\myhost\mydir``). If the ``HOME`` environment
-variable is undefined, the ExtendScript default is the user's home directory, usually the ``C:\Documents and
-Settings\username`` folder.
+variable is undefined, the ExtendScript default is the user's home directory, usually the ``C:\Users\username`` folder.
 
 .. note:: A script can access many of the folders that are specified with platform-specific variables through
   static, globally available Folder class properties; for instance, ``appData`` contains the folder that stores
@@ -156,10 +155,10 @@ These examples assume that the current drive is ``D:``
 ================  =======================================
 URI path name     Windows path name
 ================  =======================================
-/c/dir/file       c:\dir\file
-/remote/dir/file  D:\remote\dir\file
-/root/dir/file    D:\root\dir\file
-~/dir/file        C:\Documents and Settings\jdoe\dir\file
+/c/dir/file       c:\\dir\\file
+/remote/dir/file  D:\\remote\\dir\\file
+/root/dir/file    D:\\root\\dir\\file
+~/dir/file        C:\\Users\\jdoe\\dir\\file
 ================  =======================================
 
 Aliases
@@ -173,7 +172,7 @@ On Windows, all file system aliases (called shortcuts) are actual files whose na
 ``.lnk``. Never use this extension directly; the File and Folder objects work without it.
 
 For example, suppose there is a shortcut to the file ``/folder1/some.txt`` in the folder ``/folder2``. The full
-Windows file name of the shortcut file is`` \folder2\some.txt.lnk``.
+Windows file name of the shortcut file is ``\folder2\some.txt.lnk``.
 
 To access the shortcut from a File object, specify the path ``/folder2/some.txt``. Calling that File object's
 open method opens the linked file (in ``/folder1``). Calling the File object's ``rename`` method renames the

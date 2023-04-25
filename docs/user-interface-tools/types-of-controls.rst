@@ -223,12 +223,12 @@ properties.
 Scrollbars are often created with an associated ``EditText`` field to display the current
 value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
 This example creates a scrollbar with associated ``StaticText`` and ``EditText`` elements
-within a panel:
+within a panel::
 
-dlg.sizePnl = dlg.add( "panel", undefined, "Dimensions" );
-dlg.sizePnl.widthSt = dlg.sizePnl.add( "statictext", undefined, "Width:" );
-dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 );
-dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
+    dlg.sizePnl = dlg.add( "panel", undefined, "Dimensions" );
+    dlg.sizePnl.widthSt = dlg.sizePnl.add( "statictext", undefined, "Width:" );
+    dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 );
+    dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 
 .. _listbox-dropdownlist-treeview:
 

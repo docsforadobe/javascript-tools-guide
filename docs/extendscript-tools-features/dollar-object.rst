@@ -406,7 +406,8 @@ defined.
   
   - System default env vars
   - Custom env vars created by the $.setenv() method
-  - Custom env vars created with `launchctl setenv CUSTOM_VAR "custom_value"` will be accessible. 
+  - Custom env vars created with `launchctl setenv CUSTOM_VAR "custom_value"`
+   
 
   Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 

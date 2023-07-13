@@ -402,6 +402,14 @@ getenv()
 Retrieves the value of the specified environment variable, or null if no such variable is
 defined.
 
+.. note:: On MacOS the only env vars that will be accessible are: 
+  
+  - System default env vars
+  - Custom env vars created by the $.setenv() method
+  - Custom env vars created with `launchctl setenv CUSTOM_VAR "custom_value"` will be accessible. 
+
+  Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
+
 Returns: ``String``
 
 --------------------------------------------------------------------------------

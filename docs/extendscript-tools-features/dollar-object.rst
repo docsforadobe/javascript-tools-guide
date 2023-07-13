@@ -404,10 +404,9 @@ defined.
 
 .. note:: On MacOS the only env vars that will be accessible are: 
   
-  - System default env vars
-  - Custom env vars created by the $.setenv() method
-  - Custom env vars created with `launchctl setenv CUSTOM_VAR "custom_value"`
-   
+  - System default environment variables
+  - Custom environment variables created by the ``$.setenv()`` method
+  - Custom environment variables created with ``launchctl setenv CUSTOM_VAR "custom_value"``
 
   Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 

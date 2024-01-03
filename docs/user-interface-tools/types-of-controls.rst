@@ -142,6 +142,37 @@ or replace::
   indicates a field in which a long text string can be entered. The text wraps to appear
   as multiple lines.
 
+.. _editnumber:
+
+EditNumber
+**********
+Allows users to enter a decimal number, which is returned to the script when the dialog is
+dismissed. The value entered is validated for being a localized number format and checked
+against a lower and upper boundary when the control loses focus. Text in EditNumber elements
+can be selected, copied, and pasted.
+
+.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
+
+- Set the ``text`` property to assign the initial displayed number in the element, and read
+  it to obtain the current number value, as entered or modified by the user.
+
+- Set the ``textselection`` property to replace the current selection with new text,
+  or to insert text at the cursor (insertion point). Read this property to obtain the
+  current selection, if any.
+
+This example adds some EditNumber elements, with initial values that a user can accept
+or replace::
+
+    var dlg = new Window( "dialog", "Date Box" );
+    dlg.msgPnl = dlg.add( "panel", undefined, "Enter Date" );
+    dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Month:" );
+    dlg.msgPnl.titleEt = dlg.msgPnl.add( "editnumber", undefined, 1, 1, 12 );
+    dlg.msgPnl.msgSt = dlg.msgPnl.add( "statictext", undefined, "Year:" );
+    dlg.msgPnl.msgEt = dlg.msgPnl.add( "editnumber", undefined, 2025, 2000, 2100 );
+    dlg.show();
+
+.. note:: Decimal numbers like ``2.5`` are accepted for minimum and maximum values.
+
 .. _checkbox:
 
 Checkbox

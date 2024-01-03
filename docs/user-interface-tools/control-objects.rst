@@ -1914,6 +1914,14 @@ The list's ``selection`` property is set to the clicked item.
 
 --------------------------------------------------------------------------------
 
+.. _control-event-onenterkey:
+
+onEnterKey
+*************
+Called when the user presses return or enter in a :ref:`control-type-edittext` control.
+
+--------------------------------------------------------------------------------
+
 .. _control-event-ondraw:
 
 onDraw

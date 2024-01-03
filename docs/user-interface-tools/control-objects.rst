@@ -409,7 +409,9 @@ To add to a window ``w``::
                            - ``name``: A unique name for the control.
                            - ``borderStyle``: A string that specifies the appearance of the
                              border drawn around the panel. One of ``black``, ``etched``,
-                             ``gray``, ``raised`` or ``sunken``. Default is ``etched``.
+                             ``gray``, ``raised``, ``sunken`` or ``topDivider``.
+                             ``topDivider`` draws a horizonal line at the top of the panel
+                             only. Default is ``etched``.
                            - ``subPanelCoordinates``: When true, this panel automatically
                              adjusts the positions of its children for compatability with
                              Photoshop CS. Default is false, meaning that the panel does

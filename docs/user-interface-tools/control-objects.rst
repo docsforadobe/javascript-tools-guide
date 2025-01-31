@@ -420,6 +420,9 @@ To add to a window ``w``::
 
 =======================  ==================================================================
 
+.. warning::
+    The ``topDivider`` property is officially undocumented and was found via research. Please contribute if you have more information on it!
+
 .. _control-type-progressbar:
 
 progressbar

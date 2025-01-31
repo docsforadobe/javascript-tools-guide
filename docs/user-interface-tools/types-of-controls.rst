@@ -146,12 +146,14 @@ or replace::
 
 EditNumber
 **********
+
 Allows users to enter a decimal number, which is returned to the script when the dialog is
 dismissed. The value entered is validated for being a localized number format and checked
 against a lower and upper boundary when the control loses focus. Text in EditNumber elements
 can be selected, copied, and pasted.
 
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
+.. note::
+	This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 
 - Set the ``text`` property to assign the initial displayed number in the element, and read
   it to obtain the current number value, as entered or modified by the user.

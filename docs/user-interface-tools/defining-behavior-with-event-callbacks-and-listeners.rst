@@ -32,8 +32,6 @@ to different actions, or events:
   for most types of controls. To handle the key sequence, define a callback function for
   :ref:`control-event-onshortcutkey` in that control.
 
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
-
 --------------------------------------------------------------------------------
 
 .. _defining-event-handler-callback-functions:
@@ -120,8 +118,6 @@ clicked. For example, if the value of a checkbox ``hasBtnsCb`` is true, this cod
   if ( dlg.hasBtnsCb.value == true ) {
     dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now false
   }
-
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 

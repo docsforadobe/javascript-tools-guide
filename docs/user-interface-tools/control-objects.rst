@@ -147,7 +147,11 @@ To add to a window ``w``::
 
 editnumber
 **********
+
 Class Name: ``EditNumber``
+
+.. note::
+	This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 
 An editable text field the user can enter decimal numbers into. Fractions are allowed.
 Calls the :ref:`control-event-onchange` callback if the text is changed and the user types
@@ -185,8 +189,6 @@ To add to a window ``w``::
                              border. Default is false.
 
 =======================  ======================================================================================
-
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 
@@ -1918,8 +1920,6 @@ types:
   property directly or removes a selected item from the list, or when the user
   changes the selection.
 
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
-
 --------------------------------------------------------------------------------
 
 .. _control-event-onchanging:
@@ -1934,8 +1934,6 @@ Called for each incremental change in one of the following control types:
 
 - For :ref:`EditNumber` and :ref:`EditText` controls, called for each keypress while the control has focus.
 - For a :ref:`Slider` or :ref:`Scrollbar`, called for any motion of the position marker.
-
-.. note:: The ``EditNumber`` control was added in Photoshop 20.0 (CC 2019).
 
 --------------------------------------------------------------------------------
 

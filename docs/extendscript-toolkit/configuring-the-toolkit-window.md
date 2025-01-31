@@ -1,14 +1,13 @@
-.. _configuring-the-toolkit-window:
+<a id="configuring-the-toolkit-window"></a>
 
-Configuring the Toolkit window
-==============================
+# Configuring the Toolkit window
+
 The ExtendScript Toolkit initially appears with a default workspace arrangement, containing a default
 configuration of tabbed panels and Script Editor document windows contained in a parent frame. The
 arrangement is highly configurable, through the Window menu, the context menus of individual panels
 and panel groups, or directly using drag and drop.
 
-.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window.png
-   :alt: ExtendScript Toolkit Window
+![ExtendScript Toolkit Window](extendscript-toolkit/_static/02_the-extendscript-toolkit_configuring-the-toolkit-window.png)
 
 You can, for example, adjust the relative sizes of the panels by dragging the separators up or down, or right
 or left, and can rearrange the groupings. To move a tabbed panel, drag the tab into another pane.
@@ -24,21 +23,19 @@ destination group is highlighted), that group splits to show the panels in a til
   panels can be docked to each other, or can be independent.
 
 There are predefined configurations, called workspaces, suitable for various uses, and you can save your
-favorite configurations as workspaces. See :ref:`workspaces`.
+favorite configurations as workspaces. See [Workspaces](#workspaces).
 
---------------------------------------------------------------------------------
+---
 
-.. _panel-menus:
+<a id="panel-menus"></a>
 
-Panel menus
------------
+## Panel menus
+
 Panel groups have a context menu, which you invoke with a right click in the tab or on the background of
 the title bar. These menus have panel-control commands, including Close Panel and Close Group to hide
 the individual panel or entire group.
 
-.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_panel-menus_panel.png
-   :alt: A Panel
-
+![A Panel](extendscript-toolkit/_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_panel-menus_panel.png)
 - You can also show or hide specific panels by toggling them on or off in the Window menu. Use the
   Window menu to show a hidden panel, or to bring a floating panel to the front.
 - Use Window > Hide panels to close all of the panels.
@@ -49,12 +46,12 @@ text.
 
 The individual panels are discussed in detail in the following sections.
 
---------------------------------------------------------------------------------
+---
 
-.. _document-windows:
+<a id="document-windows"></a>
 
-Document windows
-----------------
+## Document windows
+
 When you open scripts or text files, each file appears in its own Script Editor document window. By default,
 the document windows are docked; that is, shown as tabbed panes in the main window. However, like the
 panels, you can drag any document window out of the frame to make it an independent floating window.
@@ -69,29 +66,29 @@ can switch between them with the commands Window > Next document and Window > Pr
 document. The default keyboard shortcuts for these commands are F6 and SHIFT-F6; you can change these
 using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences).
 
-.. note:: Because you can run scripts in the same application simultaneously, you should be careful not to
-  interrupt the processing of one script with another. For example, if one script opens a modal dialog in
-  Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second
-  script is likely to generate an error.
+#### NOTE
+Because you can run scripts in the same application simultaneously, you should be careful not to
+interrupt the processing of one script with another. For example, if one script opens a modal dialog in
+Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second
+script is likely to generate an error.
 
 A button in the upper right corner of the document window allows you to split that window.
 
-.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png
-   :alt: Split-Document Button
+![Split-Document Button](extendscript-toolkit/_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_document-windows_split-documents.png)
 
 When the window is split, the second window is another view of exactly the same source. Any changes
 you make in the text, breakpoints that you add, and so on, appear simultaneously in both windows. The
 copy is, by default, positioned to the right of the original, docked window, as shown. However, if you use
 CTRL-click to split the window, the second appears below the original.
 
-For more information about the document windows and the Script Editor, see :ref:`the-script-editor`.
+For more information about the document windows and the Script Editor, see [The Script Editor](the-script-editor.md#the-script-editor).
 
---------------------------------------------------------------------------------
+---
 
-.. _workspaces:
+<a id="workspaces"></a>
 
-Workspaces
-----------
+## Workspaces
+
 The Toolkit saves the current layout when you exit, and restores it at the next startup. It saves and restores
 the open documents, the current positions within the documents, any breakpoints that have been set, and
 other preferences that have been set in the Preferences dialog.
@@ -103,9 +100,7 @@ other preferences that have been set in the Preferences dialog.
   upper right corner of the Toolkit. When you choose a workspace, its name appears here. You can also
   add and remove workspaces from this menu.
 
-.. image:: _static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png
-   :alt: Current Workspace Name
-
+![Current Workspace Name](extendscript-toolkit/_static/02_the-extendscript-toolkit_configuring-the-toolkit-window_workspaces_current-workspace-name.png)
 - You can save any configuration as a named workspace, using the Create new Workspace menu
   command, or the Add button on the Workspaces page in the Preferences dialog (Edit > Preferences).
 - You can remove workspaces you have defined, either individually using the menu or the Workspaces
@@ -118,13 +113,13 @@ other preferences that have been set in the Preferences dialog.
 - You can restore all preferences to their default values by holding the SHIFT key down while the Toolkit
   loads.
 
---------------------------------------------------------------------------------
+---
 
-.. _dialogs:
+<a id="dialogs"></a>
 
-Dialogs
--------
-Some dialog windows offer the option "Don't show again". If you select this option, the Toolkit remembers
+## Dialogs
+
+Some dialog windows offer the option “Don’t show again”. If you select this option, the Toolkit remembers
 the choices made in this dialog, and next time it would appear, makes the same choices without showing
 the dialog.
 

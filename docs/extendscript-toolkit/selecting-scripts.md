@@ -1,7 +1,7 @@
-.. _selecting-scripts:
+<a id="selecting-scripts"></a>
 
-Selecting Scripts
-=================
+# Selecting Scripts
+
 You can open multiple scripts (or text files, including programs in other languages). You can find and open
 scripts in a number of ways:
 
@@ -14,16 +14,16 @@ scripts in a number of ways:
   locations, you must confirm that you want to run the script.
 - Search for scripts containing particular text using Edit > Find and Replace. You can search in a
   particular document window, among all scripts open in document windows, or among scripts
-  associated with an application, or kept in favorite locations. See :ref:`searching-in-text`.
+  associated with an application, or kept in favorite locations. See [Searching in text](the-script-editor.md#searching-in-text).
 - Use the Scripts panel to display and open scripts made available by loaded Adobe applications, or
   those kept in favorite locations.
 
---------------------------------------------------------------------------------
+---
 
-.. _the-scripts-panel-and-favorite-script-locations:
+<a id="the-scripts-panel-and-favorite-script-locations"></a>
 
-The Scripts panel and favorite script locations
------------------------------------------------
+## The Scripts panel and favorite script locations
+
 The Scripts panel offers a list of debuggable scripts, which can be JS or JSX files or (for some applications)
 HTML files that contain embedded scripts.
 
@@ -40,24 +40,22 @@ When you choose the target Favorites, the right-hand list shows the default favo
 any other favorite locations that have been defined. You can create your own list of favorite script locations
 using the flyout menu.
 
-.. image:: _static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_panel.png
-   :alt: Scripts panel
+![Scripts panel](extendscript-toolkit/_static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_panel.png)
 
 The favorite script locations that you define are also available to the Find and Replace dialog; see
-:ref:`searching-in-text`.
+[Searching in text](the-script-editor.md#searching-in-text).
 
 You can also examine and set favorite locations using the Favorites page of the Preferences dialog (Edit >
 Preferences). Use the Add, Modify, and Remove buttons to edit the list of folders.
 
-.. image:: _static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_favourites.jpg
-   :alt: Scripts favourites
+![Scripts favourites](extendscript-toolkit/_static/02_the-extendscript-toolkit_selecting-scripts_scripts-panel_favourites.jpg)
 
-Adobe Scripts folder
-********************
-On first launch, the Toolkit creates a folder named Adobe Scripts in the user's Documents folder. The
+### Adobe Scripts folder
+
+On first launch, the Toolkit creates a folder named Adobe Scripts in the user’s Documents folder. The
 Default favorite in the Scripts panel displays the contents of this folder.
 
 When double-clicking a JSX file, the Toolkit normally acts as an invisible security filter. Before actually
-launching the file, a security dialog asks if it is OK to execute the script. The Toolkit treats the user's
+launching the file, a security dialog asks if it is OK to execute the script. The Toolkit treats the user’s
 Documents/Adobe Scripts folder, however, as a trusted location; when you double-click a JSX file in that
 folder, the Toolkit does not display the security alert.

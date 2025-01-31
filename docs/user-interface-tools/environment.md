@@ -1,101 +1,105 @@
-.. _environment-object:
+<a id="environment-object"></a>
 
-Environment object
-==================
+# Environment object
 
-This global object is available through the :ref:`scriptui-environment` property.
+This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) property.
 
 It defines attributes of the ScriptUI environment, and only contains one property.
 
 Due to this object including only a single property (that is itself an object), all of the relevant documentation will be contained in this page.
 
---------------------------------------------------------------------------------
+---
 
-.. _environment-object-properties:
+<a id="environment-object-properties"></a>
 
-Environment object properties
------------------------------
+## Environment object properties
 
 The following element properties apply specifically to Environment elements:
 
-.. _environment-keyboard-state:
+<a id="environment-keyboard-state"></a>
 
-Keyboard state object
----------------------
+## Keyboard state object
 
 This JavaScript object reports the active state of the keyboard at any time; that is, the current key that is down and any modifiers that are pressed.
 
 This is independent of the event-handling system, which means that at any time in your script, you can use this object to check whether specific keys (such as keyboard modifiers) are pressed, and trigger alternative actions as a result.
 
-It is available through the :ref:`ScriptUI-environment` object::
+It is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) object:
 
-  var myKeyState = ScriptUI.environment.keyboardState;
+```default
+var myKeyState = ScriptUI.environment.keyboardState;
+```
 
 The Keyboard State object contains the following properties:
 
---------------------------------------------------------------------------------
+---
 
-.. _keyboard-state-keyName:
+<a id="keyboard-state-keyname"></a>
 
-keyName
-*******
-Type: ``String``
+### keyName
 
-The name of the key currently pressed. This is the JavaScript name, a string such as ``"A"`` or ``"a"``.
+Type: `String`
 
-.. note::
+The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
 
-  - This only works for single keys being pressed; holding multiple will report ``undefined``.
-  - Modifier keys will report ``undefined``; to get those, see :ref:`keyboard-state-metaKeys`
+#### NOTE
+- This only works for single keys being pressed; holding multiple will report `undefined`.
+- Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
 
-For example, with 'a' pressed::
+For example, with ‘a’ pressed:
 
-  var currentPressedKey = ScriptUI.environment.keyboardState.keyName;
+```default
+var currentPressedKey = ScriptUI.environment.keyboardState.keyName;
 
-  alert(currentPressedKey); // "A"
+alert(currentPressedKey); // "A"
+```
 
---------------------------------------------------------------------------------
+---
 
-.. _keyboard-state-metaKeys:
+<a id="keyboard-state-metakeys"></a>
 
-shiftKey, ctrlKey, altKey, metaKey
-**********************************
-Type: ``Boolean``
+### shiftKey, ctrlKey, altKey, metaKey
 
-``true`` if the named modifier key is currently active.
+Type: `Boolean`
 
-.. note::
+`true` if the named modifier key is currently active.
 
-  ``metaKey`` captures both the ``META`` and ``COMMAND`` keys.
+#### NOTE
+`metaKey` captures both the `META` and `COMMAND` keys.
 
-Examples
-++++++++
+#### Examples
 
-For example, checking whether a modifier key is held during script execution::
+For example, checking whether a modifier key is held during script execution:
 
-  var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
+```default
+var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
 
-  if (shiftHeld) {
-    alert("User is holding shift!");
+if (shiftHeld) {
+  alert("User is holding shift!");
+}
+```
+
+Or to check for keyboard modifier combinations:
+
+```default
+var keyboardState = ScriptUI.environment.keyboardState;
+
+if (keyboardState.shiftKey && keyboardState.altKey) {
+  alert("Shift and alt held!");
+}
+```
+
+This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](event-handling.md#keyboardevent-object-getmodifierstate), which can be more confusing and less user-intuitive, unless you’re confident you’re handling event states properly.
+
+For example:
+
+```default
+button.onClick = function () {
+  if (ScriptUI.environment.keyboardState.shiftKey) {
+    // Special functionality for 'shift' key here
+    return;
   }
 
-Or to check for keyboard modifier combinations::
-
-  var keyboardState = ScriptUI.environment.keyboardState;
-
-  if (keyboardState.shiftKey && keyboardState.altKey) {
-    alert("Shift and alt held!");
-  }
-
-This can also be used within interface buttons as alternative to :ref:`checking the modifiers via keyboard events <keyboardevent-object-getModifierState>`, which can be more confusing and less user-intuitive, unless you're confident you're handling event states properly.
-
-For example::
-
-  button.onClick = function () {
-    if (ScriptUI.environment.keyboardState.shiftKey) {
-      // Special functionality for 'shift' key here
-      return;
-    }
-
-    // normal button behaviour here
-  }
+  // normal button behaviour here
+}
+```

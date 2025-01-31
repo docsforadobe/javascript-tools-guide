@@ -1,20 +1,20 @@
-.. _debugging-in-the-toolkit:
+<a id="debugging-in-the-toolkit"></a>
 
-Debugging in the Toolkit
-========================
+# Debugging in the Toolkit
+
 You can debug the code in the currently active document window. Select one of the debugging
 commands to either run or to single-step through the program.
 
-When you run code from the document window, it runs in the current target application's selected
+When you run code from the document window, it runs in the current target application’s selected
 JavaScript engine. The Toolkit itself runs an independent JavaScript engine, so you can quickly edit and
 run a script without connecting to a target application.
 
---------------------------------------------------------------------------------
+---
 
-.. _selecting-a-debugging-target:
+<a id="selecting-a-debugging-target"></a>
 
-Selecting a debugging target
-----------------------------
+## Selecting a debugging target
+
 The Toolkit can debug multiple applications at one time. If you have more than one Adobe application
 installed, use the drop-down list at the upper left of a document window to select the target application
 for that window. All installed applications that support JavaScript are shown in this list. If you try to run a
@@ -27,22 +27,12 @@ more than one engine can be active, although only one is current. An active engi
 executing code, is halted at a breakpoint, or, having executed all scripts, is waiting to receive events. An
 icon by each engine name indicates whether it is running, halted, or waiting for input:
 
-.. |running| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg
-   :alt: running
+| ![running](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg)   | running   |
+|--------------------------------------------------------------------------------------------------------------------------------|-----------|
+| ![halted](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg)     | halted    |
+| ![waiting](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg)   | waiting   |
 
-.. |halted| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg
-   :alt: halted
-
-.. |waiting| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg
-   :alt: waiting
-
-=========  ========
-|running|  running
-|halted|   halted
-|waiting|  waiting
-=========  ========
-
-The current engine is the one whose data and state is displayed in the Toolkit's panes. If an application has
+The current engine is the one whose data and state is displayed in the Toolkit’s panes. If an application has
 only one engine, its engine becomes current when you select the application as the target. If there is more
 than one engine available in the target application, you can select an engine in the list to make it current.
 
@@ -60,20 +50,18 @@ Toolkit looks for a #target directive in the file and launches that application 
 first checks for syntax errors in the script. If any are found, the Toolkit displays the error in a message box
 and quits silently, rather than launching the target application. For example:
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_script-error.jpg
-   :alt: Script Error
+![Script Error](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_script-error.jpg)
 
---------------------------------------------------------------------------------
+---
 
-.. _the-javascript-console:
+<a id="the-javascript-console"></a>
 
-The JavaScript console
-----------------------
+## The JavaScript console
+
 The JavaScript console is a command shell and output window for the currently selected JavaScript
 engine. It connects you to the global namespace of that engine.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_js-console.jpg
-   :alt: JavaScript Console
+![JavaScript Console](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_js-console.jpg)
 
 The console is a JavaScript listener, that expects input text to be JavaScript code.
 
@@ -93,86 +81,54 @@ Call Stack panel, and the result appears in the next line.
   the error is displayed here along with the file name and the line number. The Toolkit displays errors here
   during its own startup phase.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlling-code-execution:
+<a id="controlling-code-execution"></a>
 
-Controlling code execution
---------------------------
-The debugging commands are available from the **Debug** menu, from the document window's right-click
+## Controlling code execution
+
+The debugging commands are available from the **Debug** menu, from the document window’s right-click
 context menu, through keyboard shortcuts, and from the toolbar buttons. Use these menu commands
 and buttons to control the execution of code when the JavaScript Debugger is active.
 
-.. |break| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg
-   :alt: break
+| ![run-continue](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg)   | Run/Continue   | F5 (Windows)<br/>Ctrl R (Mac OS)        | Starts or resumes execution of a script.<br/>Disabled when script is executing.                                                                                                                                          |
+|--------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![break](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg)                 | Break          | Ctrl F5 (Windows)<br/>Cmd . (Mac OS)    | Halts the currently executing script temporarily and reactivates<br/>the JavaScript Debugger.<br/>Enabled when a script is executing.                                                                                    |
+| ![stop](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg)                   | Stop           | Shift F5 (Windows)<br/>Ctrl K (Mac OS)  | Stops execution of the script and generates a runtime error.<br/>Enabled when a script is executing.                                                                                                                     |
+| ![step-over](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg)         | Step Over      | F10 (Windows)<br/>Ctrl S (Mac OS)       | Halts after executing a single JavaScript line in the script. If the<br/>statement calls a JavaScript function, executes the function in<br/>its entirety before stopping (do not step into the function).               |
+| ![step-into](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg)         | Step Into      | F11 (Windows)<br/>Ctrl T (Mac OS)       | Halts after executing a single JavaScript line statement in the<br/>script or after executing a single statement in any JavaScript<br/>function that the script calls.                                                   |
+| ![step-out](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg)           | Step Out       | Shift F11 (Windows)<br/>Ctrl U (Mac OS) | When paused within the body of a JavaScript function, resumes<br/>script execution until the function returns.<br/>When paused outside the body of a function, resumes script<br/>execution until the script terminates. |
 
-.. |run-continue| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg
-   :alt: run-continue
+---
 
-.. |step-into| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg
-   :alt: step-into
+<a id="visual-indication-of-execution-states"></a>
 
-.. |step-out| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg
-   :alt: step-out
+## Visual indication of execution states
 
-.. |step-over| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg
-   :alt: step-over
-
-.. |stop| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg
-   :alt: stop
-
-==============  ============  =======================  ====================================================================
-|run-continue|  Run/Continue  F5 (Windows)             Starts or resumes execution of a script.
-                              Ctrl R (Mac OS)          Disabled when script is executing.
-|break|         Break         Ctrl F5 (Windows)        Halts the currently executing script temporarily and reactivates
-                              Cmd . (Mac OS)           the JavaScript Debugger.
-                                                       Enabled when a script is executing.
-|stop|          Stop          Shift F5 (Windows)       Stops execution of the script and generates a runtime error.
-                              Ctrl K (Mac OS)          Enabled when a script is executing.
-|step-over|     Step Over     F10 (Windows)            Halts after executing a single JavaScript line in the script. If the
-                              Ctrl S (Mac OS)          statement calls a JavaScript function, executes the function in
-                                                       its entirety before stopping (do not step into the function).
-|step-into|     Step Into     F11 (Windows)            Halts after executing a single JavaScript line statement in the
-                              Ctrl T (Mac OS)          script or after executing a single statement in any JavaScript
-                                                       function that the script calls.
-|step-out|      Step Out      Shift F11 (Windows)      When paused within the body of a JavaScript function, resumes
-                              Ctrl U (Mac OS)          script execution until the function returns.
-                                                       When paused outside the body of a function, resumes script
-                                                       execution until the script terminates.
-==============  ============  =======================  ====================================================================
-
---------------------------------------------------------------------------------
-
-.. _visual-indication-of-execution-states:
-
-Visual indication of execution states
--------------------------------------
 When the execution of a script halts because the script reached a breakpoint, or when the script reaches
 the next line when stepping line by line, the document window displays the current script with the current
 line highlighted in yellow.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states.png
-   :alt: Execution States
+![Execution States](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states.png)
 
 If the script encounters a runtime error, the Toolkit halts the execution of the script, displays the current
 script with the current line highlighted in orange, and displays the error message in the status line. Use the
 Data Browser to get further details of the current data assignments.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states_runtime-error.png
-   :alt: Runtime Error
+![Runtime Error](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states_runtime-error.png)
 
 Scripts often use a try/catch clause to execute code that may cause a runtime error, in order to catch the
 error programmatically rather than have the script terminate. You can choose to allow regular processing
 of such errors using the catch clause, rather than breaking into the debugger. To set this behavior, choose
-**Debug > Don't Break On Guarded Exceptions**. Some runtime errors, such as Out Of Memory, always
+**Debug > Don’t Break On Guarded Exceptions**. Some runtime errors, such as Out Of Memory, always
 cause the termination of the script, regardless of this setting.
 
---------------------------------------------------------------------------------
+---
 
-.. _setting-breakpoints:
+<a id="setting-breakpoints"></a>
 
-Setting breakpoints
--------------------
+## Setting breakpoints
+
 When debugging a script, it is often helpful to make it stop at certain lines so that you can inspect the state
 of the environment, whether function calls are nested properly, or whether all variables contain the
 expected data.
@@ -190,106 +146,69 @@ You can attach a condition to a breakpoint, in the form of a JavaScript expressi
 reaches the breakpoint, it runs the JavaScript expression. If the expression evaluates to a nonzero number
 or true, execution stops.
 
-To set a conditional breakpoint in a loop, for example, the conditional expression could be ``"i >= 1000"``,
+To set a conditional breakpoint in a loop, for example, the conditional expression could be `"i >= 1000"`,
 which means that the program execution halts if the value of the iteration variable i is equal to or greater
 than 1000.
 
-.. tip:: It is often useful to check the boundary conditions for loops; to do this, you can set the condition for a
-  breakpoint within a loop to trigger on the first and last iterations.
-  You can set breakpoints on lines that do not contain any code, such as comment lines. When the Toolkit
-  runs the program, it automatically moves such a breakpoint down to the next line that actually contains
-  code.
+### The Breakpoints panel
 
-The Breakpoints panel
-*********************
 The Breakpoints panel displays all breakpoints set in the current document window. You can use the
-panel's flyout menu to add, change, or remove a breakpoint.
+panel’s flyout menu to add, change, or remove a breakpoint.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoints-panel.jpg
-   :alt: Breakpoints Panel
+![Breakpoints Panel](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoints-panel.jpg)
 
 You can edit a breakpoint by double-clicking it, or by selecting it and choosing **Add** or **Modify** from the
-panel menu. A dialog allows you to change the line number, the breakpoint's enabled state, and the
+panel menu. A dialog allows you to change the line number, the breakpoint’s enabled state, and the
 condition statement. You can also specify a hit count, which allows you to skip the breakpoint some
 number of times before entering the debugger. The default is 1, which breaks at the first execution.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_modify-breakpoints.png
-   :alt: Modify Breakpoints
+![Modify Breakpoints](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_modify-breakpoints.png)
 
 When execution reaches this breakpoint after the specified number of hits, the debugger evaluates this
 condition. If it does not evaluate to true, the breakpoint is ignored and execution continues. This allows
 you to break only when certain conditions are met, such as a variable having a particular value.
 
-Breakpoint icons
-****************
+### Breakpoint icons
 
 Each breakpoint is indicated by an icon to the left of the line number in the document window, and an
 icon and line number in the Breakpoints panel. Different icons are used in the document window and in
 the Breakpoints panel.
 
-.. |unconditional-document| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg
-   :alt: unconditional-document
+| Document window                                                                                                                                                                                | Breakpoints panel                                                                                                                                                                            | Description                                                                                          |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| ![unconditional-document](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg)                   | ![unconditional-bppanel](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg)                   | Unconditional breakpoint. Execution stops here.                                                      |
+| ![unconditional-disabled-document](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg) | ![unconditional-disabled-bppanel](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg) | Unconditional breakpoint, disabled. Execution does not stop.                                         |
+| ![conditional-document](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg)                       | ![conditional-bppanel](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg)                       | Conditional breakpoint. Execution stops if the attached JavaScript<br/>expression evaluates to true. |
+| ![conditional-disabled-document](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg)     | ![conditional-disabled-bppanel](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg)     | Conditional breakpoint, disabled. Execution does not stop.                                           |
 
-.. |unconditional-bppanel| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg
-   :alt: unconditional-bppanel
+---
 
-.. |unconditional-disabled-document| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg
-   :alt: unconditional-disabled-document
+<a id="evaluation-in-help-tips"></a>
 
-.. |unconditional-disabled-bppanel| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg
-   :alt: unconditional-disabled-bppanel
+## Evaluation in help tips
 
-.. |conditional-document| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg
-   :alt: conditional-document
-
-.. |conditional-bppanel| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg
-   :alt: conditional-bppanel
-
-.. |conditional-disabled-document| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg
-   :alt: conditional-disabled-document
-
-.. |conditional-disabled-bppanel| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg
-   :alt: conditional-disabled-bppanel
-
-=================================  ================================  ==================================================================
-Document window                    Breakpoints panel                 Description
-=================================  ================================  ==================================================================
-|unconditional-document|           |unconditional-bppanel|           Unconditional breakpoint. Execution stops here.
-|unconditional-disabled-document|  |unconditional-disabled-bppanel|  Unconditional breakpoint, disabled. Execution does not stop.
-|conditional-document|             |conditional-bppanel|             Conditional breakpoint. Execution stops if the attached JavaScript
-                                                                     expression evaluates to true.
-|conditional-disabled-document|    |conditional-disabled-bppanel|    Conditional breakpoint, disabled. Execution does not stop.
-=================================  ================================  ==================================================================
-
---------------------------------------------------------------------------------
-
-.. _evaluation-in-help-tips:
-
-Evaluation in help tips
------------------------
 If you let your mouse pointer rest over a variable or function in a document window, the result of
 evaluating that variable or function is displayed as a help tip. When you are not debugging the program,
 this is helpful only if the variables and functions are already known to the JavaScript engine. During
 debugging, however, this is an extremely useful way to display the current value of a variable, along with
 its current data type.
 
---------------------------------------------------------------------------------
+---
 
-.. _tracking-data:
+<a id="tracking-data"></a>
 
-Tracking data
--------------
+## Tracking data
+
 The Data Browser panel is your window into the JavaScript engine. It displays all live data defined in the
 current context, as a list of variables with their current values. If execution has stopped at a breakpoint, it
 shows variables that have been defined using var in the current function, and the function arguments. To
-show variables defined in the global or calling scope, use the Call Stack to change the context (see :ref:`the-call-stack`).
+show variables defined in the global or calling scope, use the Call Stack to change the context (see [The call stack](#the-call-stack)).
 
 You can use the Data Browser to examine and set variable values.
 - Click a variable name to show its current value in the edit field at the top of the panel.
 - To change the value, enter a new value and press ENTER. If a variable is Read only, the edit field is disabled.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data.png
-   :alt: Tracking Data
+![Tracking Data](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data.png)
 
 The flyout menu for this panel lets you control the amount of data displayed:
 
@@ -303,43 +222,24 @@ The flyout menu for this panel lets you control the amount of data displayed:
 Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an
 object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.
 
-.. |tracking-data-boolean| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_boolean.jpg
-   :alt: Boolean
+| ![Boolean](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_boolean.jpg)   | Boolean   |
+|---------------------------------------------------------------------------------------------------------------------------|-----------|
+| ![Number](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg)     | Number    |
+| ![String](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg)     | String    |
+| ![Object](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg)     | Object    |
+| ![Method](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg)     | Method    |
+| ![Null](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg)         | null      |
 
-.. |tracking-data-number| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg
-   :alt: Number
-
-.. |tracking-data-string| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg
-   :alt: String
-
-.. |tracking-data-object| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg
-   :alt: Object
-
-.. |tracking-data-method| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg
-   :alt: Method
-
-.. |tracking-data-null| image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg
-   :alt: Null
-
-=======================  =======
-|tracking-data-boolean|  Boolean
-|tracking-data-number|   Number
-|tracking-data-string|   String
-|tracking-data-object|   Object
-|tracking-data-method|   Method
-|tracking-data-null|     null
-=======================  =======
-
-You can inspect the contents of an object by clicking its icon. The list expands to show the object's
+You can inspect the contents of an object by clicking its icon. The list expands to show the object’s
 properties (and methods, if Functions display is enabled), and the triangle points down to indicate that
 the object is open.
 
---------------------------------------------------------------------------------
+---
 
-.. _the-call-stack:
+<a id="the-call-stack"></a>
 
-The call stack
---------------
+## The call stack
+
 The Call Stack panel is active while debugging a program. When an executing program stops because of a
 breakpoint or runtime error, the panel displays the sequence of function calls that led to the current
 execution point. The Call Stack panel shows the names of the active functions, along with the actual
@@ -347,8 +247,7 @@ arguments passed in to that function.
 
 For example, this panel shows a break occurring at a breakpoint in a function RGBColorPicker():
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-break.jpg
-   :alt: Call Stack Break
+![Call Stack Break](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-break.jpg)
 
 The function containing the breakpoint is highlighted in the Call Stack panel. The line containing the
 breakpoint is highlighted in the Document Window.
@@ -358,8 +257,7 @@ the function call that led to that point of execution is marked with a green bac
 when you select the run() function in the call stack, the Document Window highlights the line in that
 function where the RGBColorPicker() function was called.
 
-.. image:: _static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-inspect.jpg
-   :alt: Call Stack Inspect
+![Call Stack Inspect](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-inspect.jpg)
 
 Switching between the functions in the call hierarchy allows you to trace how the current function was
 called. The Console and Data Browser panels coordinate with the Call Stack panel. When you select a

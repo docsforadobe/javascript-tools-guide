@@ -1,322 +1,291 @@
-.. _xml-object-reference:
+<a id="xml-object-reference"></a>
 
-XML Object Reference
-====================
+# XML Object Reference
+
 This section provides reference details for the properties and methods of the XML object itself, and for the
 related utility objects and global functions that you use to work with namespaces:
 
-- :ref:`xml-object`
-- :ref:`namespace-object`
-- :ref:`qname-object`
-- :ref:`xml-global-functions`
+- [XML object](#xml-object)
+- [Namespace object](#namespace-object)
+- [QName object](#qname-object)
+- [Global functions](#xml-global-functions)
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object:
+<a id="xml-object"></a>
 
-XML object
-----------
+## XML object
 
-The ``XML`` object provides both static properties and functions, available through the ``XML`` class,
+The `XML` object provides both static properties and functions, available through the `XML` class,
 and dynamic properties and functions available through each instance.
 
-XML object constructor
-**********************
+### XML object constructor
 
 The constructor returns the XML object representing the root node of an XML tree, which contains
 additional XML objects for all contained elements.
 
-``[new] XML (xmlCode);``
+`[new] XML (xmlCode);`
 
-.. _xmlCode:
+<a id="xmlcode"></a>
 
-=======  =============  ========================================================================
-xmlCode  String or XML  A string containing valid XML code, or an existing XML object.
+| xmlCode   | String or XML   | A string containing valid XML code, or an existing XML object.<br/><br/>> - If a valid string is supplied, returns a new XML object<br/>>   encapsulating the XML code. If the XML code cannot be parsed,<br/>>   throws a JavaScript error.<br/>> - If an existing object is supplied and the `new` operator is used,<br/>>   returns a copy of the object; otherwise, returns the object itself.   |
+|-----------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-                          - If a valid string is supplied, returns a new XML object
-                            encapsulating the XML code. If the XML code cannot be parsed,
-                            throws a JavaScript error.
-                          - If an existing object is supplied and the ``new`` operator is used,
-                            returns a copy of the object; otherwise, returns the object itself.
-=======  =============  ========================================================================
+---
 
---------------------------------------------------------------------------------
+<a id="xml-class-properties"></a>
 
-.. _xml-class-properties:
-
-XML class properties
-********************
+### XML class properties
 
 These static properties are available through the XML class. They control how XML is parsed and generated:
 
-================================  =========  =======================================================
-**ignoreComments**                Boolean    When true, comments are stripped from the XML
-                                             during parsing. Default is false.
-**ignoreProcessingInstructions**  Boolean    When true, processing instructions (``<?xxx?>``
-                                             elements) are stripped from the XML during
-                                             parsing. Default is false.
-**ignoreWhitespace**              Boolean    When true, white-space characters are stripped
-                                             from the XML during parsing. Default is true.
-**prettyIndent**                  Number     The number of spaces to use for indenting when
-                                             pretty-printing. Default is 2.
-**prettyPrinting**                Boolean    When true, ``toXMLString()`` uses indenting and
-                                             line feeds to create the XML string. Default is true.
-================================  =========  =======================================================
+| **ignoreComments**               | Boolean   | When true, comments are stripped from the XML<br/>during parsing. Default is false.                                         |
+|----------------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------|
+| **ignoreProcessingInstructions** | Boolean   | When true, processing instructions (`<?xxx?>`<br/>elements) are stripped from the XML during<br/>parsing. Default is false. |
+| **ignoreWhitespace**             | Boolean   | When true, white-space characters are stripped<br/>from the XML during parsing. Default is true.                            |
+| **prettyIndent**                 | Number    | The number of spaces to use for indenting when<br/>pretty-printing. Default is 2.                                           |
+| **prettyPrinting**               | Boolean   | When true, `toXMLString()` uses indenting and<br/>line feeds to create the XML string. Default is true.                     |
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-class-functions:
+<a id="xml-class-functions"></a>
 
-XML class functions
-*******************
+### XML class functions
 
 These static functions are available through the XML class, and provide information about the global
 settings of the XML parser.
 
-.. _xml-defaultSettings:
+<a id="xml-defaultsettings"></a>
 
-defaultSettings()
-+++++++++++++++++
-``XML.defaultSettings ();``
+#### defaultSettings()
+
+`XML.defaultSettings ();`
 
 Retrieves the default global option settings that control how XML is parsed and generated.
 
-Returns a JavaScript object containing five properties, which correspond to the five :ref:`xml-class-properties`.
+Returns a JavaScript object containing five properties, which correspond to the five [XML class properties](#xml-class-properties).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-settings:
+<a id="xml-settings"></a>
 
-settings()
-++++++++++
-``XML.settings ();``
+#### settings()
+
+`XML.settings ();`
 
 Retrieves the current global option settings that control how XML is parsed and generated.
 
-Returns a JavaScript object containing five properties, which correspond to the five :ref:`xml-class-properties`
+Returns a JavaScript object containing five properties, which correspond to the five [XML class properties](#xml-class-properties)
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-setSettings:
+<a id="xml-setsettings"></a>
 
-setSettings()
-+++++++++++++
-``XML.setSettings (object);``
+#### setSettings()
 
-======  ======================================================================================
-object  A JavaScript object containing five properties, which correspond to the five :ref:`xml-class-properties`
-======  ======================================================================================
+`XML.setSettings (object);`
+
+| object   | A JavaScript object containing five properties, which correspond to the five [XML class properties](#xml-class-properties)   |
+|----------|------------------------------------------------------------------------------------------------------------------------------|
 
 Sets the global option settings that control how XML is parsed and generated. You can use this to
-restore settings retrieved with :ref:`xml-settings` or :ref:`xml-defaultSettings`.
+restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xml-defaultsettings).
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-properties:
+<a id="xml-object-properties"></a>
 
-XML object properties
-*********************
+### XML object properties
 
 The properties of the XML object are named for and contain the values of the child elements and attributes
 of the element that the object represents.
 
-==================  =================  =====================================================================================
-*childElementName*  :ref:`xml-object`  Child-element properties are named with the child element name.
-**@attributeName**  :ref:`xml-object`  Attribute properties are named with the attribute name prefixed with the at-sign, @.
-==================  =================  =====================================================================================
+| *childElementName*   | [XML object](#xml-object)   | Child-element properties are named with the child element name.                      |
+|----------------------|-----------------------------|--------------------------------------------------------------------------------------|
+| **@attributeName**   | [XML object](#xml-object)   | Attribute properties are named with the attribute name prefixed with the at-sign, @. |
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-functions:
+<a id="xml-object-functions"></a>
 
-XML object functions
-********************
+### XML object functions
 
-addNamespace()
-++++++++++++++
-``xmlObj.addNamespace (ns);``
+#### addNamespace()
 
-==  =========================================
-ns  A :ref:`namespace-object`.
-==  =========================================
+`xmlObj.addNamespace (ns);`
+
+| ns   | A [Namespace object](#namespace-object).   |
+|------|--------------------------------------------|
 
 Adds a namespace declaration to this node.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-appendChild:
+<a id="xml-object-appendchild"></a>
 
-appendChild()
-+++++++++++++
-``xmlObj.appendChild (child);``
+#### appendChild()
 
-===== ============================================================================
-child An :ref:`xml-object` or any value that can be converted to a String with ``toString()``.
-===== ============================================================================
+`xmlObj.appendChild (child);`
+
+| child   | An [XML object](#xml-object) or any value that can be converted to a String with `toString()`.   |
+|---------|--------------------------------------------------------------------------------------------------|
 
 Appends a child element to this node, after any existing children. If the argument is not XML,
 creates a new XML element that contains the string as its text value, using the same element name
-as the last element currently contained in this object's node.
+as the last element currently contained in this object’s node.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-attributes:
+<a id="xml-object-attributes"></a>
 
-attributes()
-++++++++++++
-``xmlObj.attributes (name);``
+#### attributes()
 
-====  ==============================
-name  A String, the attribute name.
-====  ==============================
+`xmlObj.attributes (name);`
+
+| name   | A String, the attribute name.   |
+|--------|---------------------------------|
 
 Retrieves a list of the named attribute elements contained in this node.
 
-Returns an :ref:`xml-object` containing all values of the named attribute.
+Returns an [XML object](#xml-object) containing all values of the named attribute.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-child:
+<a id="xml-object-child"></a>
 
-child()
-+++++++
-``xmlObj.child (which);``
+#### child()
 
-=====  ======================================================================================
-which  A String, the element name, or a Number, a 0-based index into this node's child array.
-=====  ======================================================================================
+`xmlObj.child (which);`
+
+| which   | A String, the element name, or a Number, a 0-based index into this node’s child array.   |
+|---------|------------------------------------------------------------------------------------------|
 
 Retrieves a list of all child elements of this node of a given type.
 
-Returns an :ref:`xml-object` containing all child elements of the given type.
+Returns an [XML object](#xml-object) containing all child elements of the given type.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-childIndex:
+<a id="xml-object-childindex"></a>
 
-childIndex()
-++++++++++++
-``xmlObj.childIndex ();``
+#### childIndex()
+
+`xmlObj.childIndex ();`
 
 Retrieves the 0-based position index of this node within its parent node.
 
 Returns a Number.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-children:
+<a id="xml-object-children"></a>
 
-children()
-++++++++++
-``xmlObj.children();``
+#### children()
+
+`xmlObj.children();`
 
 Retrieves all of the immediate child elements of this node, including text elements.
 
-Returns an :ref:`xml-object` containing the child elements.
+Returns an [XML object](#xml-object) containing the child elements.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-comments:
+<a id="xml-object-comments"></a>
 
-comments()
-++++++++++
-``xmlObj.comments();``
+#### comments()
+
+`xmlObj.comments();`
 
 Retrieves all XML comment elements from this node.
 
-Returns an :ref:`xml-object` containing the comments.
+Returns an [XML object](#xml-object) containing the comments.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-contains:
+<a id="xml-object-contains"></a>
 
-contains()
-++++++++++
-``xmlObj.contains (element);``
+#### contains()
 
-=======  ======================
-element  An :ref:`xml-object`.
-=======  ======================
+`xmlObj.contains (element);`
+
+| element   | An [XML object](#xml-object).   |
+|-----------|---------------------------------|
 
 Reports whether an element is contained in this node at any level of nesting.
 
-Returns ``true`` if the element is contained in this XML tree.
+Returns `true` if the element is contained in this XML tree.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-copy:
+<a id="xml-object-copy"></a>
 
-copy()
-++++++
-``xmlObj.copy();``
+#### copy()
+
+`xmlObj.copy();`
 
 Creates a copy of this node.
 
 Returns the new XML object.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-descendants:
+<a id="xml-object-descendants"></a>
 
-descendants()
-+++++++++++++
-``xmlObj.descendants ([name]);``
+#### descendants()
 
-====  ==============================================================================
-name  Optional. A String, the element name to match. If not provided, matches all
-      elements.
-====  ==============================================================================
+`xmlObj.descendants ([name]);`
+
+| name   | Optional. A String, the element name to match. If not provided, matches all<br/>elements.   |
+|--------|---------------------------------------------------------------------------------------------|
 
 Retrieves all descendent elements of this node of a given element type, or all XML-valued
 descendants, at any level of nesting. Includes text elements.
 
-Returns an :ref:`xml-object` containing properties for each descendant element.
+Returns an [XML object](#xml-object) containing properties for each descendant element.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-elements:
+<a id="xml-object-elements"></a>
 
-elements()
-++++++++++
-``xmlObj.elements (name);``
+#### elements()
 
-====  ==============================================================================
-name  Optional. A String, the element name to match. If not provided, matches all
-      elements.
-====  ==============================================================================
+`xmlObj.elements (name);`
+
+| name   | Optional. A String, the element name to match. If not provided, matches all<br/>elements.   |
+|--------|---------------------------------------------------------------------------------------------|
 
 Retrieves all of the immediate child elements of this node of the given type, or of all types. Does not
 include text elements.
 
-Returns an :ref:`xml-object` containing properties for each child element.
+Returns an [XML object](#xml-object) containing properties for each child element.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-hasComplexContent:
+<a id="xml-object-hascomplexcontent"></a>
 
-hasComplexContent()
-+++++++++++++++++++
-``xmlObj.hasComplexContent ();``
+#### hasComplexContent()
+
+`xmlObj.hasComplexContent ();`
 
 Reports whether this node has complex content; that is, whether it contains child elements.
 Disregards contents of other kinds, including attributes, comments, processing instructions and
 text nodes.
 
-Returns ``true`` if this node contains child elements.
+Returns `true` if this node contains child elements.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-hasSimpleContent:
+<a id="xml-object-hassimplecontent"></a>
 
-hasSimpleContent()
-++++++++++++++++++
-``xmlObj.hasSimpleContent ();``
+#### hasSimpleContent()
+
+`xmlObj.hasSimpleContent ();`
 
 Reports whether this node has simple content; that is, whether it represents a text node, an
 attribute node, or an element without child elements (regardless of whether it also contains
@@ -324,189 +293,182 @@ attributes, comments, processing instructions or text).
 
 Object representing comments and processing instructions do not have simple content.
 
-Returns ``true`` if this node contains no child elements.
+Returns `true` if this node contains no child elements.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-inScopeNamespaces:
+<a id="xml-object-inscopenamespaces"></a>
 
-inScopeNamespaces()
-+++++++++++++++++++
-``xmlObj.inScopeNamespaces ();``
+#### inScopeNamespaces()
+
+`xmlObj.inScopeNamespaces ();`
 
 Retrieves the current list of valid namespaces in this element.
 
-Returns an Array of :ref:`namespace-object`, in which the last member is the default namespace.
+Returns an Array of [Namespace object](#namespace-object), in which the last member is the default namespace.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-insertChildAfter:
+<a id="xml-object-insertchildafter"></a>
 
-insertChildAfter()
-++++++++++++++++++
-``xmlObj.insertChildAfter (child1, child2);``
+#### insertChildAfter()
 
-======  ====================================================================================
-child1  An :ref:`xml-object`, the existing child element after which to place the new child,
-        or null to insert the new child at the beginning.
-child2  An :ref:`xml-object`, the new child element, or any value that can be converted to a String
-        with ``toString()``.
-======  ====================================================================================
+`xmlObj.insertChildAfter (child1, child2);`
+
+| child1   | An [XML object](#xml-object), the existing child element after which to place the new child,<br/>or null to insert the new child at the beginning.   |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| child2   | An [XML object](#xml-object), the new child element, or any value that can be converted to a String<br/>with `toString()`.                           |
 
 Inserts a new child element or text node into this node, after another existing child element. If the
 relative element is not currently in this node, does not insert the new child.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-insertChildBefore:
+<a id="xml-object-insertchildbefore"></a>
 
-insertChildBefore()
-+++++++++++++++++++
-``xmlObj.insertChildBefore (child1, child2);``
+#### insertChildBefore()
 
-======  ====================================================================================
-child1  An :ref:`xml-object`, the existing child element before which to place the new child,
-        or null to insert the new child at the end.
-child2  An :ref:`xml-object`, the new child element, or any value that can be converted to a String
-        with ``toString()``.
-======  ====================================================================================
+`xmlObj.insertChildBefore (child1, child2);`
+
+| child1   | An [XML object](#xml-object), the existing child element before which to place the new child,<br/>or null to insert the new child at the end.   |
+|----------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| child2   | An [XML object](#xml-object), the new child element, or any value that can be converted to a String<br/>with `toString()`.                      |
 
 Inserts a new child element or text node into this node, before another existing child element. If the
 relative element is not currently in this node, does not insert the new child.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-length:
+<a id="xml-object-length"></a>
 
-length()
-++++++++
-``xmlObj.length ();``
+#### length()
+
+`xmlObj.length ();`
 
 Reports the number of child elements contained in this node. The minimum number is 1, the
 element that this object represents.
 
 Returns a Number.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-localName:
+<a id="xml-object-localname"></a>
 
-localName()
-+++++++++++
-``xmlObj.localName ();``
+#### localName()
+
+`xmlObj.localName ();`
 
 Retrieves the local name of this element; that is, the element name, without any namespace prefix.
 
 Returns a String.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-name:
+<a id="xml-object-name"></a>
 
-name()
-++++++
-``xmlObj.name ();``
+#### name()
+
+`xmlObj.name ();`
 
 Retrieves the full name of this element, with the namespace information.
 
-Returns a :ref:`qname-object` containing the element name and namespace URI.
+Returns a [QName object](#qname-object) containing the element name and namespace URI.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-namespace:
+<a id="xml-object-namespace"></a>
 
-namespace()
-+++++++++++
-``xmlObj.namespace ();``
+#### namespace()
+
+`xmlObj.namespace ();`
 
 Retrieves the namespace URI of this element.
 
 Returns a String.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-nodeKind:
+<a id="xml-object-nodekind"></a>
 
-nodeKind()
-++++++++++
-``xmlObj.nodeKind ();``
+#### nodeKind()
+
+`xmlObj.nodeKind ();`
 
 Reports the type of this node.
 
 Returns a String, one of:
 
-- ``element``
-- ``attribute``
-- ``comment``
-- ``processing-instruction``
-- ``text``
+- `element`
+- `attribute`
+- `comment`
+- `processing-instruction`
+- `text`
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-namespaceDeclarations:
+<a id="xml-object-namespacedeclarations"></a>
 
-namespaceDeclarations()
-+++++++++++++++++++++++
-``xmlObj.namespaceDeclarations ();``
+#### namespaceDeclarations()
+
+`xmlObj.namespaceDeclarations ();`
 
 Retrieves all of the namespace declarations contained in this node.
 
-Returns an Array of :ref:`namespace-object`.
+Returns an Array of [Namespace object](#namespace-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-normalize:
+<a id="xml-object-normalize"></a>
 
-normalize()
-+++++++++++
-``xmlObj.normalize ();``
+#### normalize()
+
+`xmlObj.normalize ();`
 
 Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent
 text nodes and eliminating empty text nodes.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-parent:
+<a id="xml-object-parent"></a>
 
-parent()
-++++++++
-``xmlObj.parent ();``
+#### parent()
+
+`xmlObj.parent ();`
 
 Retrieves the parent node of this node.
 
-Returns an :ref:`xml-object`, or ``null`` for the root element.
+Returns an [XML object](#xml-object), or `null` for the root element.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-prependChild:
+<a id="xml-object-prependchild"></a>
 
-prependChild()
-++++++++++++++
-``xmlObj.prependChild (child);``
+#### prependChild()
 
-=====  ===============================
-child  An :ref:`xml-object` or string.
-=====  ===============================
+`xmlObj.prependChild (child);`
+
+| child   | An [XML object](#xml-object) or string.   |
+|---------|-------------------------------------------|
 
 Prepends a child element to this node, before any existing children. If you prepend a string to a text
-element, the result is two text elements; call :ref:`xml-object-normalize` to concatenate them into a single text
+element, the result is two text elements; call [normalize()](#xml-object-normalize) to concatenate them into a single text
 string.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-processingInstructions:
+<a id="xml-object-processinginstructions"></a>
 
-processingInstructions()
-++++++++++++++++++++++++
-``xmlObj.processingInstructions ([name]);``
+#### processingInstructions()
+
+`xmlObj.processingInstructions ([name]);`
 name
 
 A String, the name of a processing instruction, or null to get all processing
@@ -514,162 +476,142 @@ instructions.
 
 Retrieves processing instructions contained in this node.
 
-Returns an :ref:`xml-object` containing the children of this object that are processing instructions,
+Returns an [XML object](#xml-object) containing the children of this object that are processing instructions,
 matching the name if supplied.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-replace:
+<a id="xml-object-replace"></a>
 
-replace()
-+++++++++
-``xmlObj.replace (name, value);``
+#### replace()
 
-=====  ======================================================================================
-name   An element or attribute name, with or without the 0-based position index of a
-       specific element, or the wildcard string ``"*"``.
+`xmlObj.replace (name, value);`
 
-       - If no position index is supplied, replaces the value of all matching elements.
-       - If the wildcard is supplied, replaces the value of all contained elements. When an
-         element contain subelements, those are removed, and only the replacement
-         value remains.
-
-value  An :ref:`xml-object` or any value that can be converted to a String with ``toString()``.
-=====  ======================================================================================
+| name   | An element or attribute name, with or without the 0-based position index of a<br/>specific element, or the wildcard string `"*"`.<br/><br/>- If no position index is supplied, replaces the value of all matching elements.<br/>- If the wildcard is supplied, replaces the value of all contained elements. When an<br/>  element contain subelements, those are removed, and only the replacement<br/>  value remains.   |
+|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| value  | An [XML object](#xml-object) or any value that can be converted to a String with `toString()`.                                                                                                                                                                                                                                                                                                                             |
 
 Replaces one or more property values in this node.
 
 If the named element does not exist, appends the given value as a text element.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-setChildren:
+<a id="xml-object-setchildren"></a>
 
-setChildren()
-+++++++++++++
-``xmlObj.setChildren (value);``
+#### setChildren()
 
-=====  ========================================================================================
-value  An :ref:`xml-object` or any value that can be converted to a String with ``toString()``.
-=====  ========================================================================================
+`xmlObj.setChildren (value);`
+
+| value   | An [XML object](#xml-object) or any value that can be converted to a String with `toString()`.   |
+|---------|--------------------------------------------------------------------------------------------------|
 
 Replaces all of the XML-valued properties in this object with a new value, which can be a simple text
 element, or can contain another set of XML properties.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-setLocalName:
+<a id="xml-object-setlocalname"></a>
 
-setLocalName()
-++++++++++++++
-``xmlObj.setLocalName(name);``
+#### setLocalName()
 
-====  =======================
-name  A String, the new name.
-====  =======================
+`xmlObj.setLocalName(name);`
+
+| name   | A String, the new name.   |
+|--------|---------------------------|
 
 Replaces the local name of this object; that is, the element name without any namespace prefix.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-setName:
+<a id="xml-object-setname"></a>
 
-setName()
-+++++++++
-``xmlObj.setName(name);``
+#### setName()
 
-====  =======================
-name  A String, the new name.
-====  =======================
+`xmlObj.setName(name);`
+
+| name   | A String, the new name.   |
+|--------|---------------------------|
 
 Replaces the full name of this object; that is, the element name and its namespace prefix.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-setNamespace:
+<a id="xml-object-setnamespace"></a>
 
-setNamespace()
-++++++++++++++
-``xmlObj.setNamespace(ns);``
+#### setNamespace()
 
-==  =========================================================================================
-ns  A Namespace object for a namespace that has been declared in the tree above this element.
-==  =========================================================================================
+`xmlObj.setNamespace(ns);`
+
+| ns   | A Namespace object for a namespace that has been declared in the tree above this element.   |
+|------|---------------------------------------------------------------------------------------------|
 
 Sets the namespace for this XML element. If the namespace has not been declared in the tree above
 this element, add a namespace declaration instead.
 
-Returns this :ref:`xml-object`.
+Returns this [XML object](#xml-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-text:
+<a id="xml-object-text"></a>
 
-text()
-++++++
-``xmlObj.text();``
+#### text()
+
+`xmlObj.text();`
 
 Retrieves text nodes from this element.
 
-Returns an :ref:`xml-object` containing all properties of this object that represent XML text nodes.
+Returns an [XML object](#xml-object) containing all properties of this object that represent XML text nodes.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-toString:
+<a id="xml-object-tostring"></a>
 
-toString()
-++++++++++
-``xmlObj.toString();``
+#### toString()
+
+`xmlObj.toString();`
 
 Creates a string representation of this object.
 
 - For text and attribute nodes, this is the textual value of the node.
-- For other elements, it is the result of :ref:`xml-object-toXMLString`.
+- For other elements, it is the result of [toXMLString()](#xml-object-toxmlstring).
 - If this XML object is a list, concatenates the result of calling the function on each contained element.
 
 Returns a String.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-toXMLString:
+<a id="xml-object-toxmlstring"></a>
 
-toXMLString()
-+++++++++++++
-``xmlObj.toXMLString();``
+#### toXMLString()
 
-Creates an XML-encoded string representation of this :ref:`xml-object`. This result includes the start tag,
+`xmlObj.toXMLString();`
+
+Creates an XML-encoded string representation of this [XML object](#xml-object). This result includes the start tag,
 attributes and end tag of the XML object, regardless of its content. Formats the string as specified
-by the global settings XML.:ref:`prettyPrinting <xml-class-properties>` and XML.:ref:`prettyIndent <xml-class-properties>`.
+by the global settings XML.:ref:prettyPrinting <xml-class-properties> and XML.:ref:prettyIndent <xml-class-properties>.
 
 Returns a String.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-object-xpath:
+<a id="xml-object-xpath"></a>
 
-xpath()
-+++++++
-``xmlObj.xpath (expression[, variables]);``
+#### xpath()
 
-==========  ==========================================================================================
-expression  A String containing an XPath expression.
+`xmlObj.xpath (expression[, variables]);`
 
-            .. note:: In this context, include the actual top level element. For example, an
-              expression for the example XML must start with "/bookstore". This is unlike
-              JavaScript property access, where the top level element is implied.
-
-variables   Optional. A JavaScript object containing variable definitions. The properties are used
-            to look up XPath variables contained in the expression. For example, if the
-            expression contains the variable ``$abc``, the value is in the object's ``abc`` property.
-==========  ==========================================================================================
+| expression   | A String containing an XPath expression.<br/><br/>#### NOTE<br/>In this context, include the actual top level element. For example, an<br/>expression for the example XML must start with “/bookstore”. This is unlike<br/>JavaScript property access, where the top level element is implied.   |
+|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| variables    | Optional. A JavaScript object containing variable definitions. The properties are used<br/>to look up XPath variables contained in the expression. For example, if the<br/>expression contains the variable `$abc`, the value is in the object’s `abc` property.                                 |
 
 Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML
 object as the context node. The context position and size are set to 1, and all variables are initially
@@ -678,160 +620,144 @@ other node types) and return the results in a list in the order of execution.
 
 If the XPath expression does not evaluate to a node list, throws a JavaScript exception.
 
-Returns an :ref:`xml-object`, the result of evaluation.
+Returns an [XML object](#xml-object), the result of evaluation.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-global-functions:
+<a id="xml-global-functions"></a>
 
-Global functions
-----------------
+## Global functions
 
 These functions are available in the JavaScript global namespace.
 
-.. _xml-isXMLName:
+<a id="xml-isxmlname"></a>
 
-isXMLName()
-***********
-``isXMLName (String name)``
+### isXMLName()
 
-====  =========
-name  A string.
-====  =========
+`isXMLName (String name)`
+
+| name   | A string.   |
+|--------|-------------|
 
 Reports whether a string contains a name that conforms to valid XML syntax.
 
-.. note:: This implementation uses the same rules as for a JavaScript name, except for the '$' character,
-  which is disallowed, and the '-' character, which as added. It does not follow the W3C definition of an
-  XML name, which adds more Unicode characters to the valid set of characters.
+#### NOTE
+This implementation uses the same rules as for a JavaScript name, except for the ‘$’ character,
+which is disallowed, and the ‘-’ character, which as added. It does not follow the W3C definition of an
+XML name, which adds more Unicode characters to the valid set of characters.
 
-Returns ``true`` if the name is a valid XML name, ``false`` otherwise.
+Returns `true` if the name is a valid XML name, `false` otherwise.
 
---------------------------------------------------------------------------------
+---
 
-.. _xml-setDefaultXMLNamespace:
+<a id="xml-setdefaultxmlnamespace"></a>
 
-setDefaultXMLNamespace()
-************************
-``setDefaultXMLNamespace (Namespace ns)``
+### setDefaultXMLNamespace()
 
-==  ==========================================
-ns  A Namespace object. Any prefix is ignored.
-==  ==========================================
+`setDefaultXMLNamespace (Namespace ns)`
+
+| ns   | A Namespace object. Any prefix is ignored.   |
+|------|----------------------------------------------|
 
 Sets the default namespace for XML objects. You can also set the default namespace using this
-syntax::
+syntax:
 
-  default xml namespace = Namespace object
-  default xml namespace = URL_string
+```default
+default xml namespace = Namespace object
+default xml namespace = URL_string
+```
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _qname-object:
+<a id="qname-object"></a>
 
-QName object
-------------
+## QName object
 
 This object encapsulates a fully qualified XML name, the combination of a local XML name and its
 namespace URI.
 
---------------------------------------------------------------------------------
+---
 
-QName object constructors
-*************************
+### QName object constructors
 
-The constructor takes several forms::
+The constructor takes several forms:
 
-  new QName ()
-  new QName (name)
-  new QName (ns)
-  new QName (uri, name)
+```default
+new QName ()
+new QName (name)
+new QName (ns)
+new QName (uri, name)
+```
 
-When no arguments are supplies, creates a ``QName`` object with an empty local name and no URI.
+When no arguments are supplies, creates a `QName` object with an empty local name and no URI.
 
-=========  =========  ================================================================================
-name       String     Creates a ``QName`` object with the given local name and the URI of the default
-                      namespace. Can be the wildcard character, "*".
-name       QName      Creates a copy of an existing :ref:`qname-object`.
-ns         Namespace  Creates a ``QName`` object with an empty local name and the URI of the :ref:`namespace-object`.
-uri, name  String     Create a ``QName`` object with the given namespace URI and local name.
+| name      | String    | Creates a `QName` object with the given local name and the URI of the default<br/>namespace. Can be the wildcard character, “\*”.                                                                                                   |
+|-----------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name      | QName     | Creates a copy of an existing [QName object](#qname-object).                                                                                                                                                                        |
+| ns        | Namespace | Creates a `QName` object with an empty local name and the URI of the [Namespace object](#namespace-object).                                                                                                                         |
+| uri, name | String    | Create a `QName` object with the given namespace URI and local name.<br/><br/>If the local name is supplied as the wildcard character, “\*”, the `uri` argument<br/>is ignored, and the URI value is that of the default namespace. |
 
-                      If the local name is supplied as the wildcard character, "*", the ``uri`` argument
-                      is ignored, and the URI value is that of the default namespace.
-=========  =========  ================================================================================
+---
 
---------------------------------------------------------------------------------
+### QName object properties
 
-QName object properties
-***********************
+| name   | String   | The local element name portion of the XML element’s fully qualified XML name.   |
+|--------|----------|---------------------------------------------------------------------------------|
+| uri    | String   | The namespace prefix of the XML element’s fully qualified XML name.             |
 
-======  =======  ==============================================================================
-name    String   The local element name portion of the XML element's fully qualified XML name.
-uri     String   The namespace prefix of the XML element's fully qualified XML name.
-======  =======  ==============================================================================
+---
 
---------------------------------------------------------------------------------
+<a id="namespace-object"></a>
 
-.. _namespace-object:
+## Namespace object
 
-Namespace object
-----------------
 This object encapsulates the definition of an XML namespace. A namespace associates an XML-name
 prefix with a complete URI. The prefix is a string that precedes the local name of an XML element or
 attribute and identifies the namespace, while the URI points to the actual location where the definition of
 the namespace is found.
 
-For example, this XML definition contains a namespace declaration::
+For example, this XML definition contains a namespace declaration:
 
-  .. code-block::xml
+```default
+.. code-block::xml
 
-    <?xml xmlns:adobe=http://www.adobe.com/test?>
+  <?xml xmlns:adobe=http://www.adobe.com/test?>
+```
 
-In the corresponding namespace, the prefix is ``adobe``, and the URI is ``http://www.adobe.com/test``.
+In the corresponding namespace, the prefix is `adobe`, and the URI is `http://www.adobe.com/test`.
 
---------------------------------------------------------------------------------
+---
 
-.. _namespace-object-constructors:
+<a id="namespace-object-constructors"></a>
 
-Namespace object constructors
-*****************************
+### Namespace object constructors
 
-The Namespace constructor takes several forms::
+The Namespace constructor takes several forms:
 
-  new Namespace()
-  new Namespace (String uri)
-  new Namespace (QName prefix)
-  new Namespace (Namespace ns)
-  new Namespace (String prefix, String uri)
+```default
+new Namespace()
+new Namespace (String uri)
+new Namespace (QName prefix)
+new Namespace (Namespace ns)
+new Namespace (String prefix, String uri)
+```
 
 When no argument is supplied, creates a namespace with an empty prefix and URI.
 
-===========  =========  ========================================================================
-uri          String     Creates a Namespace object with an empty prefix and the given URI.
-prefix       QName      Creates a namespace with an empty prefix and the URI set to the URI of the
-                        :ref:`qname-object` (if the QName object contains a URI).
-ns           Namespace  Creates a copy of the given :ref:`namespace-object`.
+| uri         | String    | Creates a Namespace object with an empty prefix and the given URI.                                                                                                                                                                                                           |
+|-------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| prefix      | QName     | Creates a namespace with an empty prefix and the URI set to the URI of the<br/>[QName object](#qname-object) (if the QName object contains a URI).                                                                                                                           |
+| ns          | Namespace | Creates a copy of the given [Namespace object](#namespace-object).<br/><br/>If the `Namespace()` function is called without the `new` operator, and the only<br/>argument is a `Namespace` object, the function simply returns that object,<br/>rather than creating a copy. |
+| prefix, uri | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                                        |
 
-                        If the ``Namespace()`` function is called without the ``new`` operator, and the only
-                        argument is a ``Namespace`` object, the function simply returns that object,
-                        rather than creating a copy.
-prefix, uri  String     Creates a ``Namespace`` object with the given prefix and the given URI.
-===========  =========  ========================================================================
+---
 
---------------------------------------------------------------------------------
+<a id="namespace-object-properties"></a>
 
-.. _namespace-object-properties:
+### Namespace object properties
 
-Namespace object properties
-***************************
-
-======  ======  ======================================================================================
-prefix  String  The element-name prefix associated with the namespace URI.
-
-                The prefix value can be ``undefined``, as when a specified prefix is not a valid XML
-                name. Namespaces with an undefined prefix are completely ignored; they are not
-                added to an XML namespace declaration.
-uri     String  The location of the namespace definition, a URI.
-======  ======  ======================================================================================
+| prefix   | String   | The element-name prefix associated with the namespace URI.<br/><br/>The prefix value can be `undefined`, as when a specified prefix is not a valid XML<br/>name. Namespaces with an undefined prefix are completely ignored; they are not<br/>added to an XML namespace declaration.   |
+|----------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| uri      | String   | The location of the namespace definition, a URI.                                                                                                                                                                                                                                       |

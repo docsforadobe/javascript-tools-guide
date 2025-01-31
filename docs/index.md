@@ -1,130 +1,301 @@
-Welcome to The Javascript Tools Guide
-=====================================
+# Welcome to The Javascript Tools Guide
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Introduction
+# Introduction
 
-    introduction/index
-    introduction/extendscript-overview
-    introduction/scripting-for-specific-applications
+* [Introduction](introduction/index.md)
+* [ExtendScript overview](introduction/extendscript-overview.md)
+  * [Example code](introduction/extendscript-overview.md#example-code)
+  * [Development and debugging tools](introduction/extendscript-overview.md#development-and-debugging-tools)
+  * [Cross-platform file-system access](introduction/extendscript-overview.md#cross-platform-file-system-access)
+  * [User-interface development tools](introduction/extendscript-overview.md#user-interface-development-tools)
+  * [Interapplication communication and messaging](introduction/extendscript-overview.md#interapplication-communication-and-messaging)
+  * [External communication](introduction/extendscript-overview.md#external-communication)
+  * [External shared-library integration](introduction/extendscript-overview.md#external-shared-library-integration)
+  * [Additional utilities and features](introduction/extendscript-overview.md#additional-utilities-and-features)
+* [Scripting for specific applications](introduction/scripting-for-specific-applications.md)
+  * [Startup scripts](introduction/scripting-for-specific-applications.md#startup-scripts)
+  * [JavaScript variables](introduction/scripting-for-specific-applications.md#javascript-variables)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: The VS Code ExtendScript Debugger
+# The VS Code ExtendScript Debugger
 
-    vscode-debugger/index
-    vscode-debugger/getting-started-with-vscode-debugger
-    vscode-debugger/vscode-extension-features
+* [The VS Code Debugger](vscode-debugger/index.md)
+  * [External Links](vscode-debugger/index.md#external-links)
+* [Getting Started with the VS Code Debugger](vscode-debugger/getting-started-with-vscode-debugger.md)
+  * [Installing the extension](vscode-debugger/getting-started-with-vscode-debugger.md#installing-the-extension)
+  * [Opening a project directory](vscode-debugger/getting-started-with-vscode-debugger.md#opening-a-project-directory)
+  * [Creating a debug launch task](vscode-debugger/getting-started-with-vscode-debugger.md#creating-a-debug-launch-task)
+  * [Attaching the debugger](vscode-debugger/getting-started-with-vscode-debugger.md#attaching-the-debugger)
+  * [Running the debugger](vscode-debugger/getting-started-with-vscode-debugger.md#running-the-debugger)
+  * [Futher reading](vscode-debugger/getting-started-with-vscode-debugger.md#futher-reading)
+* [VS Code Extension Features](vscode-debugger/vscode-extension-features.md)
+  * [Using Breakpoints](vscode-debugger/vscode-extension-features.md#using-breakpoints)
+  * [Exporting as Binary](vscode-debugger/vscode-extension-features.md#exporting-as-binary)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: The ExtendScript Toolkit
+# The ExtendScript Toolkit
 
-    extendscript-toolkit/index
-    extendscript-toolkit/configuring-the-toolkit-window
-    extendscript-toolkit/selecting-scripts
-    extendscript-toolkit/the-script-editor
-    extendscript-toolkit/debugging-in-the-toolkit
-    extendscript-toolkit/code-profiling-for-optimization
-    extendscript-toolkit/inspecting-object-models
+* [The ExtendScript Toolkit](extendscript-toolkit/index.md)
+* [Configuring the Toolkit window](extendscript-toolkit/configuring-the-toolkit-window.md)
+  * [Panel menus](extendscript-toolkit/configuring-the-toolkit-window.md#panel-menus)
+  * [Document windows](extendscript-toolkit/configuring-the-toolkit-window.md#document-windows)
+  * [Workspaces](extendscript-toolkit/configuring-the-toolkit-window.md#workspaces)
+  * [Dialogs](extendscript-toolkit/configuring-the-toolkit-window.md#dialogs)
+* [Selecting Scripts](extendscript-toolkit/selecting-scripts.md)
+  * [The Scripts panel and favorite script locations](extendscript-toolkit/selecting-scripts.md#the-scripts-panel-and-favorite-script-locations)
+* [The Script Editor](extendscript-toolkit/the-script-editor.md)
+  * [Navigation aids](extendscript-toolkit/the-script-editor.md#navigation-aids)
+  * [Coding aids](extendscript-toolkit/the-script-editor.md#coding-aids)
+  * [Searching in text](extendscript-toolkit/the-script-editor.md#searching-in-text)
+  * [Syntax marking](extendscript-toolkit/the-script-editor.md#syntax-marking)
+* [Debugging in the Toolkit](extendscript-toolkit/debugging-in-the-toolkit.md)
+  * [Selecting a debugging target](extendscript-toolkit/debugging-in-the-toolkit.md#selecting-a-debugging-target)
+  * [The JavaScript console](extendscript-toolkit/debugging-in-the-toolkit.md#the-javascript-console)
+  * [Controlling code execution](extendscript-toolkit/debugging-in-the-toolkit.md#controlling-code-execution)
+  * [Visual indication of execution states](extendscript-toolkit/debugging-in-the-toolkit.md#visual-indication-of-execution-states)
+  * [Setting breakpoints](extendscript-toolkit/debugging-in-the-toolkit.md#setting-breakpoints)
+  * [Evaluation in help tips](extendscript-toolkit/debugging-in-the-toolkit.md#evaluation-in-help-tips)
+  * [Tracking data](extendscript-toolkit/debugging-in-the-toolkit.md#tracking-data)
+  * [The call stack](extendscript-toolkit/debugging-in-the-toolkit.md#the-call-stack)
+* [Code profiling for optimization](extendscript-toolkit/code-profiling-for-optimization.md)
+* [Inspecting object models](extendscript-toolkit/inspecting-object-models.md)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: File System Access
+# File System Access
 
-    file-system-access/index
-    file-system-access/using-file-and-folder-objects
-    file-system-access/file-access-error-messages
-    file-system-access/file-and-folder-supported-encoding-names
-    file-system-access/file-object
-    file-system-access/folder-object
+* [File System Access](file-system-access/index.md)
+* [Using File and Folder objects](file-system-access/using-file-and-folder-objects.md)
+  * [Specifying paths](file-system-access/using-file-and-folder-objects.md#specifying-paths)
+  * [Unicode I/O](file-system-access/using-file-and-folder-objects.md#unicode-i-o)
+  * [File error handling](file-system-access/using-file-and-folder-objects.md#file-error-handling)
+* [File access error messages](file-system-access/file-access-error-messages.md)
+* [File- and Folder-supported encoding names](file-system-access/file-and-folder-supported-encoding-names.md)
+  * [Additional encodings](file-system-access/file-and-folder-supported-encoding-names.md#additional-encodings)
+* [File object](file-system-access/file-object.md)
+  * [File object constructors](file-system-access/file-object.md#file-object-constructors)
+  * [File class properties](file-system-access/file-object.md#file-class-properties)
+  * [File class functions](file-system-access/file-object.md#file-class-functions)
+  * [File object properties](file-system-access/file-object.md#file-object-properties)
+  * [File object functions](file-system-access/file-object.md#file-object-functions)
+* [Folder object](file-system-access/folder-object.md)
+  * [Folder object constructors](file-system-access/folder-object.md#folder-object-constructors)
+  * [Folder class properties](file-system-access/folder-object.md#folder-class-properties)
+  * [Folder class functions](file-system-access/folder-object.md#folder-class-functions)
+  * [Folder object properties](file-system-access/folder-object.md#folder-object-properties)
+  * [Folder object functions](file-system-access/folder-object.md#folder-object-functions)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: User-Interface Tools
+# User-Interface Tools
 
-    user-interface-tools/index
-    user-interface-tools/code-examples-for-scriptui
-    user-interface-tools/scriptui-programming-model
-    user-interface-tools/types-of-controls
-    user-interface-tools/size-and-location-objects
-    user-interface-tools/drawing-objects
-    user-interface-tools/resource-specifications
-    user-interface-tools/defining-behavior-with-event-callbacks-and-listeners
-    user-interface-tools/communicating-with-the-flash-application
-    user-interface-tools/automatic-layout
-    user-interface-tools/managing-control-titles
-    user-interface-tools/localization-in-scriptui-objects
-    user-interface-tools/scriptui-object-reference
-    user-interface-tools/scriptui-class
-    user-interface-tools/environment
-    user-interface-tools/common-properties
-    user-interface-tools/window-class
-    user-interface-tools/window-object
-    user-interface-tools/control-objects
-    user-interface-tools/event-handling
-    user-interface-tools/graphic-customization-objects
-    user-interface-tools/layoutmanager-object
+* [User-Interface Tools](user-interface-tools/index.md)
+* [Code examples for ScriptUI](user-interface-tools/code-examples-for-scriptui.md)
+* [ScriptUI programming model](user-interface-tools/scriptui-programming-model.md)
+  * [Creating a window](user-interface-tools/scriptui-programming-model.md#creating-a-window)
+  * [Container elements](user-interface-tools/scriptui-programming-model.md#container-elements)
+  * [Window layout](user-interface-tools/scriptui-programming-model.md#window-layout)
+  * [Adding elements to containers](user-interface-tools/scriptui-programming-model.md#adding-elements-to-containers)
+  * [Removing elements](user-interface-tools/scriptui-programming-model.md#removing-elements)
+* [Types of controls](user-interface-tools/types-of-controls.md)
+  * [Containers](user-interface-tools/types-of-controls.md#containers)
+  * [User-interface controls](user-interface-tools/types-of-controls.md#user-interface-controls)
+  * [Displaying images](user-interface-tools/types-of-controls.md#displaying-images)
+  * [Creating multi-column lists](user-interface-tools/types-of-controls.md#creating-multi-column-lists)
+  * [Prompts and alerts](user-interface-tools/types-of-controls.md#prompts-and-alerts)
+  * [Modal dialogs](user-interface-tools/types-of-controls.md#modal-dialogs)
+* [Size and location objects](user-interface-tools/size-and-location-objects.md)
+  * [Size and location object types](user-interface-tools/size-and-location-objects.md#size-and-location-object-types)
+* [Drawing objects](user-interface-tools/drawing-objects.md)
+* [Resource specifications](user-interface-tools/resource-specifications.md)
+  * [Using resource strings](user-interface-tools/resource-specifications.md#using-resource-strings)
+* [Defining behavior with event callbacks and listeners](user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md)
+  * [Defining event-handler callback functions](user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md#defining-event-handler-callback-functions)
+  * [Simulating user events](user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md#simulating-user-events)
+  * [Registering event listeners for windows or controls](user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls)
+  * [How registered event-handlers are called](user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md#how-registered-event-handlers-are-called)
+* [Communicating with the Flash application](user-interface-tools/communicating-with-the-flash-application.md)
+  * [Calling ExtendScript functions from ActionScript](user-interface-tools/communicating-with-the-flash-application.md#calling-extendscript-functions-from-actionscript)
+  * [Calling ActionScript functions from a ScriptUI script](user-interface-tools/communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script)
+  * [Flash Examples](user-interface-tools/communicating-with-the-flash-application.md#flash-examples)
+* [Automatic layout](user-interface-tools/automatic-layout.md)
+  * [Default layout behavior](user-interface-tools/automatic-layout.md#default-layout-behavior)
+  * [Automatic layout properties](user-interface-tools/automatic-layout.md#automatic-layout-properties)
+  * [Custom layout-manager example](user-interface-tools/automatic-layout.md#custom-layout-manager-example)
+  * [The AutoLayoutManager algorithm](user-interface-tools/automatic-layout.md#the-autolayoutmanager-algorithm)
+  * [Automatic layout restrictions](user-interface-tools/automatic-layout.md#automatic-layout-restrictions)
+* [Managing control titles](user-interface-tools/managing-control-titles.md)
+  * [Title alignment and orientation](user-interface-tools/managing-control-titles.md#title-alignment-and-orientation)
+  * [Title character width and justification](user-interface-tools/managing-control-titles.md#title-character-width-and-justification)
+  * [Title truncation](user-interface-tools/managing-control-titles.md#title-truncation)
+  * [Margins around the title and graphic object](user-interface-tools/managing-control-titles.md#margins-around-the-title-and-graphic-object)
+* [Localization in ScriptUI objects](user-interface-tools/localization-in-scriptui-objects.md)
+  * [Variable values in localized strings](user-interface-tools/localization-in-scriptui-objects.md#variable-values-in-localized-strings)
+  * [Enabling automatic localization](user-interface-tools/localization-in-scriptui-objects.md#enabling-automatic-localization)
+* [ScriptUI object reference](user-interface-tools/scriptui-object-reference.md)
+* [ScriptUI class](user-interface-tools/scriptui-class.md)
+  * [ScriptUI class properties](user-interface-tools/scriptui-class.md#scriptui-class-properties)
+  * [ScriptUI class functions](user-interface-tools/scriptui-class.md#scriptui-class-functions)
+* [Environment object](user-interface-tools/environment.md)
+  * [Environment object properties](user-interface-tools/environment.md#environment-object-properties)
+  * [Keyboard state object](user-interface-tools/environment.md#keyboard-state-object)
+* [Common properties](user-interface-tools/common-properties.md)
+* [Window class](user-interface-tools/window-class.md)
+  * [Window class properties](user-interface-tools/window-class.md#window-class-properties)
+  * [Window class functions](user-interface-tools/window-class.md#window-class-functions)
+* [Window object](user-interface-tools/window-object.md)
+  * [Window object constructor](user-interface-tools/window-object.md#window-object-constructor)
+  * [Window object properties](user-interface-tools/window-object.md#window-object-properties)
+  * [Container properties](user-interface-tools/window-object.md#container-properties)
+  * [Window object functions](user-interface-tools/window-object.md#window-object-functions)
+  * [Window event-handling callbacks](user-interface-tools/window-object.md#window-event-handling-callbacks)
+* [Control objects](user-interface-tools/control-objects.md)
+  * [Control object constructors](user-interface-tools/control-objects.md#control-object-constructors)
+  * [Control types and creation parameters](user-interface-tools/control-objects.md#control-types-and-creation-parameters)
+  * [Control object properties](user-interface-tools/control-objects.md#control-object-properties)
+  * [Control object functions](user-interface-tools/control-objects.md#control-object-functions)
+  * [List control object functions](user-interface-tools/control-objects.md#list-control-object-functions)
+  * [FlashPlayer control functions](user-interface-tools/control-objects.md#flashplayer-control-functions)
+  * [Control event-handling callbacks](user-interface-tools/control-objects.md#control-event-handling-callbacks)
+  * [DrawState object](user-interface-tools/control-objects.md#drawstate-object)
+* [Event handling](user-interface-tools/event-handling.md)
+  * [UIEvent base class](user-interface-tools/event-handling.md#uievent-base-class)
+  * [KeyboardEvent object](user-interface-tools/event-handling.md#keyboardevent-object)
+  * [MouseEvent object](user-interface-tools/event-handling.md#mouseevent-object)
+* [Graphic customization objects](user-interface-tools/graphic-customization-objects.md)
+  * [ScriptUIGraphics object](user-interface-tools/graphic-customization-objects.md#scriptuigraphics-object)
+  * [ScriptUIBrush object](user-interface-tools/graphic-customization-objects.md#scriptuibrush-object)
+  * [ScriptUIFont object](user-interface-tools/graphic-customization-objects.md#scriptuifont-object)
+  * [ScriptUIImage object](user-interface-tools/graphic-customization-objects.md#scriptuiimage-object)
+  * [ScriptUIPath object](user-interface-tools/graphic-customization-objects.md#scriptuipath-object)
+  * [ScriptUIPen object](user-interface-tools/graphic-customization-objects.md#scriptuipen-object)
+  * [Custom element class](user-interface-tools/graphic-customization-objects.md#custom-element-class)
+* [LayoutManager object](user-interface-tools/layoutmanager-object.md)
+  * [AutoLayoutManager object constructor](user-interface-tools/layoutmanager-object.md#autolayoutmanager-object-constructor)
+  * [AutoLayoutManager object properties](user-interface-tools/layoutmanager-object.md#autolayoutmanager-object-properties)
+  * [AutoLayoutManager object functions](user-interface-tools/layoutmanager-object.md#autolayoutmanager-object-functions)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Interapplication Communication with Scripts
+# Interapplication Communication with Scripts
 
-    interapplication-communication/index
-    interapplication-communication/communications-overview
-    interapplication-communication/cross-dom-functions
-    interapplication-communication/communicating-through-messages
-    interapplication-communication/messaging-framework-api-reference
-    interapplication-communication/bridgetalk-class
-    interapplication-communication/bridgetalk-message-object
-    interapplication-communication/messaging-error-codes
-    interapplication-communication/application-and-namespace-specifiers
+* [Interapplication Communication with Scripts](interapplication-communication/index.md)
+* [Communications overview](interapplication-communication/communications-overview.md)
+  * [Remote function calls](interapplication-communication/communications-overview.md#remote-function-calls)
+  * [Messaging framework](interapplication-communication/communications-overview.md#messaging-framework)
+  * [Identifying applications](interapplication-communication/communications-overview.md#identifying-applications)
+* [Cross-DOM functions](interapplication-communication/cross-dom-functions.md)
+  * [Application-specific exported functions](interapplication-communication/cross-dom-functions.md#application-specific-exported-functions)
+  * [Startup folder locations](interapplication-communication/cross-dom-functions.md#startup-folder-locations)
+  * [Cross-DOM API reference](interapplication-communication/cross-dom-functions.md#cross-dom-api-reference)
+  * [Cross-DOM Functions](interapplication-communication/cross-dom-functions.md#cross-dom-api-functions)
+* [Communicating through messages](interapplication-communication/communicating-through-messages.md)
+  * [Sending messages](interapplication-communication/communicating-through-messages.md#sending-messages)
+  * [Receiving messages](interapplication-communication/communicating-through-messages.md#receiving-messages)
+  * [Handling unsolicited messages](interapplication-communication/communicating-through-messages.md#handling-unsolicited-messages)
+  * [Handling responses from the message target](interapplication-communication/communicating-through-messages.md#handling-responses-from-the-message-target)
+  * [Passing values between applications](interapplication-communication/communicating-through-messages.md#passing-values-between-applications)
+* [Messaging framework API reference](interapplication-communication/messaging-framework-api-reference.md)
+  * [Example code](interapplication-communication/messaging-framework-api-reference.md#example-code)
+* [BridgeTalk class](interapplication-communication/bridgetalk-class.md)
+  * [BridgeTalk class properties](interapplication-communication/bridgetalk-class.md#bridgetalk-class-properties)
+  * [BridgeTalk class functions](interapplication-communication/bridgetalk-class.md#bridgetalk-class-functions)
+* [BridgeTalk message object](interapplication-communication/bridgetalk-message-object.md)
+  * [BridgeTalk message object constructor](interapplication-communication/bridgetalk-message-object.md#bridgetalk-message-object-constructor)
+  * [BridgeTalk message object properties](interapplication-communication/bridgetalk-message-object.md#bridgetalk-message-object-properties)
+  * [BridgeTalk message object callbacks](interapplication-communication/bridgetalk-message-object.md#bridgetalk-message-object-callbacks)
+  * [BridgeTalk message object functions](interapplication-communication/bridgetalk-message-object.md#bridgetalk-message-object-functions)
+* [Messaging error codes](interapplication-communication/messaging-error-codes.md)
+* [Application and namespace specifiers](interapplication-communication/application-and-namespace-specifiers.md)
+  * [Application specifiers](interapplication-communication/application-and-namespace-specifiers.md#application-specifiers)
+  * [Namespace specifiers](interapplication-communication/application-and-namespace-specifiers.md#namespace-specifiers)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: External Communication Tools
+# External Communication Tools
 
-    external-communication/index
-    external-communication/socket-object
-    external-communication/socket-object-reference
+* [External Communication Tools](external-communication/index.md)
+* [Socket object](external-communication/socket-object.md)
+  * [Chat server sample](external-communication/socket-object.md#chat-server-sample)
+* [Socket object reference](external-communication/socket-object-reference.md)
+  * [Socket object properties](external-communication/socket-object-reference.md#socket-object-properties)
+  * [Socket object functions](external-communication/socket-object-reference.md#socket-object-functions)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Integrating External Libraries
+# Integrating External Libraries
 
-    integrating-external-libraries/index
-    integrating-external-libraries/loading-and-using-shared-libraries
-    integrating-external-libraries/externalobject-object
-    integrating-external-libraries/defining-entry-points-for-direct-access
-    integrating-external-libraries/defining-entry-points-for-indirect-access
+* [Integrating External Libraries](integrating-external-libraries/index.md)
+  * [Example code](integrating-external-libraries/index.md#example-code)
+* [Loading and using shared libraries](integrating-external-libraries/loading-and-using-shared-libraries.md)
+* [ExternalObject object](integrating-external-libraries/externalobject-object.md)
+  * [ExternalObject constructor](integrating-external-libraries/externalobject-object.md#externalobject-constructor)
+  * [ExternalObject class properties](integrating-external-libraries/externalobject-object.md#externalobject-class-properties)
+  * [ExternalObject class function](integrating-external-libraries/externalobject-object.md#externalobject-class-function)
+  * [ExternalObject instance function](integrating-external-libraries/externalobject-object.md#externalobject-instance-function)
+* [Defining entry points for direct access](integrating-external-libraries/defining-entry-points-for-direct-access.md)
+  * [Entry Points](integrating-external-libraries/defining-entry-points-for-direct-access.md#entry-points)
+  * [Additional functions](integrating-external-libraries/defining-entry-points-for-direct-access.md#additional-functions)
+  * [Library initialization](integrating-external-libraries/defining-entry-points-for-direct-access.md#library-initialization)
+  * [Library termination](integrating-external-libraries/defining-entry-points-for-direct-access.md#library-termination)
+* [Defining entry points for indirect access](integrating-external-libraries/defining-entry-points-for-indirect-access.md)
+  * [Entry Points](integrating-external-libraries/defining-entry-points-for-indirect-access.md#entry-points)
+  * [Shared-library function API](integrating-external-libraries/defining-entry-points-for-indirect-access.md#shared-library-function-api)
+  * [Support structures](integrating-external-libraries/defining-entry-points-for-indirect-access.md#support-structures)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: ExtendScript Tools and Features
+# ExtendScript Tools and Features
 
-    extendscript-tools-features/index
-    extendscript-tools-features/dollar-object
-    extendscript-tools-features/extendscript-reflection-interface
-    extendscript-tools-features/localizing-extendscript-strings
-    extendscript-tools-features/user-notification-dialogs
-    extendscript-tools-features/specifying-measurement-values
-    extendscript-tools-features/preprocessor-directives
-    extendscript-tools-features/operator-overloading
+* [ExtendScript Tools and Features](extendscript-tools-features/index.md)
+* [Dollar ($) object](extendscript-tools-features/dollar-object.md)
+  * [Dollar ($) object properties](extendscript-tools-features/dollar-object.md#dollar-object-properties)
+  * [Dollar ($) object functions](extendscript-tools-features/dollar-object.md#dollar-object-functions)
+* [ExtendScript reflection interface](extendscript-tools-features/extendscript-reflection-interface.md)
+  * [Reflection object](extendscript-tools-features/extendscript-reflection-interface.md#reflection-object)
+  * [ReflectionInfo object](extendscript-tools-features/extendscript-reflection-interface.md#reflectioninfo-object)
+  * [ReflectionInfo object properties](extendscript-tools-features/extendscript-reflection-interface.md#reflectioninfo-object-properties)
+* [Localizing ExtendScript strings](extendscript-tools-features/localizing-extendscript-strings.md)
+  * [Variable values in localized strings](extendscript-tools-features/localizing-extendscript-strings.md#variable-values-in-localized-strings)
+  * [Enabling automatic localization](extendscript-tools-features/localizing-extendscript-strings.md#enabling-automatic-localization)
+  * [Locale names](extendscript-tools-features/localizing-extendscript-strings.md#locale-names)
+  * [Testing localization](extendscript-tools-features/localizing-extendscript-strings.md#testing-localization)
+  * [Global localize function](extendscript-tools-features/localizing-extendscript-strings.md#global-localize-function)
+* [User notification dialogs](extendscript-tools-features/user-notification-dialogs.md)
+  * [Global alert function](extendscript-tools-features/user-notification-dialogs.md#global-alert-function)
+  * [Global confirm function](extendscript-tools-features/user-notification-dialogs.md#global-confirm-function)
+  * [Global prompt function](extendscript-tools-features/user-notification-dialogs.md#global-prompt-function)
+* [Specifying measurement values](extendscript-tools-features/specifying-measurement-values.md)
+  * [UnitValue object](extendscript-tools-features/specifying-measurement-values.md#unitvalue-object)
+  * [Converting pixel and percentage values](extendscript-tools-features/specifying-measurement-values.md#converting-pixel-and-percentage-values)
+  * [Computing with unit values](extendscript-tools-features/specifying-measurement-values.md#computing-with-unit-values)
+* [Preprocessor directives](extendscript-tools-features/preprocessor-directives.md)
+  * [#include file](extendscript-tools-features/preprocessor-directives.md#include-file)
+  * [#includepath path](extendscript-tools-features/preprocessor-directives.md#includepath-path)
+  * [#script name](extendscript-tools-features/preprocessor-directives.md#script-name)
+  * [#strict on](extendscript-tools-features/preprocessor-directives.md#strict-on)
+  * [#target name](extendscript-tools-features/preprocessor-directives.md#target-name)
+  * [#targetengine enginename](extendscript-tools-features/preprocessor-directives.md#targetengine-enginename)
+* [Operator overloading](extendscript-tools-features/operator-overloading.md)
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Integrating XML into JavaScript
+# Integrating XML into JavaScript
 
-    integrating-xml/index
-    integrating-xml/the-xml-object
-    integrating-xml/xml-object-reference
+* [Integrating XML into JavaScript](integrating-xml/index.md)
+* [The XML Object](integrating-xml/the-xml-object.md)
+  * [Accessing XML elements](integrating-xml/the-xml-object.md#accessing-xml-elements)
+  * [Accessing XML attributes](integrating-xml/the-xml-object.md#accessing-xml-attributes)
+  * [Viewing XML objects](integrating-xml/the-xml-object.md#viewing-xml-objects)
+  * [Modifying XML elements and attributes](integrating-xml/the-xml-object.md#modifying-xml-elements-and-attributes)
+  * [Deleting elements and attributes](integrating-xml/the-xml-object.md#deleting-elements-and-attributes)
+  * [Retrieving contained elements](integrating-xml/the-xml-object.md#retrieving-contained-elements)
+  * [Creating and accessing namespaces](integrating-xml/the-xml-object.md#creating-and-accessing-namespaces)
+  * [Mixing XML and JavaScript](integrating-xml/the-xml-object.md#mixing-xml-and-javascript)
+  * [XML lists](integrating-xml/the-xml-object.md#xml-lists)
+* [XML Object Reference](integrating-xml/xml-object-reference.md)
+  * [XML object](integrating-xml/xml-object-reference.md#xml-object)
+  * [Global functions](integrating-xml/xml-object-reference.md#global-functions)
+  * [QName object](integrating-xml/xml-object-reference.md#qname-object)
+  * [Namespace object](integrating-xml/xml-object-reference.md#namespace-object)
 
+# Scripting Access to XMP Metadata
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Scripting Access to XMP Metadata
-
-    scripting-xmp/index
-    scripting-xmp/accessing-the-xmp-scripting-api
-    scripting-xmp/xmpscript-object-reference
+* [Scripting Access to XMP Metadata](scripting-xmp/index.md)
+* [Accessing the XMP scripting API](scripting-xmp/accessing-the-xmp-scripting-api.md)
+  * [Using the XMP scripting API](scripting-xmp/accessing-the-xmp-scripting-api.md#using-the-xmp-scripting-api)
+* [XMPScript object reference](scripting-xmp/xmpscript-object-reference.md)
+  * [XMPAliasInfo object](scripting-xmp/xmpscript-object-reference.md#xmpaliasinfo-object)
+  * [XMPConst object](scripting-xmp/xmpscript-object-reference.md#xmpconst-object)
+  * [XMPDateTime object](scripting-xmp/xmpscript-object-reference.md#xmpdatetime-object)
+  * [XMPFile object](scripting-xmp/xmpscript-object-reference.md#xmpfile-object)
+  * [XMPFileInfo object](scripting-xmp/xmpscript-object-reference.md#xmpfileinfo-object)
+  * [XMPIterator object](scripting-xmp/xmpscript-object-reference.md#xmpiterator-object)
+  * [XMPMeta object](scripting-xmp/xmpscript-object-reference.md#xmpmeta-object)
+  * [XMPPacketInfo object](scripting-xmp/xmpscript-object-reference.md#xmppacketinfo-object)
+  * [XMPProperty object](scripting-xmp/xmpscript-object-reference.md#xmpproperty-object)
+  * [XMPUtils object](scripting-xmp/xmpscript-object-reference.md#xmputils-object)

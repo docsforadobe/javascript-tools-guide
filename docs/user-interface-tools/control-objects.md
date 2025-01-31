@@ -1,255 +1,180 @@
-.. _control-objects:
+<a id="control-objects"></a>
 
-Control objects
-===============
+# Control objects
+
 UI elements that belong to windows can be containers or controls. Containers
 share some aspects of top-level windows, and some aspects of controls, and so
 are described here with controls.
 
-.. _control-object-constructors:
+<a id="control-object-constructors"></a>
 
-Control object constructors
----------------------------
-Use the ``add`` method to create new containers and controls. The ``add`` method
-is available on ``window`` and container (``panel`` and ``group``) objects.
-(See also :ref:`listobj-add` for :ref:`control-type-dropdownlist` and :ref:`control-type-listbox` controls.)
+## Control object constructors
 
-add()
-*****
-``containerObj.(type [, bounds, text, { creation_props> } ]);``
+Use the `add` method to create new containers and controls. The `add` method
+is available on `window` and container (`panel` and `group`) objects.
+(See also [add()](#listobj-add) for [dropdownlist](#control-type-dropdownlist) and [listbox](#control-type-listbox) controls.)
 
-==================  ============================================================================
-``type``            The control type. See :ref:`control-types-and-creation-parameters`.
-``bounds``          Optional. A bounds specification that describes the size and
-                    position of the new control or container, relative to its parent.
-                    See :ref:`Bounds` object for specification formats.
+### add()
 
-                    If supplied, this value creates a new :ref:`Bounds` object which is assigned
-                    to the new object's ``bounds`` property.
-``text``            Optional. String. Initial text to be displayed in the control as the
-                    title, label, or contents, depending on the control type. If supplied, this
-                    value is assigned to the new object's ``text`` property.
-``creation_props``  Optional. Object. The properties of this object specify
-                    creation parameters, which are specific to each object type. See
-                    :ref:`control-types-and-creation-parameters`.
-==================  ============================================================================
+`containerObj.(type [, bounds, text, { creation_props> } ]);`
+
+| `type`           | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                                                                                                                                      |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `bounds`         | Optional. A bounds specification that describes the size and<br/>position of the new control or container, relative to its parent.<br/>See [Bounds](size-and-location-objects.md#bounds) object for specification formats.<br/><br/>If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned<br/>to the new object’s `bounds` property. |
+| `text`           | Optional. String. Initial text to be displayed in the control as the<br/>title, label, or contents, depending on the control type. If supplied, this<br/>value is assigned to the new object’s `text` property.                                                                                                                                                                             |
+| `creation_props` | Optional. Object. The properties of this object specify<br/>creation parameters, which are specific to each object type. See<br/>[Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                           |
 
 Creates and returns a new control or container object and adds it to the
 children of this window or container.
 
-Returns the new object, or ``null`` if unable to create the object.
+Returns the new object, or `null` if unable to create the object.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-types-and-creation-parameters:
+<a id="control-types-and-creation-parameters"></a>
 
-Control types and creation parameters
--------------------------------------
+## Control types and creation parameters
+
 The following keywords can be used in string literals as the type specifier for
-the ``add`` method, available on
-``Window`` and container (``Panel`` and ``Group``) objects. The class names can
+the `add` method, available on
+`Window` and container (`Panel` and `Group`) objects. The class names can
 be used in resource specifications to define controls within a container element
-(``Window``, ``Panel``, or ``Group``).
+(`Window`, `Panel`, or `Group`).
 
-All types of controls, including containers, have an optional creation parameter ``name``
+All types of controls, including containers, have an optional creation parameter `name`
 that allows you to give the object a unique name.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-type-button:
+<a id="control-type-button"></a>
 
-button
-******
-Class Name: ``Button``
+### button
+
+Class Name: `Button`
 
 A pushbutton containing a mouse-sensitive text string. Calls the
-:ref:`control-event-onClick` callback if the control is clicked or if its
-:ref:`controlobj-notify` method is called.
+[onClick](#control-event-onclick) callback if the control is clicked or if its
+[notify()](#controlobj-notify) method is called.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("button" [, bounds, text, creation_properties}]);
+```default
+w.add ("button" [, bounds, text, creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``text``                 Optional. The text displayed in the control.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                              |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                            |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. For a modal dialog, the<br/>>   special name “ok” makes this [defaultElement](window-object.md#window-defaultelement), and the<br/>>   special name “cancel” makes this the [cancelElement](window-object.md#window-cancelelement) of the<br/>>   parent dialog. |
 
-                           - ``name``: A unique name for the control. For a modal dialog, the
-                             special name "ok" makes this :ref:`window-defaultElement`, and the
-                             special name "cancel" makes this the :ref:`window-cancelElement` of the
-                             parent dialog.
+---
 
-=======================  ======================================================================================
+<a id="control-type-checkbox"></a>
 
---------------------------------------------------------------------------------
+### checkbox
 
-.. _control-type-checkbox:
-
-checkbox
-********
-Class Name: ``Checkbox``
+Class Name: `Checkbox`
 
 A dual-state control showing a box with a checkmark when value is
-true, empty when ``value`` is false. Calls the :ref:`control-event-onClick` callback if the
-control is clicked or if its :ref:`controlobj-notify` method is called.
+true, empty when `value` is false. Calls the [onClick](#control-event-onclick) callback if the
+control is clicked or if its [notify()](#controlobj-notify) method is called.
 
-To add to a window `w`::
+To add to a window w:
 
-  w.add ("checkbox" [, bounds, text, {creation_properties}]);
+```default
+w.add ("checkbox" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``text``                 Optional. The text displayed in the control.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                           |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ======================================================================================
+<a id="control-type-dropdownlist"></a>
 
---------------------------------------------------------------------------------
+### dropdownlist
 
-.. _control-type-dropdownlist:
+Class Name: `DropDownList`
 
-dropdownlist
-************
-Class Name: ``DropDownList``
-
-A drop-down list with zero or more items. Calls the :ref:`control-event-onchange`
+A drop-down list with zero or more items. Calls the [onChange](#control-event-onchange)
 callback if the item selection is changed by a script or the user, or if
-the object's :ref:`controlobj-notify` method is called.
+the object’s [notify()](#controlobj-notify) method is called.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add( "dropdownlist", bounds [, items, {creation_properties}] );
+```default
+w.add( "dropdownlist", bounds [, items, {creation_properties}] );
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``items``                Optional. Supply this argument or the
-                         ``creation_properties`` argument, not both. An array of strings
-                         for the text of each list item.
-                         A :ref:`listitem` object is created for each item.
-                         An item with the text string ``"-"`` creates a separator item.
-``creation_properties``  Optional. Supply this argument or the items argument, not both. This form is most useful
-                         for elements defined using :ref:`Resource-specifications`.
-                         An object that contains the following property:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `items`               | Optional. Supply this argument or the<br/>`creation_properties` argument, not both. An array of strings<br/>for the text of each list item.<br/>A [ListItem](types-of-controls.md#listitem) object is created for each item.<br/>An item with the text string `"-"` creates a separator item.                                                                                                                                                                                                                  |
+| `creation_properties` | Optional. Supply this argument or the items argument, not both. This form is most useful<br/>for elements defined using [Resource specifications](resource-specifications.md#resource-specifications).<br/>An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.<br/>> - `items`: An array of strings for the text of each list item. A<br/>>   `ListItem` object is created for each item. An item with the<br/>>   text string `"-"` creates a separator item. |
 
-                           - ``name``: A unique name for the control.
-                           - ``items``: An array of strings for the text of each list item. A
-                             ``ListItem`` object is created for each item. An item with the
-                             text string ``"-"`` creates a separator item.
+---
 
-=======================  ======================================================================================
+<a id="control-type-editnumber"></a>
 
---------------------------------------------------------------------------------
+### editnumber
 
-.. _control-type-editnumber:
+Class Name: `EditNumber`
 
-editnumber
-**********
-
-Class Name: ``EditNumber``
-
-.. note::
-	This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+#### NOTE
+This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 
 An editable text field the user can enter decimal numbers into. Fractions are allowed.
-Calls the :ref:`control-event-onchange` callback if the text is changed and the user types
-``ENTER`` or the control loses focus, or if its :ref:`controlobj-notify` method is called.
-Calls the :ref:`control-event-onchanging` callback when any change is made to the text.
-The ``textselection`` property contains currently selected text.
+Calls the [onChange](#control-event-onchange) callback if the text is changed and the user types
+`ENTER` or the control loses focus, or if its [notify()](#controlobj-notify) method is called.
+Calls the [onChanging](#control-event-onchanging) callback when any change is made to the text.
+The `textselection` property contains currently selected text.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}]);
+```default
+w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``text``                 Optional. The text displayed in the control.
-``minValue``             Optional. Minimum accepted value of number to be entered.
-``maxValue``             Optional. Maximum accepted value of number to be entered.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `minValue`            | Optional. Minimum accepted value of number to be entered.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `maxValue`            | Optional. Maximum accepted value of number to be entered.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `readonly`: When false (the default), the control accepts text<br/>>   input. When true, the control does not accept input but only<br/>>   displays the contents of the `text` property.<br/>> - `noecho`: When false (the default), the control displays input<br/>>   text. When true, the control does not display input text<br/>>   (used for password input fields).<br/>> - `enterKeySignalsOnChange`: When false (the default), the<br/>>   control signals an [onChange](#control-event-onchange) event when the editable text is<br/>>   changed and the control loses the keyboard focus (that is,<br/>>   the user tabs to another control, clicks outside the control, or<br/>>   types `ENTER`). When true, the control only signals an<br/>>   `onChange` event when the editable text is changed and the<br/>>   user types `ENTER`; other changes to the keyboard focus do<br/>>   not signal the event.<br/>> - `borderless`: When true, the control is drawn with no<br/>>   border. Default is false. |
 
-                           - ``name``: A unique name for the control.
-                           - ``readonly``: When false (the default), the control accepts text
-                             input. When true, the control does not accept input but only
-                             displays the contents of the ``text`` property.
-                           - ``noecho``: When false (the default), the control displays input
-                             text. When true, the control does not display input text
-                             (used for password input fields).
-                           - ``enterKeySignalsOnChange``: When false (the default), the
-                             control signals an :ref:`control-event-onchange` event when the editable text is
-                             changed and the control loses the keyboard focus (that is,
-                             the user tabs to another control, clicks outside the control, or
-                             types ``ENTER``). When true, the control only signals an
-                             ``onChange`` event when the editable text is changed and the
-                             user types ``ENTER``; other changes to the keyboard focus do
-                             not signal the event.
-                           - ``borderless``: When true, the control is drawn with no
-                             border. Default is false.
+---
 
-=======================  ======================================================================================
+<a id="control-type-edittext"></a>
 
---------------------------------------------------------------------------------
+### edittext
 
-.. _control-type-edittext:
+Class Name: `EditText`
 
-edittext
-********
-Class Name: ``EditText``
-
-An editable text field that the user can change. Calls the :ref:`control-event-onchange`
-callback if the text is changed and the user types ``ENTER`` or the control
-loses focus, or if its :ref:`controlobj-notify` method is called. Calls the :ref:`control-event-onchanging`
-callback when any change is made to the text. The ``textselection``
+An editable text field that the user can change. Calls the [onChange](#control-event-onchange)
+callback if the text is changed and the user types `ENTER` or the control
+loses focus, or if its [notify()](#controlobj-notify) method is called. Calls the [onChanging](#control-event-onchanging)
+callback when any change is made to the text. The `textselection`
 property contains currently selected text.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("edittext" [, bounds, text, {creation_properties}]);
+```default
+w.add ("edittext" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``text``                 Optional. The text displayed in the control.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `readonly`: When false (the default), the control accepts text<br/>>   input. When true, the control does not accept input but only<br/>>   displays the contents of the `text` property.<br/>> - `noecho`: When false (the default), the control displays input<br/>>   text. When true, the control does not display input text<br/>>   (used for password input fields).<br/>> - `enterKeySignalsOnChange`: When false (the default), the<br/>>   control signals an [onChange](#control-event-onchange) event when the editable text is<br/>>   changed and the control loses the keyboard focus (that is,<br/>>   the user tabs to another control, clicks outside the control, or<br/>>   types `ENTER`). When true, the control only signals an<br/>>   `onChange` event when the editable text is changed and the<br/>>   user types `ENTER`; other changes to the keyboard focus do<br/>>   not signal the event.<br/>> - `borderless`: When true, the control is drawn with no<br/>>   border. Default is false.<br/>> - `multiline`: When false (the default), the control accepts a<br/>>   single line of text. When true, the control accepts multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrollable`: (For multiline elements only) When true (the<br/>>   default), the text field has a vertical scrollbar that is enabled<br/>>   when the element contains more text than fits in the visible<br/>>   area. When false, no vertical scrollbar appears; if the element<br/>>   contains more text than fits in the visible area, the arrow<br/>>   keys can be used to scroll the text up and down. |
 
-                           - ``name``: A unique name for the control.
-                           - ``readonly``: When false (the default), the control accepts text
-                             input. When true, the control does not accept input but only
-                             displays the contents of the ``text`` property.
-                           - ``noecho``: When false (the default), the control displays input
-                             text. When true, the control does not display input text
-                             (used for password input fields).
-                           - ``enterKeySignalsOnChange``: When false (the default), the
-                             control signals an :ref:`control-event-onchange` event when the editable text is
-                             changed and the control loses the keyboard focus (that is,
-                             the user tabs to another control, clicks outside the control, or
-                             types ``ENTER``). When true, the control only signals an
-                             ``onChange`` event when the editable text is changed and the
-                             user types ``ENTER``; other changes to the keyboard focus do
-                             not signal the event.
-                           - ``borderless``: When true, the control is drawn with no
-                             border. Default is false.
-                           - ``multiline``: When false (the default), the control accepts a
-                             single line of text. When true, the control accepts multiple
-                             lines, in which case the text wraps within the width of the
-                             control.
-                           - ``scrollable``: (For multiline elements only) When true (the
-                             default), the text field has a vertical scrollbar that is enabled
-                             when the element contains more text than fits in the visible
-                             area. When false, no vertical scrollbar appears; if the element
-                             contains more text than fits in the visible area, the arrow
-                             keys can be used to scroll the text up and down.
+---
 
-=======================  ======================================================================================
+<a id="control-type-flashplayer"></a>
 
---------------------------------------------------------------------------------
+### flashplayer
 
-.. _control-type-flashplayer:
-
-flashplayer
-***********
-Class Name: ``FlashPlayer``
+Class Name: `FlashPlayer`
 
 A control that contains a Flash Player, which can load and play Flash
 movies stored in SWF files.
@@ -261,517 +186,407 @@ version of JavaScript that Adobe applications run.
 
 A control object of this type contains functions that allow your script
 to load SWF files, control movie playback, and communicate with the
-ActionScript environment. See :ref:`flashplayer-control-functions`.
+ActionScript environment. See [FlashPlayer control functions](#flashplayer-control-functions).
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
+```default
+w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``moveToLoad``           Optional. A path or URL string or :ref:`File-object` for the SWF file to load into the player.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                  |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `moveToLoad`          | Optional. A path or URL string or [File object](../file-system-access/file-object.md#file-object) for the SWF file to load into the player. |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.                      |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ======================================================================================
+<a id="control-type-group"></a>
 
---------------------------------------------------------------------------------
+### group
 
-.. _control-type-group:
-
-group
-*****
-Class Name: ``Group``
+Class Name: `Group`
 
 A container for other controls. Containers have additional properties
-that control the children; see :ref:`container-properties`.
+that control the children; see [Container properties](window-object.md#container-properties).
 Hiding a group hides all its children. Making it visible makes visible
 those children that are not individually hidden.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("group" [, bounds, {creation_properties}]);
+```default
+w.add ("group" [, bounds, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Optional. The control's position and size.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ==================================================================
+<a id="control-type-iconbutton"></a>
 
---------------------------------------------------------------------------------
+### iconbutton
 
-.. _control-type-iconbutton:
+Class Name: `IconButton`
 
-iconbutton
-**********
-Class Name: ``IconButton``
+A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#control-event-onclick)
+callback if the control is clicked or if its [notify()](#controlobj-notify) method is called.
 
-A mouse-sensitive pushbutton containing an icon. Calls the :ref:`control-event-onClick`
-callback if the control is clicked or if its :ref:`controlobj-notify` method is called.
+To add to a window `w`:
 
-To add to a window ``w``::
+```default
+w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
+```
 
-  w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `icon`                | Optional. The named resource for the icon or family of<br/>icons displayed in the button control, or a pathname or [File object](../file-system-access/file-object.md#file-object)<br/>for an image file. Images must be in PNG format.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `style`: A string for the visual style, one of:<br/>>   - `button`: Has a visible border with a raised or 3D appearance.<br/>>   - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar<br/>> - `toggle`: For a button-style control, a value of true causes it<br/>>   to get a button-pressed appearance the first time it is<br/>>   clicked, and alternate with the unpressed appearance each<br/>>   time it is clicked. The toggle state is reflected in the control’s<br/>>   `value` property. |
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``icon``                 Optional. The named resource for the icon or family of
-                         icons displayed in the button control, or a pathname or :ref:`File-object`
-                         for an image file. Images must be in PNG format.
-``creation_properties``  Optional. An object that contains any of the following properties:
+---
 
-                           - ``name``: A unique name for the control.
-                           - ``style``: A string for the visual style, one of:
-                             - ``button``: Has a visible border with a raised or 3D appearance.
-                             - ``toolbutton``: Has a flat appearance, appropriate for inclusion in a toolbar
-                           - ``toggle``: For a button-style control, a value of true causes it
-                             to get a button-pressed appearance the first time it is
-                             clicked, and alternate with the unpressed appearance each
-                             time it is clicked. The toggle state is reflected in the control's
-                             ``value`` property.
+<a id="control-type-image"></a>
 
-=======================  ======================================================================================
+### image
 
---------------------------------------------------------------------------------
-
-.. _control-type-image:
-
-image
-*****
-Class Name: ``Image``
+Class Name: `Image`
 
 Displays an icon or image.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("image" [, bounds, icon, {creation_properties}]);
+```default
+w.add ("image" [, bounds, icon, {creation_properties}]);
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``icon``                 Optional. The named resource for the icon or family of
-                         icons displayed in the button control, or a pathname or :ref:`File-object`
-                         for an image file. Images must be in PNG format.
-``creation_properties``  Optional. An object that contains the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                              |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `icon`                | Optional. The named resource for the icon or family of<br/>icons displayed in the button control, or a pathname or [File object](../file-system-access/file-object.md#file-object)<br/>for an image file. Images must be in PNG format. |
+| `creation_properties` | Optional. An object that contains the following properties:<br/><br/>> - `name`: A unique name for the control.                                                                                                                         |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ======================================================================================
+<a id="control-type-item"></a>
 
---------------------------------------------------------------------------------
+### item
 
-.. _control-type-item:
-
-item
-****
-Class Name: ``Array of ListItem``
+Class Name: `Array of ListItem`
 
 The choice items in a list box or drop-down list. The objects are
 created when items are specified on creation of the parent list
-object, or afterward using the list control's :ref:`listobj-add` method.
+object, or afterward using the list control’s [add()](#listobj-add) method.
 
-Items in a drop-down list can be of type ``separator``, in which case
+Items in a drop-down list can be of type `separator`, in which case
 they cannot be selected, and are shown as a horizontal line.
 
 Item objects have these properties which are not found in other
 controls:
 
-- :ref:`controlobj-checked`
-- :ref:`controlobj-expanded`
-- :ref:`controlobj-image`
-- :ref:`controlobj-index`
-- :ref:`controlobj-selected`
+- [checked](#controlobj-checked)
+- [expanded](#controlobj-expanded)
+- [image](#controlobj-image)
+- [index](#controlobj-index)
+- [selected](#controlobj-selected)
 
---------------------------------------------------------------------------------
+---
 
-.. _control-type-listbox:
+<a id="control-type-listbox"></a>
 
-listbox
-*******
-Class Name: ``ListBox``
+### listbox
 
-A list box with zero or more items. Calls the :ref:`control-event-onChange` callback if the
-item selection is changed by a script or the user, or if the object's
-:ref:`controlobj-notify` method is called. A double click on an item selects that item
-and calls the :ref:`control-event-ondoubleclick` callback.
+Class Name: `ListBox`
 
-To add to a window ``w``::
+A list box with zero or more items. Calls the [onChange](#control-event-onchange) callback if the
+item selection is changed by a script or the user, or if the object’s
+[notify()](#controlobj-notify) method is called. A double click on an item selects that item
+and calls the [onDoubleClick](#control-event-ondoubleclick) callback.
 
-  w.add ("listbox", bounds [, items, {creation_properties}]);
+To add to a window `w`:
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``items``                Optional. An array of strings for the text of each list item.
-                         A :ref:`listitem` object is created for each item. Supply this argument,
-                         or the items property in ``creation_properties``, not both.
-``creation_properties``  Optional. An object that contains any of the following properties:
+```default
+w.add ("listbox", bounds [, items, {creation_properties}]);
+```
 
-                           - ``name``: A unique name for the control.
-                           - ``multiselect``: When false (the default), only one item can be
-                           - ``selected``. When true, multiple items can be selected.
-                           - ``items``: An array of strings for the text of each list item. A
-                             :ref:`listitem` object is created for each item. An item with the
-                             text string ``"-"`` creates a separator item. Supply this
-                             property, or the ``items`` argument, not both. This form is most
-                             useful for elements defined using :ref:`Resource-specifications`.
-                           - ``numberOfColumns``: A number of columns in which to display
-                             the items; default is 1. When there are multiple columns,
-                             each :ref:`listitem` object represents a single selectable row. Its
-                             :ref:`controlobj-text` and :ref:`controlobj-image` values supply the label
-                             for the first column, and the ``controlobj-subitems`` property specifies
-                             labels for additional columns.
-                           - ``showHeaders``: True to display column titles.
-                           - ``columnWidths``: An array of numbers for the preferred width
-                             in pixels of each column.
-                           - ``columnTitles``: A corresponding array of strings for the title
-                             of each column, to be shown if ``showHeaders`` is true.
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `items`               | Optional. An array of strings for the text of each list item.<br/>A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument,<br/>or the items property in `creation_properties`, not both.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `multiselect`: When false (the default), only one item can be<br/>> - `selected`. When true, multiple items can be selected.<br/>> - `items`: An array of strings for the text of each list item. A<br/>>   [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the<br/>>   text string `"-"` creates a separator item. Supply this<br/>>   property, or the `items` argument, not both. This form is most<br/>>   useful for elements defined using [Resource specifications](resource-specifications.md#resource-specifications).<br/>> - `numberOfColumns`: A number of columns in which to display<br/>>   the items; default is 1. When there are multiple columns,<br/>>   each [ListItem](types-of-controls.md#listitem) object represents a single selectable row. Its<br/>>   [text](#controlobj-text) and [image](#controlobj-image) values supply the label<br/>>   for the first column, and the `controlobj-subitems` property specifies<br/>>   labels for additional columns.<br/>> - `showHeaders`: True to display column titles.<br/>> - `columnWidths`: An array of numbers for the preferred width<br/>>   in pixels of each column.<br/>> - `columnTitles`: A corresponding array of strings for the title<br/>>   of each column, to be shown if `showHeaders` is true. |
 
-=======================  ======================================================================================
+---
 
---------------------------------------------------------------------------------
+<a id="control-type-panel"></a>
 
-.. _control-type-panel:
+### panel
 
-panel
-*****
-Class Name: ``Panel``
+Class Name: `Panel`
 
 A container for other types of controls, with an optional frame.
 Containers have additional properties that control the children; see
-:ref:`container-properties`. Hiding a panel hides all its
+[Container properties](window-object.md#container-properties). Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("panel" [, bounds, text, {creation_properties}]);
+```default
+w.add ("panel" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Optional. The element's position and size.
-                         A panel whose width is 0 appears as a vertical line.
-                         A panel whose height is 0 appears as a horizontal line.
-``text``                 Optional. The text displayed in the border of the panel.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The element’s position and size.<br/>A panel whose width is 0 appears as a vertical line.<br/>A panel whose height is 0 appears as a horizontal line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the border of the panel.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `borderStyle`: A string that specifies the appearance of the<br/>>   border drawn around the panel. One of `black`, `etched`,<br/>>   `gray`, `raised`, `sunken` or `topDivider`.<br/>>   `topDivider` draws a horizonal line at the top of the panel<br/>>   only. Default is `etched`.<br/>> - `subPanelCoordinates`: When true, this panel automatically<br/>>   adjusts the positions of its children for compatability with<br/>>   Photoshop CS. Default is false, meaning that the panel does<br/>>   not adjust the positions of its children, even if the parent<br/>>   window has automatic adjustment enabled. |
 
-                           - ``name``: A unique name for the control.
-                           - ``borderStyle``: A string that specifies the appearance of the
-                             border drawn around the panel. One of ``black``, ``etched``,
-                             ``gray``, ``raised``, ``sunken`` or ``topDivider``.
-                             ``topDivider`` draws a horizonal line at the top of the panel
-                             only. Default is ``etched``.
-                           - ``subPanelCoordinates``: When true, this panel automatically
-                             adjusts the positions of its children for compatability with
-                             Photoshop CS. Default is false, meaning that the panel does
-                             not adjust the positions of its children, even if the parent
-                             window has automatic adjustment enabled.
+#### WARNING
+The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!
 
-=======================  ==================================================================
+<a id="control-type-progressbar"></a>
 
-.. warning::
-    The ``topDivider`` property is officially undocumented and was found via research. Please contribute if you have more information on it!
+### progressbar
 
-.. _control-type-progressbar:
-
-progressbar
-***********
-Class Name: ``Progressbar``
+Class Name: `Progressbar`
 
 A horizontal rectangle that shows progress of an operation. All
-``progressbar`` controls have a horizontal orientation. The ``value``
+`progressbar` controls have a horizontal orientation. The `value`
 property contains the current position of the progress indicator; the
-default is 0. There is a ``minvalue`` property, but it is always 0; attempts
+default is 0. There is a `minvalue` property, but it is always 0; attempts
 to set it to a different value are silently ignored.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]);
+```default
+w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]);
+```
 
-=======================  =======================================================================
-``bounds``               Optional. The control's position and size.
-``value``                Optional. The initial position of the progress indicator. Default is 0.
-``minvalue``             Optional. The minimum value that the ``value``
-                         property can be set to. Default is 0. Together with ``maxvalue``,
-                         defines the range.
-``maxvalue``             Optional. The maximum value that the ``value``
-                         property can be set to. Default is 100. Together with ``minvalue``,
-                         defines the range.
-``creation_properties``  Optional. An object that contains the following property:
+| `bounds`              | Optional. The control’s position and size.                                                                                                |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `value`               | Optional. The initial position of the progress indicator. Default is 0.                                                                   |
+| `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the range.   |
+| `maxvalue`            | Optional. The maximum value that the `value`<br/>property can be set to. Default is 100. Together with `minvalue`,<br/>defines the range. |
+| `creation_properties` | Optional. An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.                             |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  =======================================================================
+<a id="control-type-radiobutton"></a>
 
---------------------------------------------------------------------------------
+### radiobutton
 
-.. _control-type-radiobutton:
-
-radiobutton
-***********
-Class Name: ``RadioButton``
+Class Name: `RadioButton`
 
 A dual-state control, grouped with other radiobuttons, of which only
 one can be in the selected state. Shows the selected state when
-``value`` is true, empty when value is false. Calls the :ref:`control-event-onClick`
-callback if the control is clicked or if its :ref:`controlobj-notify` method
+`value` is true, empty when value is false. Calls the [onClick](#control-event-onclick)
+callback if the control is clicked or if its [notify()](#controlobj-notify) method
 is called.
 
 All radiobuttons in a group must be created sequentially, with no
-intervening creation of other element types. Only one ``radiobutton``
-in a group can be set at a time; setting a different ``radiobutton``
+intervening creation of other element types. Only one `radiobutton`
+in a group can be set at a time; setting a different `radiobutton`
 unsets the original one.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("radiobutton" [, bounds, text, {creation_properties}]);
+```default
+w.add ("radiobutton" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Optional. The element's position and size.
-``text``                 Optional. The text displayed in the control.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The element’s position and size.                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                           |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ==================================================================
+<a id="control-type-scrollbar"></a>
 
---------------------------------------------------------------------------------
+### scrollbar
 
-.. _control-type-scrollbar:
-
-scrollbar
-*********
-Class Name: ``Scrollbar``
+Class Name: `Scrollbar`
 
 A scrollbar with a draggable scroll indicator and stepper buttons to
-move the indicator. The ``scrollbar`` control has a horizontal
-orientation if the ``width`` is greater than the ``height`` at creation time,
-or vertical if its ``height`` is greater than its ``width``.
+move the indicator. The `scrollbar` control has a horizontal
+orientation if the `width` is greater than the `height` at creation time,
+or vertical if its `height` is greater than its `width`.
 
-Calls the :ref:`control-event-onChange` callback after the position of the indicator is
-changed or if its :ref:`controlobj-notify` method is called. Calls the :ref:`control-event-onchanging`
+Calls the [onChange](#control-event-onchange) callback after the position of the indicator is
+changed or if its [notify()](#controlobj-notify) method is called. Calls the [onChanging](#control-event-onchanging)
 callback repeatedly while the user is moving the indicator.
 
-=======================  =======================================================================
-``value``                Contains the current position of the scrollbar's indicator
-                         within the scrolling area, within the range of ``minvalue`` and ``maxvalue``.
-``stepdelta``            Determines the scrolling unit for the up or down arrow. Default is 1.
-``jumpdelta``            Determines the scrolling unit for a jump (as when the bar is clicked
-                         outside the indicator or arrows); default is 20% of the range between
-                         ``minvalue`` and ``maxvalue``.
-=======================  =======================================================================
+| `value`     | Contains the current position of the scrollbar’s indicator<br/>within the scrolling area, within the range of `minvalue` and `maxvalue`.                                      |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `stepdelta` | Determines the scrolling unit for the up or down arrow. Default is 1.                                                                                                         |
+| `jumpdelta` | Determines the scrolling unit for a jump (as when the bar is clicked<br/>outside the indicator or arrows); default is 20% of the range between<br/>`minvalue` and `maxvalue`. |
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
+```default
+w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
+```
 
-=======================  =======================================================================
-``bounds``               Optional. The control's position and size.
-``value``                Optional. The initial position of the scroll indicator. Default is 0.
-``minvalue``             Optional. The minimum value that the ``value``
-                         property can be set to. Default is 0. Together with ``maxvalue``,
-                         defines the scrolling range.
-``maxvalue``             Optional. The maximum value that the ``value``
-                         property can be set to. Default is 100. Together with ``minvalue``,
-                         defines the scrolling range.
-``creation_properties``  Optional. An object that contains the following property:
+| `bounds`              | Optional. The control’s position and size.                                                                                                          |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `value`               | Optional. The initial position of the scroll indicator. Default is 0.                                                                               |
+| `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the scrolling range.   |
+| `maxvalue`            | Optional. The maximum value that the `value`<br/>property can be set to. Default is 100. Together with `minvalue`,<br/>defines the scrolling range. |
+| `creation_properties` | Optional. An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.                                       |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  =======================================================================
+<a id="control-type-slider"></a>
 
---------------------------------------------------------------------------------
+### slider
 
-.. _control-type-slider:
+Class Name: `Slider`
 
-slider
-******
-Class Name: ``Slider``
-
-A slider with a moveable position indicator. All ``slider`` controls have
-a horizontal orientation. Calls the :ref:`control-event-onChange` callback after the
-position of the indicator is changed or if its :ref:`controlobj-notify` method is called.
+A slider with a moveable position indicator. All `slider` controls have
+a horizontal orientation. Calls the [onChange](#control-event-onchange) callback after the
+position of the indicator is changed or if its [notify()](#controlobj-notify) method is called.
 Calls the onChanging callback repeatedly while the user is moving
 the indicator.
 
-The ``value`` property contains the current position of the indicator
-within the range of ``minvalue`` and ``maxvalue``.
+The `value` property contains the current position of the indicator
+within the range of `minvalue` and `maxvalue`.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
+```default
+w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
+```
 
-=======================  =======================================================================
-``bounds``               Optional. The control's position and size.
-``value``                Optional. The initial position of the scroll indicator. Default is 0.
-``minvalue``             Optional. The minimum value that the ``value``
-                         property can be set to. Default is 0. Together with ``maxvalue``,
-                         defines the range.
-``maxvalue``             Optional. The maximum value that the ``value``
-                         property can be set to. Default is 100. Together with ``minvalue``,
-                         defines the range.
-``creation_properties``  Optional. An object that contains the following property:
+| `bounds`              | Optional. The control’s position and size.                                                                                                |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `value`               | Optional. The initial position of the scroll indicator. Default is 0.                                                                     |
+| `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the range.   |
+| `maxvalue`            | Optional. The maximum value that the `value`<br/>property can be set to. Default is 100. Together with `minvalue`,<br/>defines the range. |
+| `creation_properties` | Optional. An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.                             |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  =======================================================================
+<a id="control-type-statictext"></a>
 
---------------------------------------------------------------------------------
+### statictext
 
-.. _control-type-statictext:
-
-statictext
-**********
-Class Name: ``StaticText``
+Class Name: `StaticText`
 
 A text field that the user cannot change.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("statictext" [, bounds, text, {creation_properties}]);
+```default
+w.add ("statictext" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Optional. The element's position and size.
-``text``                 Optional. The text displayed in the control.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The element’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `multiline`: When false (the default), the control displays a<br/>>   single line of text. When true, the control displays multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrolling`: When false (the default), the displayed text<br/>>   cannot be scrolled. When true, the displayed text can be<br/>>   vertically scrolled using scrollbars; this case implies<br/>>   `multiline` is true.<br/>> - `truncate`: If `middle` or `end`, defines where to remove<br/>>   characters from the text and replace them with an ellipsis if<br/>>   the specified title does not fit within the space reserved for<br/>>   it. If `none`, and the text does not fit, characters are removed<br/>>   from the end, without any replacement ellipsis character. |
 
-                           - ``name``: A unique name for the control.
-                           - ``multiline``: When false (the default), the control displays a
-                             single line of text. When true, the control displays multiple
-                             lines, in which case the text wraps within the width of the
-                             control.
-                           - ``scrolling``: When false (the default), the displayed text
-                             cannot be scrolled. When true, the displayed text can be
-                             vertically scrolled using scrollbars; this case implies
-                             ``multiline`` is true.
-                           - ``truncate``: If ``middle`` or ``end``, defines where to remove
-                             characters from the text and replace them with an ellipsis if
-                             the specified title does not fit within the space reserved for
-                             it. If ``none``, and the text does not fit, characters are removed
-                             from the end, without any replacement ellipsis character.
+---
 
-=======================  ==================================================================
+<a id="control-type-tab"></a>
 
---------------------------------------------------------------------------------
+### tab
 
-.. _control-type-tab:
+Class Name: `Tab`
 
-tab
-***
-Class Name: ``Tab``
-
-A container for other types of controls. Differs from a :ref:`control-type-panel` element
-in that is must be a direct child of a :ref:`control-type-tabbedpanel` element, the title is
+A container for other types of controls. Differs from a [panel](#control-type-panel) element
+in that is must be a direct child of a [tabbedpanel](#control-type-tabbedpanel) element, the title is
 shown in the selection tab, and it does not have a script-definable
-border. The currently active tab is the value of the parent's
-``selection`` property.
+border. The currently active tab is the value of the parent’s
+`selection` property.
 
 Containers have additional properties that control the children; see
-:ref:`container-properties`. Hiding a panel hides all its
+[Container properties](window-object.md#container-properties). Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 
-To add a tab to a tabbed panel ``t`` in window ``w``::
+To add a tab to a tabbed panel `t` in window `w`:
 
-  w.t.add ("tab" [, bounds, text, {creation_properties}]);
+```default
+w.t.add ("tab" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Not used, pass ``undefined``. The size and position is determined by the parent.
-``text``                 Optional. The text displayed in the tab.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Not used, pass `undefined`. The size and position is determined by the parent.                                         |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Optional. The text displayed in the tab.                                                                               |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ==================================================================
+<a id="control-type-tabbedpanel"></a>
 
---------------------------------------------------------------------------------
+### tabbedpanel
 
-.. _control-type-tabbedpanel:
+Class Name: `TabbedPanel`
 
-tabbedpanel
-***********
-Class Name: ``TabbedPanel``
-
-A container for selectable :ref:`control-type-tab` containers. Differs from a :ref:`control-type-panel`
-element in that it can contain only :ref:`control-type-tab` elements as direct children.
+A container for selectable [tab](#control-type-tab) containers. Differs from a [panel](#control-type-panel)
+element in that it can contain only [tab](#control-type-tab) elements as direct children.
 
 Containers have additional properties that control the children; see
-:ref:`container-properties`. Hiding a panel hides all its
+[Container properties](window-object.md#container-properties). Hiding a panel hides all its
 children. Making it visible makes visible those children that are not
 individually hidden.
 
-The selected `tab` child is the value of the parent's ``selection``
-property. One and only one of the ``tab`` children must be selected;
-selecting one deselects the others. When the value of the ``selection``
+The selected tab child is the value of the parent’s `selection`
+property. One and only one of the `tab` children must be selected;
+selecting one deselects the others. When the value of the `selection`
 property changes, either by a user selecting a different tab, or by a
-script setting the property, the ``tabbedpanel`` receives an
-ref:`control-event-onChange` notification.
+script setting the property, the `tabbedpanel` receives an
+ref:control-event-onChange notification.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
+```default
+w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
+```
 
-=======================  ==================================================================
-``bounds``               Optional. The element's position and size. This determines the sizes
-                         and positions of the tab children.
-``text``                 Ignored.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The element’s position and size. This determines the sizes<br/>and positions of the tab children.            |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------|
+| `text`                | Ignored.                                                                                                               |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
-                           - ``name``: A unique name for the control.
+---
 
-=======================  ==================================================================
+<a id="control-type-treeview"></a>
 
---------------------------------------------------------------------------------
+### treeview
 
-.. _control-type-treeview:
-
-treeview
-********
-Class Name: ``TreeView``
+Class Name: `TreeView`
 
 A hierarchical list whose items can contain child items. Items at any
-level of the tree can be individually selected. Calls the :ref:`control-event-onChange`
+level of the tree can be individually selected. Calls the [onChange](#control-event-onchange)
 callback if the item selection is changed by a script or the user, or if
-the object's :ref:`controlobj-notify` method is called.
+the object’s [notify()](#controlobj-notify) method is called.
 
-To add to a window ``w``::
+To add to a window `w`:
 
-  w.add ("treeview" [, bounds, items, {creation_properties}])
+```default
+w.add ("treeview" [, bounds, items, {creation_properties}])
+```
 
-=======================  ======================================================================================
-``bounds``               Optional. The control's position and size.
-``items``                Optional. An array of strings for the text of each top-level
-                         list item. A :ref:`listitem` object is created for each item. An item
-                         with the type node can contain child items. Supply this
-                         argument, or the ``items`` property in ``creation_properties``, not both.
-``creation_properties``  Optional. An object that contains any of the following properties:
+| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `items`               | Optional. An array of strings for the text of each top-level<br/>list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item<br/>with the type node can contain child items. Supply this<br/>argument, or the `items` property in `creation_properties`, not both.                                                                                                                                                                                                                                                                |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `items`: An array of strings for the text of each top-level list<br/>>   item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item<br/>>   with the type `node`` can contain child items. Supply this<br/>>   property, or the `items` argument, not both. This form is most<br/>>   useful for elements defined using [Resource specifications](resource-specifications.md#resource-specifications). |
 
-                           - ``name``: A unique name for the control.
-                           - ``items``: An array of strings for the text of each top-level list
-                             item. A :ref:`listitem` object is created for each item. An item
-                             with the type ``node``` can contain child items. Supply this
-                             property, or the ``items`` argument, not both. This form is most
-                             useful for elements defined using :ref:`Resource-specifications`.
+---
 
-=======================  ======================================================================================
+<a id="control-object-properties"></a>
 
---------------------------------------------------------------------------------
+## Control object properties
 
-.. _control-object-properties:
-
-Control object properties
--------------------------
 The following table shows the properties of ScriptUI control elements. Some values apply only to controls
 of particular types, as indicated. See Container properties for properties that apply to container elements
 (controls of type panel, tabbedpanel, tab, and group).
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-active:
+<a id="controlobj-active"></a>
 
-active
-******
-Type: ``Boolean``
+### active
+
+Type: `Boolean`
 
 When true, the object is active, false otherwise. Set to true to make a
 given control or dialog active.
@@ -779,265 +594,259 @@ given control or dialog active.
 - A modal dialog that is visible is by definition the active dialog.
 - An active palette is the front-most window.
 - An active control is the one with focus-that is, the one that
-  accepts keystrokes, or in the case of a :ref:`Button`, be selected when
+  accepts keystrokes, or in the case of a [Button](types-of-controls.md#button), be selected when
   the user types ENTER in Windows, or presses the spacebar in Mac
   OS.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-alignment:
+<a id="controlobj-alignment"></a>
 
-alignment
-*********
-Type: ``String or Array of 2 Strings``
+### alignment
+
+Type: `String or Array of 2 Strings`
 
 Applies to child elements of a container. If defined, this value
-overrides the ``alignChildren`` setting for the parent container.
+overrides the `alignChildren` setting for the parent container.
 
-For a single string value, allowed values depend on the ``orientation``
-value in the parent container. For ``orientation = 'row'``:
+For a single string value, allowed values depend on the `orientation`
+value in the parent container. For `orientation = 'row'`:
 
-  ======= ================
-  top     center (default)
-  bottom  fill
-  ======= ================
+> | top    | center (default)   |
+> |--------|--------------------|
+> | bottom | fill               |
 
-For ``orientation = 'column'``:
+For `orientation = 'column'`:
 
-  ======= ================
-  left    center (default)
-  right   fill
-  ======= ================
+> | left   | center (default)   |
+> |--------|--------------------|
+> | right  | fill               |
 
-For ``orientation = 'stack'``:
+For `orientation = 'stack'`:
 
-  ======= ================
-  top     right
-  bottom  center (default)
-  left    fill
-  ======= ================
+> | top    | right            |
+> |--------|------------------|
+> | bottom | center (default) |
+> | left   | fill             |
 
 For an array value, the first string element defines the horizontal
 alignment and the second element defines the vertical alignment.
-The horizontal alignment value must be one of ``left``, ``right``, ``center``
-or ``fill``. The vertical alignment value must be one of ``top``, ``bottom``, ``center``,
-or ``fill``.
+The horizontal alignment value must be one of `left`, `right`, `center`
+or `fill`. The vertical alignment value must be one of `top`, `bottom`, `center`,
+or `fill`.
 
 Values are not case sensitive.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-bounds:
+<a id="controlobj-bounds"></a>
 
-bounds
-******
-Type: ``Bounds``
+### bounds
 
-A :ref:`Bounds` object describing the boundaries of the element, in screen
+Type: `Bounds`
+
+A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries of the element, in screen
 coordinates for Window elements, and parent-relative coordinates for
-child elements (compare :ref:`controlobj-windowBounds`). For windows, the bounds
-refer only to the window's content region.
+child elements (compare [windowBounds](#controlobj-windowbounds)). For windows, the bounds
+refer only to the window’s content region.
 
-Setting an element's ``size`` or ``location`` changes its ``bounds`` property,
+Setting an element’s `size` or `location` changes its `bounds` property,
 and vice-versa.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-characters:
+<a id="controlobj-characters"></a>
 
-characters
-**********
-Type: ``Number``
+### characters
 
-Used by the :ref:`LayoutManager-object` to determine the default
-:ref:`controlobj-preferredSize` for a :ref:`StaticText` or :ref:`EditText` control.
-The control will be made wide enough to display the given number of `X` characters in
+Type: `Number`
+
+Used by the [LayoutManager object](layoutmanager-object.md#layoutmanager-object) to determine the default
+[preferredSize](#controlobj-preferredsize) for a [StaticText](types-of-controls.md#statictext) or [EditText](types-of-controls.md#edittext) control.
+The control will be made wide enough to display the given number of X characters in
 the font used by the control. Setting this property is the best way to
 reserve space in a control for a maximum number of characters to
 display.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-checked:
+<a id="controlobj-checked"></a>
 
-checked
-*******
-Type: ``Boolean``
+### checked
 
-For :ref:`listitem` objects only. When true, the item is marked with the
+Type: `Boolean`
+
+For [ListItem](types-of-controls.md#listitem) objects only. When true, the item is marked with the
 platform-appropriate checkmark. When false, no checkmark is drawn,
 but space is reserved for it in the left margin, so that the item lines up
-with other checkable items. When ``undefined``, no space is reserved
+with other checkable items. When `undefined`, no space is reserved
 for a checkmark.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-columns:
+<a id="controlobj-columns"></a>
 
-columns
-*******
-Type: ``Object``
+### columns
 
-For :ref:`control-type-listbox` objects only. A JavaScript object with two read-only
+Type: `Object`
+
+For [listbox](#control-type-listbox) objects only. A JavaScript object with two read-only
 properties whose values are set by the creation parameters:
 
-===================  ======================================================
-``titles``           An array of column title strings, whose length matches
-                     the number of columns specified at creation.
-``preferredWidths``  An array of column widths, whose length
-                     matches the number of columns specified at creation.
-===================  ======================================================
+| `titles`          | An array of column title strings, whose length matches<br/>the number of columns specified at creation.   |
+|-------------------|-----------------------------------------------------------------------------------------------------------|
+| `preferredWidths` | An array of column widths, whose length<br/>matches the number of columns specified at creation.          |
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-enabled:
+<a id="controlobj-enabled"></a>
 
-enabled
-*******
-Type: ``Boolean``
+### enabled
+
+Type: `Boolean`
 
 When true, the control is enabled, meaning that it accepts input.
 When false, control elements do not accept input, and all types of
-elements have a dimmed appearance. A disabled :ref:`listitem` is not
-selectable in a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list.
+elements have a dimmed appearance. A disabled [ListItem](types-of-controls.md#listitem) is not
+selectable in a [listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview) list.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-expanded:
+<a id="controlobj-expanded"></a>
 
-expanded
-********
-Type: ``Boolean``
+### expanded
 
-For :ref:`listitem` objects of type ``node`` in :ref:`control-type-treeview` list controls. When true,
+Type: `Boolean`
+
+For [ListItem](types-of-controls.md#listitem) objects of type `node` in [treeview](#control-type-treeview) list controls. When true,
 the item is in the expanded state and its children are shown, when
 false, it is collapsed and children are hidden.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-graphics:
+<a id="controlobj-graphics"></a>
 
-graphics
-********
-Type: ``Object``
+### graphics
 
-A :ref:`ScriptUIGraphics-object` that can be used to customize the control's
-appearance, in response to the :ref:`control-event-ondraw` event.
+Type: `Object`
 
---------------------------------------------------------------------------------
+A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) that can be used to customize the control’s
+appearance, in response to the [onDraw](#control-event-ondraw) event.
 
-.. _controlobj-helpTip:
+---
 
-helpTip
-*******
-Type: ``String``
+<a id="controlobj-helptip"></a>
+
+### helpTip
+
+Type: `String`
 
 A brief help message (also called a *tool tip*) that is displayed in a small
 floating window when the mouse cursor hovers over a user-interface
-control element. Set to an empty string or ``null`` to remove help text.
+control element. Set to an empty string or `null` to remove help text.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-icon:
+<a id="controlobj-icon"></a>
 
-icon
-****
-Type: ``String or File``
+### icon
 
-Deprecated. Use :ref:`image` instead.
+Type: `String or File`
 
---------------------------------------------------------------------------------
+Deprecated. Use [Image](types-of-controls.md#image) instead.
 
-.. _controlobj-image:
+---
 
-image
-*****
-Type: ``Object``
+<a id="controlobj-image"></a>
 
-A :ref:`ScriptUIImage-object`, or the name of an icon resource, or the
-pathname or :ref:`File-object` for a file that contains a platform-specific
+### image
+
+Type: `Object`
+
+A [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object), or the name of an icon resource, or the
+pathname or [File object](../file-system-access/file-object.md#file-object) for a file that contains a platform-specific
 image in PNG or JPEG format, or for a shortcut or alias to such a file.
 
-- For an :ref:`IconButton`, the icon appears as the content of the button.
-- For an :ref:`Image`, the image is the entire content of the image element.
-- For a :ref:`listitem`, the image is displayed to the left of the text.
+- For an [IconButton](types-of-controls.md#iconbutton), the icon appears as the content of the button.
+- For an [Image](types-of-controls.md#image), the image is the entire content of the image element.
+- For a [ListItem](types-of-controls.md#listitem), the image is displayed to the left of the text.
 
-  If the parent is a multi-column :ref:`control-type-listbox`, this is the display image
+  If the parent is a multi-column [listbox](#control-type-listbox), this is the display image
   for the label in the first column, and labels for further columns are
-  specified in the :ref:`controlobj-subitems` array.
-  See :ref:`creating-multi-column-lists`.
+  specified in the [subitems](#controlobj-subitems) array.
+  See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-indent:
+<a id="controlobj-indent"></a>
 
-indent
-******
-Type: ``Number``
+### indent
+
+Type: `Number`
 
 A number of pixels by which to indent the element during automatic
-layout. Applies for ``column`` orientation and ``left`` alignment, or ``row``
-orientation and ``top`` alignment.
+layout. Applies for `column` orientation and `left` alignment, or `row`
+orientation and `top` alignment.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-index:
+<a id="controlobj-index"></a>
 
-index
-*****
-Type: ``Number``
+### index
 
-For :ref:`listitem` objects only. The index of this item in the ``items``
+Type: `Number`
+
+For [ListItem](types-of-controls.md#listitem) objects only. The index of this item in the `items`
 collection of its parent list control. Read only.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-items:
+<a id="controlobj-items"></a>
 
-items
-*****
-Type: ``Array of Object``
+### items
 
-For a list object (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list), a collection
-of :ref:`listitem` objects for the items in the list. Access by 0-based index. To
-obtain the number of items in the list, use ``items.length``. Read only.
+Type: `Array of Object`
 
---------------------------------------------------------------------------------
+For a list object ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview) list), a collection
+of [ListItem](types-of-controls.md#listitem) objects for the items in the list. Access by 0-based index. To
+obtain the number of items in the list, use `items.length`. Read only.
 
-.. _controlobj-itemSize:
+---
 
-itemSize
-********
-Type: ``Dimension``
+<a id="controlobj-itemsize"></a>
 
-For a list object (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list),
-a :ref:`Dimension` object describing the width and height in pixels of each item in the
-list. Used by auto-layout to determine the ``preferredSize`` of the list,
+### itemSize
+
+Type: `Dimension`
+
+For a list object ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview) list),
+a [Dimension](size-and-location-objects.md#dimension) object describing the width and height in pixels of each item in the
+list. Used by auto-layout to determine the `preferredSize` of the list,
 if not otherwise specified.
 
 If not set explicitly, the size of each item is set to match the largest
 height and width among all items in the list
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-jumpdelta:
+<a id="controlobj-jumpdelta"></a>
 
-jumpdelta
-*********
-Type: ``Number``
+### jumpdelta
 
-The amount to increment or decrement a :ref:`Scrollbar` indicator's
+Type: `Number`
+
+The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator’s
 position when the user clicks ahead or behind the moveable element.
 Default is 20% of the range between the maxvalue and minvalue
 property values.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-justify:
+<a id="controlobj-justify"></a>
 
-justify
-*******
-Type: ``String``
+### justify
+
+Type: `String`
 
 The justification of text in static text and edit text controls. One of:
 
@@ -1045,153 +854,154 @@ The justification of text in static text and edit text controls. One of:
 - center
 - right
 
-.. note:: Justification only works if the value is set on creation, using a
-  resource specification or creation parameters.
+#### NOTE
+Justification only works if the value is set on creation, using a
+resource specification or creation parameters.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-location:
+<a id="controlobj-location"></a>
 
-location
-********
-Type: ``Point``
+### location
 
-A :ref:`Point` object describing the location of the element as an array, ``[x, y]``,
+Type: `Point`
+
+A [Point](size-and-location-objects.md#point) object describing the location of the element as an array, `[x, y]`,
 representing the coordinates of the upper left corner of the
-element. These are screen coordinates for ``Window`` elements, and
+element. These are screen coordinates for `Window` elements, and
 parent-relative coordinates for other elements.
 
-The ``location`` is defined as ``[bounds.x, bounds.y]``. Setting an
-element's ``location`` changes its ``bounds`` property, and vice-versa. By
-default, ``location`` is ``undefined`` until the parent container's layout
+The `location` is defined as `[bounds.x, bounds.y]`. Setting an
+element’s `location` changes its `bounds` property, and vice-versa. By
+default, `location` is `undefined` until the parent container’s layout
 manager is invoked.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-maximumSize:
+<a id="controlobj-maximumsize"></a>
 
-maximumSize
-***********
-Type: ``Dimension``
+### maximumSize
 
-A :ref:`Dimension` object that specifies the maximum height and width for
+Type: `Dimension`
+
+A [Dimension](size-and-location-objects.md#dimension) object that specifies the maximum height and width for
 an element.
 
 The default is 50 pixels less than the screen size in each dimension. In
-Windows, this can occupy the entire screen; you must define a ``maximumSize``
+Windows, this can occupy the entire screen; you must define a `maximumSize`
 to be large enough for your intended usage.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-minimumSize:
+<a id="controlobj-minimumsize"></a>
 
-minimumSize
-***********
-Type: ``Dimension``
+### minimumSize
 
-A :ref:`Dimension` object that specifies the minimum height and width for
-an element. Default is ``[0,0]``.
+Type: `Dimension`
 
---------------------------------------------------------------------------------
+A [Dimension](size-and-location-objects.md#dimension) object that specifies the minimum height and width for
+an element. Default is `[0,0]`.
 
-.. _controlobj-maxvalue:
+---
 
-maxvalue
-********
-Type: ``Number``
+<a id="controlobj-maxvalue"></a>
 
-The maximum value that the ``value`` property can have.
+### maxvalue
 
-- If ``maxvalue`` is reset less than ``value``, ``value`` is reset to ``maxvalue``.
-- If ``maxvalue`` is reset less than ``minvalue``, ``minvalue`` is reset to ``maxvalue``.
+Type: `Number`
 
---------------------------------------------------------------------------------
+The maximum value that the `value` property can have.
 
-.. _controlobj-minvalue:
+- If `maxvalue` is reset less than `value`, `value` is reset to `maxvalue`.
+- If `maxvalue` is reset less than `minvalue`, `minvalue` is reset to `maxvalue`.
 
-minvalue
-********
-Type: ``Number``
+---
 
-The minimum value that the ``value`` property can have.
+<a id="controlobj-minvalue"></a>
 
-- If ``minvalue`` is reset greater than ``value``, ``value`` is reset to ``minvalue``.
-- If ``minvalue`` is reset greater than ``maxvalue``, ``maxvalue`` is reset to ``minvalue``.
+### minvalue
 
---------------------------------------------------------------------------------
+Type: `Number`
 
-.. _controlobj-parent:
+The minimum value that the `value` property can have.
 
-parent
-******
-Type: ``Object``
+- If `minvalue` is reset greater than `value`, `value` is reset to `minvalue`.
+- If `minvalue` is reset greater than `maxvalue`, `maxvalue` is reset to `minvalue`.
+
+---
+
+<a id="controlobj-parent"></a>
+
+### parent
+
+Type: `Object`
 
 The immediate parent object of this element. Read only.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-preferredSize:
+<a id="controlobj-preferredsize"></a>
 
-preferredSize
-*************
-Type: ``Dimension``
+### preferredSize
 
-A :ref:`Dimension` object used by layout managers to determine the best
+Type: `Dimension`
+
+A [Dimension](size-and-location-objects.md#dimension) object used by layout managers to determine the best
 size for each element. If not explicitly set by a script, value is
 established by the user-interface framework in which ScriptUI is
 employed, and is based on such attributes of the element as its text,
 font, font size, icon size, and other user-interface framework-specific
 attributes.
 
-A script can explicitly set ``preferredSize`` before the layout manager
+A script can explicitly set `preferredSize` before the layout manager
 is invoked in order to establish an element size other than the default.
 To set a specific value for only one dimension, specify the other
 dimension as -1.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-properties:
+<a id="controlobj-properties"></a>
 
-properties
-**********
-Type: ``Object``
+### properties
+
+Type: `Object`
 
 An object that contains one or more creation properties of the
 element (properties used only when the element is created).
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-selected:
+<a id="controlobj-selected"></a>
 
-selected
-********
-Type: ``Boolean``
+### selected
 
-For :ref:`listitem` objects only. When true, the item is part of the ``selection``
+Type: `Boolean`
+
+For [ListItem](types-of-controls.md#listitem) objects only. When true, the item is part of the `selection`
 for its parent list. When false, the item is not selected. Set
 to true to select this item in a single-selection list, or to add it to the
 selection array for a multi-selection list.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-selection-listbox:
+<a id="controlobj-selection-listbox"></a>
 
-selection
-*********
+### selection
+
 (For ListBox only)
 
-Type: ``Array of ListItem``
+Type: `Array of ListItem`
 
-For a :ref:`control-type-listbox`, an array of :ref:`listitem` objects for the current selection in a
+For a [listbox](#control-type-listbox), an array of [ListItem](types-of-controls.md#listitem) objects for the current selection in a
 multi-selection list. Setting this value causes the selected item to be
 highlighted and to be scrolled into view if necessary. If no items are
-selected, the value is ``null``. Set to ``null`` to deselect all items.
+selected, the value is `null`. Set to `null` to deselect all items.
 
 The value can also change because the user clicked or double-clicked
-an item, or because an item was removed with :ref:`listobj-remove` or
-:ref:`listobj-removeAll`. Whenever the value changes, the :ref:`control-event-onChange` callback is
+an item, or because an item was removed with [remove()](#listobj-remove) or
+[removeAll()](#listobj-removeall). Whenever the value changes, the [onChange](#control-event-onchange) callback is
 called. If the value is changed by a double click, calls the
-:ref:`control-event-ondoubleclick` callback.
+[onDoubleClick](#control-event-ondoubleclick) callback.
 
 You can set the value using the index of an item or an array of indices,
 rather than object references. If set to an index value that is out of
@@ -1203,237 +1013,218 @@ property still returns object references.
 - If you set the value to a single item for a multi-selection list, that
   item is added to the current selection.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-selection:
+<a id="controlobj-selection"></a>
 
-selection
-*********
+### selection
+
 (For DropDownList and TreeView only)
 
-Type: ``ListItem``
+Type: `ListItem`
 
-For a :ref:`control-type-dropdownlist` or :ref:`control-type-treeview` list object, the currently selected
-:ref:`listitem` object.
+For a [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview) list object, the currently selected
+[ListItem](types-of-controls.md#listitem) object.
 
 Setting this value causes the selected item to be highlighted and to
-be scrolled into view if necessary. If no item is selected, the value is ``null``.
-Set to ``null`` to deselect all items.
+be scrolled into view if necessary. If no item is selected, the value is `null`.
+Set to `null` to deselect all items.
 
 The value can also change because the user clicked on an item, or
-because an item was removed with :ref:`listobj-remove` or :ref:`listobj-removeall`.
-Whenever the value changes, the :ref:`control-event-onChange` callback is called.
+because an item was removed with [remove()](#listobj-remove) or [removeAll()](#listobj-removeall).
+Whenever the value changes, the [onChange](#control-event-onchange) callback is called.
 
 You can set the value using the index of an item or an array of indices,
 rather than object references. If set to an index value that is out of
 range, the operation is ignored. When set with an index value, the
 property still returns an object reference.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-shortcutKey:
+<a id="controlobj-shortcutkey"></a>
 
-shortcutKey
-***********
-Type: ``String``
+### shortcutKey
 
-The key sequence that invokes the :ref:`control-event-onshortcutkey` callback for this
+Type: `String`
+
+The key sequence that invokes the [onShortcutKey](#control-event-onshortcutkey) callback for this
 element (in Windows only).
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-size:
+<a id="controlobj-size"></a>
 
-size
-****
-Type: ``Dimension``
+### size
 
-A :ref:`Dimension` object that defines the actual dimensions of an element.
-Initially ``undefined``, and unless explicitly set by a script, it is defined
-by a ``LayoutManager``.
+Type: `Dimension`
+
+A [Dimension](size-and-location-objects.md#dimension) object that defines the actual dimensions of an element.
+Initially `undefined`, and unless explicitly set by a script, it is defined
+by a `LayoutManager`.
 
 Although a script can explicitly set size before the layout manager is
-invoked to establish an element size other than the ``preferredSize``
+invoked to establish an element size other than the `preferredSize`
 or the default size, this is not recommended.
 
-Defined as ``[bounds.width, bounds.height]``. Setting an element's
-size changes its ``bounds`` property, and vice-versa.
+Defined as `[bounds.width, bounds.height]`. Setting an element’s
+size changes its `bounds` property, and vice-versa.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-stepdelta:
+<a id="controlobj-stepdelta"></a>
 
-stepdelta
-*********
-Type: ``Number``
+### stepdelta
 
-The amount by which to increment or decrement a :ref:`Scrollbar`
-element's position when the user clicks a stepper button.
+Type: `Number`
 
---------------------------------------------------------------------------------
+The amount by which to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar)
+element’s position when the user clicks a stepper button.
 
-.. _controlobj-subitems:
+---
 
-subitems
-********
-Type: ``Array``
+<a id="controlobj-subitems"></a>
 
-For :ref:`listitem` objects only. When the parent is a multi-column :ref:`control-type-listbox`,
-the :ref:`ListItem.text <controlobj-text>` and :ref:`ListItem.image <controlobj-image>`
+### subitems
+
+Type: `Array`
+
+For [ListItem](types-of-controls.md#listitem) objects only. When the parent is a multi-column [listbox](#control-type-listbox),
+the [ListItem.text](#controlobj-text) and [ListItem.image](#controlobj-image)
 values describe the label in the first column, and this specifies additional
 labels for that row in the remaining columns.
 
 This contains an array of JavaScript objects, whose length is one less
 than the number of columns. Each member specifies a label in the
-corresponding column, with the first member (``subitems[0]``)
+corresponding column, with the first member (`subitems[0]`)
 describing the label in the second column.
 
 Each object has two properties, of which one or both can be supplied:
 
-=========  ============================================
-``text``   A localizable display string for this label.
-``image``  An Image object for this label.
-=========  ============================================
+| `text`   | A localizable display string for this label.   |
+|----------|------------------------------------------------|
+| `image`  | An Image object for this label.                |
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-text:
+<a id="controlobj-text"></a>
 
-text
-****
-Type: ``String``
+### text
 
-The title, label, or displayed text. Ignored for containers of type ``group``.
+Type: `String`
+
+The title, label, or displayed text. Ignored for containers of type `group`.
 For controls, the meaning depends on the control type. Buttons use
-the ``text`` as a label, for example, while edit fields use the text to
+the `text` as a label, for example, while edit fields use the text to
 access the content.
 
-For :ref:`listitem` objects, this is the display string for the list choice. If the
+For [ListItem](types-of-controls.md#listitem) objects, this is the display string for the list choice. If the
 parent is a multi-column list box, this is the display string for the label
 in the first column, and labels for further columns are specified in the
-:ref:`controlobj-subitems` array. See :ref:`creating-multi-column-lists`.
+[subitems](#controlobj-subitems) array. See [Creating multi-column lists](types-of-controls.md#creating-multi-column-lists).
 
-This is a localizable string: see :ref:`localization-in-scriptui-objects`.
+This is a localizable string: see [Localization in ScriptUI objects](localization-in-scriptui-objects.md#localization-in-scriptui-objects).
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-textselection:
+<a id="controlobj-textselection"></a>
 
-textselection
-*************
-Type: ``String``
+### textselection
+
+Type: `String`
 
 The currently selected text in a control that displays text, or the empty
 string if there is no text selected.
 
 Setting the value replaces the current text selection and modifies the
-value of the ``text`` property. If there is no current selection, inserts the
-new value into the ``text`` string at the current insertion point. The
-``textselection`` value is reset to an empty string after it modifies the
-``text`` value.
+value of the `text` property. If there is no current selection, inserts the
+new value into the `text` string at the current insertion point. The
+`textselection` value is reset to an empty string after it modifies the
+`text` value.
 
-.. note:: Setting the ``textselection`` property before the :ref:`EditText`
-  control's parent Window exists is an undefined operation.
+#### NOTE
+Setting the `textselection` property before the [EditText](types-of-controls.md#edittext)
+control’s parent Window exists is an undefined operation.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-title:
+<a id="controlobj-title"></a>
 
-title
-*****
-Type: ``String``
+### title
 
-For a :ref:`control-type-dropdownlist`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
-or :ref:`control-type-tabbedpanel` only, a text label for the element. The title can appear
+Type: `String`
+
+For a [dropdownlist](#control-type-dropdownlist), [FlashPlayer](types-of-controls.md#flashplayer), [IconButton](types-of-controls.md#iconbutton), [Image](types-of-controls.md#image),
+or [tabbedpanel](#control-type-tabbedpanel) only, a text label for the element. The title can appear
 to the left or right of the element, or above or below it, or you can superimpose
 the title over the center of the element. The placement is controlled by
-the :ref:`controlobj-titlelayout` value.
+the [titleLayout](#controlobj-titlelayout) value.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-titlelayout:
+<a id="controlobj-titlelayout"></a>
 
-titleLayout
-***********
-``Object``
+### titleLayout
 
+`Object`
 
-For a :ref:`control-type-dropdownlist`, :ref:`FlashPlayer`, :ref:`IconButton`, :ref:`Image`,
-or :ref:`control-type-tabbedpanel` with a title value, the way the text label is shown in
+For a [dropdownlist](#control-type-dropdownlist), [FlashPlayer](types-of-controls.md#flashplayer), [IconButton](types-of-controls.md#iconbutton), [Image](types-of-controls.md#image),
+or [tabbedpanel](#control-type-tabbedpanel) with a title value, the way the text label is shown in
 relation to the element. A JavaScript object with these properties:
 
-==============  ========================================================================
-``alignment``   The position of the title relative to the element, an
-                array of [horizontal_alignment, vertical_alignment]. For possible
-                alignment values, see :ref:`controlobj-alignment`. Note that ``fill`` is
-                not a valid alignment value for either horizontal or vertical
-                alignment in this context.
-``characters``  A number; if 1 or greater, reserves a title width
-                wide enough to hold the specified number of "X" characters in
-                the font for this element. If 0, the title width is calculated based
-                on the value of the ``title`` property during layout operations.
-``spacing``     A number; 0 or greater. The number of pixels
-                separating the title from the element.
-``margins``     An array of numbers, ``[left, top, right, bottom]``
-                for the number of pixels separating each edge of an element and
-                the visible content within that element. This overrides the default
-                margins.
-``justify``     One of ``'left'``, ``'center'``, or ``'right'``, how to justify
-                the text when the space allocated for the title width is greater
-                than the actual width of the text.
-``truncate``    If ``'middle'`` or ``'end'``, defines where to remove
-                characters from the text and replace them with an ellipsis (…) if
-                the specified title does not fit within the space reserved for it. If
-                ``'none'``, and the text does not fit, characters are removed from
-                the end, without any replacement ellipsis character.
-==============  ========================================================================
+| `alignment`   | The position of the title relative to the element, an<br/>array of [horizontal_alignment, vertical_alignment]. For possible<br/>alignment values, see [alignment](#controlobj-alignment). Note that `fill` is<br/>not a valid alignment value for either horizontal or vertical<br/>alignment in this context.                  |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `characters`  | A number; if 1 or greater, reserves a title width<br/>wide enough to hold the specified number of “X” characters in<br/>the font for this element. If 0, the title width is calculated based<br/>on the value of the `title` property during layout operations.                                                                 |
+| `spacing`     | A number; 0 or greater. The number of pixels<br/>separating the title from the element.                                                                                                                                                                                                                                         |
+| `margins`     | An array of numbers, `[left, top, right, bottom]`<br/>for the number of pixels separating each edge of an element and<br/>the visible content within that element. This overrides the default<br/>margins.                                                                                                                      |
+| `justify`     | One of `'left'`, `'center'`, or `'right'`, how to justify<br/>the text when the space allocated for the title width is greater<br/>than the actual width of the text.                                                                                                                                                           |
+| `truncate`    | If `'middle'` or `'end'`, defines where to remove<br/>characters from the text and replace them with an ellipsis (…) if<br/>the specified title does not fit within the space reserved for it. If<br/>`'none'`, and the text does not fit, characters are removed from<br/>the end, without any replacement ellipsis character. |
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-type:
+<a id="controlobj-type"></a>
 
-type
-****
-Type: ``String``
+### type
+
+Type: `String`
 
 Contains the type name of the element, as specified on creation.
 
-- For ``Window`` objects, one of the type names window, palette, or dialog.
-- For ``controls``, the type of the control, as specified in the add method that
+- For `Window` objects, one of the type names window, palette, or dialog.
+- For `controls`, the type of the control, as specified in the add method that
   created it.
 
 Read only.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-value-boolean:
+<a id="controlobj-value-boolean"></a>
 
-value
-*****
-Type: ``Boolean``
+### value
 
-For a :ref:`Checkbox` or :ref:`RadioButton`, true if the control is in the
+Type: `Boolean`
+
+For a [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-controls.md#radiobutton), true if the control is in the
 selected or set state, false if it is not.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-value-number:
+<a id="controlobj-value-number"></a>
 
-value
-*****
-Type: ``Number``
+### value
 
-For a :ref:`Scrollbar` or :ref:`Slider`, the current position of the indicator.
+Type: `Number`
+
+For a [Scrollbar](types-of-controls.md#scrollbar) or [Slider](types-of-controls.md#slider), the current position of the indicator.
 If set to a value outside the range specified by minvalue and maxvalue, it is
 automatically reset to the closest boundary.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-visible:
+<a id="controlobj-visible"></a>
 
-visible
-*******
-Type: ``Boolean``
+### visible
+
+Type: `Boolean`
 
 When true, the element is shown, when false it is hidden.
 
@@ -1441,600 +1232,528 @@ When a container is hidden, its children are also hidden, but they
 retain their own visibility values, and are shown or hidden accordingly
 when the parent is next shown.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-window:
+<a id="controlobj-window"></a>
 
-window
-******
-Type: ``Window``
+### window
 
-The :ref:`Window-object` that contains this control. Read only.
+Type: `Window`
 
---------------------------------------------------------------------------------
+The [Window object](window-object.md#window-object) that contains this control. Read only.
 
-.. _controlobj-windowBounds:
+---
 
-windowBounds
-************
-Type: ``Bounds``
+<a id="controlobj-windowbounds"></a>
 
-A :ref:`Bounds` object that contains the bounds of this control in the
-containing window's coordinates. Compare :ref:`bounds`, in which
+### windowBounds
+
+Type: `Bounds`
+
+A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds of this control in the
+containing window’s coordinates. Compare [Bounds](size-and-location-objects.md#bounds), in which
 coordinates are relative to the immediate parent container. Read only.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-function_name:
+<a id="controlobj-function-name"></a>
 
-function_name
-*************
-Type: ``Function``
+### function_name
 
-For the :ref:`FlashPlayer` control, a function definition for a callback from
+Type: `Function`
+
+For the [FlashPlayer](types-of-controls.md#flashplayer) control, a function definition for a callback from
 the Flash ActionScript environment.
 
 There are no special naming requirements, but the function must
 take and return only the supported data types:
 
-======= =========
-Number  undefined
-String  Object
-Boolean Array
-Null
-======= =========
+| Number   | undefined   |
+|----------|-------------|
+| String   | Object      |
+| Boolean  | Array       |
+| Null     |             |
 
-.. note:: The ActionScript ``class`` and ``date`` objects are not supported as
-  parameter values.
+#### NOTE
+The ActionScript `class` and `date` objects are not supported as
+parameter values.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-object-functions:
+<a id="control-object-functions"></a>
 
-Control object functions
-------------------------
+## Control object functions
+
 The following table shows the methods defined for each element type, and for specific control types as
 indicated.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-addeventlistener:
+<a id="controlobj-addeventlistener"></a>
 
-addEventListener()
-******************
-``controlObj.addEventListener(eventName, handler, capturePhase);``
+### addEventListener()
 
-================  =====================================================================================
-``eventName``     The event name string. Predefined event names include:
+`controlObj.addEventListener(eventName, handler, capturePhase);`
 
-                    - ``change``
-                    - ``changing``
-                    - ``move``
-                    - ``moving``
-                    - ``resize``
-                    - ``resizing``
-                    - ``show``
-                    - ``enterKey``
-                    - ``focus``
-                    - ``blur``
-                    - ``mousedown``
-                    - ``mouseup``
-                    - ``mousemove``
-                    - ``mouseover``
-                    - ``mouseout``
-                    - ``keyup``
-                    - ``keydown``
-                    - ``click`` (detail = 1 for single, 2 for double)
-
-``handler``       The function to register for the specified event in this target. This can be the name
-                  of a function defined in the extension, or a locally defined handler function to be
-                  executed when the event occurs.
-
-                  A handler function takes one argument, an object of the UIEvent base class. See
-                  :ref:`registering-event-listeners-for-windows-or-controls`.
-
-``capturePhase``  Optional. When true, the handler is called only in the capturing phase of the event
-                  propagation. Default is false, meaning that the handler is called in the bubbling
-                  phase if this object is an ancestor of the target, or in the at-target phase if this
-                  object is itself the target.
-================  =====================================================================================
+| `eventName`    | The event name string. Predefined event names include:<br/><br/>> - `change`<br/>> - `changing`<br/>> - `move`<br/>> - `moving`<br/>> - `resize`<br/>> - `resizing`<br/>> - `show`<br/>> - `enterKey`<br/>> - `focus`<br/>> - `blur`<br/>> - `mousedown`<br/>> - `mouseup`<br/>> - `mousemove`<br/>> - `mouseover`<br/>> - `mouseout`<br/>> - `keyup`<br/>> - `keydown`<br/>> - `click` (detail = 1 for single, 2 for double)                                                      |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `handler`      | The function to register for the specified event in this target. This can be the name<br/>of a function defined in the extension, or a locally defined handler function to be<br/>executed when the event occurs.<br/><br/>A handler function takes one argument, an object of the UIEvent base class. See<br/>[Registering event listeners for windows or controls](defining-behavior-with-event-callbacks-and-listeners.md#registering-event-listeners-for-windows-or-controls). |
+| `capturePhase` | Optional. When true, the handler is called only in the capturing phase of the event<br/>propagation. Default is false, meaning that the handler is called in the bubbling<br/>phase if this object is an ancestor of the target, or in the at-target phase if this<br/>object is itself the target.                                                                                                                                                                                |
 
 Registers an event handler for a particular type of event occurring in this control.
 
 Returns undefined.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-dispatchEvent:
+<a id="controlobj-dispatchevent"></a>
 
-dispatchEvent()
-***************
-``controlObj.dispatchEvent (eventObj)``
+### dispatchEvent()
 
-============  ====================================
-``eventObj``  An object of the UIEvent base class.
-============  ====================================
+`controlObj.dispatchEvent (eventObj)`
+
+| `eventObj`   | An object of the UIEvent base class.   |
+|--------------|----------------------------------------|
 
 Simulates the occurrence of an event in this target. A script can create an event
-object for a specific event, using :ref:`ScriptUI-events-createEvent`, and pass
+object for a specific event, using [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and pass
 it to this method to start the event propagation for the event.
 
 Returns false if any of the registered listeners that handled the event called
-the event object's :ref:`eventobj-preventDefault` method, true otherwise.
+the event object’s [preventDefault()](event-handling.md#eventobj-preventdefault) method, true otherwise.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-hide:
+<a id="controlobj-hide"></a>
 
-hide()
-******
-``controlObj.hide()``
+### hide()
+
+`controlObj.hide()`
 
 Hides this container or control. When a window or container is hidden, its
 children are also hidden, but when it is shown again, the children retain their
 own visibility states.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-notify:
+<a id="controlobj-notify"></a>
 
-notify()
-********
-``controlObj.notify([event])``
+### notify()
 
-=========  ================================================================
-``event``  Optional. The name of the control event handler to call. One of:
+`controlObj.notify([event])`
 
-             - ``onClick``
-             - ``onChange``
-             - ``onChanging``
-
-           By default, simulates the :ref:`control-event-onChange` event for
-           an :ref:`EditText` control, an :ref:`control-event-onClick` event
-           for controls that support that event.
-=========  ================================================================
+| `event`   | Optional. The name of the control event handler to call. One of:<br/><br/>> - `onClick`<br/>> - `onChange`<br/>> - `onChanging`<br/><br/>By default, simulates the [onChange](#control-event-onchange) event for<br/>an [EditText](types-of-controls.md#edittext) control, an [onClick](#control-event-onclick) event<br/>for controls that support that event.   |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Sends a notification message, simulating the specified user interaction event.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-removeEventListener:
+<a id="controlobj-removeeventlistener"></a>
 
-removeEventListener()
-*********************
-``controlbj.removeEventListener (eventName, handler[, capturePhase]);``
+### removeEventListener()
 
-================  =======================================================================
-``eventName``     The event name string.
-``handler``       The function that was registered to handle the event.
-``capturePhase``  Optional. Whether the handler was to respond only in the capture phase.
-================  =======================================================================
+`controlbj.removeEventListener (eventName, handler[, capturePhase]);`
+
+| `eventName`    | The event name string.                                                  |
+|----------------|-------------------------------------------------------------------------|
+| `handler`      | The function that was registered to handle the event.                   |
+| `capturePhase` | Optional. Whether the handler was to respond only in the capture phase. |
 
 Unregisters an event handler for a particular type of event occurring in this control. All arguments
 must be identical to those that were used to register the event handler.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-show:
+<a id="controlobj-show"></a>
 
-show()
-******
-``controlObj.show()``
+### show()
+
+`controlObj.show()`
 
 Shows this container or control. When a window or container is hidden, its children
 are also hidden, but when it is shown again, the children retain their own
 visibility states.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-toString:
+<a id="controlobj-tostring"></a>
 
-toString()
-**********
-``listItemObj.toString()``
+### toString()
 
-For :ref:`listitem` controls only. Retrieves the value of this item's text
+`listItemObj.toString()`
+
+For [ListItem](types-of-controls.md#listitem) controls only. Retrieves the value of this item’s text
 property as a string.
 
 Returns a String.
 
---------------------------------------------------------------------------------
+---
 
-.. _controlobj-valueOf:
+<a id="controlobj-valueof"></a>
 
-valueOf()
-*********
-``listItemObj.valueOf()``
+### valueOf()
 
-For :ref:`listitem` controls only. Retrieves the index number of this item in
-the parent list's items array.
+`listItemObj.valueOf()`
+
+For [ListItem](types-of-controls.md#listitem) controls only. Retrieves the index number of this item in
+the parent list’s items array.
 
 Returns a Number.
 
---------------------------------------------------------------------------------
+---
 
-List control object functions
------------------------------
+## List control object functions
+
 The following table shows the methods defined for list objects only.
 
---------------------------------------------------------------------------------
+---
 
-.. _listobj-add:
+<a id="listobj-add"></a>
 
-add()
-*****
-``listObj.add (type, text[, index])``
+### add()
 
-=========  ============================================================================================
-``type``   The type of item to add. One of:
+`listObj.add (type, text[, index])`
 
-             - ``item``: A basic, selectable item with a text label.
-             - ``separator``: A separator. For dropdownlist controls only. In this case, the text value
-               is ignored, and the method returns null.
+| `type`   | The type of item to add. One of:<br/><br/>> - `item`: A basic, selectable item with a text label.<br/>> - `separator`: A separator. For dropdownlist controls only. In this case, the text value<br/>>   is ignored, and the method returns null.   |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `text`   | The localizable text label for the item.                                                                                                                                                                                                            |
+| `index`  | Optional. The index into the current item list after which this item is inserted. If not<br/>supplied, or greater than the current list length, the new item is added at the end.                                                                   |
 
-``text``   The localizable text label for the item.
-``index``  Optional. The index into the current item list after which this item is inserted. If not
-           supplied, or greater than the current list length, the new item is added at the end.
-=========  ============================================================================================
+For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only.
+Adds an `item` to the items array at the given index.
 
-For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
-Adds an ``item`` to the items array at the given index.
+Returns the `item` control object for `type = 'item'`, or `null` for
+`type = 'separator'`.
 
-Returns the ``item`` control object for ``type = 'item'``, or ``null`` for
-``type = 'separator'``.
+---
 
---------------------------------------------------------------------------------
+<a id="listobj-find"></a>
 
-.. _listobj-find:
+### find()
 
-find()
-******
-``listObj.find(text)``
+`listObj.find(text)`
 
 text
 
 The text of the item to find.
 
-For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
-Looks in this object's ``items`` array for an item object with the given ``text``
+For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only.
+Looks in this object’s `items` array for an item object with the given `text`
 value.
 
-Returns the ``item`` object if found; otherwise, returns ``null``.
+Returns the `item` object if found; otherwise, returns `null`.
 
---------------------------------------------------------------------------------
+---
 
-.. _listobj-remove:
+<a id="listobj-remove"></a>
 
-remove()
-********
-``containerObj.remove(index)``
-``containerObj.remove(text)``
-``containerObj.remove(child)``
+### remove()
 
-==============================  ====================================================================================================
-``index``, ``text``, ``child``  The item or child to remove, specified by 0-based index, ``text`` value, or as a ``control`` object.
-==============================  ====================================================================================================
+`containerObj.remove(index)`
+`containerObj.remove(text)`
+`containerObj.remove(child)`
 
-For containers (:ref:`control-type-panel`, :ref:`control-type-group`), removes the specified child control from
-the container's ``children`` array.
+| `index`, `text`, `child`   | The item or child to remove, specified by 0-based index, `text` value, or as a `control` object.   |
+|----------------------------|----------------------------------------------------------------------------------------------------|
 
-For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only, removes the specified item from this
-object's items array. No error results if the item does not exist.
+For containers ([panel](#control-type-panel), [group](#control-type-group)), removes the specified child control from
+the container’s `children` array.
 
-Returns ``undefined``.
+For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only, removes the specified item from this
+object’s items array. No error results if the item does not exist.
 
---------------------------------------------------------------------------------
+Returns `undefined`.
 
-.. _listobj-removeAll:
+---
 
-removeAll()
-***********
-``listObj.removeAll()``
+<a id="listobj-removeall"></a>
 
-For list objects (:ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`) only.
-Removes all items from the object's ``items`` array.
+### removeAll()
 
-Returns ``undefined``.
+`listObj.removeAll()`
 
---------------------------------------------------------------------------------
+For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only.
+Removes all items from the object’s `items` array.
 
-.. _listobj-revealItem:
+Returns `undefined`.
 
-revealItem()
-************
-``listObj.revealItem(item)``
+---
 
-========  ==============================================
-``item``  The item or child to reveal, a control object.
-========  ==============================================
+<a id="listobj-revealitem"></a>
 
-For :ref:`control-type-listbox` only. Scrolls the list to make the specified item visible,
+### revealItem()
+
+`listObj.revealItem(item)`
+
+| `item`   | The item or child to reveal, a control object.   |
+|----------|--------------------------------------------------|
+
+For [listbox](#control-type-listbox) only. Scrolls the list to make the specified item visible,
 if necessary.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _flashplayer-control-functions:
+<a id="flashplayer-control-functions"></a>
 
-FlashPlayer control functions
------------------------------
+## FlashPlayer control functions
+
 These functions apply only to controls of type flashplayer.
 
-.. note:: There are limitations on how these functions can be used to control
-  playback of Flash movies:
+#### NOTE
+There are limitations on how these functions can be used to control
+playback of Flash movies:
 
-  - Do not use :ref:`flashplayerobj-stopMovie` and :ref:`flashplayerobj-playMovie` to suspend and subsequently
-    resume or restart an SWF file produced by Flex™.
-  - The :ref:`flashplayerobj-stopMovie` and :ref:`flashplayerobj-playMovie` sequence does not make sense
-    for some SWF files produced by Flash Authoring, depending on the exact details
-    of how they were implemented. The sequence may not correctly reset the file to
-    the initial state (when the ``rewind`` argument to :ref:`flashplayerobj-playMovie` is
-    true) nor suspend then resume the execution of the file (when ``rewind`` is false).
-  - Using :ref:`flashplayerobj-stopMovie` from the player's hosting environment has no effect
-    on an SWF file playing in a ScriptUI Flash Player element. It is, however,
-    possible to produce an SWF using Flash Authoring that can stop itself in
-    response to user interaction.
-  - Do not call :ref:`flashplayerobj-playMovie` when an SWF file is already playing.
+- Do not use [stopMovie()](#flashplayerobj-stopmovie) and [playMovie()](#flashplayerobj-playmovie) to suspend and subsequently
+  resume or restart an SWF file produced by Flex™.
+- The [stopMovie()](#flashplayerobj-stopmovie) and [playMovie()](#flashplayerobj-playmovie) sequence does not make sense
+  for some SWF files produced by Flash Authoring, depending on the exact details
+  of how they were implemented. The sequence may not correctly reset the file to
+  the initial state (when the `rewind` argument to [playMovie()](#flashplayerobj-playmovie) is
+  true) nor suspend then resume the execution of the file (when `rewind` is false).
+- Using [stopMovie()](#flashplayerobj-stopmovie) from the player’s hosting environment has no effect
+  on an SWF file playing in a ScriptUI Flash Player element. It is, however,
+  possible to produce an SWF using Flash Authoring that can stop itself in
+  response to user interaction.
+- Do not call [playMovie()](#flashplayerobj-playmovie) when an SWF file is already playing.
 
---------------------------------------------------------------------------------
+---
 
-.. _flashplayerobj-invokePlayerFunction:
+<a id="flashplayerobj-invokeplayerfunction"></a>
 
-invokePlayerFunction()
-**********************
-``flashPlayerObj.invokePlayerFunction(fnName, [arg1[,…argN]] )``
+### invokePlayerFunction()
 
-==========  ==============================================================================
-``fnName``  String. The name of a Flash ActionScript function that has been
-            registered with the ExternalInterface object by the currently loaded SWF file;
-            see :ref:`calling-actionscript-functions-from-a-scriptui-script`.
-``args``    Optional. One or more arguments to pass through to the function, of
-            these types:
+`flashPlayerObj.invokePlayerFunction(fnName, [arg1[,…argN]] )`
 
-              - ``Array``
-              - ``Boolean``
-              - ``Null``
-              - ``Number``
-              - ``Object``
-              - ``String``
-              - ``undefined``
-
-==========  ==============================================================================
+| `fnName`   | String. The name of a Flash ActionScript function that has been<br/>registered with the ExternalInterface object by the currently loaded SWF file;<br/>see [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script).   |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `args`     | Optional. One or more arguments to pass through to the function, of<br/>these types:<br/><br/>> - `Array`<br/>> - `Boolean`<br/>> - `Null`<br/>> - `Number`<br/>> - `Object`<br/>> - `String`<br/>> - `undefined`                                                                                                        |
 
 Invokes an ActionScript function defined in the Flash application.
 
 Returns the result of the invoked function, which must be one of the allowed types. The ActionScript
-``class`` and ``date`` objects are not supported as return values.
+`class` and `date` objects are not supported as return values.
 
---------------------------------------------------------------------------------
+---
 
-.. _flashplayerobj-loadMovie:
+<a id="flashplayerobj-loadmovie"></a>
 
-loadMovie()
-***********
-``flashPlayerObj.loadMovie(file)``
+### loadMovie()
 
-========  ========================================
-``file``  The :ref:`File-object` for the SWF file.
-========  ========================================
+`flashPlayerObj.loadMovie(file)`
+
+| `file`   | The [File object](../file-system-access/file-object.md#file-object) for the SWF file.   |
+|----------|-----------------------------------------------------------------------------------------|
 
 Loads a movie into the Flash Player, and begins playing it. If you do not specify an associated movie file
 when creating the control, you must use this function to load one.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _flashplayerobj-playMovie:
+<a id="flashplayerobj-playmovie"></a>
 
-playMovie()
-***********
-``flashPlayerObj.playMovie(rewind)``
+### playMovie()
 
-==========  ==============================================================
-``rewind``  When true, restarts the movie from the beginning;
-            otherwise, starts playing from the point where it was stopped.
-==========  ==============================================================
+`flashPlayerObj.playMovie(rewind)`
+
+| `rewind`   | When true, restarts the movie from the beginning;<br/>otherwise, starts playing from the point where it was stopped.   |
+|------------|------------------------------------------------------------------------------------------------------------------------|
 
 Restarts a movie that has been stopped.
 
-.. note:: Do not call when a movie is currently playing.
+#### NOTE
+Do not call when a movie is currently playing.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _flashplayerobj-stopMovie:
+<a id="flashplayerobj-stopmovie"></a>
 
-stopMovie()
-***********
-``flashPlayerObj.stopMovie()``
+### stopMovie()
+
+`flashPlayerObj.stopMovie()`
 
 Halts playback of the current movie.
 
-.. note:: Does not work when called from the player's hosting environment.
+#### NOTE
+Does not work when called from the player’s hosting environment.
 
-Returns ``undefined``.
+Returns `undefined`.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-handling-callbacks:
+<a id="control-event-handling-callbacks"></a>
 
-Control event-handling callbacks
---------------------------------
+## Control event-handling callbacks
+
 The following events are signalled in certain types of controls. To handle the event, define a function with
 the corresponding name in the control object. Handler functions take no arguments and have no
-expected return values; see :ref:`defining-behavior-with-event-callbacks-and-listeners`.
+expected return values; see [Defining behavior with event callbacks and listeners](defining-behavior-with-event-callbacks-and-listeners.md#defining-behavior-with-event-callbacks-and-listeners).
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-onactivate:
+<a id="control-event-onactivate"></a>
 
-onActivate
-**********
+### onActivate
+
 Called when the user gives a control the keyboard focus by clicking it or
 tabbing into it.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-onclick:
+<a id="control-event-onclick"></a>
 
-onClick
-*******
+### onClick
+
 Called when the user clicks one of the following control types:
 
-=============== ==================
-:ref:`Button`   :ref:`IconButton`
-:ref:`Checkbox` :ref:`RadioButton`
-=============== ==================
+| [Button](types-of-controls.md#button)     | [IconButton](types-of-controls.md#iconbutton)   |
+|-------------------------------------------|-------------------------------------------------|
+| [Checkbox](types-of-controls.md#checkbox) | [RadioButton](types-of-controls.md#radiobutton) |
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-onchange:
+<a id="control-event-onchange"></a>
 
-onChange
-********
+### onChange
 
 Called when the user finishes making a change in one of the following control
 types:
 
-============================ ================
-:ref:`EditNumber`            :ref:`EditText`
-:ref:`Scrollbar`             :ref:`Slider`
-:ref:`control-type-listbox`  :ref:`control-type-dropdownlist`
-:ref:`control-type-treeview`
-============================ ================
-
-- For :ref:`EditNumber` and :ref:`EditText` controls, called only when the change is
-  complete-that is, when focus moves to another control, or the user types ``ENTER``.
-  The exact behavior depends on the creation parameter ``enterKeySignalsOnChange``; see
-  the :ref:`edittext <control-type-edittext>` description.
-- For a :ref:`Slider` or :ref:`Scrollbar`, called when the user has finished
+| [EditNumber](types-of-controls.md#editnumber)   | [EditText](types-of-controls.md#edittext)   |
+|-------------------------------------------------|---------------------------------------------|
+| [Scrollbar](types-of-controls.md#scrollbar)     | [Slider](types-of-controls.md#slider)       |
+| [listbox](#control-type-listbox)                | [dropdownlist](#control-type-dropdownlist)  |
+| [treeview](#control-type-treeview)              |                                             |
+- For [EditNumber](types-of-controls.md#editnumber) and [EditText](types-of-controls.md#edittext) controls, called only when the change is
+  complete-that is, when focus moves to another control, or the user types `ENTER`.
+  The exact behavior depends on the creation parameter `enterKeySignalsOnChange`; see
+  the [edittext](#control-type-edittext) description.
+- For a [Slider](types-of-controls.md#slider) or [Scrollbar](types-of-controls.md#scrollbar), called when the user has finished
   dragging the position marker or has clicked the control.
-- For a :ref:`control-type-listbox`, :ref:`control-type-dropdownlist` or :ref:`control-type-treeview`
+- For a [listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)
   control, called whenever the selection property changes. This can happen when a script sets the
   property directly or removes a selected item from the list, or when the user
   changes the selection.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-onchanging:
+<a id="control-event-onchanging"></a>
 
-onChanging
-**********
+### onChanging
+
 Called for each incremental change in one of the following control types:
 
-================= =============== ================ =============
-:ref:`EditNumber` :ref:`EditText` :ref:`Scrollbar` :ref:`Slider`
-================= =============== ================ =============
+| [EditNumber](types-of-controls.md#editnumber)   | [EditText](types-of-controls.md#edittext)   | [Scrollbar](types-of-controls.md#scrollbar)   | [Slider](types-of-controls.md#slider)   |
+|-------------------------------------------------|---------------------------------------------|-----------------------------------------------|-----------------------------------------|
+- For [EditNumber](types-of-controls.md#editnumber) and [EditText](types-of-controls.md#edittext) controls, called for each keypress while the control has focus.
+- For a [Slider](types-of-controls.md#slider) or [Scrollbar](types-of-controls.md#scrollbar), called for any motion of the position marker.
 
-- For :ref:`EditNumber` and :ref:`EditText` controls, called for each keypress while the control has focus.
-- For a :ref:`Slider` or :ref:`Scrollbar`, called for any motion of the position marker.
+---
 
---------------------------------------------------------------------------------
+<a id="control-event-oncollapse"></a>
 
-.. _control-event-oncollapse:
+### onCollapse
 
-onCollapse
-**********
-Called when the user collapses (closes) a node in a :ref:`control-type-treeview` control.
-The parameter to this function is the :ref:`listitem` node object that was
+Called when the user collapses (closes) a node in a [treeview](#control-type-treeview) control.
+The parameter to this function is the [ListItem](types-of-controls.md#listitem) node object that was
 collapsed.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-ondeactivate:
+<a id="control-event-ondeactivate"></a>
 
-onDeactivate
-************
+### onDeactivate
+
 Called when the user removes keyboard focus from a previously active control by
 clicking outside it or tabbing out of it.
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-ondoubleclick:
+<a id="control-event-ondoubleclick"></a>
 
-onDoubleClick
-*************
-Called when the user double clicks an item in a :ref:`control-type-listbox` control.
-The list's ``selection`` property is set to the clicked item.
+### onDoubleClick
 
---------------------------------------------------------------------------------
+Called when the user double clicks an item in a [listbox](#control-type-listbox) control.
+The list’s `selection` property is set to the clicked item.
 
-.. _control-event-onenterkey:
+---
 
-onEnterKey
-*************
+<a id="control-event-onenterkey"></a>
 
-.. warning::
-  This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+### onEnterKey
 
-Called when the user presses return or enter in a :ref:`control-type-edittext` control.
+#### WARNING
+This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 
---------------------------------------------------------------------------------
+Called when the user presses return or enter in a [edittext](#control-type-edittext) control.
 
-.. _control-event-ondraw:
+---
 
-onDraw
-******
+<a id="control-event-ondraw"></a>
+
+### onDraw
+
 Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control's associated :ref:`ScriptUIGraphics-object`.
-Handler takes one argument, a :ref:`DrawState-object`.
+or control the appearance, using the control’s associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
+Handler takes one argument, a [DrawState object](#drawstate-object).
 
---------------------------------------------------------------------------------
+---
 
-.. _control-event-onexpand:
+<a id="control-event-onexpand"></a>
 
-onExpand
-********
-Called when the user expands (opens) a node in a :ref:`control-type-treeview` control. The parameter
-to this function is the :ref:`listitem` node object that was expanded.
+### onExpand
 
---------------------------------------------------------------------------------
+Called when the user expands (opens) a node in a [treeview](#control-type-treeview) control. The parameter
+to this function is the [ListItem](types-of-controls.md#listitem) node object that was expanded.
 
-.. _control-event-onshortcutkey:
+---
 
-onShortcutKey
-*************
+<a id="control-event-onshortcutkey"></a>
+
+### onShortcutKey
+
 (In Windows only) Called when a shortcut-key sequence is typed that matches the
-:ref:`controlobj-shortcutKey` value for an element in the active window.
+[shortcutKey](#controlobj-shortcutkey) value for an element in the active window.
 
---------------------------------------------------------------------------------
+---
 
-.. _drawstate-object:
+<a id="drawstate-object"></a>
 
-DrawState object
-----------------
+## DrawState object
+
 A helper object that describes an input state at the time of the triggering
-:ref:`control-event-ondraw` event. Contains properties that report whether the current control
+[onDraw](#control-event-ondraw) event. Contains properties that report whether the current control
 has the input focus, and the particular mouse button and key-press state.
 There is no object constructor.
 
-DrawState object properties
-***************************
+### DrawState object properties
+
 The object contains the following read-only properties:
 
-=================== =========== ==================================================================
-altKeyPressed       Boolean     When true, the ALT key was pressed. (In Windows only.)
-capsLockKeyPressed  Boolean     When true, the CAPSLOCK key was pressed.
-cmdKeyPressed       Boolean     When true, the CMD key was pressed. (In Mac OS only.)
-ctrlKeyPressed      Boolean     When true, the CTRL key was pressed.
-hasFocus            Boolean     When true, the control containing this object has the input focus.
-leftButtonPressed   Boolean     When true, the left mouse button was pressed.
-middleButtonPressed Boolean     When true, the middle mouse button was pressed.
-mouseOver           Boolean     When true, the cursor position was within the bounds of the
-                                control containing this object.
-numLockKeyPressed   Boolean     When true, the NUMLOCK key was pressed.
-optKeyPressed       Boolean     When true, the OPT key was pressed. (In Mac OS only.)
-rightButtonPressed  Boolean     When true, the right mouse button was pressed.
-shiftKeyPressed     Boolean     When true, the SHIFT key was pressed.
-=================== =========== ==================================================================
+| altKeyPressed       | Boolean   | When true, the ALT key was pressed. (In Windows only.)                                          |
+|---------------------|-----------|-------------------------------------------------------------------------------------------------|
+| capsLockKeyPressed  | Boolean   | When true, the CAPSLOCK key was pressed.                                                        |
+| cmdKeyPressed       | Boolean   | When true, the CMD key was pressed. (In Mac OS only.)                                           |
+| ctrlKeyPressed      | Boolean   | When true, the CTRL key was pressed.                                                            |
+| hasFocus            | Boolean   | When true, the control containing this object has the input focus.                              |
+| leftButtonPressed   | Boolean   | When true, the left mouse button was pressed.                                                   |
+| middleButtonPressed | Boolean   | When true, the middle mouse button was pressed.                                                 |
+| mouseOver           | Boolean   | When true, the cursor position was within the bounds of the<br/>control containing this object. |
+| numLockKeyPressed   | Boolean   | When true, the NUMLOCK key was pressed.                                                         |
+| optKeyPressed       | Boolean   | When true, the OPT key was pressed. (In Mac OS only.)                                           |
+| rightButtonPressed  | Boolean   | When true, the right mouse button was pressed.                                                  |
+| shiftKeyPressed     | Boolean   | When true, the SHIFT key was pressed.                                                           |

@@ -1918,6 +1918,10 @@ The list's ``selection`` property is set to the clicked item.
 
 onEnterKey
 *************
+
+.. warning::
+  This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+
 Called when the user presses return or enter in a :ref:`control-type-edittext` control.
 
 --------------------------------------------------------------------------------

@@ -1,58 +1,16 @@
-# README
+# Adobe Extendscript Scripting Guide
 
-## What is this repository for?
+This repo hosts the Adobe Extendscript Scripting Guide community docs.
 
-Repo hosting the Javascript Tools Guide RST docs, linked into a http://readthedocs.io system hosted at https://extendscript.docsforadobe.dev/
+---
 
-----
+## Contributing
 
-## Contributing ###
+This endeavour is primarily community-supported & run; contributors are welcome and encouraged to suggest fixes, adjustments, notes/warnings, and anything else that may help the project.
 
-Contributors are welcome and encouraged to suggest fixes, adjustments, notes/warnings, and anything else that may help the project.
+For specific information on how to contribute & best practices, see the [Documentation Contribution Guide](https://docsforadobe.dev/contributing/contribution-guide/).
 
-This project uses reStructuredText. For a reference on how to write reStructuredText check out this [quickref](http://docutils.sourceforge.net/docs/user/rst/quickref.html).
-
-----
-
-## Build HTML Locally
-
-You may want to build the HTML locally before pushing, in order to ensure that the result is what you'd expect. These files aren't included in the git repo, nor are they used online; this is solely to create a local, offline version of the online docs.
-
-- Install ``Python``
-- Install ``pip``
-- Navigate to the project directory and use the command ``pip install -r requirements.txt``
-- Build the docs using ``make html``
-
-----
-
-## Admonitions Usage
-
-
-Currently, the following [admonitions](http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions) are in use in this project. Try to keep one piece of data per note, for easier parsing.
-
-	.. note::
-		Notes detail version added, and/or relevant pieces of information.
-
-	.. tip::
-		Tips supply helpful suggestions on usage or behaviours.
-
-	.. warning::
-		Warnings convey negative behaviours, or when something won't work the way you'd expect.
-
-----
-
-## Adding undocumented attributes or methods
-
-If you find attributes or methods that are not mentioned in this documentation, and they are not publically announced by Adobe, please add this warning to attribute/method so the user knows to use it at their own risk.
-
-	.. warning::
-	  	This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
-
-----
-
-To check the build status, visit [Read The Docs](https://readthedocs.org/projects/javascript-tools-guide/builds/).
-
-----
+---
 
 ## Licensing & Ownership
 

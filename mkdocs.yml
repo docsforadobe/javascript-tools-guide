@@ -1,8 +1,8 @@
 # Site metadata
-site_name: After Effects Scripting Guide
-site_url: https://ae-scripting.docsforadobe.dev/
-repo_url: https://github.com/docsforadobe/after-effects-scripting-guide/
-repo_name: "after-effects-scripting-guide"
+site_name: Adobe Extendscript Scripting Guide
+site_url: https://extendscript.docsforadobe.dev/
+repo_url: https://github.com/docsforadobe/javascript-tools-guide/
+repo_name: "javascript-tools-guide"
 
 # Customize navigation
 nav:

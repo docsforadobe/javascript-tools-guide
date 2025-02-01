@@ -5,7 +5,7 @@ are common across message-enabled applications. These include functions to open 
 and print files. For details of the function set, see [Cross-DOM API reference](#cross-dom-api-reference).
 
 You can access cross-DOM functions in any script by prefixing the function name with the namespace
-specifier for the target application (see [Namespace specifiers](application-and-namespace-specifiers.md#namespace-specifiers)). For example, a Photoshop CC
+specifier for the target application (see [Namespace specifiers](application-and-namespace-specifiers.md)). For example, a Photoshop CC
 script can call indesign.open(file) to open a file in Adobe InDesign® CC.
 
 The cross-DOM functions for each application are implemented in JavaScript. You can see the
@@ -29,7 +29,7 @@ specifically demonstrate the use of cross-DOM functions:
 In addition to the required base cross-DOM functions, each message-enabled application can provide
 application-specific functionality to all scripts through a simple syntax. You can access exported functions
 in any script by prefixing the function name with the namespace specifier for the target application (see
-[Namespace specifiers](application-and-namespace-specifiers.md#namespace-specifiers)). For example, Photoshop CS5 exports the photomerge function, so
+[Namespace specifiers](application-and-namespace-specifiers.md)). For example, Photoshop CS5 exports the photomerge function, so
 an Illustrator CS5 script can directly call photoshop.photomerge(files).
 
 The only difference between cross-DOM functions and the application-specific exported functions is that
@@ -55,14 +55,14 @@ JavaScript, and an application-specific startup folder.
   `/Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/`
 
 !!! note
-    This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md#scripting-for-specific-applications).
+    This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md).
 
 ---
 
 ## Cross-DOM API reference
 
 All exported functions, including those of the cross-DOM API, are invoked through the exporting
-application, identified by its namespace specifier (see [Namespace specifiers](application-and-namespace-specifiers.md#namespace-specifiers)). For example:
+application, identified by its namespace specifier (see [Namespace specifiers](application-and-namespace-specifiers.md)). For example:
 
 ```default
 //execute an Illustrator script in version 12

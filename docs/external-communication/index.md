@@ -3,7 +3,7 @@
 ExtendScript offers tools for communicating with other computers or the Internet using standard
 protocols.
 
-The [Socket object](socket-object.md#socket-object) supports low-level TCP connections. It is available in the following applications:
+The [Socket object](socket-object.md) supports low-level TCP connections. It is available in the following applications:
 
 - Adobe Bridge CS5
 - Adobe InDesign CS5

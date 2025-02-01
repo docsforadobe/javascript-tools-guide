@@ -5,7 +5,7 @@ Once you have the Extendscript VS Code Extension up and running, there are a few
 !!! note
     This guide is meant to give insight on how to use specific Extendscript for VS Code features.
 
-If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md#getting-started-with-vscode-debugger).
+If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md).
 
 ---
 

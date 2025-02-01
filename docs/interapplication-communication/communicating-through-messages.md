@@ -14,11 +14,11 @@ addition to all cross-DOM and application exported functions.
 The messaging API defines the BridgeTalk class, whose globally available static properties and functions
 provide access to environmental information relevant for communication between applications. You can
 instantiate this class to create a BridgeTalk message object, which encapsulates a message and allows you
-to send it to another application. For details of these objects, see [Messaging framework API reference](messaging-framework-api-reference.md#messaging-framework-api-reference).
+to send it to another application. For details of these objects, see [Messaging framework API reference](messaging-framework-api-reference.md).
 
 ## Sending messages
 
-To send a script or other data to another application, you must create and configure a [BridgeTalk message object](bridgetalk-message-object.md#bridgetalk-message-object).
+To send a script or other data to another application, you must create and configure a [BridgeTalk message object](bridgetalk-message-object.md).
 This object contains the data to be sent (generally a script to be executed in the target application),
 and also specifies how to handle the response.
 
@@ -29,7 +29,7 @@ CS5, and receiving a response.
 
 Before you can actually send a message, you must check that the required version of the target application
 is installed. The function [getSpecifier()](bridgetalk-class.md#bridgetalk-getspecifier), available in the global namespace through the
-[BridgeTalk class](bridgetalk-class.md#bridgetalk-class), provides this information.
+[BridgeTalk class](bridgetalk-class.md), provides this information.
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed
 by Photoshop CS5, checks that the required version of Adobe Bridge is installed:
@@ -171,7 +171,7 @@ callbacks defined in the sending message object. For details, see [Handling resp
 
 To specify how the application should handle unsolicited incoming messages, define a callback handler
 function in the static [onReceive](bridgetalk-class.md#bridgetalk-onreceive) property of the `BridgeTalk` class. This function takes a single argument, a
-[BridgeTalk message object](bridgetalk-message-object.md#bridgetalk-message-object).
+[BridgeTalk message object](bridgetalk-message-object.md).
 
 The default behavior of the `onReceive` handler is to evaluate the body of the received message with
 JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last

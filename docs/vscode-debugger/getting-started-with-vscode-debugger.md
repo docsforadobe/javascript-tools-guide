@@ -5,7 +5,7 @@ Unlike the ExtendScript Toolkit, the VS Code debugger takes some work to get up 
 !!! note
     This guide is meant to walk you through how to install and run the Extendscript for VS Code debugger.
 
-If you're looking on how to use specific features of the extension, see [VS Code Extension Features](vscode-extension-features.md#vscode-extension-features).
+If you're looking on how to use specific features of the extension, see [VS Code Extension Features](vscode-extension-features.md).
 
 Generally, you'll need to follow these steps:
 

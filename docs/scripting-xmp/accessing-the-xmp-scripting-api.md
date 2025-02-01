@@ -22,7 +22,7 @@ that include namespace constants. The top-level objects provide access to additi
 encapsulate individual metadata properties, file information, and XMP packet information, and a utility
 that allows iteration through properties.
 
-See [XMPScript object reference](xmpscript-object-reference.md#xmpscript-object-reference) for details of the classes, their properties, and their
+See [XMPScript object reference](xmpscript-object-reference.md) for details of the classes, their properties, and their
 methods.
 
 ---

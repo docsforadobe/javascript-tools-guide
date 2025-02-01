@@ -6,8 +6,8 @@ It's semi-buggy, generally unreliable, and seems to be meant for self-contained 
 
 The docs here are currently in progress and are ever-evolving; contributions are encouraged and welcome!
 
-- [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md#getting-started-with-vscode-debugger)
-- [VS Code Extension Features](vscode-extension-features.md#vscode-extension-features)
+- [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md)
+- [VS Code Extension Features](vscode-extension-features.md)
 
 ---
 

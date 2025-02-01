@@ -233,7 +233,7 @@ If an element's size property is not defined, the layout manager uses the value 
 determine the dimensions of each element during the layout process. Generally, you should avoid setting
 the preferredSize property explicitly, and let ScriptUI determine the best value based on the state of an
 element at layout time. This allows you to set the text properties of your user-interface elements using
-localizable strings (see [Localization in ScriptUI objects](localization-in-scriptui-objects.md#localization-in-scriptui-objects)). The width and height of each
+localizable strings (see [Localization in ScriptUI objects](localization-in-scriptui-objects.md)). The width and height of each
 element are calculated at layout time based on the chosen language-specific text string, rather than
 relying on the script to specify a fixed size for each element.
 
@@ -259,7 +259,7 @@ and other `Group` containers.
 
 Many dialogs consist of rows of information to be filled in, where each row has columns of related types of
 controls. For instance, an edit field is typically in a row next to a static text label that identifies it, and a
-series of such rows are arranged in a column. This example (created using [Resource specifications](resource-specifications.md#resource-specifications)) shows a
+series of such rows are arranged in a column. This example (created using [Resource specifications](resource-specifications.md)) shows a
 simple dialog in which a user can enter information into two EditText fields, each arranged in a row with
 its StaticText label. To create the layout, a `Panel` with a column orientation contains two `Group` elements
 with row orientation. These groups contain the control rows. A third `Group`, outside the panel, contains the

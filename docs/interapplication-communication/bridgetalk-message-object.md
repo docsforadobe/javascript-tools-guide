@@ -57,7 +57,7 @@ notation (`msgObj.headers.propName`), or bracket notation
 syntax, use the dot notation. If not, use the bracket notation.
 
 The predefined header `["Error-Code"]` is used to return error messages to a
-sender; see [Messaging error codes](messaging-error-codes.md#messaging-error-codes).
+sender; see [Messaging error codes](messaging-error-codes.md).
 
 Examples of setting headers:
 
@@ -151,7 +151,7 @@ bridgeTalkObj.onError = function( errorMsgObject ) {
 
 The body property of the received message object contains the error
 message, and the headers property contains the error code in its
-`Error-Code` property. See [Messaging error codes](messaging-error-codes.md#messaging-error-codes).
+`Error-Code` property. See [Messaging error codes](messaging-error-codes.md).
 
 The function returns `undefined`.
 

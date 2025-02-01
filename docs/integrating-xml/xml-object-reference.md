@@ -622,10 +622,8 @@ the namespace is found.
 
 For example, this XML definition contains a namespace declaration:
 
-```default
-.. code-block::xml
-
-  <?xml xmlns:adobe=http://www.adobe.com/test?>
+```xml
+<?xml xmlns:adobe=http://www.adobe.com/test?>
 ```
 
 In the corresponding namespace, the prefix is `adobe`, and the URI is `http://www.adobe.com/test`.

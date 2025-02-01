@@ -26,7 +26,7 @@ specific kinds of display and user interaction. Control instances are created by
 `type` keyword to the `add()` method of a Window or container; see [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).
 
 These examples do not set bounds explicitly on creation, because it is often more useful to set a preferred
-size, then allow the layout manager to set the bounds; see [Automatic layout](automatic-layout.md#automatic-layout).
+size, then allow the layout manager to set the bounds; see [Automatic layout](automatic-layout.md).
 
 ### Button
 
@@ -276,7 +276,7 @@ label with respect to the player.
 You can display icon images in `Image` or `IconButton` controls, or display images in place of strings or in
 addition to strings as the selectable items in a `Listbox` or `DropdownList` control. In each case, the image
 is defined by setting the element's `image` property. You can set it to a [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object); a named icon
-resource; a [File object](../file-system-access/file-object.md#file-object); or the pathname of a file containing the iconic image, or of an alias or shortcut to
+resource; a [File object](../file-system-access/file-object.md); or the pathname of a file containing the iconic image, or of an alias or shortcut to
 that file (see [Specifying paths](../file-system-access/using-file-and-folder-objects.md#specifying-paths)).
 
 The image data for an icon can be in Portable Network Graphics (PNG) format, or in Joint Photographic
@@ -384,7 +384,7 @@ or by using one of the dialog controls that you supply, typically an **OK** or *
 method of such a button must call the `close` or `hide` method to close the dialog. The `close` method
 allows you to pass a value to be returned by the show method.
 
-For an example of how to define such buttons and their behavior, see [Defining behavior with event callbacks and listeners](defining-behavior-with-event-callbacks-and-listeners.md#defining-behavior-with-event-callbacks-and-listeners).
+For an example of how to define such buttons and their behavior, see [Defining behavior with event callbacks and listeners](defining-behavior-with-event-callbacks-and-listeners.md).
 
 ### Creating and using modal dialogs
 

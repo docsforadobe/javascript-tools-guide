@@ -50,7 +50,7 @@ A property value can be specified as `null`, true, false, a string, a number, an
   { classname inlineObject }
   ```
 
-  In this case, the classname must be one of the control class names list in [Types of controls](types-of-controls.md#types-of-controls).
+  In this case, the classname must be one of the control class names list in [Types of controls](types-of-controls.md).
 - An inline object contains one or more properties, in the form:
   ```default
   { propertyName: propertyValue, propertyName: propertyValue, ... }

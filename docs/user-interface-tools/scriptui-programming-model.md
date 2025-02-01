@@ -73,7 +73,7 @@ container apply to its children; for example, when you hide a container, its chi
 When a script creates a `Window` and adds various user-interface elements to it, the locations and sizes of
 elements and spacing between elements is known as the *layout* of the window. Each user-interface
 element has properties which define its location and dimensions: `location`, `size`, and `bounds`. These
-properties are initially undefined, and a script that employs [Automatic layout](automatic-layout.md#automatic-layout) should leave them
+properties are initially undefined, and a script that employs [Automatic layout](automatic-layout.md) should leave them
 undefined for the main window as well as its contained elements, allowing the automatic layout
 mechanism to set their values.
 
@@ -172,7 +172,7 @@ of the element's appearance, or special functions such as whether an edit text e
 only. See [Control object constructors](control-objects.md#control-object-constructors) for details.
 
 You can also specify the creation properties for new objects using the resource specification format; for
-details, see [Resource specifications](resource-specifications.md#resource-specifications).
+details, see [Resource specifications](resource-specifications.md).
 
 All user-interface elements have an optional creation property called name, which assigns a name for
 identifying that element. For example, the following creates a new Button element with the name ok:

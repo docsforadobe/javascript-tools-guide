@@ -75,7 +75,7 @@ you make in the text, breakpoints that you add, and so on, appear simultaneously
 copy is, by default, positioned to the right of the original, docked window, as shown. However, if you use
 CTRL-click to split the window, the second appears below the original.
 
-For more information about the document windows and the Script Editor, see [The Script Editor](the-script-editor.md#the-script-editor).
+For more information about the document windows and the Script Editor, see [The Script Editor](the-script-editor.md).
 
 ---
 

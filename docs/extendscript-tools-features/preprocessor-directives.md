@@ -92,14 +92,14 @@ unique name generated from a number.
 
 ## #strict on
 
-Turns on strict error checking. See the [Dollar ($) object](dollar-object.md#dollar-object)'s [strict](dollar-object.md#dollar-strict) property.
+Turns on strict error checking. See the [Dollar ($) object](dollar-object.md)'s [strict](dollar-object.md#dollar-strict) property.
 
 ---
 
 ## #target name
 
 Defines the target application for this JSX file. The name value is an application
-specifier; see [Application and namespace specifiers](../interapplication-communication/application-and-namespace-specifiers.md#application-and-namespace-specifiers). Enclosing quotes are optional.
+specifier; see [Application and namespace specifiers](../interapplication-communication/application-and-namespace-specifiers.md). Enclosing quotes are optional.
 If the Toolkit is registered as the handler for files with the `.jsx` extension (as it is by
 default), opening the file opens the target application to run the script.
 

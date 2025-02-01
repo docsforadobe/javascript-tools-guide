@@ -129,7 +129,7 @@ defined in the object-model dictionary that is currently selected from the flyou
 
 You can use the flyout menu at the upper right corner of the document window to choose an
 object-model dictionary to use for completion. Available dictionaries depend on which applications are
-loaded. See [Inspecting object models](inspecting-object-models.md#inspecting-object-models).
+loaded. See [Inspecting object models](inspecting-object-models.md).
 
 ![Code Completion](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_coding-aids_object-model-dictionary.png)
 

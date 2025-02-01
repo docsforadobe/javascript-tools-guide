@@ -54,9 +54,9 @@ model for windows and user-interface control elements within an Adobe applicatio
 see [User-Interface Tools](../user-interface-tools/index.md#user-interface-tools).
 In addition, ExtendScript provides:
 
-- Global functions for localization of display strings; see [Localizing ExtendScript strings](../extendscript-tools-features/localizing-extendscript-strings.md#localizing-extendscript-strings)
-- Global functions for displaying short messages in dialog boxes; see [User notification dialogs](../extendscript-tools-features/user-notification-dialogs.md#user-notification-dialogs).
-- An object type for specifying measurement values together with their units; see [Specifying measurement values](../extendscript-tools-features/specifying-measurement-values.md#specifying-measurement-values).
+- Global functions for localization of display strings; see [Localizing ExtendScript strings](../extendscript-tools-features/localizing-extendscript-strings.md)
+- Global functions for displaying short messages in dialog boxes; see [User notification dialogs](../extendscript-tools-features/user-notification-dialogs.md).
+- An object type for specifying measurement values together with their units; see [Specifying measurement values](../extendscript-tools-features/specifying-measurement-values.md).
 
 ## Interapplication communication and messaging
 
@@ -94,9 +94,9 @@ For complete details, see [Integrating External Libraries](../integrating-extern
 ExtendScript provides these utilities and features:
 
 - JavaScript language enhancements
-  - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md#preprocessor-directives).
+  - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md).
   - Support for extending or overriding math and logical operator behavior on a class-by-class basis.
-      See [Operator overloading](../extendscript-tools-features/operator-overloading.md#operator-overloading).
+      See [Operator overloading](../extendscript-tools-features/operator-overloading.md).
   - For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
 - JavaScript compilation, through the ExtendScript Toolkit. See [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit).
 - XML integration: ExtendScript defines the XML object, which allows you to process XML with your JavaScript scripts. For complete details, see [Integrating XML into JavaScript](../integrating-xml/index.md#integrating-xml-into-javascript).

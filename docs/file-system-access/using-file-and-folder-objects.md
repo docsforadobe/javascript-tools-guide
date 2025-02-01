@@ -204,7 +204,7 @@ Roman on Mac OS). The `encoding` property of a File object returns the current e
 encoding property to the name of the desired encoding. The File object looks for the corresponding
 encoder in the operating system to use for subsequent I/O. The name is one of the standard Internet
 names that are used to describe the encoding of HTML files, such as `ASCII`, `X-SJIS`, or `ISO-8859-1`. For a
-complete list, see [File- and Folder-supported encoding names](file-and-folder-supported-encoding-names.md#file-and-folder-supported-encoding-names).
+complete list, see [File- and Folder-supported encoding names](file-and-folder-supported-encoding-names.md).
 
 A special encoder, `BINARY`, is provided for binary I/O. This encoder simply extends every 8-bit character it
 finds to a Unicode character between 0 and 255. When using this encoder to write binary files, the encoder
@@ -232,4 +232,4 @@ property contains a message describing the type of the error. On success, the pr
 string. You can set the property, but setting it only causes the error message to be cleared. If a file is open,
 assigning an arbitrary value to the property also resets its error flag.
 
-For a complete list of supported error messages, see [File access error messages](file-access-error-messages.md#file-access-error-messages).
+For a complete list of supported error messages, see [File access error messages](file-access-error-messages.md).

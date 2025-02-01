@@ -2,7 +2,7 @@
 
 All forms of interapplication communication use [Application specifiers](#application-specifiers) to identify Adobe applications.
 In all ExtendScript scripts, the #target directive can use an specifier to identify the application that
-should run that script. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md#preprocessor-directives).
+should run that script. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md).
 
 In interapplication messages, the specifier is used as the value of the target property of the message
 object, to identify the target application for the message.

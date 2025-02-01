@@ -13,7 +13,7 @@ A limited set of basic functions (the cross-DOM) are common across all message-e
 allow your script to, for example, open or print files in other applications, simply by calling the open or
 print function for that application.
 
-[Cross-DOM functions](cross-dom-functions.md#cross-dom-functions) describes the usage of this feature.
+[Cross-DOM functions](cross-dom-functions.md) describes the usage of this feature.
 [Cross-DOM API reference](cross-dom-functions.md#cross-dom-api-reference) provides reference details for the functions of the basic
 cross-DOM.
 
@@ -34,8 +34,8 @@ results. Typically the data passed between applications are JavaScript scripts. 
 framework is extensible. It allows you to define different types of data to send between applications, and
 to specify how they are handled.
 
-[Communicating through messages](communicating-through-messages.md#communicating-through-messages) describes the usage of this feature.
-[Messaging framework API reference](messaging-framework-api-reference.md#messaging-framework-api-reference) provides complete reference details.
+[Communicating through messages](communicating-through-messages.md) describes the usage of this feature.
+[Messaging framework API reference](messaging-framework-api-reference.md) provides complete reference details.
 
 ---
 
@@ -44,7 +44,7 @@ to specify how they are handled.
 When calling external functions or exchanging messages, you must identify particular applications using
 namespace specifiers. A specifier consists of a specific name string (such as photoshop), and optional
 additions that identify a particular release or locale version. Application specifiers are used occasionally in
-other contexts as well. For details of the syntax, see [Application and namespace specifiers](application-and-namespace-specifiers.md#application-and-namespace-specifiers).
+other contexts as well. For details of the syntax, see [Application and namespace specifiers](application-and-namespace-specifiers.md).
 
 Regardless of which method you use to perform interapplication communication, you must place your
 script in a location where the application you want to run it can see it. There are different locations for the
@@ -53,4 +53,4 @@ startup scripts of the applications themselves, and for scripts provided by deve
 Because all JavaScript-enabled applications look in the same locations for scripts to run, the scripts
 themselves must be explicit about which application they are meant for. A script should check that all
 applications it needs to communicate with are installed with the correct version, and that any other
-applications that might be installed do not run the script. For details, see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md#scripting-for-specific-applications).
+applications that might be installed do not run the script. For details, see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md).

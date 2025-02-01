@@ -5,7 +5,7 @@ text. You can localize the display strings in any ScriptUI object simply and eff
 `localize` function. This function takes as its argument a *localization object* containing the localized
 versions of a string.
 
-For complete details of this ExtendScript feature, see [Localizing ExtendScript strings](../extendscript-tools-features/localizing-extendscript-strings.md#localizing-extendscript-strings).
+For complete details of this ExtendScript feature, see [Localizing ExtendScript strings](../extendscript-tools-features/localizing-extendscript-strings.md).
 A localization object is a JavaScript object literal whose property names are locale names, and whose
 property values are the localized text strings. The locale name is an identifier as specified in the ISO 31
 standard. In this example, a `btnText` object contains localized text strings for several locales. This object

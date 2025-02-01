@@ -17,4 +17,4 @@ The Toolkit includes a JavaScript debugger that allows you to:
 
 When you double click a JSX file in the platform's windowing environment, the script runs in the Toolkit, unless it specifies a particular target application using the #target directive.
 
-For more information, see [Selecting a debugging target](debugging-in-the-toolkit.md#selecting-a-debugging-target) and [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md#preprocessor-directives).
+For more information, see [Selecting a debugging target](debugging-in-the-toolkit.md#selecting-a-debugging-target) and [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md).

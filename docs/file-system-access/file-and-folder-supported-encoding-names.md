@@ -40,7 +40,7 @@ reading and writing binary data.
 
 In Windows, all encodings use code pages, which are assigned numeric values. The usual Western
 character set that Windows uses, for example, is the code page 1252. You can select Windows code pages
-by prepending the number of the code page with “CP” or “WINDOWS”: for example, “CP1252” for the code
+by prepending the number of the code page with "CP" or "WINDOWS": for example, "CP1252" for the code
 page 1252. The File object has many other built-in encoding names that match predefined code page
 numbers. If a code page is not present, the encoding cannot be selected.
 

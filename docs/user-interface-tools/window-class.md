@@ -71,11 +71,11 @@ resource exists.
 
 `Window.prompt(message, preset[, title ]);`
 
-Displays a modal dialog that returns the user’s text input.
+Displays a modal dialog that returns the user's text input.
 
 | `message`   | The string for the displayed message.                                                                                                                                                                   |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `preset`    | The initial value to be displayed in the text edit field.                                                                                                                                               |
-| `title`     | Optional. A string to appear as the title of the dialog. In Windows, this appears in<br/>the window’s frame; in Mac OS it appears above the message. The default title<br/>string is `"Script Prompt"`. |
+| `title`     | Optional. A string to appear as the title of the dialog. In Windows, this appears in<br/>the window's frame; in Mac OS it appears above the message. The default title<br/>string is `"Script Prompt"`. |
 
 Returns the value of the text edit field if the user clicked OK, `null` if the user clicked Cancel.

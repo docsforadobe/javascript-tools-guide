@@ -92,7 +92,7 @@ unique name generated from a number.
 
 ## #strict on
 
-Turns on strict error checking. See the [Dollar ($) object](dollar-object.md#dollar-object)’s [strict](dollar-object.md#dollar-strict) property.
+Turns on strict error checking. See the [Dollar ($) object](dollar-object.md#dollar-object)'s [strict](dollar-object.md#dollar-strict) property.
 
 ---
 
@@ -105,7 +105,7 @@ default), opening the file opens the target application to run the script.
 
 If this directive is not present, the Toolkit loads and displays the script. A user can open a
 file by double-clicking it in a file browser, and a script can open a file using a `File`
-object’s `execute` method.
+object's `execute` method.
 
 ---
 

@@ -6,10 +6,10 @@ element as a title or label, and use the automatic layout mechanism to control t
 relative to the element it identifies.
 
 The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It
-allows you to define an element’s title and its spacial relationship with the graphic representation of the
+allows you to define an element's title and its spacial relationship with the graphic representation of the
 object it identifies, without the need for additional `statictext` and container elements. Title layout
-operates on an element’s optional [title](control-objects.md#controlobj-title) and [titleLayout](control-objects.md#controlobj-titlelayout) properties.
-It treats this title and the element’s graphic representation as two separate objects whose relative positions
+operates on an element's optional [title](control-objects.md#controlobj-title) and [titleLayout](control-objects.md#controlobj-titlelayout) properties.
+It treats this title and the element's graphic representation as two separate objects whose relative positions
 are controlled according to layout rules within a virtual container that encloses both objects. This is
 similar to the operation of the automatic layout mechanism, but within a more limited scope.
 
@@ -29,8 +29,8 @@ element. The same principles apply in both cases.
   right of the graphic element, above or below it, or superimposed over the center of the graphic
   element; the placement is controlled by the [titleLayout](control-objects.md#controlobj-titlelayout) property.
 - The [titleLayout](control-objects.md#controlobj-titlelayout) property is an Object containing properties that specify:
-  - The title’s character width;
-  - The title’s justification within the character width;
+  - The title's character width;
+  - The title's justification within the character width;
   - How the title should be truncated if necessary;
   - The orientation, alignment, and spacing of the title with respect to the object it identifies;
   - The margins within the virtual container that surrounds the title and its related object.
@@ -68,7 +68,7 @@ except that the `fill` value is not allowed.
 - To achieve a stack orientation where the title appears superimposed upon the graphic element, define
   both vertical and horizontal alignment as `center`. This orientation is mainly useful with the
   `iconbutton` or `image` element types; it does not make sense to superimpose a title over a
-  dropdownlist, for instance. In this example, the button’s title is centered over its iconic image:
+  dropdownlist, for instance. In this example, the button's title is centered over its iconic image:
   ```default
   button.title = 'Get information';
   button.titleLayout = { alignment: ['center', 'center'] };
@@ -96,8 +96,8 @@ except that the `fill` value is not allowed.
 ## Title character width and justification
 
 - To override the automatically calculated title width, define a positive non-zero value for the
-  `characters` property. This reserves enough space in the title area to hold the specified number of “X”
-  characters. This is useful when an element’s title can change (for localized values, for instance) and you
+  `characters` property. This reserves enough space in the title area to hold the specified number of "X"
+  characters. This is useful when an element's title can change (for localized values, for instance) and you
   want to reserve enough space to fit all the expected values without truncation or affecting the overall
   layout.
   > ```default
@@ -118,7 +118,7 @@ except that the `fill` value is not allowed.
   ![Wider character width: right justified](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
 - This example demonstrates using `characters` and `justify` to vertically align the colons at the ends
   of all the dropdownlist control titles in a group. The same `characters` value is used for each
-  element’s `title`, and all are right-justified:
+  element's `title`, and all are right-justified:
   ```default
   w.ddl1 = w.add("dropdownlist { title: 'Image format:' }");
   w.ddl2 = w.add("dropdownlist { title: 'Background color:' }");
@@ -139,7 +139,7 @@ except that the `fill` value is not allowed.
 
 If the space reserved for a title is not wide enough to display its entire text, set the `truncate` property to
 control the appearance of the truncated text. If `truncate` is `middle`, characters are removed from the
-middle of the text and replaced with an ellipsis (…). For the value `end`, characters are removed from the
+middle of the text and replaced with an ellipsis (...). For the value `end`, characters are removed from the
 end of the text and replaced with an ellipsis. If `truncate` is `none` or is not defined, characters are removed
 from the end, without any replacement ellipsis character.
 
@@ -164,7 +164,7 @@ The `margins` property specifies the number of pixels separating each edge of an
 content within that element. This value overrides the default margin settings (no margins for most
 element types, 6 pixels at each edge for `iconbutton`).
 
-- For `iconbutton`, the margins value controls the padding between the button’s frame and its title and
+- For `iconbutton`, the margins value controls the padding between the button's frame and its title and
   icon image.
 - For other element types, `margins` controls the padding between the imaginary border surrounding
   the union of the bounding boxes of the title and graphic object, which makes the space occupied by

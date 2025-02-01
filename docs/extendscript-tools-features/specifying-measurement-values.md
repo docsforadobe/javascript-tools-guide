@@ -39,8 +39,8 @@ shown in the following table.
 | px             | pixel             | pixels             | baseless (see below) |
 | %              | percent           | percent            | baseless (see below) |
 
-If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as “UnitValue
-0.00000”.
+If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue
+0.00000".
 
 For example, all the following formats are equivalent:
 
@@ -56,7 +56,7 @@ myVal = UnitValue ("12 centimeters");
 
 | `baseUnit`   | UnitValue   | A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a<br/>base for percentage values. This is used as the base conversion unit for pixels<br/>and percentages; see [Converting pixel and percentage values](#converting-pixel-and-percentage-values).<br/><br/>Default is 0.013889 inches (1/72 in), which is the base conversion unit for<br/>pixels at 72 dpi. Set to null to restore the default.   |
 |--------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`       | String      | The unit type in abbreviated form; for example, “cm” or “in”.                                                                                                                                                                                                                                                                                                                                                                                            |
+| `type`       | String      | The unit type in abbreviated form; for example, "cm" or "in".                                                                                                                                                                                                                                                                                                                                                                                            |
 | `value`      | Number      | The numeric measurement value.                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ---
@@ -67,7 +67,7 @@ myVal = UnitValue ("12 centimeters");
 
 `unitValueObj.as (unit)`
 
-| *unit*   | The unit type in abbreviated form; for example, “cm” or “in”.   |
+| *unit*   | The unit type in abbreviated form; for example, "cm" or "in".   |
 |----------|-----------------------------------------------------------------|
 
 Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be
@@ -79,7 +79,7 @@ computed, generates a run-time error.
 
 `unitValueObj.convert (unit)`
 
-| *unit*   | The unit type in abbreviated form; for example, “cm” or “in”.   |
+| *unit*   | The unit type in abbreviated form; for example, "cm" or "in".   |
 |----------|-----------------------------------------------------------------|
 
 Converts this object to the given unit, resetting the type and value accordingly.
@@ -196,7 +196,7 @@ depends on the type of operator.
   ```
 - Comparisons (=, ==, <, >, <=, >=)
   If one operand is a unitValue object and the other is a number, JavaScript compares the number with
-  the unitValue’s numeric value.
+  the unitValue's numeric value.
 
   If both operands are unitValue objects, JavaScript converts both objects to the same unit, and
   compares the converted numeric values.

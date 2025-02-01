@@ -102,7 +102,7 @@ define a signature for a function in order to make it callable in JavaScript.
 ### Function signatures
 
 If you choose to return a set of function name-signature strings, each string associates a function name
-with that function’s parameter types, if any. For example:
+with that function's parameter types, if any. For example:
 
 ```default
 ["functionName1_argtypes", "functionName2_argtypes", "functionName3"]

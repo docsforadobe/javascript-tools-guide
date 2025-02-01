@@ -48,10 +48,10 @@ Preferences). Use the Add, Modify, and Remove buttons to edit the list of folder
 
 ### Adobe Scripts folder
 
-On first launch, the Toolkit creates a folder named Adobe Scripts in the user’s Documents folder. The
+On first launch, the Toolkit creates a folder named Adobe Scripts in the user's Documents folder. The
 Default favorite in the Scripts panel displays the contents of this folder.
 
 When double-clicking a JSX file, the Toolkit normally acts as an invisible security filter. Before actually
-launching the file, a security dialog asks if it is OK to execute the script. The Toolkit treats the user’s
+launching the file, a security dialog asks if it is OK to execute the script. The Toolkit treats the user's
 Documents/Adobe Scripts folder, however, as a trusted location; when you double-click a JSX file in that
 folder, the Toolkit does not display the security alert.

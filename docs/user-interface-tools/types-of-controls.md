@@ -31,10 +31,10 @@ size, then allow the layout manager to set the bounds; see [Automatic layout](au
 ### Button
 
 Typically used to initiate some action from a window when a user clicks the button;
-for example, accepting a dialog’s current settings, canceling a dialog, bringing up a
+for example, accepting a dialog's current settings, canceling a dialog, bringing up a
 new dialog, and so on.
 
-- Set the `text` property to assign a label to identify a Button’s function.
+- Set the `text` property to assign a label to identify a Button's function.
 - The `onClick` callback method provides behavior.
 
 ```default
@@ -168,7 +168,7 @@ Allows the user to select one choice among several.
   platform-specific manner, with a filled or empty dot, for example.
 
 You group a related set of radio buttons by creating all the related elements one after
-another. When any button’s value becomes true, the value of all other buttons in the
+another. When any button's value becomes true, the value of all other buttons in the
 group becomes false. When you create a group of radio buttons, you should set the
 state of one of them true:
 
@@ -200,7 +200,7 @@ within the range determined by `minvalue` and `maxvalue`. By default the range i
 
 ### Scrollbar
 
-Like a slider, the scrollbar is a bar with a draggable indicator. It also has “stepper”
+Like a slider, the scrollbar is a bar with a draggable indicator. It also has "stepper"
 buttons at each end, that you can click to jump the indicator by the amount in the
 `stepdelta` property. If you click a point on the bar outside the indicator, the indicator
 jumps by the amount in the jumpdelta property.
@@ -211,7 +211,7 @@ that creates the scrollbar define values for the `value`, `minvalue` and `maxval
 properties.
 
 Scrollbars are often created with an associated `EditText` field to display the current
-value of the scrollbar, and to allow setting the scrollbar’s position to a specific value.
+value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
 This example creates a scrollbar with associated `StaticText` and `EditText` elements
 within a panel:
 
@@ -243,8 +243,8 @@ the `items` property. You can access the items in this array using a 0-based ind
   the label with respect to the list.
 
 You can specify the choice items on creation of the list object, or afterward using the
-list object’s `add()` method. You can remove items programmatically with the list
-object’s `remove()` and `removeAll()` methods.
+list object's `add()` method. You can remove items programmatically with the list
+object's `remove()` and `removeAll()` methods.
 
 ### ListItem
 
@@ -252,14 +252,14 @@ Items added to or inserted into any type of list control are `ListItem` objects,
 properties that can be manipulated from a script. ListItem elements can be of the
 following types:
 
-| `item`      | The typical item in any type of list. It displays text or an image, and can be<br/>selected. To display an image, set the item object’s image property; [Displaying images](#displaying-images).   |
+| `item`      | The typical item in any type of list. It displays text or an image, and can be<br/>selected. To display an image, set the item object's image property; [Displaying images](#displaying-images).   |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `separator` | A separator is a nonselectable visual element in a drop-down list.<br/>Although it has a text property, the value is ignored, and the item is displayed as<br/>a horizontal line.                  |
 | `node`      | A displayable and selectable item in a `TreeView` control which can contain<br/>other `ListItem` objects, including other items of type node.                                                      |
 
 ### FlashPlayer
 
-Runs a Flash movie within a ScriptUI window. Its control’s methods allow you to load a
+Runs a Flash movie within a ScriptUI window. Its control's methods allow you to load a
 movie from an SWF file and control the playback. See [FlashPlayer control functions](control-objects.md#flashplayer-control-functions).
 
 You can also use the control object to communicate with the Flash application, calling
@@ -275,7 +275,7 @@ label with respect to the player.
 
 You can display icon images in `Image` or `IconButton` controls, or display images in place of strings or in
 addition to strings as the selectable items in a `Listbox` or `DropdownList` control. In each case, the image
-is defined by setting the element’s `image` property. You can set it to a [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object); a named icon
+is defined by setting the element's `image` property. You can set it to a [ScriptUIImage object](graphic-customization-objects.md#scriptuiimage-object); a named icon
 resource; a [File object](../file-system-access/file-object.md#file-object); or the pathname of a file containing the iconic image, or of an alias or shortcut to
 that file (see [Specifying paths](../file-system-access/using-file-and-folder-objects.md#specifying-paths)).
 
@@ -286,7 +286,7 @@ information on these formats.
 You can set or reset the `image` property at any time to change the image displayed in the element.
 
 The scripting environment can define icon *resources*, which are available to scripts by name. To specify an
-icon resource, set a control’s `image` property to the resource’s JavaScript name, or refer to the resource by
+icon resource, set a control's `image` property to the resource's JavaScript name, or refer to the resource by
 name when creating the control. For example, to create a button with an application-defined icon
 resource:
 
@@ -391,7 +391,7 @@ For an example of how to define such buttons and their behavior, see [Defining b
 A dialog typically contains some controls that the user must interact with, to make selections or enter
 values that your script will use. In some cases, the result of the user action is stored in the object, and you
 can retrieve it after the dialog has been dismissed. For example, if the user changes the state of a `Checkbox`
-or `RadioButton`, the new state is found in the control’s `value` property.
+or `RadioButton`, the new state is found in the control's `value` property.
 
 However, if you need to respond to a user action while the dialog is still active, you must assign the control
 a callback function for the interaction event, either `onClick` or `onChange`. The callback function is the
@@ -431,7 +431,7 @@ than relying on the default behavior.
 
 If, by mistake, you create a modal dialog with no buttons to dismiss it, or if your dialog does have buttons,
 but their `onClick` handlers do not function properly, a user can still dismiss the dialog by typing ESC. In this
-case, the system will execute a call to the dialog’s `close` method, passing a value of 2. This is not, of course,
+case, the system will execute a call to the dialog's `close` method, passing a value of 2. This is not, of course,
 a recommended way to design your dialogs, but is provided as an escape hatch to prevent the application
 from hanging in case of an error in the operations of your dialog.
 
@@ -442,15 +442,15 @@ keyboard shortcuts. By convention, typing ENTER is the same as clicking OK or th
 typing ESC is the same as clicking Cancel. The keyboard shortcut has the same effect as calling notify for
 the associated `button` control.
 
-To determine which control is notified by which keyboard shortcut, set the `Dialog` object’s
+To determine which control is notified by which keyboard shortcut, set the `Dialog` object's
 `defaultElement` and `cancelElement` properties. The value is the control object that should be notified
 when the user types the associated keyboard shortcut.
 
 - For buttons assigned as the `defaultElement`, if there is no `onClick` handler associated with the
-  button, clicking the button or typing ENTER calls the parent dialog’s `close` method, passing a value of 1
+  button, clicking the button or typing ENTER calls the parent dialog's `close` method, passing a value of 1
   to be returned by the show call that opened the dialog.
 - For buttons assigned as the `cancelElement`, if there is no `onClick` handler associated with the
-  button, clicking the button or typing ESC calls the parent dialog’s `close` method, passing a value of 2
+  button, clicking the button or typing ESC calls the parent dialog's `close` method, passing a value of 2
   to be returned by the show call that opened the dialog.
 
 If you do not set the `defaultElement` and `cancelElement` properties explicitly, ScriptUI tries to choose

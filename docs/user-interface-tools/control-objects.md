@@ -16,8 +16,8 @@ is available on `window` and container (`panel` and `group`) objects.
 
 | `type`           | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                                                                                                                                      |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bounds`         | Optional. A bounds specification that describes the size and<br/>position of the new control or container, relative to its parent.<br/>See [Bounds](size-and-location-objects.md#bounds) object for specification formats.<br/><br/>If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned<br/>to the new object’s `bounds` property. |
-| `text`           | Optional. String. Initial text to be displayed in the control as the<br/>title, label, or contents, depending on the control type. If supplied, this<br/>value is assigned to the new object’s `text` property.                                                                                                                                                                             |
+| `bounds`         | Optional. A bounds specification that describes the size and<br/>position of the new control or container, relative to its parent.<br/>See [Bounds](size-and-location-objects.md#bounds) object for specification formats.<br/><br/>If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned<br/>to the new object's `bounds` property. |
+| `text`           | Optional. String. Initial text to be displayed in the control as the<br/>title, label, or contents, depending on the control type. If supplied, this<br/>value is assigned to the new object's `text` property.                                                                                                                                                                             |
 | `creation_props` | Optional. Object. The properties of this object specify<br/>creation parameters, which are specific to each object type. See<br/>[Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                           |
 
 Creates and returns a new control or container object and adds it to the
@@ -54,10 +54,10 @@ To add to a window `w`:
 w.add ("button" [, bounds, text, creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                              |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                              |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                            |
-| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. For a modal dialog, the<br/>>   special name “ok” makes this [defaultElement](window-object.md#window-defaultelement), and the<br/>>   special name “cancel” makes this the [cancelElement](window-object.md#window-cancelelement) of the<br/>>   parent dialog. |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. For a modal dialog, the<br/>>   special name "ok" makes this [defaultElement](window-object.md#window-defaultelement), and the<br/>>   special name "cancel" makes this the [cancelElement](window-object.md#window-cancelelement) of the<br/>>   parent dialog. |
 
 ---
 
@@ -75,7 +75,7 @@ To add to a window w:
 w.add ("checkbox" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                             |
+| `bounds`              | Optional. The control's position and size.                                                                             |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                           |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
@@ -88,7 +88,7 @@ Class Name: `DropDownList`
 
 A drop-down list with zero or more items. Calls the [onChange](#control-event-onchange)
 callback if the item selection is changed by a script or the user, or if
-the object’s [notify()](#controlobj-notify) method is called.
+the object's [notify()](#controlobj-notify) method is called.
 
 To add to a window `w`:
 
@@ -96,7 +96,7 @@ To add to a window `w`:
 w.add( "dropdownlist", bounds [, items, {creation_properties}] );
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `items`               | Optional. Supply this argument or the<br/>`creation_properties` argument, not both. An array of strings<br/>for the text of each list item.<br/>A [ListItem](types-of-controls.md#listitem) object is created for each item.<br/>An item with the text string `"-"` creates a separator item.                                                                                                                                                                                                                  |
 | `creation_properties` | Optional. Supply this argument or the items argument, not both. This form is most useful<br/>for elements defined using [Resource specifications](resource-specifications.md#resource-specifications).<br/>An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.<br/>> - `items`: An array of strings for the text of each list item. A<br/>>   `ListItem` object is created for each item. An item with the<br/>>   text string `"-"` creates a separator item. |
@@ -122,7 +122,7 @@ To add to a window `w`:
 w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `minValue`            | Optional. Minimum accepted value of number to be entered.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -147,7 +147,7 @@ To add to a window `w`:
 w.add ("edittext" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `readonly`: When false (the default), the control accepts text<br/>>   input. When true, the control does not accept input but only<br/>>   displays the contents of the `text` property.<br/>> - `noecho`: When false (the default), the control displays input<br/>>   text. When true, the control does not display input text<br/>>   (used for password input fields).<br/>> - `enterKeySignalsOnChange`: When false (the default), the<br/>>   control signals an [onChange](#control-event-onchange) event when the editable text is<br/>>   changed and the control loses the keyboard focus (that is,<br/>>   the user tabs to another control, clicks outside the control, or<br/>>   types `ENTER`). When true, the control only signals an<br/>>   `onChange` event when the editable text is changed and the<br/>>   user types `ENTER`; other changes to the keyboard focus do<br/>>   not signal the event.<br/>> - `borderless`: When true, the control is drawn with no<br/>>   border. Default is false.<br/>> - `multiline`: When false (the default), the control accepts a<br/>>   single line of text. When true, the control accepts multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrollable`: (For multiline elements only) When true (the<br/>>   default), the text field has a vertical scrollbar that is enabled<br/>>   when the element contains more text than fits in the visible<br/>>   area. When false, no vertical scrollbar appears; if the element<br/>>   contains more text than fits in the visible area, the arrow<br/>>   keys can be used to scroll the text up and down. |
@@ -176,7 +176,7 @@ To add to a window `w`:
 w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                  |
+| `bounds`              | Optional. The control's position and size.                                                                                                  |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | `moveToLoad`          | Optional. A path or URL string or [File object](../file-system-access/file-object.md#file-object) for the SWF file to load into the player. |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.                      |
@@ -198,7 +198,7 @@ To add to a window `w`:
 w.add ("group" [, bounds, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                             |
+| `bounds`              | Optional. The control's position and size.                                                                             |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------|
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
@@ -217,10 +217,10 @@ To add to a window `w`:
 w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `icon`                | Optional. The named resource for the icon or family of<br/>icons displayed in the button control, or a pathname or [File object](../file-system-access/file-object.md#file-object)<br/>for an image file. Images must be in PNG format.                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `style`: A string for the visual style, one of:<br/>>   - `button`: Has a visible border with a raised or 3D appearance.<br/>>   - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar<br/>> - `toggle`: For a button-style control, a value of true causes it<br/>>   to get a button-pressed appearance the first time it is<br/>>   clicked, and alternate with the unpressed appearance each<br/>>   time it is clicked. The toggle state is reflected in the control’s<br/>>   `value` property. |
+| `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `style`: A string for the visual style, one of:<br/>>   - `button`: Has a visible border with a raised or 3D appearance.<br/>>   - `toolbutton`: Has a flat appearance, appropriate for inclusion in a toolbar<br/>> - `toggle`: For a button-style control, a value of true causes it<br/>>   to get a button-pressed appearance the first time it is<br/>>   clicked, and alternate with the unpressed appearance each<br/>>   time it is clicked. The toggle state is reflected in the control's<br/>>   `value` property. |
 
 ---
 
@@ -236,7 +236,7 @@ To add to a window `w`:
 w.add ("image" [, bounds, icon, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                              |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                              |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `icon`                | Optional. The named resource for the icon or family of<br/>icons displayed in the button control, or a pathname or [File object](../file-system-access/file-object.md#file-object)<br/>for an image file. Images must be in PNG format. |
 | `creation_properties` | Optional. An object that contains the following properties:<br/><br/>> - `name`: A unique name for the control.                                                                                                                         |
@@ -249,7 +249,7 @@ Class Name: `Array of ListItem`
 
 The choice items in a list box or drop-down list. The objects are
 created when items are specified on creation of the parent list
-object, or afterward using the list control’s [add()](#listobj-add) method.
+object, or afterward using the list control's [add()](#listobj-add) method.
 
 Items in a drop-down list can be of type `separator`, in which case
 they cannot be selected, and are shown as a horizontal line.
@@ -270,7 +270,7 @@ controls:
 Class Name: `ListBox`
 
 A list box with zero or more items. Calls the [onChange](#control-event-onchange) callback if the
-item selection is changed by a script or the user, or if the object’s
+item selection is changed by a script or the user, or if the object's
 [notify()](#controlobj-notify) method is called. A double click on an item selects that item
 and calls the [onDoubleClick](#control-event-ondoubleclick) callback.
 
@@ -280,7 +280,7 @@ To add to a window `w`:
 w.add ("listbox", bounds [, items, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `items`               | Optional. An array of strings for the text of each list item.<br/>A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument,<br/>or the items property in `creation_properties`, not both.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `multiselect`: When false (the default), only one item can be<br/>> - `selected`. When true, multiple items can be selected.<br/>> - `items`: An array of strings for the text of each list item. A<br/>>   [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the<br/>>   text string `"-"` creates a separator item. Supply this<br/>>   property, or the `items` argument, not both. This form is most<br/>>   useful for elements defined using [Resource specifications](resource-specifications.md#resource-specifications).<br/>> - `numberOfColumns`: A number of columns in which to display<br/>>   the items; default is 1. When there are multiple columns,<br/>>   each [ListItem](types-of-controls.md#listitem) object represents a single selectable row. Its<br/>>   [text](#controlobj-text) and [image](#controlobj-image) values supply the label<br/>>   for the first column, and the `controlobj-subitems` property specifies<br/>>   labels for additional columns.<br/>> - `showHeaders`: True to display column titles.<br/>> - `columnWidths`: An array of numbers for the preferred width<br/>>   in pixels of each column.<br/>> - `columnTitles`: A corresponding array of strings for the title<br/>>   of each column, to be shown if `showHeaders` is true. |
@@ -303,7 +303,7 @@ To add to a window `w`:
 w.add ("panel" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The element’s position and size.<br/>A panel whose width is 0 appears as a vertical line.<br/>A panel whose height is 0 appears as a horizontal line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `bounds`              | Optional. The element's position and size.<br/>A panel whose width is 0 appears as a vertical line.<br/>A panel whose height is 0 appears as a horizontal line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the border of the panel.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `borderStyle`: A string that specifies the appearance of the<br/>>   border drawn around the panel. One of `black`, `etched`,<br/>>   `gray`, `raised`, `sunken` or `topDivider`.<br/>>   `topDivider` draws a horizonal line at the top of the panel<br/>>   only. Default is `etched`.<br/>> - `subPanelCoordinates`: When true, this panel automatically<br/>>   adjusts the positions of its children for compatability with<br/>>   Photoshop CS. Default is false, meaning that the panel does<br/>>   not adjust the positions of its children, even if the parent<br/>>   window has automatic adjustment enabled. |
@@ -327,7 +327,7 @@ To add to a window `w`:
 w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                |
+| `bounds`              | Optional. The control's position and size.                                                                                                |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `value`               | Optional. The initial position of the progress indicator. Default is 0.                                                                   |
 | `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the range.   |
@@ -357,7 +357,7 @@ To add to a window `w`:
 w.add ("radiobutton" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The element’s position and size.                                                                             |
+| `bounds`              | Optional. The element's position and size.                                                                             |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                           |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
@@ -377,7 +377,7 @@ Calls the [onChange](#control-event-onchange) callback after the position of the
 changed or if its [notify()](#controlobj-notify) method is called. Calls the [onChanging](#control-event-onchanging)
 callback repeatedly while the user is moving the indicator.
 
-| `value`     | Contains the current position of the scrollbar’s indicator<br/>within the scrolling area, within the range of `minvalue` and `maxvalue`.                                      |
+| `value`     | Contains the current position of the scrollbar's indicator<br/>within the scrolling area, within the range of `minvalue` and `maxvalue`.                                      |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `stepdelta` | Determines the scrolling unit for the up or down arrow. Default is 1.                                                                                                         |
 | `jumpdelta` | Determines the scrolling unit for a jump (as when the bar is clicked<br/>outside the indicator or arrows); default is 20% of the range between<br/>`minvalue` and `maxvalue`. |
@@ -388,7 +388,7 @@ To add to a window `w`:
 w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                          |
+| `bounds`              | Optional. The control's position and size.                                                                                                          |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | `value`               | Optional. The initial position of the scroll indicator. Default is 0.                                                                               |
 | `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the scrolling range.   |
@@ -416,7 +416,7 @@ To add to a window `w`:
 w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                |
+| `bounds`              | Optional. The control's position and size.                                                                                                |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `value`               | Optional. The initial position of the scroll indicator. Default is 0.                                                                     |
 | `minvalue`            | Optional. The minimum value that the `value`<br/>property can be set to. Default is 0. Together with `maxvalue`,<br/>defines the range.   |
@@ -437,7 +437,7 @@ To add to a window `w`:
 w.add ("statictext" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The element’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `bounds`              | Optional. The element's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Optional. The text displayed in the control.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `multiline`: When false (the default), the control displays a<br/>>   single line of text. When true, the control displays multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrolling`: When false (the default), the displayed text<br/>>   cannot be scrolled. When true, the displayed text can be<br/>>   vertically scrolled using scrollbars; this case implies<br/>>   `multiline` is true.<br/>> - `truncate`: If `middle` or `end`, defines where to remove<br/>>   characters from the text and replace them with an ellipsis if<br/>>   the specified title does not fit within the space reserved for<br/>>   it. If `none`, and the text does not fit, characters are removed<br/>>   from the end, without any replacement ellipsis character. |
@@ -451,7 +451,7 @@ Class Name: `Tab`
 A container for other types of controls. Differs from a [panel](#control-type-panel) element
 in that is must be a direct child of a [tabbedpanel](#control-type-tabbedpanel) element, the title is
 shown in the selection tab, and it does not have a script-definable
-border. The currently active tab is the value of the parent’s
+border. The currently active tab is the value of the parent's
 `selection` property.
 
 Containers have additional properties that control the children; see
@@ -484,7 +484,7 @@ Containers have additional properties that control the children; see
 children. Making it visible makes visible those children that are not
 individually hidden.
 
-The selected tab child is the value of the parent’s `selection`
+The selected tab child is the value of the parent's `selection`
 property. One and only one of the `tab` children must be selected;
 selecting one deselects the others. When the value of the `selection`
 property changes, either by a user selecting a different tab, or by a
@@ -497,7 +497,7 @@ To add to a window `w`:
 w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
 ```
 
-| `bounds`              | Optional. The element’s position and size. This determines the sizes<br/>and positions of the tab children.            |
+| `bounds`              | Optional. The element's position and size. This determines the sizes<br/>and positions of the tab children.            |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------|
 | `text`                | Ignored.                                                                                                               |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
@@ -511,7 +511,7 @@ Class Name: `TreeView`
 A hierarchical list whose items can contain child items. Items at any
 level of the tree can be individually selected. Calls the [onChange](#control-event-onchange)
 callback if the item selection is changed by a script or the user, or if
-the object’s [notify()](#controlobj-notify) method is called.
+the object's [notify()](#controlobj-notify) method is called.
 
 To add to a window `w`:
 
@@ -519,7 +519,7 @@ To add to a window `w`:
 w.add ("treeview" [, bounds, items, {creation_properties}])
 ```
 
-| `bounds`              | Optional. The control’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `bounds`              | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `items`               | Optional. An array of strings for the text of each top-level<br/>list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item<br/>with the type node can contain child items. Supply this<br/>argument, or the `items` property in `creation_properties`, not both.                                                                                                                                                                                                                                                                |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `items`: An array of strings for the text of each top-level list<br/>>   item. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item<br/>>   with the type `node`` can contain child items. Supply this<br/>>   property, or the `items` argument, not both. This form is most<br/>>   useful for elements defined using [Resource specifications](resource-specifications.md#resource-specifications). |
@@ -594,9 +594,9 @@ Type: `Bounds`
 A [Bounds](size-and-location-objects.md#bounds) object describing the boundaries of the element, in screen
 coordinates for Window elements, and parent-relative coordinates for
 child elements (compare [windowBounds](#controlobj-windowbounds)). For windows, the bounds
-refer only to the window’s content region.
+refer only to the window's content region.
 
-Setting an element’s `size` or `location` changes its `bounds` property,
+Setting an element's `size` or `location` changes its `bounds` property,
 and vice-versa.
 
 ---
@@ -664,7 +664,7 @@ false, it is collapsed and children are hidden.
 
 Type: `Object`
 
-A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) that can be used to customize the control’s
+A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) that can be used to customize the control's
 appearance, in response to the [onDraw](#control-event-ondraw) event.
 
 ---
@@ -753,7 +753,7 @@ height and width among all items in the list
 
 Type: `Number`
 
-The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator’s
+The amount to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar) indicator's
 position when the user clicks ahead or behind the moveable element.
 Default is 20% of the range between the maxvalue and minvalue
 property values.
@@ -786,8 +786,8 @@ element. These are screen coordinates for `Window` elements, and
 parent-relative coordinates for other elements.
 
 The `location` is defined as `[bounds.x, bounds.y]`. Setting an
-element’s `location` changes its `bounds` property, and vice-versa. By
-default, `location` is `undefined` until the parent container’s layout
+element's `location` changes its `bounds` property, and vice-versa. By
+default, `location` is `undefined` until the parent container's layout
 manager is invoked.
 
 ---
@@ -956,7 +956,7 @@ Although a script can explicitly set size before the layout manager is
 invoked to establish an element size other than the `preferredSize`
 or the default size, this is not recommended.
 
-Defined as `[bounds.width, bounds.height]`. Setting an element’s
+Defined as `[bounds.width, bounds.height]`. Setting an element's
 size changes its `bounds` property, and vice-versa.
 
 ---
@@ -966,7 +966,7 @@ size changes its `bounds` property, and vice-versa.
 Type: `Number`
 
 The amount by which to increment or decrement a [Scrollbar](types-of-controls.md#scrollbar)
-element’s position when the user clicks a stepper button.
+element's position when the user clicks a stepper button.
 
 ---
 
@@ -1025,7 +1025,7 @@ new value into the `text` string at the current insertion point. The
 
 !!! note
     Setting the `textselection` property before the [EditText](types-of-controls.md#edittext)
-control’s parent Window exists is an undefined operation.
+control's parent Window exists is an undefined operation.
 
 ---
 
@@ -1051,11 +1051,11 @@ relation to the element. A JavaScript object with these properties:
 
 | `alignment`   | The position of the title relative to the element, an<br/>array of [horizontal_alignment, vertical_alignment]. For possible<br/>alignment values, see [alignment](#controlobj-alignment). Note that `fill` is<br/>not a valid alignment value for either horizontal or vertical<br/>alignment in this context.                  |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `characters`  | A number; if 1 or greater, reserves a title width<br/>wide enough to hold the specified number of “X” characters in<br/>the font for this element. If 0, the title width is calculated based<br/>on the value of the `title` property during layout operations.                                                                 |
+| `characters`  | A number; if 1 or greater, reserves a title width<br/>wide enough to hold the specified number of "X" characters in<br/>the font for this element. If 0, the title width is calculated based<br/>on the value of the `title` property during layout operations.                                                                 |
 | `spacing`     | A number; 0 or greater. The number of pixels<br/>separating the title from the element.                                                                                                                                                                                                                                         |
 | `margins`     | An array of numbers, `[left, top, right, bottom]`<br/>for the number of pixels separating each edge of an element and<br/>the visible content within that element. This overrides the default<br/>margins.                                                                                                                      |
 | `justify`     | One of `'left'`, `'center'`, or `'right'`, how to justify<br/>the text when the space allocated for the title width is greater<br/>than the actual width of the text.                                                                                                                                                           |
-| `truncate`    | If `'middle'` or `'end'`, defines where to remove<br/>characters from the text and replace them with an ellipsis (…) if<br/>the specified title does not fit within the space reserved for it. If<br/>`'none'`, and the text does not fit, characters are removed from<br/>the end, without any replacement ellipsis character. |
+| `truncate`    | If `'middle'` or `'end'`, defines where to remove<br/>characters from the text and replace them with an ellipsis (...) if<br/>the specified title does not fit within the space reserved for it. If<br/>`'none'`, and the text does not fit, characters are removed from<br/>the end, without any replacement ellipsis character. |
 
 ---
 
@@ -1117,7 +1117,7 @@ The [Window object](window-object.md#window-object) that contains this control. 
 Type: `Bounds`
 
 A [Bounds](size-and-location-objects.md#bounds) object that contains the bounds of this control in the
-containing window’s coordinates. Compare [Bounds](size-and-location-objects.md#bounds), in which
+containing window's coordinates. Compare [Bounds](size-and-location-objects.md#bounds), in which
 coordinates are relative to the immediate parent container. Read only.
 
 ---
@@ -1178,7 +1178,7 @@ object for a specific event, using [ScriptUI.events.createEvent()](scriptui-clas
 it to this method to start the event propagation for the event.
 
 Returns false if any of the registered listeners that handled the event called
-the event object’s [preventDefault()](event-handling.md#eventobj-preventdefault) method, true otherwise.
+the event object's [preventDefault()](event-handling.md#eventobj-preventdefault) method, true otherwise.
 
 ---
 
@@ -1239,7 +1239,7 @@ Returns `undefined`.
 
 `listItemObj.toString()`
 
-For [ListItem](types-of-controls.md#listitem) controls only. Retrieves the value of this item’s text
+For [ListItem](types-of-controls.md#listitem) controls only. Retrieves the value of this item's text
 property as a string.
 
 Returns a String.
@@ -1251,7 +1251,7 @@ Returns a String.
 `listItemObj.valueOf()`
 
 For [ListItem](types-of-controls.md#listitem) controls only. Retrieves the index number of this item in
-the parent list’s items array.
+the parent list's items array.
 
 Returns a Number.
 
@@ -1289,7 +1289,7 @@ text
 The text of the item to find.
 
 For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only.
-Looks in this object’s `items` array for an item object with the given `text`
+Looks in this object's `items` array for an item object with the given `text`
 value.
 
 Returns the `item` object if found; otherwise, returns `null`.
@@ -1306,10 +1306,10 @@ Returns the `item` object if found; otherwise, returns `null`.
 |----------------------------|----------------------------------------------------------------------------------------------------|
 
 For containers ([panel](#control-type-panel), [group](#control-type-group)), removes the specified child control from
-the container’s `children` array.
+the container's `children` array.
 
 For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only, removes the specified item from this
-object’s items array. No error results if the item does not exist.
+object's items array. No error results if the item does not exist.
 
 Returns `undefined`.
 
@@ -1320,7 +1320,7 @@ Returns `undefined`.
 `listObj.removeAll()`
 
 For list objects ([listbox](#control-type-listbox), [dropdownlist](#control-type-dropdownlist) or [treeview](#control-type-treeview)) only.
-Removes all items from the object’s `items` array.
+Removes all items from the object's `items` array.
 
 Returns `undefined`.
 
@@ -1355,7 +1355,7 @@ playback of Flash movies:
   of how they were implemented. The sequence may not correctly reset the file to
   the initial state (when the `rewind` argument to [playMovie()](#flashplayerobj-playmovie) is
   true) nor suspend then resume the execution of the file (when `rewind` is false).
-- Using [stopMovie()](#flashplayerobj-stopmovie) from the player’s hosting environment has no effect
+- Using [stopMovie()](#flashplayerobj-stopmovie) from the player's hosting environment has no effect
   on an SWF file playing in a ScriptUI Flash Player element. It is, however,
   possible to produce an SWF using Flash Authoring that can stop itself in
   response to user interaction.
@@ -1365,7 +1365,7 @@ playback of Flash movies:
 
 ### invokePlayerFunction()
 
-`flashPlayerObj.invokePlayerFunction(fnName, [arg1[,…argN]] )`
+`flashPlayerObj.invokePlayerFunction(fnName, [arg1[,...argN]] )`
 
 | `fnName`   | String. The name of a Flash ActionScript function that has been<br/>registered with the ExternalInterface object by the currently loaded SWF file;<br/>see [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script).   |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1415,7 +1415,7 @@ Returns `undefined`.
 Halts playback of the current movie.
 
 !!! note
-    Does not work when called from the player’s hosting environment.
+    Does not work when called from the player's hosting environment.
 
 Returns `undefined`.
 
@@ -1498,7 +1498,7 @@ clicking outside it or tabbing out of it.
 ### onDoubleClick
 
 Called when the user double clicks an item in a [listbox](#control-type-listbox) control.
-The list’s `selection` property is set to the clicked item.
+The list's `selection` property is set to the clicked item.
 
 ---
 
@@ -1514,7 +1514,7 @@ Called when the user presses return or enter in a [edittext](#control-type-editt
 ### onDraw
 
 Called when a container or control is about to be drawn. Allows the script to modify
-or control the appearance, using the control’s associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
+or control the appearance, using the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
 Handler takes one argument, a [DrawState object](#drawstate-object).
 
 ---

@@ -23,7 +23,7 @@ Displays a platform-standard dialog containing a short message and an **OK** but
 
 | message   | The string for the displayed message.                                                                                                                                                        |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for alert dialogs. The default title string is “Script Alert.” |
+| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for alert dialogs. The default title string is "Script Alert." |
 | errorIcon | Optional. When true, the platform-standard alert icon is replaced by the<br/>platform-standard error icon in the dialog. Default is `false`.                                                 |
 
 Returns `undefined`
@@ -51,7 +51,7 @@ Displays a platform-standard dialog containing a short message and two buttons l
 | message   | The string for the displayed message.                                                                                                                                                                   |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | noAsDflt  | Optional. When true, the **No** button is the default choice, selected when the user types<br/>`ENTER`. Default is false, meaning that **Yes** is the default choice.                                   |
-| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for confirmation dialogs. The default title string is<br/>“Script Alert.” |
+| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for confirmation dialogs. The default title string is<br/>"Script Alert." |
 
 Returns `true` if the user clicked **Yes**, `false` if the user clicked **No**.
 
@@ -79,7 +79,7 @@ Displays a platform-standard dialog containing a short message, a text edit fiel
 | message   | The string for the displayed message.                                                                                                                                                                   |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | preset    | The initial value to be displayed in the text edit field.                                                                                                                                               |
-| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for confirmation dialogs. The default title string is<br/>“Script Alert.” |
+| title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for confirmation dialogs. The default title string is<br/>"Script Alert." |
 
 Returns the value of the text edit field if the user clicked **OK**, `null` if the user clicked **Cancel**.
 

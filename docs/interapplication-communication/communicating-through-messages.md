@@ -8,7 +8,7 @@ example, from within Adobe Bridge, a script can launch Photoshop, and then send 
 that requests a photomerge operation.
 
 While the exported functions allow specific access to certain capabilities of the application, the script in an
-interapplication message allows full access to the target application’s document object model (DOM), in
+interapplication message allows full access to the target application's document object model (DOM), in
 addition to all cross-DOM and application exported functions.
 
 The messaging API defines the BridgeTalk class, whose globally available static properties and functions
@@ -68,13 +68,13 @@ app.document.target.children.length;"
 
 ### Step 3: Specify how to handle a response
 
-If you want to handle a response for this message, or use the data that is returned from the script’s
+If you want to handle a response for this message, or use the data that is returned from the script's
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
 by defining the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback in the message object.
 
 !!! note
     The message callbacks are optional, and are not implemented by all message-enabled applications.
-The response to a message is, by default, the result of evaluation of the script contained in that message’s
+The response to a message is, by default, the result of evaluation of the script contained in that message's
 body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
 
 When the target has finished processing this message, it looks for an onResult callback in the message
@@ -101,7 +101,7 @@ response would be lost.
 
 ### Step 4: Send the message
 
-To send the message, call the message object’s `send` method. You do not need to specify where to send
+To send the message, call the message object's `send` method. You do not need to specify where to send
 the message to, since the target application is set in the message itself:
 
 ```default
@@ -210,7 +210,7 @@ the original message.
 ### Message-handling examples
 
 This example shows the default mechanism for handling unsolicited messages received from other
-applications. This simple handler executes the message’s data as a script and returns the results of that
+applications. This simple handler executes the message's data as a script and returns the results of that
 execution:
 
 ```default
@@ -244,8 +244,8 @@ message object it received has the appropriate callback defined.
 !!! note
     The message callbacks are optional, and are not implemented by all message-enabled applications.
 
-When your message is received by its target, the target application’s static BridgeTalk object’s onReceive
-method processes that message, and can invoke one of the message object’s callbacks to return a
+When your message is received by its target, the target application's static BridgeTalk object's onReceive
+method processes that message, and can invoke one of the message object's callbacks to return a
 response. In each case, the messaging framework packages the response in a new message object, whose
 target application is the sender. Your callback functions receive this response message object as an
 argument.
@@ -264,13 +264,13 @@ A response message can be:
     receipt of your message, define the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback in the message object. The target sends back
     the original message object to this callback, first replacing the body value with an empty string.
 - The result of a time-out. This is handled by the [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback.
-  : You can specify a number of seconds in a message object’s [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) property. If the message is not
+  : You can specify a number of seconds in a message object's [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) property. If the message is not
     removed from the input queue for processing before the time elapses, it is discarded. If the sender has
     defined an [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback for the message, the target application sends a time-out message back
     to the sender.
 - Intermediate responses. These are handled by the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
   : The script that you send can send back intermediate responses by invoking the original message
-    object’s [sendResult()](bridgetalk-message-object.md#bridgetalk-message-object-sendresult) method. It can send data of any type, but that data is packaged into a body string
+    object's [sendResult()](bridgetalk-message-object.md#bridgetalk-message-object-sendresult) method. It can send data of any type, but that data is packaged into a body string
     in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
 - The final result of processing the message. This is handled by the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
   : When it finishes processing your message, the target application can send back a result of any type. If
@@ -429,15 +429,15 @@ the message body, first converting the result to a UTF-8-encoded string.
 
 ### Passing simple types
 
-When your message object’s onResult callback receives a response, it must interpret the string it finds in
+When your message object's onResult callback receives a response, it must interpret the string it finds in
 the body of the response message to obtain a result of the correct type. Results of various types can be
 identified and processed as follows:
 
 | Number   | JavaScript allows you to access a string that contains a number directly as a number, without<br/>doing any type conversion. However, be careful when using the plus operator (+), which<br/>works with either strings or numbers. If one of the operands is a string, both operands are<br/>converted to strings and concatenated.                                                                                                                                                                                                          |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | String   | No conversion is required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Boolean  | The result string is either “true” or “false.” You can convert it to a true boolean by evaluating it<br/>with the `eval` method.                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Date     | The result string contains the date in the form: `"dow mmm dd yyyy hh:mm:ss GMT-nnnn".`<br/><br/>For example “Wed Jun 23 2004 00:00:00 GMT-0700”.                                                                                                                                                                                                                                                                                                                                                                                            |
+| Boolean  | The result string is either "true" or "false." You can convert it to a true boolean by evaluating it<br/>with the `eval` method.                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Date     | The result string contains the date in the form: `"dow mmm dd yyyy hh:mm:ss GMT-nnnn".`<br/><br/>For example "Wed Jun 23 2004 00:00:00 GMT-0700".                                                                                                                                                                                                                                                                                                                                                                                            |
 | Array    | The result string contains a comma delimited list of the elements of the array. For example, If<br/>the result array is `[12, "test", 432]`, the messaging framework flattens this into the string<br/>`"12,test,432"`.<br/><br/>As an alternative to simply returning the array, the message target can use the `toSource`<br/>method to return the code used to create the array. In this case, the sender must reconstitute<br/>the array by using the `eval` method on the result string in the response body. See discussion<br/>below. |
 
 ### Passing complex types

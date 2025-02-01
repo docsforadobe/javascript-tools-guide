@@ -15,7 +15,7 @@ ScriptUI defines the following types of windows:
   dismissed.
 - Floating palette: Also called modeless dialog, allows activity in other application windows. (Adobe
   Photoshop® does not support script creation of palette windows.)
-- Main window: Suitable for use as an application’s main window. (Main windows are not normally
+- Main window: Suitable for use as an application's main window. (Main windows are not normally
   created by script developers for Adobe applications. Photoshop does not support script creation of
   main windows.)
 
@@ -81,7 +81,7 @@ Your script can access these values, and (if not using auto-layout) set them as 
 
 - The `location` of a window is defined by a `Point` object containing a pair of coordinates (`x` and `y`) for
   the top left corner (the origin), specified in the screen coordinate system. The location of an element
-  within a window or other container is defined as the origin point specified in the container’s
+  within a window or other container is defined as the origin point specified in the container's
   coordinate system. That is, the x and y values are relative to the origin of the container.
   The following examples show equivalent ways of placing the content region of an existing window at
   screen coordinates [10, 50]:
@@ -90,15 +90,15 @@ Your script can access these values, and (if not using auto-layout) set them as 
   win.location = { x: 10, y: 50 };
   win.location = "x:10, y:50";
   ```
-- The `size` of an element’s region is defined by a `Dimension` object containing a `width` and `height` in pixels.
-  The following examples show equivalent ways of changing an existing window’s width and height to 200 and 100:
+- The `size` of an element's region is defined by a `Dimension` object containing a `width` and `height` in pixels.
+  The following examples show equivalent ways of changing an existing window's width and height to 200 and 100:
   ```default
   win.size = [ 200, 100 ];
   win.size = { width: 200, height: 100 };
   win.size = "width:200, height:100";
   ```
 
-  This example shows how to change a window’s height to 100, leaving its location and width
+  This example shows how to change a window's height to 100, leaving its location and width
   unchanged:
   ```default
   win.size.height = 100;
@@ -119,7 +119,7 @@ Your script can access these values, and (if not using auto-layout) set them as 
   ```
 
 The `window` dimensions define the size of the *content region* of the window, or that portion of the window
-that a script can directly control. The actual window size is typically larger, because the host platform’s
+that a script can directly control. The actual window size is typically larger, because the host platform's
 window system typically adds title bars and borders. The `bounds` property for a `Window` refers only to its
 content region. To determine the bounds of the frame surrounding the content region of a window, use
 the `Window.frameBounds` property.
@@ -128,7 +128,7 @@ the `Window.frameBounds` property.
 
 ## Adding elements to containers
 
-To add elements to a `window`, `panel`, or `group`, use the container’s `add` method. This method accepts the
+To add elements to a `window`, `panel`, or `group`, use the container's `add` method. This method accepts the
 type of the element to be created and some optional parameters, depending on the element type. It
 creates and returns an object of the specified type.
 
@@ -139,14 +139,14 @@ In additions to windows, ScriptUI defines the following user-interface elements 
 - Static text or images, edit text
 - Progress bars, scrollbars, sliders
 - Lists, which include list boxes, drop-down (also called popup) lists, and tree views. Each item in a list is
-  a control of type `item`, and the parent list’s `items` property contains an array of child items. Tree views
+  a control of type `item`, and the parent list's `items` property contains an array of child items. Tree views
   can also have collapsible `node`-type items, which contain child items. You can add list items with the
-  parent’s `add` method.
+  parent's `add` method.
 
 You can specify the initial size and position of any new element relative to the working area of the parent
 container, in an optional `bounds` parameter. Different types of elements have different additional
 parameters. For elements which display text, for example, you can specify the initial text. See the ScriptUI
-Classes dictionary in the ExtendScript Toolkit’s Object Model Viewer for details.
+Classes dictionary in the ExtendScript Toolkit's Object Model Viewer for details.
 
 The order of optional parameters must be maintained. Use the value `undefined` for a parameter you do
 not wish to set. For example, if you want to use automatic layout to determine the bounds, but still set the
@@ -165,10 +165,10 @@ A new element is initially set to be visible, but is not shown unless its parent
 ### Creation properties
 
 Some element types have attributes that can only be specified when the element is created. These are not
-normal properties of the element, in that they cannot be changed during the element’s lifetime, and they
+normal properties of the element, in that they cannot be changed during the element's lifetime, and they
 are only needed once. For these element types, you can supply an optional creation-properties
 argument to the add method. This argument is an object with one or more properties that control aspects
-of the element’s appearance, or special functions such as whether an edit text element is editable or Read
+of the element's appearance, or special functions such as whether an edit text element is editable or Read
 only. See [Control object constructors](control-objects.md#control-object-constructors) for details.
 
 You can also specify the creation properties for new objects using the resource specification format; for
@@ -196,12 +196,12 @@ that window unless it is explicitly disabled in the child panel. See Window obje
 
 ### Accessing child elements
 
-A reference to each element added to a container is appended to the container’s `children` property. You
+A reference to each element added to a container is appended to the container's `children` property. You
 can access the child elements through this array, using a 0-based index. For controls that are not
 containers, the `children` collection is empty.
 
 In this example, the `msgPnl` panel was the first element created in dlg, so the script can access the panel
-object at index 0 of the parent’s `children` property to set the text for the title:
+object at index 0 of the parent's `children` property to set the text for the title:
 
 ```default
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -218,7 +218,7 @@ dlg.btnPnl.children[ "ok" ].text = "Build";
 dlg.btnPnl.ok.text = "Build";
 ```
 
-You can also access named elements through the parent window’s `findElement()` method:
+You can also access named elements through the parent window's `findElement()` method:
 
 ```default
 var myOkButton = dlg.findElement( "ok" );
@@ -231,13 +231,13 @@ array.
 
 ## Removing elements
 
-To remove elements from a `Window`, `Panel`, or `Group`, use the container’s `remove` method. This method
+To remove elements from a `Window`, `Panel`, or `Group`, use the container's `remove` method. This method
 accepts an object representing the element to be removed, or the name of the element, or the index of the
-element in the container’s `children` collection (see [Accessing child elements](#accessing-child-elements)).
+element in the container's `children` collection (see [Accessing child elements](#accessing-child-elements)).
 
 The specified element is removed from view if it was currently visible, and it is no longer accessible from
 the container or window. The results of any further references by a script to the object representing the
 element are undefined.
 
-To remove list items from a list, use the parent list control’s remove method in the same way. It removes the
-item from the parent’s `items` list, hides it from view, and deletes the item object.
+To remove list items from a list, use the parent list control's remove method in the same way. It removes the
+item from the parent's `items` list, hides it from view, and deletes the item object.

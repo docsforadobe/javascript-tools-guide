@@ -109,7 +109,7 @@ other preferences that have been set in the Preferences dialog.
 
 ## Dialogs
 
-Some dialog windows offer the option “Don’t show again”. If you select this option, the Toolkit remembers
+Some dialog windows offer the option "Don't show again". If you select this option, the Toolkit remembers
 the choices made in this dialog, and next time it would appear, makes the same choices without showing
 the dialog.
 

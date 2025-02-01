@@ -11,7 +11,7 @@ Adobe Bridge CS5 makes the XMP library available in its libraries folder. Script
 time to use the API; it is not automatically loaded when Adobe Bridge launches. The XMPScript API is
 separate from the Adobe Bridge DOM. You can use it independently, to get and set metadata in supported
 formats; or you can use it with the Adobe Bridge API to modify the metadata that you access from files
-using the Adobe Bridge DOM’s `Thumbnail` object.
+using the Adobe Bridge DOM's `Thumbnail` object.
 
 !!! note
     Adobe Bridge provides a means of embedding metadata values in a script (to describe the script file

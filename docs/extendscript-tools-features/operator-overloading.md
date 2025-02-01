@@ -17,7 +17,7 @@ MyClass.prototype ["+"] = function (operand) {
 }
 ```
 
-This allows you to perform the “+” operation with any object of this class:
+This allows you to perform the "+" operation with any object of this class:
 
 ```default
 var obj = new MyClass (5);

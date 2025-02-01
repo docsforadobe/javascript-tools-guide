@@ -4,7 +4,7 @@ Several helper classes provide low-level event-handling capabilities.
 
 - Event objects are normally created by ScriptUI and passed to your event handler. However, you can
   simulate a user action by constructing an event object using [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent),
-  and sending it to a target object’s controlobj-dispatchEvent function.
+  and sending it to a target object's controlobj-dispatchEvent function.
 - A helper object, [Keyboard state object](environment.md#environment-keyboard-state), provides global access to the keyboard state during function
   execution, outside the event-handling framework.
 
@@ -33,7 +33,7 @@ When true, the event supports the bubbling phase.
 
 Type: `Boolean`
 
-When true, the handler can call this object’s [preventDefault()](#eventobj-preventdefault) method to
+When true, the handler can call this object's [preventDefault()](#eventobj-preventdefault) method to
 cancel the default action of the event.
 
 ---
@@ -254,7 +254,7 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
 !!! note
-    If you’re trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
+    If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
 
 ---
 
@@ -269,7 +269,7 @@ Returns true if the given modifier was active when the event occurred, false oth
 | `view`          | The container or control object that dispatched the event.                                                |
 | `keyID`         | Sets the `keyIdentifier` value.                                                                           |
 | `keyLocation`   | Sets the `keyLocation`. value.                                                                            |
-| `modifiersList` | A whitespace-separated string of modifier key names, such as “Control Alt”.                               |
+| `modifiersList` | A whitespace-separated string of modifier key names, such as "Control Alt".                               |
 
 Reinitializes the object, allowing you to change the event properties after construction. Arguments
 set the corresponding properties. Returns `undefined`.

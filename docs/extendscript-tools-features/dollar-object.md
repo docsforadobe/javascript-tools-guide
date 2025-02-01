@@ -12,13 +12,13 @@ programmatically, and gather statistics on object use.
 
 `String`
 
-The Internet name of the application’s default character encoding, such as
-“CP1252” or “X-SHIFT-JIS”. Valid values are implementation- and
+The Internet name of the application's default character encoding, such as
+"CP1252" or "X-SHIFT-JIS". Valid values are implementation- and
 OS-dependent.
 
 Set to change the default encoding for the application. The returned value
-can differ from the value set. In Windows, for example, if set to “x-latin1”,
-the returned value is the synonymous “ISO-8859-1”.
+can differ from the value set. In Windows, for example, if set to "x-latin1",
+the returned value is the synonymous "ISO-8859-1".
 
 ---
 
@@ -249,7 +249,7 @@ true.
 `String`
 
 The version number of the JavaScript engine as a three-part number and
-description; for example: “3.92.95 (debug)”
+description; for example: "3.92.95 (debug)"
 
 Read only.
 

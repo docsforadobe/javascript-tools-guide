@@ -34,7 +34,7 @@ Returns an error code, `kESErrOK` on success.
 |------------|------------------------------------|
 
 Provides a memory allocation routine to be used by JavaScript for managing memory associated
-with the library’s objects.
+with the library's objects.
 
 Returns a pointer to the allocated block of memory.
 
@@ -217,7 +217,7 @@ Returns an error code, `kESErrOK` on success.
 | `name`      | String. A buffer in which to return the unique name of the class.               |
 | `name_1`    | Number. The size of the name buffer.                                            |
 
-Retrieves this object’s parent class name.
+Retrieves this object's parent class name.
 
 Returns an error code, `kESErrOK` on success.
 

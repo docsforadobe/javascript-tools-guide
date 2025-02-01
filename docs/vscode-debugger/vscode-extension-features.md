@@ -5,7 +5,7 @@ Once you have the Extendscript VS Code Extension up and running, there are a few
 !!! note
     This guide is meant to give insight on how to use specific Extendscript for VS Code features.
 
-If you’re looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md#getting-started-with-vscode-debugger).
+If you're looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md#getting-started-with-vscode-debugger).
 
 ---
 
@@ -13,7 +13,7 @@ If you’re looking on how to get up and running with the extension, see [Gettin
 
 Breakpoints allow you to stop your code running at a specific line, letting you explore the call stack, variable status, and function arguments at that exact point.
 
-You can create breakpoints one of two ways; either using [VS Code’s native Breakpoints system](#vs-code-breakpoints), or using [Extendscript’s inline breakpoint method](#extendscript-breakpoints).
+You can create breakpoints one of two ways; either using [VS Code's native Breakpoints system](#vs-code-breakpoints), or using [Extendscript's inline breakpoint method](#extendscript-breakpoints).
 
 ### VS Code Breakpoints
 
@@ -39,8 +39,8 @@ You can export either [from the vscode interface](#jsxbin-from-vs-code), or [via
 
 To export your script as binary, you have a few options:
 
-> - With the file open, right-click the document and press ‘Export as Binary’
-> - Open the command palette (Ctrl + Shift + P) and type ‘Export as Binary’
+> - With the file open, right-click the document and press 'Export as Binary'
+> - Open the command palette (Ctrl + Shift + P) and type 'Export as Binary'
 > - Use the keyboard shortcut for the same command (Ctrl + Shift + J)
 
 ### JSXBIN from the Command Line
@@ -56,13 +56,13 @@ Both methods above require the VS Code extension be installed.
 
 All of the files are saved in the same directory with the same filename (though the suffix will be .jsxbin). Any passed directories will be recursively traversed.
 
-1. Within the Extension install directory, there’s a `exportToJSX.js` script file that accepts a file path or directory to convert. We need to get this path.
-   > - Note that you’ll need to swap X.X.X with the current version #
+1. Within the Extension install directory, there's a `exportToJSX.js` script file that accepts a file path or directory to convert. We need to get this path.
+   > - Note that you'll need to swap X.X.X with the current version #
    > - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
    > - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
 2. This script accepts a few arguments;
-   > - `-f`, `--force`: Overwrite the ‘.jsxbin’ file/files if already exists
-   > - `-n`, `--name`: The ‘.js/.jsx’ script path or path to some directory having these files.
+   > - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
+   > - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
    > - `h`, `--help`: Show this help and exit
 3. Running the script
    > - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`

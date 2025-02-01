@@ -29,7 +29,7 @@ more specialized layout behavior. See [Custom layout-manager example](#custom-la
 
 Child elements of a container can be organized in a single row or column, or in a stack, where the elements
 overlap one other in the same region of the container, and only the top element is fully visible. This is
-controlled by the container’s orientation property, which can have the value row, column, or stack.
+controlled by the container's orientation property, which can have the value row, column, or stack.
 
 You can nest Panel and Group containers to create more complex organizations. For example, to display
 two columns of controls, you can create a panel with a row orientation that in turn contains two groups,
@@ -40,10 +40,10 @@ manager provides defaults if these are not set.
 
 The alignment of child elements within a container is controlled by the alignChildren property of the
 container, and the alignment property of the individual controls. The alignChildren property
-determines an overall strategy for the container, which can be overridden by a particular child element’s
+determines an overall strategy for the container, which can be overridden by a particular child element's
 alignment value.
 
-A layout manager can determine the best size for a child element through the element’s preferredSize
+A layout manager can determine the best size for a child element through the element's preferredSize
 property. The value defaults to dimensions determined by ScriptUI based on characteristics of the control
 type and variable characteristics such as a displayed text string, and the font and size used to display text.
 A value of -1 for either the width or height in the preferredSize value causes the layout manager to
@@ -123,44 +123,44 @@ corresponding to the constant, rather than a string value.
 
 Elements in a row can be aligned along the vertical axis, in these ways:
 
-| `top`    | The element’s top edge is located at the top margin of its container.                                        |
+| `top`    | The element's top edge is located at the top margin of its container.                                        |
 |----------|--------------------------------------------------------------------------------------------------------------|
-| `bottom` | The element’s bottom edge is located at the bottom margin of its container.                                  |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container.                                  |
 | `center` | The element is centered within the top and bottom margins of its container.                                  |
-| `fill`   | The element’s height is adjusted to fill the height of the container<br/>between the top and bottom margins. |
+| `fill`   | The element's height is adjusted to fill the height of the container<br/>between the top and bottom margins. |
 
 Elements in a column can be aligned along the horizontal axis, in these ways:
 
-| `left`   | The element’s left edge is located at the left margin of its container.                                    |
+| `left`   | The element's left edge is located at the left margin of its container.                                    |
 |----------|------------------------------------------------------------------------------------------------------------|
-| `right`  | The element’s right edge is located at the right margin of its container.                                  |
+| `right`  | The element's right edge is located at the right margin of its container.                                  |
 | `center` | The element is centered within the right and left margins of its container.                                |
-| `fill`   | The element’s width is adjusted to fill the width of the container<br/>between the right and left margins. |
+| `fill`   | The element's width is adjusted to fill the width of the container<br/>between the right and left margins. |
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
 
-| `top`    | The element’s top edge is located at the top margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                                    |
+| `top`    | The element's top edge is located at the top margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                                    |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bottom` | The element’s bottom edge is located at the bottom margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                              |
-| `left`   | The element’s left edge is located at the left margin of its container, and the element is centered<br/>within the top and bottom margins of its container.                                                                  |
-| `right`  | The element’s right edge is located at the right margin of its container, and the element is<br/>centered within the top and bottom margins of its container.-                                                               |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                              |
+| `left`   | The element's left edge is located at the left margin of its container, and the element is centered<br/>within the top and bottom margins of its container.                                                                  |
+| `right`  | The element's right edge is located at the right margin of its container, and the element is<br/>centered within the top and bottom margins of its container.-                                                               |
 | `center` | The element is centered within the top, bottom, right and left margins of its container.                                                                                                                                     |
-| `fill`   | The element’s height is adjusted to fill the height of the container between the top and<br/>bottom margins., and the element’s width is adjusted to fill the width of the container between the<br/>right and left margins. |
+| `fill`   | The element's height is adjusted to fill the height of the container between the top and<br/>bottom margins., and the element's width is adjusted to fill the width of the container between the<br/>right and left margins. |
 
 The following figure shows the results of creating the sample window with row orientation and the
-`bottom` and `top` alignment settings in the parent’s `alignChildren` property:
+`bottom` and `top` alignment settings in the parent's `alignChildren` property:
 
 ![alignChildren = bottom](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg)![alignChildren = top](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg)
 
 The following figure shows the results of creating the sample window with column orientation and the
-right, left, and fill alignment settings in the parent’s alignChildren property. Notice how in the
+right, left, and fill alignment settings in the parent's alignChildren property. Notice how in the
 fill case, each element is made as wide as the widest element in the container:
 
 ![alignChildren = left](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg)![alignChildren = right](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg)![alignChildren = fill](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg)
 
-You can override the container’s child alignment, as specified by `alignChildren`, by setting the
+You can override the container's child alignment, as specified by `alignChildren`, by setting the
 alignment property of a particular child element. The following diagram shows the result of setting
-alignment to right for the EditText element, when the parent’s `alignChildren` value is left:
+alignment to right for the EditText element, when the parent's `alignChildren` value is left:
 
 ![override alignChildren = left](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg)
 
@@ -177,10 +177,10 @@ The following figures show the results of the sample script [SnpAlignElements.js
 how to specify alignment in two dimensions.
 
 - In the first, each control is centered vertically within its row, and placed at a specific horizontal
-  position, using an alignment value such as [‘left’, ‘center’] for each element:
+  position, using an alignment value such as ['left', 'center'] for each element:
   ![Horizontal Alignment](user-interface-tools/_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
 - The vertical alignment example creates four columns, and places the controls within each column
-  along the vertical axis. It uses alignment values such as [‘fill’, ‘top’] to distribute controls within
+  along the vertical axis. It uses alignment values such as ['fill', 'top'] to distribute controls within
   the column, while still controlling the relative vertical positions:
   ![Vertical Alignment](user-interface-tools/_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
 
@@ -229,7 +229,7 @@ dimensions for the element. The default value is calculated by ScriptUI, and is 
 characteristics of each type of element, and variable characteristics such as the text string to be displayed
 in a button or text element.
 
-If an element’s size property is not defined, the layout manager uses the value of preferredSize to
+If an element's size property is not defined, the layout manager uses the value of preferredSize to
 determine the dimensions of each element during the layout process. Generally, you should avoid setting
 the preferredSize property explicitly, and let ScriptUI determine the best value based on the state of an
 element at layout time. This allows you to set the text properties of your user-interface elements using
@@ -305,7 +305,7 @@ This creates the following result:
 
 Suppose now that you need two panels, and want each panel to have the same width in the dialog. You
 can specify this at the level of the dialog window object, the parent of both panels. Specify
-alignChildren=’fill’, which makes each child of the dialog match its width to the widest child.
+alignChildren='fill', which makes each child of the dialog match its width to the widest child.
 
 ```default
 var res = "dialog { alignChildren: 'fill', \
@@ -350,11 +350,11 @@ enough to hold the widest child element, and tall enough to contain the tallest 
 arrange groups or panels in such a stack, you can show and hide them in different combinations to display
 a different set of controls in the same space, depending on other choices in the dialog.
 
-For example, this dialog changes dynamically according to the user’s choice in the `DropDownList`.
+For example, this dialog changes dynamically according to the user's choice in the `DropDownList`.
 
 ![Personal Info](user-interface-tools/_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg)![Work Info](user-interface-tools/_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg)
 
-The following script creates this dialog. It compresses the “Personal Info” and “Work Info” panels from the
+The following script creates this dialog. It compresses the "Personal Info" and "Work Info" panels from the
 previous example into a single `Panel` that has two `Groups` arranged in a stack. A `DropDownList` allows the
 user to choose which set of information to view. When the user makes a choice in the list, its `onChange`
 function shows one group, and hides the other.
@@ -512,18 +512,18 @@ win.show();
 When a script creates a Window object and its elements and shows it the first time, the visible
 user-interface-platform window and controls are created. At this point, if no explicit placement of controls
 was specified by the script, all the controls are located at [0, 0] within their containers, and have default
-dimensions. Before the window is made visible, the layout manager’s layout method is called to assign
+dimensions. Before the window is made visible, the layout manager's layout method is called to assign
 locations and sizes for all the elements and their containers.
 
-The default AutoLayoutManager’s layout method performs these steps when invoked during the initial
-call to a Window object’s show method:
+The default AutoLayoutManager's layout method performs these steps when invoked during the initial
+call to a Window object's show method:
 
 1. Read the bounds property for the managed container; if undefined, proceed with auto layout. If
    defined, assume that the script has explicitly placed the elements in this container, and cancel the
    layout operation (if both the location and size property have been set, this is equivalent to setting
    the bounds property, and layout does not proceed).
-2. Determine the container’s margins and inter-element spacing from its margins and spacing
-   properties, and the orientation and alignment of its child elements from the container’s orientation
+2. Determine the container's margins and inter-element spacing from its margins and spacing
+   properties, and the orientation and alignment of its child elements from the container's orientation
    and alignChildren properties. If any of these properties are undefined, use default settings obtained
    from platform and user-interface framework-specific default values.
 3. Enumerate the child elements, and for each child:
@@ -531,17 +531,17 @@ call to a Window object’s show method:
      container).
    - Read its alignment property; if defined, override the default alignment established by the parent
      container with its alignChildren property.
-   - Read its size property: if defined, use it to determine the child’s dimensions. If undefined, read its
-     preferredSize property to get the child’s dimensions. Ignore the child’s location property.
+   - Read its size property: if defined, use it to determine the child's dimensions. If undefined, read its
+     preferredSize property to get the child's dimensions. Ignore the child's location property.
 
    All the per-child information is collected for later use.
 4. Based on the orientation, calculate the trial location of each child in the row or column, using
-   inter-element spacing and the container’s margins.
+   inter-element spacing and the container's margins.
 5. Determine the column, row, or stack dimensions, based on the dimensions of the children.
 6. Using the desired alignment for each child element, adjust its trial location relative to the edges of its
    container.
 7. Set the bounds property for each child element.
-8. Set the container’s preferredSize property, based on the margins and dimensions of the row or
+8. Set the container's preferredSize property, based on the margins and dimensions of the row or
    column of child elements.
 
 ---
@@ -554,5 +554,5 @@ The following restrictions apply to the automatic layout mechanism:
   property. The script programmer can override this behavior by defining a custom layout manager for
   the container.
 - The layout mechanism does not track changes to element sizes after the initial layout has occurred.
-  The script can initiate another layout by calling the layout manager’s `layout` method, and can force
+  The script can initiate another layout by calling the layout manager's `layout` method, and can force
   the manager to recalculate the sizes of all child containers by passing the optional argument as true.

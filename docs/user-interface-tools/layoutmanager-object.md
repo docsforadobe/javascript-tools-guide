@@ -12,7 +12,7 @@ myWin.layout = new AutoLayoutManager( myWin );
 ```
 
 An instance is automatically created when you create a `Window` or container (`group` or `panel`) object, and
-referenced by the container’s [layout](window-object.md#container-properties-layout) property. This instance implements the default layout behavior unless
+referenced by the container's [layout](window-object.md#container-properties-layout) property. This instance implements the default layout behavior unless
 you override it.
 
 ## AutoLayoutManager object properties
@@ -47,7 +47,7 @@ Returns `undefined`
 Resizes and moves the child elements of the managed container, according to the alignment values
 for each child of the container, after the container has been resized by the user or by a script.
 
-See [Automatic layout](automatic-layout.md#automatic-layout) for details of how alignment affects an element’s size and
+See [Automatic layout](automatic-layout.md#automatic-layout) for details of how alignment affects an element's size and
 location.
 
 Returns `undefined`.

@@ -34,9 +34,9 @@ instance to access them.
 | `appPackage`  | String   | The Folder object for the folder that contains the bundle of the<br/>running application. Read only.<br/><br/>- In Windows, for example: `C:\Program Files (x86)\Adobe\Adobe ExtendScript Toolkit CC\`<br/>- In Mac OS, for example: `/Applications/Adobe ExtendScript Toolkit CC/ExtendScript Toolkit.app` |
 | `commonFiles` | Folder   | A Folder object for the folder that contains files common to all programs.<br/>Read only.<br/><br/>- In Windows, the value of `%CommonProgramFiles%` (by default,<br/>  `C:\Program Files\Common Files`)<br/>- In Mac OS, `/Library/Application Support`                                                    |
 | `current`     | Folder   | A Folder object for the current folder. Assign either a Folder object or a<br/>string containing the new path name to set the current folder.                                                                                                                                                               |
-| `desktop`     | Folder   | A Folder object for the folder that contains the user’s desktop. Read only.<br/><br/>- In Windows, `C:\Users\[username]\Desktop`<br/>- In Mac OS, `~/Desktop`                                                                                                                                               |
+| `desktop`     | Folder   | A Folder object for the folder that contains the user's desktop. Read only.<br/><br/>- In Windows, `C:\Users\[username]\Desktop`<br/>- In Mac OS, `~/Desktop`                                                                                                                                               |
 | `fs`          | String   | The name of the file system. Read only. One of `Windows`, `Macintosh`, or `Unix`.                                                                                                                                                                                                                           |
-| `myDocuments` | Folder   | A Folder object for the user’s default document folder. Read only.<br/><br/>- In Windows, `C:\Users\[username]\Documents`<br/>- In Mac OS, `~/Documents`                                                                                                                                                    |
+| `myDocuments` | Folder   | A Folder object for the user's default document folder. Read only.<br/><br/>- In Windows, `C:\Users\[username]\Documents`<br/>- In Mac OS, `~/Documents`                                                                                                                                                    |
 | `startup`     | Folder   | A Folder object for the folder containing the executable image of the running<br/>application. Read only.                                                                                                                                                                                                   |
 | `system`      | Folder   | A Folder object for the folder containing the operating system files. Read<br/>only.<br/><br/>- In Windows, the value of `%windir%` (by default, `C:\Windows`)<br/>- In Mac OS, `/System`                                                                                                                   |
 | `temp`        | Folder   | A Folder object for the default folder for temporary files. Read only.                                                                                                                                                                                                                                      |
@@ -94,7 +94,7 @@ Returns the encoded string.
 
 `Folder.isEncodingAvailable( name )`
 
-| `name`   | String. The encoding name. Typical values are “ASCII,” “binary,” or “UTF-8.”<br/>See [File- and Folder-supported encoding names](file-and-folder-supported-encoding-names.md#file-and-folder-supported-encoding-names).   |
+| `name`   | String. The encoding name. Typical values are "ASCII," "binary," or "UTF-8."<br/>See [File- and Folder-supported encoding names](file-and-folder-supported-encoding-names.md#file-and-folder-supported-encoding-names).   |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Checks whether a given encoding is available.
@@ -133,7 +133,7 @@ These properties are available for Folder objects.
 | `fsName`        | String   | The platform-specific name of the referenced folder as a full path name.<br/>Read only.                                                                                                                                                                                                                                                                           |
 | `fullName`      | String   | The full path name for the referenced folder in URI notation. Read only.                                                                                                                                                                                                                                                                                          |
 | `localizedName` | String   | A localized version of the folder name portion of the absolute URI for the<br/>referenced file, without the path specification. Read only.                                                                                                                                                                                                                        |
-| `modified`      | Date     | The date of the referenced folder’s last modification, or `null` if the object<br/>does not refer to a folder on disk. Read only.                                                                                                                                                                                                                                 |
+| `modified`      | Date     | The date of the referenced folder's last modification, or `null` if the object<br/>does not refer to a folder on disk. Read only.                                                                                                                                                                                                                                 |
 | `name`          | String   | The folder name portion of the absolute URI for the referenced file,<br/>without the path specification. Read only.                                                                                                                                                                                                                                               |
 | `parent`        | Folder   | The Folder object for the folder that contains this folder, or `null` if this<br/>object refers to the root folder of a volume. Read only.                                                                                                                                                                                                                        |
 | `path`          | String   | The path portion of the absolute URI for the referenced folder, without the<br/>folder name. Read only.                                                                                                                                                                                                                                                           |
@@ -164,7 +164,7 @@ Returns true on success.
 
 `folderObj.create()`
 
-Creates a folder at the location given by this object’s path property.
+Creates a folder at the location given by this object's path property.
 
 Returns true if the folder was created successfully.
 
@@ -185,7 +185,7 @@ Returns true immediately if the folder was opened successfully.
 
 `folderObj.getFiles( [mask] )`
 
-| `mask`   | Optional. A search mask for file names. A string that can contain question mark (`?`) and<br/>asterisk (`*`) wild cards. Default is “`*`”, which matches all file names.   |
+| `mask`   | Optional. A search mask for file names. A string that can contain question mark (`?`) and<br/>asterisk (`*`) wild cards. Default is "`*`", which matches all file names.   |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Can also be the name of a function that takes a File or Folder object as its argument.
@@ -200,7 +200,7 @@ that such code is not portable.
 
 Retrieves the contents of this folder, filtered by the supplied mask.
 
-Returns an array of File and Folder objects, or null if this object’s referenced folder does not exist.
+Returns an array of File and Folder objects, or null if this object's referenced folder does not exist.
 
 ---
 

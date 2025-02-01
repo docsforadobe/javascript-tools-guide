@@ -68,7 +68,7 @@ In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` objec
   newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
   thumb.metadata = new Metadata( newPacket );
   ```
-- To write metadata back to the file for a thumbnail, you can access the thumbnail’s file and create an
+- To write metadata back to the file for a thumbnail, you can access the thumbnail's file and create an
   [XMPFile object](xmpscript-object-reference.md#xmpfile-object) object to access the embedded metadata directly:
   ```default
   xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
@@ -168,7 +168,7 @@ for ( var i = 0; i < pics.length; i++ ) {
 This script adds a command to the context menu for Thumbnails that shows some of the XMP properties.
 It demonstrates how to retrieve the XMP metadata that is stored with the Thumbnail object, and use it to
 create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), then use that object to retrieve different types of property values.
-To use this script, place it in the “Startup Scripts” folder for Adobe Bridge (see [Startup scripts](../introduction/scripting-for-specific-applications.md#startup-scripts)).
+To use this script, place it in the "Startup Scripts" folder for Adobe Bridge (see [Startup scripts](../introduction/scripting-for-specific-applications.md#startup-scripts)).
 When you start Adobe Bridge, select a thumbnail for a document that contains XMP metadata, right click,
 and choose **Show XMP Properties** from the menu.
 

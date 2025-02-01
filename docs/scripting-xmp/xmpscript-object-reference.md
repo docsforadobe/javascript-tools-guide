@@ -59,9 +59,9 @@ Constant values for the namespace URI strings used in all get and set property o
 | `NS_PDFX`              | The XML namespace for the PDFX schema. An Adobe private namespace; do<br/>not create new properties.                   |
 | `NS_PHOTOSHOP`         | The XML namespace for the Adobe Photoshop custom schema.                                                               |
 | `NS_PS_ALBUM`          | The XML namespace for the Adobe Photoshop Album custom schema.                                                         |
-| `NS_EXIF`              | The XML namespace for Adobe’s EXIF schema.                                                                             |
-| `NS_EXIF_AUX`          | The XML namespace for Adobe’s EXIF auxiliary schema.                                                                   |
-| `NS_TIFF`              | The XML namespace for Adobe’s TIFF schema.                                                                             |
+| `NS_EXIF`              | The XML namespace for Adobe's EXIF schema.                                                                             |
+| `NS_EXIF_AUX`          | The XML namespace for Adobe's EXIF auxiliary schema.                                                                   |
+| `NS_TIFF`              | The XML namespace for Adobe's TIFF schema.                                                                             |
 | `NS_PNG`               | The XML namespace for the PNG schema.                                                                                  |
 | `NS_JPEG`              | The XML namespace for the JPEG schema.                                                                                 |
 | `NS_SWF`               | The XML namespace for the Flash small web format schema.                                                               |
@@ -167,17 +167,17 @@ resolution.
 All properties are read-write, and allow you to modify the date-time value. If values are set outside the
 allowed range, they are automatically set to the minimum or maximum allowed value.
 
-| **year**       | Number   | The year, in the range [0000…9999].                                          |
+| **year**       | Number   | The year, in the range [0000...9999].                                          |
 |----------------|----------|------------------------------------------------------------------------------|
-| **month**      | Number   | The month, in the range [1…12].                                              |
-| **day**        | Number   | The day, in the range [1…31].                                                |
-| **hour**       | Number   | The hour, in the range [1…23].                                               |
-| **minute**     | Number   | The minute, in the range [1…59].                                             |
-| **second**     | Number   | The second, in the range [1…59.                                              |
-| **nanosecond** | Number   | The nanosecond, in the range [0…1e+9 -1].                                    |
+| **month**      | Number   | The month, in the range [1...12].                                              |
+| **day**        | Number   | The day, in the range [1...31].                                                |
+| **hour**       | Number   | The hour, in the range [1...23].                                               |
+| **minute**     | Number   | The minute, in the range [1...59].                                             |
+| **second**     | Number   | The second, in the range [1...59.                                              |
+| **nanosecond** | Number   | The nanosecond, in the range [0...1e+9 -1].                                    |
 | **tzSign**     | Number   | The time zone direction of offset.<br/>- 0: UTC<br/>- -1: west<br/>- 1: east |
-| **tzHour**     | Number   | The time zone hour offset from the prime meridian, in the range [1…23].      |
-| **tzMinute**   | Number   | The time zone minute offset from the prime meridian, in the range [1…59].    |
+| **tzHour**     | Number   | The time zone hour offset from the prime meridian, in the range [1...23].      |
+| **tzMinute**   | Number   | The time zone minute offset from the prime meridian, in the range [1...59].    |
 
 ---
 
@@ -243,7 +243,7 @@ Returns `undefined`.
 
 ## XMPFile object
 
-This class corresponds to the Adobe XMP Toolkit’s File Handler component, which provides convenient I/O
+This class corresponds to the Adobe XMP Toolkit's File Handler component, which provides convenient I/O
 access to the main, or document level, XMP for a file.
 The File Handler supports those file formats in which you can embed XMP metadata, as defined in the XMP
 Specification. It allows you to add XMP where none currently exists, expand existing XMP without regard
@@ -488,7 +488,7 @@ provides more specific functions for use with specific types of properties, such
 
 To create an `XMPMeta` object, use the `new` operator. The constructor accepts an RDF/XML serialized
 metadata packet as a string, or as an array of numbers that contain only byte values. It returns the new
-object. If no argument is supplied, the new object is empty; you can use the object’s functions to add
+object. If no argument is supplied, the new object is empty; you can use the object's functions to add
 namespaces and properties.
 
 The first call to any of these constructors initializes the library by registering the standard namespaces and
@@ -1099,7 +1099,7 @@ the file represented by the [XMPFile object](#xmpfile-object).
 | length     | Number   | The length of the packet in bytes.                                                                                                                                                                                                            |
 | offset     | Number   | The byte-offset from the start of the file where the packet begins.                                                                                                                                                                           |
 | packet     | String   | The raw packet data.                                                                                                                                                                                                                          |
-| padSize    | Number   | The packet’s padding size in bytes, 0 if unknown.                                                                                                                                                                                             |
+| padSize    | Number   | The packet's padding size in bytes, 0 if unknown.                                                                                                                                                                                             |
 | writeable  | Boolean  | If true, the packet is writeable.                                                                                                                                                                                                             |
 
 ---
@@ -1164,9 +1164,9 @@ Returns `undefined`.
 |-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | schemaNS  | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                                                                                                                                         |
 | arrayName | The array property name string. Can be a general path expression. Each item in<br/>the array must be a simple string value.                                                                                                                                                                                                                    |
-| separator | The string used to separate the items in the result string. Default is ‘; ‘, an ASCII<br/>semicolon and space (U+003B,U+0020).                                                                                                                                                                                                                 |
-| quotes    | The character used to quote items that contain a separator. Default is ‘”’, an ASCII<br/>double quote (U+0022).                                                                                                                                                                                                                                |
-| options   | Option flag that controls the concatenation. This constant value:<br/><br/>- `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such<br/>  as “LastName, FirstName”). This option must be set the same way in this<br/>  function and in [separateArrayItems()](#xmputils-separatearrayitems) to reconstruct the items correctly. |
+| separator | The string used to separate the items in the result string. Default is '; ', an ASCII<br/>semicolon and space (U+003B,U+0020).                                                                                                                                                                                                                 |
+| quotes    | The character used to quote items that contain a separator. Default is '"', an ASCII<br/>double quote (U+0022).                                                                                                                                                                                                                                |
+| options   | Option flag that controls the concatenation. This constant value:<br/><br/>- `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such<br/>  as "LastName, FirstName"). This option must be set the same way in this<br/>  function and in [separateArrayItems()](#xmputils-separatearrayitems) to reconstruct the items correctly. |
 
 Default is 0.
 
@@ -1208,7 +1208,7 @@ Returns a String.
 | fieldName  | The field name. Must be a simple XML name.                                                               |
 | fieldValue | The desired field value.                                                                                 |
 
-Creates and returns a string containing the path expression to select an alternate item by a field’s
+Creates and returns a string containing the path expression to select an alternate item by a field's
 value, using the registered prefixes for the namespaces, in the form:
 
 ```default
@@ -1345,7 +1345,7 @@ Returns `undefined`.
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | schemaNS     | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | arrayName    | The array property name string. Can be a general path expression. Each item in<br/>the array must be a simple string value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| arrayOptions | Option flags that control how the array property is updated from the separated<br/>string. A logical OR of these bit-flag constants:<br/><br/>- `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external<br/>  properties. By default, copies only external properties. This applies only to<br/>  top-level properties.<br/>- `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing<br/>  properties with the value from the source object. By default, existing values<br/>  are retained. This applies to properties at all levels of hierarchy.<br/>- `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new<br/>  value is empty.<br/>- `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not<br/>  specified, an item containing a comma (such as “LastName, FirstName”) is<br/>  separated into two array items.<br/><br/>Default is 0. |
+| arrayOptions | Option flags that control how the array property is updated from the separated<br/>string. A logical OR of these bit-flag constants:<br/><br/>- `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external<br/>  properties. By default, copies only external properties. This applies only to<br/>  top-level properties.<br/>- `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing<br/>  properties with the value from the source object. By default, existing values<br/>  are retained. This applies to properties at all levels of hierarchy.<br/>- `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new<br/>  value is empty.<br/>- `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not<br/>  specified, an item containing a comma (such as "LastName, FirstName") is<br/>  separated into two array items.<br/><br/>Default is 0. |
 | concatString | The string containing the concatenated array values, as returned by<br/>[catenateArrayItems()](#xmputils-catenatearrayitems).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 Updates individual array item strings in the XMPMeta object from a concatenated string returned by

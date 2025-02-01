@@ -178,7 +178,7 @@ You are responsible for manually updating the !Version! portion with your own ve
 
 ### Undo and redo
 
-Choose **Undo** or **Redo** from the **Edit** menu or from the document window’s right-click context menu to
+Choose **Undo** or **Redo** from the **Edit** menu or from the document window's right-click context menu to
 revoke and reinstate multiple editing changes sequentially. The change history is kept from when a file is
 created or loaded, and maintained through file-save operations.
 
@@ -187,7 +187,7 @@ created or loaded, and maintained through file-save operations.
 Before running the new script or saving the text as a script file, use **Edit > Check Syntax** to check whether
 the text contains JavaScript syntax errors. The default keyboard shortcut is `F7`.
 
-- If the script is syntactically correct, the status line shows “No syntax errors.”
+- If the script is syntactically correct, the status line shows "No syntax errors."
 - If the Toolkit finds a syntax error, such as a missing quote, it highlights the affected text, plays a sound,
   and shows the error message in the status line so you can fix the error.
 
@@ -246,8 +246,8 @@ The Toolkit supports a limited set of Regular Expression syntax for the Find and
 |----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `(`      | Marks the start of a region for capturing a match.                                                                                                                |
 | `)`      | Marks the end of a capturing region.                                                                                                                              |
-| `\<`     | Matches the start of a word using the editor’s current definition of words.                                                                                       |
-| `\>`     | Matches the end of a word using the editor’s current definition of words.                                                                                         |
+| `\<`     | Matches the start of a word using the editor's current definition of words.                                                                                       |
+| `\>`     | Matches the end of a word using the editor's current definition of words.                                                                                         |
 | `\x`     | Escapes a character x that would otherwise have a special meaning. For example, [ is<br/>interpreted as a left bracket, rather than the start of a character set. |
 | `[...]`  | A set of characters; for example, [abc] means any of the characters a, b or c.<br/>You can also use ranges, for example [a-z] for any lower case character.       |
 | `[^...]` | The complement of the characters in a set. For example, [^A-Za-z] means any character<br/>except an alphabetic character.                                         |

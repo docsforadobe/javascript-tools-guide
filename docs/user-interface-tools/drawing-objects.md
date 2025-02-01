@@ -5,7 +5,7 @@ methods of the [ScriptUIGraphics object](graphic-customization-objects.md#script
 These methods take as parameters a number of helper objects
 that encapsulate drawing information, including the following:
 
-| **ScriptUIGraphics**   | Encapsulates the drawing methods. The graphics object is associated with each<br/>control is found in the control object’s graphics property.   |
+| **ScriptUIGraphics**   | Encapsulates the drawing methods. The graphics object is associated with each<br/>control is found in the control object's graphics property.   |
 |------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ScriptUIBrush**      | Describes the brush used to paint textures in a control.                                                                                        |
 | **ScriptUIFont**       | Describes the font used to write text into a control.                                                                                           |

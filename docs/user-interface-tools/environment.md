@@ -38,7 +38,7 @@ The name of the key currently pressed. This is the JavaScript name, a string suc
     - This only works for single keys being pressed; holding multiple will report `undefined`.
 - Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
 
-For example, with ‘a’ pressed:
+For example, with 'a' pressed:
 
 ```default
 var currentPressedKey = ScriptUI.environment.keyboardState.keyName;
@@ -79,7 +79,7 @@ if (keyboardState.shiftKey && keyboardState.altKey) {
 }
 ```
 
-This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](event-handling.md#keyboardevent-object-getmodifierstate), which can be more confusing and less user-intuitive, unless you’re confident you’re handling event states properly.
+This can also be used within interface buttons as alternative to [checking the modifiers via keyboard events](event-handling.md#keyboardevent-object-getmodifierstate), which can be more confusing and less user-intuitive, unless you're confident you're handling event states properly.
 
 For example:
 

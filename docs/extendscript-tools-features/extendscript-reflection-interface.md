@@ -81,7 +81,7 @@ Math.reflect.find ("PI").type; // => number
 ## ReflectionInfo object
 
 This object contains information about a property, a method, or a method argument.
-You can access ReflectionInfo objects in a Reflection object’s properties and methods arrays, by
+You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by
 name or index:
 
 ```default

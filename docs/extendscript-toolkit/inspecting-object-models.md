@@ -17,7 +17,7 @@ dictionary of objects. A dictionary provides access to the object model for one 
 - The **Core JavaScript Classes** dictionary includes Adobe tools and utilities such as File and Folder.
 - The **ScriptUI Classes** dictionary shows the interface elements defined in the ScriptUI JavaScript
   module.
-- Each Adobe application defines a dictionary for that application’s Document Object Model (DOM). The
+- Each Adobe application defines a dictionary for that application's Document Object Model (DOM). The
   dictionary for a particular application may not be available until you launch that application, or until
   you select it as a target in the Toolkit.
 

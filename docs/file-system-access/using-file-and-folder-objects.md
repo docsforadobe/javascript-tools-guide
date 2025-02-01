@@ -91,7 +91,7 @@ This encoding scheme is compatible with the global JavaScript functions `encodeU
 
 ### The home directory
 
-A path name can start with a tilde (`~`) to indicate the user’s home directory. It corresponds to the platform’s
+A path name can start with a tilde (`~`) to indicate the user's home directory. It corresponds to the platform's
 `HOME` environment variable.
 
 UNIX and Mac OS assign the HOME environment variable according to the user login. On Mac OS, the
@@ -100,7 +100,7 @@ ExtendScript assigns the home directory value directly from the platform value.
 
 On Windows, the `HOME` environment variable is optional. If it is assigned, its value must be a Windows path
 name or a path name referring to a remote server (such as `\\myhost\mydir`). If the `HOME` environment
-variable is undefined, the ExtendScript default is the user’s home directory, usually the `C:\Users\username` folder.
+variable is undefined, the ExtendScript default is the user's home directory, usually the `C:\Users\username` folder.
 
 !!! note
     A script can access many of the folders that are specified with platform-specific variables through
@@ -173,8 +173,8 @@ On Windows, all file system aliases (called shortcuts) are actual files whose na
 For example, suppose there is a shortcut to the file `/folder1/some.txt` in the folder `/folder2`. The full
 Windows file name of the shortcut file is `\folder2\some.txt.lnk`.
 
-To access the shortcut from a File object, specify the path `/folder2/some.txt`. Calling that File object’s
-open method opens the linked file (in `/folder1`). Calling the File object’s `rename` method renames the
+To access the shortcut from a File object, specify the path `/folder2/some.txt`. Calling that File object's
+open method opens the linked file (in `/folder1`). Calling the File object's `rename` method renames the
 shortcut file itself (leaving the `.lnk` extension intact).
 
 However, Windows permits a file and its shortcut to reside in the same folder. In this case, the File object

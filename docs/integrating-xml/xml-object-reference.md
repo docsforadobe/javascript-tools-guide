@@ -114,7 +114,7 @@ Returns this [XML object](#xml-object).
 
 Appends a child element to this node, after any existing children. If the argument is not XML,
 creates a new XML element that contains the string as its text value, using the same element name
-as the last element currently contained in this object’s node.
+as the last element currently contained in this object's node.
 
 Returns this [XML object](#xml-object).
 
@@ -137,7 +137,7 @@ Returns an [XML object](#xml-object) containing all values of the named attribut
 
 `xmlObj.child (which);`
 
-| which   | A String, the element name, or a Number, a 0-based index into this node’s child array.   |
+| which   | A String, the element name, or a Number, a 0-based index into this node's child array.   |
 |---------|------------------------------------------------------------------------------------------|
 
 Retrieves a list of all child elements of this node of a given type.
@@ -521,9 +521,9 @@ Returns a String.
 
 `xmlObj.xpath (expression[, variables]);`
 
-| expression   | A String containing an XPath expression.<br/><br/>#### NOTE<br/>In this context, include the actual top level element. For example, an<br/>expression for the example XML must start with “/bookstore”. This is unlike<br/>JavaScript property access, where the top level element is implied.   |
+| expression   | A String containing an XPath expression.<br/><br/>#### NOTE<br/>In this context, include the actual top level element. For example, an<br/>expression for the example XML must start with "/bookstore". This is unlike<br/>JavaScript property access, where the top level element is implied.   |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| variables    | Optional. A JavaScript object containing variable definitions. The properties are used<br/>to look up XPath variables contained in the expression. For example, if the<br/>expression contains the variable `$abc`, the value is in the object’s `abc` property.                                 |
+| variables    | Optional. A JavaScript object containing variable definitions. The properties are used<br/>to look up XPath variables contained in the expression. For example, if the<br/>expression contains the variable `$abc`, the value is in the object's `abc` property.                                 |
 
 Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML
 object as the context node. The context position and size are set to 1, and all variables are initially
@@ -550,8 +550,8 @@ These functions are available in the JavaScript global namespace.
 Reports whether a string contains a name that conforms to valid XML syntax.
 
 !!! note
-    This implementation uses the same rules as for a JavaScript name, except for the ‘$’ character,
-which is disallowed, and the ‘-’ character, which as added. It does not follow the W3C definition of an
+    This implementation uses the same rules as for a JavaScript name, except for the '$' character,
+which is disallowed, and the '-' character, which as added. It does not follow the W3C definition of an
 XML name, which adds more Unicode characters to the valid set of characters.
 
 Returns `true` if the name is a valid XML name, `false` otherwise.
@@ -597,19 +597,19 @@ new QName (uri, name)
 
 When no arguments are supplies, creates a `QName` object with an empty local name and no URI.
 
-| name      | String    | Creates a `QName` object with the given local name and the URI of the default<br/>namespace. Can be the wildcard character, “\*”.                                                                                                   |
+| name      | String    | Creates a `QName` object with the given local name and the URI of the default<br/>namespace. Can be the wildcard character, "\*".                                                                                                   |
 |-----------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | name      | QName     | Creates a copy of an existing [QName object](#qname-object).                                                                                                                                                                        |
 | ns        | Namespace | Creates a `QName` object with an empty local name and the URI of the [Namespace object](#namespace-object).                                                                                                                         |
-| uri, name | String    | Create a `QName` object with the given namespace URI and local name.<br/><br/>If the local name is supplied as the wildcard character, “\*”, the `uri` argument<br/>is ignored, and the URI value is that of the default namespace. |
+| uri, name | String    | Create a `QName` object with the given namespace URI and local name.<br/><br/>If the local name is supplied as the wildcard character, "\*", the `uri` argument<br/>is ignored, and the URI value is that of the default namespace. |
 
 ---
 
 ### QName object properties
 
-| name   | String   | The local element name portion of the XML element’s fully qualified XML name.   |
+| name   | String   | The local element name portion of the XML element's fully qualified XML name.   |
 |--------|----------|---------------------------------------------------------------------------------|
-| uri    | String   | The namespace prefix of the XML element’s fully qualified XML name.             |
+| uri    | String   | The namespace prefix of the XML element's fully qualified XML name.             |
 
 ---
 

@@ -18,7 +18,7 @@ define completely customized UI elements that are rendered by the application in
 ## ScriptUIGraphics object
 
 Most types of user-interface elements have a graphics property which contains an object of this type,
-which allows you to customize aspects of the element’s appearance, such as the color and font. Use an
+which allows you to customize aspects of the element's appearance, such as the color and font. Use an
 onDraw callback function to set these properties or call the functions.
 
 All measurements are in pixels.
@@ -147,10 +147,10 @@ Returns undefined.
 | image         | The ScriptUIImage object containing the images to be drawn.                                                                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | left, top     | Defines the top left corner of the drawing region, in the coordinate system of the<br/>control that contains this graphics object.                                                                                       |
-| width, height | Optional. The width and height of the drawing region in pixels. If specified, the<br/>image is stretched or shrunk to fit into the given rectangular area. If omitted, the<br/>image’s original width or height is used. |
+| width, height | Optional. The width and height of the drawing region in pixels. If specified, the<br/>image is stretched or shrunk to fit into the given rectangular area. If omitted, the<br/>image's original width or height is used. |
 
 Draws an image within the given rectangular region, using the image file from the given image
-object that is appropriate to the control’s current state.
+object that is appropriate to the control's current state.
 
 Returns undefined.
 
@@ -331,7 +331,7 @@ Passed as an argument to fillPath().
 
 The object contains the following properties:
 
-| color   | Array of Number   | The paint color to use when the type is SOLID_COLOR. An array in the<br/>form [R, B, G, A] specifying the red, green, blue values of the color<br/>and the opacity (alpha channel) value as numbers in the range [0.0…1.0].<br/>An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.   |
+| color   | Array of Number   | The paint color to use when the type is SOLID_COLOR. An array in the<br/>form [R, B, G, A] specifying the red, green, blue values of the color<br/>and the opacity (alpha channel) value as numbers in the range [0.0...1.0].<br/>An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.   |
 |---------|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | theme   | String            | The name of a color theme to use as a painting texture<br/>when the type is THEME_COLOR. Theme colors are defined by the host application.                                                                                                                                                                   |
 | type    | Number            | The brush type, one of these constants:<br/><br/>> - `ScriptUIGraphics.BrushType.SOLID_COLOR`<br/>> - `ScriptUIGraphics.BrushType.THEME_COLOR`                                                                                                                                                               |
@@ -407,7 +407,7 @@ Passed as an argument to drawString() and strokePath().
 
 The object contains the following properties:
 
-| color     | Array of Number   | The paint color to use when the type is SOLID_COLOR. An array in the form<br/>[R, B, G, A] specifying the red, green, blue values of the color and the<br/>opacity (alpha channel) value as numbers in the range [0.0…1.0].<br/>An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.   |
+| color     | Array of Number   | The paint color to use when the type is SOLID_COLOR. An array in the form<br/>[R, B, G, A] specifying the red, green, blue values of the color and the<br/>opacity (alpha channel) value as numbers in the range [0.0...1.0].<br/>An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.   |
 |-----------|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | lineWidth | Number            | The pixel width of the drawing line.                                                                                                                                                                                                                                                                         |
 | theme     | String            | The name of a color theme to use for drawing when the type is<br/>`THEME_COLOR`. Theme colors are defined by the host application.                                                                                                                                                                           |
@@ -418,20 +418,20 @@ The object contains the following properties:
 ## Custom element class
 
 Elements of the Custom class differ from typical UI elements in that they have no default appearance; the
-script which creates a custom element is responsible for drawing it by defining the element’s onDraw
+script which creates a custom element is responsible for drawing it by defining the element's onDraw
 event handler function. This allows scripts to create any appearance for custom elements that can be
-rendered via the drawing functions defined for a UI element’s graphics object.
+rendered via the drawing functions defined for a UI element's graphics object.
 Custom elements have the same common properties that other types of control elements have (see
 [Common properties](common-properties.md#common-properties)). The different types of custom elements have additional properties.
 
 The Custom element class has the following types of elements:
 
-| customBoundedValue   | Can be used to implement controls whose ‘value’ can vary within minimum<br/>and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the<br/>same additional properties as those controls:<br/><br/>> - `value`<br/>> - `minvalue`<br/>> - `maxvalue`<br/>> - `shortcutKey`<br/><br/>If the value property is changed, the control receives an onChange event<br/>notification, followed by an onDraw event notification, so the element can<br/>redraw itself with the changed state.   |
+| customBoundedValue   | Can be used to implement controls whose 'value' can vary within minimum<br/>and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the<br/>same additional properties as those controls:<br/><br/>> - `value`<br/>> - `minvalue`<br/>> - `maxvalue`<br/>> - `shortcutKey`<br/><br/>If the value property is changed, the control receives an onChange event<br/>notification, followed by an onDraw event notification, so the element can<br/>redraw itself with the changed state.   |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | customButton         | Can be used to implement various types of button controls, like the `Button`,<br/>`IconButton` with text, `Checkbox`, and so on. Additional properties are:<br/><br/>> - `image`<br/>> - `shortcutKey`<br/>> - `text`<br/>> - `value`                                                                                                                                                                                                                                                                |
 | customView           | Has an `image` property that allows a script to define an image to display.<br/><br/>If no `onDraw` function is defined and the image property is set, the default<br/>appearance is simply the specified image, rendered centered in the bounds of<br/>the element.                                                                                                                                                                                                                                 |
 
-A custom element’s onDraw event handler function is not called when the mouse enters or leaves the
+A custom element's onDraw event handler function is not called when the mouse enters or leaves the
 screen region occupied by the element.
 
 If you need to force a drawing update in such cases, you must call `notify("onDraw")` for the element,

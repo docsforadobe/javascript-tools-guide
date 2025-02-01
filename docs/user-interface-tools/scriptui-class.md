@@ -13,7 +13,7 @@ is not instantiable.
 
 Collects the enumerated values that can be used in the [alignment](window-object.md#container-properties-alignment) and
 [alignChildren](window-object.md#container-properties-alignchildren) properties of controls and containers, and in the alignment
-property used to set a control’s [titleLayout](control-objects.md#controlobj-titlelayout) property. Read only.
+property used to set a control's [titleLayout](control-objects.md#controlobj-titlelayout) property. Read only.
 
 Use these constants to set the alignment. For example:
 
@@ -155,7 +155,7 @@ to register a handler function. See [Registering event listeners for windows or 
 | `text`   | The text to match.   |
 |----------|----------------------|
 
-Finds and returns the resource for a given text string from the host application’s resource data. If no
+Finds and returns the resource for a given text string from the host application's resource data. If no
 string resource matches the given text, the text itself is returned.
 
 Returns a String.

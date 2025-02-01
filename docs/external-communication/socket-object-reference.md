@@ -1,6 +1,6 @@
 # Socket object reference
 
-This section provides details of the object’s properties and methods.
+This section provides details of the object's properties and methods.
 
 Socket object constructor:
 
@@ -16,7 +16,7 @@ Creates and returns a new `Socket` object.
 
 | `connected`   | Boolean   | When true, the connection is active. Read only.                                                                                                                                |
 |---------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `encoding`    | String    | Sets or retrieves the name of the encoding used to transmit data.<br/>Typical values are “ASCII,” “BINARY,” or “UTF-8.”                                                        |
+| `encoding`    | String    | Sets or retrieves the name of the encoding used to transmit data.<br/>Typical values are "ASCII," "BINARY," or "UTF-8."                                                        |
 | `eof`         | Boolean   | When true, the receive buffer is empty. Read only.                                                                                                                             |
 | `error`       | String    | A message describing the most recent error.<br/>Setting this value clears any error message.                                                                                   |
 | `host`        | String    | The name of the remote computer when a connection is established.<br/>If the connection is shut down or does not exist, the property<br/>contains the empty string. Read only. |
@@ -45,7 +45,7 @@ Returns `true` if the connection was closed, `false` on I/O errors.
 
 | `port`     | Number. The TCP/IP port number to listen on. Valid port numbers are 1 to 65535.<br/>Typical values are 80 for a Web server, 23 for a Telnet server and so on.   |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `encoding` | Optional. String. The encoding to be used for the connection.<br/>Typical values are “ASCII,” “binary,” or “UTF-8.” Default is “ASCII.”                         |
+| `encoding` | Optional. String. The encoding to be used for the connection.<br/>Typical values are "ASCII," "binary," or "UTF-8." Default is "ASCII."                         |
 
 Instructs the object to start listening for an incoming connection.
 
@@ -60,9 +60,9 @@ Returns `true` on success.
 
 `socketObj.open (host [, encoding]);`
 
-| `host`     | String. The name or IP address of the remote computer, followed by a colon and the<br/>port number to connect to. The port number is required. Valid computer names are,<br/>for example, “www.adobe.com:80” or “192.150.14.12:80”.   |
+| `host`     | String. The name or IP address of the remote computer, followed by a colon and the<br/>port number to connect to. The port number is required. Valid computer names are,<br/>for example, "www.adobe.com:80" or "192.150.14.12:80".   |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `encoding` | Optional. String. The encoding to be used for the connection.<br/>Typical values are “ASCII,” “binary,” or “UTF-8.” Default is “ASCII.”                                                                                               |
+| `encoding` | Optional. String. The encoding to be used for the connection.<br/>Typical values are "ASCII," "binary," or "UTF-8." Default is "ASCII."                                                                                               |
 
 Opens the connection for subsequent read/write operations.
 

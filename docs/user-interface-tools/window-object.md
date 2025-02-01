@@ -11,8 +11,8 @@ new Window (type [, title, bounds, {creation_properties}]);
 | `type`                | The window type. The value is:<br/><br/>> - `dialog` - Creates a modal dialog.<br/>> - `palette` - Creates a modeless dialog, also called a floating palette.<br/>>   (Not supported by Photoshop CC.)<br/>> - `window` - Creates a simple window that can be used as a main window for<br/>>   an application. (Not supported by Photoshop CC.)<br/><br/>This argument can be a ScriptUI resource specification; in this case, all other<br/>arguments are ignored. See [Resource specifications](resource-specifications.md#resource-specifications).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `title`               | Optional. The window title. A localizable string.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `bounds`              | Optional. The window’s position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `creation_properties` | Optional. An object that can contain any of these properties:<br/><br/>> - `resizeable` - When true, the window can be resized by the user. Default<br/>>   is false.<br/>> - `su1PanelCoordinates` - Photoshop only. When true, the child panels of<br/>>   this window automatically adjust the positions of their children for<br/>>   compatability with Photoshop CS (in which the vertical coordinate was<br/>>   measured from outside the frame). Default is false. Individual panels can<br/>>   override the parent window’s setting.<br/>> - `closeButton` - When true, the title bar includes a button to close the<br/>>   window, if the platform and window type allow it. When false, it does not.<br/>>   Default is true. Not used for dialogs.<br/>> - `maximizeButton` - When true, the title bar includes a button to expand<br/>>   the window to its maximum size (typically, the entire screen), if the<br/>>   platform and window type allow it. When false, it does not. Default is false<br/>>   for type palette, true for type window. Not used for dialogs.<br/>> - `minimizeButton` - When true, the title bar includes a button to minimize<br/>>   or iconify the window, if the platform and window type allow it. When<br/>>   false, it does not. Default is false for type palette, true for type window.<br/>>   Main windows cannot have a minimize button in Mac OS. Not used for<br/>>   dialogs.<br/>> - `independent` - When true, a window of type window is independent of<br/>>   other application windows, and can be hidden behind them in Windows.<br/>>   In Mac OS, has no effect. Default is false.<br/>> - `borderless` - When true, the window has no title bar or borders.<br/>>   Properties that control those features are ignored. |
+| `bounds`              | Optional. The window's position and size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `creation_properties` | Optional. An object that can contain any of these properties:<br/><br/>> - `resizeable` - When true, the window can be resized by the user. Default<br/>>   is false.<br/>> - `su1PanelCoordinates` - Photoshop only. When true, the child panels of<br/>>   this window automatically adjust the positions of their children for<br/>>   compatability with Photoshop CS (in which the vertical coordinate was<br/>>   measured from outside the frame). Default is false. Individual panels can<br/>>   override the parent window's setting.<br/>> - `closeButton` - When true, the title bar includes a button to close the<br/>>   window, if the platform and window type allow it. When false, it does not.<br/>>   Default is true. Not used for dialogs.<br/>> - `maximizeButton` - When true, the title bar includes a button to expand<br/>>   the window to its maximum size (typically, the entire screen), if the<br/>>   platform and window type allow it. When false, it does not. Default is false<br/>>   for type palette, true for type window. Not used for dialogs.<br/>> - `minimizeButton` - When true, the title bar includes a button to minimize<br/>>   or iconify the window, if the platform and window type allow it. When<br/>>   false, it does not. Default is false for type palette, true for type window.<br/>>   Main windows cannot have a minimize button in Mac OS. Not used for<br/>>   dialogs.<br/>> - `independent` - When true, a window of type window is independent of<br/>>   other application windows, and can be hidden behind them in Windows.<br/>>   In Mac OS, has no effect. Default is false.<br/>> - `borderless` - When true, the window has no title bar or borders.<br/>>   Properties that control those features are ignored. |
 
 ---
 
@@ -59,7 +59,7 @@ the ENTER key. By default, looks for a button whose name or text is
 
 Type: [Bounds](size-and-location-objects.md#bounds)
 
-A Bounds object for the boundaries of the Window’s frame in screen
+A Bounds object for the boundaries of the Window's frame in screen
 coordinates. The frame consists of the title bar and borders that
 enclose the content region of a window, depending on the
 windowing system. Read only.
@@ -70,7 +70,7 @@ windowing system. Read only.
 
 Type: [Point](size-and-location-objects.md#point)
 
-A Point object for the location of the top left corner of the Window’s
+A Point object for the location of the top left corner of the Window's
 frame. The same as [frameBounds.x, frameBounds.y]. Set this
 value to move the window frame to the specified location on the
 screen. The frameBounds value changes accordingly.
@@ -81,7 +81,7 @@ screen. The frameBounds value changes accordingly.
 
 Type: [Dimension](size-and-location-objects.md#dimension)
 
-A Dimension object for the size and location of the Window’s frame
+A Dimension object for the size and location of the Window's frame
 in screen coordinates. Read only.
 
 ---
@@ -117,7 +117,7 @@ transparent to any degree.
 
 Type: String
 
-The key sequence that invokes this window’s ref:control-event-onshortcutkey callback
+The key sequence that invokes this window's ref:control-event-onshortcutkey callback
 (in Windows only).
 
 ---
@@ -221,7 +221,7 @@ Values are not case sensitive.
 
 Type: [Bounds](size-and-location-objects.md#bounds)
 
-A Bounds object for the boundaries of the window’s drawable
+A Bounds object for the boundaries of the window's drawable
 area in screen coordinates. Compare [frameBounds](). Does not
 apply to containers of type tab, whose bounds are determined
 by the parent tabbedpanel container.
@@ -236,7 +236,7 @@ Type: Array of Object
 
 The collection of user-interface elements that have been added
 to this window or container. An array indexed by number or by a
-string containing an element’s `name`. The `length` property of this
+string containing an element's `name`. The `length` property of this
 array is the number of child elements for container elements, and
 is zero for controls.
 
@@ -249,7 +249,7 @@ Read only.
 Type: [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
 
 A ScriptUIGraphics object that can be used to customize the
-window’s appearance, in response to the onDraw event.
+window's appearance, in response to the onDraw event.
 
 ---
 
@@ -270,7 +270,7 @@ container element is created.
 Type: [Point](size-and-location-objects.md#point)
 
 A Point object for the location of the top left corner of the
-Window’s drawable area, or the top left corner of the frame for a
+Window's drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
 
 ---
@@ -321,8 +321,8 @@ The default orientation depends on the type of container. For
 `Window` and `Panel`, the default is `column`, and for `Group` the
 default is `row`.
 
-The allowed values for the container’s alignChildren and its
-children’s alignment properties depend on the orientation.
+The allowed values for the container's alignChildren and its
+children's alignment properties depend on the orientation.
 
 ---
 
@@ -443,8 +443,8 @@ Group.
 
 | `type`           | The control type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                                                                                                                                    |
 |------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bounds`         | Optional. A bounds specification that describes the size and position of the new<br/>control or container, relative to its parent. See Bounds object for specification<br/>formats.<br/><br/>If supplied, this value creates a new Bounds object which is assigned to the new<br/>object’s bounds property. |
-| `text`           | Optional. String. Initial text to be displayed in the control as the title, label, or<br/>contents, depending on the control type. If supplied, this value is assigned to<br/>the new object’s text property.                                                                                               |
+| `bounds`         | Optional. A bounds specification that describes the size and position of the new<br/>control or container, relative to its parent. See Bounds object for specification<br/>formats.<br/><br/>If supplied, this value creates a new Bounds object which is assigned to the new<br/>object's bounds property. |
+| `text`           | Optional. String. Initial text to be displayed in the control as the title, label, or<br/>contents, depending on the control type. If supplied, this value is assigned to<br/>the new object's text property.                                                                                               |
 | `creation_props` | Optional. Object. The properties of this object specify creation parameters,<br/>which are specific to each object type. See [Control types and creation parameters](control-objects.md#control-types-and-creation-parameters).                                                                             |
 
 Creates and returns a new control or container object and adds it to the children of this window or
@@ -506,7 +506,7 @@ Returns undefined.
 Simulates the occurrence of an event in this target. A script can create a UIEvent base class for a
 specific event and pass it to this method to start the event propagation for the event.
 
-Returns `false` if any of the registered listeners that handled the event called the event object’s
+Returns `false` if any of the registered listeners that handled the event called the event object's
 [preventDefault()](event-handling.md#eventobj-preventdefault) method, `true` otherwise.
 
 ---
@@ -565,7 +565,7 @@ Returns `undefined`.
 | `index`/`text`/`child`   | The child control to remove, specified by 0-based index, the contained text<br/>value, or as a control object.   |
 |--------------------------|------------------------------------------------------------------------------------------------------------------|
 
-Removes the specified child control from this window’s or container’s children array. No error
+Removes the specified child control from this window's or container's children array. No error
 results if the child does not exist.
 
 Returns `undefined`.
@@ -621,7 +621,7 @@ During the update() operation, the application is put into a modal state, so tha
 any events that would activate a different window, or give focus to a control outside the window
 being updated. The modal state allows drawing events for controls in other windows to occur (as is
 the case during a modal [show()](#window-object-functions-show) operation), so that the script does not prevent the update of other
-parts of the application’s UI while in the operation loop.
+parts of the application's UI while in the operation loop.
 
 It is an error to call the update() method for a window that is not currently visible.
 
@@ -638,7 +638,7 @@ for other container types (controls of type `panel` or `group`).
 | **onActivate**    | Called when the user make the window active by clicking it or otherwise making it<br/>the keyboard focus.                                                                                                                                                                                                                                             |
 | **onClose**       | Called when a request is made to close the window, either by an explicit call to the<br/>[close()](#window-object-functions-close) function or by a user action<br/>(clicking the OS-specific close icon in the title bar).<br/><br/>The function is called before the window actually closes; it can return false to cancel<br/>the close operation. |
 | **onDeactivate**  | Called when the user makes a previously active window inactive; for instance by<br/>closing it, or by clicking another window to change the keyboard focus.                                                                                                                                                                                           |
-| **onDraw**        | Called when a container or control is about to be drawn. Allows the script to modify<br/>or control the appearance, using the control’s associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) object.<br/>Handler takes one argument, a [DrawState object](control-objects.md#drawstate-object) object.      |
+| **onDraw**        | Called when a container or control is about to be drawn. Allows the script to modify<br/>or control the appearance, using the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object) object.<br/>Handler takes one argument, a [DrawState object](control-objects.md#drawstate-object) object.      |
 | **onMove**        | Called when the window has been moved.                                                                                                                                                                                                                                                                                                                |
 | **onMoving**      | Called while a window in being moved, each time the position changes. A handler<br/>can monitor the move operation.                                                                                                                                                                                                                                   |
 | **onResize**      | Called when the window has been resized.                                                                                                                                                                                                                                                                                                              |

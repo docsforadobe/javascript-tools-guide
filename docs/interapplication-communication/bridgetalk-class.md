@@ -285,7 +285,7 @@ Returns `true` if the given application is running and active on the local compu
 
 | `specifier`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `where`       | Optional. If the value “background” is specified, the application’s main window is<br/>not brought to the front of the screen.          |
+| `where`       | Optional. If the value "background" is specified, the application's main window is<br/>not brought to the front of the screen.          |
 
 Launches the given application on the local computer. It is not necessary to launch an application
 explicitly in order to send it a message; sending a message to an application that is not running

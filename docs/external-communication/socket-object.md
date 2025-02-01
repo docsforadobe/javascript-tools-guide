@@ -1,7 +1,7 @@
 # Socket object
 
 TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a
-server and requests a new page, it opens a TCP connection to handle the request as well as the server’s
+server and requests a new page, it opens a TCP connection to handle the request as well as the server's
 reply. The JavaScript Socket object lets you connect to any server on the Internet and to exchange data
 with this server.
 
@@ -99,7 +99,7 @@ The following sample code implements a very simple chat server. A chat client ma
 server, who is listening on port number 1234. The server responds with a welcome message and waits for
 one line of input from the client. The client types some text and transmits it to the server who displays the
 text and lets the user at the server computer type a line of text, which the client computer again displays.
-This goes back and forth until either the server or the client computer types the word “bye”:
+This goes back and forth until either the server or the client computer types the word "bye":
 
 ```default
 // A simple Chat server on port 1234

@@ -106,7 +106,7 @@ Returns `undefined`.
 | `files`   | A File object or array of File objects.<br/>For applications that use compound documents, this should be a project file.   |
 |-----------|----------------------------------------------------------------------------------------------------------------------------|
 
-Performs the equivalent of the target application’s File > Open command on the specified files.
+Performs the equivalent of the target application's File > Open command on the specified files.
 
 Returns `undefined`.
 
@@ -119,7 +119,7 @@ Returns `undefined`.
 | `options`   | Optional. Application-specific creation options:<br/><br/>- Adobe Bridge: none<br/>- Photoshop: none<br/>- InDesign: creation options are:<br/>  `(Boolean:showingWindow, ObjectOrString:documentPresets)`<br/>  See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting<br/>  Reference.<br/>- Illustrator: creation options are:<br/>  `([DocumentColorSpace:colorspace][, Number:width, Number:height])`<br/>  See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript<br/>  Reference.   |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Performs the equivalent of the target application’s File > New command.
+Performs the equivalent of the target application's File > New command.
 
 Returns `true` on success.
 
@@ -132,7 +132,7 @@ Returns `true` on success.
 | `files`   | A File object or array of File objects.<br/>For applications that use compound documents, this should be a project file.   |
 |-----------|----------------------------------------------------------------------------------------------------------------------------|
 
-Performs the equivalent of the target application’s File > Print command on the specified files.
+Performs the equivalent of the target application's File > Print command on the specified files.
 
 Returns `undefined`.
 
@@ -142,7 +142,7 @@ Returns `undefined`.
 
 `appspec.quit()`
 
-Performs the equivalent of the target application’s File > Exit or File > Close command.
+Performs the equivalent of the target application's File > Exit or File > Close command.
 
 !!! note
     This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the

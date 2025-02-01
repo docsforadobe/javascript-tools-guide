@@ -219,7 +219,7 @@ You can change the values of attributes using the same technique.
   bookstoreXML.book[1].year = 1901;
   ```
 - This following statement adds a new <rating> element to the second book:
-  > bookstoreXML.book[1].rating = “**\***”;
+  > bookstoreXML.book[1].rating = "**\***";
 
   The result is this XML:
   ```xml
@@ -281,7 +281,7 @@ tree:
 - `XML.`[children()](xml-object-reference.md#xml-object-children) gets the direct child elements, including text elements.
 - `XML.`[elements()](xml-object-reference.md#xml-object-elements) gets the direct child elements that are XML tags, but does not get text.
 - `XML.`[descendants()](xml-object-reference.md#xml-object-descendants) allows you to match a specific tag, and gets all matching elements at any level of
-  nesting. You can also use a “double dot” notation to access descendants of an element. For example,
+  nesting. You can also use a "double dot" notation to access descendants of an element. For example,
   these statements are equivalent:
   ```default
   xml..title
@@ -358,7 +358,7 @@ default namespace.
 
 You can define a namespace within an XML element using the xmlns attribute, and define elements within
 the schema as belonging to that namespace. For example, these additions to the example XML add a
-namespace that maps the prefix “kids” to the namespace “[http://kids.mybookstore.com](http://kids.mybookstore.com)”, and then
+namespace that maps the prefix "kids" to the namespace "[http://kids.mybookstore.com](http://kids.mybookstore.com)", and then
 uses the prefix to place a particular book element in that namespace:
 
 > ```xml
@@ -380,8 +380,8 @@ uses the prefix to place a particular book element in that namespace:
 > ...
 > ```
 
-When this namespace is defined, the simple statement `bookstoreXML.book` no longer returns “The
-Wonderful Wizard of Oz”, because that book is no longer in the default namespace. To access that book,
+When this namespace is defined, the simple statement `bookstoreXML.book` no longer returns "The
+Wonderful Wizard of Oz", because that book is no longer in the default namespace. To access that book,
 you must define a [Namespace object](xml-object-reference.md#namespace-object) for the namespace, and use it to access the element.
 
 For example, this JavaScript code creates a [Namespace object](xml-object-reference.md#namespace-object) for the namespace defined in the
@@ -433,7 +433,7 @@ Once you have set the default namespace:
   bookstoreXML.**ns::book**;
   ```
 
-  This returns all books that have been assigned to the “kids” namespace.
+  This returns all books that have been assigned to the "kids" namespace.
 - If you have set a default namespace, you can still access all objects that do not have any specific
   namespace assignment by using a [Namespace object](xml-object-reference.md#namespace-object) for the empty string, which is the default
   creation case:

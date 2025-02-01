@@ -24,7 +24,7 @@ to different actions, or events:
 - Both containers and controls generate events just before they are drawn, that allow you to customize
   their appearance. To handle these events, define callback functions for [onDraw](control-objects.md#control-event-ondraw).
   Your handler can modify or control how the container or control is drawn using the methods
-  defined in the control’s associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
+  defined in the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
 - In Windows only, you can register a key sequence as a [shortcutKey](control-objects.md#controlobj-shortcutkey) for a window or
   for most types of controls. To handle the key sequence, define a callback function for
   [onShortcutKey](control-objects.md#control-event-onshortcutkey) in that control.
@@ -130,7 +130,7 @@ cascading of an event through a hierarchy of containers and controls.
 Use [addEventListener()](window-object.md#window-object-functions-addeventlistener) or [addEventListener()](control-objects.md#controlobj-addeventlistener)
 to register a handler. The function you register receives an event object (from the [UIEvent base class](event-handling.md#uievent-base-class))
 that encapsulates the event information. As an event cascades down through a hierarchy and back up
-through the hierarchy, your handler can respond at any level, or use the UIEvent object’s
+through the hierarchy, your handler can respond at any level, or use the UIEvent object's
 [stopPropagation()](event-handling.md#eventobj-stoppropagation) method to stop the event propagation at some level.
 
 You can register:
@@ -148,10 +148,10 @@ You can register:
 
 The handler or registered code statement is executed when the specified event occurs in the target. A
 script can programmatically simulate an event by creating an event objects with
-[ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and passing it to an event target’s
+[ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and passing it to an event target's
 [dispatchEvent()](control-objects.md#controlobj-dispatchevent) function.
 
-You can remove a handler that has been previously registered by calling the event target’s
+You can remove a handler that has been previously registered by calling the event target's
 [removeEventListener()](control-objects.md#controlobj-removeeventlistener) function. The parameters you pass to this function must be identical to those
 passed to the [addEventListener()](control-objects.md#controlobj-addeventlistener) call that registered the handler. Typically, a script would register all event
 handlers during initialization, and unregister them during termination; however, unregistering handlers
@@ -185,7 +185,7 @@ exceptions:
 - In ScriptUI, the W3C `EventTarget` interface is implemented by UI element objects (such as `Button`,
   `Window`, and so on).
 - In ScriptUI, the W3C `AbstractView` object is a UI element (such as `Button`, `Window`, and so on).
-- None of the “namespace” properties or methods are supported (such as `initEventNS` and
+- None of the "namespace" properties or methods are supported (such as `initEventNS` and
   `initMouseEventNS`).
 
 The ScriptUI implementation of W3C mouse events follows the W3C DOM level 3 functional specification [for MouseEvent](https://www.w3.org/TR/uievents/#mouseevent), with
@@ -235,12 +235,12 @@ For example, suppose a dialog window contains a group which contains a button. A
 event handler function for the click event at the Window object, another handler at the group object, and
 a third handler at the button object (the actual target).
 
-When the user clicks the button, the Window object’s handler is called first (during the capture phase), then
-the button object’s handler (during the at-target phase). Finally, ScriptUI calls the handler registered with
+When the user clicks the button, the Window object's handler is called first (during the capture phase), then
+the button object's handler (during the at-target phase). Finally, ScriptUI calls the handler registered with
 the group object (during the bubble phase).
 
 If you register a handler at an ancestor object of the actual event target, you can specify the third
-argument to [addEventListener()](control-objects.md#controlobj-addeventlistener), so that the ancestor’s handler responds only in the
+argument to [addEventListener()](control-objects.md#controlobj-addeventlistener), so that the ancestor's handler responds only in the
 capture phase, not in the bubbling phase. For example, the following click handler, registered with the
 parent dialog object, responds only in the capture phase:
 
@@ -249,7 +249,7 @@ myDialog.addEventListener( "click", handleAllItems, true );
 ```
 
 This value is false by default, so if it is not supplied, the handler can respond only in the bubbling phase
-when the object’s descendent is the target, or when the object is itself the target of the event (the
+when the object's descendent is the target, or when the object is itself the target of the event (the
 at-target phase).
 
 To distinguish which of multiple registered handlers is being executed at any given time, the event object

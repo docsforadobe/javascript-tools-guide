@@ -21,13 +21,13 @@ through library-defined object types.
   var a = mylib.method_abc(1,2.0,true, "this is data") ;
   alert(a) ;
   mylib.unload() ;
-
-  For details of how to define functions for direct access through the ExternalObject object, see
-  :ref:`defining-entry-points-for-direct-access`.
   ```
+
+  For details of how to define functions for direct access through the ExternalObject object, see [Defining entry points for direct access](./defining-entry-points-for-direct-access.md)
+
 - **Indirect access to library calls through JavaScript classes** - Use the indirect style to access classes
-  defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is automatically defined,
-  and you can access the properties and methods through an instance of that class. For example:
+  defined in a C++ library. For each C++ class defined in the library, a corresponding JavaScript class is automatically defined, and you can access the properties and methods through an instance of that class. For example:
+
   ```default
   anotherlib= new ExternalObject ("lib:" + filespec); // load the library
   alert(anotherlib.version) ;
@@ -37,7 +37,7 @@ through library-defined object types.
   var a = myObject.method_abc(1,2.0,true,"this is data") ;
   alert(a) ;
   anotherlib.unload() ;
+  ```
 
   For details of how to define functions for direct access through the ExternalObject object, see
-  :ref:`defining-entry-points-for-indirect-access`.
-  ```
+  [Defining entry points for indirect access](./defining-entry-points-for-indirect-access.md).

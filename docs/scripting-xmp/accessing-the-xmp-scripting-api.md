@@ -197,7 +197,7 @@ thumb = app.document.selections[0];
 // If there is one, and it has metadata
 if ( thumb && thumb.metadata ) {
 
-    // Retrieve metadata from the thumbnail into an :ref:`xmpmeta-object`
+    // Retrieve metadata from the thumbnail into an XMPMeta object`
     // ( if app.synchronousMode is set, use thumb.metadata )
 
     xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );

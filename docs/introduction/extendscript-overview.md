@@ -94,11 +94,10 @@ For complete details, see [Integrating External Libraries](../integrating-extern
 ExtendScript provides these utilities and features:
 
 - JavaScript language enhancements
-  : - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md#preprocessor-directives).
-    - Support for extending or overriding math and logical operator behavior on a class-by-class basis.
+  - Tools for combining scripts, such as a `#include` directive. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md#preprocessor-directives).
+  - Support for extending or overriding math and logical operator behavior on a class-by-class basis.
       See [Operator overloading](../extendscript-tools-features/operator-overloading.md#operator-overloading).
-    <br/>
-    For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
+  - For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
 - JavaScript compilation, through the ExtendScript Toolkit. See [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit).
 - XML integration: ExtendScript defines the XML object, which allows you to process XML with your JavaScript scripts. For complete details, see [Integrating XML into JavaScript](../integrating-xml/index.md#integrating-xml-into-javascript).
 - Scripting support for XMP metadata manipulation: XMPScript provides a JavaScript API for the Adobe

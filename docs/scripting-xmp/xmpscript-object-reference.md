@@ -24,8 +24,7 @@ After the library has been loaded, these XMP classes are available in the global
 
 ## XMPAliasInfo object
 
-This object is returned by XMPMeta.:ref:xmpmeta-resolveAlias. The read-only properties describe an XMP metadata
-alias.
+This object is returned by [XMPMeta.resolveAlias](#resolvealias). The read-only properties describe an XMP metadata alias.
 
 ### XMPAliasInfo object properties
 
@@ -408,7 +407,7 @@ Returns `undefined`.
 
 ## XMPFileInfo object
 
-This object is returned by XMPFile.:ref:xmpfile-getFileInfo. The read-only properties describe the file represented by
+This object is returned by [XMPFile.getFileInfo](#getfileinfo). The read-only properties describe the file represented by
 the [XMPFile object](#xmpfile-object).
 
 !!! note
@@ -429,8 +428,7 @@ display metadata.
 
 ## XMPIterator object
 
-Created by a call to XMPMeta.:ref:xmpmeta-iterator. Walks recursively through the properties and qualifiers of an
-[XMPMeta object](#xmpmeta-object), and returns them as [XMPProperty object](#xmpproperty-object).
+Created by a call to [XMPMeta.iterator](#iterator). Walks recursively through the properties and qualifiers of an [XMPMeta object](#xmpmeta-object), and returns them as [XMPProperty object](#xmpproperty-object).
 
 The object has no JavaScript properties.
 
@@ -502,7 +500,7 @@ new XMPMeta ( buffer );
 
 | packet   | A String containing an XML file or an XMP packet.                                                                                                             |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| buffer   | An Array of Number. The UTF-8 or UTF-16 encoded bytes of an XML file or an XMP packet.<br/>This array is the result of XMPMeta.:ref:xmpmeta-serializeToArray. |
+| buffer   | An Array of Number. The UTF-8 or UTF-16 encoded bytes of an XML file or an XMP packet.<br/>This array is the result of [XMPMeta.serializeToArray](#serializetoarray). |
 
 ---
 
@@ -1087,8 +1085,7 @@ Returns `undefined`.
 
 ## XMPPacketInfo object
 
-This object is returned by XMPFile.:ref:xmpfile-getpacketinfo. The read-only properties describe the XMP packet for
-the file represented by the [XMPFile object](#xmpfile-object).
+This object is returned by [XMPFile.getPacketInfo()](#getpacketinfo). The read-only properties describe the XMP packet for the file represented by the [XMPFile object](#xmpfile-object).
 
 ---
 

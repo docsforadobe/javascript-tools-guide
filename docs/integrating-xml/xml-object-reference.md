@@ -509,9 +509,9 @@ Returns a String.
 
 `xmlObj.toXMLString();`
 
-Creates an XML-encoded string representation of this [XML object](#xml-object). This result includes the start tag,
-attributes and end tag of the XML object, regardless of its content. Formats the string as specified
-by the global settings XML.:ref:prettyPrinting <xml-class-properties> and XML.:ref:prettyIndent <xml-class-properties>.
+Creates an XML-encoded string representation of this [XML object](#xml-object).
+
+This result includes the start tag, attributes and end tag of the XML object, regardless of its content. Formats the string as specified by the global settings [XML.prettyPrinting](#xml-class-properties) and [XML.prettyIndent](#xml-class-properties).
 
 Returns a String.
 

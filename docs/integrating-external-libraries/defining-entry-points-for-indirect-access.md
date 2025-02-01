@@ -1,5 +1,3 @@
-<a id="defining-entry-points-for-indirect-access"></a>
-
 # Defining entry points for indirect access
 
 The C-client object interface for external libraries allows your C or C++ shared-library code to define,
@@ -7,13 +5,9 @@ create, use, and manage JavaScript objects.
 
 ---
 
-<a id="indirect-access-entry-points"></a>
-
 ## Entry Points
 
 The following entry points are required if you wish to use the object interface:
-
-<a id="externalobject-functions-esclientinterface"></a>
 
 ### ESClientInterface()
 
@@ -32,8 +26,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-esmallocmem"></a>
-
 ### ESMallocMem()
 
 `void * ESMallocMem ( size_t nbytes)`
@@ -48,15 +40,11 @@ Returns a pointer to the allocated block of memory.
 
 ---
 
-<a id="shared-library-function-api"></a>
-
 ## Shared-library function API
 
 Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in
 [SoServerInterface](#shared-library-soserverinterface) and [SoObjectInterface](#shared-library-soobjectinterface) function-pointer structures.
 Return values from most functions are integer constants. The error code `kESErrOK == 0` indicates success.
-
-<a id="shared-library-soserverinterface"></a>
 
 ### SoServerInterface
 
@@ -117,8 +105,6 @@ objects. The functions must conform to the following type definitions.
 
 ---
 
-<a id="externalobject-functions-dumpserver"></a>
-
 #### dumpServer()
 
 `ESerror_t dumpServer (SoHServer hServer);`
@@ -132,8 +118,6 @@ debugging.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-dumpobject"></a>
 
 #### dumpObject()
 
@@ -149,8 +133,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-addclass"></a>
-
 #### addClass()
 
 `ESerror_t addClass (SoHServer hServer, char* name, SoObjectInterface_p pObjectInterface);`
@@ -165,8 +147,6 @@ Creates a new JavaScript class.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-addmethod"></a>
 
 #### addMethod()
 
@@ -184,8 +164,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-addmethods"></a>
-
 #### addMethods()
 
 `ESerror_t addMethods (SoHObject hObject, SoCClientName_p pNames);`
@@ -199,8 +177,6 @@ Adds a set of new methods to an instance.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-addproperty"></a>
 
 #### addProperty()
 
@@ -218,8 +194,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-addproperties"></a>
-
 #### addProperties()
 
 `ESerror_t addProperties (SoHObject hObject, SoCClientName_p pNames);`
@@ -233,8 +207,6 @@ Adds a set of new properties to an instance.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-getclass"></a>
 
 #### getClass()
 
@@ -251,8 +223,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-getserver"></a>
-
 #### getServer()
 
 `ESerror_t getServer (SoHObject hObject, SoHServer* phServer, SoServerInterface_p* ppServerInterface);`
@@ -268,8 +238,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-setclientdata"></a>
-
 #### setClientData()
 
 `ESerror_t setClientData (SoHObject hObject, void* pData);`
@@ -284,8 +252,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-getclientdata"></a>
-
 #### getClientData()
 
 `ESerror_t setClientData (SoHObject hObject, void** pData);`
@@ -299,8 +265,6 @@ Retrieves data that was stored with [setClientData()](#externalobject-functions-
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-eval"></a>
 
 #### eval()
 
@@ -317,8 +281,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-taggeddatainit"></a>
-
 #### taggedDataInit()
 
 `ESerror_t taggedDataInit (SoHSever hServer, TaggedData* pTaggedData);`
@@ -333,8 +295,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-taggeddatafree"></a>
-
 #### taggedDataFree()
 
 `ESerror_t setClientData (SoHServer hServer, TaggedData* pTaggedData);`
@@ -348,8 +308,6 @@ Frees memory being used by a TaggedData structure.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="shared-library-soobjectinterface"></a>
 
 ### SoObjectInterface
 
@@ -374,8 +332,6 @@ All `SoObjectInterface` members must be valid function pointers, or NULL. You mu
 
 ---
 
-<a id="externalobject-functions-initialize"></a>
-
 #### initialize()
 
 `ESerror_t initialize (SoHObject hObject, int argc, TaggedData* argv);`
@@ -398,8 +354,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-put"></a>
-
 #### put()
 
 `ESerror_t put (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
@@ -421,8 +375,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-get"></a>
-
 #### get()
 
 `ESerror_t get (SoHObject hObject, SoCClientName* name, TaggedData* pValue);`
@@ -441,8 +393,6 @@ alert(xx.myproperty);
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-call"></a>
 
 #### call()
 
@@ -466,8 +416,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-valueof"></a>
-
 #### valueOf()
 
 `ESerror_t valueOf (SoHObject hObject, TaggedData* pResult);`
@@ -481,8 +429,6 @@ Creates and returns the value of the object, with no type conversion.
 Returns an error code, `kESErrOK` on success.
 
 ---
-
-<a id="externalobject-functions-tostring"></a>
 
 #### toString()
 
@@ -498,8 +444,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="externalobject-functions-finalize"></a>
-
 #### finalize()
 
 `ESerror_t finalize (SoHObject hObject);`
@@ -514,12 +458,6 @@ Returns an error code, `kESErrOK` on success.
 
 ---
 
-<a id="sohobject"></a>
-
-<a id="sohserver"></a>
-
-<a id="support-structures"></a>
-
 ## Support structures
 
 These support structures are passed to functions that you define for your JavaScript interface:
@@ -529,8 +467,6 @@ These support structures are passed to functions that you define for your JavaSc
 | `SoHServer`     | An opaque pointer `(long *)` to the server object, which acts as an object factory for<br/>the shared library.  |
 | `SoCClientName` | A structure that uniquely identifies methods and properties.                                                    |
 | `TaggedData`    | A structure that encapsulates data values with type information, to be passed<br/>between C/C++ and JavaScript. |
-
-<a id="socclientname"></a>
 
 ### SoCClientName
 
@@ -549,8 +485,6 @@ SoCClientName {
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`         | A unique identifying number for the property or method, or 0 to assign a generated UID.<br/>If you assign the UID, your C/C++ code can use it to avoid string comparisons when<br/>identifying JavaScript properties and methods. It is recommended that you either assign all<br/>UIDs explicitly, or allow them all to be generated. |
 | `desc`       | A descriptive string or `NULL`.                                                                                                                                                                                                                                                                                                        |
-
-<a id="taggeddata"></a>
 
 ### TaggedData
 

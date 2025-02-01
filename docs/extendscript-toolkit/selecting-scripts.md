@@ -1,5 +1,3 @@
-<a id="selecting-scripts"></a>
-
 # Selecting Scripts
 
 You can open multiple scripts (or text files, including programs in other languages). You can find and open
@@ -19,8 +17,6 @@ scripts in a number of ways:
   those kept in favorite locations.
 
 ---
-
-<a id="the-scripts-panel-and-favorite-script-locations"></a>
 
 ## The Scripts panel and favorite script locations
 

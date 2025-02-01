@@ -1,5 +1,3 @@
-<a id="file-and-folder-supported-encoding-names"></a>
-
 # File- and Folder-supported encoding names
 
 The following list of names is a basic set of encoding names supported by the File object. Some of the
@@ -37,8 +35,6 @@ between bytes and Unicode characters by using the lower 8 bits. The latter encod
 reading and writing binary data.
 
 ---
-
-<a id="additional-encodings"></a>
 
 ## Additional encodings
 

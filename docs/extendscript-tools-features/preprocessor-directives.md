@@ -1,5 +1,3 @@
-<a id="preprocessor-directives"></a>
-
 # Preprocessor directives
 
 ExtendScript provides preprocessor directives for including external scripts, naming scripts, specifying a

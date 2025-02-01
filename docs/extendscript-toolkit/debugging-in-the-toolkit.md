@@ -1,5 +1,3 @@
-<a id="debugging-in-the-toolkit"></a>
-
 # Debugging in the Toolkit
 
 You can debug the code in the currently active document window. Select one of the debugging
@@ -10,8 +8,6 @@ JavaScript engine. The Toolkit itself runs an independent JavaScript engine, so 
 run a script without connecting to a target application.
 
 ---
-
-<a id="selecting-a-debugging-target"></a>
 
 ## Selecting a debugging target
 
@@ -54,8 +50,6 @@ and quits silently, rather than launching the target application. For example:
 
 ---
 
-<a id="the-javascript-console"></a>
-
 ## The JavaScript console
 
 The JavaScript console is a command shell and output window for the currently selected JavaScript
@@ -83,8 +77,6 @@ Call Stack panel, and the result appears in the next line.
 
 ---
 
-<a id="controlling-code-execution"></a>
-
 ## Controlling code execution
 
 The debugging commands are available from the **Debug** menu, from the document window’s right-click
@@ -100,8 +92,6 @@ and buttons to control the execution of code when the JavaScript Debugger is act
 | ![step-out](extendscript-toolkit/_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg)           | Step Out       | Shift F11 (Windows)<br/>Ctrl U (Mac OS) | When paused within the body of a JavaScript function, resumes<br/>script execution until the function returns.<br/>When paused outside the body of a function, resumes script<br/>execution until the script terminates. |
 
 ---
-
-<a id="visual-indication-of-execution-states"></a>
 
 ## Visual indication of execution states
 
@@ -124,8 +114,6 @@ of such errors using the catch clause, rather than breaking into the debugger. T
 cause the termination of the script, regardless of this setting.
 
 ---
-
-<a id="setting-breakpoints"></a>
 
 ## Setting breakpoints
 
@@ -183,8 +171,6 @@ the Breakpoints panel.
 
 ---
 
-<a id="evaluation-in-help-tips"></a>
-
 ## Evaluation in help tips
 
 If you let your mouse pointer rest over a variable or function in a document window, the result of
@@ -194,8 +180,6 @@ debugging, however, this is an extremely useful way to display the current value
 its current data type.
 
 ---
-
-<a id="tracking-data"></a>
 
 ## Tracking data
 
@@ -235,8 +219,6 @@ properties (and methods, if Functions display is enabled), and the triangle poin
 the object is open.
 
 ---
-
-<a id="the-call-stack"></a>
 
 ## The call stack
 

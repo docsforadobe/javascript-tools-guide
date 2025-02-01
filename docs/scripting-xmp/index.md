@@ -1,5 +1,3 @@
-<a id="scripting-access-to-xmp-metadata"></a>
-
 # Scripting Access to XMP Metadata
 
 XMPScript, the XMP ExtendScript API, offers JavaScript access to the Adobe XMP Core and XMP Files
@@ -15,7 +13,7 @@ separate from the Adobe Bridge DOM. You can use it independently, to get and set
 formats; or you can use it with the Adobe Bridge API to modify the metadata that you access from files
 using the Adobe Bridge DOM’s `Thumbnail` object.
 
-#### NOTE
-Adobe Bridge provides a means of embedding metadata values in a script (to describe the script file
+!!! note
+    Adobe Bridge provides a means of embedding metadata values in a script (to describe the script file
 itself) using XML delimited by special tags within a comment block. This is not related to metadata access
 for files and thumbnails. For details, see the *Adobe Bridge JavaScript Guide*.

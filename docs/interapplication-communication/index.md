@@ -1,5 +1,3 @@
-<a id="interapplication-communication-with-scripts"></a>
-
 # Interapplication Communication with Scripts
 
 The Adobe scripting environment provides an interapplication messaging framework, a way for to send

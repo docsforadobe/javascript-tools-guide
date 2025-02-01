@@ -1,5 +1,3 @@
-<a id="extendscript-tools-and-features"></a>
-
 # ExtendScript Tools and Features
 
 In addition to the specific functional modules and development tools, ExtendScript provides these tools

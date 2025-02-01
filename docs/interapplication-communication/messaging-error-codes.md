@@ -1,5 +1,3 @@
-<a id="messaging-error-codes"></a>
-
 # Messaging error codes
 
 The interapplication messaging protocol defines the following error codes, which are compatible with

@@ -1,5 +1,3 @@
-<a id="defining-entry-points-for-direct-access"></a>
-
 # Defining entry points for direct access
 
 A library to be loaded and accessed directly through an ExternalObject instance must publish the
@@ -7,13 +5,9 @@ following entry points. These must be exported as C functions, not C++ functions
 
 ---
 
-<a id="direct-access-entry-points"></a>
-
 ## Entry Points
 
 The following entry points are required if you wish to use an ExternalObject instance:
-
-<a id="externalobject-functions-esinitialize"></a>
 
 ### ESInitialize()
 
@@ -28,8 +22,6 @@ Returns a string of function signatures; see [Library initialization](#library-i
 
 ---
 
-<a id="externalobject-functions-esgetversion"></a>
-
 ### ESGetVersion()
 
 `long ESGetVersion (void );`
@@ -39,8 +31,6 @@ Takes no arguments, and returns a version number for the library as a long integ
 The result is available in JavaScript as ExternalObject.version.
 
 ---
-
-<a id="externalobject-functions-esfreemem"></a>
 
 ### ESFreeMem()
 
@@ -55,8 +45,6 @@ Returns nothing.
 
 ---
 
-<a id="externalobject-functions-esterminate"></a>
-
 ### ESTerminate()
 
 `void ESTerminate (void );`
@@ -66,8 +54,6 @@ Called when your library is being unloaded. See [Library termination](#library-t
 Takes no arguments, and returns nothing.
 
 ---
-
-<a id="additional-functions"></a>
 
 ## Additional functions
 
@@ -96,13 +82,11 @@ The variant data does not support JavaScript objects. The following data types a
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to
 `undefined` and does not attempt to convert the data to the requested type.
 
-#### NOTE
-The data type of a return value cannot be predefined; JavaScript functions can return any data type.
+!!! note
+    The data type of a return value cannot be predefined; JavaScript functions can return any data type.
 The called function is free to return any of the listed data types.
 
 ---
-
-<a id="library-initialization"></a>
 
 ## Library initialization
 
@@ -148,13 +132,11 @@ Two ();
 
 The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
-#### NOTE
-You cannot define function overloading by returning multiple different signatures for one function.
+!!! note
+    You cannot define function overloading by returning multiple different signatures for one function.
 Attempting to do so produces undefined results.
 
 ---
-
-<a id="library-termination"></a>
 
 ## Library termination
 

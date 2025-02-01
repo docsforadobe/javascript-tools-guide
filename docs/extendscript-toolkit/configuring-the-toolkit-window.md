@@ -1,5 +1,3 @@
-<a id="configuring-the-toolkit-window"></a>
-
 # Configuring the Toolkit window
 
 The ExtendScript Toolkit initially appears with a default workspace arrangement, containing a default
@@ -27,8 +25,6 @@ favorite configurations as workspaces. See [Workspaces](#workspaces).
 
 ---
 
-<a id="panel-menus"></a>
-
 ## Panel menus
 
 Panel groups have a context menu, which you invoke with a right click in the tab or on the background of
@@ -48,8 +44,6 @@ The individual panels are discussed in detail in the following sections.
 
 ---
 
-<a id="document-windows"></a>
-
 ## Document windows
 
 When you open scripts or text files, each file appears in its own Script Editor document window. By default,
@@ -66,8 +60,8 @@ can switch between them with the commands Window > Next document and Window > Pr
 document. The default keyboard shortcuts for these commands are F6 and SHIFT-F6; you can change these
 using the Keyboard Shortcuts page in the Preferences dialog (Edit > Preferences).
 
-#### NOTE
-Because you can run scripts in the same application simultaneously, you should be careful not to
+!!! note
+    Because you can run scripts in the same application simultaneously, you should be careful not to
 interrupt the processing of one script with another. For example, if one script opens a modal dialog in
 Photoshop, and you run another script that targets Photoshop while the dialog is still open, the second
 script is likely to generate an error.
@@ -84,8 +78,6 @@ CTRL-click to split the window, the second appears below the original.
 For more information about the document windows and the Script Editor, see [The Script Editor](the-script-editor.md#the-script-editor).
 
 ---
-
-<a id="workspaces"></a>
 
 ## Workspaces
 
@@ -114,8 +106,6 @@ other preferences that have been set in the Preferences dialog.
   loads.
 
 ---
-
-<a id="dialogs"></a>
 
 ## Dialogs
 

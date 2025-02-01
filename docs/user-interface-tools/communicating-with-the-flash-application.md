@@ -1,5 +1,3 @@
-<a id="communicating-with-the-flash-application"></a>
-
 # Communicating with the Flash application
 
 ScriptUI supports a Flash Player, which runs the Flash application within a window in an Adobe
@@ -33,8 +31,6 @@ import flash.external.ExternalInterface;
 
 ---
 
-<a id="calling-actionscript-functions-from-actionscript"></a>
-
 ## Calling ExtendScript functions from ActionScript
 
 The ActionScript `ExternalInterface` class allows you to call an ExtendScript function that has been
@@ -58,8 +54,6 @@ name as a method of the FlashPlayer element, and invokes it with the specified a
 context of the function, the JavaScript this object refers to the `FlashPlayer` object.
 
 ---
-
-<a id="calling-actionscript-functions-from-a-scriptui-script"></a>
 
 ## Calling ActionScript functions from a ScriptUI script
 
@@ -87,8 +81,6 @@ ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArra
 ```
 
 ---
-
-<a id="flash-examples"></a>
 
 ## Flash Examples
 

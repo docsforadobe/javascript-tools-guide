@@ -1,5 +1,3 @@
-<a id="extendscript-overview"></a>
-
 # ExtendScript overview
 
 Adobe provides an extended implementation of JavaScript, called ExtendScript, that is used by many
@@ -10,10 +8,8 @@ features and utilities.
 This document describes JavaScript modules, tools, utilities, and features that are available to all
 JavaScript-enabled Adobe applications.
 
-#### NOTE
-Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
-
-<a id="example-code"></a>
+!!! note
+    Some modules, and features of some modules, are optional. Check the product documentation for each application for details of which modules and features are implemented.
 
 ## Example code
 
@@ -27,8 +23,6 @@ The samples are located under the ExtendScript SDK root directory:
 
 - `SDKroot/Samples/javascript/`: sample scripts
 - `SDKroot/Samples/resources/`: resources, such as image or flash files
-
-<a id="development-and-debugging-tools"></a>
 
 ## Development and debugging tools
 
@@ -45,16 +39,12 @@ ExtendScript also provides global objects that support development and debugging
 
 For complete details, see [ExtendScript Tools and Features](../extendscript-tools-features/index.md#extendscript-tools-and-features).
 
-<a id="cross-platform-file-system-access"></a>
-
 ## Cross-platform file-system access
 
 Adobe ExtendScript defines File and Folder classes that simplify cross-platform file-system access. These
 classes are available to all applications that support a JavaScript interface.
 
 For complete details, see [File System Access](../file-system-access/index.md#file-system-access).
-
-<a id="user-interface-development-tools"></a>
 
 ## User-interface development tools
 
@@ -67,8 +57,6 @@ In addition, ExtendScript provides:
 - Global functions for localization of display strings; see [Localizing ExtendScript strings](../extendscript-tools-features/localizing-extendscript-strings.md#localizing-extendscript-strings)
 - Global functions for displaying short messages in dialog boxes; see [User notification dialogs](../extendscript-tools-features/user-notification-dialogs.md#user-notification-dialogs).
 - An object type for specifying measurement values together with their units; see [Specifying measurement values](../extendscript-tools-features/specifying-measurement-values.md#specifying-measurement-values).
-
-<a id="interapplication-communication-and-messaging"></a>
 
 ## Interapplication communication and messaging
 
@@ -86,16 +74,12 @@ Different levels of communication are provided through the cross-DOM and the mes
 
 For complete details, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
 
-<a id="external-communication"></a>
-
 ## External communication
 
 ExtendScript offers tools for communicating with other computers or the internet using standard
 protocols. The Socket object supports low-level TCP connections.
 
 For complete details, see [External Communication Tools](../external-communication/index.md#external-communication-tools).
-
-<a id="external-shared-library-integration"></a>
 
 ## External shared-library integration
 
@@ -104,8 +88,6 @@ the platform you are using, and loading it into JavaScript as an ExternalObject 
 is implemented by a DLL in Windows, a bundle or framework in Mac OS, or a SharedObject in UNIX.
 
 For complete details, see [Integrating External Libraries](../integrating-external-libraries/index.md#integrating-external-libraries).
-
-<a id="additional-utilities-and-features"></a>
 
 ## Additional utilities and features
 

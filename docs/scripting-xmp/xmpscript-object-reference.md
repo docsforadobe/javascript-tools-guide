@@ -1,5 +1,3 @@
-<a id="xmpscript-object-reference"></a>
-
 # XMPScript object reference
 
 The classes defined for the XMP JavaScript API, with their properties and methods, are listed here in
@@ -24,14 +22,10 @@ After the library has been loaded, these XMP classes are available in the global
 
 ---
 
-<a id="xmpaliasinfo-object"></a>
-
 ## XMPAliasInfo object
 
 This object is returned by XMPMeta.:ref:xmpmeta-resolveAlias. The read-only properties describe an XMP metadata
 alias.
-
-<a id="xmpaliasinfo-object-properties"></a>
 
 ### XMPAliasInfo object properties
 
@@ -42,14 +36,10 @@ alias.
 
 ---
 
-<a id="xmpconst-object"></a>
-
 ## XMPConst object
 
 This object contains the read-only constant definitions for use with the JavaScript XMP API. Some of these
 are listed in the context in which they are used. Longer lists are provided here.
-
-<a id="schema-namespace-string-constants"></a>
 
 ### Schema namespace string constants
 
@@ -83,8 +73,6 @@ Constant values for the namespace URI strings used in all get and set property o
 
 ---
 
-<a id="type-namespace-string-constraints"></a>
-
 ### Type namespace string constants
 
 Constant values for the field-type namespace URI strings used in all structured property operations. See [XMPMeta object](#xmpmeta-object).
@@ -110,8 +98,6 @@ Constant values for the field-type namespace URI strings used in all structured 
 | `TYPE_PDFA_EXTENSION`    | The XML namespaces for PDF subtypes                                                                             |
 
 ---
-
-<a id="file-format-numeric-constants"></a>
 
 ### File format numeric constants
 
@@ -157,14 +143,10 @@ Constant values for supported file types, used in I/O operations. See [XMPFile o
 
 ---
 
-<a id="xmpdatetime-object"></a>
-
 ## XMPDateTime object
 
 This class represents a date and time. Times include a time zone, and can have up to nanosecond
 resolution.
-
-<a id="xmpdatetime-object-constructors"></a>
 
 ### XMPDateTime object constructors
 
@@ -179,8 +161,6 @@ resolution.
 | iso8601Date | A string containing a date-time in ISO 8601 format; for example:<br/>`"2007-04-10T17:54:50+01:00"`                                                                                                                                                                                    |
 
 ---
-
-<a id="xmpdatetime-object-properties"></a>
 
 ### XMPDateTime object properties
 
@@ -201,11 +181,7 @@ allowed range, they are automatically set to the minimum or maximum allowed valu
 
 ---
 
-<a id="xmpdatetime-object-functions"></a>
-
 ### XMPDateTime object functions
-
-<a id="xmpdatetime-compareto"></a>
 
 #### compareTo()
 
@@ -221,8 +197,6 @@ this date-time is earlier than the comparison value.
 
 ---
 
-<a id="xmpdatetime-converttolocaltime"></a>
-
 #### convertToLocalTime()
 
 `XMPDateTimeObj.convertToLocalTime()`
@@ -233,8 +207,6 @@ from the previous time zone, if necessary.
 Returns `undefined`.
 
 ---
-
-<a id="xmpdatetime-converttoutctime"></a>
 
 #### convertToUTCTime()
 
@@ -247,8 +219,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpdatetime-getdate"></a>
-
 #### getDate()
 
 `XMPDateTimeObj.getDate()`
@@ -260,8 +230,6 @@ Returns a JavaScript `Date` object.
 
 ---
 
-<a id="xmpdatetime-setlocaltimezone"></a>
-
 #### setLocalTimeZone()
 
 `XMPDateTimeObj.setLocalTimeZone()`
@@ -272,8 +240,6 @@ Does not affect other fields.
 Returns `undefined`.
 
 ---
-
-<a id="xmpfile-object"></a>
 
 ## XMPFile object
 
@@ -287,14 +253,12 @@ provides more limited accesses to all file formats by performing a dump file sca
 cannot extend the packet or reconcile other metadata formats.
 The XMPScript API does not currently support retrieving thumbnails.
 
-#### NOTE
-You can also use the Adobe Bridge `Metadata` object to access embedded metadata in files. It
+!!! note
+    You can also use the Adobe Bridge `Metadata` object to access embedded metadata in files. It
 supports thumbnails and previews, and additional file formats such as PDF and Camera Raw. For details,
 see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 
 ---
-
-<a id="xmpfile-object-constructors"></a>
 
 ### XMPFile object constructors
 
@@ -307,8 +271,6 @@ see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 
 ---
 
-<a id="xmpfile-class-properties"></a>
-
 ### XMPFile class properties
 
 This property is available as a static property of the XMPFile class. It is not necessary to create an instance
@@ -319,14 +281,10 @@ to access it.
 
 ---
 
-<a id="xmpfile-class-functions"></a>
-
 ### XMPFile class functions
 
 This function is available as a static method of the XMPFile class. It is not necessary to create an instance to
 call it.
-
-<a id="xmpfile-getformatinfo"></a>
 
 #### getFormatInfo()
 
@@ -354,11 +312,7 @@ Returns a logical OR of bit-flag constants, or 0 if the format is not handled. C
 
 ---
 
-<a id="xmpfile-object-functions"></a>
-
 ### XMPFile object functions
-
-<a id="xmpfile-canputxmp"></a>
 
 #### canPutXMP()
 
@@ -381,8 +335,6 @@ Returns `true` if the given XMP can be put into this file.
 
 ---
 
-<a id="xmpfile-closefile"></a>
-
 #### closeFile()
 
 `XMPFileObj.closeFile(closeFlags)`
@@ -399,8 +351,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpfile-getxmp"></a>
-
 #### getXMP()
 
 `XMPFileObj.getXMP()`
@@ -414,8 +364,6 @@ metadata.
 
 ---
 
-<a id="xmpfile-getpacketinfo"></a>
-
 #### getPacketInfo()
 
 `XMPFileObj.getPacketInfo()`
@@ -428,8 +376,6 @@ Returns an [XMPPacketInfo object](#xmppacketinfo-object), or `null` if the files
 
 ---
 
-<a id="xmpfile-getfileinfo"></a>
-
 #### getFileInfo()
 
 `XMPFileObj.getFileInfo()`
@@ -439,8 +385,6 @@ Retrieves basic information about this file.
 Returns an [XMPFileInfo object](#xmpfileinfo-object).
 
 ---
-
-<a id="xmpfile-putxmp"></a>
 
 #### putXMP()
 
@@ -462,20 +406,16 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpfileinfo-object"></a>
-
 ## XMPFileInfo object
 
 This object is returned by XMPFile.:ref:xmpfile-getFileInfo. The read-only properties describe the file represented by
 the [XMPFile object](#xmpfile-object).
 
-#### NOTE
-This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
+!!! note
+    This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
 display metadata.
 
 ---
-
-<a id="xmpfileinfo-object-properties"></a>
 
 ### XMPFileInfo object properties
 
@@ -487,8 +427,6 @@ display metadata.
 
 ---
 
-<a id="xmpiterator-object"></a>
-
 ## XMPIterator object
 
 Created by a call to XMPMeta.:ref:xmpmeta-iterator. Walks recursively through the properties and qualifiers of an
@@ -498,11 +436,7 @@ The object has no JavaScript properties.
 
 ---
 
-<a id="xmpiterator-object-functions"></a>
-
 ### XMPIterator object functions
-
-<a id="xmpiterator-next"></a>
 
 #### next()
 
@@ -514,8 +448,6 @@ Returns an [XMPProperty object](#xmpproperty-object), or null if there are no mo
 
 ---
 
-<a id="xmpiterator-skipsiblings"></a>
-
 #### skipSiblings()
 
 `XMPIteratorObj.skipSiblings ( )`
@@ -526,8 +458,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpiterator-skipsubtree"></a>
-
 #### skipSubtree()
 
 `XMPIteratorObj.skipSubtree ( )`
@@ -537,8 +467,6 @@ Skips the subtree below the current node on the subsequent call to [next()](#xmp
 Returns `undefined`.
 
 ---
-
-<a id="xmpmeta-object"></a>
 
 ## XMPMeta object
 
@@ -555,8 +483,6 @@ of properties, when used with appropriately composed path expressions. For conve
 provides more specific functions for use with specific types of properties, such as arrays.
 
 ---
-
-<a id="xmpmeta-object-constructors"></a>
 
 ### XMPMeta object constructors
 
@@ -580,8 +506,6 @@ new XMPMeta ( buffer );
 
 ---
 
-<a id="xmpmeta-class-properties"></a>
-
 ### XMPMeta class properties
 
 The `XMPMeta` class provides this static property. It is not necessary to create an instance to access it.
@@ -591,13 +515,9 @@ The `XMPMeta` class provides this static property. It is not necessary to create
 
 ---
 
-<a id="xmpmeta-class-functions"></a>
-
 ### XMPMeta class functions
 
 The `XMPMeta` class provides these static functions. It is not necessary to create an instance to call them.
-
-<a id="xmpmeta-deletealias"></a>
 
 #### deleteAlias()
 
@@ -610,14 +530,12 @@ The `XMPMeta` class provides these static functions. It is not necessary to crea
 Deletes the specified alias; does not delete the aliased property.
 If the alias does not exist, does nothing.
 
-#### NOTE
-Not yet implemented in the XMP Toolkit.
+!!! note
+    Not yet implemented in the XMP Toolkit.
 
 Returns `undefined`.
 
 ---
-
-<a id="xmpmeta-deletenamespace"></a>
 
 #### deleteNamespace()
 
@@ -628,14 +546,12 @@ Returns `undefined`.
 
 Deletes a registered prefix - namespace URI pair.
 
-#### NOTE
-Not yet implemented in the XMP Toolkit.
+!!! note
+    Not yet implemented in the XMP Toolkit.
 
 Returns `undefined`.
 
 ---
-
-<a id="xmpmeta-dumpaliases"></a>
 
 #### dumpAliases()
 
@@ -648,8 +564,6 @@ Returns a String.
 
 ---
 
-<a id="xmpmeta-dumpnamespaces"></a>
-
 #### dumpNamespaces()
 
 `XMPMeta.dumpNamespaces ( )`
@@ -660,8 +574,6 @@ their associated prefixes.
 Returns a String.
 
 ---
-
-<a id="xmpmeta-getnamespaceprefix"></a>
 
 #### getNamespacePrefix()
 
@@ -676,8 +588,6 @@ Returns the prefix string followed by a colon.
 
 ---
 
-<a id="xmpmeta-getnamespaceuri"></a>
-
 #### getNamespaceURI()
 
 `XMPMeta.getNamespaceURI (namespacePrefix)`
@@ -690,8 +600,6 @@ Retrieves the registered namespace URI associated with a namespace prefix.
 Returns the URI String.
 
 ---
-
-<a id="xmpmeta-registeralias"></a>
 
 #### registerAlias()
 
@@ -714,8 +622,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmeta-registernamespace"></a>
-
 #### registerNamespace()
 
 `XMPMeta.registerNamespace (namespaceURI, suggestedPrefix)`
@@ -732,8 +638,6 @@ one is already assigned to another namespace.
 
 ---
 
-<a id="xmpmeta-resolvealias"></a>
-
 #### resolveAlias()
 
 `XMPMeta.resolveAlias (aliasNS, aliasProp)`
@@ -748,11 +652,7 @@ Returns an [XMPAliasInfo object](#xmpaliasinfo-object).
 
 ---
 
-<a id="xmpmeta-object-functions"></a>
-
 ### XMPMeta object functions
-
-<a id="xmpmetaobj-appendarrayitem"></a>
 
 #### appendArrayItem()
 
@@ -772,8 +672,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-countarrayitems"></a>
-
 #### countArrayItems()
 
 `XMPMetaObj.countArrayItems(schemaNS, arrayName)`
@@ -787,8 +685,6 @@ Reports the number of items in an array-type metadata property.
 Returns the number of items.
 
 ---
-
-<a id="xmpmetaobj-deletearrayitem"></a>
 
 #### deleteArrayItem()
 
@@ -805,8 +701,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-deleteproperty"></a>
-
 #### deleteProperty()
 
 `XMPMetaObj.deleteProperty(schemaNS, propName)`
@@ -821,8 +715,6 @@ nothing.
 Returns `undefined`.
 
 ---
-
-<a id="xmpmetaobj-deletestructfield"></a>
 
 #### deleteStructField()
 
@@ -839,8 +731,6 @@ Deletes the metadata tree that has the given structure field as its root.
 Returns `undefined`.
 
 ---
-
-<a id="xmpmetaobj-deletequalifier"></a>
 
 #### deleteQualifier()
 
@@ -859,8 +749,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-doesarrayitemexist"></a>
-
 #### doesArrayItemExist()
 
 `XMPMetaObj.doesArrayItemExist(schemaNS, arrayName, itemIndex)`
@@ -877,8 +765,6 @@ Returns `true` if the array and item exist.
 
 ---
 
-<a id="xmpmetaobj-doespropertyexist"></a>
-
 #### doesPropertyExist()
 
 `XMPMetaObj.doesPropertyExist(schemaNS, propName)`
@@ -892,8 +778,6 @@ Reports whether a property with a given name currently exists in the metadata.
 Returns `true` if the property exists.
 
 ---
-
-<a id="xmpmetaobj-doesstructfieldexist"></a>
 
 #### doesStructFieldExist()
 
@@ -911,8 +795,6 @@ Returns `true` if the structure and field exist.
 
 ---
 
-<a id="xmpmetaobj-doesqualifierexist"></a>
-
 #### doesQualifierExist()
 
 `XMPMetaObj.doesQualifierExist(schemaNS, structName, qualNS, qualName)`
@@ -929,8 +811,6 @@ Returns `true` if the property and qualifier exist.
 
 ---
 
-<a id="xmpmetaobj-dumpobject"></a>
-
 #### dumpObject()
 
 `XMPMetaObj.dumpObject ( )`
@@ -940,8 +820,6 @@ Creates and returns a string containing the metadata content of this object as R
 Returns a String.
 
 ---
-
-<a id="xmpmetaobj-getarrayitem"></a>
 
 #### getArrayItem()
 
@@ -957,8 +835,6 @@ Retrieves an item from an array-type metadata property.
 Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the property is not found.
 
 ---
-
-<a id="xmpmetaobj-getlocalizedtext"></a>
 
 #### getLocalizedText()
 
@@ -978,8 +854,6 @@ Returns a String, or `undefined` if no matching value is not found.
 
 ---
 
-<a id="xmpmetaobj-getproperty"></a>
-
 #### getProperty()
 
 `XMPMetaObj.getProperty(schemaNS, propName[, valueType])`
@@ -995,8 +869,6 @@ using the path-composition functions in the XMPUtils object.
 Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the property is not found.
 
 ---
-
-<a id="xmpmetaobj-getstructfield"></a>
 
 #### getStructField()
 
@@ -1014,8 +886,6 @@ Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the prop
 
 ---
 
-<a id="xmpmetaobj-getqualifier"></a>
-
 #### getQualifier()
 
 `XMPMetaObj.getQualifier(schemaNS, structName, qualNS, qualName)`
@@ -1031,8 +901,6 @@ Retrieves a qualifier attached to a metadata property.
 Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the property is not found.
 
 ---
-
-<a id="xmpmetaobj-insertarrayitem"></a>
 
 #### insertArrayItem()
 
@@ -1052,8 +920,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-iterator"></a>
-
 #### iterator()
 
 `XMPMetaObj.iterator(options, schemaNS, propName)`
@@ -1071,8 +937,6 @@ Returns an [XMPIterator object](#xmpiterator-object) for this metadata object.
 
 ---
 
-<a id="xmpmetaobj-serialize"></a>
-
 #### serialize()
 
 `XMPMetaObj.serialize([options, padding, indent, newline, baseIndent])`
@@ -1089,8 +953,6 @@ Serializes this XMP metadata into a string as RDF.
 Returns a String.
 
 ---
-
-<a id="xmpmetaobj-serializetoarray"></a>
 
 #### serializeToArray()
 
@@ -1110,8 +972,6 @@ Returns an Array of Numbers.
 
 ---
 
-<a id="xmpmetaobj-setarrayitem"></a>
-
 #### setArrayItem()
 
 `XMPMetaObj.setArrayItem(schemaNS, arrayName, itemIndex, itemValue[, itemOptions])`
@@ -1129,8 +989,6 @@ Replaces an item within an array, or appends an item. The array must exist. To c
 Returns `undefined`.
 
 ---
-
-<a id="xmpmetaobj-setlocalizedtext"></a>
 
 #### setLocalizedText()
 
@@ -1150,8 +1008,6 @@ x-default item.
 Returns `undefined`.
 
 ---
-
-<a id="xmpmetaobj-setstructfield"></a>
 
 #### setStructField()
 
@@ -1173,8 +1029,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-setqualifier"></a>
-
 #### setQualifier()
 
 `XMPMetaObj.setQualifier(schemaNS, propName, qualNS, qualName, qualValue[, options])`
@@ -1193,8 +1047,6 @@ array item, a struct field, or another qualifier.
 Returns `undefined`.
 
 ---
-
-<a id="xmpmetaobj-setproperty"></a>
 
 #### setProperty()
 
@@ -1216,8 +1068,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xmpmetaobj-sort"></a>
-
 #### sort()
 
 `XMPMetaObj.sort ( )`
@@ -1235,16 +1085,12 @@ Returns `undefined`.
 
 ---
 
-<a id="xmppacketinfo-object"></a>
-
 ## XMPPacketInfo object
 
 This object is returned by XMPFile.:ref:xmpfile-getpacketinfo. The read-only properties describe the XMP packet for
 the file represented by the [XMPFile object](#xmpfile-object).
 
 ---
-
-<a id="xmppacketinfo-object-properties"></a>
 
 ### XMPPacketInfo object properties
 
@@ -1258,16 +1104,12 @@ the file represented by the [XMPFile object](#xmpfile-object).
 
 ---
 
-<a id="xmpproperty-object"></a>
-
 ## XMPProperty object
 
 This object is returned by various property accessor functions of the [XMPMeta object](#xmpmeta-object), such as
 :xmpmetaobj-getProperty. The read-only properties describe a metadata property.
 
 ---
-
-<a id="xmpproperty-object-properties"></a>
 
 ### XMPProperty object properties
 
@@ -1279,8 +1121,6 @@ This object is returned by various property accessor functions of the [XMPMeta o
 | value     | Variant  | The value of the property, if any. Arrays and non-leaf levels of structures do not<br/>have values.                                                                                                                                                               |
 
 ---
-
-<a id="xmputils-object"></a>
 
 ## XMPUtils object
 
@@ -1297,8 +1137,6 @@ XMPMeta object.
 ---
 
 ### XMPUtils class functions
-
-<a id="xmputils-appendproperties"></a>
 
 #### appendProperties()
 
@@ -1317,8 +1155,6 @@ object.
 Returns `undefined`.
 
 ---
-
-<a id="xmputils-catenatearrayitems"></a>
 
 #### catenateArrayItems()
 
@@ -1341,8 +1177,6 @@ Returns the concatenated String.
 
 ---
 
-<a id="xmputils-composearrayitempath"></a>
-
 #### composeArrayItemPath()
 
 `XMPUtils.composeArrayItemPath(schemaNS, arrayName, itemIndex)`
@@ -1362,8 +1196,6 @@ schemaNS:arrayName[itemIndex]
 Returns a String.
 
 ---
-
-<a id="xmputils-composefieldselector"></a>
 
 #### composeFieldSelector()
 
@@ -1387,8 +1219,6 @@ Returns a String.
 
 ---
 
-<a id="xmputils-composelanguageselector"></a>
-
 #### composeLanguageSelector()
 
 `XMPUtils.composeLanguageSelector(schemaNS, arrayName, locale)`
@@ -1407,15 +1237,13 @@ schemaNS:arrayName[@xml:lang='langName']
 
 Returns a String.
 
-#### NOTE
-Do not use this in place of getLocalizedText() or setLocalizedText().
+!!! note
+    Do not use this in place of getLocalizedText() or setLocalizedText().
 Those functions provide
 extra logic to choose the appropriate language and maintain consistency with the x-default value.
 This function provides a path expression for an explicit language, and only for that language.
 
 ---
-
-<a id="xmputils-composestructfieldpath"></a>
 
 #### composeStructFieldPath()
 
@@ -1440,8 +1268,6 @@ Returns a String.
 
 ---
 
-<a id="xmputils-composequalifierpath"></a>
-
 #### composeQualifierPath()
 
 `XMPUtils.composeQualifierPath(schemaNS, propName, qualNS, qualName)`
@@ -1463,8 +1289,6 @@ Returns a String.
 
 ---
 
-<a id="xmputils-duplicatesubtree"></a>
-
 #### duplicateSubtree()
 
 `XMPUtils.duplicateSubtree(source, dest, sourceNS, sourceRoot, destNS, destRoot, options)`
@@ -1484,8 +1308,6 @@ destination [XMPMeta object](#xmpmeta-object).
 Returns `undefined`.
 
 ---
-
-<a id="xmputils-removeproperties"></a>
 
 #### removeProperties()
 
@@ -1514,8 +1336,6 @@ actual is removed.
 Returns `undefined`.
 
 ---
-
-<a id="xmputils-separatearrayitems"></a>
 
 #### separateArrayItems()
 

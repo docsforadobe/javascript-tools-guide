@@ -1,5 +1,3 @@
-<a id="introduction"></a>
-
 # Introduction
 
 JavaScript is a platform-independent scripting language that you can use to control many features and

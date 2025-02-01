@@ -1,5 +1,3 @@
-<a id="scriptui-programming-model"></a>
-
 # ScriptUI programming model
 
 ScriptUI defines `Window` objects that represent platform-specific windows, and various control elements
@@ -8,8 +6,6 @@ of properties and methods that allow you to query the type, move the element aro
 caption or content, and so on. Many element types also have properties unique to that class of elements.
 
 ---
-
-<a id="creating-a-window"></a>
 
 ## Creating a window
 
@@ -46,8 +42,6 @@ dlg.show();
 
 ---
 
-<a id="container-elements"></a>
-
 ## Container elements
 
 All Windows are containers-that is, they contain other elements within their bounds. Within a Window, you
@@ -73,8 +67,6 @@ You can add elements to any container using the add method (see [Adding elements
 container apply to its children; for example, when you hide a container, its children are also hidden.
 
 ---
-
-<a id="window-layout"></a>
 
 ## Window layout
 
@@ -134,8 +126,6 @@ the `Window.frameBounds` property.
 
 ---
 
-<a id="adding-elements-to-containers"></a>
-
 ## Adding elements to containers
 
 To add elements to a `window`, `panel`, or `group`, use the container’s `add` method. This method accepts the
@@ -172,8 +162,6 @@ A new element is initially set to be visible, but is not shown unless its parent
 
 ---
 
-<a id="creation-properties"></a>
-
 ### Creation properties
 
 Some element types have attributes that can only be specified when the element is created. These are not
@@ -193,8 +181,8 @@ identifying that element. For example, the following creates a new Button elemen
 dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
 ```
 
-#### NOTE
-In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
+!!! note
+    In Photoshop CS, panel coordinates were measured from outside the frame (including the title bar),
 but in Photoshop CS2, panel coordinates are measured from the inside the frame (the content area). This
 means that if you use the same values to set the vertical positions of child controls in a panel, the positions
 are slightly different in the two versions. When you add a panel to a window, you can choose to set a
@@ -205,8 +193,6 @@ CS5, or CC. You can also set automatic adjustment for a window; in this case, it
 that window unless it is explicitly disabled in the child panel. See Window object constructor.
 
 ---
-
-<a id="accessing-child-elements"></a>
 
 ### Accessing child elements
 
@@ -242,8 +228,6 @@ For list controls (type `list` and `dropdown`), you can access the child list-it
 array.
 
 ---
-
-<a id="removing-elements"></a>
 
 ## Removing elements
 

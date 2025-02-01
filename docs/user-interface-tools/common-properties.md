@@ -1,5 +1,3 @@
-<a id="common-properties"></a>
-
 # Common properties
 
 All types of user-interface elements, including windows, containers, and controls, share many of the same

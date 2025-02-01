@@ -1,5 +1,3 @@
-<a id="user-interface-tools"></a>
-
 # User-Interface Tools
 
 Adobe provides the ScriptUI component, which works with the ExtendScript JavaScript interpreter to

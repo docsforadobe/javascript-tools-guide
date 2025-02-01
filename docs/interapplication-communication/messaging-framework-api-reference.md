@@ -1,5 +1,3 @@
-<a id="messaging-framework-api-reference"></a>
-
 # Messaging framework API reference
 
 This application programming interface (API) defines a communication protocol between

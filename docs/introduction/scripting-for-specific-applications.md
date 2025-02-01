@@ -1,5 +1,3 @@
-<a id="scripting-for-specific-applications"></a>
-
 # Scripting for specific applications
 
 On startup, all Adobe JavaScript-enabled applications execute JSX files that they find in their startup
@@ -10,8 +8,6 @@ may be configurable. Some applications allow access to scripts from menus; all o
 and run scripts using the ExtendScript Toolkit.
 For details of how to load and run scripts for any individual application, see the JavaScript Scripting Guide
 for that application.
-
-<a id="startup-scripts"></a>
 
 ## Startup scripts
 
@@ -39,8 +35,6 @@ if ( BridgeTalk.appName == "bridge-2.0" ) {
 ```
 
 For details of interapplication communication, see [Interapplication Communication with Scripts](../interapplication-communication/index.md#interapplication-communication-with-scripts).
-
-<a id="javascript-variables"></a>
 
 ## JavaScript variables
 

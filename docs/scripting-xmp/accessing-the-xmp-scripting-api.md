@@ -1,5 +1,3 @@
-<a id="accessing-the-xmp-scripting-api"></a>
-
 # Accessing the XMP scripting API
 
 To use the XMP objects, you must load the XMP library as an ExtendScript ExternalObject. To avoid
@@ -28,8 +26,6 @@ See [XMPScript object reference](xmpscript-object-reference.md#xmpscript-object-
 methods.
 
 ---
-
-<a id="using-the-xmp-scripting-api"></a>
 
 ## Using the XMP scripting API
 
@@ -78,12 +74,10 @@ In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` objec
   xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
   ```
 
-#### NOTE
-The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
+!!! note
+    The `XMPFile` object does not support all of the file formats that Adobe Bridge supports.
 
 ---
-
-<a id="creating-new-metadata"></a>
 
 ### Creating new metadata
 
@@ -104,8 +98,6 @@ $.writeln( "namespace: " + prop.namespace + "\n" +
 
 ---
 
-<a id="modifying-existing-metadata"></a>
-
 ### Modifying existing metadata
 
 This code accesses an existing XMP packet, assuming the location has been assigned to a string variable. It
@@ -124,8 +116,6 @@ xmpStr = xmp.serialize( XMPConst.SERIALIZE_USE_COMPACT_FORMAT );
 ```
 
 ---
-
-<a id="using-xmpfile-for-batch-processing"></a>
 
 ### Using XMPFile for batch processing
 
@@ -172,8 +162,6 @@ for ( var i = 0; i < pics.length; i++ ) {
 ```
 
 ---
-
-<a id="integrating-xmpscript-with-adobe-bridge"></a>
 
 ### Integrating XMPScript with Adobe Bridge
 

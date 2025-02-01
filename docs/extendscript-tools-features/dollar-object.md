@@ -1,5 +1,3 @@
-<a id="dollar-object"></a>
-
 # Dollar ($) object
 
 This global ExtendScript object provides a number of debugging facilities and informational methods. The
@@ -8,11 +6,7 @@ set flags that control debugging and localization behavior. The methods allow yo
 JavaScript Console during script execution, control execution and other ExtendScript behavior
 programmatically, and gather statistics on object use.
 
-<a id="dollar-object-properties"></a>
-
 ## Dollar ($) object properties
-
-<a id="dollar-appencoding"></a>
 
 ### appEncoding
 
@@ -28,8 +22,6 @@ the returned value is the synonymous “ISO-8859-1”.
 
 ---
 
-<a id="dollar-build"></a>
-
 ### build
 
 `String`
@@ -40,8 +32,6 @@ Read only.
 
 ---
 
-<a id="dollar-builddate"></a>
-
 ### buildDate
 
 `Date`
@@ -51,8 +41,6 @@ The date the current JavaScript engine was built.
 Read only.
 
 ---
-
-<a id="dollar-decimalpoint"></a>
 
 ### decimalPoint
 
@@ -65,8 +53,6 @@ Read only.
 
 ---
 
-<a id="dollar-enginename"></a>
-
 ### engineName
 
 `String`
@@ -76,8 +62,6 @@ The name of the current JavaScript engine, if set.
 Read only.
 
 ---
-
-<a id="dollar-error"></a>
 
 ### error
 
@@ -92,8 +76,6 @@ the preferred way to generate a run-time error is to throw an Error object.
 
 ---
 
-<a id="dollar-filename"></a>
-
 ### fileName
 
 `String`
@@ -103,8 +85,6 @@ The file name of the current script.
 Read only.
 
 ---
-
-<a id="dollar-flags"></a>
 
 ### flags
 
@@ -126,12 +106,10 @@ bit flag values:
 - `0x0200` (512): Enables the localization feature of the toString
   method. Equivalent to the localize property.
 
-#### NOTE
-Other bit values are not public and should not be used.
+!!! note
+    Other bit values are not public and should not be used.
 
 ---
-
-<a id="dollar-global"></a>
 
 ### global
 
@@ -141,8 +119,6 @@ Provides access to the Global object, which contains the JavaScript global
 namespace.
 
 ---
-
-<a id="dollar-hirestimer"></a>
 
 ### hiresTimer
 
@@ -158,8 +134,6 @@ Read only.
 
 ---
 
-<a id="dollar-includepath"></a>
-
 ### includePath
 
 `String`
@@ -169,8 +143,6 @@ The path for include files for the current script.
 Read only.
 
 ---
-
-<a id="dollar-level"></a>
 
 ### level
 
@@ -187,8 +159,6 @@ Read only.
 
 ---
 
-<a id="dollar-line"></a>
-
 ### line
 
 `Number`
@@ -198,8 +168,6 @@ The current line of the currently executing script; the first line is number 1.
 Read only.
 
 ---
-
-<a id="dollar-locale"></a>
 
 ### locale
 
@@ -216,8 +184,6 @@ empty string.
 
 ---
 
-<a id="dollar-localize"></a>
-
 ### localize
 
 `Boolean`
@@ -227,8 +193,6 @@ toString method. See Localizing ExtendScript strings.
 
 ---
 
-<a id="dollar-memcache"></a>
-
 ### memCache
 
 `Number`
@@ -236,8 +200,6 @@ toString method. See Localizing ExtendScript strings.
 Gets or sets the ExtendScript memory cache size in bytes.
 
 ---
-
-<a id="dollar-os"></a>
 
 ### os
 
@@ -248,8 +210,6 @@ The current operating system version information.
 Read only.
 
 ---
-
-<a id="dollar-screens"></a>
 
 ### screens
 
@@ -266,8 +226,6 @@ A property primary is true if that object describes the primary display.
 
 ---
 
-<a id="dollar-stack"></a>
-
 ### stack
 
 `String`
@@ -275,8 +233,6 @@ A property primary is true if that object describes the primary display.
 The current stack trace.
 
 ---
-
-<a id="dollar-strict"></a>
 
 ### strict
 
@@ -287,8 +243,6 @@ error. Some objects do not permit the creation of new properties when
 true.
 
 ---
-
-<a id="dollar-version"></a>
 
 ### version
 
@@ -301,11 +255,7 @@ Read only.
 
 ---
 
-<a id="dollar-object-functions"></a>
-
 ## Dollar ($) object functions
-
-<a id="dollar-about"></a>
 
 ### about()
 
@@ -317,8 +267,6 @@ box as a string.
 returns: `String`
 
 ---
-
-<a id="dollar-bp"></a>
 
 ### bp()
 
@@ -336,8 +284,6 @@ returns: `undefined`
 
 ---
 
-<a id="dollar-colorpicker"></a>
-
 ### colorPicker()
 
 `$.colorPicker(name)`
@@ -351,8 +297,6 @@ hexadecimal RGB value: `0xRRGGBB`.
 Returns: `Number`
 
 ---
-
-<a id="dollar-evalfile"></a>
 
 ### evalFile()
 
@@ -368,8 +312,6 @@ Returns: Any type
 
 ---
 
-<a id="dollar-gc"></a>
-
 ### gc()
 
 `$.gc()`
@@ -379,8 +321,6 @@ Initiates garbage collection in the JavaScript engine.
 Returns: `undefined`
 
 ---
-
-<a id="dollar-getenv"></a>
 
 ### getenv()
 
@@ -392,8 +332,8 @@ Returns: `undefined`
 Retrieves the value of the specified environment variable, or null if no such variable is
 defined.
 
-#### NOTE
-On MacOS the only env vars that will be accessible are:
+!!! note
+    On MacOS the only env vars that will be accessible are:
 
 - System default environment variables
 - Custom environment variables created by the `$.setenv()` method
@@ -404,8 +344,6 @@ Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be
 Returns: `String`
 
 ---
-
-<a id="dollar-setenv"></a>
 
 ### setenv()
 
@@ -420,8 +358,6 @@ Sets the value of the specified environment variable, if no such variable is def
 Returns: `undefined`
 
 ---
-
-<a id="dollar-sleep"></a>
 
 ### sleep()
 
@@ -440,8 +376,6 @@ Returns: `undefined`
 
 ---
 
-<a id="dollar-write"></a>
-
 ### write()
 
 `$.write(text[, text...]...)`
@@ -454,8 +388,6 @@ Writes the specified text to the JavaScript Console.
 Returns: `undefined`
 
 ---
-
-<a id="dollar-writeln"></a>
 
 ### writeln()
 

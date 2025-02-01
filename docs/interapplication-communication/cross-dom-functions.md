@@ -1,5 +1,3 @@
-<a id="cross-dom-functions"></a>
-
 # Cross-DOM functions
 
 The cross-DOM is a small application programming interface (API), which provides a set of functions that
@@ -26,8 +24,6 @@ specifically demonstrate the use of cross-DOM functions:
 
 ---
 
-<a id="application-specific-exported-functions"></a>
-
 ## Application-specific exported functions
 
 In addition to the required base cross-DOM functions, each message-enabled application can provide
@@ -48,8 +44,6 @@ number of the installed application. See [Startup folder locations](#startup-fol
 
 ---
 
-<a id="startup-folder-locations"></a>
-
 ## Startup folder locations
 
 For each platform, there is a startup folder shared by all Adobe Creative Suite 4 applications that support
@@ -60,12 +54,10 @@ JavaScript, and an application-specific startup folder.
 - In Mac OS®, the installation startup folders are:
   `/Library/Application Support/Adobe/Startup Scripts CS5/Adobe AppName/`
 
-#### NOTE
-This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md#scripting-for-specific-applications).
+!!! note
+    This is not the location in which to store your own startup scripts; see [Scripting for specific applications](../introduction/scripting-for-specific-applications.md#scripting-for-specific-applications).
 
 ---
-
-<a id="cross-dom-api-reference"></a>
 
 ## Cross-DOM API reference
 
@@ -87,15 +79,11 @@ photoshop.executeScript (myPSScript)
 
 ---
 
-<a id="cross-dom-api-functions"></a>
-
 ## Cross-DOM Functions
 
 All message-enabled applications implement the following cross-DOM functions:
 
 ---
-
-<a id="cross-dom-api-functions-executescript"></a>
 
 ### executeScript()
 
@@ -111,8 +99,6 @@ Returns `undefined`.
 
 ---
 
-<a id="cross-dom-api-functions-open"></a>
-
 ### open()
 
 `appspec.open(files)`
@@ -125,8 +111,6 @@ Performs the equivalent of the target application’s File > Open command on the
 Returns `undefined`.
 
 ---
-
-<a id="cross-dom-api-functions-openasnew"></a>
 
 ### openAsNew()
 
@@ -141,8 +125,6 @@ Returns `true` on success.
 
 ---
 
-<a id="cross-dom-api-functions-print"></a>
-
 ### print()
 
 `appspec.print(files)`
@@ -156,23 +138,19 @@ Returns `undefined`.
 
 ---
 
-<a id="cross-dom-api-functions-quit"></a>
-
 ### quit()
 
 `appspec.quit()`
 
 Performs the equivalent of the target application’s File > Exit or File > Close command.
 
-#### NOTE
-This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the
+!!! note
+    This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the
 application.
 
 Returns `undefined`.
 
 ---
-
-<a id="cross-dom-api-functions-reveal"></a>
 
 ### reveal()
 

@@ -1,5 +1,3 @@
-<a id="communicating-through-messages"></a>
-
 # Communicating through messages
 
 Adobe Bridge provides an application programming interface (API) that defines a communication
@@ -17,8 +15,6 @@ The messaging API defines the BridgeTalk class, whose globally available static 
 provide access to environmental information relevant for communication between applications. You can
 instantiate this class to create a BridgeTalk message object, which encapsulates a message and allows you
 to send it to another application. For details of these objects, see [Messaging framework API reference](messaging-framework-api-reference.md#messaging-framework-api-reference).
-
-<a id="sending-messages"></a>
 
 ## Sending messages
 
@@ -76,8 +72,8 @@ If you want to handle a response for this message, or use the data that is retur
 evaluation, you must set up the response-handling mechanism before you send the message. You do this
 by defining the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback in the message object.
 
-#### NOTE
-The message callbacks are optional, and are not implemented by all message-enabled applications.
+!!! note
+    The message callbacks are optional, and are not implemented by all message-enabled applications.
 The response to a message is, by default, the result of evaluation of the script contained in that message’s
 body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
 
@@ -98,8 +94,8 @@ If you want to handle errors that might arise during script processing, you can 
 the message object. Similarly, you can define a [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) value and [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback to handle the case
 where the target cannot process the message within a given time. For more information, see [Handling responses from the message target](#handling-responses-from-the-message-target).
 
-#### NOTE
-If you define callbacks to handle a response, you must store the message in a variable that still exists
+!!! note
+    If you define callbacks to handle a response, you must store the message in a variable that still exists
 when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the
 response would be lost.
 
@@ -151,8 +147,6 @@ if( targetApp ) {
 
 ---
 
-<a id="receiving-messages"></a>
-
 ## Receiving messages
 
 An application can be the target of a message; that is, it receives an unsolicited message from another
@@ -172,8 +166,6 @@ All of these response messages are sent automatically by the target application,
 callbacks defined in the sending message object. For details, see [Handling responses from the message target](#handling-responses-from-the-message-target).
 
 ---
-
-<a id="handling-unsolicited-messages"></a>
 
 ## Handling unsolicited messages
 
@@ -243,16 +235,14 @@ BridgeTalk.onReceive = function (message) {
 
 ---
 
-<a id="handling-responses-from-the-message-target"></a>
-
 ## Handling responses from the message target
 
 To handle responses to a message you have sent, you define callback handler functions in the message
 object itself. The target application cannot send a response message back to the sender unless the
 message object it received has the appropriate callback defined.
 
-#### NOTE
-The message callbacks are optional, and are not implemented by all message-enabled applications.
+!!! note
+    The message callbacks are optional, and are not implemented by all message-enabled applications.
 
 When your message is received by its target, the target application’s static BridgeTalk object’s onReceive
 method processes that message, and can invoke one of the message object’s callbacks to return a
@@ -430,8 +420,6 @@ bt.send();
 ```
 
 ---
-
-<a id="passing-values-between-applications"></a>
 
 ## Passing values between applications
 

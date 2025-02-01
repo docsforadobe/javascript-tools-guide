@@ -1,5 +1,3 @@
-<a id="size-and-location-objects"></a>
-
 # Size and location objects
 
 ScriptUI defines objects to represent the complex values of properties that place and size windows and
@@ -33,14 +31,10 @@ with the properties supported for the type.
 
 ---
 
-<a id="size-and-location-object-types"></a>
-
 ## Size and location object types
 
 The following table shows the property-value object types, the element properties that create and contain
 them, and their array and object-property formats.
-
-<a id="bounds"></a>
 
 ### Bounds
 
@@ -56,8 +50,6 @@ returns a `Bounds` object.
   or `x`, `y`, `width`, `height`.
 - An array must have values in the order [left, top, right, bottom].
 
-<a id="dimension"></a>
-
 ### Dimension
 
 Defines the size of a Window or user-interface element. Contains an array, `[ width, height ]`,
@@ -68,8 +60,6 @@ property. (A `preferredSize` of -1 causes the size to be calculated automaticall
 
 - An object must contain properties named `width` and `height`.
 - An array must have values in the order `[ width, height ]`.
-
-<a id="margins"></a>
 
 ### Margins
 
@@ -84,8 +74,6 @@ A `Margins` object is created when you set an element’s `margins` property.
 
 You can also set the margins property to a number; all of the array values are then set to
 this number.
-
-<a id="point"></a>
 
 ### Point
 

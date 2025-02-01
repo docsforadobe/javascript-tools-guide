@@ -1,5 +1,3 @@
-<a id="file-access-error-messages"></a>
-
 # File access error messages
 
 The following messages can be returned in the error property.

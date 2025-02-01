@@ -1,5 +1,3 @@
-<a id="integrating-external-libraries"></a>
-
 # Integrating External Libraries
 
 You can extend the JavaScript DOM for an application by writing a C or C++ shared library, compiling it for

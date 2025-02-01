@@ -1,5 +1,3 @@
-<a id="inspecting-object-models"></a>
-
 # Inspecting object models
 
 The ExtendScript Toolkit offers the ability to inspect the object model of any loaded dictionary, using the

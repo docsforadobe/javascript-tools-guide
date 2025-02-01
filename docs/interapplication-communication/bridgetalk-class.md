@@ -1,5 +1,3 @@
-<a id="bridgetalk-class"></a>
-
 # BridgeTalk class
 
 Static properties and methods of this class provide a way for your script to determine basic messaging
@@ -14,20 +12,16 @@ namespace. For example:
 var thisApp = BridgeTalk.appName;
 ```
 
-#### NOTE
-You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used
+!!! note
+    You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used
 to send message packets between applications. Dynamic properties and methods can be accessed only in
 instances.
 
 ---
 
-<a id="bridgetalk-class-properties"></a>
-
 ## BridgeTalk class properties
 
 The BridgeTalk class provides these static properties, which are available in the global namespace:
-
-<a id="bridgetalk-appinstance"></a>
 
 ### appInstance
 
@@ -44,8 +38,6 @@ Read only.
 
 ---
 
-<a id="bridgetalk-applocale"></a>
-
 ### appLocale
 
 Type: `String`
@@ -57,8 +49,6 @@ sent, this is the locale of the sending application.
 Read only.
 
 ---
-
-<a id="bridgetalk-appname"></a>
 
 ### appName
 
@@ -72,8 +62,6 @@ Read only.
 
 ---
 
-<a id="bridgetalk-appspecifier"></a>
-
 ### appSpecifier
 
 Type: `String`
@@ -84,8 +72,6 @@ see [Application specifiers](application-and-namespace-specifiers.md#application
 Read/write.
 
 ---
-
-<a id="bridgetalk-appstatus"></a>
 
 ### appStatus
 
@@ -101,8 +87,6 @@ Read only.
 
 ---
 
-<a id="bridgetalk-appversion"></a>
-
 ### appVersion
 
 Type: `String`
@@ -114,8 +98,6 @@ message is sent, this is the version of the sending application.
 Read only.
 
 ---
-
-<a id="bridgetalk-onreceive"></a>
 
 ### onReceive
 
@@ -135,21 +117,17 @@ BridgeTalk.onReceive = function( bridgeTalkObject ) {
 The body property of the received message object contains the received
 data. The function can return any type. See [Handling unsolicited messages](communicating-through-messages.md#handling-unsolicited-messages).
 
-#### NOTE
-This function is not applied to a message that is received in response
+!!! note
+    This function is not applied to a message that is received in response
 to a message sent from this application. Response messages are processed
 by the onResult, onReceived, or onError callbacks associated with the
 sent message.
 
 ---
 
-<a id="bridgetalk-class-functions"></a>
-
 ## BridgeTalk class functions
 
 The BridgeTalk class provides these static methods, which are available in the global namespace:
-
-<a id="bridgetalk-bringtofront"></a>
 
 ### bringToFront()
 
@@ -165,8 +143,6 @@ it opens a new browser window.
 
 ---
 
-<a id="bridgetalk-getapppath"></a>
-
 ### getAppPath()
 
 `BridgeTalk.getAppPath (app)`
@@ -179,8 +155,6 @@ Retrieves the full path of the executable file for a specified application.
 Returns a string.
 
 ---
-
-<a id="bridgetalk-getdisplayname"></a>
 
 ### getDisplayName()
 
@@ -198,8 +172,6 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 ```
 
 ---
-
-<a id="bridgetalk-getspecifier"></a>
 
 ### getSpecifier()
 
@@ -238,8 +210,6 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 ---
 
-<a id="bridgetalk-getstatus"></a>
-
 ### getStatus()
 
 `BridgeTalk.getStatus (targetSpec)`
@@ -259,8 +229,6 @@ Retrieves the processing status of an application. Returns a string, one of:
 >   a CS2 application that uses an earlier version of the messaging framework.
 
 ---
-
-<a id="bridgetalk-gettargets"></a>
 
 ### getTargets()
 
@@ -300,8 +268,6 @@ BridgeTalk.getTargets( null, null );
 
 ---
 
-<a id="bridgetalk-isrunning"></a>
-
 ### isRunning()
 
 `BridgeTalk.isRunning (specifier)`
@@ -312,8 +278,6 @@ BridgeTalk.getTargets( null, null );
 Returns `true` if the given application is running and active on the local computer.
 
 ---
-
-<a id="bridgetalk-launch"></a>
 
 ### launch()
 
@@ -331,8 +295,6 @@ Returns `true` if the application has already been launched, `false` if it was l
 
 ---
 
-<a id="bridgetalk-loadappscript"></a>
-
 ### loadAppScript()
 
 `BridgeTalk.loadAppScript (specifier)`
@@ -346,8 +308,6 @@ implement late loading of startup scripts.
 Returns `true` if the script was successfully loaded.
 
 ---
-
-<a id="bridgetalk-ping"></a>
 
 ### ping()
 
@@ -363,8 +323,6 @@ Returns a string whose meaning is defined by the ping-request key.
 
 ---
 
-<a id="bridgetalk-pump"></a>
-
 ### pump()
 
 `BridgeTalk.pump ()`
@@ -372,8 +330,8 @@ Returns a string whose meaning is defined by the ping-request key.
 Checks all active messaging interfaces for outgoing and incoming messages, and processes them if
 there are any.
 
-#### NOTE
-Most applications have a message processing loop that continually checks the message queues,
+!!! note
+    Most applications have a message processing loop that continually checks the message queues,
 so use of this method is rarely required.
 
 Returns `true` if any messages have been processed, `false` otherwise.

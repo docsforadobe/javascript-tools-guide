@@ -1,5 +1,3 @@
-<a id="code-profiling-for-optimization"></a>
-
 # Code profiling for optimization
 
 The Profiling tool helps you to optimize program execution. When you turn profiling on, the JavaScript

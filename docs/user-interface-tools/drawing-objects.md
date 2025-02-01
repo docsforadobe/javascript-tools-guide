@@ -1,5 +1,3 @@
-<a id="drawing-objects"></a>
-
 # Drawing objects
 
 ScriptUI allows you to draw directly on controls to customize their appearance. You do this by calling

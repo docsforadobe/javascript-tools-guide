@@ -1,5 +1,3 @@
-<a id="scriptui-class"></a>
-
 # ScriptUI class
 
 The globally available ScriptUI class provides central information about the ScriptUI module. This object
@@ -7,11 +5,7 @@ is not instantiable.
 
 ---
 
-<a id="scriptui-class-properties"></a>
-
 ## ScriptUI class properties
-
-<a id="scriptui-alignment"></a>
 
 ### ScriptUI.Alignment
 
@@ -39,8 +33,6 @@ correspond to the constants as shown. Constant values are:
 
 ---
 
-<a id="scriptui-applicationfonts"></a>
-
 ### ScriptUI.applicationFonts
 
 `Object`
@@ -50,8 +42,6 @@ The available fonts vary according to the application and system
 configuration.
 
 ---
-
-<a id="scriptui-compatability"></a>
 
 ### ScriptUI.compatability
 
@@ -65,8 +55,6 @@ Panel elements in ScriptUI version 1.
 
 ---
 
-<a id="scriptui-coreversion"></a>
-
 ### ScriptUI.coreVersion
 
 `String`
@@ -74,8 +62,6 @@ Panel elements in ScriptUI version 1.
 The internal core version number of the ScriptUI components. Read only.
 
 ---
-
-<a id="scriptui-environment"></a>
 
 ### ScriptUI.environment
 
@@ -90,8 +76,6 @@ See: [Environment object](environment.md#environment-object) for more informatio
 
 ---
 
-<a id="scriptui-events"></a>
-
 ### ScriptUI.events
 
 `Object`
@@ -101,8 +85,6 @@ which allows you to create event objects in order to simulate
 user-interaction events.
 
 ---
-
-<a id="scriptui-fontstyle"></a>
 
 ### ScriptUI.FontStyle
 
@@ -124,8 +106,6 @@ Read only. Values are:
 
 ---
 
-<a id="scriptui-frameworkname"></a>
-
 ### ScriptUI.frameworkName
 
 `String`
@@ -135,8 +115,6 @@ component is compatible. Read only.
 
 ---
 
-<a id="scriptui-version"></a>
-
 ### ScriptUI.version
 
 `String`
@@ -145,11 +123,7 @@ The main version number of the ScriptUI component framework. Read only.
 
 ---
 
-<a id="scriptui-class-functions"></a>
-
 ## ScriptUI class functions
-
-<a id="scriptui-events-createevent"></a>
 
 ### ScriptUI.events.createEvent()
 
@@ -174,8 +148,6 @@ to register a handler function. See [Registering event listeners for windows or 
 
 ---
 
-<a id="scriptui-getresourcetext"></a>
-
 ### ScriptUI.getResourceText()
 
 `ScriptUI.getResourceText( text )`
@@ -189,8 +161,6 @@ string resource matches the given text, the text itself is returned.
 Returns a String.
 
 ---
-
-<a id="scriptui-newfont"></a>
 
 ### ScriptUI.newFont()
 
@@ -206,8 +176,6 @@ Creates a new font object for use in text controls and titles.
 Returns a [ScriptUIFont object](graphic-customization-objects.md#scriptuifont-object).
 
 ---
-
-<a id="scriptui-newimage"></a>
 
 ### ScriptUI.newImage()
 

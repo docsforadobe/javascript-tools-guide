@@ -1,8 +1,4 @@
-<a id="window-object"></a>
-
 # Window object
-
-<a id="window-object-constructor"></a>
 
 ## Window object constructor
 
@@ -20,13 +16,9 @@ new Window (type [, title, bounds, {creation_properties}]);
 
 ---
 
-<a id="window-object-properties"></a>
-
 ## Window object properties
 
 The following element properties apply specifically to Window elements:
-
-<a id="window-active"></a>
 
 ### active
 
@@ -43,8 +35,6 @@ given control or dialog active.
 
 ---
 
-<a id="window-cancelelement"></a>
-
 ### cancelElement
 
 Type: Object
@@ -55,8 +45,6 @@ the ESC key. By default, looks for a button whose name or text is
 
 ---
 
-<a id="window-defaultelement"></a>
-
 ### defaultElement
 
 Type: Object
@@ -66,8 +54,6 @@ the ENTER key. By default, looks for a button whose name or text is
 `"ok"` (case disregarded).
 
 ---
-
-<a id="window-framebounds"></a>
 
 ### frameBounds
 
@@ -80,8 +66,6 @@ windowing system. Read only.
 
 ---
 
-<a id="window-framelocation"></a>
-
 ### frameLocation
 
 Type: [Point](size-and-location-objects.md#point)
@@ -93,8 +77,6 @@ screen. The frameBounds value changes accordingly.
 
 ---
 
-<a id="window-framesize"></a>
-
 ### frameSize
 
 Type: [Dimension](size-and-location-objects.md#dimension)
@@ -104,8 +86,6 @@ in screen coordinates. Read only.
 
 ---
 
-<a id="window-maximized"></a>
-
 ### maximized
 
 Type: Boolean
@@ -114,8 +94,6 @@ When true, the window is expanded.
 
 ---
 
-<a id="window-minimized"></a>
-
 ### minimized
 
 Type: Boolean
@@ -123,8 +101,6 @@ Type: Boolean
 When true, the window is minimized or iconified.
 
 ---
-
-<a id="window-opacity"></a>
 
 ### opacity
 
@@ -137,8 +113,6 @@ transparent to any degree.
 
 ---
 
-<a id="window-shortcutkey"></a>
-
 ### shortcutKey
 
 Type: String
@@ -148,16 +122,12 @@ The key sequence that invokes this window’s ref:control-event-onshortcutkey ca
 
 ---
 
-<a id="container-properties"></a>
-
 ## Container properties
 
 The following table shows properties that apply to Window objects and container objects (controls of type
 panel, tabbedpanel, tab, and group).
 
 ---
-
-<a id="container-properties-alignchildren"></a>
 
 ### alignChildren
 
@@ -205,8 +175,6 @@ Values are not case sensitive.
 
 ---
 
-<a id="container-properties-alignment"></a>
-
 ### alignment
 
 Type: String, or Array of 2 Strings
@@ -249,8 +217,6 @@ Values are not case sensitive.
 
 ---
 
-<a id="container-properties-bounds"></a>
-
 ### bounds
 
 Type: [Bounds](size-and-location-objects.md#bounds)
@@ -263,8 +229,6 @@ by the parent tabbedpanel container.
 Read only.
 
 ---
-
-<a id="container-properties-children"></a>
 
 ### children
 
@@ -280,8 +244,6 @@ Read only.
 
 ---
 
-<a id="container-properties-graphics"></a>
-
 ### graphics
 
 Type: [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object)
@@ -290,8 +252,6 @@ A ScriptUIGraphics object that can be used to customize the
 window’s appearance, in response to the onDraw event.
 
 ---
-
-<a id="container-properties-layout"></a>
 
 ### layout
 
@@ -305,8 +265,6 @@ container element is created.
 
 ---
 
-<a id="container-properties-location"></a>
-
 ### location
 
 Type: [Point](size-and-location-objects.md#point)
@@ -316,8 +274,6 @@ Window’s drawable area, or the top left corner of the frame for a
 panel. The same as [bounds.x, bounds.y].
 
 ---
-
-<a id="container-properties-margins"></a>
 
 ### margins
 
@@ -331,8 +287,6 @@ match the standard Adobe user-interface guidelines.
 
 ---
 
-<a id="container-properties-maximumsize"></a>
-
 ### maximumSize
 
 Type: [Dimension](size-and-location-objects.md#dimension)
@@ -342,8 +296,6 @@ window can be resized, used in automatic layout and resizing.
 
 ---
 
-<a id="container-properties-minimumsize"></a>
-
 ### minimumSize
 
 Type: [Dimension](size-and-location-objects.md#dimension)
@@ -352,8 +304,6 @@ A Dimension object for the smallest rectangle to which the
 window can be resized, used in automatic layout and resizing.
 
 ---
-
-<a id="container-properties-orientation"></a>
 
 ### orientation
 
@@ -376,8 +326,6 @@ children’s alignment properties depend on the orientation.
 
 ---
 
-<a id="container-properties-parent"></a>
-
 ### parent
 
 Type: Object
@@ -389,8 +337,6 @@ Read only.
 
 ---
 
-<a id="container-properties-preferredsize"></a>
-
 ### preferredSize
 
 Type: [Dimension](size-and-location-objects.md#dimension)
@@ -401,8 +347,6 @@ dimension, specify other dimension as `-1`.
 
 ---
 
-<a id="container-properties-properties-properties"></a>
-
 ### properties
 
 Type: Object
@@ -411,8 +355,6 @@ An object that contains one or more creation properties of the
 container (properties used only when the element is created).
 
 ---
-
-<a id="container-properties-selection"></a>
 
 ### selection
 
@@ -427,8 +369,6 @@ panel is called.
 
 ---
 
-<a id="container-properties-size"></a>
-
 ### size
 
 Type: [Dimension](size-and-location-objects.md#dimension)
@@ -437,8 +377,6 @@ A Dimension object for the current size and location of a group or
 panel element, or of the content area of a window.
 
 ---
-
-<a id="container-properties-spacing"></a>
 
 ### spacing
 
@@ -453,8 +391,6 @@ guidelines.
 
 ---
 
-<a id="container-properties-text"></a>
-
 ### text
 
 Type: String
@@ -464,8 +400,6 @@ type group or tabbedpanel. This is a localizable string: see
 [Localization in ScriptUI objects](localization-in-scriptui-objects.md#localization-in-scriptui-objects).
 
 ---
-
-<a id="container-properties-visible"></a>
 
 ### visible
 
@@ -479,8 +413,6 @@ accordingly when the parent is next shown.
 
 ---
 
-<a id="container-properties-window"></a>
-
 ### window
 
 Type: [Window](#window-object)
@@ -488,8 +420,6 @@ Type: [Window](#window-object)
 The top-level parent window of this container, a [Window object](#window-object).
 
 ---
-
-<a id="container-properties-windowbounds"></a>
 
 ### windowBounds
 
@@ -500,16 +430,12 @@ to its top-level parent window.
 
 ---
 
-<a id="window-object-functions"></a>
-
 ## Window object functions
 
 These functions are defined for Window instances, and as indicated for container objects of type Panel and
 Group.
 
 ---
-
-<a id="window-object-functions-add"></a>
 
 ### add()
 
@@ -528,8 +454,6 @@ Returns the new object, or `null` if unable to create the object.
 
 ---
 
-<a id="window-object-functions-addeventlistener"></a>
-
 ### addEventListener()
 
 `windowObj.addEventListener (eventName, handler[, capturePhase]);`
@@ -545,8 +469,6 @@ Returns `undefined`.
 
 ---
 
-<a id="window-object-functions-center"></a>
-
 ### center()
 
 `windowObj.center ([window])`
@@ -559,8 +481,6 @@ Centers this window on the screen, or with respect to another specified window.
 Returns `undefined`.
 
 ---
-
-<a id="window-object-functions-close"></a>
 
 ### close()
 
@@ -575,8 +495,6 @@ closing the window.
 Returns undefined.
 
 ---
-
-<a id="window-object-functions-dispatchevent"></a>
 
 ### dispatchEvent()
 
@@ -593,8 +511,6 @@ Returns `false` if any of the registered listeners that handled the event called
 
 ---
 
-<a id="window-object-functions-findelement"></a>
-
 ### findElement()
 
 `windowOrContainerObj.findElement(name)`
@@ -609,8 +525,6 @@ Returns the control object or `null`.
 
 ---
 
-<a id="window-object-functions-hide"></a>
-
 ### hide()
 
 `windowObj.hide()`
@@ -623,8 +537,6 @@ For a modal dialog, closes the dialog and sets its result to 0.
 Returns `undefined`.
 
 ---
-
-<a id="window-object-functions-notify"></a>
 
 ### notify()
 
@@ -644,8 +556,6 @@ Returns `undefined`.
 
 ---
 
-<a id="window-object-functions-remove"></a>
-
 ### remove()
 
 `windowOrContainerObj.remove(index)`
@@ -661,8 +571,6 @@ results if the child does not exist.
 Returns `undefined`.
 
 ---
-
-<a id="window-object-functions-removeeventlistener"></a>
 
 ### removeEventListener()
 
@@ -680,8 +588,6 @@ Returns `undefined`.
 
 ---
 
-<a id="window-object-functions-show"></a>
-
 ### show()
 
 `windowObj.show()`
@@ -697,8 +603,6 @@ dismissed via the [close()](#window-object-functions-close) method, this method 
 Otherwise, returns 0.
 
 ---
-
-<a id="window-object-functions-update"></a>
 
 ### update()
 
@@ -722,8 +626,6 @@ parts of the application’s UI while in the operation loop.
 It is an error to call the update() method for a window that is not currently visible.
 
 ---
-
-<a id="window-event-handling-callbacks"></a>
 
 ## Window event-handling callbacks
 

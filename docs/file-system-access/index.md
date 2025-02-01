@@ -1,5 +1,3 @@
-<a id="file-system-access"></a>
-
 # File System Access
 
 Adobe ExtendScript defines classes that simplify cross-platform file-system access. These classes are

@@ -1,5 +1,3 @@
-<a id="operator-overloading"></a>
-
 # Operator overloading
 
 ExtendScript allows you to extend or override the behavior of a math or a Boolean operator for a specific

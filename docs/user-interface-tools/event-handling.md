@@ -1,5 +1,3 @@
-<a id="event-handling"></a>
-
 # Event handling
 
 Several helper classes provide low-level event-handling capabilities.
@@ -12,8 +10,6 @@ Several helper classes provide low-level event-handling capabilities.
 
 ---
 
-<a id="uievent-base-class"></a>
-
 ## UIEvent base class
 
 Encapsulates input event information for an event that propagates through a container and control
@@ -25,8 +21,6 @@ Both keyboard and mouse events have these properties.
 
 ---
 
-<a id="eventobj-bubbles"></a>
-
 #### bubbles
 
 Type: `Boolean`
@@ -34,8 +28,6 @@ Type: `Boolean`
 When true, the event supports the bubbling phase.
 
 ---
-
-<a id="eventobj-cancelable"></a>
 
 #### cancelable
 
@@ -46,8 +38,6 @@ cancel the default action of the event.
 
 ---
 
-<a id="eventobj-currenttarget"></a>
-
 #### currentTarget
 
 Type: `Object`
@@ -57,8 +47,6 @@ This could be an ancestor of the target object, if the handler is invoked
 during the capture or bubbling phase.
 
 ---
-
-<a id="eventobj-eventphase"></a>
 
 #### eventPhase
 
@@ -73,8 +61,6 @@ Current event propagation phase. One of these constants:
 
 ---
 
-<a id="eventobj-target"></a>
-
 #### target
 
 Type: `Object`
@@ -83,8 +69,6 @@ The element object where the event occurred.
 
 ---
 
-<a id="eventobj-timestamp"></a>
-
 #### timeStamp
 
 Type: `Object`
@@ -92,8 +76,6 @@ Type: `Object`
 Time the event was initiated. A JavaScript Date object.
 
 ---
-
-<a id="eventobj-type"></a>
 
 #### type
 
@@ -112,8 +94,6 @@ Additional type names apply specifically to keyboard and mouse events.
 
 ---
 
-<a id="eventobj-view"></a>
-
 #### view
 
 Type: `Object`
@@ -123,8 +103,6 @@ The container or control object that dispatched the event.
 ---
 
 ### UIEvent object functions
-
-<a id="eventobj-inituievent"></a>
 
 #### initUIEvent()
 
@@ -145,8 +123,6 @@ Returns undefined.
 
 ---
 
-<a id="eventobj-preventdefault"></a>
-
 #### preventDefault()
 
 `eventObj.preventDefault()`
@@ -159,8 +135,6 @@ Returns `undefined`.
 
 ---
 
-<a id="eventobj-stoppropagation"></a>
-
 #### stopPropagation()
 
 `eventObj.stopPropagation()`
@@ -171,8 +145,6 @@ current target.
 Returns `undefined`.
 
 ---
-
-<a id="keyboardevent-object"></a>
 
 ## KeyboardEvent object
 
@@ -266,15 +238,11 @@ The name of the event that occurred. Key events types are:
 
 ---
 
-<a id="keyboardevent-object-functions"></a>
-
 ### KeyboardEvent object functions
 
 In addition to the functions defined for [UIEvent base class](#uievent-base-class), a keyboard event has these functions.
 
 ---
-
-<a id="keyboardevent-object-getmodifierstate"></a>
 
 #### getModifierState()
 
@@ -285,12 +253,10 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
-#### NOTE
-If you’re trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
+!!! note
+    If you’re trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
 
 ---
-
-<a id="keyboardevent-object-initkeyboardevent"></a>
 
 #### initKeyboardEvent()
 
@@ -309,8 +275,6 @@ Reinitializes the object, allowing you to change the event properties after cons
 set the corresponding properties. Returns `undefined`.
 
 ---
-
-<a id="mouseevent-object"></a>
 
 ## MouseEvent object
 
@@ -437,15 +401,11 @@ The sequence of click events is: `mousedown`, `mouseup`, `click`.
 
 ---
 
-<a id="mouseevent-object-functions"></a>
-
 ### MouseEvent object functions
 
 In addition to the functions defined for [UIEvent base class](#uievent-base-class), a mouse event has these functions.
 
 ---
-
-<a id="mouseevent-object-getmodifierstate"></a>
 
 #### getModifierState()
 
@@ -457,8 +417,6 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 Returns true if the given modifier was active when the event occurred, false otherwise.
 
 ---
-
-<a id="mouseevent-object-initmouseevent"></a>
 
 #### initMouseEvent()
 

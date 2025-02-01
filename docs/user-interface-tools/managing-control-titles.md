@@ -1,5 +1,3 @@
-<a id="managing-control-titles"></a>
-
 # Managing control titles
 
 User interface elements often need a title or label to identify their purpose, with the title placed near the
@@ -44,8 +42,6 @@ The following sections provide examples that show how to use title layout to ach
 layouts.
 
 ---
-
-<a id="title-alignment-and-orientation"></a>
 
 ## Title alignment and orientation
 
@@ -97,8 +93,6 @@ except that the `fill` value is not allowed.
 
 ---
 
-<a id="title-character-width-and-justification"></a>
-
 ## Title character width and justification
 
 - To override the automatically calculated title width, define a positive non-zero value for the
@@ -141,8 +135,6 @@ except that the `fill` value is not allowed.
 
 ---
 
-<a id="title-truncation"></a>
-
 ## Title truncation
 
 If the space reserved for a title is not wide enough to display its entire text, set the `truncate` property to
@@ -165,8 +157,6 @@ w.btn3.titleLayout = { characters: 8, truncate: 'none' };
 ![Show effect of truncate options](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-truncation.jpg)
 
 ---
-
-<a id="margins-around-the-title-and-graphic-object"></a>
 
 ## Margins around the title and graphic object
 

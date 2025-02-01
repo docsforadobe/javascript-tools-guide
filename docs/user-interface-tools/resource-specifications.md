@@ -1,5 +1,3 @@
-<a id="resource-specifications"></a>
-
 # Resource specifications
 
 You can create one or more user-interface elements at a time using a *resource* specification. This specially
@@ -59,8 +57,6 @@ A property value can be specified as `null`, true, false, a string, a number, an
   ```
 
 ---
-
-<a id="using-resource-strings"></a>
 
 ## Using resource strings
 

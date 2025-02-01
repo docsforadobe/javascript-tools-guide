@@ -1,5 +1,3 @@
-<a id="integrating-xml-into-javascript"></a>
-
 # Integrating XML into JavaScript
 
 ExtendScript defines the XML object, which allows you to process XML with your JavaScript scripts. This

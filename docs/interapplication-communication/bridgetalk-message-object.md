@@ -1,5 +1,3 @@
-<a id="bridgetalk-message-object"></a>
-
 # BridgeTalk message object
 
 The message object defines the basic communication packet that is sent between applications. Its
@@ -9,8 +7,6 @@ types of data for the type property, and to send and receive arbitrary additiona
 headers property.
 
 ---
-
-<a id="bridgetalk-message-object-constructor"></a>
 
 ## BridgeTalk message object constructor
 
@@ -25,11 +21,7 @@ application, and the body property to the data message (typically a script) you 
 
 ---
 
-<a id="bridgetalk-message-object-properties"></a>
-
 ## BridgeTalk message object properties
-
-<a id="bridgetalk-message-object-body"></a>
 
 ### body
 
@@ -50,8 +42,6 @@ The data payload of the message.
 Read/write.
 
 ---
-
-<a id="bridgetalk-message-object-headers"></a>
 
 ### headers
 
@@ -87,8 +77,6 @@ Read/write.
 
 ---
 
-<a id="bridgetalk-message-object-sender"></a>
-
 ### sender
 
 Type: `String`
@@ -99,8 +87,6 @@ Read/write.
 
 ---
 
-<a id="bridgetalk-message-object-target"></a>
-
 ### target
 
 Type: `String`
@@ -110,8 +96,6 @@ The application specifier for the target, or receiving, application (see [Applic
 Read/write.
 
 ---
-
-<a id="bridgetalk-message-object-timeout"></a>
 
 ### timeout
 
@@ -128,8 +112,6 @@ Read/write.
 
 ---
 
-<a id="bridgetalk-message-object-type"></a>
-
 ### type
 
 Type: `String`
@@ -145,14 +127,10 @@ Read/write.
 
 ---
 
-<a id="bridgetalk-message-object-callbacks"></a>
-
 ## BridgeTalk message object callbacks
 
-#### NOTE
-The message callbacks are optional, and are not implemented by all message-enabled applications.
-
-<a id="bridgetalk-message-object-onerror"></a>
+!!! note
+    The message callbacks are optional, and are not implemented by all message-enabled applications.
 
 ### onError()
 
@@ -179,8 +157,6 @@ The function returns `undefined`.
 
 ---
 
-<a id="bridgetalk-message-object-onreceived"></a>
-
 ### onReceived()
 
 `bridgeTalkObj.onReceived ()`
@@ -205,8 +181,6 @@ The function returns `undefined`.
 
 ---
 
-<a id="bridgetalk-message-object-onresult"></a>
-
 ### onResult()
 
 `bridgeTalkObj.onResult ()`
@@ -229,8 +203,6 @@ packaged as a UTF-8-encoded string. See [Passing values between applications](co
 
 ---
 
-<a id="bridgetalk-message-object-ontimeout"></a>
-
 ### onTimeout()
 
 `bridgeTalkObj.onTimeout ()`
@@ -252,11 +224,7 @@ bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
 
 ---
 
-<a id="bridgetalk-message-object-functions"></a>
-
 ## BridgeTalk message object functions
-
-<a id="bridgetalk-message-object-send"></a>
 
 ### send()
 
@@ -282,8 +250,6 @@ Returns `true` if the message could be sent immediately, `false` if it could not
 for sending later.
 
 ---
-
-<a id="bridgetalk-message-object-sendresult"></a>
 
 ### sendResult()
 

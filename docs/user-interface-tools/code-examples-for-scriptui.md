@@ -1,5 +1,3 @@
-<a id="code-examples-for-scriptui"></a>
-
 # Code examples for ScriptUI
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes code examples that specifically

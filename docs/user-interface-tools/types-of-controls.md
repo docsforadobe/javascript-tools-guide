@@ -1,5 +1,3 @@
-<a id="types-of-controls"></a>
-
 # Types of controls
 
 The following sections introduce the types of controls you can add to a `Window` or other container element
@@ -7,8 +5,6 @@ The following sections introduce the types of controls you can add to a `Window`
 see [Control object constructors](control-objects.md#control-object-constructors).
 
 ---
-
-<a id="containers"></a>
 
 ## Containers
 
@@ -23,8 +19,6 @@ controls.
 
 ---
 
-<a id="user-interface-controls"></a>
-
 ## User-interface controls
 
 These are types of `Control` objects that are contained in windows, panels, and groups, and that provide
@@ -33,8 +27,6 @@ specific kinds of display and user interaction. Control instances are created by
 
 These examples do not set bounds explicitly on creation, because it is often more useful to set a preferred
 size, then allow the layout manager to set the bounds; see [Automatic layout](automatic-layout.md#automatic-layout).
-
-<a id="button"></a>
 
 ### Button
 
@@ -54,8 +46,6 @@ dlg.btnPnl.cancelBtn = dlg.btnPnl.add( "button", undefined, "Cancel", { name: "c
 dlg.show();
 ```
 
-<a id="iconbutton"></a>
-
 ### IconButton
 
 A button that displays an icon, with or without a text label. Like a text button, typically
@@ -66,8 +56,6 @@ initiates an action in response to a click.
   places the label with respect to the image.
 - The `onClick` callback method provides behavior.
 
-<a id="image"></a>
-
 ### Image
 
 Displays an iconic image.
@@ -75,8 +63,6 @@ Displays an iconic image.
 - The `image` property identifies the icon image; see [Displaying images](#displaying-images).
 - The `title` property provides an optional label; the [titleLayout](control-objects.md#controlobj-titlelayout) property places
   the label with respect to the image.
-
-<a id="statictext"></a>
 
 ### StaticText
 
@@ -92,8 +78,6 @@ dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Alert box title:"
 dlg.msgPnl.msgSt = dlg.msgPnl.add( "statictext", undefined, "Alert message:" );
 dlg.show();
 ```
-
-<a id="edittext"></a>
 
 ### EditText
 
@@ -119,12 +103,10 @@ dlg.msgPnl.msgEt = dlg.msgPnl.add( "edittext", undefined, "<your message here>",
 dlg.show();
 ```
 
-#### NOTE
-the creation property on the second EditText field, where `multiline: true`
+!!! note
+    the creation property on the second EditText field, where `multiline: true`
 indicates a field in which a long text string can be entered. The text wraps to appear
 as multiple lines.
-
-<a id="editnumber"></a>
 
 ### EditNumber
 
@@ -133,8 +115,8 @@ dismissed. The value entered is validated for being a localized number format an
 against a lower and upper boundary when the control loses focus. Text in EditNumber elements
 can be selected, copied, and pasted.
 
-#### NOTE
-This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+!!! note
+    This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 
 - Set the `text` property to assign the initial displayed number in the element, and read
   it to obtain the current number value, as entered or modified by the user.
@@ -155,10 +137,8 @@ dlg.msgPnl.msgEt = dlg.msgPnl.add( "editnumber", undefined, 2025, 2000, 2100 );
 dlg.show();
 ```
 
-#### NOTE
-Decimal numbers like `2.5` are accepted for minimum and maximum values.
-
-<a id="checkbox"></a>
+!!! note
+    Decimal numbers like `2.5` are accepted for minimum and maximum values.
 
 ### Checkbox
 
@@ -177,8 +157,6 @@ and appearance.
 dlg.hasBtnsCb = dlg.add( "checkbox", undefined, "Should there be alert buttons?" );
 dlg.hasBtnsCb.value = true;
 ```
-
-<a id="radiobutton"></a>
 
 ### RadioButton
 
@@ -204,8 +182,6 @@ dlg.alertBtnsPnl.alignCenterRb.value = true;
 dlg.show();
 ```
 
-<a id="progressbar"></a>
-
 ### Progressbar
 
 Typically used to display the progress of a time-consuming operation. A colored bar
@@ -214,8 +190,6 @@ completion of the operation. The `value` property reflects and controls how much
 the visible area is colored, relative to the maximum value (`maxvalue`). By default the
 range is 0 to 100, so the `value = 50` when the operation is half done.
 
-<a id="slider"></a>
-
 ### Slider
 
 Typically used to select within a range of values. The slider is a horizontal bar with a
@@ -223,8 +197,6 @@ draggable indicator, and you can click a point on the slider bar to jump the ind
 to that location. The `value` property reflects and controls the position of the indicator,
 within the range determined by `minvalue` and `maxvalue`. By default the range is 0 to
 100, so setting `value = 50` moves the indicator to the middle of the bar.
-
-<a id="scrollbar"></a>
 
 ### Scrollbar
 
@@ -250,8 +222,6 @@ dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 )
 dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 ```
 
-<a id="listbox-dropdownlist-treeview"></a>
-
 ### ListBox, DropDownList and TreeView
 
 These controls display lists of items, which are represented by `ListItem` objects in
@@ -276,8 +246,6 @@ You can specify the choice items on creation of the list object, or afterward us
 list object’s `add()` method. You can remove items programmatically with the list
 object’s `remove()` and `removeAll()` methods.
 
-<a id="listitem"></a>
-
 ### ListItem
 
 Items added to or inserted into any type of list control are `ListItem` objects, with
@@ -288,8 +256,6 @@ following types:
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `separator` | A separator is a nonselectable visual element in a drop-down list.<br/>Although it has a text property, the value is ignored, and the item is displayed as<br/>a horizontal line.                  |
 | `node`      | A displayable and selectable item in a `TreeView` control which can contain<br/>other `ListItem` objects, including other items of type node.                                                      |
-
-<a id="flashplayer"></a>
 
 ### FlashPlayer
 
@@ -304,8 +270,6 @@ The `title` property provides an optional label; the [titleLayout](control-objec
 label with respect to the player.
 
 ---
-
-<a id="displaying-images"></a>
 
 ## Displaying images
 
@@ -348,8 +312,6 @@ clipped. If they are set to dimensions larger than those of the image graphic, t
 centered in the larger space. An image is never scaled to fit the available space.
 
 ---
-
-<a id="creating-multi-column-lists"></a>
 
 ## Creating multi-column lists
 
@@ -403,8 +365,6 @@ and an image.
 
 ---
 
-<a id="prompts-and-alerts"></a>
-
 ## Prompts and alerts
 
 Static functions on the `Window` class are globally available to display short messages in standard dialogs.
@@ -416,8 +376,6 @@ own messages. You do not need to create a Window object to call these functions.
 
 ---
 
-<a id="modal-dialogs"></a>
-
 ## Modal dialogs
 
 A modal dialog is initially invisible. Your script invokes it using the `show` method, which does not return
@@ -427,8 +385,6 @@ method of such a button must call the `close` or `hide` method to close the dial
 allows you to pass a value to be returned by the show method.
 
 For an example of how to define such buttons and their behavior, see [Defining behavior with event callbacks and listeners](defining-behavior-with-event-callbacks-and-listeners.md#defining-behavior-with-event-callbacks-and-listeners).
-
-<a id="creating-and-using-modal-dialogs"></a>
 
 ### Creating and using modal dialogs
 
@@ -456,8 +412,6 @@ and can show alert messages or use other modal dialogs to alert the user to any 
 corrected. It can then return true to allow the dialog to be dismissed, or false to allow the user to correct
 any errors.
 
-<a id="dismissing-a-modal-dialog"></a>
-
 ### Dismissing a modal dialog
 
 Every modal dialog should have at least one button that the user can click to dismiss the dialog. Typically
@@ -480,8 +434,6 @@ but their `onClick` handlers do not function properly, a user can still dismiss 
 case, the system will execute a call to the dialog’s `close` method, passing a value of 2. This is not, of course,
 a recommended way to design your dialogs, but is provided as an escape hatch to prevent the application
 from hanging in case of an error in the operations of your dialog.
-
-<a id="default-and-cancel-elements"></a>
 
 ### Default and cancel elements
 

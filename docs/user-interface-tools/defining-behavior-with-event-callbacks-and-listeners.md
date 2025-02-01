@@ -1,5 +1,3 @@
-<a id="defining-behavior-with-event-callbacks-and-listeners"></a>
-
 # Defining behavior with event callbacks and listeners
 
 You must define the behavior of your controls in order for them to respond to user interaction. You can do
@@ -32,8 +30,6 @@ to different actions, or events:
   [onShortcutKey](control-objects.md#control-event-onshortcutkey) in that control.
 
 ---
-
-<a id="defining-event-handler-callback-functions"></a>
 
 ## Defining event-handler callback functions
 
@@ -76,8 +72,6 @@ cancelBtn.onClick = function() {
 ```
 
 ---
-
-<a id="simulating-user-events"></a>
 
 ## Simulating user events
 
@@ -126,8 +120,6 @@ if ( dlg.hasBtnsCb.value == true ) {
 ```
 
 ---
-
-<a id="registering-event-listeners-for-windows-or-controls"></a>
 
 ## Registering event listeners for windows or controls
 
@@ -207,8 +199,6 @@ The ScriptUI implementation of W3C keyboard events follows the W3C DOM level 3 f
 specification [for KeyboardEvent](https://www.w3.org/TR/uievents/#keyboardevent).
 
 ---
-
-<a id="how-registered-event-handlers-are-called"></a>
 
 ## How registered event-handlers are called
 

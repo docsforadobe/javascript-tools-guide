@@ -1,5 +1,3 @@
-<a id="externalobject-object"></a>
-
 # ExternalObject object
 
 You specify the name of the library in the constructor. The constructor searches for the named library
@@ -18,8 +16,6 @@ executable file.
 
 ---
 
-<a id="externalobject-constructor"></a>
-
 ## ExternalObject constructor
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
@@ -36,8 +32,6 @@ var mylib = new ExternalObject( "lib:myLibrary" );
 
 ---
 
-<a id="externalobject-class-properties"></a>
-
 ## ExternalObject class properties
 
 The ExternalObject class provides these static properties:
@@ -49,16 +43,12 @@ The ExternalObject class provides these static properties:
 
 ---
 
-<a id="externalobject-class-function"></a>
-
 ## ExternalObject class function
 
 The ExternalObject class provides this static function to help debug problems with loading libraries as
 external objects:
 
 ---
-
-<a id="externalobject-functions-search"></a>
 
 ### search()
 
@@ -74,11 +64,7 @@ Returns `true` if the library is found, `false` otherwise.
 
 ---
 
-<a id="externalobject-instance-function"></a>
-
 ## ExternalObject instance function
-
-<a id="externalobject-functions-terminate"></a>
 
 ### terminate()
 

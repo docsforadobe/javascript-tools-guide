@@ -1,13 +1,9 @@
-<a id="file-object"></a>
-
 # File object
 
 Represents a file in the local file system in a platform-independent manner. All properties and methods
 resolve file system aliases automatically and act on the original file unless otherwise noted.
 
 ---
-
-<a id="file-object-constructors"></a>
 
 ## File object constructors
 
@@ -23,13 +19,11 @@ new File ([ path ] ); // Always returns a File object
 | `path`   | Optional. The absolute or relative path to the file associated with this object, specified in<br/>platform-specific or URI format; see [Specifying paths](using-file-and-folder-objects.md#specifying-paths). The value stored in the<br/>object is the absolute path.<br/><br/>The path need not refer to an existing file. If not supplied, a temporary name is generated.<br/><br/>If the path refers to an existing folder:<br/><br/>- The File function returns a Folder object instead of a File object.<br/>- The new operator returns a File object for a nonexisting file with the same name.   |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-#### WARNING
-In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.
+!!! warning
+    In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.
 This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
 
 ---
-
-<a id="file-class-properties"></a>
 
 ## File class properties
 
@@ -41,14 +35,10 @@ access it.
 
 ---
 
-<a id="file-class-functions"></a>
-
 ## File class functions
 
 These functions are available as static methods of the File class. It is not necessary to create an instance to
 call them.
-
-<a id="file-decode"></a>
 
 ### decode()
 
@@ -66,8 +56,6 @@ Special characters are those with a numeric value greater than 127, except the f
 Decodes the specified string as required by RFC 2396.
 
 Returns the decoded string.
-
-<a id="file-encode"></a>
 
 ### encode()
 
@@ -87,8 +75,6 @@ Special characters are those with a numeric value greater than 127, except the f
 
 Returns the encoded string.
 
-<a id="file-isencodingavailable"></a>
-
 ### isEncodingAvailable()
 
 `File.isEncodingAvailable( name )`
@@ -98,8 +84,6 @@ Returns the encoded string.
 
 Checks whether a given encoding is available.
 Returns true if your system supports the specified encoding, false otherwise.
-
-<a id="file-opendialog"></a>
 
 ### openDialog()
 
@@ -115,8 +99,6 @@ multiple files, and creates new File objects to represent the selected files.
 
 If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files
 are selected. If the user cancels, returns `null`.
-
-<a id="file-savedialog"></a>
 
 ### saveDialog()
 
@@ -134,8 +116,6 @@ If the user clicks **OK**, returns a File object for the selected file location.
 `null`.
 
 ---
-
-<a id="file-object-properties"></a>
 
 ## File object properties
 
@@ -167,13 +147,9 @@ These properties are available for `File` objects.
 
 ---
 
-<a id="file-object-functions"></a>
-
 ## File object functions
 
 These functions are available for File objects.
-
-<a id="file-changepath"></a>
 
 ### changePath()
 
@@ -186,8 +162,6 @@ Changes the path specification of the referenced file.
 
 Returns true on success.
 
-<a id="file-close"></a>
-
 ### close()
 
 `fileObj.close()`
@@ -195,8 +169,6 @@ Returns true on success.
 Closes this open file.
 
 Returns true on success, false if there are I/O errors.
-
-<a id="file-copy"></a>
 
 ### copy()
 
@@ -210,8 +182,6 @@ source file. If a file exists at the target location, it is overwritten.
 
 Returns true if the copy was successful, false otherwise.
 
-<a id="file-createalias"></a>
-
 ### createAlias()
 
 `fileObj.createAlias( [path] )`
@@ -224,8 +194,6 @@ must not yet exist on disk.
 
 Returns true if the operation was successful, false otherwise.
 
-<a id="file-execute"></a>
-
 ### execute()
 
 `fileObj.execute()`
@@ -234,8 +202,6 @@ Opens this file using the appropriate application, as if it had been double-clic
 You can use this method to run scripts, launch applications, and so on.
 
 Returns true immediately if the application launch was successful.
-
-<a id="file-getrelativeuri"></a>
 
 ### getRelativeURI()
 
@@ -248,8 +214,6 @@ Retrieves the URI for this file, relative to the specified base path, in URI not
 supplied, the URI is relative to the path of the current folder.
 
 Returns a string containing the relative URI.
-
-<a id="file-open"></a>
 
 ### open()
 
@@ -270,11 +234,8 @@ UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not fou
 zero bytes at the current location and makes an assumption about one of the above formats (except
 UTF-8). If everything fails, the encoding property is set to the system encoding.
 
-#### NOTE
-Be careful about opening a file more than once. The operating system usually permits you to
-do so, but if you start writing to the file using two different File objects, you can destroy your data.
-
-<a id="file-opendlg"></a>
+!!! note
+    Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
 
 ### openDlg()
 
@@ -293,8 +254,6 @@ file to this object’s associated file.
 If the user clicks **OK**, returns a File or Folder object for the selected file or folder, or an array of
 objects. If the user cancels, returns `null`.
 
-<a id="file-read"></a>
-
 ### read()
 
 `fileObj.read( [chars] )`
@@ -306,8 +265,6 @@ Reads the contents of the file starting at the current position.
 
 Returns a string that contains up to the specified number of characters.
 
-<a id="file-readch"></a>
-
 ### readch()
 
 `fileObj.readch()`
@@ -317,8 +274,6 @@ CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to cre
 characters.
 
 Returns a string that contains the character.
-
-<a id="file-readln"></a>
 
 ### readln()
 
@@ -330,8 +285,6 @@ create single Unicode characters.
 
 Returns a string that contains the text.
 
-<a id="file-remove"></a>
-
 ### remove()
 
 `fileObj.remove()`
@@ -339,12 +292,10 @@ Returns a string that contains the text.
 Deletes the file associated with this object from disk, immediately, without moving it to the system
 trash. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
 
-#### NOTE
-Cannot be undone. It is recommended that you prompt the user for permission before deleting.
+!!! note
+    Cannot be undone. It is recommended that you prompt the user for permission before deleting.
 
 Returns true if the file is deleted successfully.
-
-<a id="file-rename"></a>
 
 ### rename()
 
@@ -358,8 +309,6 @@ file itself.
 
 Returns true on success.
 
-<a id="file-resolve"></a>
-
 ### resolve()
 
 `fileObj.resolve()`
@@ -369,8 +318,6 @@ object that references the file-system element to which the alias resolves.
 
 Returns the new File object, or null if this object does not reference an alias, or if the alias cannot
 be resolved.
-
-<a id="file-savedlg"></a>
 
 ### saveDlg()
 
@@ -388,8 +335,6 @@ parent folder and the file to this object’s associated file.
 
 If the user clicks **OK**, returns a File object for the selected file. If the user cancels, returns `null`.
 
-<a id="file-seek"></a>
-
 ### seek()
 
 `fileObj.seek( pos[, mode] )`
@@ -403,8 +348,6 @@ current file size.
 
 Returns true if the position was changed.
 
-<a id="file-tell"></a>
-
 ### tell()
 
 `fileObj.tell()`
@@ -412,8 +355,6 @@ Returns true if the position was changed.
 Retrieves the current position as a byte offset from the start of the file.
 
 Returns a number, the position index.
-
-<a id="file-write"></a>
 
 ### write()
 
@@ -425,13 +366,10 @@ Returns a number, the position index.
 Writes the specified text to the file at the current position. For encoded files, writing a single
 Unicode character may write multiple bytes.
 
-#### NOTE
-Be careful not to write to a file that is open in another application or object, as this can
-overwrite existing data.
+!!! note
+    Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 
 Returns true on success.
-
-<a id="file-writeln"></a>
 
 ### writeln()
 
@@ -444,8 +382,7 @@ Writes the specified text to the file at the current position, and appends a Lin
 style specified by the linefeed property.For encoded files, writing a single Unicode character may
 write multiple bytes.
 
-#### NOTE
-Be careful not to write to a file that is open in another application or object, as this can
-overwrite existing data.
+!!! note
+    Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 
 Returns true on success.

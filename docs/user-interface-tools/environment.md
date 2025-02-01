@@ -1,5 +1,3 @@
-<a id="environment-object"></a>
-
 # Environment object
 
 This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) property.
@@ -10,13 +8,9 @@ Due to this object including only a single property (that is itself an object), 
 
 ---
 
-<a id="environment-object-properties"></a>
-
 ## Environment object properties
 
 The following element properties apply specifically to Environment elements:
-
-<a id="environment-keyboard-state"></a>
 
 ## Keyboard state object
 
@@ -34,16 +28,14 @@ The Keyboard State object contains the following properties:
 
 ---
 
-<a id="keyboard-state-keyname"></a>
-
 ### keyName
 
 Type: `String`
 
 The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
 
-#### NOTE
-- This only works for single keys being pressed; holding multiple will report `undefined`.
+!!! note
+    - This only works for single keys being pressed; holding multiple will report `undefined`.
 - Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
 
 For example, with ‘a’ pressed:
@@ -56,16 +48,14 @@ alert(currentPressedKey); // "A"
 
 ---
 
-<a id="keyboard-state-metakeys"></a>
-
 ### shiftKey, ctrlKey, altKey, metaKey
 
 Type: `Boolean`
 
 `true` if the named modifier key is currently active.
 
-#### NOTE
-`metaKey` captures both the `META` and `COMMAND` keys.
+!!! note
+    `metaKey` captures both the `META` and `COMMAND` keys.
 
 #### Examples
 

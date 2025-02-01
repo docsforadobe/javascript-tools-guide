@@ -1,12 +1,8 @@
-<a id="control-objects"></a>
-
 # Control objects
 
 UI elements that belong to windows can be containers or controls. Containers
 share some aspects of top-level windows, and some aspects of controls, and so
 are described here with controls.
-
-<a id="control-object-constructors"></a>
 
 ## Control object constructors
 
@@ -31,8 +27,6 @@ Returns the new object, or `null` if unable to create the object.
 
 ---
 
-<a id="control-types-and-creation-parameters"></a>
-
 ## Control types and creation parameters
 
 The following keywords can be used in string literals as the type specifier for
@@ -45,8 +39,6 @@ All types of controls, including containers, have an optional creation parameter
 that allows you to give the object a unique name.
 
 ---
-
-<a id="control-type-button"></a>
 
 ### button
 
@@ -69,8 +61,6 @@ w.add ("button" [, bounds, text, creation_properties}]);
 
 ---
 
-<a id="control-type-checkbox"></a>
-
 ### checkbox
 
 Class Name: `Checkbox`
@@ -91,8 +81,6 @@ w.add ("checkbox" [, bounds, text, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
 ---
-
-<a id="control-type-dropdownlist"></a>
 
 ### dropdownlist
 
@@ -115,14 +103,12 @@ w.add( "dropdownlist", bounds [, items, {creation_properties}] );
 
 ---
 
-<a id="control-type-editnumber"></a>
-
 ### editnumber
 
 Class Name: `EditNumber`
 
-#### NOTE
-This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
+!!! note
+    This functionality was added in Photoshop 20.0 (CC 2019), and may not exist in other hosts.
 
 An editable text field the user can enter decimal numbers into. Fractions are allowed.
 Calls the [onChange](#control-event-onchange) callback if the text is changed and the user types
@@ -144,8 +130,6 @@ w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}])
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `readonly`: When false (the default), the control accepts text<br/>>   input. When true, the control does not accept input but only<br/>>   displays the contents of the `text` property.<br/>> - `noecho`: When false (the default), the control displays input<br/>>   text. When true, the control does not display input text<br/>>   (used for password input fields).<br/>> - `enterKeySignalsOnChange`: When false (the default), the<br/>>   control signals an [onChange](#control-event-onchange) event when the editable text is<br/>>   changed and the control loses the keyboard focus (that is,<br/>>   the user tabs to another control, clicks outside the control, or<br/>>   types `ENTER`). When true, the control only signals an<br/>>   `onChange` event when the editable text is changed and the<br/>>   user types `ENTER`; other changes to the keyboard focus do<br/>>   not signal the event.<br/>> - `borderless`: When true, the control is drawn with no<br/>>   border. Default is false. |
 
 ---
-
-<a id="control-type-edittext"></a>
 
 ### edittext
 
@@ -169,8 +153,6 @@ w.add ("edittext" [, bounds, text, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `readonly`: When false (the default), the control accepts text<br/>>   input. When true, the control does not accept input but only<br/>>   displays the contents of the `text` property.<br/>> - `noecho`: When false (the default), the control displays input<br/>>   text. When true, the control does not display input text<br/>>   (used for password input fields).<br/>> - `enterKeySignalsOnChange`: When false (the default), the<br/>>   control signals an [onChange](#control-event-onchange) event when the editable text is<br/>>   changed and the control loses the keyboard focus (that is,<br/>>   the user tabs to another control, clicks outside the control, or<br/>>   types `ENTER`). When true, the control only signals an<br/>>   `onChange` event when the editable text is changed and the<br/>>   user types `ENTER`; other changes to the keyboard focus do<br/>>   not signal the event.<br/>> - `borderless`: When true, the control is drawn with no<br/>>   border. Default is false.<br/>> - `multiline`: When false (the default), the control accepts a<br/>>   single line of text. When true, the control accepts multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrollable`: (For multiline elements only) When true (the<br/>>   default), the text field has a vertical scrollbar that is enabled<br/>>   when the element contains more text than fits in the visible<br/>>   area. When false, no vertical scrollbar appears; if the element<br/>>   contains more text than fits in the visible area, the arrow<br/>>   keys can be used to scroll the text up and down. |
 
 ---
-
-<a id="control-type-flashplayer"></a>
 
 ### flashplayer
 
@@ -201,8 +183,6 @@ w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
 
 ---
 
-<a id="control-type-group"></a>
-
 ### group
 
 Class Name: `Group`
@@ -224,8 +204,6 @@ w.add ("group" [, bounds, {creation_properties}]);
 
 ---
 
-<a id="control-type-iconbutton"></a>
-
 ### iconbutton
 
 Class Name: `IconButton`
@@ -246,8 +224,6 @@ w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
 
 ---
 
-<a id="control-type-image"></a>
-
 ### image
 
 Class Name: `Image`
@@ -266,8 +242,6 @@ w.add ("image" [, bounds, icon, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains the following properties:<br/><br/>> - `name`: A unique name for the control.                                                                                                                         |
 
 ---
-
-<a id="control-type-item"></a>
 
 ### item
 
@@ -291,8 +265,6 @@ controls:
 
 ---
 
-<a id="control-type-listbox"></a>
-
 ### listbox
 
 Class Name: `ListBox`
@@ -315,8 +287,6 @@ w.add ("listbox", bounds [, items, {creation_properties}]);
 
 ---
 
-<a id="control-type-panel"></a>
-
 ### panel
 
 Class Name: `Panel`
@@ -338,10 +308,8 @@ w.add ("panel" [, bounds, text, {creation_properties}]);
 | `text`                | Optional. The text displayed in the border of the panel.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `borderStyle`: A string that specifies the appearance of the<br/>>   border drawn around the panel. One of `black`, `etched`,<br/>>   `gray`, `raised`, `sunken` or `topDivider`.<br/>>   `topDivider` draws a horizonal line at the top of the panel<br/>>   only. Default is `etched`.<br/>> - `subPanelCoordinates`: When true, this panel automatically<br/>>   adjusts the positions of its children for compatability with<br/>>   Photoshop CS. Default is false, meaning that the panel does<br/>>   not adjust the positions of its children, even if the parent<br/>>   window has automatic adjustment enabled. |
 
-#### WARNING
-The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!
-
-<a id="control-type-progressbar"></a>
+!!! warning
+    The `topDivider` property is officially undocumented and was found via research. Please contribute if you have more information on it!
 
 ### progressbar
 
@@ -367,8 +335,6 @@ w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]
 | `creation_properties` | Optional. An object that contains the following property:<br/><br/>> - `name`: A unique name for the control.                             |
 
 ---
-
-<a id="control-type-radiobutton"></a>
 
 ### radiobutton
 
@@ -397,8 +363,6 @@ w.add ("radiobutton" [, bounds, text, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
 ---
-
-<a id="control-type-scrollbar"></a>
 
 ### scrollbar
 
@@ -433,8 +397,6 @@ w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}])
 
 ---
 
-<a id="control-type-slider"></a>
-
 ### slider
 
 Class Name: `Slider`
@@ -463,8 +425,6 @@ w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 
 ---
 
-<a id="control-type-statictext"></a>
-
 ### statictext
 
 Class Name: `StaticText`
@@ -483,8 +443,6 @@ w.add ("statictext" [, bounds, text, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control.<br/>> - `multiline`: When false (the default), the control displays a<br/>>   single line of text. When true, the control displays multiple<br/>>   lines, in which case the text wraps within the width of the<br/>>   control.<br/>> - `scrolling`: When false (the default), the displayed text<br/>>   cannot be scrolled. When true, the displayed text can be<br/>>   vertically scrolled using scrollbars; this case implies<br/>>   `multiline` is true.<br/>> - `truncate`: If `middle` or `end`, defines where to remove<br/>>   characters from the text and replace them with an ellipsis if<br/>>   the specified title does not fit within the space reserved for<br/>>   it. If `none`, and the text does not fit, characters are removed<br/>>   from the end, without any replacement ellipsis character. |
 
 ---
-
-<a id="control-type-tab"></a>
 
 ### tab
 
@@ -513,8 +471,6 @@ w.t.add ("tab" [, bounds, text, {creation_properties}]);
 | `creation_properties` | Optional. An object that contains any of the following properties:<br/><br/>> - `name`: A unique name for the control. |
 
 ---
-
-<a id="control-type-tabbedpanel"></a>
 
 ### tabbedpanel
 
@@ -548,8 +504,6 @@ w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
 
 ---
 
-<a id="control-type-treeview"></a>
-
 ### treeview
 
 Class Name: `TreeView`
@@ -572,8 +526,6 @@ w.add ("treeview" [, bounds, items, {creation_properties}])
 
 ---
 
-<a id="control-object-properties"></a>
-
 ## Control object properties
 
 The following table shows the properties of ScriptUI control elements. Some values apply only to controls
@@ -581,8 +533,6 @@ of particular types, as indicated. See Container properties for properties that 
 (controls of type panel, tabbedpanel, tab, and group).
 
 ---
-
-<a id="controlobj-active"></a>
 
 ### active
 
@@ -599,8 +549,6 @@ given control or dialog active.
   OS.
 
 ---
-
-<a id="controlobj-alignment"></a>
 
 ### alignment
 
@@ -639,8 +587,6 @@ Values are not case sensitive.
 
 ---
 
-<a id="controlobj-bounds"></a>
-
 ### bounds
 
 Type: `Bounds`
@@ -655,8 +601,6 @@ and vice-versa.
 
 ---
 
-<a id="controlobj-characters"></a>
-
 ### characters
 
 Type: `Number`
@@ -670,8 +614,6 @@ display.
 
 ---
 
-<a id="controlobj-checked"></a>
-
 ### checked
 
 Type: `Boolean`
@@ -683,8 +625,6 @@ with other checkable items. When `undefined`, no space is reserved
 for a checkmark.
 
 ---
-
-<a id="controlobj-columns"></a>
 
 ### columns
 
@@ -699,8 +639,6 @@ properties whose values are set by the creation parameters:
 
 ---
 
-<a id="controlobj-enabled"></a>
-
 ### enabled
 
 Type: `Boolean`
@@ -712,8 +650,6 @@ selectable in a [listbox](#control-type-listbox), [dropdownlist](#control-type-d
 
 ---
 
-<a id="controlobj-expanded"></a>
-
 ### expanded
 
 Type: `Boolean`
@@ -724,8 +660,6 @@ false, it is collapsed and children are hidden.
 
 ---
 
-<a id="controlobj-graphics"></a>
-
 ### graphics
 
 Type: `Object`
@@ -734,8 +668,6 @@ A [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-ob
 appearance, in response to the [onDraw](#control-event-ondraw) event.
 
 ---
-
-<a id="controlobj-helptip"></a>
 
 ### helpTip
 
@@ -747,8 +679,6 @@ control element. Set to an empty string or `null` to remove help text.
 
 ---
 
-<a id="controlobj-icon"></a>
-
 ### icon
 
 Type: `String or File`
@@ -756,8 +686,6 @@ Type: `String or File`
 Deprecated. Use [Image](types-of-controls.md#image) instead.
 
 ---
-
-<a id="controlobj-image"></a>
 
 ### image
 
@@ -778,8 +706,6 @@ image in PNG or JPEG format, or for a shortcut or alias to such a file.
 
 ---
 
-<a id="controlobj-indent"></a>
-
 ### indent
 
 Type: `Number`
@@ -790,8 +716,6 @@ orientation and `top` alignment.
 
 ---
 
-<a id="controlobj-index"></a>
-
 ### index
 
 Type: `Number`
@@ -800,8 +724,6 @@ For [ListItem](types-of-controls.md#listitem) objects only. The index of this it
 collection of its parent list control. Read only.
 
 ---
-
-<a id="controlobj-items"></a>
 
 ### items
 
@@ -812,8 +734,6 @@ of [ListItem](types-of-controls.md#listitem) objects for the items in the list. 
 obtain the number of items in the list, use `items.length`. Read only.
 
 ---
-
-<a id="controlobj-itemsize"></a>
 
 ### itemSize
 
@@ -829,8 +749,6 @@ height and width among all items in the list
 
 ---
 
-<a id="controlobj-jumpdelta"></a>
-
 ### jumpdelta
 
 Type: `Number`
@@ -842,8 +760,6 @@ property values.
 
 ---
 
-<a id="controlobj-justify"></a>
-
 ### justify
 
 Type: `String`
@@ -854,13 +770,11 @@ The justification of text in static text and edit text controls. One of:
 - center
 - right
 
-#### NOTE
-Justification only works if the value is set on creation, using a
+!!! note
+    Justification only works if the value is set on creation, using a
 resource specification or creation parameters.
 
 ---
-
-<a id="controlobj-location"></a>
 
 ### location
 
@@ -878,8 +792,6 @@ manager is invoked.
 
 ---
 
-<a id="controlobj-maximumsize"></a>
-
 ### maximumSize
 
 Type: `Dimension`
@@ -893,8 +805,6 @@ to be large enough for your intended usage.
 
 ---
 
-<a id="controlobj-minimumsize"></a>
-
 ### minimumSize
 
 Type: `Dimension`
@@ -903,8 +813,6 @@ A [Dimension](size-and-location-objects.md#dimension) object that specifies the 
 an element. Default is `[0,0]`.
 
 ---
-
-<a id="controlobj-maxvalue"></a>
 
 ### maxvalue
 
@@ -917,8 +825,6 @@ The maximum value that the `value` property can have.
 
 ---
 
-<a id="controlobj-minvalue"></a>
-
 ### minvalue
 
 Type: `Number`
@@ -930,8 +836,6 @@ The minimum value that the `value` property can have.
 
 ---
 
-<a id="controlobj-parent"></a>
-
 ### parent
 
 Type: `Object`
@@ -939,8 +843,6 @@ Type: `Object`
 The immediate parent object of this element. Read only.
 
 ---
-
-<a id="controlobj-preferredsize"></a>
 
 ### preferredSize
 
@@ -960,8 +862,6 @@ dimension as -1.
 
 ---
 
-<a id="controlobj-properties"></a>
-
 ### properties
 
 Type: `Object`
@@ -970,8 +870,6 @@ An object that contains one or more creation properties of the
 element (properties used only when the element is created).
 
 ---
-
-<a id="controlobj-selected"></a>
 
 ### selected
 
@@ -983,8 +881,6 @@ to true to select this item in a single-selection list, or to add it to the
 selection array for a multi-selection list.
 
 ---
-
-<a id="controlobj-selection-listbox"></a>
 
 ### selection
 
@@ -1015,8 +911,6 @@ property still returns object references.
 
 ---
 
-<a id="controlobj-selection"></a>
-
 ### selection
 
 (For DropDownList and TreeView only)
@@ -1041,8 +935,6 @@ property still returns an object reference.
 
 ---
 
-<a id="controlobj-shortcutkey"></a>
-
 ### shortcutKey
 
 Type: `String`
@@ -1051,8 +943,6 @@ The key sequence that invokes the [onShortcutKey](#control-event-onshortcutkey) 
 element (in Windows only).
 
 ---
-
-<a id="controlobj-size"></a>
 
 ### size
 
@@ -1071,8 +961,6 @@ size changes its `bounds` property, and vice-versa.
 
 ---
 
-<a id="controlobj-stepdelta"></a>
-
 ### stepdelta
 
 Type: `Number`
@@ -1081,8 +969,6 @@ The amount by which to increment or decrement a [Scrollbar](types-of-controls.md
 element’s position when the user clicks a stepper button.
 
 ---
-
-<a id="controlobj-subitems"></a>
 
 ### subitems
 
@@ -1106,8 +992,6 @@ Each object has two properties, of which one or both can be supplied:
 
 ---
 
-<a id="controlobj-text"></a>
-
 ### text
 
 Type: `String`
@@ -1126,8 +1010,6 @@ This is a localizable string: see [Localization in ScriptUI objects](localizatio
 
 ---
 
-<a id="controlobj-textselection"></a>
-
 ### textselection
 
 Type: `String`
@@ -1141,13 +1023,11 @@ new value into the `text` string at the current insertion point. The
 `textselection` value is reset to an empty string after it modifies the
 `text` value.
 
-#### NOTE
-Setting the `textselection` property before the [EditText](types-of-controls.md#edittext)
+!!! note
+    Setting the `textselection` property before the [EditText](types-of-controls.md#edittext)
 control’s parent Window exists is an undefined operation.
 
 ---
-
-<a id="controlobj-title"></a>
 
 ### title
 
@@ -1160,8 +1040,6 @@ the title over the center of the element. The placement is controlled by
 the [titleLayout](#controlobj-titlelayout) value.
 
 ---
-
-<a id="controlobj-titlelayout"></a>
 
 ### titleLayout
 
@@ -1181,8 +1059,6 @@ relation to the element. A JavaScript object with these properties:
 
 ---
 
-<a id="controlobj-type"></a>
-
 ### type
 
 Type: `String`
@@ -1197,8 +1073,6 @@ Read only.
 
 ---
 
-<a id="controlobj-value-boolean"></a>
-
 ### value
 
 Type: `Boolean`
@@ -1207,8 +1081,6 @@ For a [Checkbox](types-of-controls.md#checkbox) or [RadioButton](types-of-contro
 selected or set state, false if it is not.
 
 ---
-
-<a id="controlobj-value-number"></a>
 
 ### value
 
@@ -1219,8 +1091,6 @@ If set to a value outside the range specified by minvalue and maxvalue, it is
 automatically reset to the closest boundary.
 
 ---
-
-<a id="controlobj-visible"></a>
 
 ### visible
 
@@ -1234,8 +1104,6 @@ when the parent is next shown.
 
 ---
 
-<a id="controlobj-window"></a>
-
 ### window
 
 Type: `Window`
@@ -1243,8 +1111,6 @@ Type: `Window`
 The [Window object](window-object.md#window-object) that contains this control. Read only.
 
 ---
-
-<a id="controlobj-windowbounds"></a>
 
 ### windowBounds
 
@@ -1255,8 +1121,6 @@ containing window’s coordinates. Compare [Bounds](size-and-location-objects.md
 coordinates are relative to the immediate parent container. Read only.
 
 ---
-
-<a id="controlobj-function-name"></a>
 
 ### function_name
 
@@ -1274,13 +1138,11 @@ take and return only the supported data types:
 | Boolean  | Array       |
 | Null     |             |
 
-#### NOTE
-The ActionScript `class` and `date` objects are not supported as
+!!! note
+    The ActionScript `class` and `date` objects are not supported as
 parameter values.
 
 ---
-
-<a id="control-object-functions"></a>
 
 ## Control object functions
 
@@ -1288,8 +1150,6 @@ The following table shows the methods defined for each element type, and for spe
 indicated.
 
 ---
-
-<a id="controlobj-addeventlistener"></a>
 
 ### addEventListener()
 
@@ -1305,8 +1165,6 @@ Registers an event handler for a particular type of event occurring in this cont
 Returns undefined.
 
 ---
-
-<a id="controlobj-dispatchevent"></a>
 
 ### dispatchEvent()
 
@@ -1324,8 +1182,6 @@ the event object’s [preventDefault()](event-handling.md#eventobj-preventdefaul
 
 ---
 
-<a id="controlobj-hide"></a>
-
 ### hide()
 
 `controlObj.hide()`
@@ -1337,8 +1193,6 @@ own visibility states.
 Returns `undefined`.
 
 ---
-
-<a id="controlobj-notify"></a>
 
 ### notify()
 
@@ -1352,8 +1206,6 @@ Sends a notification message, simulating the specified user interaction event.
 Returns `undefined`.
 
 ---
-
-<a id="controlobj-removeeventlistener"></a>
 
 ### removeEventListener()
 
@@ -1371,8 +1223,6 @@ Returns `undefined`.
 
 ---
 
-<a id="controlobj-show"></a>
-
 ### show()
 
 `controlObj.show()`
@@ -1385,8 +1235,6 @@ Returns `undefined`.
 
 ---
 
-<a id="controlobj-tostring"></a>
-
 ### toString()
 
 `listItemObj.toString()`
@@ -1397,8 +1245,6 @@ property as a string.
 Returns a String.
 
 ---
-
-<a id="controlobj-valueof"></a>
 
 ### valueOf()
 
@@ -1417,8 +1263,6 @@ The following table shows the methods defined for list objects only.
 
 ---
 
-<a id="listobj-add"></a>
-
 ### add()
 
 `listObj.add (type, text[, index])`
@@ -1436,8 +1280,6 @@ Returns the `item` control object for `type = 'item'`, or `null` for
 
 ---
 
-<a id="listobj-find"></a>
-
 ### find()
 
 `listObj.find(text)`
@@ -1453,8 +1295,6 @@ value.
 Returns the `item` object if found; otherwise, returns `null`.
 
 ---
-
-<a id="listobj-remove"></a>
 
 ### remove()
 
@@ -1475,8 +1315,6 @@ Returns `undefined`.
 
 ---
 
-<a id="listobj-removeall"></a>
-
 ### removeAll()
 
 `listObj.removeAll()`
@@ -1487,8 +1325,6 @@ Removes all items from the object’s `items` array.
 Returns `undefined`.
 
 ---
-
-<a id="listobj-revealitem"></a>
 
 ### revealItem()
 
@@ -1504,14 +1340,12 @@ Returns `undefined`.
 
 ---
 
-<a id="flashplayer-control-functions"></a>
-
 ## FlashPlayer control functions
 
 These functions apply only to controls of type flashplayer.
 
-#### NOTE
-There are limitations on how these functions can be used to control
+!!! note
+    There are limitations on how these functions can be used to control
 playback of Flash movies:
 
 - Do not use [stopMovie()](#flashplayerobj-stopmovie) and [playMovie()](#flashplayerobj-playmovie) to suspend and subsequently
@@ -1529,8 +1363,6 @@ playback of Flash movies:
 
 ---
 
-<a id="flashplayerobj-invokeplayerfunction"></a>
-
 ### invokePlayerFunction()
 
 `flashPlayerObj.invokePlayerFunction(fnName, [arg1[,…argN]] )`
@@ -1546,8 +1378,6 @@ Returns the result of the invoked function, which must be one of the allowed typ
 
 ---
 
-<a id="flashplayerobj-loadmovie"></a>
-
 ### loadMovie()
 
 `flashPlayerObj.loadMovie(file)`
@@ -1562,8 +1392,6 @@ Returns `undefined`.
 
 ---
 
-<a id="flashplayerobj-playmovie"></a>
-
 ### playMovie()
 
 `flashPlayerObj.playMovie(rewind)`
@@ -1573,14 +1401,12 @@ Returns `undefined`.
 
 Restarts a movie that has been stopped.
 
-#### NOTE
-Do not call when a movie is currently playing.
+!!! note
+    Do not call when a movie is currently playing.
 
 Returns `undefined`.
 
 ---
-
-<a id="flashplayerobj-stopmovie"></a>
 
 ### stopMovie()
 
@@ -1588,14 +1414,12 @@ Returns `undefined`.
 
 Halts playback of the current movie.
 
-#### NOTE
-Does not work when called from the player’s hosting environment.
+!!! note
+    Does not work when called from the player’s hosting environment.
 
 Returns `undefined`.
 
 ---
-
-<a id="control-event-handling-callbacks"></a>
 
 ## Control event-handling callbacks
 
@@ -1605,16 +1429,12 @@ expected return values; see [Defining behavior with event callbacks and listener
 
 ---
 
-<a id="control-event-onactivate"></a>
-
 ### onActivate
 
 Called when the user gives a control the keyboard focus by clicking it or
 tabbing into it.
 
 ---
-
-<a id="control-event-onclick"></a>
 
 ### onClick
 
@@ -1625,8 +1445,6 @@ Called when the user clicks one of the following control types:
 | [Checkbox](types-of-controls.md#checkbox) | [RadioButton](types-of-controls.md#radiobutton) |
 
 ---
-
-<a id="control-event-onchange"></a>
 
 ### onChange
 
@@ -1651,8 +1469,6 @@ types:
 
 ---
 
-<a id="control-event-onchanging"></a>
-
 ### onChanging
 
 Called for each incremental change in one of the following control types:
@@ -1664,8 +1480,6 @@ Called for each incremental change in one of the following control types:
 
 ---
 
-<a id="control-event-oncollapse"></a>
-
 ### onCollapse
 
 Called when the user collapses (closes) a node in a [treeview](#control-type-treeview) control.
@@ -1674,16 +1488,12 @@ collapsed.
 
 ---
 
-<a id="control-event-ondeactivate"></a>
-
 ### onDeactivate
 
 Called when the user removes keyboard focus from a previously active control by
 clicking outside it or tabbing out of it.
 
 ---
-
-<a id="control-event-ondoubleclick"></a>
 
 ### onDoubleClick
 
@@ -1692,18 +1502,14 @@ The list’s `selection` property is set to the clicked item.
 
 ---
 
-<a id="control-event-onenterkey"></a>
-
 ### onEnterKey
 
-#### WARNING
-This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
+!!! warning
+    This method/property is officially undocumented and was found via research. The information here may be inaccurate, and this whole method/property may disappear or stop working some point. Please contribute if you have more information on it!
 
 Called when the user presses return or enter in a [edittext](#control-type-edittext) control.
 
 ---
-
-<a id="control-event-ondraw"></a>
 
 ### onDraw
 
@@ -1713,8 +1519,6 @@ Handler takes one argument, a [DrawState object](#drawstate-object).
 
 ---
 
-<a id="control-event-onexpand"></a>
-
 ### onExpand
 
 Called when the user expands (opens) a node in a [treeview](#control-type-treeview) control. The parameter
@@ -1722,16 +1526,12 @@ to this function is the [ListItem](types-of-controls.md#listitem) node object th
 
 ---
 
-<a id="control-event-onshortcutkey"></a>
-
 ### onShortcutKey
 
 (In Windows only) Called when a shortcut-key sequence is typed that matches the
 [shortcutKey](#controlobj-shortcutkey) value for an element in the active window.
 
 ---
-
-<a id="drawstate-object"></a>
 
 ## DrawState object
 

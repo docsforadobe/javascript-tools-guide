@@ -1,5 +1,3 @@
-<a id="the-vscode-debugger"></a>
-
 # The VS Code Debugger
 
 Since [The ExtendScript Toolkit](../extendscript-toolkit/index.md#the-extendscript-toolkit) has been deprecated by Adobe (in part due to MacOS dropping support for 32-bit apps), the official method of debugging Extendscript is by using [VS Code](https://code.visualstudio.com/) with the [Adobe Extendscript extension](https://marketplace.visualstudio.com/items?itemName=Adobe.extendscript-debug).

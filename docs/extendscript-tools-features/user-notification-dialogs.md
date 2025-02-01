@@ -1,5 +1,3 @@
-<a id="user-notification-dialogs"></a>
-
 # User notification dialogs
 
 ExtendScript provides a set of globally available functions that allow you to display short messages to the
@@ -14,8 +12,6 @@ user in platform-standard dialog boxes. There are three types of message dialogs
 > These dialogs are customizable to a small degree. The appearance is platform specific.
 
 ---
-
-<a id="global-alert-function"></a>
 
 ## Global alert function
 
@@ -44,8 +40,6 @@ This figure shows alert dialogs with error icons.
 
 ---
 
-<a id="global-confirm-function"></a>
-
 ## Global confirm function
 
 Displays a platform-standard dialog containing a short message and two buttons labeled Yes and No.
@@ -72,8 +66,6 @@ This figure shows confirmation dialogs with No as the default button.
 ![Windows Confirmation w/ 'No' as default](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_win-no-default.jpg)![MacOS Confirmation w/ 'No' as default](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos-no-default.jpg)
 
 ---
-
-<a id="global-prompt-function"></a>
 
 ## Global prompt function
 

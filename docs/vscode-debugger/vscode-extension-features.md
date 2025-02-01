@@ -1,17 +1,13 @@
-<a id="vscode-extension-features"></a>
-
 # VS Code Extension Features
 
 Once you have the Extendscript VS Code Extension up and running, there are a few other things you can do; [export to jsxbin](#exporting-as-binary), [use breakpoints in your code](#using-breakpoint), and more.
 
-#### NOTE
-This guide is meant to give insight on how to use specific Extendscript for VS Code features.
+!!! note
+    This guide is meant to give insight on how to use specific Extendscript for VS Code features.
 
 If you’re looking on how to get up and running with the extension, see [Getting Started with the VS Code Debugger](getting-started-with-vscode-debugger.md#getting-started-with-vscode-debugger).
 
 ---
-
-<a id="using-breakpoint"></a>
 
 ## Using Breakpoints
 
@@ -19,13 +15,9 @@ Breakpoints allow you to stop your code running at a specific line, letting you 
 
 You can create breakpoints one of two ways; either using [VS Code’s native Breakpoints system](#vs-code-breakpoints), or using [Extendscript’s inline breakpoint method](#extendscript-breakpoints).
 
-<a id="vs-code-breakpoints"></a>
-
 ### VS Code Breakpoints
 
 One advantage of using VS Code is that we can set VS Code breakpoints and have the debugger respect them! See the official [Visual Studio article on breakpoints](https://code.visualstudio.com/docs/editor/debugging#_breakpoints).
-
-<a id="extendscript-breakpoints"></a>
 
 ### Extendscript Breakpoints
 
@@ -37,15 +29,11 @@ See [bp()](../extendscript-tools-features/dollar-object.md#dollar-bp) for more i
 
 ---
 
-<a id="exporting-as-binary"></a>
-
 ## Exporting as Binary
 
 In the old Extendscript ToolKit, you could very easily save your projects as an obfuscated binary file. This functionality still exists in the VS Code debugger!
 
 You can export either [from the vscode interface](#jsxbin-from-vs-code), or [via the command line](#jsxbin-from-the-command-line).
-
-<a id="jsxbin-from-vs-code"></a>
 
 ### JSXBIN from VS Code
 
@@ -55,14 +43,12 @@ To export your script as binary, you have a few options:
 > - Open the command palette (Ctrl + Shift + P) and type ‘Export as Binary’
 > - Use the keyboard shortcut for the same command (Ctrl + Shift + J)
 
-<a id="jsxbin-from-the-command-line"></a>
-
 ### JSXBIN from the Command Line
 
 The VS Code extension allows you to export either single files or entire directories via the command line, but it takes a bit of work on your end.
 
-#### WARNING
-While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
+!!! warning
+    While there is a built-in way to do it, it can be a fairly unfriendly process. As an alternative, consider the gulp-accessible [npm package jsxbin](https://www.npmjs.com/package/jsxbin). It does the same as below, but with much less user involvement.
 
 There are reports that this package has issues on Windows. As an alternative gulp task, you can try [this script](https://bitbucket.org/motiondesign/workspace/snippets/aLzaX5) from [Justin Taylor](http://justintaylor.tv/).
 
@@ -80,8 +66,6 @@ All of the files are saved in the same directory with the same filename (though 
    > - `h`, `--help`: Show this help and exit
 3. Running the script
    > - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
-
-<a id="examples"></a>
 
 #### Examples
 

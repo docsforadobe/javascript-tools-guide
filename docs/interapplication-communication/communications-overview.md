@@ -1,5 +1,3 @@
-<a id="communications-overview"></a>
-
 # Communications overview
 
 Scripts written for any message-enabled application can communicate with other message-enabled
@@ -8,8 +6,6 @@ sending messages and receiving responses from a remote application. A specific s
 identifying applications unambiguously.
 
 ---
-
-<a id="remote-function-calls"></a>
 
 ## Remote function calls
 
@@ -29,8 +25,6 @@ photoshop.photomerge(files). The set of functions available for each application
 
 ---
 
-<a id="messaging-framework"></a>
-
 ## Messaging framework
 
 The interapplication messaging framework is a JavaScript application programming interface (API) that
@@ -44,8 +38,6 @@ to specify how they are handled.
 [Messaging framework API reference](messaging-framework-api-reference.md#messaging-framework-api-reference) provides complete reference details.
 
 ---
-
-<a id="identifying-applications"></a>
 
 ## Identifying applications
 

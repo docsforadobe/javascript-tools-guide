@@ -1,18 +1,12 @@
-<a id="specifying-measurement-values"></a>
-
 # Specifying measurement values
 
 ExtendScript provides the UnitValue object to represent measurement values. The properties and
 methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform
 conversions from one unit to another.
 
-<a id="unitvalue-object"></a>
-
 ## UnitValue object
 
 Represents measurement values that contain both the numeric magnitude and the unit of measurement.
-
-<a id="unitvalue-object-constructor"></a>
 
 ### UnitValue object constructor
 
@@ -58,8 +52,6 @@ myVal = UnitValue ("12 centimeters");
 
 ---
 
-<a id="unitvalue-object-properties"></a>
-
 ### UnitValue object properties
 
 | `baseUnit`   | UnitValue   | A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a<br/>base for percentage values. This is used as the base conversion unit for pixels<br/>and percentages; see [Converting pixel and percentage values](#converting-pixel-and-percentage-values).<br/><br/>Default is 0.013889 inches (1/72 in), which is the base conversion unit for<br/>pixels at 72 dpi. Set to null to restore the default.   |
@@ -69,11 +61,7 @@ myVal = UnitValue ("12 centimeters");
 
 ---
 
-<a id="unitvalue-object-functions"></a>
-
 ### UnitValue object functions
-
-<a id="unitvalue-object-as"></a>
 
 #### as()
 
@@ -86,8 +74,6 @@ Returns the numeric value of this object in the given unit. If the unit is unkno
 computed, generates a run-time error.
 
 ---
-
-<a id="unitvalue-object-convert"></a>
 
 #### convert()
 
@@ -102,8 +88,6 @@ Returns `true` if the conversion is successful. If the unit is unknown or the ob
 converted, generates a run-time error and returns `false`.
 
 ---
-
-<a id="converting-pixel-and-percentage-values"></a>
 
 ## Converting pixel and percentage values
 
@@ -176,8 +160,6 @@ myVal.convert ("px"); // => value=72 type=px
 ```
 
 ---
-
-<a id="computing-with-unit-values"></a>
 
 ## Computing with unit values
 

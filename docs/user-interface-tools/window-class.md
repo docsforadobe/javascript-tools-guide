@@ -1,13 +1,9 @@
-<a id="window-class"></a>
-
 # Window class
 
 The Window class defines these static properties and functions. Window instances created with new
 Window() do not have these properties and functions defined.
 
 ---
-
-<a id="window-class-properties"></a>
 
 ## Window class properties
 
@@ -16,8 +12,6 @@ Window() do not have these properties and functions defined.
 | **version**         | `String`   | Deprecated. Use ScriptUI.version instead.         |
 
 ---
-
-<a id="window-class-functions"></a>
 
 ## Window class functions
 
@@ -67,8 +61,8 @@ windows created by the application (if the application supports this case).
 | `type`           | Optional. The window type (see [Window object constructor](window-object.md#window-object-constructor)) used if<br/>there is more than one window with the same title.<br/>Can be `null` or the empty string. |
 | `title`          | The window title.                                                                                                                                                                                             |
 
-#### NOTE
-Not supported in all ScriptUI implementations.
+!!! note
+    Not supported in all ScriptUI implementations.
 
 Returns a Window object found or generated from the resource, or `null` if no such window or
 resource exists.

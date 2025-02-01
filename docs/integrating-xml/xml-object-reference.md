@@ -1,5 +1,3 @@
-<a id="xml-object-reference"></a>
-
 # XML Object Reference
 
 This section provides reference details for the properties and methods of the XML object itself, and for the
@@ -11,8 +9,6 @@ related utility objects and global functions that you use to work with namespace
 - [Global functions](#xml-global-functions)
 
 ---
-
-<a id="xml-object"></a>
 
 ## XML object
 
@@ -26,14 +22,10 @@ additional XML objects for all contained elements.
 
 `[new] XML (xmlCode);`
 
-<a id="xmlcode"></a>
-
 | xmlCode   | String or XML   | A string containing valid XML code, or an existing XML object.<br/><br/>> - If a valid string is supplied, returns a new XML object<br/>>   encapsulating the XML code. If the XML code cannot be parsed,<br/>>   throws a JavaScript error.<br/>> - If an existing object is supplied and the `new` operator is used,<br/>>   returns a copy of the object; otherwise, returns the object itself.   |
 |-----------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ---
-
-<a id="xml-class-properties"></a>
 
 ### XML class properties
 
@@ -48,14 +40,10 @@ These static properties are available through the XML class. They control how XM
 
 ---
 
-<a id="xml-class-functions"></a>
-
 ### XML class functions
 
 These static functions are available through the XML class, and provide information about the global
 settings of the XML parser.
-
-<a id="xml-defaultsettings"></a>
 
 #### defaultSettings()
 
@@ -67,8 +55,6 @@ Returns a JavaScript object containing five properties, which correspond to the 
 
 ---
 
-<a id="xml-settings"></a>
-
 #### settings()
 
 `XML.settings ();`
@@ -78,8 +64,6 @@ Retrieves the current global option settings that control how XML is parsed and 
 Returns a JavaScript object containing five properties, which correspond to the five [XML class properties](#xml-class-properties)
 
 ---
-
-<a id="xml-setsettings"></a>
 
 #### setSettings()
 
@@ -95,8 +79,6 @@ Returns `undefined`.
 
 ---
 
-<a id="xml-object-properties"></a>
-
 ### XML object properties
 
 The properties of the XML object are named for and contain the values of the child elements and attributes
@@ -107,8 +89,6 @@ of the element that the object represents.
 | **@attributeName**   | [XML object](#xml-object)   | Attribute properties are named with the attribute name prefixed with the at-sign, @. |
 
 ---
-
-<a id="xml-object-functions"></a>
 
 ### XML object functions
 
@@ -125,8 +105,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-appendchild"></a>
-
 #### appendChild()
 
 `xmlObj.appendChild (child);`
@@ -142,8 +120,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-attributes"></a>
-
 #### attributes()
 
 `xmlObj.attributes (name);`
@@ -156,8 +132,6 @@ Retrieves a list of the named attribute elements contained in this node.
 Returns an [XML object](#xml-object) containing all values of the named attribute.
 
 ---
-
-<a id="xml-object-child"></a>
 
 #### child()
 
@@ -172,8 +146,6 @@ Returns an [XML object](#xml-object) containing all child elements of the given 
 
 ---
 
-<a id="xml-object-childindex"></a>
-
 #### childIndex()
 
 `xmlObj.childIndex ();`
@@ -183,8 +155,6 @@ Retrieves the 0-based position index of this node within its parent node.
 Returns a Number.
 
 ---
-
-<a id="xml-object-children"></a>
 
 #### children()
 
@@ -196,8 +166,6 @@ Returns an [XML object](#xml-object) containing the child elements.
 
 ---
 
-<a id="xml-object-comments"></a>
-
 #### comments()
 
 `xmlObj.comments();`
@@ -207,8 +175,6 @@ Retrieves all XML comment elements from this node.
 Returns an [XML object](#xml-object) containing the comments.
 
 ---
-
-<a id="xml-object-contains"></a>
 
 #### contains()
 
@@ -223,8 +189,6 @@ Returns `true` if the element is contained in this XML tree.
 
 ---
 
-<a id="xml-object-copy"></a>
-
 #### copy()
 
 `xmlObj.copy();`
@@ -234,8 +198,6 @@ Creates a copy of this node.
 Returns the new XML object.
 
 ---
-
-<a id="xml-object-descendants"></a>
 
 #### descendants()
 
@@ -251,8 +213,6 @@ Returns an [XML object](#xml-object) containing properties for each descendant e
 
 ---
 
-<a id="xml-object-elements"></a>
-
 #### elements()
 
 `xmlObj.elements (name);`
@@ -267,8 +227,6 @@ Returns an [XML object](#xml-object) containing properties for each child elemen
 
 ---
 
-<a id="xml-object-hascomplexcontent"></a>
-
 #### hasComplexContent()
 
 `xmlObj.hasComplexContent ();`
@@ -280,8 +238,6 @@ text nodes.
 Returns `true` if this node contains child elements.
 
 ---
-
-<a id="xml-object-hassimplecontent"></a>
 
 #### hasSimpleContent()
 
@@ -297,8 +253,6 @@ Returns `true` if this node contains no child elements.
 
 ---
 
-<a id="xml-object-inscopenamespaces"></a>
-
 #### inScopeNamespaces()
 
 `xmlObj.inScopeNamespaces ();`
@@ -308,8 +262,6 @@ Retrieves the current list of valid namespaces in this element.
 Returns an Array of [Namespace object](#namespace-object), in which the last member is the default namespace.
 
 ---
-
-<a id="xml-object-insertchildafter"></a>
 
 #### insertChildAfter()
 
@@ -326,8 +278,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-insertchildbefore"></a>
-
 #### insertChildBefore()
 
 `xmlObj.insertChildBefore (child1, child2);`
@@ -343,8 +293,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-length"></a>
-
 #### length()
 
 `xmlObj.length ();`
@@ -356,8 +304,6 @@ Returns a Number.
 
 ---
 
-<a id="xml-object-localname"></a>
-
 #### localName()
 
 `xmlObj.localName ();`
@@ -367,8 +313,6 @@ Retrieves the local name of this element; that is, the element name, without any
 Returns a String.
 
 ---
-
-<a id="xml-object-name"></a>
 
 #### name()
 
@@ -380,8 +324,6 @@ Returns a [QName object](#qname-object) containing the element name and namespac
 
 ---
 
-<a id="xml-object-namespace"></a>
-
 #### namespace()
 
 `xmlObj.namespace ();`
@@ -391,8 +333,6 @@ Retrieves the namespace URI of this element.
 Returns a String.
 
 ---
-
-<a id="xml-object-nodekind"></a>
 
 #### nodeKind()
 
@@ -410,8 +350,6 @@ Returns a String, one of:
 
 ---
 
-<a id="xml-object-namespacedeclarations"></a>
-
 #### namespaceDeclarations()
 
 `xmlObj.namespaceDeclarations ();`
@@ -421,8 +359,6 @@ Retrieves all of the namespace declarations contained in this node.
 Returns an Array of [Namespace object](#namespace-object).
 
 ---
-
-<a id="xml-object-normalize"></a>
 
 #### normalize()
 
@@ -435,8 +371,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-parent"></a>
-
 #### parent()
 
 `xmlObj.parent ();`
@@ -446,8 +380,6 @@ Retrieves the parent node of this node.
 Returns an [XML object](#xml-object), or `null` for the root element.
 
 ---
-
-<a id="xml-object-prependchild"></a>
 
 #### prependChild()
 
@@ -464,8 +396,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-processinginstructions"></a>
-
 #### processingInstructions()
 
 `xmlObj.processingInstructions ([name]);`
@@ -480,8 +410,6 @@ Returns an [XML object](#xml-object) containing the children of this object that
 matching the name if supplied.
 
 ---
-
-<a id="xml-object-replace"></a>
 
 #### replace()
 
@@ -499,8 +427,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-setchildren"></a>
-
 #### setChildren()
 
 `xmlObj.setChildren (value);`
@@ -515,8 +441,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-setlocalname"></a>
-
 #### setLocalName()
 
 `xmlObj.setLocalName(name);`
@@ -530,8 +454,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-setname"></a>
-
 #### setName()
 
 `xmlObj.setName(name);`
@@ -544,8 +466,6 @@ Replaces the full name of this object; that is, the element name and its namespa
 Returns this [XML object](#xml-object).
 
 ---
-
-<a id="xml-object-setnamespace"></a>
 
 #### setNamespace()
 
@@ -561,8 +481,6 @@ Returns this [XML object](#xml-object).
 
 ---
 
-<a id="xml-object-text"></a>
-
 #### text()
 
 `xmlObj.text();`
@@ -572,8 +490,6 @@ Retrieves text nodes from this element.
 Returns an [XML object](#xml-object) containing all properties of this object that represent XML text nodes.
 
 ---
-
-<a id="xml-object-tostring"></a>
 
 #### toString()
 
@@ -589,8 +505,6 @@ Returns a String.
 
 ---
 
-<a id="xml-object-toxmlstring"></a>
-
 #### toXMLString()
 
 `xmlObj.toXMLString();`
@@ -602,8 +516,6 @@ by the global settings XML.:ref:prettyPrinting <xml-class-properties> and XML.:r
 Returns a String.
 
 ---
-
-<a id="xml-object-xpath"></a>
 
 #### xpath()
 
@@ -624,13 +536,9 @@ Returns an [XML object](#xml-object), the result of evaluation.
 
 ---
 
-<a id="xml-global-functions"></a>
-
 ## Global functions
 
 These functions are available in the JavaScript global namespace.
-
-<a id="xml-isxmlname"></a>
 
 ### isXMLName()
 
@@ -641,16 +549,14 @@ These functions are available in the JavaScript global namespace.
 
 Reports whether a string contains a name that conforms to valid XML syntax.
 
-#### NOTE
-This implementation uses the same rules as for a JavaScript name, except for the ‘$’ character,
+!!! note
+    This implementation uses the same rules as for a JavaScript name, except for the ‘$’ character,
 which is disallowed, and the ‘-’ character, which as added. It does not follow the W3C definition of an
 XML name, which adds more Unicode characters to the valid set of characters.
 
 Returns `true` if the name is a valid XML name, `false` otherwise.
 
 ---
-
-<a id="xml-setdefaultxmlnamespace"></a>
 
 ### setDefaultXMLNamespace()
 
@@ -670,8 +576,6 @@ default xml namespace = URL_string
 Returns `undefined`.
 
 ---
-
-<a id="qname-object"></a>
 
 ## QName object
 
@@ -709,8 +613,6 @@ When no arguments are supplies, creates a `QName` object with an empty local nam
 
 ---
 
-<a id="namespace-object"></a>
-
 ## Namespace object
 
 This object encapsulates the definition of an XML namespace. A namespace associates an XML-name
@@ -729,8 +631,6 @@ For example, this XML definition contains a namespace declaration:
 In the corresponding namespace, the prefix is `adobe`, and the URI is `http://www.adobe.com/test`.
 
 ---
-
-<a id="namespace-object-constructors"></a>
 
 ### Namespace object constructors
 
@@ -753,8 +653,6 @@ When no argument is supplied, creates a namespace with an empty prefix and URI.
 | prefix, uri | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                                        |
 
 ---
-
-<a id="namespace-object-properties"></a>
 
 ### Namespace object properties
 

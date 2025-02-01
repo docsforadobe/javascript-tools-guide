@@ -1,5 +1,3 @@
-<a id="scriptui-object-reference"></a>
-
 # ScriptUI object reference
 
 ScriptUI is a component that works with the ExtendScript JavaScript interpreter to provide JavaScript

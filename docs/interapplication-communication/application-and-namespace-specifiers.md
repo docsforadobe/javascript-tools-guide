@@ -1,5 +1,3 @@
-<a id="application-and-namespace-specifiers"></a>
-
 # Application and namespace specifiers
 
 All forms of interapplication communication use [Application specifiers](#application-specifiers) to identify Adobe applications.
@@ -17,8 +15,6 @@ When a script for one application invokes cross-DOM or exported functions, it id
 application using [Namespace specifiers](#namespace-specifiers).
 
 ---
-
-<a id="application-specifiers"></a>
 
 ## Application specifiers
 
@@ -50,8 +46,6 @@ appropriate available installation. It tries to match to available applications 
 > 5. Applications for any locale
 
 ---
-
-<a id="namespace-specifiers"></a>
 
 ## Namespace specifiers
 

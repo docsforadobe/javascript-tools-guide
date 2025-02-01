@@ -1,5 +1,3 @@
-<a id="graphic-customization-objects"></a>
-
 # Graphic customization objects
 
 These objects provide the ability to customize the appearance of user-interface controls before they are
@@ -16,8 +14,6 @@ In addition, the Custom element class (if supported by the Adobe application you
 define completely customized UI elements that are rendered by the application in a manner you define.
 
 ---
-
-<a id="scriptuigraphics-object"></a>
 
 ## ScriptUIGraphics object
 
@@ -51,8 +47,6 @@ Contains the enumerated constants for the type argument of newPen(). Types are:
 - `THEME_COLOR`
 
 ---
-
-<a id="scriptuigraphics-object-properties"></a>
 
 ### ScriptUIGraphics object properties
 
@@ -111,16 +105,12 @@ foreground color of a control element. A ScriptUIPen object.
 
 ---
 
-<a id="scriptuigraphics-object-functions"></a>
-
 ### ScriptUIGraphics object functions
 
 These functions directly customize the appearance of the associated element by drawing on the screen, or
 create the Pen and Brush objects used to populate the graphics object or pass to the drawing methods:
 
 ---
-
-<a id="scriptuigraphics-closepath"></a>
 
 #### closePath()
 
@@ -132,8 +122,6 @@ currentPath), which closes the path.
 Returns undefined.
 
 ---
-
-<a id="scriptuigraphics-drawfocusring"></a>
 
 #### drawFocusRing()
 
@@ -152,8 +140,6 @@ Returns undefined.
 
 ---
 
-<a id="scriptuigraphics-drawimage"></a>
-
 #### drawImage()
 
 `controlObj.graphics.drawImage (image, left, top[, width, height])`
@@ -170,8 +156,6 @@ Returns undefined.
 
 ---
 
-<a id="scriptuigraphics-drawoscontrol"></a>
-
 #### drawOSControl()
 
 `controlObj.graphics.drawOSControl ( )`
@@ -181,8 +165,6 @@ Draws the platform-specific control associated with this element.
 Returns undefined.
 
 ---
-
-<a id="scriptuigraphics-drawstring"></a>
 
 #### drawString()
 
@@ -200,8 +182,6 @@ Returns undefined.
 
 ---
 
-<a id="scriptuigraphics-ellipsepath"></a>
-
 #### ellipsePath()
 
 `controlObj.graphics.ellipsePath (left, top[, width, height])`
@@ -217,8 +197,6 @@ Returns a Point object for the upper left corner of the area, which is the new c
 
 ---
 
-<a id="scriptuigraphics-fillpath"></a>
-
 #### fillPath()
 
 `controlObj.graphics.fillPath (brush[, path])`
@@ -233,8 +211,6 @@ Returns undefined.
 
 ---
 
-<a id="scriptuigraphics-lineto"></a>
-
 #### lineto()
 
 `controlObj.graphics.lineto (x, y)`
@@ -247,8 +223,6 @@ Adds a path segment to the currentPath, from the currentPoint to the specified p
 Returns a Point object for the given destination point, which is the new current position.
 
 ---
-
-<a id="scriptuigraphics-measurestring"></a>
 
 #### measureString()
 
@@ -265,8 +239,6 @@ Returns a Dimension object containing the height and width of the string in pixe
 
 ---
 
-<a id="scriptuigraphics-moveto"></a>
-
 #### moveto()
 
 `controlObj.graphics.moveto (x, y)`
@@ -279,8 +251,6 @@ Adds a given point to the currentPath, and makes it the currentPoint.
 Returns a Point object for the given destination point, which is the new current position.
 
 ---
-
-<a id="scriptuigraphics-newbrush"></a>
 
 #### newBrush()
 
@@ -296,8 +266,6 @@ Returns a ScriptUIBrush object.
 
 ---
 
-<a id="scriptuigraphics-newpath"></a>
-
 #### newPath()
 
 `controlObj.graphics.newPath( );`
@@ -307,8 +275,6 @@ Creates a new, empty drawing path in currentPath, replacing any existing path.
 Returns a ScriptUIPath object.
 
 ---
-
-<a id="scriptuigraphics-newpen"></a>
 
 #### newPen()
 
@@ -325,8 +291,6 @@ Returns a ScriptUIPen object.
 
 ---
 
-<a id="scriptuigraphics-rectpath"></a>
-
 #### rectPath()
 
 `controlObj.graphics.rectPath (left, top[, width, height])`
@@ -342,8 +306,6 @@ Returns a Point object for the upper left corner of the rectangle, which is the 
 
 ---
 
-<a id="scriptuigraphics-strokepath"></a>
-
 #### strokePath()
 
 `controlObj.graphics.fillPath (pen[, path])`
@@ -358,16 +320,12 @@ Returns undefined.
 
 ---
 
-<a id="scriptuibrush-object"></a>
-
 ## ScriptUIBrush object
 
 A helper object that encapsulates the qualities of a brush used to paint fill into a path in a control. Create
 with the newBrush() method of the ScriptUIGraphics object.
 Used as a value of backgroundColor and disabledBackgroundColor.
 Passed as an argument to fillPath().
-
-<a id="scriptuibrush-object-properties"></a>
 
 ### ScriptUIBrush object properties
 
@@ -380,16 +338,12 @@ The object contains the following properties:
 
 ---
 
-<a id="scriptuifont-object"></a>
-
 ## ScriptUIFont object
 
 A helper object that encapsulates the qualities of a font used to draw text into a control. Create with the
 newFont() method of the ScriptUI class.
 Used as a value of font.
 Passed as an argument to drawString() and measureString().
-
-<a id="scriptuifont-object-properties"></a>
 
 ### ScriptUIFont object properties
 
@@ -403,8 +357,6 @@ The object contains the following properties:
 | substitute | String   | The name of a substitution font, a fallback font to substitute for this font<br/>if the requested font family or style is not available.                                                        |
 
 ---
-
-<a id="scriptuiimage-object"></a>
 
 ## ScriptUIImage object
 
@@ -420,8 +372,6 @@ disabled, and rollover.
 
 This object is passed as an argument to drawImage().
 
-<a id="scriptuiimage-object-properties"></a>
-
 ### ScriptUIImage object properties
 
 The object contains the following read-only properties:
@@ -433,8 +383,6 @@ The object contains the following read-only properties:
 | size     | Dimension | A Dimension object that defines the size of the image in pixels.                                                                       |
 
 ---
-
-<a id="scriptuipath-object"></a>
 
 ## ScriptUIPath object
 
@@ -448,16 +396,12 @@ The class defines no properties or methods.
 
 ---
 
-<a id="scriptuipen-object"></a>
-
 ## ScriptUIPen object
 
 A helper object that encapsulates the qualities of a pen used to stroke path segments in a control. Create
 with the newPen() method of the ScriptUIGraphics object.
 Used as a value of foregroundColor and disabledForegroundColor.
 Passed as an argument to drawString() and strokePath().
-
-<a id="scriptuipen-object-properties"></a>
 
 ### ScriptUIPen object properties
 
@@ -470,8 +414,6 @@ The object contains the following properties:
 | type      | Number            | The pen type, one of these constants:<br/><br/>> - `ScriptUIGraphics.PenType.SOLID_COLOR`<br/>> - `ScriptUIGraphics.PenType.THEME_COLOR`                                                                                                                                                                     |
 
 ---
-
-<a id="custom-element-class"></a>
 
 ## Custom element class
 

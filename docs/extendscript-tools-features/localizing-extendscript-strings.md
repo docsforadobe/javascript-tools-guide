@@ -1,5 +1,3 @@
-<a id="localizing-extendscript-strings"></a>
-
 # Localizing ExtendScript strings
 
 Localization is the process of translating and otherwise manipulating an interface so it looks as if it were
@@ -29,8 +27,6 @@ string `"Hallo Welt"`.
 
 ---
 
-<a id="variable-values-in-localized-extendscript-strings"></a>
-
 ## Variable values in localized strings
 
 Some localization strings need to contain additional data whose position and order may change according
@@ -54,8 +50,6 @@ alert (localize (today, d.getMonth()+1, d.getDate()));
 ```
 
 ---
-
-<a id="enabling-automatic-extendscript-localization"></a>
 
 ## Enabling automatic localization
 
@@ -89,8 +83,6 @@ alert ( localize (msg));
 If you need to include variables in the localized strings, use the localize function.
 
 ---
-
-<a id="locale-names"></a>
 
 ## Locale names
 
@@ -141,8 +133,6 @@ All these identifiers are case sensitive; for example, `EN_US` is not valid.
 
 ---
 
-<a id="testing-localization"></a>
-
 ## Testing localization
 
 ExtendScript stores the current locale in the variable `$.locale`. This variable is updated whenever the
@@ -157,8 +147,6 @@ $.locale = null; // restore to the locale of the app
 ```
 
 ---
-
-<a id="global-localize-function"></a>
 
 ## Global localize function
 

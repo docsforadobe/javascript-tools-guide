@@ -1,5 +1,3 @@
-<a id="using-file-and-folder-objects"></a>
-
 # Using File and Folder objects
 
 Because path name syntax is very different on Windows, Mac OS, and UNIX®, Adobe ExendScript defines
@@ -20,14 +18,12 @@ if ( typeof f.open == "undefined" ) ... // Folders do not open
 File and Folder objects can be used anywhere that a path name is required, such as in properties and
 arguments for files and folders.
 
-#### NOTE
-When you create two File objects that refer to the same disk file, they are treated as distinct
+!!! note
+    When you create two File objects that refer to the same disk file, they are treated as distinct
 objects. If you open one of them for I/O, the operating system may inhibit access from the other object,
 because the disk file already is open.
 
 ---
-
-<a id="specifying-paths"></a>
 
 ## Specifying paths
 
@@ -106,8 +102,8 @@ On Windows, the `HOME` environment variable is optional. If it is assigned, its 
 name or a path name referring to a remote server (such as `\\myhost\mydir`). If the `HOME` environment
 variable is undefined, the ExtendScript default is the user’s home directory, usually the `C:\Users\username` folder.
 
-#### NOTE
-A script can access many of the folders that are specified with platform-specific variables through
+!!! note
+    A script can access many of the folders that are specified with platform-specific variables through
 static, globally available Folder class properties; for instance, `appData` contains the folder that stores
 application data for all users.
 
@@ -200,8 +196,6 @@ same data location, the path name `//myServer/share/file` would work for all thr
 
 ---
 
-<a id="unicode-i-o"></a>
-
 ## Unicode I/O
 
 When doing file I/O, Adobe applications convert 8-bit character encoding to Unicode. By default, this
@@ -230,8 +224,6 @@ When using UTF-8 encoding or 16-bit Unicode, always write the BOM character `"\u
 character of the file.
 
 ---
-
-<a id="file-error-handling"></a>
 
 ## File error handling
 

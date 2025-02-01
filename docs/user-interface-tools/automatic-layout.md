@@ -1,5 +1,3 @@
-<a id="automatic-layout"></a>
-
 # Automatic layout
 
 When a script creates a window and its associated user-interface elements, it can explicitly control the size
@@ -22,8 +20,6 @@ myWin.layout = new AutoLayoutManager( myWin );
 ```
 
 ---
-
-<a id="default-layout-behavior"></a>
 
 ## Default layout behavior
 
@@ -55,14 +51,12 @@ calculate that dimension, while using the specified value for the other.
 
 For details of how you can set these property values to affect the automatic layout, see [Automatic layout properties](#automatic-layout-properties).
 
-#### NOTE
-The default font and font size are chosen differently on different platforms, and by different
+!!! note
+    The default font and font size are chosen differently on different platforms, and by different
 applications on the same platform, so ScriptUI windows that are created the same way can appear
 different in different contexts.
 
 ---
-
-<a id="automatic-layout-properties"></a>
 
 ## Automatic layout properties
 
@@ -89,8 +83,6 @@ the particular property value being demonstrated.
 
 ---
 
-<a id="container-orientation"></a>
-
 ### Container orientation
 
 The `orientation` property of a container specifies the organization of child elements within it. It can have
@@ -106,8 +98,6 @@ The following figure shows the results of laying out the sample window with each
 ![Orientation = Row](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg)![Orientation = Column](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg)![Orientation = Stack](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg)
 
 ---
-
-<a id="aligning-children"></a>
 
 ### Aligning children
 
@@ -176,8 +166,6 @@ alignment to right for the EditText element, when the parent’s `alignChildren`
 
 ---
 
-<a id="alignment-in-two-dimensions"></a>
-
 ### Alignment in two dimensions
 
 You can set the alignment property with a two-string array instead of a single string, where the first string
@@ -198,8 +186,6 @@ how to specify alignment in two dimensions.
 
 ---
 
-<a id="setting-margins"></a>
-
 ### Setting margins
 
 The margins property of a container specifies the number of pixels between the edges of a container and
@@ -219,8 +205,6 @@ pixels, a bottom margin of 20 pixels, and left and right margins of 15 pixels:
 
 ---
 
-<a id="spacing-between-children"></a>
-
 ### Spacing between children
 
 The spacing property of a container specifies the number of pixels separating one child element from its
@@ -237,8 +221,6 @@ pixels:
 ![spacing = 20](user-interface-tools/_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg)
 
 ---
-
-<a id="determining-a-preferred-size"></a>
 
 ### Determining a preferred size
 
@@ -269,8 +251,6 @@ You can explicitly resize the controls in a window to fit the current text conte
 resized by the user, using the [resize()](layoutmanager-object.md#autolayoutmanager-object-resize) method of the layout object.
 
 ---
-
-<a id="creating-more-complex-arrangements"></a>
 
 ### Creating more complex arrangements
 
@@ -360,8 +340,6 @@ of its parent (the dialog), and specifies `alignment='right'`.
 
 ---
 
-<a id="creating-dynamic-content"></a>
-
 ### Creating dynamic content
 
 Many dialogs need to present different sets of information based on the user selecting some option within
@@ -428,8 +406,6 @@ win.show();
 ```
 
 ---
-
-<a id="custom-layout-manager-example"></a>
 
 ## Custom layout-manager example
 
@@ -531,8 +507,6 @@ win.show();
 
 ---
 
-<a id="the-autolayoutmanager-algorithm"></a>
-
 ## The AutoLayoutManager algorithm
 
 When a script creates a Window object and its elements and shows it the first time, the visible
@@ -571,8 +545,6 @@ call to a Window object’s show method:
    column of child elements.
 
 ---
-
-<a id="automatic-layout-restrictions"></a>
 
 ## Automatic layout restrictions
 

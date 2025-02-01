@@ -1,5 +1,3 @@
-<a id="socket-object"></a>
-
 # Socket object
 
 TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a
@@ -94,8 +92,6 @@ for example, let two Adobe applications exchange documents and data simply by wr
 JavaScript programs.
 
 ---
-
-<a id="chat-server-sample"></a>
 
 ## Chat server sample
 

@@ -1,11 +1,7 @@
-<a id="layoutmanager-object"></a>
-
 # LayoutManager object
 
 Controls the automatic layout behavior for a window or container. The subclass AutoLayoutManager
 implements the default automatic layout behavior.
-
-<a id="autolayoutmanager-object-constructor"></a>
 
 ## AutoLayoutManager object constructor
 
@@ -19,18 +15,12 @@ An instance is automatically created when you create a `Window` or container (`g
 referenced by the container’s [layout](window-object.md#container-properties-layout) property. This instance implements the default layout behavior unless
 you override it.
 
-<a id="autolayoutmanager-object-properties"></a>
-
 ## AutoLayoutManager object properties
 
 The default object has no predefined properties, but a script can assign arbitrary properties to an object it
 creates, to store data needed by the script-defined layout algorithm.
 
-<a id="autolayoutmanager-object-functions"></a>
-
 ## AutoLayoutManager object functions
-
-<a id="autolayoutmanager-object-layout"></a>
 
 ### layout()
 
@@ -49,8 +39,6 @@ explicitly to change the layout in case of changes in the size or position of th
 Returns `undefined`
 
 ---
-
-<a id="autolayoutmanager-object-resize"></a>
 
 ### resize()
 

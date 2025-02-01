@@ -1,5 +1,3 @@
-<a id="the-script-editor"></a>
-
 # The Script Editor
 
 The Script Editor is a full-featured source code editor for JavaScript. You can open any number of Script
@@ -17,8 +15,6 @@ specifically for use with JavaScript, while others are useful for all kinds of t
   other computer languages. The marking styles are configurable; see [Syntax marking](#syntax-marking).
 
 ---
-
-<a id="navigation-aids"></a>
 
 ## Navigation aids
 
@@ -117,8 +113,6 @@ The Script Editor supports extended keyboard input via IME (Windows) or TMS (Mac
 important for Far Eastern characters.
 
 ---
-
-<a id="coding-aids"></a>
 
 ## Coding aids
 
@@ -221,8 +215,6 @@ The triple-quote option allows the string to contain embedded quotes.
 
 ---
 
-<a id="searching-in-text"></a>
-
 ## Searching in text
 
 The Toolkit offers a search utility through the Edit > Find and Replace command. This command brings
@@ -269,8 +261,6 @@ on.
 
 For example, if the search string is `Fred\([1-9]\)XXX` and the replace string is `Sam\1YYY`, when applied to
 `Fred2XXX` the search generates `Sam2YYY`.
-
-<a id="syntax-marking"></a>
 
 ## Syntax marking
 

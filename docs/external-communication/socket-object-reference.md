@@ -1,5 +1,3 @@
-<a id="socket-object-reference"></a>
-
 # Socket object reference
 
 This section provides details of the object’s properties and methods.
@@ -14,8 +12,6 @@ Creates and returns a new `Socket` object.
 
 ---
 
-<a id="socket-object-properties"></a>
-
 ## Socket object properties
 
 | `connected`   | Boolean   | When true, the connection is active. Read only.                                                                                                                                |
@@ -28,11 +24,7 @@ Creates and returns a new `Socket` object.
 
 ---
 
-<a id="socket-object-functions"></a>
-
 ## Socket object functions
-
-<a id="socket-object-functions-close"></a>
 
 ### close()
 
@@ -46,8 +38,6 @@ The connection might stay open longer than you wish if you do not close it expli
 Returns `true` if the connection was closed, `false` on I/O errors.
 
 ---
-
-<a id="socket-object-functions-listen"></a>
 
 ### listen()
 
@@ -66,8 +56,6 @@ Returns `true` on success.
 
 ---
 
-<a id="socket-object-functions-open"></a>
-
 ### open()
 
 `socketObj.open (host [, encoding]);`
@@ -85,8 +73,6 @@ Returns `true` on success.
 
 ---
 
-<a id="socket-object-functions-poll"></a>
-
 ### poll()
 
 `socketObj.poll ();`
@@ -101,8 +87,6 @@ If no new connection request was detected, the method returns null.
 Returns a `Socket` object or `null`.
 
 ---
-
-<a id="socket-object-functions-read"></a>
 
 ### read()
 
@@ -119,8 +103,6 @@ number of characters read before the connection closed or timed out.
 
 ---
 
-<a id="socket-object-functions-readln"></a>
-
 ### readln()
 
 `socketObj.readln ();`
@@ -131,8 +113,6 @@ CR characters are ignored.
 Returns a string.
 
 ---
-
-<a id="socket-object-functions-write"></a>
 
 ### write()
 
@@ -147,8 +127,6 @@ CRLF sequences are converted to LFs unless encoding is set to `BINARY.`
 Returns `true` on success.
 
 ---
-
-<a id="socket-object-functions-writeln"></a>
 
 ### writeln()
 

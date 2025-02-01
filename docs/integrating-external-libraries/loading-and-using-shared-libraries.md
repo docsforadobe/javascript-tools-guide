@@ -1,5 +1,3 @@
-<a id="loading-and-using-shared-libraries"></a>
-
 # Loading and using shared libraries
 
 To load an external shared library into JavaScript, create a new [ExternalObject object](externalobject-object.md#externalobject-object). The instance acts as

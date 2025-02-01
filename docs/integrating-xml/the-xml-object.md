@@ -1,5 +1,3 @@
-<a id="the-xml-object"></a>
-
 # The XML Object
 
 The XML object represents an XML element node in an XML tree. The topmost `XML` object for an XML file
@@ -56,8 +54,6 @@ is never `null` or `undefined`.
 
 ---
 
-<a id="accessing-xml-elements"></a>
-
 ## Accessing XML elements
 
 This sample XML code is used for examples throughout this chapter:
@@ -112,8 +108,6 @@ and [Creating and accessing namespaces](#creating-and-accessing-namespaces)
 
 ---
 
-<a id="accessing-xml-attributes"></a>
-
 ## Accessing XML attributes
 
 Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a
@@ -145,8 +139,6 @@ bookstoreXML.book.(@category == "CHILDREN");
 ```
 
 ---
-
-<a id="viewing-xml-objects"></a>
 
 ## Viewing XML objects
 
@@ -187,8 +179,6 @@ The [toXMLString()](xml-object-reference.md#xml-object-toxmlstring) method seria
 For example, for the element `<x>text</x>`, the method returns `"<x>text</x>"`.
 
 ---
-
-<a id="modifying-xml-elements-and-attributes"></a>
 
 ## Modifying XML elements and attributes
 
@@ -255,8 +245,6 @@ You can change the values of attributes using the same technique.
 
 ---
 
-<a id="deleting-elements-and-attributes"></a>
-
 ## Deleting elements and attributes
 
 To delete an element or attribute in the XML, use the JavaScript `delete` operator to delete the
@@ -284,8 +272,6 @@ delete bookstoreXML.book[2].@category;
 ```
 
 ---
-
-<a id="retrieving-contained-elements"></a>
 
 ## Retrieving contained elements
 
@@ -362,15 +348,11 @@ Here are the results of the different calls.
 
 ---
 
-<a id="creating-and-accessing-namespaces"></a>
-
 ## Creating and accessing namespaces
 
 Simple access statements access elements in the default namespace. If you need to define elements in
 more than one namespace, you must use a [Namespace object](xml-object-reference.md#namespace-object) to access any elements that are NOT in the
 default namespace.
-
-<a id="defining-a-namespace-within-the-tree"></a>
 
 ### Defining a namespace within the tree
 
@@ -412,8 +394,6 @@ bookstoreXML.ns::book;
 
 ---
 
-<a id="setting-a-default-namespace"></a>
-
 ### Setting a default namespace
 
 By default, the default namespace is a namespace whose URI is the empty string. It is possible to set the
@@ -440,8 +420,6 @@ Once you have set the default namespace:
   empty string as the URI.
 
 ---
-
-<a id="accessing-elements-in-namespaces"></a>
 
 ### Accessing elements in namespaces
 
@@ -477,8 +455,6 @@ Once you have set the default namespace:
 
 ---
 
-<a id="mixing-xml-and-javascript"></a>
-
 ## Mixing XML and JavaScript
 
 You can enclose JavaScript statements in curly brackets, and embed them into XML. The JavaScript part is
@@ -511,8 +487,6 @@ You can also use these operators on XML elements:
 - Use the == operator to make an in-depth comparison of two XML trees.
 
 ---
-
-<a id="xml-lists"></a>
 
 ## XML lists
 

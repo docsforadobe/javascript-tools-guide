@@ -1,5 +1,3 @@
-<a id="external-communication-tools"></a>
-
 # External Communication Tools
 
 ExtendScript offers tools for communicating with other computers or the Internet using standard

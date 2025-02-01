@@ -1,12 +1,8 @@
-<a id="extendscript-reflection-interface"></a>
-
 # ExtendScript reflection interface
 
 ExtendScript provides a reflection interface that allows you to find out everything about an object,
 including its name, a description, the expected data type for properties, the arguments and return value
 for methods, and any default values or limitations to the input values.
-
-<a id="reflection-object"></a>
 
 ## Reflection object
 
@@ -23,8 +19,6 @@ for (var i = 0; i < props.length; i++) {
 
 ---
 
-<a id="reflection-object-properties"></a>
-
 ### Reflection object properties
 
 All properties are read only.
@@ -38,11 +32,7 @@ All properties are read only.
 
 ---
 
-<a id="reflection-object-functions"></a>
-
 ### Reflection object functions
-
-<a id="reflection-object-find"></a>
 
 #### find()
 
@@ -88,8 +78,6 @@ Math.reflect.find ("PI").type; // => number
 
 ---
 
-<a id="reflectioninfo-object"></a>
-
 ## ReflectionInfo object
 
 This object contains information about a property, a method, or a method argument.
@@ -111,8 +99,6 @@ obj.reflect.methods.indexOf.arguments[0];
 ```
 
 ---
-
-<a id="reflectioninfo-object-properties"></a>
 
 ## ReflectionInfo object properties
 

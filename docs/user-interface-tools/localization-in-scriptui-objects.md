@@ -1,5 +1,3 @@
-<a id="localization-in-scriptui-objects"></a>
-
 # Localization in ScriptUI objects
 
 For portions of your user interface that are displayed on the screen, you may want to localize the displayed
@@ -29,8 +27,6 @@ of your script-defined dialogs to allow for the varying widths of strings for di
 
 ---
 
-<a id="variable-values-in-localized-strings"></a>
-
 ## Variable values in localized strings
 
 The localize function allows you to include variables in the string values. Each variable is replaced with
@@ -46,8 +42,6 @@ Window.alert( localize( today, date.getMonth() + 1, date.getDate() ) );
 ```
 
 ---
-
-<a id="enabling-automatic-localization"></a>
 
 ## Enabling automatic localization
 

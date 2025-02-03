@@ -176,52 +176,64 @@ You can change the values of attributes using the same technique.
 
 ### Modification examples
 
-- In the sample XML, the third book has several <author> elements. This statement replaces all of them with a single element, containing a new string:
-  ```javascript
-  bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
-  ```
+**In the sample XML, the third book has several <author> elements. This statement replaces all of them with a single element, containing a new string:**
 
-  The result is this XML:
-  ```xml
-  <book category="CHILDREN">
-      <title lang="en">Alice's Adventures in Wonderland</title>
-      <author>Charles 'Lewis Carroll' Dodgeson</author>
-      <year>1865</year>
-      <price>29.99</price>
-  </book>
-  ```
-- To replace just the first author, leaving all the other authors in place, use this statement:
-  ```javascript
-  bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
-  ```
-- This statement changes the content of the <year> element in the second book. ExtendScript automatically converts the numeric value to a string:
-  ```javascript
-  bookstoreXML.book[1].year = 1901;
-  ```
-- This following statement adds a new <rating> element to the second book:
-  > bookstoreXML.book[1].rating = "**\***";
+```javascript
+bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
+```
 
-  The result is this XML:
-  ```xml
-  <book category="CHILDREN">
-      <title lang="en">The Wonderful Wizard of Oz</title>
-      <author>L. Frank Baum</author>
-      <year>1900</year>
-      <price>39.95</price>
-      <rating>*****</rating>
-  </book>
-  ```
-- This statement changes the value of the category attribute of the second book:
-  ```javascript
-  bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
-  ```
+The result is this XML:
 
-  The result is this XML:
-  ```xml
-  <book category="LITERATURE, FANTASY">
-  <title lang="en">The Wonderful Wizard of Oz</title>
-  ...
-  ```
+```xml
+<book category="CHILDREN">
+    <title lang="en">Alice's Adventures in Wonderland</title>
+    <author>Charles 'Lewis Carroll' Dodgeson</author>
+    <year>1865</year>
+    <price>29.99</price>
+</book>
+```
+
+**To replace just the first author, leaving all the other authors in place, use this statement:**
+
+```javascript
+bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
+```
+
+**This statement changes the content of the <year> element in the second book. ExtendScript automatically converts the numeric value to a string:**
+
+```javascript
+bookstoreXML.book[1].year = 1901;
+```
+
+**This following statement adds a new <rating> element to the second book:**
+
+`> bookstoreXML.book[1].rating = "**\***";`
+
+The result is this XML:
+
+```xml
+<book category="CHILDREN">
+    <title lang="en">The Wonderful Wizard of Oz</title>
+    <author>L. Frank Baum</author>
+    <year>1900</year>
+    <price>39.95</price>
+    <rating>*****</rating>
+</book>
+```
+
+**This statement changes the value of the category attribute of the second book:**
+
+```javascript
+bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
+```
+
+The result is this XML:
+
+```xml
+<book category="LITERATURE, FANTASY">
+<title lang="en">The Wonderful Wizard of Oz</title>
+...
+```
 
 ---
 
@@ -408,8 +420,10 @@ Once you have set the default namespace:
     ```
 
     or
-    > var nullNS = null;
-    > bookstoreXML.nullNS::book;
+    ```js
+    var nullNS = null;
+    bookstoreXML.nullNS::book;
+    ```
 
 ---
 

@@ -1,16 +1,16 @@
-# Socket object
+# Socket Object
 
 TCP connections are the basic transport layer of the Internet. Every time your Web browser connects to a server and requests a new page, it opens a TCP connection to handle the request as well as the server's reply. The JavaScript Socket object lets you connect to any server on the Internet and to exchange data with this server.
 
-The `Socket` object provides basic functionality to connect to a remote computer over a TCP/IP network or the Internet. It provides calls like `open()` and `close()` to establish or to terminate a connection, and `read()` or `write()` to transfer data. The `listen()` method establishes a simple Internet server; the server uses the method `poll()` to check for incoming connections.
+The Socket object provides basic functionality to connect to a remote computer over a TCP/IP network or the Internet. It provides calls like [`open()`](./socket-object-reference.md#socketopen) and [`close()`](./socket-object-reference.md#socketclose) to establish or to terminate a connection, and [`read()`](./socket-object-reference.md#socketread) or [`write()`](./socket-object-reference.md#socketwrite) to transfer data. The [`listen()`](./socket-object-reference.md#socketlisten) method establishes a simple Internet server; the server uses the method [`poll()`](./socket-object-reference.md#socketpoll) to check for incoming connections.
 
 Many of these connections are based on simple data exchange of ASCII data, while other protocols, like the FTP protocol, are more complex and involve binary data. One of the simplest protocols is the HTTP protocol.
 
 The following sample TCP/IP client connects to a WWW server (which listens on port 80); it then sends a very simple HTTP GET request to obtain the home page of the WWW server, and then it reads the reply, which is the home page together with a HTTP response header:
 
 ```javascript
-reply = "";
-conn = new Socket;
+var reply = "";
+var conn = new Socket;
 
 // access Adobe's home page
 if (conn.open ("www.adobe.com:80")) {
@@ -27,11 +27,11 @@ if (conn.open ("www.adobe.com:80")) {
 
 After executing this code, the variable `reply` contains the contents of the Adobe home page together with an HTTP response header.
 
-Establishing an Internet server is a bit more complicated. A typical server program sits and waits for incoming connections, which it then processes. Usually, you would not want your application to run in an endless loop, waiting for any incoming connection request. Therefore, you can ask a Socket object for an incoming connection by calling the `poll()` method of a `Socket` object.
+Establishing an Internet server is a bit more complicated. A typical server program sits and waits for incoming connections, which it then processes. Usually, you would not want your application to run in an endless loop, waiting for any incoming connection request. Therefore, you can ask a Socket object for an incoming connection by calling the [`poll()`](./socket-object-reference.md#socketpoll) method of a Socket object.
 
-This call would just check the incoming connections and then return immediately. If there is a connection request, the call to `poll()` would return another Socket object containing the brand new connection. Use this connection object to talk to the calling client; when finished, close the connection and discard the connection object.
+This call would just check the incoming connections and then return immediately. If there is a connection request, the call to [`poll()`](./socket-object-reference.md#socketpoll) would return another Socket object containing the brand new connection. Use this connection object to talk to the calling client; when finished, close the connection and discard the connection object.
 
-Before a `Socket` object is able to check for an incoming connection, it must be told to listen on a specific port, like port 80 for HTTP requests. Do this by calling the `listen()` method instead of the `open()` method.
+Before a Socket object is able to check for an incoming connection, it must be told to listen on a specific port, like port 80 for HTTP requests. Do this by calling the [`listen()`](./socket-object-reference.md#socketlisten) method instead of the [`open()`](./socket-object-reference.md#socketopen) method.
 
 The following example is a very simple Web server. It listens on port 80, waiting until it detects an incoming request. The HTTP header is discarded, and a dummy HTML page is transmitted to the caller:
 
@@ -63,7 +63,7 @@ if (conn.listen (80)) {
 
 Often, the remote endpoint terminates the connection after transmitting data. Therefore, there is a connected property that contains true as long as the connection still exists. If the connected property returns false, the connection is closed automatically.
 
-On errors, the `error` property of the `Socket` object contains a short message describing the type of the error.
+On errors, the [`error`](./socket-object-reference.md#socketerror) property of the Socket object contains a short message describing the type of the error.
 
 The Socket object lets you easily implement software that talks to each other via the Internet. You could, for example, let two Adobe applications exchange documents and data simply by writing and executing JavaScript programs.
 

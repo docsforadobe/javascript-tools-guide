@@ -1,23 +1,33 @@
 # Defining entry points for direct access
 
-A library to be loaded and accessed directly through an ExternalObject instance must publish the following entry points. These must be exported as C functions, not C++ functions:
+A library to be loaded and accessed directly through an [ExternalObject instance](./externalobject-object.md) must publish the following entry points.
+
+!!! note
+    These must be exported as C functions, not C++ functions
 
 ---
 
 ## Entry Points
 
-The following entry points are required if you wish to use an ExternalObject instance:
+The following entry points are required if you wish to use an [ExternalObject instance](./externalobject-object.md):
 
 ### ESInitialize()
 
 `char* ESInitialize (TaggedData* argv, long argc);`
 
-| `argv, argc`   | The pointer to and number of arguments passed to the constructor,<br/>in the form of TaggedData.   |
-|----------------|----------------------------------------------------------------------------------------------------|
+#### Description
 
 Called when your library is loaded into memory.
 
-Returns a string of function signatures; see [Library initialization](#library-initialization).
+#### Parameters
+
+|  Parameter   |                                         Description                                          |
+| ------------ | -------------------------------------------------------------------------------------------- |
+| `argv, argc` | The pointer to and number of arguments passed to the constructor, in the form of TaggedData. |
+
+#### Returns
+
+A string of function signatures; see [Library initialization](#library-initialization).
 
 ---
 
@@ -25,9 +35,15 @@ Returns a string of function signatures; see [Library initialization](#library-i
 
 `long ESGetVersion (void );`
 
+#### Description
+
 Takes no arguments, and returns a version number for the library as a long integer.
 
 The result is available in JavaScript as ExternalObject.version.
+
+#### Returns
+
+Long integer
 
 ---
 
@@ -35,12 +51,17 @@ The result is available in JavaScript as ExternalObject.version.
 
 `void ESFreeMem (void* p);`
 
-| `p`   | A pointer to the string.   |
-|-------|----------------------------|
+#### Description
 
 Called to free memory allocated for a null-terminated string passed to or from library functions.
 
-Returns nothing.
+| Parameter |       Description        |
+| --------- | ------------------------ |
+| `p`       | A pointer to the string. |
+
+#### Returns
+
+Nothing
 
 ---
 
@@ -48,15 +69,19 @@ Returns nothing.
 
 `void ESTerminate (void );`
 
+#### Description
+
 Called when your library is being unloaded. See [Library termination](#library-termination).
 
-Takes no arguments, and returns nothing.
+#### Returns
+
+Nothing
 
 ---
 
 ## Additional functions
 
-The shared library can contain any number of additional functions. Each function corresponds to a JavaScript method in the ExternalObject instance. If a function is undefined, ExtendScript throws a run-time error.
+The shared library can contain any number of additional functions. Each function corresponds to a JavaScript method in the [ExternalObject instance](./externalobject-object.md). If a function is undefined, ExtendScript throws a run-time error.
 
 Each function must accept the following arguments:
 
@@ -67,9 +92,9 @@ Each function must accept the following arguments:
 The variant data does not support JavaScript objects. The following data types are allowed:
 
 - `undefined`
-- `Boolean`
+- Boolean
 - `double`
-- `string` - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#externalobject-functions-esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
+- String - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#externalobject-functions-esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
 - `Script` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define arbitrarily complex data.
 
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
@@ -101,13 +126,14 @@ For each function, the string begins with the function name, followed by an unde
 
 The characters that indicate data types are:
 
-| a   | Any type. The argument is not converted. This is the default, if no type is supplied or if a type<br/>code is unrecognized.   |
-|-----|-------------------------------------------------------------------------------------------------------------------------------|
-| b   | Boolean                                                                                                                       |
-| d   | signed 32 bit integer                                                                                                         |
-| u   | unsigned 32 bit integer                                                                                                       |
-| f   | 64 bit floating point                                                                                                         |
-| s   | String                                                                                                                        |
+| Characeter |                                                         Description                                                         |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type<br/>code is unrecognized. |
+| `b`        | Boolean                                                                                                                     |
+| `d`        | signed 32 bit integer                                                                                                       |
+| `u`        | unsigned 32 bit integer                                                                                                     |
+| `f`        | 64 bit floating point                                                                                                       |
+| `s`        | String                                                                                                                      |
 
 For example, suppose your library defines these two entry points:
 
@@ -118,7 +144,7 @@ Two ();
 
 The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
-!!! note
+!!! warning
     You cannot define function overloading by returning multiple different signatures for one function.
 
     Attempting to do so produces undefined results.

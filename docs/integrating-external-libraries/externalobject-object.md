@@ -15,9 +15,21 @@ Before loading the library, the current folder is temporarily switched to the lo
 
 `obj = new ExternalObject ("lib:" + filespec, arg1, ...argn);`
 
-| `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries.<br/>Concatenate this to the base name of the shared library, with or without an extension.<br/>ExtendScript appends a file extension if necessary, according to the operating system:<br/><br/>- `.dll` in Windows<br/>- `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)<br/>- `.so` in UNIX (except for HP/UX, where the extension is .sl )<br/><br/>The name of the library is case sensitive in UNIX.   |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|   Parameter   |                                                                                  Description                                                                                   |
++===============+================================================================================================================================================================================+
+| `filespec`    | The specifier "lib:" is case sensitive, and serves as the marker for dynamic libraries. Concatenate this to the base name of the shared library, with or without an extension. |
+|               |                                                                                                                                                                                |
+|               | ExtendScript appends a file extension if necessary, according to the operating system:                                                                                         |
+|               |                                                                                                                                                                                |
+|               | - `.dll` in Windows                                                                                                                                                            |
+|               | - `.bundle` or `.framework` in Mac OS (only Mach-O bundles are supported)                                                                                                      |
+|               | - `.so` in UNIX (except for HP/UX, where the extension is `.sl`)                                                                                                               |
+|               |     - The name of the library is case sensitive in UNIX.                                                                                                                       |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `arg1...argn` | Optional. Any number of arguments to pass to the library's initialization routine.                                                                                             |
++---------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 For example:
 
@@ -27,44 +39,98 @@ var mylib = new ExternalObject( "lib:myLibrary" );
 
 ---
 
-## ExternalObject class properties
+## ExternalObject Class Attributes
 
 The ExternalObject class provides these static properties:
 
-| **log**           | Boolean   | Set to true to write status information to standard output (the<br/>JavaScript Console in the ExtendScript Toolkit). Set to false to turn<br/>logging off. Default is false.                                                                                                                                                                                                                                                                                                                                                                            |
-|-------------------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **searchFolders** | String    | A set of alternate paths in which to search for the shared library files, a<br/>single string with multiple path specifications delimited by semicolons<br/>(;). Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folder-class-properties) location.<br/>Default value is:<br/><br/>- In Windows, `"Plugins;Plug-Ins;."`<br/>- In Mac OS,<br/>  `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;<br/>  ../../../Plug-ins;../../../Frameworks;../../..;"`<br/>- In UNIX, `"Plugins;Plug-Ins;plugins;."` |
-| **version**       | Number    | The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#externalobject-functions-esgetversion).                                                                                                                                                                                                                                                                                                                                                                                                          |
+### ExternalObject.log
+
+`ExternalObject.log`
+
+#### Description
+
+Set to true to write status information to standard output (the JavaScript Console in the ExtendScript Toolkit).
+
+Set to `false` to turn logging off. Default is `false`.
+
+#### Type
+
+Boolean
 
 ---
 
-## ExternalObject class function
+### ExternalObject.searchFolders
+
+`ExternalObject.searchFolders`
+
+#### Description
+
+A set of alternate paths in which to search for the shared library files, a single string with multiple path specifications delimited by semicolons (;).
+
+Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folder-class-properties) location.
+
+Default value is:
+
+- In Windows, `"Plugins;Plug-Ins;."`
+- In Mac OS, `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;<br/>  ../../../Plug-ins;../../../Frameworks;../../..;"`
+- In UNIX, `"Plugins;Plug-Ins;plugins;."`
+
+#### Type
+
+String
+
+---
+
+### ExternalObject.version
+
+`ExternalObject.version`
+
+#### Description
+
+The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#externalobject-functions-esgetversion).
+
+#### Type
+
+Number
+
+---
+
+## ExternalObject Class Methods
 
 The ExternalObject class provides this static function to help debug problems with loading libraries as external objects:
 
----
+### ExternalObject.search()
 
-### search()
+`ExternalObject.search(spec)`
 
-`ExternalObject.search (spec)`
-
-| `spec`   | String. The file specification for the compiled library, with or without path information.   |
-|----------|----------------------------------------------------------------------------------------------|
+#### Description
 
 Reports whether a compiled C/C++ library can be found, but does not load it. If logging is on, the paths searched are reported to the JavaScript Console in the ExtendScript Toolkit.
 
-Returns `true` if the library is found, `false` otherwise.
+#### Parameters
+
+| Parameter |  Type  |                                    Description                                     |
+| --------- | ------ | ---------------------------------------------------------------------------------- |
+| `spec`    | String | The file specification for the compiled library, with or without path information. |
+
+#### Returns
+
+Boolean. `true` if the library is found, `false` otherwise.
 
 ---
 
-## ExternalObject instance function
+## ExternalObject Object Methods
 
-### terminate()
+### ExternalObject.terminate()
 
-`ExternalObject_obj.terminate ()`
+`externalObj.terminate()`
+
+#### Description
 
 Explicitly shuts down the `ExternalObject` dynamic library wrapped by this instance.
 
 It can be helpful to force a shutdown of the external library if termination of external libraries during the shutdown of the hosting application does not occur in the correct order.
 
-Returns `undefined`.
+#### Returns
+
+Nothing

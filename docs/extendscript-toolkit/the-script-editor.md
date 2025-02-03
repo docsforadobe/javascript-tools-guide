@@ -31,7 +31,7 @@ You can set the default values for any of these states using the Documents page 
 
 The Functions panel, and the flyout menu at the top right of the document window, both offer lists of functions defined in the current document. When you select a function in either list, the document jumps directly to that function definition in the code.
 
-![Function finder](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_function-finder.png)
+![Function finder](./_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_function-finder.png)
 
 ### Bookmarks
 
@@ -45,7 +45,7 @@ When you navigate to a bookmark in a collapsed section of code, that section aut
 
 Bookmarks are marked with a blue, right-pointing arrow at the left of the line (to the right of the line number if it is shown). This is the same place where a breakpoint is marked with a dot (see [Setting breakpoints](debugging-in-the-toolkit.md#setting-breakpoints)). If you have both a breakpoint and a bookmark set in the same line, the blue arrow is superimposed on the breakpoint dot.
 
-![Bookmarks](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_bookmarks.png)
+![Bookmarks](./_static/02_the-extendscript-toolkit_the-script-editor_navigation-aids_bookmarks.png)
 
 ### Mouse navigation and selection
 
@@ -63,8 +63,9 @@ The Keyboard Shortcuts page in the Preferences dialog **(Edit > Preferences)** a
 
 In addition to the keyboard shortcuts specified for menu commands, and the usual keyboard input, the document window accepts these special movement keys. You can also select text by using a movement key while pressing `SHIFT`.
 
+|       Shortcut       |                           Behaviour                            |
+| -------------------- | -------------------------------------------------------------- |
 | `ENTER`              | Insert a Line Feed character                                   |
-|----------------------|----------------------------------------------------------------|
 | `Backspace`          | Delete character to the left                                   |
 | `DELETE`             | Delete character to the right                                  |
 | `Left arrow`         | Move insertion point left one character                        |
@@ -95,11 +96,11 @@ The Script Editor offers a number of visual and editing features that help you n
 
 When you position the cursor in a document and begin typing, the Toolkit offers completion choices from among keywords, global functions, functions that are defined in the current document, and functions defined in the object-model dictionary that is currently selected from the flyout menu.
 
-![Code Completion](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_coding-aids_code-completion.jpg)
+![Code Completion](./_static/02_the-extendscript-toolkit_the-script-editor_coding-aids_code-completion.jpg)
 
 You can use the flyout menu at the upper right corner of the document window to choose an object-model dictionary to use for completion. Available dictionaries depend on which applications are loaded. See [Inspecting object models](inspecting-object-models.md).
 
-![Code Completion](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_coding-aids_object-model-dictionary.png)
+![Code Completion](./_static/02_the-extendscript-toolkit_the-script-editor_coding-aids_object-model-dictionary.png)
 
 ### Brace matching
 
@@ -126,8 +127,8 @@ A special comment format is reserved for a code versioning statement, which is u
 
 ```default
 /**
-* @@@BUILDINFO@@@ SnpCreateDialog.jsx !Version! Tue Dec 05 2006 08:03:38 GMT-0800
-*/
+ * @@@BUILDINFO@@@ SnpCreateDialog.jsx !Version! Tue Dec 05 2006 08:03:38 GMT-0800
+ */
 ```
 
 You are responsible for manually updating the !Version! portion with your own version information.
@@ -148,19 +149,19 @@ Before running the new script or saving the text as a script file, use **Edit > 
 The Script Editor supports triple-quote syntax to allow strings to span several source code lines. When entering a very long string, you can:
 
 - Enter it all on one line:
-  ```default
-  var myString = "This very long string might wrap onto a second line visually, but you typed no CR character when entering it."
-  ```
+    ```default
+    var myString = "This very long string might wrap onto a second line visually, but you typed no CR character when entering it."
+    ```
 - Enter on multiple lines, using a backslash () continuation character at the end of each line:
-  ```default
-  var myString = "This string spans \
-  two lines."
-  ```
+    ```default
+    var myString = "This string spans \
+    two lines."
+    ```
 - Use triple quotes around the entire string on multiple lines:
-  ```default
-  var myString = """This "quoted" word is inside the
-  multiline string enclosed by triple quotes."""
-  ```
+    ```default
+    var myString = """This "quoted" word is inside the
+    multiline string enclosed by triple quotes."""
+    ```
 
 The triple-quote option allows the string to contain embedded quotes.
 
@@ -177,11 +178,11 @@ The Find and Replace panel allows you to search through multiple documents for t
 - All scripts made public by the current target application
 - Folders that you have defined as favorite locations; see [The Scripts panel and favorite script locations](selecting-scripts.md#the-scripts-panel-and-favorite-script-locations).
 
-![Search](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_search.jpg)
+![Search](./_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_search.jpg)
 
 The results of a search are listed in the Find Results tab; by default, this is stacked with the Find and Replace panel, but you can drag it to another stack, or display it as an independent floating panel.
 
-![Find Results](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_find-results.png)
+![Find Results](./_static/02_the-extendscript-toolkit_the-script-editor_searching-in-text_find-results.png)
 
 Double-click a result line in the Find Results panel to jump directly to the document and line where the text was found.
 
@@ -189,18 +190,19 @@ Double-click a result line in the Find Results panel to jump directly to the doc
 
 The Toolkit supports a limited set of Regular Expression syntax for the Find and Replace dialog:
 
-| `.`      | Matches any character                                                                                                                                             |
-|----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `(`      | Marks the start of a region for capturing a match.                                                                                                                |
-| `)`      | Marks the end of a capturing region.                                                                                                                              |
-| `\<`     | Matches the start of a word using the editor's current definition of words.                                                                                       |
-| `\>`     | Matches the end of a word using the editor's current definition of words.                                                                                         |
-| `\x`     | Escapes a character x that would otherwise have a special meaning. For example, [ is<br/>interpreted as a left bracket, rather than the start of a character set. |
-| `[...]`  | A set of characters; for example, [abc] means any of the characters a, b or c.<br/>You can also use ranges, for example [a-z] for any lower case character.       |
-| `[^...]` | The complement of the characters in a set. For example, [^A-Za-z] means any character<br/>except an alphabetic character.                                         |
-| `^`      | Matches the start of a line (unless used inside a set).                                                                                                           |
-| `$`      | Matches the end of a line.                                                                                                                                        |
-| `*`      | Matches 0 or more times. For example, Sa\*m matches Sm, Sam, Saam, Saaam etc.                                                                                     |
+| RegEx Token |                                                                             Behaviour                                                                             |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.`         | Matches any character                                                                                                                                             |
+| `(`         | Marks the start of a region for capturing a match.                                                                                                                |
+| `)`         | Marks the end of a capturing region.                                                                                                                              |
+| `\<`        | Matches the start of a word using the editor's current definition of words.                                                                                       |
+| `\>`        | Matches the end of a word using the editor's current definition of words.                                                                                         |
+| `\x`        | Escapes a character x that would otherwise have a special meaning. For example, [ is<br/>interpreted as a left bracket, rather than the start of a character set. |
+| `[...]`     | A set of characters; for example, [abc] means any of the characters a, b or c.<br/>You can also use ranges, for example [a-z] for any lower case character.       |
+| `[^...]`    | The complement of the characters in a set. For example, [^A-Za-z] means any character<br/>except an alphabetic character.                                         |
+| `^`         | Matches the start of a line (unless used inside a set).                                                                                                           |
+| `$`         | Matches the end of a line.                                                                                                                                        |
+| `*`         | Matches 0 or more times. For example, Sa\*m matches Sm, Sam, Saam, Saaam etc.                                                                                     |
 
 In a replace operation, you can use the captured regions of a match in the replacement expression by using the placeholders `\1` through `\9`, where `\1` refers to the first captured region, `\2` to the second, and so on.
 
@@ -212,4 +214,4 @@ The Script Editor offers language-based syntax highlighting to aid in editing co
 
 The style of highlighting is configurable, using the Fonts and Colors page of the Preferences dialog.
 
-![Syntax Marking](extendscript-toolkit/_static/02_the-extendscript-toolkit_the-script-editor_syntax-marking.png)
+![Syntax Marking](./_static/02_the-extendscript-toolkit_the-script-editor_syntax-marking.png)

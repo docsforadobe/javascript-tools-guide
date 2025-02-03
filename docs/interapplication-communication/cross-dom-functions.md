@@ -6,12 +6,12 @@ You can access cross-DOM functions in any script by prefixing the function name 
 
 The cross-DOM functions for each application are implemented in JavaScript. You can see the implementation for each installed application by reading its associated startup script in the Adobe startup folder. For example, Adobe Illustrator® CC defines illustrator.open() in the illustrator-14.jsx startup script (14 is the version number of the installed application). See [Startup folder locations](#startup-folder-locations).
 
-**Example code**
+### Example
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of cross-DOM functions:
 
-| **Cross-DOM calls**                                                                                                                                 |                                                            |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|                                                                       Example                                                                       |                        Description                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | [OpenImageInPhotoshop.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/OpenImageInPhotoshop.jsx) | Shows how to send an image file to be opened in Photoshop. |
 
 ---
@@ -68,12 +68,19 @@ All message-enabled applications implement the following cross-DOM functions:
 
 `appspec.executeScript(script)`
 
-| `script`   | A string containing the script to be evaluated.   |
-|------------|---------------------------------------------------|
+#### Description
 
 Performs a JavaScript eval on the specified script. The entire document object model (DOM) of the target application is available to the script.
 
-Returns `undefined`.
+#### Parameters
+
+| Parameter |  Type  |         Description         |
+| --------- | ------ | --------------------------- |
+| `script`  | String | The script to be evaluated. |
+
+#### Returns
+
+Nothing
 
 ---
 
@@ -81,12 +88,19 @@ Returns `undefined`.
 
 `appspec.open(files)`
 
-| `files`   | A File object or array of File objects.<br/>For applications that use compound documents, this should be a project file.   |
-|-----------|----------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Performs the equivalent of the target application's File > Open command on the specified files.
 
-Returns `undefined`.
+#### Parameters
+
+| Parameter |                                     Type                                      |                                          Description                                          |
+| --------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `files`   | [File object](../file-system-access/file-object.md) or array of File objects. | File(s) to open. For applications that use compound documents, this should be a project file. |
+
+#### Returns
+
+Nothing
 
 ---
 
@@ -94,12 +108,25 @@ Returns `undefined`.
 
 `appspec.openAsNew([options])`
 
-| `options`   | Optional. Application-specific creation options:<br/><br/>- Adobe Bridge: none<br/>- Photoshop: none<br/>- InDesign: creation options are:<br/>  `(Boolean:showingWindow, ObjectOrString:documentPresets)`<br/>  See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting<br/>  Reference.<br/>- Illustrator: creation options are:<br/>  `([DocumentColorSpace:colorspace][, Number:width, Number:height])`<br/>  See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript<br/>  Reference.   |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Performs the equivalent of the target application's File > New command.
 
-Returns `true` on success.
+#### Parameters
+
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+| Parameter |                                                                                               Type                                                                                                |         Description         |
++===========+===================================================================================================================================================================================================+=============================+
+| `options` | Application-specific creation options:                                                                                                                                                            | Optional. Creation options. |
+|           | - Adobe Bridge: none                                                                                                                                                                              |                             |
+|           | - Photoshop: none                                                                                                                                                                                 |                             |
+|           | - InDesign: creation options are: `(Boolean:showingWindow, ObjectOrString:documentPresets)`. See the arguments for `documents.add()` in the Adobe InDesign CS5 Scripting Reference.               |                             |
+|           | - Illustrator: creation options are: `([DocumentColorSpace:colorspace][, Number:width, Number:height])`. See the arguments for documents.add() in the Adobe Illustrator CS5 JavaScript Reference. |                             |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------+
+
+#### Returns
+
+Boolean. `true` on success.
 
 ---
 
@@ -107,12 +134,19 @@ Returns `true` on success.
 
 `appspec.print(files)`
 
-| `files`   | A File object or array of File objects.<br/>For applications that use compound documents, this should be a project file.   |
-|-----------|----------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Performs the equivalent of the target application's File > Print command on the specified files.
 
-Returns `undefined`.
+#### Parameters
+
+| Parameter |                                     Type                                      |                                          Description                                           |
+| --------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `files`   | [File object](../file-system-access/file-object.md) or array of File objects. | File(s) to print. For applications that use compound documents, this should be a project file. |
+
+#### Returns
+
+Nothing
 
 ---
 
@@ -120,12 +154,16 @@ Returns `undefined`.
 
 `appspec.quit()`
 
+#### Description
+
 Performs the equivalent of the target application's File > Exit or File > Close command.
 
 !!! note
     This function is available for Adobe Acrobat®, but does nothing. Scripts cannot terminate the application.
 
-Returns `undefined`.
+#### Returns
+
+Nothing
 
 ---
 
@@ -133,9 +171,16 @@ Returns `undefined`.
 
 `appspec.reveal(file)`
 
-| `file`   | A File object or string specifying a file that can be opened in the target application.   |
-|----------|-------------------------------------------------------------------------------------------|
+#### Description
 
 Gives the target application the operating-system focus, and, if the specified file is open in that application, brings it to the foreground.
 
-Returns `undefined`.
+#### Parameters
+
+| Parameter |                             Type                              |     Description     |
+| --------- | ------------------------------------------------------------- | ------------------- |
+| `file`    | [File object](../file-system-access/file-object.md) or String | File info to reveal |
+
+#### Returns
+
+Nothing

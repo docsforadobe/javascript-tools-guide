@@ -13,55 +13,73 @@ var thisApp = BridgeTalk.appName;
 
 ---
 
-## BridgeTalk class properties
+## Attributes
 
 The BridgeTalk class provides these static properties, which are available in the global namespace:
 
-### appInstance
+### BridgeTalk.appInstance
 
-Type: `String`
+`BridgeTalk.appInstance`
+
+#### Description
 
 The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
 Used only for those applications, such as InDesign, that support launching and running multiple instances.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### appLocale
+### BridgeTalk.appLocale
 
-Type: `String`
+`BridgeTalk.appLocale`
+
+#### Description
 
 The locale of this application, the locale portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the locale of the sending application.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### appName
+### BridgeTalk.appName
 
-Type: `String`
+`BridgeTalk.appName`
+
+#### Description
 
 The name of this application, the appname portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the name of the sending application.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### appSpecifier
+### BridgeTalk.appSpecifier
 
-Type: `String`
+`BridgeTalk.appSpecifier`
+
+#### Description
 
 A lower-case string containing the complete specifier for this application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
-Read/write.
+#### Type
+
+String.
 
 ---
 
-### appStatus
+### BridgeTalk.appStatus
 
-Type: `String`
+`BridgeTalk.appStatus`
+
+#### Description
 
 The current processing status of this application. One of:
 
@@ -69,29 +87,39 @@ The current processing status of this application. One of:
 - `idle`: The application is currently idle, but processes messages regularly.
 - `not installed`: The application is not installed.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### appVersion
+### BridgeTalk.appVersion
 
-Type: `String`
+`BridgeTalk.appVersion`
+
+#### Description
 
 The version number of this application, the version portion of an application specifier; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers). When a message is sent, this is the version of the sending application.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### onReceive
+### BridgeTalk.onReceive
 
-Type: `Function`
+`BridgeTalk.onReceive`
 
-A callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:
+#### Description
+
+#### Returns
+
+callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-// act on received message
+    // act on received message
 };
 ```
 
@@ -100,46 +128,77 @@ The body property of the received message object contains the received data. The
 !!! note
     This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.
 
+#### Type
+
+Function
+
 ---
 
-## BridgeTalk class functions
+## Methods
 
 The BridgeTalk class provides these static methods, which are available in the global namespace:
 
-### bringToFront()
+### BridgeTalk.bringToFront()
 
-`BridgeTalk.bringToFront (app)`
+`BridgeTalk.bringToFrontapp)`
 
-| `app`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Brings all windows of the specified application to the front of the screen.
 
 In Mac OS, an application can be running but have no windows open. In this case, calling this function might or might not open a new window, depending on the application. For Adobe Bridge, it opens a new browser window.
 
+#### Parameters
+
+| Parameter |                                           Type                                           |              Description               |
+| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+
+#### Returns
+
+Nothing
+
 ---
 
-### getAppPath()
+### BridgeTalk.getAppPath()
 
-`BridgeTalk.getAppPath (app)`
+`BridgeTalk.getAppPathapp)`
 
-| `app`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Retrieves the full path of the executable file for a specified application.
 
-Returns a string.
+#### Parameters
+
+| Parameter |                                           Type                                           |              Description               |
+| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+
+#### Returns
+
+String
 
 ---
 
-### getDisplayName()
+### BridgeTalk.getDisplayName()
 
-`BridgeTalk.getDisplayName (app)`
+`BridgeTalk.getDisplayNameapp)`
 
-| `app`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------|-----------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
-Returns a localized display name for an application, or NULL if the application is not installed. For example:
+Returns a localized display name for an application, or `null` if the application is not installed. For example:
+
+#### Parameters
+
+| Parameter |                                           Type                                           |              Description               |
+| --------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| `app`     | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+
+#### Returns
+
+String
+
+#### Example
 
 ```javascript
 BridgeTalk.getDisplayName("photoshop-10.0");
@@ -148,18 +207,37 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 ---
 
-### getSpecifier()
+### BridgeTalk.getSpecifier()
 
-`BridgeTalk.getSpecifier (appName,[version],[locale])`
+`BridgeTalk.getSpecifierappName[, version][, locale])`
 
-| `appName`   | The base name of the application to search for.                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `version`   | Optional. The specific version number to search for. If 0 or not supplied, returns the<br/>most recent version. If negative, returns the highest version up to and including the<br/>absolute value.<br/><br/>If a major version is specified, returns the highest minor-version variation. For<br/>example, if Photoshop CS versions 9, 9.1, and 10 are installed:<br/><br/>```javascript<br/>BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/>``` |
-| `locale`    | Optional. The specific locale to search for.<br/>If not supplied and multiple language versions are installed, prefers the version for<br/>the current locale.                                                                                                                                                                                                                                                                                                         |
+#### Description
 
 Retrieves a complete application specifier.
 
-Returns a complete specifier (see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers)) for a messaging-enabled application version installed on this computer, or null if the requested version of the application is not installed.
+#### Parameters
+
++-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |                      Type                       |                                                                      Description                                                                       |
++===========+=================================================+========================================================================================================================================================+
+| `appName` | The base name of the application to search for. |                                                                                                                                                        |
++-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `version` | Number                                          | Optional. The specific version number to search for.                                                                                                   |
+|           |                                                 | If `0` or not supplied, returns the most recent version.                                                                                               |
+|           |                                                 | If negative, returns the highest version up to and including the absolute value.                                                                       |
+|           |                                                 |                                                                                                                                                        |
+|           |                                                 | If a major version is specified, returns the highest minor-version variation. For example, if Photoshop CS versions 9, 9.1, and 10 are installed:      |
+|           |                                                 |                                                                                                                                                        |
+|           |                                                 | <pre lang="javascript">BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/></pre>                                                   |
++-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `locale`  | String                                          | Optional. The specific locale to search for. If not supplied and multiple language versions are installed, prefers the version for the current locale. |
++-----------+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+#### Returns
+
+[Application specifier](application-and-namespace-specifiers.md#application-specifiers) for a messaging-enabled application version installed on this computer, or `null` if the requested version of the application is not installed.
+
+#### Example
 
 For example, assuming installed applications include Photoshop CS4 11.0 `en_us`, Photoshop CS2 8.5 `de_de`, Photoshop CS2 9.0 `de_de`, and Photoshop CS2 9.5 `de_de`, and that the current locale is `en_US`
 
@@ -182,14 +260,23 @@ BridgeTalk.getSpecifier ("photoshop", 8);
 
 ---
 
-### getStatus()
+### BridgeTalk.getStatus()
 
-`BridgeTalk.getStatus (targetSpec)`
+`BridgeTalk.getStatus(targetSpec)`
 
-| `targetSpec`   | Optional, a specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).<br/>If not supplied, returns the processing status of the current application.   |
-|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
-Retrieves the processing status of an application. Returns a string, one of:
+Retrieves the processing status of an application.
+
+#### Parameters
+
+|  Parameter   |                                           Type                                           |                                                         Description                                                          |
+| ------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `targetSpec` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | Optional. A specifier for the target application. If not supplied, returns the processing status of the current application. |
+
+#### Returns
+
+String, one of:
 
 - `BUSY`: The application is currently busy, but not processing messages. This is the case, for example, when a modal dialog is shown.
 - `IDLE`: The application is currently idle, but processes messages regularly.
@@ -200,21 +287,39 @@ Retrieves the processing status of an application. Returns a string, one of:
 
 ---
 
-### getTargets()
+### BridgeTalk.getTargets()
 
-`BridgeTalk.getTargets ([version],[locale])`
+`BridgeTalk.getTargets([version],[locale])`
 
-| `version`   | Optional. The specific version number to search for, or `null` to return the most<br/>appropriate version (matching, most recent, or running), with version information.<br/>Specify only a major version number to return the highest minor-version<br/>variation.<br/><br/>For example, if Photoshop CS versions 9, 9.5, and 10 are installed:<br/><br/>```javascript<br/>BridgeTalk.getTargets( "9" )<br/>  => [photoshop-9.5]<br/>```<br/><br/>Specify a negative value to return all versions up to the absolute value of the<br/>version number. For example:<br/><br/>```javascript<br/>BridgeTalk.getTargets( "-9.9" )<br/>  => [photoshop-9.0, photoshop-9.5]<br/>```   |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `locale`    | Optional. The specific locale to search for, or null to `return` applications for all<br/>locales, with locale information.<br/><br/>If not supplied when version is supplied, returns specifiers with version information only.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+#### Description
 
 Retrieves a list of messaging-enabled applications installed on this computer.
+
+#### Parameters
+
++-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |  Type  |                                                                                                     Description                                                                                                      |
++===========+========+======================================================================================================================================================================================================================+
+| `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                 |
+|           |        |                                                                                                                                                                                                                      |
+|           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                   |
+|           |        |                                                                                                                                                                                                                      |
+|           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed: <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>  => [photoshop-9.5]</pre>                                                               |
+|           |        |                                                                                                                                                                                                                      |
+|           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example: <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>  => [photoshop-9.0, photoshop-9.5]</pre>    |
++-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information.  If not supplied when version is supplied, returns specifiers with version information only. |
++-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+#### Returns
 
 Returns an array of [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
 
 - If version is supplied, specifiers include the base name plus the version information.
 - If locale is supplied, specifiers include the full name, with both version and locale information.
 - If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).
+
+#### Example
 
 For example, assuming installed applications include Photoshop CS3 10.0 `en_US`, Photoshop CS4 11.0 `en_us`, and Illustrator CS4 14.0 `de_de`
 
@@ -237,65 +342,106 @@ BridgeTalk.getTargets( null, null );
 
 ---
 
-### isRunning()
+### BridgeTalk.isRunning()
 
-`BridgeTalk.isRunning (specifier)`
+`BridgeTalk.isRunning(specifier)`
 
-| `specifier`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
-Returns `true` if the given application is running and active on the local computer.
+Checks whether a given application is running and active on the local computer.
+
+#### Parameters
+
+|  Parameter  |                                           Type                                           |              Description               |
+| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+
+#### Returns
+
+Boolean
 
 ---
 
-### launch()
+### BridgeTalk.launch()
 
-`BridgeTalk.launch (specifier [, where])`
+`BridgeTalk.launch(specifier[, where])`
 
-| `specifier`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| `where`       | Optional. If the value "background" is specified, the application's main window is<br/>not brought to the front of the screen.          |
+#### Description
 
 Launches the given application on the local computer. It is not necessary to launch an application explicitly in order to send it a message; sending a message to an application that is not running automatically launches it.
 
-Returns `true` if the application has already been launched, `false` if it was launched by this call.
+#### Parameters
+
+|  Parameter  |                                           Type                                           |                                                        Description                                                         |
+| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application                                                                                     |
+| `where`     | Unknown.                                                                                 | Optional. If the value "background" is specified, the application's main window is not brought to the front of the screen. |
+
+#### Returns
+
+Boolean. `true` if the application has already been launched, `false` if it was launched by this call.
 
 ---
 
-### loadAppScript()
+### BridgeTalk.loadAppScript()
 
-`BridgeTalk.loadAppScript (specifier)`
+`BridgeTalk.loadAppScript(specifier)`
 
-| `specifier`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).   |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Loads the startup script for an application from the common StartupScripts folders. Use to implement late loading of startup scripts.
 
-Returns `true` if the script was successfully loaded.
+#### Parameters
+
+|  Parameter  |                                           Type                                           |              Description               |
+| ----------- | ---------------------------------------------------------------------------------------- | -------------------------------------- |
+| `specifier` | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
+
+#### Returns
+
+Boolean. `true` if the script was successfully loaded.
 
 ---
 
-### ping()
+### BridgeTalk.ping()
 
-`BridgeTalk.ping (specifier, pingRequest)`
+`BridgeTalk.ping(specifier, pingRequest)`
 
-| `specifier`   | A specifier for the target application; see [Application specifiers](application-and-namespace-specifiers.md#application-specifiers).                                                                                                                                                                                                       |
-|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pingRequest` | An identifying key string for a specific type of return value. One of:<br/><br/>> - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalk-getstatus).<br/>> - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.<br/>> - `ECHO_REQUEST`: Returns ECHO_RESPONSE for a simple ping request. |
+#### Description
 
 Sends a message to another application to determine whether it can be contacted.
 
-Returns a string whose meaning is defined by the ping-request key.
+#### Parameters
+
++---------------+------------------------------------------------------------------------------------------+----------------------------------------+
+|   Parameter   |                                           Type                                           |              Description               |
++===============+==========================================================================================+========================================+
+| `specifier`   | [Application specifiers](application-and-namespace-specifiers.md#application-specifiers) | A specifier for the target application |
++---------------+------------------------------------------------------------------------------------------+----------------------------------------+
+| `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
+|               |                                                                                          |                                        |
+|               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalk-getstatus).     |                                        |
+|               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |
+|               | - `ECHO_REQUEST`: Returns `ECHO_RESPONSE` for a simple ping request.                     |                                        |
++---------------+------------------------------------------------------------------------------------------+----------------------------------------+
+
+#### Returns
+
+String
 
 ---
 
-### pump()
+### BridgeTalk.pump()
 
-`BridgeTalk.pump ()`
+`BridgeTalk.pump()`
+
+#### Description
 
 Checks all active messaging interfaces for outgoing and incoming messages, and processes them if there are any.
 
 !!! note
     Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.
 
-Returns `true` if any messages have been processed, `false` otherwise.
+#### Returns
+
+Boolean. `true` if any messages have been processed, `false` otherwise.

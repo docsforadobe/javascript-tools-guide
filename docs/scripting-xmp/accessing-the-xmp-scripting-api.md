@@ -2,7 +2,7 @@
 
 To use the XMP objects, you must load the XMP library as an ExtendScript ExternalObject. To avoid loading multiple instances of the library, use code like the following:
 
-```default
+```javascript
 // load the library
 if ( ExternalObject.AdobeXMPScript == undefined ) {
     ExternalObject.AdobeXMPScript = new ExternalObject( "lib:AdobeXMPScript");
@@ -34,24 +34,24 @@ You can obtain or create an [XMPMeta object](xmpscript-object-reference.md#xmpme
 In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` object and the XMPScript [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) using serialized XMP.
 
 - You can use XMPScript to examine thumbnail metadata by creating the [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) from the metadata stored with a `Thumbnail` object, using the object constructor. To ensure that the metadata is up-to-date, use synchronous mode (which is off by default):
-    ```default
+    ```javascript
     var thumb = new Thumbnail( new File( "/C/myImage.jpg") );
     app.synchronousMode = true;
     xmp = new XMPMeta( thumb.metadata.serialize() );
     ```
 
     or:
-    ```default
+    ```javascript
     xmp = new XMPMeta( thumb.synchronousMetadata.serialize() );
     ```
 - You can modify the metadata in an Adobe Bridge thumbnail by creating a new `Metadata` object with serialized XMP. Continuing the previous example:
-    ```default
+    ```javascript
     // Create a compact XMP packet
     newPacket = xmp.serialize( XMPConst.SERIALIZE_OMIT_PACKET_WRAPPER | XMPConst.SERIALIZE_USE_COMPACT_FORMAT ) );
     thumb.metadata = new Metadata( newPacket );
     ```
 - To write metadata back to the file for a thumbnail, you can access the thumbnail's file and create an [XMPFile object](xmpscript-object-reference.md#xmpfile-object) object to access the embedded metadata directly:
-    ```default
+    ```javascript
     xmp = new XMPFile( thumb.spec.fsName, XMPConst.UNKNOWN, XMPConst.OPEN_FOR_UPDATE );
     ```
 
@@ -64,7 +64,7 @@ In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` objec
 
 This code creates an empty [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), uses it to set a metadata property, and serializes it to a string, which you could pass to an authoring tool, for example, or store in a file.
 
-```default
+```javascript
 xmp = new XMPMeta();
 xmp.setProperty( XMPConst.NS_XMP, "CreatorTool", "My Script" );
 xmpStr = xmp.serialize(); // Serialize the XMP packet to XML
@@ -82,7 +82,7 @@ $.writeln( "namespace: " + prop.namespace + "\n" +
 
 This code accesses an existing XMP packet, assuming the location has been assigned to a string variable. It sets the modification-date property to the current date and time, and stores the updated XMP packet back to the string, making it as small as possible.
 
-```default
+```javascript
 xmp = new XMPMeta( xmpStr ); // Object initialized with xmp packet as string
 dateTime = new XMPDateTime( new Date() ); // Now
 oldModificationDate = mp.getProperty( XMPConst.NS_XMP, "ModifyDate", "xmpdate" );
@@ -103,7 +103,7 @@ This example iterates through a folder of image files and processes the metadata
 - Deletes the list of existing creators, and adds a new creator value.
 - Writes the modified metadata back to the file.
 
-```default
+```javascript
 $.writeln( "XMPFiles batch processing example" );
 
 // Define folder containing images (make sure that you use copies)
@@ -147,7 +147,7 @@ It demonstrates how to retrieve the XMP metadata that is stored with the Thumbna
 
 To use this script, place it in the "Startup Scripts" folder for Adobe Bridge (see [Startup scripts](../introduction/scripting-for-specific-applications.md#startup-scripts)). When you start Adobe Bridge, select a thumbnail for a document that contains XMP metadata, right click, and choose **Show XMP Properties** from the menu.
 
-```default
+```javascript
 $.writeln("XMPFiles batch processing example");
 
 // Define folder containing images (make sure that you use copies)

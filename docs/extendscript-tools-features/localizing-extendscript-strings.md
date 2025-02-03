@@ -8,7 +8,7 @@ A localization object is a JavaScript object literal whose property names are lo
 
 In this example, a msg object contains localized text strings for two locales. This object supplies the text for an alert dialog:
 
-```default
+```javascript
 msg = { en: "Hello, world", de: "Hallo Welt" };
 alert (msg);
 ```
@@ -25,7 +25,7 @@ You can include variables in the string values of the localization object, in th
 
 Because the replacement occurs after the localized string is chosen, the variable values are inserted in the correct position. For example:
 
-```default
+```javascript
 today = {
     en: "Today is %1/%2.",
     de: "Heute ist der %2.%1."
@@ -40,20 +40,20 @@ alert (localize (today, d.getMonth()+1, d.getDate()));
 
 ExtendScript offers an automatic localization feature. When it is enabled, you can specify a localization object directly as the value of any property that takes a localizable string, without using the `localize` function. For example:
 
-```default
+```javascript
 msg = { en: "Yes", de: "Ja", fr: "Oui" };
 alert (msg);
 ```
 
 To use automatic translation of localization objects, you must enable localization in your script with this statement:
 
-```default
+```javascript
 $.localize = true;
 ```
 
 The localize function always performs its translation, regardless of the setting of the `$.localize` variable; for example:
 
-```default
+```javascript
 msg = { en: "Yes", de: "Ja", fr: "Oui" };
 //Only works if the $.localize=true
 alert (msg);
@@ -73,7 +73,7 @@ The ISO 3166 standard defines a region code, another two-letter identifier, whic
 
 This object defines one message for British English, another for all other flavors of English, and another for all flavors of German:
 
-```default
+```javascript
 message = {
     en_GB: "Please select a colour."
     en: "Please select a colour."
@@ -83,7 +83,7 @@ message = {
 
 If you need to specify different messages for different platforms, you can append another underline character and the name of the platform, one of `Win`, `Mac`, or `Unix`. For example, this objects defines one message in British English to be displayed on Mac OS, one for all other flavors of English on Mac OS, and one for all other flavors of English on all other platforms:
 
-```default
+```javascript
 pressMsg = {
     en_GB_Mac: "Press Cmd-S to select a colour.",
     en_Mac: "Press Cmd-S to select a color.",
@@ -111,7 +111,7 @@ ExtendScript stores the current locale in the variable `$.locale`. This variable
 
 To test your localized strings, you can temporarily reset the locale. To restore the original behavior, set the variable to `null`, false, 0, or the empty string. An example:
 
-```default
+```javascript
 $.locale = "ru"; // try your Russian messages
 $.locale = null; // restore to the locale of the app
 ```
@@ -127,14 +127,14 @@ The globally available `localize` function can be used to provide localized stri
 `localize (localization_obj[, args])`
 `localize (ZString)`
 
-| localization_obj   | A JavaScript object literal whose property names are locale names, and<br/>whose property values are the localized text strings. The locale name is an<br/>identifier as specified in the ISO 3166 standard, a set of two-letter language<br/>abbreviations, such as `"en"` for English and `"de"` for German.<br/><br/>For example:<br/><br/>```default<br/>btnText = { en: "Yes", de: "Ja", fr: "Oui" };<br/>b1 = w.add ("button", undefined, localize (btnText));<br/>```<br/><br/>The string value of each property can contain variables in the form %1, %2,<br/>and so on, corresponding to additional arguments. The variable is replaced<br/>with the result of evaluating the corresponding argument in the returned<br/>string.   |
+| localization_obj   | A JavaScript object literal whose property names are locale names, and<br/>whose property values are the localized text strings. The locale name is an<br/>identifier as specified in the ISO 3166 standard, a set of two-letter language<br/>abbreviations, such as `"en"` for English and `"de"` for German.<br/><br/>For example:<br/><br/>```javascript<br/>btnText = { en: "Yes", de: "Ja", fr: "Oui" };<br/>b1 = w.add ("button", undefined, localize (btnText));<br/>```<br/><br/>The string value of each property can contain variables in the form %1, %2,<br/>and so on, corresponding to additional arguments. The variable is replaced<br/>with the result of evaluating the corresponding argument in the returned<br/>string.   |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | args               | Optional. Additional JavaScript expressions matching variables in the string<br/>values supplied in the localization object. The first argument corresponds to<br/>the variable `%1`, the second to `%2`, and so on.<br/><br/>Each expression is evaluated and the result inserted in the variable's position<br/>in the returned string.                                                                                                                                                                                                                                                                                                                                                                                                   |
-| ZString            | Internal use only. A ZString is an internal Adobe format for localized strings,<br/>which you might see in Adobe scripts. It is a string that begins with `$$$` and<br/>contains a path to the localized string in an installed ZString dictionary.<br/>For example:<br/><br/>```default<br/>w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));<br/>```                                                                                                                                                                                                                                                                                                                                                                          |
+| ZString            | Internal use only. A ZString is an internal Adobe format for localized strings,<br/>which you might see in Adobe scripts. It is a string that begins with `$$$` and<br/>contains a path to the localized string in an installed ZString dictionary.<br/>For example:<br/><br/>```javascript<br/>w = new Window ("dialog", localize ("$$$/UI/title1=Sample"));<br/>```                                                                                                                                                                                                                                                                                                                                                                          |
 
 For example:
 
-```default
+```javascript
 today = {
     en: "Today is %1/%2",
     de: "Heute ist der %2.%1."

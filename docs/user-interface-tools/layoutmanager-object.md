@@ -6,7 +6,7 @@ Controls the automatic layout behavior for a window or container. The subclass A
 
 Create an instance of the `AutoLayoutManager` class with the new operator:
 
-```default
+```javascript
 myWin.layout = new AutoLayoutManager( myWin );
 ```
 

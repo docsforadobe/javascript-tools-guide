@@ -8,7 +8,7 @@ Represents a file-system folder or directory in a platform-independent manner. A
 
 To create a Folder object, use the Folder function or the new operator. The constructor accepts full or partial path names, and returns the new object.
 
-```default
+```javascript
 Folder( [path] ); // Can return a File object
 new Folder( [path] ); // Always returns a Folder object
 ```
@@ -56,7 +56,7 @@ These functions are available as a static methods of the Folder class. It is not
 
 Special characters are those with a numeric value greater than 127, except the following:
 
-```default
+```javascript
 ``/ - _ . ! ~ * ' ( )``
 ```
 
@@ -79,7 +79,7 @@ For example, the string `"my file"` is encoded as `"my%20file"`.
 
 Special characters are those with a numeric value greater than 127, except the following:
 
-```default
+```javascript
 ``/ - _ . ! ~ * ' ( )``
 ```
 

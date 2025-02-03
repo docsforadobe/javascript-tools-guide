@@ -6,7 +6,7 @@ Automatic layout is easier to program than explicit layout. It makes a script ea
 
 The script programmer has considerable control over the automatic layout process. Each container has an associated layout manager object, specified in the layout property. The layout manager controls the sizes and positions of the contained elements, and also sizes the container itself. There is a default layout manager object, or you can create a new one:
 
-```default
+```javascript
 myWin.layout = new AutoLayoutManager( myWin );
 ```
 
@@ -37,7 +37,7 @@ For details of how you can set these property values to affect the automatic lay
 
 Your script establishes rules for the layout manager by setting the values of certain properties, both in the container object and in the child elements. The following examples show the effects of various combinations of values for these properties. The examples are based on a simple window containing a StaticText, Button and EditText element, created (using Resource specifications) as follows:
 
-```default
+```javascript
 var w = new Window( "window { \
   orientation: 'row', \
   st: StaticText { }, \
@@ -76,7 +76,7 @@ These properties use the same values, which specify alignment along one axis, de
 
 You can also set the value using the corresponding constants from the Alignment property of the ScriptUI class; for example:
 
-```default
+```javascript
 myGroup.alignment = [ ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 ```
 
@@ -185,7 +185,7 @@ You can easily create more complex arrangements by nesting Group containers with
 
 Many dialogs consist of rows of information to be filled in, where each row has columns of related types of controls. For instance, an edit field is typically in a row next to a static text label that identifies it, and a series of such rows are arranged in a column. This example (created using [Resource specifications](resource-specifications.md)) shows a simple dialog in which a user can enter information into two EditText fields, each arranged in a row with its StaticText label. To create the layout, a `Panel` with a column orientation contains two `Group` elements with row orientation. These groups contain the control rows. A third `Group`, outside the panel, contains the row of buttons.
 
-```default
+```javascript
 var res = "dialog { \
     info: Panel { orientation: 'column', \
         text: 'Personal Info', \
@@ -212,7 +212,7 @@ win.show();
 
 In this simplest example, the columns are not vertically aligned. When you are using fixed-width controls in your rows, a simple way to get an attractive alignment of the StaticText labels for your EditText fields is to align the child rows in the Panel to the right of the panel. In the example, add the following to the Panel specification:
 
-```default
+```javascript
 info: Panel { orientation: 'column', alignChildren:'right', \
 ```
 
@@ -222,7 +222,7 @@ This creates the following result:
 
 Suppose now that you need two panels, and want each panel to have the same width in the dialog. You can specify this at the level of the dialog window object, the parent of both panels. Specify alignChildren='fill', which makes each child of the dialog match its width to the widest child.
 
-```default
+```javascript
 var res = "dialog { alignChildren: 'fill', \
     info: Panel { orientation: 'column', alignChildren:'right', \
         text: 'Personal Info', \
@@ -266,7 +266,7 @@ For example, this dialog changes dynamically according to the user's choice in t
 
 The following script creates this dialog. It compresses the "Personal Info" and "Work Info" panels from the previous example into a single `Panel` that has two `Groups` arranged in a stack. A `DropDownList` allows the user to choose which set of information to view. When the user makes a choice in the list, its `onChange` function shows one group, and hides the other.
 
-```default
+```javascript
 var res = "dialog { \
     whichInfo: DropDownList { alignment:'left' }, \
     allGroups: Panel { orientation:'stack', \
@@ -322,7 +322,7 @@ This script-defined layout manager positions elements in its container in a stai
 
 ![Custom layout-manager example](user-interface-tools/_static/04_user-interface-tools_automatic-layout_custom-layoutmanager-example.jpg)
 
-```default
+```javascript
 // Define a custom layout manager that arranges the children
 // of "container" in a stair-step fashion.
 function StairStepButtonLayout( container ) {

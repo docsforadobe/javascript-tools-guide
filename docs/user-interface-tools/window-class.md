@@ -16,7 +16,7 @@ The Window class defines these static properties and functions. Window instances
 
 Access these function through the class. For example:
 
-```default
+```javascript
 Window.alert("Notification to user");
 ```
 

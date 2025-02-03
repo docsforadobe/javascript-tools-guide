@@ -21,12 +21,12 @@ You must define the behavior of your controls in order for them to respond to us
 Your script can define an event handler as a named function referenced by the callback property, or as an unnamed function defined inline in the callback property.
 
 - If you define a named function, assign its name as the value of the corresponding callback property. For example:
-    ```default
+    ```javascript
     function hasBtnsCbOnClick() { /* do something interesting */ }
     hasBtnsCb.onClick = hasBtnsCbOnClick;
     ```
 - For a simple, unnamed function, set the property value directly to the function definition:
-    ```default
+    ```javascript
     UI-element.callback-name = function () { handler-definition };
     ```
 
@@ -34,7 +34,7 @@ Event-handler functions take no arguments.
 
 For example, the following sets the onClick property of the hasBtnsCb checkbox to a function that enables another control in the same dialog:
 
-```default
+```javascript
 hasBtnsCb.onClick = function () {
   this.parent.alertBtnsPnl.enabled = this.value;
 };
@@ -42,7 +42,7 @@ hasBtnsCb.onClick = function () {
 
 The following statements set the `onClick` event handlers for buttons that close the containing dialog, returning different values to the `show` method that invoked the dialog, so the calling script can tell which button was clicked:
 
-```default
+```javascript
 buildBtn.onClick = function() {
   this.parent.parent.close( 1 );
 };
@@ -88,7 +88,7 @@ In the ListBox, double-clicking an item generates the `onDoubleClick` event.
 
 In RadioButton and Checkbox controls, the boolean value property automatically changes when the user clicks the control. If you use `notify()` to simulate a click, the value changes just as if the user had clicked. For example, if the value of a checkbox `hasBtnsCb` is true, this code changes the value to false:
 
-```default
+```javascript
 if ( dlg.hasBtnsCb.value == true ) {
   dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now false
 }
@@ -105,12 +105,12 @@ Use [addEventListener()](window-object.md#window-object-functions-addeventlisten
 You can register:
 
 - The name of a handler function defined in the extension that takes one argument, the event object. For example:
-    ```default
+    ```javascript
     myButton.addEventListener( "click", myFunction );
     ```
 
 - A locally defined handler function that takes one argument, the event object. For example:
-    ```default
+    ```javascript
     myButton.addEventListener( "click", "function( e ) { /*handler code*/ }" );
     ```
 
@@ -174,7 +174,7 @@ When the user clicks the button, the Window object's handler is called first (du
 
 If you register a handler at an ancestor object of the actual event target, you can specify the third argument to [addEventListener()](control-objects.md#controlobj-addeventlistener), so that the ancestor's handler responds only in the capture phase, not in the bubbling phase. For example, the following click handler, registered with the parent dialog object, responds only in the capture phase:
 
-```default
+```javascript
 myDialog.addEventListener( "click", handleAllItems, true );
 ```
 

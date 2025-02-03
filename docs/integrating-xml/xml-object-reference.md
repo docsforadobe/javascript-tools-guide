@@ -540,7 +540,7 @@ Returns `true` if the name is a valid XML name, `false` otherwise.
 
 Sets the default namespace for XML objects. You can also set the default namespace using this syntax:
 
-```default
+```javascript
 default xml namespace = Namespace object
 default xml namespace = URL_string
 ```
@@ -559,7 +559,7 @@ This object encapsulates a fully qualified XML name, the combination of a local 
 
 The constructor takes several forms:
 
-```default
+```javascript
 new QName ()
 new QName (name)
 new QName (ns)
@@ -602,7 +602,7 @@ In the corresponding namespace, the prefix is `adobe`, and the URI is `http://ww
 
 The Namespace constructor takes several forms:
 
-```default
+```javascript
 new Namespace()
 new Namespace (String uri)
 new Namespace (QName prefix)

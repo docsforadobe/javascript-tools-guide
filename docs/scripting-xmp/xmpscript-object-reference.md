@@ -147,7 +147,7 @@ This class represents a date and time. Times include a time zone, and can have u
 
 ### XMPDateTime object constructors
 
-```default
+```javascript
 new XMPDateTime ( ); // creates an object containing a 0 date
 new XMPDateTime ( date ); // initializes the object with a JavaScript date
 new XMPDateTime ( iso8601Date ); // initializes the object with an ISO date
@@ -457,7 +457,7 @@ To create an `XMPMeta` object, use the `new` operator. The constructor accepts a
 
 The first call to any of these constructors initializes the library by registering the standard namespaces and aliases:
 
-```default
+```javascript
 new XMPMeta ( ); // creates an empty object
 new XMPMeta ( packet );
 new XMPMeta ( buffer );
@@ -1119,7 +1119,7 @@ Returns the concatenated String.
 
 Creates and returns a string containing the path expression for an item in an array, using the registered prefix for the namespace, in the form:
 
-```default
+```javascript
 schemaNS:arrayName[itemIndex]
 ```
 
@@ -1140,7 +1140,7 @@ Returns a String.
 
 Creates and returns a string containing the path expression to select an alternate item by a field's value, using the registered prefixes for the namespaces, in the form:
 
-```default
+```javascript
 schemaNS:arrayName[fieldNS:fieldName='fieldValue']
 ```
 
@@ -1159,7 +1159,7 @@ Returns a String.
 
 Creates and returns a string containing the path expression to select an alternate item in an alt text array by language, using the registered prefix for the namespace, in the form:
 
-```default
+```javascript
 schemaNS:arrayName[@xml:lang='langName']
 ```
 
@@ -1186,7 +1186,7 @@ The field name. Must be a simple XML name.
 
 Creates and returns a string containing the path expression for a field in a structure, using the registered prefixes for the namespaces, in the form:
 
-```default
+```javascript
 schemaNS:structName/fieldNS:fieldName
 ```
 
@@ -1206,7 +1206,7 @@ Returns a String.
 
 Creates and returns a string containing the path expression for a qualifier attached to a property, using the registered prefix for the namespace, in the form:
 
-```default
+```javascript
 schemaNS:propName/?qualNS:qualName
 ```
 

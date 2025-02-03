@@ -10,7 +10,7 @@ Represents measurement values that contain both the numeric magnitude and the un
 
 The UnitValue constructor creates a new UnitValue object. The keyword new is optional:
 
-```default
+```javascript
 myVal = new UnitValue (value, unit);
 myVal = new UnitValue ("value unit");
 myVal = new UnitValue (value, "unit");
@@ -40,7 +40,7 @@ If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValu
 
 For example, all the following formats are equivalent:
 
-```default
+```javascript
 myVal = new UnitValue (12, "cm");
 myVal = new UnitValue ("12 cm");
 myVal = UnitValue ("12 centimeters");
@@ -96,19 +96,19 @@ The default `baseUnit` of a `unitValue` object is 0.013889 inches, the base for 
 
 For a system using a different DPI, you can change the `baseUnit` value in the `UnitValue` class, thus changing the default for all new `unitValue` objects. For example, to double the resolution of pixels:
 
-```default
+```javascript
 UnitValue.baseUnit = UnitValue (1/144, "in"); //144 dpi
 ```
 
 To restore the default, assign null to the class property:
 
-```default
+```javascript
 UnitValue.baseUnit = null; //restore default
 ```
 
 You can override the default value for any particular unitValue object by setting the property in that object. For example, to create a unitValue object for pixels with 96 dpi:
 
-```default
+```javascript
 pixels = UnitValue (10, "px");
 myPixBase = UnitValue (1/96, "in");
 pixels.baseUnit = myPixBase;
@@ -116,7 +116,7 @@ pixels.baseUnit = myPixBase;
 
 For percentage measurements, set the baseUnit property to the measurement value for 100%. For example, to create a unitValue object for 40% of 10 feet:
 
-```default
+```javascript
 myPctVal = UnitValue (40, "%");
 myBase = UnitValue (10, "ft")
 myPctVal.baseUnit = myBase;
@@ -124,14 +124,14 @@ myPctVal.baseUnit = myBase;
 
 Use the [as()](#unitvalue-object-as) method to get to a percentage value as a unit value:
 
-```default
+```javascript
 myFootVal = myPctVal.as ("ft"); // => 4
 myInchVal = myPctVal.as ("in"); // => 36
 ```
 
 You can convert a unitValue from an absolute measurement to pixels or percents in the same way:
 
-```default
+```javascript
 myMeterVal = UnitValue (10, "m"); // 10 meters
 myBase = UnitValue (1, "km");
 myMeterVal.baseUnit = myBase; //as a percentage of 1 kilometer
@@ -158,7 +158,7 @@ UnitValue objects can be used in computational JavaScript expressions. The way t
   If one operand is unitValue object and the other is a number, the operation is applied to the number
   and the numeric value of the object. The expression returns a new unitValue object with the result as
   its value. For example:
-  ```default
+  ```javascript
   val = new UnitValue ("10 cm");
   res = val * 20;
   // res is a UnitValue (200, "cm");
@@ -167,7 +167,7 @@ UnitValue objects can be used in computational JavaScript expressions. The way t
   If both operands are unitValue objects, JavaScript converts the right operand to the same unit as the
   left operand and applies the operation to the resulting values. The expression returns a new
   unitValue object with the unit of the left operand, and the result value. For example:
-  ```default
+  ```javascript
   a = new UnitValue ("1 m");
   b = new UnitValue ("10 cm");
   a + b;
@@ -182,7 +182,7 @@ UnitValue objects can be used in computational JavaScript expressions. The way t
   If both operands are unitValue objects, JavaScript converts both objects to the same unit, and
   compares the converted numeric values.
   For example:
-  ```default
+  ```javascript
   a = new UnitValue ("98 cm");
   b = new UnitValue ("1 m");
   a < b;   // => true

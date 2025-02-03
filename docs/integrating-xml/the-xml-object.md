@@ -19,13 +19,13 @@ For example, suppose you have the following, minimal XML code:
 
 In a JavaScript script, the XML object that you create from this XML code represents the root element:
 
-```default
+```javascript
 var myRoot = new XML( "<rootElement> <elementA> <elementB></elementB> </elementA> <elementA> <elementB></elementB> </elementA> </rootElement>");
 ```
 
 You can assign a constant to an XML value directly. The following implicitly creates the XML object assigned to `myRoot`:
 
-```default
+```javascript
 var myRoot = <rootElement>
     <elementA>
         <elementB></elementB>
@@ -38,7 +38,7 @@ var myRoot = <rootElement>
 
 The object `myRoot` contains a property named `elementA`, which contains two `XML` objects for the two instances of that element. Each of these, in turn, contains an `elementB` property, which contains one empty `XML` object:
 
-```default
+```javascript
 var elemB1 = myRoot.elementA[0].elementB[0];
 ```
 
@@ -83,7 +83,7 @@ This sample XML code is used for examples throughout this chapter:
 
 To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor:
 
-```default
+```javascript
 var bookXmlStr = "...";
 var bookstoreXML = new XML (bookXmlStr);
 ```
@@ -177,7 +177,7 @@ You can change the values of attributes using the same technique.
 ### Modification examples
 
 - In the sample XML, the third book has several <author> elements. This statement replaces all of them with a single element, containing a new string:
-  ```default
+  ```javascript
   bookstoreXML.book[2].author = "Charles 'Lewis Carroll' Dodgeson";
   ```
 
@@ -191,11 +191,11 @@ You can change the values of attributes using the same technique.
   </book>
   ```
 - To replace just the first author, leaving all the other authors in place, use this statement:
-  ```default
+  ```javascript
   bookstoreXML.book[2].author[0] = "Charles Dodgeson, aka Lewis Carroll";
   ```
 - This statement changes the content of the <year> element in the second book. ExtendScript automatically converts the numeric value to a string:
-  ```default
+  ```javascript
   bookstoreXML.book[1].year = 1901;
   ```
 - This following statement adds a new <rating> element to the second book:
@@ -212,7 +212,7 @@ You can change the values of attributes using the same technique.
   </book>
   ```
 - This statement changes the value of the category attribute of the second book:
-  ```default
+  ```javascript
   bookstoreXML.book[1].@category = "LITERATURE, FANTASY"
   ```
 
@@ -258,7 +258,7 @@ The `XML` object provides methods that allow you to retrieve elements contained 
 - `XML.`[children()](xml-object-reference.md#xml-object-children) gets the direct child elements, including text elements.
 - `XML.`[elements()](xml-object-reference.md#xml-object-elements) gets the direct child elements that are XML tags, but does not get text.
 - `XML.`[descendants()](xml-object-reference.md#xml-object-descendants) allows you to match a specific tag, and gets all matching elements at any level of nesting. You can also use a "double dot" notation to access descendants of an element. For example, these statements are equivalent:
-  ```default
+  ```javascript
   xml..title
   xml.descendants("title")
   ```
@@ -352,7 +352,7 @@ When this namespace is defined, the simple statement `bookstoreXML.book` no long
 
 For example, this JavaScript code creates a [Namespace object](xml-object-reference.md#namespace-object) for the namespace defined in the <bookstore> element, and accesses the books in the namespace through that object:
 
-```default
+```javascript
 var ns = new Namespace ("http://kids.mybookstore.com");
 bookstoreXML.ns::book;
 ```
@@ -365,13 +365,13 @@ By default, the default namespace is a namespace whose URI is the empty string. 
 
 To set the default namespace, use the global function [setDefaultXMLNamespace()](xml-object-reference.md#xml-setdefaultxmlnamespace), or this syntax:
 
-```default
+```javascript
 default xml namespace = namespace_specifier;
 ```
 
 The namespace specifier can be either a [Namespace object](xml-object-reference.md#namespace-object), or a URL string. For example:
 
-```default
+```javascript
 default xml namespace = "http://books.mybookstore.com";
 ```
 
@@ -388,14 +388,14 @@ Once you have set the default namespace:
     - If you have not set a default, you can use direct access for elements with no namespace specifier.
     - If you have set a default, you can use direct access for elements in that namespace.
 - If you have assigned an element to a namespace, and have not made it the default, you must use a [Namespace object](xml-object-reference.md#namespace-object) to access those elements. For example:
-    ```default
+    ```javascript
     var ns = new Namespace (**"http://kids.mybookstore.com"**);
     bookstoreXML.**ns::book**;
     ```
 
     This returns all books that have been assigned to the "kids" namespace.
 - If you have set a default namespace, you can still access all objects that do not have any specific namespace assignment by using a [Namespace object](xml-object-reference.md#namespace-object) for the empty string, which is the default creation case:
-    ```default
+    ```javascript
     var emptyNS = new Namespace ();
     bookstoreXML.emptyNS::book;
     ```
@@ -403,7 +403,7 @@ Once you have set the default namespace:
     This returns all books that have not been assigned to any namespace.
 - To access all elements, regardless of the namespace assignment, you can use an asterisk (\*) wild-card
     character or null as the namespace name:
-    ```default
+    ```javascript
     bookstoreXML.*::book;
     ```
 
@@ -419,7 +419,7 @@ You can enclose JavaScript statements in curly brackets, and embed them into XML
 
 For example, this function returns an XML value, in which embedded JavaScript variables will be evaluated and included:
 
-```default
+```javascript
 function makeXML (first, last) {
     return <person first={first} last={last}>{first + " " + last}</person>;
 }
@@ -427,7 +427,7 @@ function makeXML (first, last) {
 
 Calling this function:
 
-```default
+```javascript
 makeXML ( "Jane", "Doe" );
 ```
 
@@ -450,6 +450,6 @@ ExtendScript defines an `XMLList` object, which is identical to the [XML object]
 
 All XML statements and functions that collect XML return the result as an `XMLList`, which can be empty if there is no match. For example, the following statement returns an empty list:
 
-```default
+```javascript
 bookstoreXML.magazine;
 ```

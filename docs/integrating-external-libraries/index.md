@@ -10,7 +10,7 @@ All Adobe Creative Suite 4 applications support this feature.
 
 The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes an example that demonstrates how write a C/C++ shared library to be integrated with JavaScript. It is in the directory:
 
-```default
+```javascript
 sdkInstall/sdksamples/cpp/
 ```
 

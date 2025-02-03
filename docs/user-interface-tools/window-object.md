@@ -4,7 +4,7 @@
 
 The constructor creates and returns a new Window object, or null if window creation failed.
 
-```default
+```javascript
 new Window (type [, title, bounds, {creation_properties}]);
 ```
 
@@ -501,7 +501,7 @@ Returns `undefined`.
 
 Sends a notification message, simulating the specified user interaction event. For example, to simulate a dialog being moved by a user:
 
-```default
+```javascript
 myDlg.notify("onMove")
 ```
 

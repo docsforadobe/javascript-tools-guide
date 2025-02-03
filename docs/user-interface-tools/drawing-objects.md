@@ -18,7 +18,7 @@ The `ScriptUIGraphics` object contains methods that create the other graphics ob
 
 To make the background of a window light gray, you could use this code:
 
-```default
+```javascript
 g = myWindow.graphics;
 myBrush = g.newBrush( g.BrushType.SOLID_COLOR, [ 0.75, 0.75, 0.75, 1 ] );
 g.backgroundColor = myBrush;

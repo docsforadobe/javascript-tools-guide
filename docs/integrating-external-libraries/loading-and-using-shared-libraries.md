@@ -12,7 +12,7 @@ Use the direct-access style for C-language libraries. For each function defined 
 
 For example:
 
-```default
+```javascript
 mylib = new ExternalObject ("lib:" + samplelib); // load the library
 alert(mylib.version) ;
 // access functions directly from ExternalObject instance
@@ -31,7 +31,7 @@ Use the indirect style to access classes defined in a C++ library. For each C++ 
 
 For example:
 
-```default
+```javascript
 anotherlib= new ExternalObject ("lib:" + filespec); // load the library
 alert(anotherlib.version) ;
 // instantiate library-defined class

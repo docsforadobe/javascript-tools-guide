@@ -4,7 +4,7 @@ ExtendScript provides preprocessor directives for including external scripts, na
 
 Specify these with either a C-style statement starting with the # character, or a comment followed by @:
 
-```default
+```javascript
 #include "file.jsxinc"
 //@include "file.jsxinc"
 ```
@@ -19,7 +19,7 @@ Includes a JavaScript source file from another location. Inserts the contents of
 
 As a convention, use the file extension .jsxinc for JavaScript include files. For example:
 
-```default
+```javascript
 #include "../include/lib.jsxinc"
 //@include "../include/file.jsxinc"
 ```
@@ -38,7 +38,7 @@ If a `#include` file name starts with a slash (/), it is an absolute path name, 
 
 For example:
 
-```default
+```javascript
 #includepath "include;../include"
 #include "file.jsxinc"
 //@includepath "include;../include"
@@ -63,7 +63,7 @@ Some engines can have a predefined set of include paths. If so, the path provide
 
 Names a script. Enclosing quotes are optional, but required for names that include spaces or special characters. For example:
 
-```default
+```javascript
 #script SetupPalette
 #script "Load image file"
 ```

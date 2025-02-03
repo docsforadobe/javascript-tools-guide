@@ -8,7 +8,7 @@ Many of these connections are based on simple data exchange of ASCII data, while
 
 The following sample TCP/IP client connects to a WWW server (which listens on port 80); it then sends a very simple HTTP GET request to obtain the home page of the WWW server, and then it reads the reply, which is the home page together with a HTTP response header:
 
-```default
+```javascript
 reply = "";
 conn = new Socket;
 
@@ -35,7 +35,7 @@ Before a `Socket` object is able to check for an incoming connection, it must be
 
 The following example is a very simple Web server. It listens on port 80, waiting until it detects an incoming request. The HTTP header is discarded, and a dummy HTML page is transmitted to the caller:
 
-```default
+```javascript
 conn = new Socket;
 // listen on port 80
 if (conn.listen (80)) {
@@ -73,7 +73,7 @@ The Socket object lets you easily implement software that talks to each other vi
 
 The following sample code implements a very simple chat server. A chat client may connect to the chat server, who is listening on port number 1234. The server responds with a welcome message and waits for one line of input from the client. The client types some text and transmits it to the server who displays the text and lets the user at the server computer type a line of text, which the client computer again displays. This goes back and forth until either the server or the client computer types the word "bye":
 
-```default
+```javascript
 // A simple Chat server on port 1234
 function chatServer() {
     var tcp = new Socket;

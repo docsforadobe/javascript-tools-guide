@@ -125,7 +125,7 @@ The command affects only the comment markers it places in the text; it ignores a
 
 A special comment format is reserved for a code versioning statement, which is used internally by Adobe scripts, but is available to all scripters. Use Edit > Insert Version Tag to insert a comment containing the file name and current date-time, in this format:
 
-```default
+```javascript
 /**
  * @@@BUILDINFO@@@ SnpCreateDialog.jsx !Version! Tue Dec 05 2006 08:03:38 GMT-0800
  */
@@ -149,16 +149,16 @@ Before running the new script or saving the text as a script file, use **Edit > 
 The Script Editor supports triple-quote syntax to allow strings to span several source code lines. When entering a very long string, you can:
 
 - Enter it all on one line:
-    ```default
+    ```javascript
     var myString = "This very long string might wrap onto a second line visually, but you typed no CR character when entering it."
     ```
 - Enter on multiple lines, using a backslash () continuation character at the end of each line:
-    ```default
+    ```javascript
     var myString = "This string spans \
     two lines."
     ```
 - Use triple quotes around the entire string on multiple lines:
-    ```default
+    ```javascript
     var myString = """This "quoted" word is inside the
     multiline string enclosed by triple quotes."""
     ```

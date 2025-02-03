@@ -10,7 +10,7 @@ You can set these properties as objects, strings, or arrays.
 
 The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left corner of the screen:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder ");
 dlg.bounds = { x:100, y:100, width:380, height:390 }; // Object
 dlg.bounds = { left:100, top:100, right:480, bottom:490 }; // Object

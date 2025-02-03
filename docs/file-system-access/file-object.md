@@ -8,7 +8,7 @@ Represents a file in the local file system in a platform-independent manner. All
 
 To create a File object, use the File function or the new operator. The constructor accepts full or partial path names, and returns the new object. The CRLF sequence for the file is preset to the system default, and the encoding is preset to the default system encoding.
 
-```default
+```javascript
 File ( [ path ] ); // Can return a Folder object
 new File ([ path ] ); // Always returns a File object
 ```
@@ -45,7 +45,7 @@ These functions are available as static methods of the File class. It is not nec
 
 Special characters are those with a numeric value greater than 127, except the following:
 
-```default
+```javascript
 / - _ . ! ~ * ' ( )
 ```
 
@@ -64,7 +64,7 @@ Encodes the specified string as required by RFC 2396. All special characters are
 
 For example, the string "my file" is encoded as "my%20file". Special characters are those with a numeric value greater than 127, except the following:
 
-```default
+```javascript
 / - _ . ! ~ * ' ( )
 ```
 

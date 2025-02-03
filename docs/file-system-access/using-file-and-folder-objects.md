@@ -7,7 +7,7 @@ Because path name syntax is very different on Windows, Mac OS, and UNIX®, Adobe
 
 There are several ways to distinguish between a File and a Folder object. For example:
 
-```default
+```javascript
 if ( f instanceof File ) ...
 if ( typeof f.open == "undefined" ) ... // Folders do not open
 ```
@@ -32,7 +32,7 @@ An absolute path name in URI notation describes the full path from a root direct
 
 For example, the following describes an absolute location for the file `myFile.jsx`:
 
-```default
+```javascript
 /dir1/dir2/mydir/myFile.jsx
 ```
 
@@ -61,7 +61,7 @@ If a path name starts with two slashes (or backslashes on Windows), the first el
 
 URI notation allows special characters in pathnames, but they must specified with an escape character (%) followed by a hexadecimal character code. Special characters are those which are not alphanumeric and not one of the characters:
 
-```default
+```javascript
 / - - . ! ~ * ' ( )
 ```
 

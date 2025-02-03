@@ -2,7 +2,7 @@
 
 ExtendScript allows you to extend or override the behavior of a math or a Boolean operator for a specific class by defining a method in that class with same name as the operator. For example, this code defines the addition (+) operator for the class `MyClass`. In this case, the addition operator simply adds the operand to the property value:
 
-```default
+```javascript
 // define the constructor method
 function MyClass (initialValue) {
     this.value = initialValue;
@@ -16,7 +16,7 @@ MyClass.prototype ["+"] = function (operand) {
 
 This allows you to perform the "+" operation with any object of this class:
 
-```default
+```javascript
 var obj = new MyClass (5);
 Result: [object Object]
 obj + 10;
@@ -37,7 +37,7 @@ Unary operator functions work on the `this` object, while binary operators work 
 
 For binary operators, a second argument indicates the order of operands. For noncommutative operators, either implement both order variants in your function or return `undefined` for combinations that you do not support. For example:
 
-```default
+```javascript
 this ["/"] = function (operand, rev) {
     if (rev) {
         // do not resolve operand / this

@@ -20,7 +20,7 @@ This is independent of the event-handling system, which means that at any time i
 
 It is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) object:
 
-```default
+```javascript
 var myKeyState = ScriptUI.environment.keyboardState;
 ```
 
@@ -41,7 +41,7 @@ The name of the key currently pressed. This is the JavaScript name, a string suc
 
 For example, with 'a' pressed:
 
-```default
+```javascript
 var currentPressedKey = ScriptUI.environment.keyboardState.keyName;
 
 alert(currentPressedKey); // "A"
@@ -62,7 +62,7 @@ Type: `Boolean`
 
 For example, checking whether a modifier key is held during script execution:
 
-```default
+```javascript
 var shiftHeld = ScriptUI.environment.keyboardState.shiftKey;
 
 if (shiftHeld) {
@@ -72,7 +72,7 @@ if (shiftHeld) {
 
 Or to check for keyboard modifier combinations:
 
-```default
+```javascript
 var keyboardState = ScriptUI.environment.keyboardState;
 
 if (keyboardState.shiftKey && keyboardState.altKey) {
@@ -84,7 +84,7 @@ This can also be used within interface buttons as alternative to [checking the m
 
 For example:
 
-```default
+```javascript
 button.onClick = function () {
   if (ScriptUI.environment.keyboardState.shiftKey) {
     // Special functionality for 'shift' key here

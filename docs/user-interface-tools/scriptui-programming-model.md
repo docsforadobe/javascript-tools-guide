@@ -16,7 +16,7 @@ To create a new window, use the `Window` constructor function. The constructor t
 
 The following example creates an empty dialog with the variable name dlg, which is used in subsequent examples:
 
-```default
+```javascript
 // Create an empty dialog window near the upper left of the screen
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.frameLocation = [ 100, 100 ];
@@ -24,7 +24,7 @@ dlg.frameLocation = [ 100, 100 ];
 
 Initially, new windows are hidden. The show method makes them visible and responsive to user interaction; for example:
 
-```default
+```javascript
 dlg.show();
 ```
 
@@ -52,25 +52,25 @@ Your script can access these values, and (if not using auto-layout) set them as 
 
 - The `location` of a window is defined by a `Point` object containing a pair of coordinates (`x` and `y`) for the top left corner (the origin), specified in the screen coordinate system. The location of an element within a window or other container is defined as the origin point specified in the container's coordinate system. That is, the x and y values are relative to the origin of the container.
     - The following examples show equivalent ways of placing the content region of an existing window at screen coordinates [10, 50]:
-        ```default
+        ```javascript
         win.location = [ 10, 50 ];
         win.location = { x: 10, y: 50 };
         win.location = "x:10, y:50";
         ```
 - The `size` of an element's region is defined by a `Dimension` object containing a `width` and `height` in pixels.
     - The following examples show equivalent ways of changing an existing window's width and height to 200 and 100:
-        ```default
+        ```javascript
         win.size = [ 200, 100 ];
         win.size = { width: 200, height: 100 };
         win.size = "width:200, height:100";
         ```
     - This example shows how to change a window's height to 100, leaving its location and width unchanged:
-        ```default
+        ```javascript
         win.size.height = 100;
         ```
 - The `bounds` of an element are defined by a `Bounds` object containing both the origin point (`x`, `y`) and size (`width`, `height`) To define the size and location of windows and controls in one step, use the bounds property.
     - The value of the `bounds` property can be a string with appropriate contents, an inline JavaScript `Bounds` object, or a four-element array. The following examples show equivalent ways of placing a 380 by 390 pixel window near the upper left corner of the screen:
-        ```default
+        ```javascript
         var dlg = new Window( "dialog", "Alert Box Builder", [ 100, 100, 480, 490] );
         dlg.bounds = [ 100, 100, 480, 490 ];
         dlg.bounds = { x: 100, y: 100, width: 380, height: 390 };
@@ -98,7 +98,7 @@ You can specify the initial size and position of any new element relative to the
 
 The order of optional parameters must be maintained. Use the value `undefined` for a parameter you do not wish to set. For example, if you want to use automatic layout to determine the bounds, but still set the title and text in a panel and button, the following creates `Panel` and `Button` elements with an initial `text` value, but no `bounds` value:
 
-```default
+```javascript
 dlg.btnPnl = dlg.add('panel', undefined, 'Build it');
 dlg.btnPnl.testBtn = dlg.btnPnl.add('button', undefined, 'Test');
 ```
@@ -115,7 +115,7 @@ You can also specify the creation properties for new objects using the resource 
 
 All user-interface elements have an optional creation property called name, which assigns a name for identifying that element. For example, the following creates a new Button element with the name ok:
 
-```default
+```javascript
 dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
 ```
 
@@ -130,7 +130,7 @@ A reference to each element added to a container is appended to the container's 
 
 In this example, the `msgPnl` panel was the first element created in dlg, so the script can access the panel object at index 0 of the parent's `children` property to set the text for the title:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.msgPnl = dlg.add( "panel" );
 dlg.children[ 0 ].text = "Messages";
@@ -138,14 +138,14 @@ dlg.children[ 0 ].text = "Messages";
 
 If you use a creation property to assign a name to a newly created element, you can access that child by its name, either in the `children` array of its parent, or directly as a property of its parent. For example, the `Button` in a previous example was named **ok**, so it can be referenced as follows:
 
-```default
+```javascript
 dlg.btnPnl.children[ "ok" ].text = "Build";
 dlg.btnPnl.ok.text = "Build";
 ```
 
 You can also access named elements through the parent window's `findElement()` method:
 
-```default
+```javascript
 var myOkButton = dlg.findElement( "ok" );
 ```
 

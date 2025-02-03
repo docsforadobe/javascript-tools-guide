@@ -8,7 +8,7 @@ The message object defines the basic communication packet that is sent between a
 
 Create a new message object using a simple constructor:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 ```
 
@@ -44,14 +44,14 @@ The predefined header `["Error-Code"]` is used to return error messages to a sen
 
 Examples of setting headers:
 
-```default
+```javascript
 bt.headers.info = "Additional Information";
 bt.headers ["Error-Code"] = 8;
 ```
 
 Examples of getting header values:
 
-```default
+```javascript
 var info = bt.headers.info;
 var error = bt.headers ["Error-Code"];
 ```
@@ -119,7 +119,7 @@ A callback function that the target application invokes to return an error respo
 
 To define error-response behavior, set this to a function definition in the following form:
 
-```default
+```javascript
 bridgeTalkObj.onError = function( errorMsgObject ) {
   // error handler defined here
 };
@@ -139,7 +139,7 @@ A callback function that the target application invokes to confirm that the mess
 
 To define a response to receipt notification, set this to a function definition in the following form:
 
-```default
+```javascript
 bridgeTalkObj.onReceived = function( origMsgObject ) {
   // handler defined here
 };
@@ -159,7 +159,7 @@ A callback function that the target application invokes to return a response to 
 
 To handle the response, set this to a function definition in the following form:
 
-```default
+```javascript
 bridgeTalkObj.onResult = function( responseMsgObject ) {
   // handler defined here
 };
@@ -181,7 +181,7 @@ To enable this callback, the message must specify a value for the timeout proper
 
 To define a response to the timeout event, set this to a function definition in the following form:
 
-```default
+```javascript
 bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
   // handler defined here
 };

@@ -6,7 +6,7 @@ ExtendScript provides a reflection interface that allows you to find out everyth
 
 Every object has a reflect property that returns a reflection object that reports the contents of the object. You can, for example, show the values of all the properties of an object with code like this:
 
-```default
+```javascript
 var f = new File ("myfile");
 var props = f.reflect.properties;
 for (var i = 0; i < props.length; i++) {
@@ -46,14 +46,14 @@ Use this method to get information about dynamic properties that have not yet be
 
 This code determines the class name of an object:
 
-```default
+```javascript
 obj = new String ("hi");
 obj.reflect.name; // => String
 ```
 
 This code gets a list of all methods:
 
-```default
+```javascript
 obj = new String ("hi");
 obj.reflect.methods; //=> indexOf,slice,...
 obj.reflect.find ("indexOf"); // => the method info
@@ -61,13 +61,13 @@ obj.reflect.find ("indexOf"); // => the method info
 
 This code gets a list of properties:
 
-```default
+```javascript
 Math.reflect.properties; //=> PI,LOG10,...
 ```
 
 This code gets the data type of a property:
 
-```default
+```javascript
 Math.reflect.find ("PI").type; // => number
 ```
 
@@ -79,7 +79,7 @@ This object contains information about a property, a method, or a method argumen
 
 You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by name or index:
 
-```default
+```javascript
 obj = new String ("hi");
 obj.reflect.methods[0];
 obj.reflect.methods["indexOf"];
@@ -87,7 +87,7 @@ obj.reflect.methods["indexOf"];
 
 You can access the ReflectionInfo objects for the arguments of a method in the arguments array of the ReflectionInfo object for the method, by index:
 
-```default
+```javascript
 obj.reflect.methods["indexOf"].arguments[0];
 obj.reflect.methods.indexOf.arguments[0];
 ```

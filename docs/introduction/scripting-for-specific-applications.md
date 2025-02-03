@@ -10,7 +10,7 @@ For details of how to load and run scripts for any individual application, see t
 
 A script in a startup directory might be executed on startup by multiple applications. If you place a script in such a directory, it must contain code to check whether it is being run by the intended application. You can do this using the appName static property of the BridgeTalk class. For example:
 
-```default
+```javascript
 if ( BridgeTalk.appName == "bridge" ) {
     //continue executing script
 }
@@ -18,7 +18,7 @@ if ( BridgeTalk.appName == "bridge" ) {
 
 If a script that is run by one application will communicate with another application or add functionality that depends on another application, it must first check whether that application/version is installed. You can do this using the ``BridgeTalk.getSpecifier()` static function. For example:
 
-```default
+```javascript
 if ( BridgeTalk.appName == "bridge-2.0" ) {
     // Check to see that Photoshop is installed.
     if ( BridgeTalk.getSpecifier( "photoshop", 10 ) ){

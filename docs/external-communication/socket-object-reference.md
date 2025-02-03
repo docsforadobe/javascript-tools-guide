@@ -4,7 +4,7 @@ This section provides details of the object's properties and methods.
 
 Socket object constructor:
 
-```default
+```javascript
 [new] Socket ();
 ```
 

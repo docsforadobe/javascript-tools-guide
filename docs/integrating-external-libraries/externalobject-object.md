@@ -21,7 +21,7 @@ Before loading the library, the current folder is temporarily switched to the lo
 
 For example:
 
-```default
+```javascript
 var mylib = new ExternalObject( "lib:myLibrary" );
 ```
 

@@ -331,7 +331,7 @@ All `SoObjectInterface` members must be valid function pointers, or NULL. You mu
 
 Required. Called when JavaScript code instantiates this class with the new operator:
 
-```default
+```javascript
 var xx = New MyClass(arg1, ...)
 ```
 
@@ -352,7 +352,7 @@ Returns an error code, `kESErrOK` on success.
 
 Called when JavaScript code sets a property of this class:
 
-```default
+```javascript
 xx.myproperty = "abc" ;
 ```
 
@@ -373,7 +373,7 @@ Returns an error code, `kESErrOK` on success.
 
 Called when JavaScript code accesses a property of this class:
 
-```default
+```javascript
 alert(xx.myproperty);
 ```
 
@@ -393,7 +393,7 @@ Returns an error code, `kESErrOK` on success.
 
 Called when JavaScript code calls a method of this class:
 
-```default
+```javascript
 xx.mymethod()
 ```
 

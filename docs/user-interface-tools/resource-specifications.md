@@ -4,20 +4,20 @@ You can create one or more user-interface elements at a time using a *resource* 
 
 The general structure of a resource specification is an element type specification (such as `dialog`), followed by a set of braces enclosing one or more property definitions.
 
-```default
+```javascript
 var myResource = "dialog{ control_specs }";
 var myDialog = new Window ( myResource );
 ```
 
 Controls are defined as properties within windows and other containers. For each control, give the class name of the control, followed by the properties of the control enclosed in braces. For example, the following specifies a button:
 
-```default
+```javascript
 testBtn: Button { text: "Test" }
 ```
 
 The following resource string specifies a panel that contains grouped `StaticText` and `EditText` controls:
 
-```default
+```javascript
 "msgPnl: Panel { orientation:'column', alignChildren:['right', 'top'],\
     text: 'Messages', \
     title: Group { \
@@ -37,17 +37,17 @@ The property with name properties specifies creation `properties`; see [Creation
 A property value can be specified as `null`, true, false, a string, a number, an inline array, or an object.
 
 - An inline array contains one or more values in the form:
-    ```default
+    ```javascript
     [ value, value, ... ]
     ```
 - An object can be an inline object, or a named object, in the form:
-    ```default
+    ```javascript
     { classname inlineObject }
     ```
 
     In this case, the classname must be one of the control class names list in [Types of controls](types-of-controls.md).
 - An inline object contains one or more properties, in the form:
-    ```default
+    ```javascript
     { propertyName: propertyValue, propertyName: propertyValue, ... }
     ```
 
@@ -69,7 +69,7 @@ The Build button event handler builds a resource string from the collected value
 
 The resource specification format can also be used to create a single element or container and its child elements. For instance, if the `alertBuilderResource` in the example did not contain the panel `btnPnlResource`, you could define that resource separately, then add it to the dialog as follows:
 
-```default
+```javascript
 var btnPnlResource = "btnPnl: Panel { orientation:'row', \
     text: 'Build it', \
     testBtn: Button { text:'Test' }, \

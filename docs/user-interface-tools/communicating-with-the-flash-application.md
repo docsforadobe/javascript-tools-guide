@@ -32,7 +32,7 @@ For example, in order for the SWF code to call an ExtendScript function named `m
 
 You do not need to register the ExtendScript function in the ActionScript environment. Your ActionScript script can simply call the external function using the `ExternalInterface.call()` method:
 
-```default
+```javascript
 var res = ExternalInterface.call( "myJavaScriptFunction" );
 ```
 
@@ -44,7 +44,7 @@ When the Flash Player executes the ExternalInterface call, ScriptUI looks for a 
 
 From the ExtendScript side, use the `FlashPlayer` method [invokePlayerFunction()](control-objects.md#flashplayerobj-invokeplayerfunction) to call ActionScript methods that have been defined within the Flash application:
 
-```default
+```javascript
 var result = flashElement.invokePlayerFunction( "ActionScript_function_name", [ arg1, ..., argN ] );
 ```
 
@@ -58,7 +58,7 @@ public static addCallback(methodName:String, instance:Object, method:Function);
 
 This registers a function defined in your Adobe application script named `getActionScriptArray()`:
 
-```default
+```javascript
 ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArray );
 ```
 

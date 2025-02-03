@@ -14,7 +14,7 @@ Collects the enumerated values that can be used in the [alignment](window-object
 
 Use these constants to set the alignment. For example:
 
-```default
+```javascript
 myGroup.alignment = [ScriptUI.Alignment.LEFT, ScriptUI.Alignment.TOP]
 ```
 
@@ -79,7 +79,7 @@ A JavaScript object that contains one function, [ScriptUI.events.createEvent()](
 
 Collects the enumerated values that can be used as the style argument to the [ScriptUI.newFont()](#scriptui-newfont) method. For example:
 
-```default
+```javascript
 var font = ScriptUI.newFont( 'Helvetica', ScriptUI.FontStyle.BOLD )
 ```
 

@@ -8,7 +8,7 @@ The following sections introduce the types of controls you can add to a `Window`
 
 These are types of `Control` objects which are contained in windows, and which contain and group other controls.
 
-| **Panel**       | Typically used to visually organize related controls.<br/><br/>- Set the text property to define a title that appears at the top of the panel.<br/>- An optional borderStyle creation property controls the appearance of the border<br/>  drawn around the panel.<br/><br/>You can use panels as separators: those with width of 0 appear as vertical lines and<br/>those with height of 0 appear as horizontal lines:<br/><br/>```default<br/>var dlg = new Window( "dialog", "Alert Box Builder" );<br/>dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );<br/>```   |
+| **Panel**       | Typically used to visually organize related controls.<br/><br/>- Set the text property to define a title that appears at the top of the panel.<br/>- An optional borderStyle creation property controls the appearance of the border<br/>  drawn around the panel.<br/><br/>You can use panels as separators: those with width of 0 appear as vertical lines and<br/>those with height of 0 appear as horizontal lines:<br/><br/>```javascript<br/>var dlg = new Window( "dialog", "Alert Box Builder" );<br/>dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );<br/>```   |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Group**       | Used to visually organize related controls. Unlike `Panels`, `Groups` have no title or<br/>visible border. You can use them to create hierarchies of controls, and for fine control<br/>over layout attributes of certain groups of controls within a larger panel. For examples,<br/>see [Creating more complex arrangements](automatic-layout.md#creating-more-complex-arrangements).                                                                                                                                                                                                 |
 | **TabbedPanel** | A panel that contains only Tab objects as its immediate children. It has a selection<br/>property that contains the currently active Tab child. When the value of the selection<br/>property changes, either by a user selecting a different tab, or by a script setting the<br/>property, the TabbedPanel receives an onChange notification.<br/><br/>The title property provides an optional label; the titleLayout property places the<br/>label within the panel.                                                                                                                   |
@@ -29,7 +29,7 @@ Typically used to initiate some action from a window when a user clicks the butt
 - Set the `text` property to assign a label to identify a Button's function.
 - The `onClick` callback method provides behavior.
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.btnPnl = dlg.add( "panel", undefined, "Build it" );
 dlg.btnPnl.testBtn = dlg.btnPnl.add( "button", undefined, "Test" );
@@ -59,7 +59,7 @@ Typically used to display text strings that are not intended for direct manipula
 
 This example creates a Panel and adds several StaticText elements:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.msgPnl = dlg.add( "panel", undefined, "Messages" );
 dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Alert box title:" );
@@ -76,7 +76,7 @@ Allows users to enter text, which is returned to the script when the dialog is d
 
 This example adds some EditText elements, with initial values that a user can accept or replace:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.msgPnl = dlg.add( "panel", undefined, "Messages" );
 dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Alert box title:" );
@@ -101,7 +101,7 @@ Allows users to enter a decimal number, which is returned to the script when the
 
 This example adds some EditNumber elements, with initial values that a user can accept or replace:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Date Box" );
 dlg.msgPnl = dlg.add( "panel", undefined, "Enter Date" );
 dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Month:" );
@@ -123,7 +123,7 @@ Allows the user to set a boolean state.
 
 When you create a Checkbox, you can set its value property to specify its initial state and appearance.
 
-```default
+```javascript
 // Add a checkbox to control the buttons that dismiss an alert box
 dlg.hasBtnsCb = dlg.add( "checkbox", undefined, "Should there be alert buttons?" );
 dlg.hasBtnsCb.value = true;
@@ -138,7 +138,7 @@ Allows the user to select one choice among several.
 
 You group a related set of radio buttons by creating all the related elements one after another. When any button's value becomes true, the value of all other buttons in the group becomes false. When you create a group of radio buttons, you should set the state of one of them true:
 
-```default
+```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
 dlg.alertBtnsPnl = dlg.add( "panel", undefined, "Button alignment" );
 dlg.alertBtnsPnl.alignLeftRb = dlg.alertBtnsPnl.add( "radiobutton", undefined, "Left" );
@@ -166,7 +166,7 @@ Scrollbars are often created with an associated `EditText` field to display the 
 
 This example creates a scrollbar with associated `StaticText` and `EditText` elements within a panel:
 
-```default
+```javascript
 dlg.sizePnl = dlg.add( "panel", undefined, "Dimensions" );
 dlg.sizePnl.widthSt = dlg.sizePnl.add( "statictext", undefined, "Width:" );
 dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 );
@@ -213,7 +213,7 @@ You can set or reset the `image` property at any time to change the image displa
 
 The scripting environment can define icon *resources*, which are available to scripts by name. To specify an icon resource, set a control's `image` property to the resource's JavaScript name, or refer to the resource by name when creating the control. For example, to create a button with an application-defined icon resource:
 
-```default
+```javascript
 myWin.upBtn = myWin.add ( "iconbutton", undefined, "SourceFolderIcon" );
 ```
 
@@ -240,13 +240,13 @@ If you specify more than one column, each [ListItem]() object that you add to th
 
 The [subitems](control-objects.md#controlobj-subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
 
-```default
+```javascript
 { text : displayString , image : imageFileReference }
 ```
 
 For example, the following fragment defines a list box with two columns, and specifies the labels in each column for the two choices:
 
-```default
+```javascript
 ...
 // create list box with two titled columns
 var list = dlg.add ('ListBox', [0, 0, 150, 75], 'asd',

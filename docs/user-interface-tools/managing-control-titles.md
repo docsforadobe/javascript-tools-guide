@@ -35,32 +35,32 @@ The following sections provide examples that show how to use title layout to ach
 Unlike automatic layout, title layout uses the [alignment](control-objects.md#controlobj-alignment) property to specify the orientation of the title and graphic element, and how the title aligns to the graphic element. This property contains a 2-element array, where the first element specifies horizontal alignment and the second specifies vertical alignment. The allowed values for these are the same as those used by automatic layout (see [Aligning children](automatic-layout.md#aligning-children)), except that the `fill` value is not allowed.
 
 - To achieve a row orientation where the title appears to the left or right of the graphic element, define horizontal alignment as left or right and vertical alignment as `center`, `top`, or `bottom`:
-    ```default
+    ```javascript
     button.titleLayout = { alignment: ['right', 'center'] };
     ```
 
     ![Row orientation: title aligned right](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg)
 - To achieve a column orientation where the title appears above or below the graphic element, define vertical alignment as `top` or `bottom`, and horizontal alignment as `center`:
-    ```default
+    ```javascript
     image.titleLayout = { alignment: ['center', 'bottom'] };
     ```
 
     ![Column orientation: center / bottom alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg)
 - To achieve a stack orientation where the title appears superimposed upon the graphic element, define both vertical and horizontal alignment as `center`. This orientation is mainly useful with the `iconbutton` or `image` element types; it does not make sense to superimpose a title over a dropdownlist, for instance. In this example, the button's title is centered over its iconic image:
-    ```default
+    ```javascript
     button.title = 'Get information';
     button.titleLayout = { alignment: ['center', 'center'] };
     ```
 
     ![Stack orientation: center / center alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg)
 - With row orientation, you can control whether the title aligns to the top, center, or bottom of the graphic element. In this example, the title is placed to the left of the image, aligned at the top edge:
-    ```default
+    ```javascript
     image.titleLayout = { alignment: ['left', 'top'] };
     ```
 
     ![Row orientation: top left alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg)
 - Use `spacing` to override the default number of pixels separating the title from the graphic element. In this example, titleLayout is configured to place the title 15 pixels above the panel:
-    ```default
+    ```javascript
     panel.title = 'Image format';
     panel.titleLayout = { alignment: ['center', 'top'], spacing: 15 };
     ```
@@ -72,13 +72,13 @@ Unlike automatic layout, title layout uses the [alignment](control-objects.md#co
 ## Title character width and justification
 
 - To override the automatically calculated title width, define a positive non-zero value for the `characters` property. This reserves enough space in the title area to hold the specified number of "X" characters. This is useful when an element's title can change (for localized values, for instance) and you want to reserve enough space to fit all the expected values without truncation or affecting the overall layout.
-    ```default
+    ```javascript
     droplist.titleLayout = { alignment: ['left', 'center'], characters: 20 };
     ```
 
     ![Wider character width: left justified](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg)
 - When a `characters` value specifies a width greater than the default title width, you can set the `justify` property to control how the text of the title is justified within the space reserved for it. The value `left` places the text at the left end of the space, leaving blank space on the right; `right` places the text at the right end of the space, leaving blank space on the left; and `center` places the text in the middle of the space, dividing any blank space evenly on both sides of the text.
-    ```default
+    ```javascript
     droplist.titleLayout = { alignment: ['left', 'center'],
                              characters: 20,
                              justify: 'right' };
@@ -86,7 +86,7 @@ Unlike automatic layout, title layout uses the [alignment](control-objects.md#co
 
     ![Wider character width: right justified](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
 - This example demonstrates using `characters` and `justify` to vertically align the colons at the ends of all the dropdownlist control titles in a group. The same `characters` value is used for each element's `title`, and all are right-justified:
-    ```default
+    ```javascript
     w.ddl1 = w.add("dropdownlist { title: 'Image format:' }");
     w.ddl2 = w.add("dropdownlist { title: 'Background color:' }");
     w.ddl3 = w.add("dropdownlist { title: 'Text color:' }");
@@ -108,7 +108,7 @@ If the space reserved for a title is not wide enough to display its entire text,
 
 This example demonstrates the effect of all three options on the same title string:
 
-```default
+```javascript
 w.btn1 = w.add("iconbutton { title: 'Start 123456 End', image: 'SystemWarningIcon' }");
 w.btn2 = w.add("iconbutton { title: 'Start 123456 End', image: 'SystemWarningIcon' }");
 w.btn3 = w.add("iconbutton { title: 'Start 123456 End', image: 'SystemWarningIcon' }");
@@ -132,7 +132,7 @@ This example demonstrates overriding the default margins for `iconbutton` and `d
 
 The lists are enclosed in panels to create artificial borders around them:
 
-```default
+```javascript
 w.btn1 = w.add("iconbutton { title: 'Default margins', image: 'SystemWarningIcon' }");
 
 w.btn2 = w.add("iconbutton { title: 'Extra T/B margins', image: 'SystemWarningIcon' }");

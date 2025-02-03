@@ -93,7 +93,7 @@ The function can return an array of function name-signature strings, which are u
 
 If you choose to return a set of function name-signature strings, each string associates a function name with that function's parameter types, if any. For example:
 
-```default
+```javascript
 ["functionName1_argtypes", "functionName2_argtypes", "functionName3"]
 ```
 
@@ -111,7 +111,7 @@ The characters that indicate data types are:
 
 For example, suppose your library defines these two entry points:
 
-```default
+```javascript
 One (Integer a, String b);
 Two ();
 ```

@@ -38,7 +38,7 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#cont
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("button" [, bounds, text, creation_properties}]);
 ```
 
@@ -57,7 +57,7 @@ A dual-state control showing a box with a checkmark when value is true, empty wh
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("checkbox" [, bounds, text, {creation_properties}]);
 ```
 
@@ -76,7 +76,7 @@ A drop-down list with zero or more items. Calls the [onChange](#control-event-on
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add( "dropdownlist", bounds [, items, {creation_properties}] );
 ```
 
@@ -104,7 +104,7 @@ The `textselection` property contains currently selected text.
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("editnumber" [, bounds, text, minValue, maxValue, {creation_properties}]);
 ```
 
@@ -125,7 +125,7 @@ An editable text field that the user can change. Calls the [onChange](#control-e
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("edittext" [, bounds, text, {creation_properties}]);
 ```
 
@@ -148,7 +148,7 @@ A control object of this type contains functions that allow your script to load 
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("flashplayer" [, bounds, movieToLoad, {creation_properties}]);
 ```
 
@@ -169,7 +169,7 @@ Hiding a group hides all its children. Making it visible makes visible those chi
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("group" [, bounds, {creation_properties}]);
 ```
 
@@ -187,7 +187,7 @@ A mouse-sensitive pushbutton containing an icon. Calls the [onClick](#control-ev
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("iconbutton" [, bounds, icon, {creation_properties}]);
 ```
 
@@ -206,7 +206,7 @@ Displays an icon or image.
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("image" [, bounds, icon, {creation_properties}]);
 ```
 
@@ -243,7 +243,7 @@ A list box with zero or more items. Calls the [onChange](#control-event-onchange
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("listbox", bounds [, items, {creation_properties}]);
 ```
 
@@ -264,7 +264,7 @@ Containers have additional properties that control the children; see [Container 
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("panel" [, bounds, text, {creation_properties}]);
 ```
 
@@ -284,7 +284,7 @@ A horizontal rectangle that shows progress of an operation. All `progressbar` co
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("progressbar" [, bounds, value, minvalue, maxvalue, creation_properties}]);
 ```
 
@@ -307,7 +307,7 @@ All radiobuttons in a group must be created sequentially, with no intervening cr
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("radiobutton" [, bounds, text, {creation_properties}]);
 ```
 
@@ -333,7 +333,7 @@ Calls the [onChange](#control-event-onchange) callback after the position of the
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("scrollbar" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 ```
 
@@ -358,7 +358,7 @@ The `value` property contains the current position of the indicator within the r
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("slider" [, bounds, value, minvalue, maxvalue, {creation_properties}]);
 ```
 
@@ -379,7 +379,7 @@ A text field that the user cannot change.
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("statictext" [, bounds, text, {creation_properties}]);
 ```
 
@@ -400,7 +400,7 @@ Containers have additional properties that control the children; see [Container 
 
 To add a tab to a tabbed panel `t` in window `w`:
 
-```default
+```javascript
 w.t.add ("tab" [, bounds, text, {creation_properties}]);
 ```
 
@@ -423,7 +423,7 @@ The selected tab child is the value of the parent's `selection` property. One an
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("tabbedpanel" [, bounds, text, {creation_properties}]);
 ```
 
@@ -442,7 +442,7 @@ A hierarchical list whose items can contain child items. Items at any level of t
 
 To add to a window `w`:
 
-```default
+```javascript
 w.add ("treeview" [, bounds, items, {creation_properties}])
 ```
 

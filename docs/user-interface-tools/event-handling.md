@@ -391,7 +391,7 @@ Returns `true` if the given modifier was active when the event occurred, false o
 
 #### initMouseEvent()
 
-```default
+```javascript
 eventObj.initMouseEvent(
     eventName,
     bubble,

@@ -20,7 +20,7 @@ Before you can actually send a message, you must check that the required version
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed by Photoshop CS5, checks that the required version of Adobe Bridge is installed:
 
-```default
+```javascript
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 if( targetApp ) {
   // construct and send message
@@ -35,7 +35,7 @@ The next step is to construct a message to send to the application. You do this 
 
 Scripts sent in messages can be very complex, and can use the full DOM of the target application. This example defines a message script that accesses the Adobe Bridge DOM to request the number of files or folders found in a specific folder:
 
-```default
+```javascript
 // create a new BridgeTalk message object
 var bt = new BridgeTalk;
 
@@ -59,7 +59,7 @@ When the target has finished processing this message, it looks for an onResult c
 
 This handler, for example, processes the returned result using a script-defined processResult function:
 
-```default
+```javascript
 bt.onResult = function(returnBtObj) {
   processResult(returnBtObj.body);
 }
@@ -74,7 +74,7 @@ If you want to handle errors that might arise during script processing, you can 
 
 To send the message, call the message object's `send` method. You do not need to specify where to send the message to, since the target application is set in the message itself:
 
-```default
+```javascript
 bt.send();
 ```
 
@@ -84,7 +84,7 @@ A second optional parameter allows you to specify launch parameters, in case the
 
 The complete script looks like this:
 
-```default
+```javascript
 // script to be executed in Photoshop CS4
 #target "photoshop-11.0"
 
@@ -139,7 +139,7 @@ If an error occurs on evaluation, the default `onReceive` handler returns the er
 
 To change the default behavior set the `BridgeTalk.onReceive` property to a function definition in the following form:
 
-```default
+```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
   // callback definition here
 };
@@ -161,7 +161,7 @@ The result object is transmitted back to the sender if the sender has implemente
 
 This example shows the default mechanism for handling unsolicited messages received from other applications. This simple handler executes the message's data as a script and returns the results of that execution:
 
-```default
+```javascript
 BridgeTalk.onReceive = function (message) {
   return eval( message.body );
 }
@@ -169,7 +169,7 @@ BridgeTalk.onReceive = function (message) {
 
 This example shows how you might extend the receive handler to process a new type of message:
 
-```default
+```javascript
 BridgeTalk.onReceive = function (message) {
   switch (message.type) {
     case "Data":
@@ -213,7 +213,7 @@ In this example, an application script asks Adobe Bridge to find out how many fi
 
 The `onResult` method saves that number in `fileCountResult`, a script-defined property of the message, for later use:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "new Document('C:\\BridgeScripts');
@@ -229,7 +229,7 @@ bt.send();
 
 In this example, the onError handler re-throws the error message within the sending application:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 bt.onError = function (btObj) {
   var errorCode = parseInt (btObj.headers ["Error-Code"]);
@@ -241,7 +241,7 @@ bt.onError = function (btObj) {
 
 This example creates a message that asks Adobe Bridge to return XMP metadata for a specific file. The `onResult` method processes the data using a script-defined processFileSize function. Any errors are handled by the `onError` method. For example, if the file requested is not an existing file, the resulting error is returned to the onError method:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif');
@@ -264,7 +264,7 @@ This example integrates the sending of multiple responses with the evaluation of
 
 The target application (Adobe Bridge) defines a static onReceive method to allow for a new type of message, which it calls an iterator. An iterator type of message expects the message.body to use the iteration variable i within the script, so that different results are produced for each pass through the while loop. Each result is sent back to the sending application with the sendResult() method. When the message.body has finished processing its task, it sets a flag to end the while loop:
 
-```default
+```javascript
 // Code for processing the message and sending intermediate responses
 // in the target application (Adobe Bridge)
 BridgeTalk.onReceive = function (message){
@@ -297,7 +297,7 @@ For each file in the folder, it returns file size data. For each contained folde
 
 The `onResult` method of the message object receives each intermediate result, stores it into an array, `resArr`, and processes it immediately using a script-defined function processInterResult:
 
-```default
+```javascript
 // Code for send message and handling response
 // in the sending application (any message-enabled application)
 var idx = 0;
@@ -354,7 +354,7 @@ When returning complex types (arrays and objects), the script that you send must
 
 For example, the following code sends a script that returns an array in this way. The onResult callback that receives the response uses eval to reconstruct the array:
 
-```default
+```javascript
 // Code for send message and handling response
 // in the sending application (any message-enabled application)
 var idx = 0;
@@ -384,7 +384,7 @@ bt.send();
 
 This technique is the only way to pass objects between applications. For example, this code sends a script that returns an object containing some of the metadata for a specific file and defines an onResult callback that receives the object:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
 
@@ -410,7 +410,7 @@ bt.send();
 
 You can send a script that returns a DOM object, but the resulting object contains only those properties that were accessed within the script. For example, the following script requests the return of the Adobe Bridge DOM Thumbnail object. Only the properties path and uri are accessed by the script, and only those properties are returned:
 
-```default
+```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge";
 

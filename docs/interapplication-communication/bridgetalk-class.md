@@ -4,7 +4,7 @@ Static properties and methods of this class provide a way for your script to det
 
 You can access static properties and methods in the BridgeTalk class, which is available in the global namespace. For example:
 
-```default
+```javascript
 var thisApp = BridgeTalk.appName;
 ```
 
@@ -89,7 +89,7 @@ Type: `Function`
 
 A callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:
 
-```default
+```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
 // act on received message
 };
@@ -141,7 +141,7 @@ Returns a string.
 
 Returns a localized display name for an application, or NULL if the application is not installed. For example:
 
-```default
+```javascript
 BridgeTalk.getDisplayName("photoshop-10.0");
 => Adobe Photoshop CS4
 ```
@@ -154,7 +154,7 @@ BridgeTalk.getDisplayName("photoshop-10.0");
 
 | `appName`   | The base name of the application to search for.                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `version`   | Optional. The specific version number to search for. If 0 or not supplied, returns the<br/>most recent version. If negative, returns the highest version up to and including the<br/>absolute value.<br/><br/>If a major version is specified, returns the highest minor-version variation. For<br/>example, if Photoshop CS versions 9, 9.1, and 10 are installed:<br/><br/>```default<br/>BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/>``` |
+| `version`   | Optional. The specific version number to search for. If 0 or not supplied, returns the<br/>most recent version. If negative, returns the highest version up to and including the<br/>absolute value.<br/><br/>If a major version is specified, returns the highest minor-version variation. For<br/>example, if Photoshop CS versions 9, 9.1, and 10 are installed:<br/><br/>```javascript<br/>BridgeTalk.Specifier( "photoshop", "9" )<br/> => ["photoshop-9.1"]<br/>``` |
 | `locale`    | Optional. The specific locale to search for.<br/>If not supplied and multiple language versions are installed, prefers the version for<br/>the current locale.                                                                                                                                                                                                                                                                                                         |
 
 Retrieves a complete application specifier.
@@ -163,7 +163,7 @@ Returns a complete specifier (see [Application specifiers](application-and-names
 
 For example, assuming installed applications include Photoshop CS4 11.0 `en_us`, Photoshop CS2 8.5 `de_de`, Photoshop CS2 9.0 `de_de`, and Photoshop CS2 9.5 `de_de`, and that the current locale is `en_US`
 
-```default
+```javascript
 BridgeTalk.getSpecifier ("photoshop");
  => ["photoshop-11.0-en_us"]
 
@@ -204,7 +204,7 @@ Retrieves the processing status of an application. Returns a string, one of:
 
 `BridgeTalk.getTargets ([version],[locale])`
 
-| `version`   | Optional. The specific version number to search for, or `null` to return the most<br/>appropriate version (matching, most recent, or running), with version information.<br/>Specify only a major version number to return the highest minor-version<br/>variation.<br/><br/>For example, if Photoshop CS versions 9, 9.5, and 10 are installed:<br/><br/>```default<br/>BridgeTalk.getTargets( "9" )<br/>  => [photoshop-9.5]<br/>```<br/><br/>Specify a negative value to return all versions up to the absolute value of the<br/>version number. For example:<br/><br/>```default<br/>BridgeTalk.getTargets( "-9.9" )<br/>  => [photoshop-9.0, photoshop-9.5]<br/>```   |
+| `version`   | Optional. The specific version number to search for, or `null` to return the most<br/>appropriate version (matching, most recent, or running), with version information.<br/>Specify only a major version number to return the highest minor-version<br/>variation.<br/><br/>For example, if Photoshop CS versions 9, 9.5, and 10 are installed:<br/><br/>```javascript<br/>BridgeTalk.getTargets( "9" )<br/>  => [photoshop-9.5]<br/>```<br/><br/>Specify a negative value to return all versions up to the absolute value of the<br/>version number. For example:<br/><br/>```javascript<br/>BridgeTalk.getTargets( "-9.9" )<br/>  => [photoshop-9.0, photoshop-9.5]<br/>```   |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `locale`    | Optional. The specific locale to search for, or null to `return` applications for all<br/>locales, with locale information.<br/><br/>If not supplied when version is supplied, returns specifiers with version information only.                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
@@ -218,7 +218,7 @@ Returns an array of [Application specifiers](application-and-namespace-specifier
 
 For example, assuming installed applications include Photoshop CS3 10.0 `en_US`, Photoshop CS4 11.0 `en_us`, and Illustrator CS4 14.0 `de_de`
 
-```default
+```javascript
 BridgeTalk.getTargets();
   => [photoshop,illustrator]
 

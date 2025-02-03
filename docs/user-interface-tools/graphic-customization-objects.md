@@ -416,7 +416,7 @@ If you need to force a drawing update in such cases, you must call `notify("onDr
 
 In the following example, the script forces a visual update for a customButton element when the mouse enters or leaves the button, by handling mouseover or mouseout events for the custom button:
 
-```default
+```javascript
 var res =
 """palette {
 text:'Custom elements demo',

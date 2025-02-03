@@ -6,7 +6,7 @@ For complete details of this ExtendScript feature, see [Localizing ExtendScript 
 
 A localization object is a JavaScript object literal whose property names are locale names, and whose property values are the localized text strings. The locale name is an identifier as specified in the ISO 31 standard. In this example, a `btnText` object contains localized text strings for several locales. This object supplies the text for a Button to be added to a window `win`:
 
-```default
+```javascript
 btnText = { en: "Yes", de: "Ja", fr: "Oui" };
 b1 = win.add ( "button", undefined, localize( btnText ) );
 ```
@@ -23,7 +23,7 @@ The localize function allows you to include variables in the string values. Each
 
 For example:
 
-```default
+```javascript
 var today = {
     en: "Today is %1/%2.",
     de: "Heute ist der %2.%1."
@@ -38,13 +38,13 @@ Window.alert( localize( today, date.getMonth() + 1, date.getDate() ) );
 
 If you do not need variable replacement, you can use automatic localization. To turn on automatic localization, set the global value:
 
-```default
+```javascript
 $.localization = true
 ```
 
 When it is enabled, you can specify a localization object directly as the value of any property that takes a localizable string, without using the `localize` function. For example:
 
-```default
+```javascript
 var btnText = { en: "Yes", de: "Ja", fr: "Oui" };
 b1 = win.add( "button", undefined, btnText );
 ```
@@ -53,7 +53,7 @@ The `localize` function always performs its translation, regardless of the setti
 
 For example:
 
-```default
+```javascript
 // Only works if the $.localize = true
 var b1 = win.add ( "button", undefined, btnText );
 // Always works, regardless of $.localize value

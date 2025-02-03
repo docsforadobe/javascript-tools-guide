@@ -44,14 +44,14 @@ For each platform, there is a startup folder shared by all Adobe Creative Suite 
 
 All exported functions, including those of the cross-DOM API, are invoked through the exporting application, identified by its namespace specifier (see [Namespace specifiers](application-and-namespace-specifiers.md)). For example:
 
-```default
+```javascript
 //execute an Illustrator script in version 12
 illustrator12.executeScript(myAIScript);
 ```
 
 A specifier with no version information invokes the highest installed version of the application. For example:
 
-```default
+```javascript
 //execute a Photoshop script in the highest available version
 photoshop.executeScript (myPSScript)
 ```

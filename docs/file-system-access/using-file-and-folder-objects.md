@@ -40,12 +40,13 @@ A relative path name in URI notation is appended to the path of the current dire
 
 For example, the following paths describe various relative locations for the file `myFile.jsx`:
 
-| myFile.jsx         | In the current directory.                            |
-|--------------------|------------------------------------------------------|
-| ./myFile.jsx       |                                                      |
-| ../myFile.jsx      | In the parent of the current directory.              |
-| ../../myFile.jsx   | In the grandparent of the current directory.         |
-| ../dir1/myFile.jsx | In dir1, which is parallel to the current directory. |
+|    File reference    |                        Location                        |
+| -------------------- | ------------------------------------------------------ |
+| `myFile.jsx`         | In the current directory.                              |
+| `./myFile.jsx`       |                                                        |
+| `../myFile.jsx`      | In the parent of the current directory.                |
+| `../../myFile.jsx`   | In the grandparent of the current directory.           |
+| `../dir1/myFile.jsx` | In `dir1`, which is parallel to the current directory. |
 
 Relative path names are independent of different volume names on different machines and operating systems, and therefore make your code considerably more portable. You can, for example, use an absolute path for a single operation, to set the current directory in the Folder.current property, and use relative paths for all other operations. You would then need only a single code change to update to a new platform or file location.
 
@@ -94,12 +95,12 @@ When Mac OS X starts, the startup volume is the root directory of the file syste
 
 Mac OS 9 is not supported as an operating system, but the use of the colon as a path separator is still supported and corresponds to URI and to Mac OS X paths as shown in the following table. These examples assume that the startup volume is `MacOSX`, and that there is a mounted volume `Remote`.
 
-| URI path name    | Mac OS 9 path name   | Mac OS X path name       |
-|------------------|----------------------|--------------------------|
-| /MacOSX/dir/file | MacOSX:dir:file      | /dir/file                |
-| /Remote/dir/file | Remote:dir:file      | /Volumes/Remote/dir/file |
-| /root/dir/file   | Root:dir:file        | /root/dir/file           |
-| ~/dir/file       |                      | /Users/jdoe/dir/file     |
+|   URI path name    | Mac OS 9 path name |     Mac OS X path name     |
+| ------------------ | ------------------ | -------------------------- |
+| `/MacOSX/dir/file` | `MacOSX:dir:file`  | `/dir/file`                |
+| `/Remote/dir/file` | `Remote:dir:file`  | `/Volumes/Remote/dir/file` |
+| `/root/dir/file`   | `Root:dir:file`    | `/root/dir/file`           |
+| `~/dir/file`       |                    | `/Users/jdoe/dir/file`     |
 
 #### Windows drives
 
@@ -113,12 +114,12 @@ If the current drive contains a root folder with the same name as another drive 
 
 To access a remote volume, use a uniform naming convention (UNC) path name of the form `//servername/sharename`. These path names are portable, because both Max OS X and UNIX ignore multiple slash characters. Note that on Windows, UNC names do not work for local volumes. These examples assume that the current drive is `D:`
 
-| URI path name    | Windows path name          |
-|------------------|----------------------------|
-| /c/dir/file      | c:\\dir\\file              |
-| /remote/dir/file | D:\\remote\\dir\\file      |
-| /root/dir/file   | D:\\root\\dir\\file        |
-| ~/dir/file       | C:\\Users\\jdoe\\dir\\file |
+|   URI path name    |      Windows path name       |
+| ------------------ | ---------------------------- |
+| `/c/dir/file`      | `c:\\dir\\file`              |
+| `/remote/dir/file` | `D:\\remote\\dir\\file`      |
+| `/root/dir/file`   | `D:\\root\\dir\\file`        |
+| `~/dir/file`       | `C:\\Users\\jdoe\\dir\\file` |
 
 ### Aliases
 

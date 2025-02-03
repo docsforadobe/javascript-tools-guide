@@ -2,18 +2,14 @@
 
 Several helper classes provide low-level event-handling capabilities.
 
-- Event objects are normally created by ScriptUI and passed to your event handler. However, you can
-  simulate a user action by constructing an event object using [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent),
-  and sending it to a target object's controlobj-dispatchEvent function.
-- A helper object, [Keyboard state object](environment.md#environment-keyboard-state), provides global access to the keyboard state during function
-  execution, outside the event-handling framework.
+- Event objects are normally created by ScriptUI and passed to your event handler. However, you can simulate a user action by constructing an event object using [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and sending it to a target object's controlobj-dispatchEvent function.
+- A helper object, [Keyboard state object](environment.md#environment-keyboard-state), provides global access to the keyboard state during function execution, outside the event-handling framework.
 
 ---
 
 ## UIEvent base class
 
-Encapsulates input event information for an event that propagates through a container and control
-hierarchy. This is a base class for the more specialized [KeyboardEvent object](#keyboardevent-object) and [MouseEvent object](#mouseevent-object).
+Encapsulates input event information for an event that propagates through a container and control hierarchy. This is a base class for the more specialized [KeyboardEvent object](#keyboardevent-object) and [MouseEvent object](#mouseevent-object).
 
 ### UIEvent object properties
 
@@ -25,7 +21,7 @@ Both keyboard and mouse events have these properties.
 
 Type: `Boolean`
 
-When true, the event supports the bubbling phase.
+When `true`, the event supports the bubbling phase.
 
 ---
 
@@ -33,8 +29,7 @@ When true, the event supports the bubbling phase.
 
 Type: `Boolean`
 
-When true, the handler can call this object's [preventDefault()](#eventobj-preventdefault) method to
-cancel the default action of the event.
+When `true`, the handler can call this object's [preventDefault()](#eventobj-preventdefault) method to cancel the default action of the event.
 
 ---
 
@@ -43,8 +38,8 @@ cancel the default action of the event.
 Type: `Object`
 
 The element object where the currently executing handler was registered.
-This could be an ancestor of the target object, if the handler is invoked
-during the capture or bubbling phase.
+
+This could be an ancestor of the target object, if the handler is invoked during the capture or bubbling phase.
 
 ---
 
@@ -110,13 +105,13 @@ The container or control object that dispatched the event.
 
 | `eventName`    | The event name string.                                                                                                                          |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bubble`       | When true, the event should be triggered in ancestors<br/>of the target object during the bubbling phase.                                       |
-| `isCancelable` | When true, the event can be cancelled.                                                                                                          |
+| `bubble`       | When `true`, the event should be triggered in ancestors<br/>of the target object during the bubbling phase.                                       |
+| `isCancelable` | When `true`, the event can be cancelled.                                                                                                          |
 | `view`         | The container or control object that dispatched the event.                                                                                      |
 | `detail`       | Details of the event, which vary according to the event type.<br/>The value is 1 or 2 for the click event, indicating a single or double click. |
 
-Modifies an event before it is dispatched to its targets. Takes effect only if
-[UIEvent.eventPhase](#eventobj-eventphase) is `Event.NOT_DISPATCHING`.
+Modifies an event before it is dispatched to its targets. Takes effect only if [UIEvent.eventPhase](#eventobj-eventphase) is `Event.NOT_DISPATCHING`.
+
 Ignored at all other phases.
 
 Returns undefined.
@@ -127,9 +122,7 @@ Returns undefined.
 
 `eventObj.preventDefault()`
 
-Cancels the default action of this event, if this event is cancelable (that is, [cancelable](#eventobj-cancelable) is true). For
-example, the default click action of an OK button is to close the containing dialog; this call prevents
-that behavior.
+Cancels the default action of this event, if this event is cancelable (that is, [cancelable](#eventobj-cancelable) is true). For example, the default click action of an OK button is to close the containing dialog; this call prevents that behavior.
 
 Returns `undefined`.
 
@@ -139,8 +132,7 @@ Returns `undefined`.
 
 `eventObj.stopPropagation()`
 
-Stops event propagation (bubbling and capturing) after executing the handler or handlers at the
-current target.
+Stops event propagation (bubbling and capturing) after executing the handler or handlers at the current target.
 
 Returns `undefined`.
 
@@ -148,23 +140,19 @@ Returns `undefined`.
 
 ## KeyboardEvent object
 
-This type of object is passed to your registered event handler when a keyboard-input event occurs. The
-properties reflect the keypress and key modifier state at the time the keyboard event was generated. All
-properties are read-only.
+This type of object is passed to your registered event handler when a keyboard-input event occurs. The properties reflect the keypress and key modifier state at the time the keyboard event was generated. All properties are read-only.
 
 ### KeyboardEvent object properties
 
 In addition to the properties defined for [UIEvent base class](#uievent-base-class), a keyboard event has these properties. All
 properties are read-only.
-
 ---
 
 #### altKey
 
 Type: `Boolean`
 
-When true, the `ALT` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `ALT` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -172,8 +160,7 @@ When true, the `ALT` key was active. Value is `undefined` if the
 
 Type: `Boolean`
 
-When true, the `CTRL` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `CTRL` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -181,8 +168,7 @@ When true, the `CTRL` key was active. Value is `undefined` if the
 
 Type: `Boolean`
 
-When true, the `META` or `COMMAND` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `META` or `COMMAND` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -190,8 +176,7 @@ When true, the `META` or `COMMAND` key was active. Value is `undefined` if the
 
 Type: `Boolean`
 
-When true, the `SHIFT` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `SHIFT` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -199,8 +184,7 @@ When true, the `SHIFT` key was active. Value is `undefined` if the
 
 Type: `String`
 
-The key whose keypress generated the event, as a W3C identifier
-contained in a string; for example, `"U+0044"`. See [W3 Keyset Article](https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/keyset.html).
+The key whose keypress generated the event, as a W3C identifier contained in a string; for example, `"U+0044"`. See [W3 Keyset Article](https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/keyset.html).
 
 ---
 
@@ -209,6 +193,7 @@ contained in a string; for example, `"U+0044"`. See [W3 Keyset Article](https://
 Type: `Number`
 
 A constant that identifies where on the keyboard the keypress occurred.
+
 One of:
 
 - `DOM_KEY_LOCATION_STANDARD`
@@ -222,8 +207,7 @@ One of:
 
 Type: `String`
 
-The key whose keypress generated the event, as a simple key name; for
-example `"A"`.
+The key whose keypress generated the event, as a simple key name; for example `"A"`.
 
 ---
 
@@ -251,7 +235,7 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 | `keyIdentifier`   | A string containing a modifier key identifier, one of:<br/><br/>> - `Alt`<br/>> - `CapsLock`<br/>> - `Control`<br/>> - `Meta`<br/>> - `NumLock`<br/>> - `Scroll`<br/>> - `Shift`   |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Returns true if the given modifier was active when the event occurred, false otherwise.
+Returns `true` if the given modifier was active when the event occurred, false otherwise.
 
 !!! note
     If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
@@ -264,31 +248,26 @@ Returns true if the given modifier was active when the event occurred, false oth
 
 | `eventName`     | The event name string.                                                                                    |
 |-----------------|-----------------------------------------------------------------------------------------------------------|
-| `bubble`        | When true, the event should be triggered in ancestors of<br/>the target object during the bubbling phase. |
-| `isCancelable`  | When true, the event can be cancelled.                                                                    |
+| `bubble`        | When `true`, the event should be triggered in ancestors of<br/>the target object during the bubbling phase. |
+| `isCancelable`  | When `true`, the event can be cancelled.                                                                    |
 | `view`          | The container or control object that dispatched the event.                                                |
 | `keyID`         | Sets the `keyIdentifier` value.                                                                           |
 | `keyLocation`   | Sets the `keyLocation`. value.                                                                            |
 | `modifiersList` | A whitespace-separated string of modifier key names, such as "Control Alt".                               |
 
-Reinitializes the object, allowing you to change the event properties after construction. Arguments
-set the corresponding properties. Returns `undefined`.
+Reinitializes the object, allowing you to change the event properties after construction. Arguments set the corresponding properties. Returns `undefined`.
 
 ---
 
 ## MouseEvent object
 
-This type of object is passed to your registered event handler when a mouse-input event occurs. The
-properties reflect the button and modifier-key state and pointer position at the time the event was
-generated.
-In the case of nested elements, mouse event types are always targeted at the most deeply nested element.
-Ancestors of the targeted element can use bubbling to obtain notification of mouse events which occur
-within its descendent elements.
+This type of object is passed to your registered event handler when a mouse-input event occurs. The properties reflect the button and modifier-key state and pointer position at the time the event was generated.
+
+In the case of nested elements, mouse event types are always targeted at the most deeply nested element. Ancestors of the targeted element can use bubbling to obtain notification of mouse events which occur within its descendent elements.
 
 ### MouseEvent object properties
 
-In addition to the properties defined for [UIEvent base class](#uievent-base-class), a mouse event has these properties. All
-properties are read-only.
+In addition to the properties defined for [UIEvent base class](#uievent-base-class), a mouse event has these properties. All properties are read-only.
 
 ---
 
@@ -296,8 +275,7 @@ properties are read-only.
 
 Type: `Boolean`
 
-When true, the `ALT` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `ALT` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -312,8 +290,7 @@ Which mouse button changed state.
 | `1`   | The middle button of a three-button mouse, or the mouse wheel.                                                                              |
 | `2`   | The right button, used to display a context menu, if present.                                                                               |
 
-Some mice may provide or simulate more buttons, and values higher than
-2 represent such buttons.
+Some mice may provide or simulate more buttons, and values higher than `2` represent such buttons.
 
 ---
 
@@ -321,9 +298,7 @@ Some mice may provide or simulate more buttons, and values higher than
 
 Type: `Number`
 
-The horizontal and vertical coordinates at which the event occurred
-relative to the target object. The origin is the top left of the control or
-window, inside any border decorations.
+The horizontal and vertical coordinates at which the event occurred relative to the target object. The origin is the top left of the control or window, inside any border decorations.
 
 ---
 
@@ -331,8 +306,7 @@ window, inside any border decorations.
 
 Type: `Boolean`
 
-When true, the `CTRL` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `CTRL` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -340,9 +314,9 @@ When true, the `CTRL` key was active. Value is `undefined` if the
 
 Type: `Number`
 
-Details of the event, which vary according to the event type. For the
-`click`, `mousedown`, and `mouseup` events, the value is `1` for a single click, or
-`2` for a double click.
+Details of the event, which vary according to the event type.
+
+For the `click`, `mousedown`, and `mouseup` events, the value is `1` for a single click, or `2` for a double click.
 
 ---
 
@@ -350,8 +324,7 @@ Details of the event, which vary according to the event type. For the
 
 Type: `Boolean`
 
-When true, the `META` or `COMMAND`` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `META` or `COMMAND`` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -370,8 +343,7 @@ Otherwise `undefined`.
 
 Type: `Number`
 
-The horizontal and vertical coordinates at which the event occurred
-relative to the screen.
+The horizontal and vertical coordinates at which the event occurred relative to the screen.
 
 ---
 
@@ -379,8 +351,7 @@ relative to the screen.
 
 Type: `Boolean`
 
-When true, the `SHIFT` key was active. Value is `undefined` if the
-`keyIdentifier` is for a modifier key.
+When `true`, the `SHIFT` key was active. Value is `undefined` if the `keyIdentifier` is for a modifier key.
 
 ---
 
@@ -414,36 +385,36 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 | `keyIdentifier`   | A string containing a modifier key identifier, one of:<br/><br/>> - `Alt`<br/>> - `CapsLock`<br/>> - `Control`<br/>> - `Meta`<br/>> - `NumLock`<br/>> - `Scroll`<br/>> - `Shift`   |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Returns true if the given modifier was active when the event occurred, false otherwise.
+Returns `true` if the given modifier was active when the event occurred, false otherwise.
 
 ---
 
 #### initMouseEvent()
 
-> ```default
-> eventObj.initMouseEvent(
->     eventName,
->     bubble,
->     isCancelable,
->     view,
->     detail,
->     screenX,
->     screenY,
->     clientX,
->     clientY,
->     ctrlKey,
->     altKey,
->     shiftKey,
->     metaKey,
->     button,
->     relatedTarge
-> )
-> ```
+```default
+eventObj.initMouseEvent(
+    eventName,
+    bubble,
+    isCancelable,
+    view,
+    detail,
+    screenX,
+    screenY,
+    clientX,
+    clientY,
+    ctrlKey,
+    altKey,
+    shiftKey,
+    metaKey,
+    button,
+    relatedTarge
+)
+```
 
 | `eventName`                | The event name string.                                                                                                                            |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bubble`                   | When true, the event should be triggered in ancestors of<br/>the target object during the bubbling phase.                                         |
-| `isCancelable`             | When true, the event can be cancelled.                                                                                                            |
+| `bubble`                   | When `true`, the event should be triggered in ancestors of<br/>the target object during the bubbling phase.                                         |
+| `isCancelable`             | When `true`, the event can be cancelled.                                                                                                            |
 | `view`                     | The container or control object that dispatched the event.                                                                                        |
 | `detail`                   | Sets the single-double click value for the `click` event.                                                                                         |
 | `screenX, screenY`         | Sets the event coordinates relative to the screen.                                                                                                |
@@ -452,7 +423,6 @@ Returns true if the given modifier was active when the event occurred, false oth
 | `button`                   | Sets the mouse button.                                                                                                                            |
 | `relatedTarget`            | Optional. Sets the related target, if any, for a `mouseover` or `mouseout` event.                                                                 |
 
-Reinitializes the object, allowing you to change the event properties after construction. Arguments
-set the corresponding properties.
+Reinitializes the object, allowing you to change the event properties after construction. Arguments set the corresponding properties.
 
 Returns `undefined`.

@@ -1,9 +1,8 @@
 # Code profiling for optimization
 
-The Profiling tool helps you to optimize program execution. When you turn profiling on, the JavaScript
-engine collects information about a program while it is running. It counts how often the program
-executed a line or function, or how long it took to execute a line or function. You can choose exactly which
-profiling data to display.
+The Profiling tool helps you to optimize program execution.
+
+When you turn profiling on, the JavaScript engine collects information about a program while it is running. It counts how often the program executed a line or function, or how long it took to execute a line or function. You can choose exactly which profiling data to display.
 
 Because profiling significantly slows execution time, the Profile menu offers these profiling options.
 
@@ -18,19 +17,15 @@ Because profiling significantly slows execution time, the Profile menu offers th
 | Erase Profiler Data | Clear all profiling data.                                                                                                                                                                                                                                                                             |
 | Save Data As        | Save profiling data as comma-separated values in a CSV file that can be loaded<br/>into a spreadsheet program such as Excel.                                                                                                                                                                          |
 
-When execution halts (at termination, at a breakpoint, or due to a runtime error), the Toolkit displays this
-information in the Document Window, line by line. The profiling data is color coded:
+When execution halts (at termination, at a breakpoint, or due to a runtime error), the Toolkit displays this information in the Document Window, line by line. The profiling data is color coded:
 
 - Green indicates the lowest number of hits, or the fastest execution time.
-- Orange or yellow indicates a trouble spot, such as a line that has been executed many times, or which
-  line took the most time to execute.
+- Orange or yellow indicates a trouble spot, such as a line that has been executed many times, or which line took the most time to execute.
 
 This example shows number-of-hits information:
 
 ![Number of Hits](extendscript-toolkit/_static/02_the-extendscript-toolkit_code-profiling_number-of-hits.jpg)
 
-This example displays timing information for the program, in microseconds. The timing might not be
-accurate down to the microsecond; it depends on the resolution and accuracy of the hardware timers built
-into your computer.
+This example displays timing information for the program, in microseconds. The timing might not be accurate down to the microsecond; it depends on the resolution and accuracy of the hardware timers built into your computer.
 
 ![Timing Info](extendscript-toolkit/_static/02_the-extendscript-toolkit_code-profiling_timing-info.jpg)

@@ -1,22 +1,14 @@
 # Messaging framework API reference
 
-This application programming interface (API) defines a communication protocol between
-message-enabled applications. These objects are available to all ExtendScript scripts when any of the
-applications is loaded.
+This application programming interface (API) defines a communication protocol between message-enabled applications. These objects are available to all ExtendScript scripts when any of the applications is loaded.
 
-The messaging protocol is extensible. Although it is primarily designed to send scripts, you can use it to
-send other kinds of data.
+The messaging protocol is extensible. Although it is primarily designed to send scripts, you can use it to send other kinds of data.
 
-The messaging API defines the BridgeTalk class. Static properties and methods of the class provide
-access to environmental information relevant for communication between applications. Instantiate the
-class to create a BridgeTalk message object, which encapsulates the message itself. For discussion and
-examples, see [Communicating through messages](communicating-through-messages.md), and the example code provided with the
-[Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit).
+The messaging API defines the BridgeTalk class. Static properties and methods of the class provide access to environmental information relevant for communication between applications. Instantiate the class to create a BridgeTalk message object, which encapsulates the message itself. For discussion and examples, see [Communicating through messages](communicating-through-messages.md), and the example code provided with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit).
 
 ## Example code
 
-The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that
-specifically demonstrate the use of interapplication messaging:
+The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes these code examples that specifically demonstrate the use of interapplication messaging:
 
 | **Interapplication messaging**                                                                                                                              |                                                                                                                        |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|

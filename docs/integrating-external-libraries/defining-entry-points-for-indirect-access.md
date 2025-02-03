@@ -1,7 +1,6 @@
 # Defining entry points for indirect access
 
-The C-client object interface for external libraries allows your C or C++ shared-library code to define,
-create, use, and manage JavaScript objects.
+The C-client object interface for external libraries allows your C or C++ shared-library code to define, create, use, and manage JavaScript objects.
 
 ---
 
@@ -18,9 +17,7 @@ The following entry points are required if you wish to use the object interface:
 | `pServer`   | A pointer to an [SoServerInterface](#shared-library-soserverinterface) containing function pointers for the entry points,<br/>which enable the shared-library code to call into JavaScript to create and access<br/>JavaScript classes and objects.<br/><br/>The shared-library code is responsible for storing this structure between the<br/>initialization and termination call, and retrieving it to access the functions.                                        |
 | `hServer`   | An [Support structures](#sohserver) reference for this shared library. The server is an object factory that<br/>creates and manages [Support structures](#sohobject) objects.<br/><br/>The shared-library code is responsible for storing this structure between the<br/>initialization and termination calls. You must pass it to [taggedDataInit()](#externalobject-functions-taggeddatainit) and<br/>[taggedDataFree()](#externalobject-functions-taggeddatafree). |
 
-Your library must define this global function in order to use the object interface to JavaScript. The
-function is called twice in each session, immediately upon loading the library, and again when
-unloading it.
+Your library must define this global function in order to use the object interface to JavaScript. The function is called twice in each session, immediately upon loading the library, and again when unloading it.
 
 Returns an error code, `kESErrOK` on success.
 
@@ -33,8 +30,7 @@ Returns an error code, `kESErrOK` on success.
 | `nbytes`   | The number of bytes to allocate.   |
 |------------|------------------------------------|
 
-Provides a memory allocation routine to be used by JavaScript for managing memory associated
-with the library's objects.
+Provides a memory allocation routine to be used by JavaScript for managing memory associated with the library's objects.
 
 Returns a pointer to the allocated block of memory.
 
@@ -42,24 +38,21 @@ Returns a pointer to the allocated block of memory.
 
 ## Shared-library function API
 
-Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in
-[SoServerInterface](#shared-library-soserverinterface) and [SoObjectInterface](#shared-library-soobjectinterface) function-pointer structures.
+Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in [SoServerInterface](#shared-library-soserverinterface) and [SoObjectInterface](#shared-library-soobjectinterface) function-pointer structures.
+
 Return values from most functions are integer constants. The error code `kESErrOK == 0` indicates success.
 
 ### SoServerInterface
 
 `SoServerInterface` is a structure of function pointers which enable the shared-library code to call
 
-JavaScript objects. It is passed to the global ESClientInterface() function for initialization when the library is
-loaded, and again for cleanup when the library is unloaded. Between these calls, your shared-library code
-must store the structure and use it to access the communication functions.
-You can store information for every object and class in your C code. The recommended method is to create
-a data structure during the initialize() and free it during finalize(). You can then access that data with
-setClientData() and getClientData().
+JavaScript objects. It is passed to the global ESClientInterface() function for initialization when the library is loaded, and again for cleanup when the library is unloaded. Between these calls, your shared-library code must store the structure and use it to access the communication functions.
+
+You can store information for every object and class in your C code. The recommended method is to create a data structure during the initialize() and free it during finalize(). You can then access that data with setClientData() and getClientData().
 
 The SoServerInterface structure contains these function pointers:
 
-```default
+```cpp
 SoServerInterface {
     SoServerDumpServer_f
     SoServerDumpObject_f
@@ -100,8 +93,7 @@ SoServerInterface {
 }
 ```
 
-These functions allow your C/C++ shared library code to create, modify, and access JavaScript classes and
-objects. The functions must conform to the following type definitions.
+These functions allow your C/C++ shared library code to create, modify, and access JavaScript classes and objects. The functions must conform to the following type definitions.
 
 ---
 
@@ -112,8 +104,7 @@ objects. The functions must conform to the following type definitions.
 | `hServer`   | The [Support structures](#sohserver) reference for this shared library, as passed to your global<br/>[ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization.   |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Prints the contents of this server to the JavaScript Console in the ExtendScript Toolkit, for
-debugging.
+Prints the contents of this server to the JavaScript Console in the ExtendScript Toolkit, for debugging.
 
 Returns an error code, `kESErrOK` on success.
 
@@ -126,8 +117,7 @@ Returns an error code, `kESErrOK` on success.
 | `hObject`   | The [Support structures](#sohobject) reference for an instance of this class.   |
 |-------------|---------------------------------------------------------------------------------|
 
-Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for
-debugging.
+Prints the contents of this object to the JavaScript Console in the ExtendScript Toolkit, for debugging.
 
 Returns an error code, `kESErrOK` on success.
 
@@ -311,11 +301,11 @@ Returns an error code, `kESErrOK` on success.
 
 ### SoObjectInterface
 
-When you add a JavaScript class with SoServerInterface.addClass(), you must provide this interface.
-JavaScript calls the provided functions to interact with objects of the new class.
+When you add a JavaScript class with SoServerInterface.addClass(), you must provide this interface. JavaScript calls the provided functions to interact with objects of the new class.
+
 The SoObjectInterface is an array of function pointers defined as follows:
 
-```default
+```cpp
 SoObjectInterface {
     SoObjectInitialize_f initialize;
     SoObjectPut_f        put;
@@ -327,8 +317,7 @@ SoObjectInterface {
 }
 ```
 
-All `SoObjectInterface` members must be valid function pointers, or NULL. You must implement
-`initialize()` and `finalize()`. The functions must conform to the following type definitions.
+All `SoObjectInterface` members must be valid function pointers, or NULL. You must implement `initialize()` and `finalize()`. The functions must conform to the following type definitions.
 
 ---
 
@@ -346,9 +335,7 @@ Required. Called when JavaScript code instantiates this class with the new opera
 var xx = New MyClass(arg1, ...)
 ```
 
-The initialization function typically adds properties and methods to the object. Objects of the same
-class can offer different properties and methods, which you can add with the [addMethod()](#externalobject-functions-addmethod) and
-[addProperty()](#externalobject-functions-addproperty) functions in the stored SoServerInterface.
+The initialization function typically adds properties and methods to the object. Objects of the same class can offer different properties and methods, which you can add with the [addMethod()](#externalobject-functions-addmethod) and [addProperty()](#externalobject-functions-addproperty) functions in the stored SoServerInterface.
 
 Returns an error code, `kESErrOK` on success.
 
@@ -452,6 +439,7 @@ Returns an error code, `kESErrOK` on success.
 |-------------|---------------------------------------------------------------------------------|
 
 Required. Called when JavaScript deletes an instance of this class.
+
 Use this function to free any memory you have allocated.
 
 Returns an error code, `kESErrOK` on success.
@@ -473,7 +461,7 @@ These support structures are passed to functions that you define for your JavaSc
 The SoCClientName data structure stores identifying information for methods and properties of
 JavaScript objects created by shared-library C/C++ code. It is defined as follows:
 
-```default
+```cpp
 SoCClientName {
     char* name_sig ;
     uint32_t id ;
@@ -488,10 +476,9 @@ SoCClientName {
 
 ### TaggedData
 
-The TaggedData structure is used to communicate data values between JavaScript and shared-library
-C/C++ code. Types are automatically converted as appropriate:
+The TaggedData structure is used to communicate data values between JavaScript and shared-library C/C++ code. Types are automatically converted as appropriate:
 
-```default
+```cpp
 typedef struct {
     union {
         long intval;

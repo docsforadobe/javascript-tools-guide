@@ -1,13 +1,10 @@
 # File- and Folder-supported encoding names
 
-The following list of names is a basic set of encoding names supported by the File object. Some of the
-character encoders are built in, while the operating system is queried for most of the other encoders.
-Depending on the language packs installed, some of the encodings may not be available. Names that refer
-to the same encoding are listed in one line. Underlines are replaced with dashes before matching an
-encoding name.
+The following list of names is a basic set of encoding names supported by the File object. Some of the character encoders are built in, while the operating system is queried for most of the other encoders.
 
-The File object processes an extended Unicode character with a value greater that 65535 as a Unicode
-surrogate pair (two characters in the range between 0xD700-0xDFFF).
+Depending on the language packs installed, some of the encodings may not be available. Names that refer to the same encoding are listed in one line. Underlines are replaced with dashes before matching an encoding name.
+
+The File object processes an extended Unicode character with a value greater that 65535 as a Unicode surrogate pair (two characters in the range between 0xD700-0xDFFF).
 
 Built-in encodings are:
 
@@ -30,23 +27,15 @@ MACINTOSH,X-MAC-ROMAN
 BINARY
 ```
 
-The ASCII encoder raises errors for characters greater than 127, and the BINARY encoder simply converts
-between bytes and Unicode characters by using the lower 8 bits. The latter encoder is convenient for
-reading and writing binary data.
+The ASCII encoder raises errors for characters greater than 127, and the BINARY encoder simply converts between bytes and Unicode characters by using the lower 8 bits. The latter encoder is convenient for reading and writing binary data.
 
 ---
 
 ## Additional encodings
 
-In Windows, all encodings use code pages, which are assigned numeric values. The usual Western
-character set that Windows uses, for example, is the code page 1252. You can select Windows code pages
-by prepending the number of the code page with "CP" or "WINDOWS": for example, "CP1252" for the code
-page 1252. The File object has many other built-in encoding names that match predefined code page
-numbers. If a code page is not present, the encoding cannot be selected.
+In Windows, all encodings use code pages, which are assigned numeric values. The usual Western character set that Windows uses, for example, is the code page 1252. You can select Windows code pages by prepending the number of the code page with "CP" or "WINDOWS": for example, "CP1252" for the code page 1252. The File object has many other built-in encoding names that match predefined code page numbers. If a code page is not present, the encoding cannot be selected.
 
-In Mac OS, you can select encoders by name rather than by code page number. The File object queries
-Mac OS directly for an encoder. As far as Mac OS character sets are identical with Windows code pages,
-Mac OS also knows the Windows code page numbers.
+In Mac OS, you can select encoders by name rather than by code page number. The File object queries Mac OS directly for an encoder. As far as Mac OS character sets are identical with Windows code pages, Mac OS also knows the Windows code page numbers.
 
 In UNIX, the number of available encoders depends on the installation of the `iconv` library.
 
@@ -127,6 +116,4 @@ EUC-TW,EUCTW,X-EUC-TW
 
 ### UNIX encodings
 
-In UNIX, the `File` object looks for the presence of the `iconv` library, and uses whatever encoding it finds
-there. If you need a special encoding in UNIX, make sure that there is an `iconv` encoding module installed
-that converts between UTF-16 (the internal format that the `File` object uses) and the desired encoding.
+In UNIX, the `File` object looks for the presence of the `iconv` library, and uses whatever encoding it finds there. If you need a special encoding in UNIX, make sure that there is an `iconv` encoding module installed that converts between UTF-16 (the internal format that the `File` object uses) and the desired encoding.

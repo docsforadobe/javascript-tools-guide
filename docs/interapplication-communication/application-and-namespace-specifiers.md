@@ -1,26 +1,21 @@
 # Application and namespace specifiers
 
 All forms of interapplication communication use [Application specifiers](#application-specifiers) to identify Adobe applications.
-In all ExtendScript scripts, the #target directive can use an specifier to identify the application that
-should run that script. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md).
 
-In interapplication messages, the specifier is used as the value of the target property of the message
-object, to identify the target application for the message.
+In all ExtendScript scripts, the #target directive can use an specifier to identify the application that should run that script. See [Preprocessor directives](../extendscript-tools-features/preprocessor-directives.md).
 
-Adobe Bridge (which is integrated with many Adobe applications) uses an application specifier as the
-value of the `document.owner` property, to identify another application that created or opened an
-Adobe Bridge browser window. For details, see the *Adobe Bridge JavaScript Reference.*
+In interapplication messages, the specifier is used as the value of the target property of the message object, to identify the target application for the message.
 
-When a script for one application invokes cross-DOM or exported functions, it identifies the exporting
-application using [Namespace specifiers](#namespace-specifiers).
+Adobe Bridge (which is integrated with many Adobe applications) uses an application specifier as the value of the `document.owner` property, to identify another application that created or opened an Adobe Bridge browser window. For details, see the *Adobe Bridge JavaScript Reference.*
+
+When a script for one application invokes cross-DOM or exported functions, it identifies the exporting application using [Namespace specifiers](#namespace-specifiers).
 
 ---
 
 ## Application specifiers
 
 Application specifiers are strings that encode the application name, a version number and a language
-code. They take the following form:
-`appname[_instance[[-version[-locale]]]`
+code. They take the following form: `appname[_instance[[-version[-locale]]]`
 
 | `appname`   | An Adobe application name. For example, these are the identifying strings for applications<br/>that can use the ExtendScript Toolkit in Creative Suite 4:<br/><br/>- `aftereffects`<br/>- `bridge`<br/>- `estoolkit`<br/>- `illustrator`<br/>- `incopy`<br/>- `indesign`<br/>- `indesignserver`<br/>- `photoshop`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -30,30 +25,27 @@ code. They take the following form:
 
 The following are examples of legal specifiers:
 
-> - `photoshop`
-> - `bridge-3.0`
-> - `indesign_1-6.0`
-> - `illustrator-14.0`
-> - `illustrator-14.0-de_de`
+- `photoshop`
+- `bridge-3.0`
+- `indesign_1-6.0`
+- `illustrator-14.0`
+- `illustrator-14.0-de_de`
 
-If a specifier does not supply specific version and locale information, the framework tries to find the most
-appropriate available installation. It tries to match to available applications in this order:
+If a specifier does not supply specific version and locale information, the framework tries to find the most appropriate available installation. It tries to match to available applications in this order:
 
-> 1. Peer applications (from the same suite)
-> 2. Applications with the highest available version number
-> 3. Applications that are currently running
-> 4. Applications that match the current locale
-> 5. Applications for any locale
+1. Peer applications (from the same suite)
+2. Applications with the highest available version number
+3. Applications that are currently running
+4. Applications that match the current locale
+5. Applications for any locale
 
 ---
 
 ## Namespace specifiers
 
-When calling cross-DOM and exported functions from other applications, a namespace specifier qualifies
-the function call, directing it to the appropriate application.
-Namespace specifiers consist of an application name, as used in an application specifier, with an optional
-major version number. Use it as a prefix to an exported function name, with the JavaScript dot notation.
-appname[majorVersion].functionName(args)
+When calling cross-DOM and exported functions from other applications, a namespace specifier qualifies the function call, directing it to the appropriate application.
+
+Namespace specifiers consist of an application name, as used in an application specifier, with an optional major version number. Use it as a prefix to an exported function name, with the JavaScript dot notation. appname[majorVersion].functionName(args)
 
 For example:
 

@@ -1,7 +1,6 @@
 # Window class
 
-The Window class defines these static properties and functions. Window instances created with new
-Window() do not have these properties and functions defined.
+The Window class defines these static properties and functions. Window instances created with new `Window()` do not have these properties and functions defined.
 
 ---
 
@@ -30,7 +29,7 @@ Displays a platform-standard dialog containing a short message and an OK button.
 | `message`   | The string for the displayed message.                                                                                                                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `title`     | Optional. A string to appear as the title of the dialog, if the platform supports a<br/>title. Mac OS does not support titles for alert dialogs. The default title string is<br/>`"Script Alert."` |
-| `errorIcon` | Optional. When true, the platform-standard alert icon is replaced by the<br/>platform-standard error icon in the dialog. Default is false.                                                         |
+| `errorIcon` | Optional. When `true`, the platform-standard alert icon is replaced by the<br/>platform-standard error icon in the dialog. Default is false.                                                         |
 
 Returns `undefined`
 
@@ -38,23 +37,21 @@ Returns `undefined`
 
 `Window.confirm(message[,noAsDflt ,title ]);`
 
-Displays a platform-standard dialog containing a short message and two buttons labeled Yes and
-No.
+Displays a platform-standard dialog containing a short message and two buttons labeled "Yes" and "No".
 
 | `message`   | The string for the displayed message.                                                                                                                                                                     |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `noAsDflt`  | Optional. When `true`, the No button is the default choice, selected when the user<br/>types ENTER. Default is `false`, meaning that Yes is the default choice.                                           |
 | `title`     | Optional. A string to appear as the title of the dialog, if the platform supports a<br/>title. Mac OS does not support titles for confirmation dialogs. The default title<br/>string is `"Script Alert."` |
 
-Returns `true` if the user clicked Yes, `false` if the user clicked No.
+Returns `true` if the user clicked "Yes", `false` if the user clicked "No".
 
 ### find()
 
 `Window.find(resourceName)`
 `Window.find(type, title)`
 
-Use this method to find an existing window. This includes windows already created by a script, and
-windows created by the application (if the application supports this case).
+Use this method to find an existing window. This includes windows already created by a script, and windows created by the application (if the application supports this case).
 
 | `resourceName`   | The name of a predefined resource available to JavaScript<br/>in the current application.                                                                                                                     |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -64,8 +61,7 @@ windows created by the application (if the application supports this case).
 !!! note
     Not supported in all ScriptUI implementations.
 
-Returns a Window object found or generated from the resource, or `null` if no such window or
-resource exists.
+Returns a [Window object](./window-object.md) found or generated from the resource, or `null` if no such window or resource exists.
 
 ### prompt()
 

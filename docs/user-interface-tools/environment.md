@@ -35,8 +35,9 @@ Type: `String`
 The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
 
 !!! note
-    - This only works for single keys being pressed; holding multiple will report `undefined`.
-- Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
+    This only works for single keys being pressed; holding multiple will report `undefined`.
+
+    Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
 
 For example, with 'a' pressed:
 

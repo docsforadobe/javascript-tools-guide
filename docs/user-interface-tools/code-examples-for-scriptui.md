@@ -1,7 +1,6 @@
 # Code examples for ScriptUI
 
-The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes code examples that specifically
-demonstrate different ways of building and populating a ScriptUI dialog.
+The sample code distributed with the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) includes code examples that specifically demonstrate different ways of building and populating a ScriptUI dialog.
 
 | **Building ScriptUI dialogs**                                                                                                                               |                                                                                                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

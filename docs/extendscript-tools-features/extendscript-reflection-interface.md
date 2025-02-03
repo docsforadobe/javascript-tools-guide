@@ -1,13 +1,10 @@
 # ExtendScript reflection interface
 
-ExtendScript provides a reflection interface that allows you to find out everything about an object,
-including its name, a description, the expected data type for properties, the arguments and return value
-for methods, and any default values or limitations to the input values.
+ExtendScript provides a reflection interface that allows you to find out everything about an object, including its name, a description, the expected data type for properties, the arguments and return value for methods, and any default values or limitations to the input values.
 
 ## Reflection object
 
-Every object has a reflect property that returns a reflection object that reports the contents of the
-object. You can, for example, show the values of all the properties of an object with code like this:
+Every object has a reflect property that returns a reflection object that reports the contents of the object. You can, for example, show the values of all the properties of an object with code like this:
 
 ```default
 var f = new File ("myfile");
@@ -41,11 +38,9 @@ All properties are read only.
 | name   | The property for which to retrieve information.   |
 |--------|---------------------------------------------------|
 
-Returns the [ReflectionInfo object](#reflectioninfo-object) for the named property of the reflected object, or null if no such
-property exists.
+Returns the [ReflectionInfo object](#reflectioninfo-object) for the named property of the reflected object, or null if no such property exists.
 
-Use this method to get information about dynamic properties that have not yet been accessed, but
-that are known to exist.
+Use this method to get information about dynamic properties that have not yet been accessed, but that are known to exist.
 
 #### Examples
 
@@ -81,8 +76,8 @@ Math.reflect.find ("PI").type; // => number
 ## ReflectionInfo object
 
 This object contains information about a property, a method, or a method argument.
-You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by
-name or index:
+
+You can access ReflectionInfo objects in a Reflection object's properties and methods arrays, by name or index:
 
 ```default
 obj = new String ("hi");
@@ -90,8 +85,7 @@ obj.reflect.methods[0];
 obj.reflect.methods["indexOf"];
 ```
 
-You can access the ReflectionInfo objects for the arguments of a method in the arguments array of
-the ReflectionInfo object for the method, by index:
+You can access the ReflectionInfo objects for the arguments of a method in the arguments array of the ReflectionInfo object for the method, by index:
 
 ```default
 obj.reflect.methods["indexOf"].arguments[0];

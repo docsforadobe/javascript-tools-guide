@@ -1,7 +1,6 @@
 # Defining entry points for direct access
 
-A library to be loaded and accessed directly through an ExternalObject instance must publish the
-following entry points. These must be exported as C functions, not C++ functions:
+A library to be loaded and accessed directly through an ExternalObject instance must publish the following entry points. These must be exported as C functions, not C++ functions:
 
 ---
 
@@ -57,9 +56,7 @@ Takes no arguments, and returns nothing.
 
 ## Additional functions
 
-The shared library can contain any number of additional functions. Each function corresponds to a
-JavaScript method in the ExternalObject instance. If a function is undefined, ExtendScript throws a
-run-time error.
+The shared library can contain any number of additional functions. Each function corresponds to a JavaScript method in the ExternalObject instance. If a function is undefined, ExtendScript throws a run-time error.
 
 Each function must accept the following arguments:
 
@@ -72,19 +69,15 @@ The variant data does not support JavaScript objects. The following data types a
 - `undefined`
 - `Boolean`
 - `double`
-- `string` - Must be UTF-8 encoded.
-  The library must define an entry point [ESFreeMem()](#externalobject-functions-esfreemem), which ExtendScript calls to release a returned
-  string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned
-  string data.
-- `Script` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define
-  arbitrarily complex data.
+- `string` - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#externalobject-functions-esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
+- `Script` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define arbitrarily complex data.
 
-If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to
-`undefined` and does not attempt to convert the data to the requested type.
+If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
 
 !!! note
     The data type of a return value cannot be predefined; JavaScript functions can return any data type.
-The called function is free to return any of the listed data types.
+
+    The called function is free to return any of the listed data types.
 
 ---
 
@@ -92,26 +85,19 @@ The called function is free to return any of the listed data types.
 
 ExtendScript calls [ESInitialize()](#externalobject-functions-esinitialize) to initialize the library.
 
-The function receives an argument vector containing the additional arguments passed in to the
-ExternalObject constructor.
+The function receives an argument vector containing the additional arguments passed in to the ExternalObject constructor.
 
-The function can return an array of function name-signature strings, which are used to support the
-ExtendScript reflection interface, and to cast function arguments to specific types. You do not need to
-define a signature for a function in order to make it callable in JavaScript.
+The function can return an array of function name-signature strings, which are used to support the ExtendScript reflection interface, and to cast function arguments to specific types. You do not need to define a signature for a function in order to make it callable in JavaScript.
 
 ### Function signatures
 
-If you choose to return a set of function name-signature strings, each string associates a function name
-with that function's parameter types, if any. For example:
+If you choose to return a set of function name-signature strings, each string associates a function name with that function's parameter types, if any. For example:
 
 ```default
 ["functionName1_argtypes", "functionName2_argtypes", "functionName3"]
 ```
 
-For each function, the string begins with the function name, followed by an underscore character and a list
-of argument data types, represented as a single character for each argument. If the function does not have
-arguments, you can omit the trailing underscore character (unless there is an underscore in the function
-name).
+For each function, the string begins with the function name, followed by an underscore character and a list of argument data types, represented as a single character for each argument. If the function does not have arguments, you can omit the trailing underscore character (unless there is an underscore in the function name).
 
 The characters that indicate data types are:
 
@@ -134,15 +120,13 @@ The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
 !!! note
     You cannot define function overloading by returning multiple different signatures for one function.
-Attempting to do so produces undefined results.
+
+    Attempting to do so produces undefined results.
 
 ---
 
 ## Library termination
 
-Define the entry point [ESInitialize()](#externalobject-functions-esinitialize) to free any memory you have allocated when your library is
-unloaded.
-Whenever a JavaScript function makes a call to a library function, it increments a reference count for that
-library. When the reference count for a library reaches 0, the library is automatically unloaded; your
-termination function is called, and the `ExternalObject` instance is deleted. Note that deleting the
-`ExternalObject` instance does not unload the library if there are remaining references.
+Define the entry point [ESInitialize()](#externalobject-functions-esinitialize) to free any memory you have allocated when your library is unloaded.
+
+Whenever a JavaScript function makes a call to a library function, it increments a reference count for that library. When the reference count for a library reaches 0, the library is automatically unloaded; your termination function is called, and the `ExternalObject` instance is deleted. Note that deleting the `ExternalObject` instance does not unload the library if there are remaining references.

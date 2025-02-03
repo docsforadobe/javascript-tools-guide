@@ -1,7 +1,6 @@
 # XMPScript object reference
 
-The classes defined for the XMP JavaScript API, with their properties and methods, are listed here in
-alphabetical order.
+The classes defined for the XMP JavaScript API, with their properties and methods, are listed here in alphabetical order.
 
 After the library has been loaded, these XMP classes are available in the global JavaScript namespace:
 
@@ -11,7 +10,8 @@ After the library has been loaded, these XMP classes are available in the global
 | [XMPUtils object](#xmputils-object)       | Provides additional utility functions for array handling.                      |
 | [XMPDateTime object](#xmpdatetime-object) | Represents date-time values.                                                   |
 | [XMPConst object](#xmpconst-object)       | Contains numeric and string constant values for use with the JavaScript API.   |
-- These top-level objects provide access to additional support classes:
+
+These top-level objects provide access to additional support classes:
 
 | [XMPIterator object](#xmpiterator-object)     | Allows iteration through properties in an [XMPMeta object](#xmpmeta-object).   |
 |-----------------------------------------------|--------------------------------------------------------------------------------|
@@ -37,8 +37,7 @@ This object is returned by [XMPMeta.resolveAlias](#resolvealias). The read-only 
 
 ## XMPConst object
 
-This object contains the read-only constant definitions for use with the JavaScript XMP API. Some of these
-are listed in the context in which they are used. Longer lists are provided here.
+This object contains the read-only constant definitions for use with the JavaScript XMP API. Some of these are listed in the context in which they are used. Longer lists are provided here.
 
 ### Schema namespace string constants
 
@@ -144,16 +143,15 @@ Constant values for supported file types, used in I/O operations. See [XMPFile o
 
 ## XMPDateTime object
 
-This class represents a date and time. Times include a time zone, and can have up to nanosecond
-resolution.
+This class represents a date and time. Times include a time zone, and can have up to nanosecond resolution.
 
 ### XMPDateTime object constructors
 
-> ```default
-> new XMPDateTime ( ); // creates an object containing a 0 date
-> new XMPDateTime ( date ); // initializes the object with a JavaScript date
-> new XMPDateTime ( iso8601Date ); // initializes the object with an ISO date
-> ```
+```default
+new XMPDateTime ( ); // creates an object containing a 0 date
+new XMPDateTime ( date ); // initializes the object with a JavaScript date
+new XMPDateTime ( iso8601Date ); // initializes the object with an ISO date
+```
 
 | date        | A JavaScript `Date` object.<br/>The time zone is set to the local operation-system time-zone value.<br/>Times in the XMP Toolkit can have up to nanosecond resolution; however, when<br/>converting to or from a JavaScript Date value, time resolution is reduced to milliseconds.   |
 |-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -163,8 +161,7 @@ resolution.
 
 ### XMPDateTime object properties
 
-All properties are read-write, and allow you to modify the date-time value. If values are set outside the
-allowed range, they are automatically set to the minimum or maximum allowed value.
+All properties are read-write, and allow you to modify the date-time value. If values are set outside the allowed range, they are automatically set to the minimum or maximum allowed value.
 
 | **year**       | Number   | The year, in the range [0000...9999].                                          |
 |----------------|----------|------------------------------------------------------------------------------|
@@ -191,8 +188,7 @@ allowed range, they are automatically set to the minimum or maximum allowed valu
 
 Reports the time order of two date-time values.
 
-Returns 0 if the two values are the same, 1 if this date-time is later than the comparison value, -1 if
-this date-time is earlier than the comparison value.
+Returns `0` if the two values are the same, `1` if this date-time is later than the comparison value, `-1` if this date-time is earlier than the comparison value.
 
 ---
 
@@ -200,8 +196,7 @@ this date-time is earlier than the comparison value.
 
 `XMPDateTimeObj.convertToLocalTime()`
 
-Sets the time zone in this object to the local operating-system time zone, adjusting the time values
-from the previous time zone, if necessary.
+Sets the time zone in this object to the local operating-system time zone, adjusting the time values from the previous time zone, if necessary.
 
 Returns `undefined`.
 
@@ -211,8 +206,7 @@ Returns `undefined`.
 
 `XMPDateTimeObj.convertToUTCTime()`
 
-Sets the time zone in this object to UTC (coordinated universal time), adjusting the time values from
-the previous time zone, if necessary.
+Sets the time zone in this object to UTC (coordinated universal time), adjusting the time values from the previous time zone, if necessary.
 
 Returns `undefined`.
 
@@ -222,8 +216,7 @@ Returns `undefined`.
 
 `XMPDateTimeObj.getDate()`
 
-Converts this date-time value to a JavaScript Date. The time zone is normalized (time zones are not
-supported in the JavaScript format), and the accuracy is reduced to milliseconds.
+Converts this date-time value to a JavaScript Date. The time zone is normalized (time zones are not supported in the JavaScript format), and the accuracy is reduced to milliseconds.
 
 Returns a JavaScript `Date` object.
 
@@ -234,6 +227,7 @@ Returns a JavaScript `Date` object.
 `XMPDateTimeObj.setLocalTimeZone()`
 
 Sets the time zone in this object to the current operation-system value, replacing any existing value.
+
 Does not affect other fields.
 
 Returns `undefined`.
@@ -242,20 +236,18 @@ Returns `undefined`.
 
 ## XMPFile object
 
-This class corresponds to the Adobe XMP Toolkit's File Handler component, which provides convenient I/O
-access to the main, or document level, XMP for a file.
-The File Handler supports those file formats in which you can embed XMP metadata, as defined in the XMP
-Specification. It allows you to add XMP where none currently exists, expand existing XMP without regard
-to existing padding, and reconcile XMP with other metadata formats.
-The XMP Toolkit also supplies the Packet Scanner as a fallback solution for unsupported file formats. It
-provides more limited accesses to all file formats by performing a dump file scan. It can update a file, but
-cannot extend the packet or reconcile other metadata formats.
+This class corresponds to the Adobe XMP Toolkit's File Handler component, which provides convenient I/O access to the main, or document level, XMP for a file.
+
+The File Handler supports those file formats in which you can embed XMP metadata, as defined in the XMP Specification. It allows you to add XMP where none currently exists, expand existing XMP without regard to existing padding, and reconcile XMP with other metadata formats.
+
+The XMP Toolkit also supplies the Packet Scanner as a fallback solution for unsupported file formats. It provides more limited accesses to all file formats by performing a dump file scan. It can update a file, but cannot extend the packet or reconcile other metadata formats.
+
 The XMPScript API does not currently support retrieving thumbnails.
 
 !!! note
-    You can also use the Adobe Bridge `Metadata` object to access embedded metadata in files. It
-supports thumbnails and previews, and additional file formats such as PDF and Camera Raw. For details,
-see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
+    You can also use the Adobe Bridge `Metadata` object to access embedded metadata in files. It supports thumbnails and previews, and additional file formats such as PDF and Camera Raw.
+
+    For details, see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 
 ---
 
@@ -272,8 +264,7 @@ see the Adobe Bridge JavaScript Guide and Adobe Bridge JavaScript Reference.
 
 ### XMPFile class properties
 
-This property is available as a static property of the XMPFile class. It is not necessary to create an instance
-to access it.
+This property is available as a static property of the XMPFile class. It is not necessary to create an instance to access it.
 
 | **version**   | String   | The descriptive string for this version of the XMP Toolkit.   |
 |---------------|----------|---------------------------------------------------------------|
@@ -282,8 +273,7 @@ to access it.
 
 ### XMPFile class functions
 
-This function is available as a static method of the XMPFile class. It is not necessary to create an instance to
-call it.
+This function is available as a static method of the XMPFile class. It is not necessary to create an instance to call it.
 
 #### getFormatInfo()
 
@@ -324,11 +314,9 @@ Returns a logical OR of bit-flag constants, or 0 if the format is not handled. C
 | *xmpPacket* | The XMP metadata as a string containing an XMP packet.                 |
 | *xmpBuffer* | The XMP metadata as an Array of Number containing raw XMP packet data. |
 
-Reports whether XMP metadata of a given size can be updated for this file. This is particularly
-important if the packet size is increased.
+Reports whether XMP metadata of a given size can be updated for this file. This is particularly important if the packet size is increased.
 
-Considers only the length of the serialized packet; does not keep the provided XMP. Use [putXMP()](#xmpfile-putxmp) to
-actually update the XMP in the open file.
+Considers only the length of the serialized packet; does not keep the provided XMP. Use [putXMP()](#xmpfile-putxmp) to actually update the XMP in the open file.
 
 Returns `true` if the given XMP can be put into this file.
 
@@ -341,10 +329,7 @@ Returns `true` if the given XMP can be put into this file.
 | closeFlags   | A close-option constant, or 0. Close options are:<br/><br/>- XMPConst.\`\`CLOSE_UPDATE_SAFELY\`\` -  Write into a temporary file then swap for<br/>  crash safety.   |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Closes this open file, after writing to it as necessary; that is, if the file was opened for update, and if
-the XMP metadata was updated or injected. The options provided when the file was opened
-determine whether this function reconciles the XMP with other forms of metadata; that is, whether
-any legacy metadata is also updated to be consistent with the XMP metadata.
+Closes this open file, after writing to it as necessary; that is, if the file was opened for update, and if the XMP metadata was updated or injected. The options provided when the file was opened determine whether this function reconciles the XMP with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent with the XMP metadata.
 
 Returns `undefined`.
 
@@ -354,12 +339,9 @@ Returns `undefined`.
 
 `XMPFileObj.getXMP()`
 
-Retrieves and parses the existing XMP metadata from this file. If the file format contains legacy
-metadata in a format that is recognized by the File Handler, the function creates an XMP packet
-containing the metadata.
+Retrieves and parses the existing XMP metadata from this file. If the file format contains legacy metadata in a format that is recognized by the File Handler, the function creates an XMP packet containing the metadata.
 
-Returns an [XMPMeta object](#xmpmeta-object), or `null` if the files does not contain XMP or convertible legacy
-metadata.
+Returns an [XMPMeta object](#xmpmeta-object), or `null` if the files does not contain XMP or convertible legacy metadata.
 
 ---
 
@@ -367,9 +349,7 @@ metadata.
 
 `XMPFileObj.getPacketInfo()`
 
-Retrieves the raw XMP packet from this file, along with information about the packet. The options
-with which the file was opened determine whether this function reconciles other forms of metadata
-with the XMP.
+Retrieves the raw XMP packet from this file, along with information about the packet. The options with which the file was opened determine whether this function reconciles other forms of metadata with the XMP.
 
 Returns an [XMPPacketInfo object](#xmppacketinfo-object), or `null` if the files does not contain XMP metadata.
 
@@ -396,10 +376,7 @@ Returns an [XMPFileInfo object](#xmpfileinfo-object).
 | *xmpPacket* | The XMP metadata as a String containing an XMP packet.                 |
 | *xmpBuffer* | The XMP metadata as an Array of Number containing raw XMP packet data. |
 
-Supplies new XMP metadata for this file. The file is not actually written until [closeFile()](#xmpfile-closefile) is called. The
-options provided when the file was opened determine whether that function reconciles the XMP
-with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent
-with the XMP metadata.
+Supplies new XMP metadata for this file. The file is not actually written until [closeFile()](#xmpfile-closefile) is called. The options provided when the file was opened determine whether that function reconciles the XMP with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent with the XMP metadata.
 
 Returns `undefined`.
 
@@ -407,12 +384,10 @@ Returns `undefined`.
 
 ## XMPFileInfo object
 
-This object is returned by [XMPFile.getFileInfo](#getfileinfo). The read-only properties describe the file represented by
-the [XMPFile object](#xmpfile-object).
+This object is returned by [XMPFile.getFileInfo](#getfileinfo). The read-only properties describe the file represented by the [XMPFile object](#xmpfile-object).
 
 !!! note
-    This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to
-display metadata.
+    This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to display metadata.
 
 ---
 
@@ -468,29 +443,19 @@ Returns `undefined`.
 
 ## XMPMeta object
 
-This class provides the core services of the XMP Toolkit. The functions provide the ability to create and
-query metadata properties from an XMP namespace. The class also provides static functions that allow
-you to create and query namespaces and aliases.
+This class provides the core services of the XMP Toolkit. The functions provide the ability to create and query metadata properties from an XMP namespace. The class also provides static functions that allow you to create and query namespaces and aliases.
 
-There is one static property on the class that provides XMP version information; there are no JavaScript
-properties in the instance. The object encapsulates a set of metadata properties, which you access
-through the object functions.
+There is one static property on the class that provides XMP version information; there are no JavaScript properties in the instance. The object encapsulates a set of metadata properties, which you access through the object functions.
 
-The generic functions [getProperty()](#xmpmetaobj-getproperty), [setProperty()](#xmpmetaobj-setproperty), and [deleteProperty()](#xmpmetaobj-deleteproperty) allow you to manipulate all types
-of properties, when used with appropriately composed path expressions. For convenience, the object also
-provides more specific functions for use with specific types of properties, such as arrays.
+The generic functions [getProperty()](#xmpmetaobj-getproperty), [setProperty()](#xmpmetaobj-setproperty), and [deleteProperty()](#xmpmetaobj-deleteproperty) allow you to manipulate all types of properties, when used with appropriately composed path expressions. For convenience, the object also provides more specific functions for use with specific types of properties, such as arrays.
 
 ---
 
 ### XMPMeta object constructors
 
-To create an `XMPMeta` object, use the `new` operator. The constructor accepts an RDF/XML serialized
-metadata packet as a string, or as an array of numbers that contain only byte values. It returns the new
-object. If no argument is supplied, the new object is empty; you can use the object's functions to add
-namespaces and properties.
+To create an `XMPMeta` object, use the `new` operator. The constructor accepts an RDF/XML serialized metadata packet as a string, or as an array of numbers that contain only byte values. It returns the new object. If no argument is supplied, the new object is empty; you can use the object's functions to add namespaces and properties.
 
-The first call to any of these constructors initializes the library by registering the standard namespaces and
-aliases:
+The first call to any of these constructors initializes the library by registering the standard namespaces and aliases:
 
 ```default
 new XMPMeta ( ); // creates an empty object
@@ -526,6 +491,7 @@ The `XMPMeta` class provides these static functions. It is not necessary to crea
 | aliasProp | The alias property string.                                                                               |
 
 Deletes the specified alias; does not delete the aliased property.
+
 If the alias does not exist, does nothing.
 
 !!! note
@@ -555,8 +521,7 @@ Returns `undefined`.
 
 `XMPMeta.dumpAliases ( )`
 
-Creates and returns a human-readable string containing the list of registered aliases and their
-targets.
+Creates and returns a human-readable string containing the list of registered aliases and their targets.
 
 Returns a String.
 
@@ -566,8 +531,7 @@ Returns a String.
 
 `XMPMeta.dumpNamespaces ( )`
 
-Creates and returns a human-readable string containing the list of registered namespace URIs and
-their associated prefixes.
+Creates and returns a human-readable string containing the list of registered namespace URIs and their associated prefixes.
 
 Returns a String.
 
@@ -610,11 +574,9 @@ Returns the URI String.
 | actualProp | The aliased property, a simple name string.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | arrayForm  | Number. The array form for a simple alias to an array item, which controls how<br/>the array is created if it is set for the first time through the alias. One of these<br/>constants:<br/>- `XMPConst.ALIAS_TO_SIMPLE_PROP` (default) - A direct mapping. It can be simple-to-simple, array-to-array, or structure-to-structure.<br/>- `XMPConst.ALIAS_TO_ARRAY` - The actual is an unordered array, the alias is to the first element of the array.<br/>- `XMPConst.ALIAS_TO_ORDERED_ARRAY` - The actual is an ordered array, the alias is to the first element of the array.<br/>- `XMPConst.ALIAS_TO_ALT_ARRAY` - The actual is an alternate array, the alias is to the first element of the array.<br/>- `XMPConst.ALIAS_TO_ALT_TEXT` - The actual is an alternate-text array (a localized property), the alias is to the x-default element of the array. |
 
-Defines an alias mapping from one namespace and property to another. An alias can be a direct
-mapping where the alias and actual property have the same data type, or it can map a simple alias
-to an item in an array, either the first item, or the `x-default` item in an alternate-text array.
-Multiple alias names can map to the same actual property, as long as the forms match. If the same
-alias and form exists, the call does nothing.
+Defines an alias mapping from one namespace and property to another. An alias can be a direct mapping where the alias and actual property have the same data type, or it can map a simple alias to an item in an array, either the first item, or the `x-default` item in an alternate-text array.
+
+Multiple alias names can map to the same actual property, as long as the forms match. If the same alias and form exists, the call does nothing.
 
 Returns `undefined`.
 
@@ -628,11 +590,9 @@ Returns `undefined`.
 |-----------------|----------------------------------------------------------------------------------------------------------|
 | suggestedPrefix | The suggested namespace prefix string.                                                                   |
 
-Registers a namespace with a prefix. If the suggested prefix is already in use, generates, registers,
-and returns a different prefix.
+Registers a namespace with a prefix. If the suggested prefix is already in use, generates, registers, and returns a different prefix.
 
-Returns a String containing the actual registered prefix. This is the `suggestedPrefix`, unless that
-one is already assigned to another namespace.
+Returns a String containing the actual registered prefix. This is the `suggestedPrefix`, unless that one is already assigned to another namespace.
 
 ---
 
@@ -663,8 +623,7 @@ Returns an [XMPAliasInfo object](#xmpaliasinfo-object).
 | itemValue    | The new item value string. Pass `null` for array items that do not have values.                                                                                                                                                                                                                                                                                                                                             |
 | arrayOptions | Optional. A flag that describes the array form. Must be provided if the array is<br/>being created; ignored if the array already exists. One of:<br/><br/>- `XMPConst.ARRAY_IS_ORDERED` - Item order is significant. Implies<br/>  `XMPConst.PROP_IS_ARRAY`.<br/>- `XMPConst.ARRAY_IS_ALTERNATIVE` - Items are mutually exclusive<br/>  alternates. Implies `XMPConst.PROP_IS_ARRAY` and<br/>  XMPConst.ARRAY_IS_ORDERED\`. |
 
-Appends an item to an existing array, or creates a new array-type property if the named array does
-not exist.
+Appends an item to an existing array, or creates a new array-type property if the named array does not exist.
 
 Returns `undefined`.
 
@@ -707,8 +666,7 @@ Returns `undefined`.
 |------------|----------------------------------------------------------------------------------------------------------|
 | propName   | The property name string. Can be a general path expression.                                              |
 
-Deletes the metadata tree that has the given property as its root. If the property does not exist, does
-nothing.
+Deletes the metadata tree that has the given property as its root. If the property does not exist, does nothing.
 
 Returns `undefined`.
 
@@ -740,8 +698,7 @@ Returns `undefined`.
 | qualNS     | The URI string of the qualifier namespace.                                                               |
 | qualName   | The qualifier name string. Must be a simple XML name.                                                    |
 
-Deletes the metadata tree that has the given qualifier as its root. If the qualifier does not exist, does
-nothing.
+Deletes the metadata tree that has the given qualifier as its root. If the qualifier does not exist, does nothing.
 
 Returns `undefined`.
 
@@ -756,8 +713,7 @@ Returns `undefined`.
 | arrayName  | The array name string. Can be a general path expression.                                                 |
 | itemIndex  | Number. The 1-based position index of the item.                                                          |
 
-Reports whether an array item with a given index currently exists in an existing array in the
-metadata.
+Reports whether an array item with a given index currently exists in an existing array in the metadata.
 
 Returns `true` if the array and item exist.
 
@@ -844,9 +800,7 @@ Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the prop
 | genericLang  | The name of the generic language as an RFC 3066 primary subtag. Can be null or<br/>the empty string.        |
 | specificLang | The name of the specific language as an RFC 3066 primary subtag; for example,<br/>en-US. Must be specified. |
 
-Retrieves the text value for a specific language from an alternate-text array. First tries to match the
-specific language. If not found, tries to match the generic language, if specified. If not found, gets
-the x-default item, if any. Otherwise, gets the first item.
+Retrieves the text value for a specific language from an alternate-text array. First tries to match the specific language. If not found, tries to match the generic language, if specified. If not found, gets the x-default item, if any. Otherwise, gets the first item.
 
 Returns a String, or `undefined` if no matching value is not found.
 
@@ -861,8 +815,7 @@ Returns a String, or `undefined` if no matching value is not found.
 | propName   | The property name string. Can be a general path expression.                                                                                                                  |
 | valueType  | Optional, String. The property data type, one of:<br/>- `XMPConst.STRING`<br/>- `XMPConst.INTEGER`<br/>- `XMPConst.NUMBER`<br/>- `XMPConst.BOOLEAN`<br/>- `XMPConst.XMPDATE` |
 
-Retrieves the value and options of a metadata property. Use for top-level, simple properties, or after
-using the path-composition functions in the XMPUtils object.
+Retrieves the value and options of a metadata property. Use for top-level, simple properties, or after using the path-composition functions in the XMPUtils object.
 
 Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the property is not found.
 
@@ -911,8 +864,7 @@ Returns an [XMPProperty object](#xmpproperty-object), or `undefined` if the prop
 | itemValue   | String. The new item value. Pass `null` for array items that do not have values.                                                                                                                                                                                                 |
 | itemOptions | Optional. A flag that describes the new item, if it is being created. One of:<br/>- 0: A simple item, the default.<br/>- `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).<br/>- `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields. |
 
-Inserts an item into an array, before an existing item. The index positions of all later items are
-incremented. The array must exist.
+Inserts an item into an array, before an existing item. The index positions of all later items are incremented. The array must exist.
 
 Returns `undefined`.
 
@@ -927,9 +879,7 @@ Returns `undefined`.
 | schemaNS  | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | propName  | The array-type property name string. Can be a general path expression.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-Creates an iteration object that can iterate over the properties, arrays, and qualifiers within this
-metadata. Specify options, a namespace, and a property to limit the range and granularity of the
-resulting items.
+Creates an iteration object that can iterate over the properties, arrays, and qualifiers within this metadata. Specify options, a namespace, and a property to limit the range and granularity of the resulting items.
 
 Returns an [XMPIterator object](#xmpiterator-object) for this metadata object.
 
@@ -963,8 +913,7 @@ Returns a String.
 | newline    | Optional, String. The newline character to use. Default is U+000A.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | baseIndent | Optional, Number. The level of indentation of the outermost XML element. Default is 0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-Serializes this XMP metadata into a string as RDF, then converts that to an array of one-byte numeric
-values, the UTF-8 or UTF-16 encoded characters.
+Serializes this XMP metadata into a string as RDF, then converts that to an array of one-byte numeric values, the UTF-8 or UTF-16 encoded characters.
 
 Returns an Array of Numbers.
 
@@ -981,8 +930,7 @@ Returns an Array of Numbers.
 | itemValue   | String. The new item value string. Pass `null` for array items that do not have values.                                                                                                                                                                                               |
 | itemOptions | Optional. A flag that describes the new item, if it is being created. One of:<br/><br/>- 0: A simple item, the default.<br/>- `XMPConst.PROP_IS_ARRAY`: The item is an array (of type alt, bag, or seq).<br/>- `XMPConst.PROP_IS_STRUCT`: The item is a structure with nested fields. |
 
-Replaces an item within an array, or appends an item. The array must exist. To create an item,
-[appendArrayItem()](#xmpmetaobj-appendarrayitem) and [insertArrayItem()](#xmpmetaobj-insertarrayitem) are preferred.
+Replaces an item within an array, or appends an item. The array must exist. To create an item, [appendArrayItem()](#xmpmetaobj-appendarrayitem) and [insertArrayItem()](#xmpmetaobj-insertarrayitem) are preferred.
 
 Returns `undefined`.
 
@@ -1000,8 +948,7 @@ Returns `undefined`.
 | itemValue    | The new string value.                                                                                       |
 | setOptions   | Not used.                                                                                                   |
 
-Sets the text value for a specific language in an alternate-text array. Handles special cases for the
-x-default item.
+Sets the text value for a specific language in an alternate-text array. Handles special cases for the x-default item.
 
 Returns `undefined`.
 
@@ -1019,9 +966,7 @@ Returns `undefined`.
 | fieldValue | The new field value string. Pass null for fields that do not have values.                                                                                                                                                                                                                                                 |
 | options    | Optional, option flags that describe a new structure. Used only if the structure is<br/>being created. One of:<br/><br/>- 0 - A simple item, the default.<br/>- `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq).<br/>- `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields. |
 
-Sets the value of a field within a structure-type property, or creates a new field if the named field
-does not exist in the structure, or creates a new structure containing the named field if the named
-structure does not exist.
+Sets the value of a field within a structure-type property, or creates a new field if the named field does not exist in the structure, or creates a new structure containing the named field if the named structure does not exist.
 
 Returns `undefined`.
 
@@ -1039,8 +984,7 @@ Returns `undefined`.
 | qualValue  | The new qualifier value string. Pass null for qualifiers that do not have values.                                                                                                                                                                                                                                       |
 | options    | Optional, option flags that describe the qualifier. Used only if the qualifier is being<br/>created. One of:<br/><br/>- 0 - A simple item, the default.<br/>- `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq).<br/>- `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields. |
 
-Attaches a new qualifier to a metadata property. A qualifier can be added to a simple property, an
-array item, a struct field, or another qualifier.
+Attaches a new qualifier to a metadata property. A qualifier can be added to a simple property, an array item, a struct field, or another qualifier.
 
 Returns `undefined`.
 
@@ -1057,10 +1001,7 @@ Returns `undefined`.
 | setOptions | Optional. The type of property to create, if the named property does not exist.<br/>Default is 0, a simple-valued property. Other constant values are:<br/><br/>- 0 - A simple item, the default.<br/>- `XMPConst.PROP_IS_ARRAY` - The item is an array (of type alt, bag, or seq).<br/>- `XMPConst.PROP_IS_STRUCT` - The item is a structure with nested fields. |
 | valueType  | Optional. The property data type. If supplied, the value is converted to this type. One of:<br/><br/>- `XMPConst.STRING`<br/>- `XMPConst.INTEGER`<br/>- `XMPConst.NUMBER`<br/>- `XMPConst.BOOLEAN`<br/>- `XMPConst.XMPDATE`                                                                                                                                       |
 
-Sets the value of a simple metadata property, creating the property if necessary, or creates a new
-array or structure property. For creating array and structure properties, [setArrayItem()](#xmpmetaobj-setarrayitem) and
-[setStructField()](#xmpmetaobj-setstructfield) are preferred. Use this call to create or set top-level, simple properties, or after using
-the path-composition functions in the [XMPUtils object](#xmputils-object).
+Sets the value of a simple metadata property, creating the property if necessary, or creates a new array or structure property. For creating array and structure properties, [setArrayItem()](#xmpmetaobj-setarrayitem) and [setStructField()](#xmpmetaobj-setstructfield) are preferred. Use this call to create or set top-level, simple properties, or after using the path-composition functions in the [XMPUtils object](#xmputils-object).
 
 Returns `undefined`.
 
@@ -1076,8 +1017,7 @@ Sorts the XMP contents alphabetically.
 - Within a namespace, sorts top-level properties are sorted by name.
 - Within a struct, sorts fields by their qualified name (that is, the XML `prefix:local` form.)
 - Sorts unordered arrays of simple items by value.
-- Sorts language alternative arrays by the `xml:lang` qualifiers, with the `"x-default"` item placed
-  first.
+- Sorts language alternative arrays by the `xml:lang` qualifiers, with the `"x-default"` item placed first.
 
 Returns `undefined`.
 
@@ -1104,7 +1044,7 @@ This object is returned by [XMPFile.getPacketInfo()](#getpacketinfo). The read-o
 ## XMPProperty object
 
 This object is returned by various property accessor functions of the [XMPMeta object](#xmpmeta-object), such as
-:xmpmetaobj-getProperty. The read-only properties describe a metadata property.
+[getProperty](#getproperty). The read-only properties describe a metadata property.
 
 ---
 
@@ -1121,15 +1061,11 @@ This object is returned by various property accessor functions of the [XMPMeta o
 
 ## XMPUtils object
 
-This class provides additional utility functions for the XMP Toolkit, layered upon the functionality of the
-[XMPMeta object](#xmpmeta-object). It has only static functions, you cannot create an instance.
+This class provides additional utility functions for the XMP Toolkit, layered upon the functionality of the [XMPMeta object](#xmpmeta-object). It has only static functions, you cannot create an instance.
 
-Path-composition functions such as [composeArrayItemPath()](#xmputils-composearrayitempath), provide support for composing path
-expressions to deeply nested properties, which you can then pass to the accessor functions in
-XMPMeta object, such as xmpmetaobj-getProperty.
+Path-composition functions such as [composeArrayItemPath()](#xmputils-composearrayitempath), provide support for composing path expressions to deeply nested properties, which you can then pass to the accessor functions in XMPMeta object, such as xmpmetaobj-getProperty.
 
-Higher-level functions such as xmputils-duplicateSubtree allow you to manipulate the metadata tree in an
-XMPMeta object.
+Higher-level functions such as xmputils-duplicateSubtree allow you to manipulate the metadata tree in an XMPMeta object.
 
 ---
 
@@ -1146,8 +1082,7 @@ XMPMeta object.
 
 Default is 0.
 
-Copies properties from a source XMPMeta object and appends them to a destination XMPMeta
-object.
+Copies properties from a source XMPMeta object and appends them to a destination XMPMeta object.
 
 Returns `undefined`.
 
@@ -1167,8 +1102,7 @@ Returns `undefined`.
 
 Default is 0.
 
-Concatenates a set of array item values into a single string. The resulting string can be separated
-back out into array items using [separateArrayItems()](#xmputils-separatearrayitems).
+Concatenates a set of array item values into a single string. The resulting string can be separated back out into array items using [separateArrayItems()](#xmputils-separatearrayitems).
 
 Returns the concatenated String.
 
@@ -1183,8 +1117,7 @@ Returns the concatenated String.
 | arrayName  | The array property name string. Can be a general path expression.                                                                                                                                    |
 | itemIndex  | Number. The 1-based position index of the item. Use<br/>`XMPConst.ARRAY_LAST_ITEM` to reference the last existing item in the array. In<br/>this case, the resulting path is `ns:arrayName[last()]`. |
 
-Creates and returns a string containing the path expression for an item in an array, using the
-registered prefix for the namespace, in the form:
+Creates and returns a string containing the path expression for an item in an array, using the registered prefix for the namespace, in the form:
 
 ```default
 schemaNS:arrayName[itemIndex]
@@ -1205,8 +1138,7 @@ Returns a String.
 | fieldName  | The field name. Must be a simple XML name.                                                               |
 | fieldValue | The desired field value.                                                                                 |
 
-Creates and returns a string containing the path expression to select an alternate item by a field's
-value, using the registered prefixes for the namespaces, in the form:
+Creates and returns a string containing the path expression to select an alternate item by a field's value, using the registered prefixes for the namespaces, in the form:
 
 ```default
 schemaNS:arrayName[fieldNS:fieldName='fieldValue']
@@ -1225,8 +1157,7 @@ Returns a String.
 | arrayName  | The array property name string. Can be a general path expression.                                        |
 | locale     | The RFC3066 locale code string for the desired language.                                                 |
 
-Creates and returns a string containing the path expression to select an alternate item in an alt
-text array by language, using the registered prefix for the namespace, in the form:
+Creates and returns a string containing the path expression to select an alternate item in an alt text array by language, using the registered prefix for the namespace, in the form:
 
 ```default
 schemaNS:arrayName[@xml:lang='langName']
@@ -1236,9 +1167,8 @@ Returns a String.
 
 !!! note
     Do not use this in place of getLocalizedText() or setLocalizedText().
-Those functions provide
-extra logic to choose the appropriate language and maintain consistency with the x-default value.
-This function provides a path expression for an explicit language, and only for that language.
+
+    Those functions provide extra logic to choose the appropriate language and maintain consistency with the x-default value. This function provides a path expression for an explicit language, and only for that language.
 
 ---
 
@@ -1254,8 +1184,7 @@ This function provides a path expression for an explicit language, and only for 
 
 The field name. Must be a simple XML name.
 
-Creates and returns a string containing the path expression for a field in a structure, using the
-registered prefixes for the namespaces, in the form:
+Creates and returns a string containing the path expression for a field in a structure, using the registered prefixes for the namespaces, in the form:
 
 ```default
 schemaNS:structName/fieldNS:fieldName
@@ -1275,8 +1204,7 @@ Returns a String.
 | qualNS     | The qualifier namespace URI string.                                                                      |
 | qualName   | The qualifier name. Must be a simple XML name.                                                           |
 
-Creates and returns a string containing the path expression for a qualifier attached to a property,
-using the registered prefix for the namespace, in the form:
+Creates and returns a string containing the path expression for a qualifier attached to a property, using the registered prefix for the namespace, in the form:
 
 ```default
 schemaNS:propName/?qualNS:qualName
@@ -1299,8 +1227,7 @@ Returns a String.
 | destRoot   | Optional. The property name string for the root location of the destination<br/>subtree. Can be a general path expression. Default is the source root location.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | options    | Option flags that control the copying operation. A logical OR of these bit-flag constants:<br/><br/>- `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external<br/>  properties. By default, copies only external properties. This applies only to<br/>  top-level properties.<br/>- `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing<br/>  properties with the value from the source object. By default, existing values<br/>  are retained. This applies to properties at all levels of hierarchy.<br/>- `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.<br/><br/>Default is 0. |
 
-Copies properties in the specified subtree from a source [XMPMeta object](#xmpmeta-object) and adds them into a
-destination [XMPMeta object](#xmpmeta-object).
+Copies properties in the specified subtree from a source [XMPMeta object](#xmpmeta-object) and adds them into a destination [XMPMeta object](#xmpmeta-object).
 
 Returns `undefined`.
 
@@ -1318,17 +1245,11 @@ Returns `undefined`.
 
 Removes multiple properties from an [XMPMeta object](#xmpmeta-object).
 
-If both the namespace and property name are supplied, removes the property if it is external,
-even if it is an alias. If it is internal, removes it if the option `XMPConst.REMOVE_ALL_PROPERTIES`
-is specified.
+If both the namespace and property name are supplied, removes the property if it is external, even if it is an alias. If it is internal, removes it if the option `XMPConst.REMOVE_ALL_PROPERTIES` is specified.
 
-If the namespace is supplied and the property name is not, removes all external properties in
-the namespace, and optionally all internal properties. Removes aliases only if the option
-`XMPConst.REMOVE_INCLUDE_ALIASES` is specified.
+If the namespace is supplied and the property name is not, removes all external properties in the namespace, and optionally all internal properties. Removes aliases only if the option `XMPConst.REMOVE_INCLUDE_ALIASES` is specified.
 
-If neither the namespace nor the property name are supplied, removes all external properties,
-and optionally all internal properties. Aliases are handled implicitly, because the associated
-actual is removed.
+If neither the namespace nor the property name are supplied, removes all external properties, and optionally all internal properties. Aliases are handled implicitly, because the associated actual is removed.
 
 Returns `undefined`.
 
@@ -1345,8 +1266,6 @@ Returns `undefined`.
 | arrayOptions | Option flags that control how the array property is updated from the separated<br/>string. A logical OR of these bit-flag constants:<br/><br/>- `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external<br/>  properties. By default, copies only external properties. This applies only to<br/>  top-level properties.<br/>- `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing<br/>  properties with the value from the source object. By default, existing values<br/>  are retained. This applies to properties at all levels of hierarchy.<br/>- `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new<br/>  value is empty.<br/>- `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not<br/>  specified, an item containing a comma (such as "LastName, FirstName") is<br/>  separated into two array items.<br/><br/>Default is 0. |
 | concatString | The string containing the concatenated array values, as returned by<br/>[catenateArrayItems()](#xmputils-catenatearrayitems).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-Updates individual array item strings in the XMPMeta object from a concatenated string returned by
-[catenateArrayItems()](#xmputils-catenatearrayitems). Recognizes a large set of separator characters, including semicolons, commas,
-tab, return, linefeed, and multiple spaces.
+Updates individual array item strings in the XMPMeta object from a concatenated string returned by [catenateArrayItems()](#xmputils-catenatearrayitems). Recognizes a large set of separator characters, including semicolons, commas, tab, return, linefeed, and multiple spaces.
 
 Returns `undefined`.

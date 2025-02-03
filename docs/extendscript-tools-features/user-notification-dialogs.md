@@ -1,13 +1,10 @@
 # User notification dialogs
 
-ExtendScript provides a set of globally available functions that allow you to display short messages to the
-user in platform-standard dialog boxes. There are three types of message dialogs:
+ExtendScript provides a set of globally available functions that allow you to display short messages to the user in platform-standard dialog boxes. There are three types of message dialogs:
 
 > - **Alert** - Displays a dialog containing a short message and an **OK** button.
-> - **Confirm** - Displays a dialog containing a short message and two buttons, **Yes** and **No**, allowing the
->   user to accept or reject an action.
-> - **Prompt** - Displays a dialog containing a short message, a text entry field, and **OK** and **Cancel**
->   buttons, allowing the user to supply a value to the script.
+> - **Confirm** - Displays a dialog containing a short message and two buttons, **Yes** and **No**, allowing the user to accept or reject an action.
+> - **Prompt** - Displays a dialog containing a short message, a text entry field, and **OK** and **Cancel** buttons, allowing the user to supply a value to the script.
 
 > These dialogs are customizable to a small degree. The appearance is platform specific.
 
@@ -24,7 +21,7 @@ Displays a platform-standard dialog containing a short message and an **OK** but
 | message   | The string for the displayed message.                                                                                                                                                        |
 |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for alert dialogs. The default title string is "Script Alert." |
-| errorIcon | Optional. When true, the platform-standard alert icon is replaced by the<br/>platform-standard error icon in the dialog. Default is `false`.                                                 |
+| errorIcon | Optional. When `true`, the platform-standard alert icon is replaced by the<br/>platform-standard error icon in the dialog. Default is `false`.                                                 |
 
 Returns `undefined`
 
@@ -50,7 +47,7 @@ Displays a platform-standard dialog containing a short message and two buttons l
 
 | message   | The string for the displayed message.                                                                                                                                                                   |
 |-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| noAsDflt  | Optional. When true, the **No** button is the default choice, selected when the user types<br/>`ENTER`. Default is false, meaning that **Yes** is the default choice.                                   |
+| noAsDflt  | Optional. When `true`, the **No** button is the default choice, selected when the user types<br/>`ENTER`. Default is false, meaning that **Yes** is the default choice.                                   |
 | title     | Optional. A string to appear as the title of the dialog, if the platform supports a title.<br/>Mac OS does not support titles for confirmation dialogs. The default title string is<br/>"Script Alert." |
 
 Returns `true` if the user clicked **Yes**, `false` if the user clicked **No**.
@@ -69,8 +66,7 @@ This figure shows confirmation dialogs with No as the default button.
 
 ## Global prompt function
 
-Displays a platform-standard dialog containing a short message, a text edit field, and two buttons labeled
-**OK** and **Cancel**.
+Displays a platform-standard dialog containing a short message, a text edit field, and two buttons labeled **OK** and **Cancel**.
 
 ### prompt()
 

@@ -1,8 +1,6 @@
 # Specifying measurement values
 
-ExtendScript provides the UnitValue object to represent measurement values. The properties and
-methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform
-conversions from one unit to another.
+ExtendScript provides the UnitValue object to represent measurement values. The properties and methods of the UnitValue object make it easy to change the value, the unit, or both, or to perform conversions from one unit to another.
 
 ## UnitValue object
 
@@ -18,8 +16,7 @@ myVal = new UnitValue ("value unit");
 myVal = new UnitValue (value, "unit");
 ```
 
-The value is a number, and the unit is specified with a string in abbreviated, singular, or plural form, as
-shown in the following table.
+The value is a number, and the unit is specified with a string in abbreviated, singular, or plural form, as shown in the following table.
 
 | Abbreviation   | Singular          | Plural             | Comments             |
 |----------------|-------------------|--------------------|----------------------|
@@ -39,8 +36,7 @@ shown in the following table.
 | px             | pixel             | pixels             | baseless (see below) |
 | %              | percent           | percent            | baseless (see below) |
 
-If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue
-0.00000".
+If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue 0.00000".
 
 For example, all the following formats are equivalent:
 
@@ -70,8 +66,7 @@ myVal = UnitValue ("12 centimeters");
 | *unit*   | The unit type in abbreviated form; for example, "cm" or "in".   |
 |----------|-----------------------------------------------------------------|
 
-Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be
-computed, generates a run-time error.
+Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be computed, generates a run-time error.
 
 ---
 
@@ -84,33 +79,22 @@ computed, generates a run-time error.
 
 Converts this object to the given unit, resetting the type and value accordingly.
 
-Returns `true` if the conversion is successful. If the unit is unknown or the object cannot be
-converted, generates a run-time error and returns `false`.
+Returns `true` if the conversion is successful. If the unit is unknown or the object cannot be converted, generates a run-time error and returns `false`.
 
 ---
 
 ## Converting pixel and percentage values
 
-Converting measurements among different units requires a common base unit. For example, for length,
-the meter is the base unit. All length units can be converted into meters, which makes it possible to
-convert any length unit into any other length unit.
+Converting measurements among different units requires a common base unit. For example, for length, the meter is the base unit. All length units can be converted into meters, which makes it possible to convert any length unit into any other length unit.
 
-Pixels and percentages do not have a standard common base unit. Pixel measurements are relative to
-display resolution, and percentages are relative to an absolute total size.
+Pixels and percentages do not have a standard common base unit. Pixel measurements are relative to display resolution, and percentages are relative to an absolute total size.
 
-- To convert pixels into length units, you must know the size of a single pixel. The size of a pixel depends
-  on the display resolution. A common resolution measurement is 72 dpi, which means that there are 72
-  pixels to the inch. The conversion base for pixels at 72 dpi is 0.013889 inches (1/72 inch).
-- Percentage values are relative to a total measurement. For example, 10% of 100 inches is 10 inches,
-  while 10% of 1 meter is 0.1 meters. The conversion base of a percentage is the unit value
-  corresponding to 100%.
+- To convert pixels into length units, you must know the size of a single pixel. The size of a pixel depends on the display resolution. A common resolution measurement is 72 dpi, which means that there are 72 pixels to the inch. The conversion base for pixels at 72 dpi is 0.013889 inches (1/72 inch).
+- Percentage values are relative to a total measurement. For example, 10% of 100 inches is 10 inches, while 10% of 1 meter is 0.1 meters. The conversion base of a percentage is the unit value corresponding to 100%.
 
-The default `baseUnit` of a `unitValue` object is 0.013889 inches, the base for pixels at 72 dpi. If the
-`unitValue` is for pixels at any other dpi, or for a percentage value, you must set the `baseUnit` value
-accordingly. The `baseUnit` value is itself a `unitValue` object, containing both a magnitude and a unit.
+The default `baseUnit` of a `unitValue` object is 0.013889 inches, the base for pixels at 72 dpi. If the `unitValue` is for pixels at any other dpi, or for a percentage value, you must set the `baseUnit` value accordingly. The `baseUnit` value is itself a `unitValue` object, containing both a magnitude and a unit.
 
-For a system using a different DPI, you can change the `baseUnit` value in the `UnitValue` class, thus
-changing the default for all new `unitValue` objects. For example, to double the resolution of pixels:
+For a system using a different DPI, you can change the `baseUnit` value in the `UnitValue` class, thus changing the default for all new `unitValue` objects. For example, to double the resolution of pixels:
 
 ```default
 UnitValue.baseUnit = UnitValue (1/144, "in"); //144 dpi
@@ -122,8 +106,7 @@ To restore the default, assign null to the class property:
 UnitValue.baseUnit = null; //restore default
 ```
 
-You can override the default value for any particular unitValue object by setting the property in that
-object. For example, to create a unitValue object for pixels with 96 dpi:
+You can override the default value for any particular unitValue object by setting the property in that object. For example, to create a unitValue object for pixels with 96 dpi:
 
 ```default
 pixels = UnitValue (10, "px");
@@ -131,8 +114,7 @@ myPixBase = UnitValue (1/96, "in");
 pixels.baseUnit = myPixBase;
 ```
 
-For percentage measurements, set the baseUnit property to the measurement value for 100%. For
-example, to create a unitValue object for 40% of 10 feet:
+For percentage measurements, set the baseUnit property to the measurement value for 100%. For example, to create a unitValue object for 40% of 10 feet:
 
 ```default
 myPctVal = UnitValue (40, "%");
@@ -163,8 +145,7 @@ myVal.convert ("px"); // => value=72 type=px
 
 ## Computing with unit values
 
-UnitValue objects can be used in computational JavaScript expressions. The way the value is used
-depends on the type of operator.
+UnitValue objects can be used in computational JavaScript expressions. The way the value is used depends on the type of operator.
 
 - Unary operators `(~, !, +, -)`
   ==========  ======================================================================

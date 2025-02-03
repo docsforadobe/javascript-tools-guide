@@ -39,9 +39,9 @@ You can export either [from the vscode interface](#jsxbin-from-vs-code), or [via
 
 To export your script as binary, you have a few options:
 
-> - With the file open, right-click the document and press 'Export as Binary'
-> - Open the command palette (Ctrl + Shift + P) and type 'Export as Binary'
-> - Use the keyboard shortcut for the same command (Ctrl + Shift + J)
+- With the file open, right-click the document and press 'Export as Binary'
+- Open the command palette (Ctrl + Shift + P) and type 'Export as Binary'
+- Use the keyboard shortcut for the same command (Ctrl + Shift + J)
 
 ### JSXBIN from the Command Line
 
@@ -57,26 +57,26 @@ Both methods above require the VS Code extension be installed.
 All of the files are saved in the same directory with the same filename (though the suffix will be .jsxbin). Any passed directories will be recursively traversed.
 
 1. Within the Extension install directory, there's a `exportToJSX.js` script file that accepts a file path or directory to convert. We need to get this path.
-   > - Note that you'll need to swap X.X.X with the current version #
-   > - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
-   > - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
+    - Note that you'll need to swap X.X.X with the current version #
+    - MacOS: `$HOME/.vscode/extensions/adobe.extendscript-debug-X.X.X/public-scripts/exportToJSX.js`
+    - Windows: `%USERPROFILE%\.vscode\extensions\adobe.extendscript-debug-X.X.X\public-scripts\exportToJSX.js`
 2. This script accepts a few arguments;
-   > - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
-   > - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
-   > - `h`, `--help`: Show this help and exit
+    - `-f`, `--force`: Overwrite the '.jsxbin' file/files if already exists
+    - `-n`, `--name`: The '.js/.jsx' script path or path to some directory having these files.
+    - `h`, `--help`: Show this help and exit
 3. Running the script
-   > - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
+    - From your command line, run `node path/to/exportToJSX.js [options] [file/directory]`
 
 #### Examples
 
 **Exporting a single script**
 
-```default
+```sh
 sh node "C:/Users/Dev/.vscode/extensions/adobe.extendscript-debug-1.1.2/public-scripts/exportToJSX.js" "d:/projects/scripting/coolTool.jsx"
 ```
 
 **Exporting a folder, overwriting**
 
-```default
+```sh
 sh node "C:/Users/Dev/.vscode/extensions/adobe.extendscript-debug-1.1.2/public-scripts/exportToJSX.js" --force "d:/projects/scripting/"
 ```

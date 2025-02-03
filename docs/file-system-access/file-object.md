@@ -1,15 +1,12 @@
 # File object
 
-Represents a file in the local file system in a platform-independent manner. All properties and methods
-resolve file system aliases automatically and act on the original file unless otherwise noted.
+Represents a file in the local file system in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.
 
 ---
 
 ## File object constructors
 
-To create a File object, use the File function or the new operator. The constructor accepts full or partial
-path names, and returns the new object. The CRLF sequence for the file is preset to the system default, and
-the encoding is preset to the default system encoding.
+To create a File object, use the File function or the new operator. The constructor accepts full or partial path names, and returns the new object. The CRLF sequence for the file is preset to the system default, and the encoding is preset to the default system encoding.
 
 ```default
 File ( [ path ] ); // Can return a Folder object
@@ -21,14 +18,14 @@ new File ([ path ] ); // Always returns a File object
 
 !!! warning
     In After Effects on MacOS, if `path.length` is more than 1002, After Effects crashes.
-This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
+
+    This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.
 
 ---
 
 ## File class properties
 
-This property is available as a static property of the File class. It is not necessary to create an instance to
-access it.
+This property is available as a static property of the File class. It is not necessary to create an instance to access it.
 
 | **fs**   | String   | The name of the file system. Read only. One of `Windows`, `Macintosh`, or `Unix`.   |
 |----------|----------|-------------------------------------------------------------------------------------|
@@ -37,8 +34,7 @@ access it.
 
 ## File class functions
 
-These functions are available as static methods of the File class. It is not necessary to create an instance to
-call them.
+These functions are available as static methods of the File class. It is not necessary to create an instance to call them.
 
 ### decode()
 
@@ -64,10 +60,9 @@ Returns the decoded string.
 | `name`   | String. The string to encode.   |
 |----------|---------------------------------|
 
-Encodes the specified string as required by RFC 2396. All special characters are encoded in UTF-8
-and stored as escaped characters starting with the percent sign followed by two hexadecimal digits.
-For example, the string "my file" is encoded as "my%20file".
-Special characters are those with a numeric value greater than 127, except the following:
+Encodes the specified string as required by RFC 2396. All special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits.
+
+For example, the string "my file" is encoded as "my%20file". Special characters are those with a numeric value greater than 127, except the following:
 
 ```default
 / - _ . ! ~ * ' ( )
@@ -83,7 +78,8 @@ Returns the encoded string.
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Checks whether a given encoding is available.
-Returns true if your system supports the specified encoding, false otherwise.
+
+Returns `true` if your system supports the specified encoding, `false` otherwise.
 
 ### openDialog()
 
@@ -91,14 +87,14 @@ Returns true if your system supports the specified encoding, false otherwise.
 
 | `prompt`      | Optional. A string containing the prompt text, if the dialog allows a prompt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filter`      | Optional. A filter that limits the types of files displayed in the dialog.<br/><br/>> - In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/><br/>>   #### NOTE<br/>>   - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>>   - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)<br/>> - In Mac OS, a filter function that takes a File instance and returns true if the file<br/>>   should be included in the display, false if it should not. |
-| `multiSelect` | Optional. Boolean. When true, the user can select multiple files and the return<br/>value is an array. Default is false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `filter`      | Optional. A filter that limits the types of files displayed in the dialog.<br/><br/>> - In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/><br/>>   #### NOTE<br/>>   - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>>   - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)<br/>> - In Mac OS, a filter function that takes a File instance and returns `true` if the file<br/>>   should be included in the display, `false` if it should not. |
+| `multiSelect` | Optional. Boolean. When `true`, the user can select multiple files and the return<br/>value is an array. Default is false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
-Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or
-multiple files, and creates new File objects to represent the selected files.
+Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or multiple files, and creates new File objects to represent the selected files.
 
-If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files
-are selected. If the user cancels, returns `null`.
+If the user clicks **OK**, returns a File object for the selected file, or an array of objects if multiple files are selected.
+
+If the user cancels, returns `null`.
 
 ### saveDialog()
 
@@ -106,14 +102,13 @@ are selected. If the user cancels, returns `null`.
 
 | `prompt`   | A string containing the prompt text, if the dialog allows a prompt.                                                                                                                                                                                                                                                                                                                                                                            |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filter`   | Optional, in Windows only. A filter that limits the types of files displayed in the<br/>dialog. A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>Not used in Mac OS.<br/><br/>#### NOTE<br/>- Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>- Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
+| `filter`   | Optional, in [Windows](../user-interface-tools/window-object.md) only. A filter that limits the types of files displayed in the<br/>dialog. A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>Not used in Mac OS.<br/><br/>#### NOTE<br/>- Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>- Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
 
-Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file
-location to which to save information, and creates a new File object to represent the selected file
-location.
+Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file location to which to save information, and creates a new File object to represent the selected file location.
 
-If the user clicks **OK**, returns a File object for the selected file location. If the user cancels, returns
-`null`.
+If the user clicks **OK**, returns a File object for the selected file location.
+
+If the user cancels, returns `null`.
 
 ---
 
@@ -123,17 +118,17 @@ These properties are available for `File` objects.
 
 | **absoluteURI**   | String   | The full path name for the referenced file in URI notation. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **alias**         | Boolean  | When true, the object refers to a file system alias or shortcut. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **alias**         | Boolean  | When `true`, the object refers to a file system alias or shortcut. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **created**       | Date     | The creation date of the referenced file, or null if the object does not<br/>refer to a file on disk. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **creator**       | String   | In Mac OS, the file creator as a four-character string. In Windows or UNIX,<br/>value is "????". Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **displayName**   | String   | The localized name of the referenced file, without the path. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | **encoding**      | String   | Gets or sets the encoding for subsequent read/write operations. One of<br/>the encoding constants listed in [File- and Folder-supported encoding names](file-and-folder-supported-encoding-names.md).<br/>If the value is not recognized, uses the system default encoding.<br/><br/>A special encoder, BINARY, is used to read binary files. It stores each byte<br/>of the file as one Unicode character regardless of any encoding. When<br/>writing, the lower byte of each Unicode character is treated as a single<br/>byte to write. |
-| **eof**           | Boolean  | When true, a read attempt caused the current position to be at the end of<br/>the file, or the file is not open. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **eof**           | Boolean  | When `true`, a read attempt caused the current position to be at the end of<br/>the file, or the file is not open. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **error**         | String   | A message describing the last file system error; see [File access error messages](file-access-error-messages.md).<br/>Typically set by the file system, but a script can set<br/>it. Setting this value clears any error message and resets the error bit for<br/>opened files. Contains the empty string if there is no error.                                                                                                                                                                                                                           |
-| **exists**        | Boolean  | When true, this object refers to a file or file-system alias that actually<br/>exists in the file system. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **exists**        | Boolean  | When `true`, this object refers to a file or file-system alias that actually<br/>exists in the file system. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **fsName**        | String   | The platform-specific full path name for the referenced file. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **fullName**      | String   | The full path name for the referenced file in URI notation. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **hidden**        | Boolean  | When true, the file is not shown in the platform-specific file browser.<br/>Read/write. If the object references a file-system alias or shortcut, the flag<br/>is altered on the alias, not on the original file.                                                                                                                                                                                                                                                                                                                                                                    |
+| **hidden**        | Boolean  | When `true`, the file is not shown in the platform-specific file browser.<br/>Read/write. If the object references a file-system alias or shortcut, the flag<br/>is altered on the alias, not on the original file.                                                                                                                                                                                                                                                                                                                                                                    |
 | **length**        | Number   | The size of the file in bytes. Can be set only for a file that is not open, in<br/>which case it truncates or pads the file with 0-bytes to the new length.                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **lineFeed**      | String   | How line feed characters are written in the file system. One of:<br/>`Windows` - Windows style<br/>`Macintosh` - Mac OS style<br/>`Unix` - UNIX style                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **localizedName** | String   | A localized version of the file name portion of the absolute URI for the<br/>referenced file, without the path specification. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -141,7 +136,7 @@ These properties are available for `File` objects.
 | **name**          | String   | The file name portion of the absolute URI for the referenced file, without<br/>the path specification. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **parent**        | Folder   | The Folder object for the folder that contains this file. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | **path**          | String   | The path portion of the absolute URI for the referenced file, without the<br/>file name. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **readonly**      | Boolean  | When true, prevents the file from being altered or deleted. If the<br/>referenced file is a file-system alias or shortcut, the flag is altered on the<br/>alias, not on the original file.                                                                                                                                                                                                                                                                                                                                                                                           |
+| **readonly**      | Boolean  | When `true`, prevents the file from being altered or deleted. If the<br/>referenced file is a file-system alias or shortcut, the flag is altered on the<br/>alias, not on the original file.                                                                                                                                                                                                                                                                                                                                                                                           |
 | **relativeURI**   | String   | The path name for the referenced file in URI notation, relative to the<br/>current folder. Read only.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | **type**          | String   | The file type as a four-character string.<br/><br/>- In Mac OS, the Mac OS file type.<br/>- In Windows, `"appl"` for `.EXE` files, `"shlb"` for `.DLL` files and `"TEXT"`<br/>  for any other file.<br/><br/>If the file does not exist, the value is "????". Read only.                                                                                                                                                                                                                                                                                                             |
 
@@ -160,7 +155,7 @@ These functions are available for File objects.
 
 Changes the path specification of the referenced file.
 
-Returns true on success.
+Returns `true` on success.
 
 ### close()
 
@@ -168,7 +163,7 @@ Returns true on success.
 
 Closes this open file.
 
-Returns true on success, false if there are I/O errors.
+Returns `true` on success, `false` if there are I/O errors.
 
 ### copy()
 
@@ -177,10 +172,9 @@ Returns true on success, false if there are I/O errors.
 | `target`   | A string with the URI path to the target location, or a File object<br/>that references the target location.   |
 |------------|----------------------------------------------------------------------------------------------------------------|
 
-Copies this object's referenced file to the specified target location. Resolves any aliases to find the
-source file. If a file exists at the target location, it is overwritten.
+Copies this object's referenced file to the specified target location. Resolves any aliases to find the source file. If a file exists at the target location, it is overwritten.
 
-Returns true if the copy was successful, false otherwise.
+Returns `true` if the copy was successful, `false` otherwise.
 
 ### createAlias()
 
@@ -189,19 +183,19 @@ Returns true if the copy was successful, false otherwise.
 | `path`   | A string containing the path of the target file.   |
 |----------|----------------------------------------------------|
 
-Makes this file a file-system alias or shortcut to the specified file. The referenced file for this object
-must not yet exist on disk.
+Makes this file a file-system alias or shortcut to the specified file. The referenced file for this object must not yet exist on disk.
 
-Returns true if the operation was successful, false otherwise.
+Returns `true` if the operation was successful, `false` otherwise.
 
 ### execute()
 
 `fileObj.execute()`
 
 Opens this file using the appropriate application, as if it had been double-clicked in a file browser.
+
 You can use this method to run scripts, launch applications, and so on.
 
-Returns true immediately if the application launch was successful.
+Returns `true` immediately if the application launch was successful.
 
 ### getRelativeURI()
 
@@ -210,8 +204,7 @@ Returns true immediately if the application launch was successful.
 | `basePath`   | Optional. A string containing the base path for the relative URI.<br/>Default is the current folder.   |
 |--------------|--------------------------------------------------------------------------------------------------------|
 
-Retrieves the URI for this file, relative to the specified base path, in URI notation. If no base path is
-supplied, the URI is relative to the path of the current folder.
+Retrieves the URI for this file, relative to the specified base path, in URI notation. If no base path is supplied, the URI is relative to the path of the current folder.
 
 Returns a string containing the relative URI.
 
@@ -222,17 +215,11 @@ Returns a string containing the relative URI.
 | `mode`   | A string indicating the read/write mode. One of:<br/>: - `r`: (read) Opens for reading. If the file does not exist<br/>    or cannot be found, the call fails.<br/>  - `w`: (write) Opens a file for writing. If the file exists,<br/>    its contents are destroyed. If the file does not exist,<br/>    creates a new, empty file.<br/>  - `e`: (edit) Opens an existing file for reading and writing.<br/>  - `a`: (append) Opens the file in Append mode, and moves the<br/>    current position to the end of the file.<br/>  - `type`: Optional. In Mac OS, the type of a newly created file,<br/>    a 4-character string. Ignored in Windows and UNIX.<br/>  - `creator`: Optional. In Mac OS, the creator of a newly created file,<br/>    a 4-character string. Ignored in Windows and UNIX.   |
 |----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-Opens the referenced file for subsequent read/write operations. The method resolves any aliases to
-find the file.
+Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.
 
-Returns true if the file has been opened successfully, false otherwise.
+Returns `true` if the file has been opened successfully, `false` otherwise.
 
-The method attempts to detect the encoding of the open file. It reads a few bytes at the current
-location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is
-advanced behind the detected character and the encoding property is set to one of the strings
-UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for
-zero bytes at the current location and makes an assumption about one of the above formats (except
-UTF-8). If everything fails, the encoding property is set to the system encoding.
+The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.
 
 !!! note
     Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.
@@ -243,16 +230,12 @@ UTF-8). If everything fails, the encoding property is set to the system encoding
 
 | `prompt`      | Optional. A string containing the prompt text, if the dialog allows a prompt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filter`      | Optional. A filter that limits the types of files displayed in the dialog.<br/>: - In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>  <br/><br/>  #### NOTE<br/>  - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>  - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)<br/>  <br/><br/>  - In Mac OS, a filter function that takes a File instance and returns true if the file<br/>    should be included in the display, false if it should not. |
-| `multiSelect` | Optional. Boolean. When true, the user can select multiple files and the return value is an array. Default is false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `filter`      | Optional. A filter that limits the types of files displayed in the dialog.<br/>: - In Windows, a filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>  <br/><br/>  #### NOTE<br/>  - Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>  - Separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`)<br/>  <br/><br/>  - In Mac OS, a filter function that takes a File instance and returns `true` if the file<br/>    should be included in the display, `false` if it should not. |
+| `multiSelect` | Optional. Boolean. When `true`, the user can select multiple files and the return value is an array. Default is false.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
-Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
-or files, and creates new File objects to represent the selected files. Differs from the class method
-openDialog() in that it presets the current folder to this File object's parent folder and the current
-file to this object's associated file.
+Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files. Differs from the class method openDialog() in that it presets the current folder to this File object's parent folder and the current file to this object's associated file.
 
-If the user clicks **OK**, returns a File or Folder object for the selected file or folder, or an array of
-objects. If the user cancels, returns `null`.
+If the user clicks **OK**, returns a File or Folder object for the selected file or folder, or an array of objects. If the user cancels, returns `null`.
 
 ### read()
 
@@ -269,9 +252,7 @@ Returns a string that contains up to the specified number of characters.
 
 `fileObj.readch()`
 
-Reads a single text character from the file at the current position. Line feeds are recognized as CR, LF,
-CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode
-characters.
+Reads a single text character from the file at the current position. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.
 
 Returns a string that contains the character.
 
@@ -279,9 +260,7 @@ Returns a string that contains the character.
 
 `fileObj.readln()`
 
-Reads a single line of text from the file at the current position, and returns it in a string. Line feeds
-are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to
-create single Unicode characters.
+Reads a single line of text from the file at the current position, and returns it in a string. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.
 
 Returns a string that contains the text.
 
@@ -289,13 +268,14 @@ Returns a string that contains the text.
 
 `fileObj.remove()`
 
-Deletes the file associated with this object from disk, immediately, without moving it to the system
-trash. Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
+Deletes the file associated with this object from disk, immediately, without moving it to the system trash.
+
+Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.
 
 !!! note
     Cannot be undone. It is recommended that you prompt the user for permission before deleting.
 
-Returns true if the file is deleted successfully.
+Returns `true` if the file is deleted successfully.
 
 ### rename()
 
@@ -304,20 +284,19 @@ Returns true if the file is deleted successfully.
 | `newName`   | The new file name, with no path.   |
 |-------------|------------------------------------|
 
-Renames the associated file. Does not resolve aliases, but renames the referenced alias or shortcut
-file itself.
+Renames the associated file.
 
-Returns true on success.
+Does not resolve aliases, but renames the referenced alias or shortcut file itself.
+
+Returns `true` on success.
 
 ### resolve()
 
 `fileObj.resolve()`
 
-If this object references an alias or shortcut, this method resolves that alias and returns a new File
-object that references the file-system element to which the alias resolves.
+If this object references an alias or shortcut, this method resolves that alias and returns a new File object that references the file-system element to which the alias resolves.
 
-Returns the new File object, or null if this object does not reference an alias, or if the alias cannot
-be resolved.
+Returns the new File object, or null if this object does not reference an alias, or if the alias cannot be resolved.
 
 ### saveDlg()
 
@@ -325,13 +304,11 @@ be resolved.
 
 | `prompt`   | Optional. A string containing the prompt text, if the dialog allows a prompt.                                                                                                                                                                                                                                                                                                                                                                  |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `preset`   | Optional, in Windows only. A filter that limits the types of files displayed in the<br/>dialog. A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>Not used in Mac OS.<br/><br/>#### NOTE<br/>- Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>- separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
+| `preset`   | Optional, in [Windows](../user-interface-tools/window-object.md) only. A filter that limits the types of files displayed in the<br/>dialog. A filter expression, such as `"JavaScript:*.jsx;All files:*.*"`<br/>Not used in Mac OS.<br/><br/>#### NOTE<br/>- Separate expression with a semicolon (`;`) to filter by all these types at once; (show `jsx` AND `all`)<br/>- separate with a comma (`,`) to populate the filter dropdown, to select one type at a time (show `jsx` OR `all`) |
 
-Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file
-location to which to save information, and creates a new File object to represent the selected file.
+Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.
 
-Differs from the class method [saveDialog()](#file-savedialog) in that it presets the current folder to this File object's
-parent folder and the file to this object's associated file.
+Differs from the class method [saveDialog()](#file-savedialog) in that it presets the current folder to this File object's parent folder and the file to this object's associated file.
 
 If the user clicks **OK**, returns a File object for the selected file. If the user cancels, returns `null`.
 
@@ -343,10 +320,9 @@ If the user clicks **OK**, returns a File object for the selected file. If the u
 |---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `mode`  | Optional. The seek mode, one of:<br/><br/>> - `0`: Seek to absolute position, where pos=0 is the first byte of the file. This is the<br/>>   default.<br/>> - `1`: Seek relative to the current position.<br/>> - `2`: Seek backward from the end of the file. |
 
-Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the
-current file size.
+Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the current file size.
 
-Returns true if the position was changed.
+Returns `true` if the position was changed.
 
 ### tell()
 
@@ -363,13 +339,12 @@ Returns a number, the position index.
 | `text`   | One or more strings to write, which are concatenated to form a single string.   |
 |----------|---------------------------------------------------------------------------------|
 
-Writes the specified text to the file at the current position. For encoded files, writing a single
-Unicode character may write multiple bytes.
+Writes the specified text to the file at the current position. For encoded files, writing a single Unicode character may write multiple bytes.
 
 !!! note
     Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 
-Returns true on success.
+Returns `true` on success.
 
 ### writeln()
 
@@ -378,11 +353,9 @@ Returns true on success.
 | `text`   | One or more strings to write, which are concatenated to form a single string.   |
 |----------|---------------------------------------------------------------------------------|
 
-Writes the specified text to the file at the current position, and appends a Line Feed sequence in the
-style specified by the linefeed property.For encoded files, writing a single Unicode character may
-write multiple bytes.
+Writes the specified text to the file at the current position, and appends a Line Feed sequence in the style specified by the linefeed property.For encoded files, writing a single Unicode character may write multiple bytes.
 
 !!! note
     Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.
 
-Returns true on success.
+Returns `true` on success.

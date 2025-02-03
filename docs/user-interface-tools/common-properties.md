@@ -1,8 +1,6 @@
 # Common properties
 
-All types of user-interface elements, including windows, containers, and controls, share many of the same
-properties, although some have slightly different meanings for different types of objects. The following
-table summarizes which properties are used in which object types.
+All types of user-interface elements, including windows, containers, and controls, share many of the same properties, although some have slightly different meanings for different types of objects. The following table summarizes which properties are used in which object types.
 
 | Property       | Window   | Panel   | TabbedPanel   | Tab   | Group   | Button   | Checkbox   | DropDownList   | EditText   | FlashPlayer   | IconButton   | Image   | ListBox   | ListItem   | ProgressBar   | RadioButton   | Scrollbar   | Slider   | StaticText   | TreeView   |
 |----------------|----------|---------|---------------|-------|---------|----------|------------|----------------|------------|---------------|--------------|---------|-----------|------------|---------------|---------------|-------------|----------|--------------|------------|

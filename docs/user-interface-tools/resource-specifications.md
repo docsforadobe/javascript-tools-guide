@@ -1,21 +1,15 @@
 # Resource specifications
 
-You can create one or more user-interface elements at a time using a *resource* specification. This specially
-formatted string provides a simple and compact means of creating an element, including any container
-element and its component elements. The resource-specification string is passed as the `type` parameter to
-the `Window()` or `add()` constructor function.
+You can create one or more user-interface elements at a time using a *resource* specification. This specially formatted string provides a simple and compact means of creating an element, including any container element and its component elements. The resource-specification string is passed as the `type` parameter to the `Window()` or `add()` constructor function.
 
-The general structure of a resource specification is an element type specification (such as `dialog`),
-followed by a set of braces enclosing one or more property definitions.
+The general structure of a resource specification is an element type specification (such as `dialog`), followed by a set of braces enclosing one or more property definitions.
 
 ```default
 var myResource = "dialog{ control_specs }";
 var myDialog = new Window ( myResource );
 ```
 
-Controls are defined as properties within windows and other containers. For each control, give the class
-name of the control, followed by the properties of the control enclosed in braces. For example, the
-following specifies a button:
+Controls are defined as properties within windows and other containers. For each control, give the class name of the control, followed by the properties of the control enclosed in braces. For example, the following specifies a button:
 
 ```default
 testBtn: Button { text: "Test" }
@@ -39,22 +33,23 @@ The following resource string specifies a panel that contains grouped `StaticTex
 ```
 
 The property with name properties specifies creation `properties`; see [Creation properties](scriptui-programming-model.md#creation-properties).
+
 A property value can be specified as `null`, true, false, a string, a number, an inline array, or an object.
 
 - An inline array contains one or more values in the form:
-  ```default
-  [ value, value, ... ]
-  ```
+    ```default
+    [ value, value, ... ]
+    ```
 - An object can be an inline object, or a named object, in the form:
-  ```default
-  { classname inlineObject }
-  ```
+    ```default
+    { classname inlineObject }
+    ```
 
-  In this case, the classname must be one of the control class names list in [Types of controls](types-of-controls.md).
+    In this case, the classname must be one of the control class names list in [Types of controls](types-of-controls.md).
 - An inline object contains one or more properties, in the form:
-  ```default
-  { propertyName: propertyValue, propertyName: propertyValue, ... }
-  ```
+    ```default
+    { propertyName: propertyValue, propertyName: propertyValue, ... }
+    ```
 
 ---
 
@@ -70,13 +65,9 @@ The two Alert Box Builder examples create the same dialog to collect values from
 
 ![Resource Strings Window](user-interface-tools/_static/04_user-interface-tools_defining-behavior_resource-strings.jpg)
 
-The Build button event handler builds a resource string from the collected values, and returns it from the
-dialog invocation function; the script then saves the resource string to a file. That resource string can later
-be used to create and display the user-configured alert box.
+The Build button event handler builds a resource string from the collected values, and returns it from the dialog invocation function; the script then saves the resource string to a file. That resource string can later be used to create and display the user-configured alert box.
 
-The resource specification format can also be used to create a single element or container and its child
-elements. For instance, if the `alertBuilderResource` in the example did not contain the panel
-`btnPnlResource`, you could define that resource separately, then add it to the dialog as follows:
+The resource specification format can also be used to create a single element or container and its child elements. For instance, if the `alertBuilderResource` in the example did not contain the panel `btnPnlResource`, you could define that resource separately, then add it to the dialog as follows:
 
 ```default
 var btnPnlResource = "btnPnl: Panel { orientation:'row', \

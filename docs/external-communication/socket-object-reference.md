@@ -14,10 +14,10 @@ Creates and returns a new `Socket` object.
 
 ## Socket object properties
 
-| `connected`   | Boolean   | When true, the connection is active. Read only.                                                                                                                                |
+| `connected`   | Boolean   | When `true`, the connection is active. Read only.                                                                                                                                |
 |---------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `encoding`    | String    | Sets or retrieves the name of the encoding used to transmit data.<br/>Typical values are "ASCII," "BINARY," or "UTF-8."                                                        |
-| `eof`         | Boolean   | When true, the receive buffer is empty. Read only.                                                                                                                             |
+| `eof`         | Boolean   | When `true`, the receive buffer is empty. Read only.                                                                                                                             |
 | `error`       | String    | A message describing the most recent error.<br/>Setting this value clears any error message.                                                                                   |
 | `host`        | String    | The name of the remote computer when a connection is established.<br/>If the connection is shut down or does not exist, the property<br/>contains the empty string. Read only. |
 | `timeout`     | Number    | The timeout in seconds to be applied to read or write operations.<br/>Default is 10.                                                                                           |
@@ -30,8 +30,7 @@ Creates and returns a new `Socket` object.
 
 `socketObj.close ();`
 
-Terminates the open connection. Deleting the object also closes the connection, but not until
-JavaScript garbage-collects the object.
+Terminates the open connection. Deleting the object also closes the connection, but not until JavaScript garbage-collects the object.
 
 The connection might stay open longer than you wish if you do not close it explicitly.
 
@@ -49,8 +48,7 @@ Returns `true` if the connection was closed, `false` on I/O errors.
 
 Instructs the object to start listening for an incoming connection.
 
-The call to `open()` and the call to `listen()` are mutually exclusive.
-Call one function or the other, not both.
+The call to `open()` and the call to `listen()` are mutually exclusive. Call one function or the other, not both.
 
 Returns `true` on success.
 
@@ -66,8 +64,7 @@ Returns `true` on success.
 
 Opens the connection for subsequent read/write operations.
 
-The call to open() and the call to listen() are mutually exclusive.
-Call one function or the other, not both.
+The call to open() and the call to listen() are mutually exclusive. Call one function or the other, not both.
 
 Returns `true` on success.
 
@@ -77,12 +74,9 @@ Returns `true` on success.
 
 `socketObj.poll ();`
 
-Checks a listening object for a new incoming connection. If a connection request was detected, the
-method returns a new Socket object that wraps the new connection. Use this connection object to
-communicate with the remote computer.
+Checks a listening object for a new incoming connection. If a connection request was detected, the method returns a new Socket object that wraps the new connection. Use this connection object to communicate with the remote computer.
 
-After use, close the connection and delete the JavaScript object.
-If no new connection request was detected, the method returns null.
+After use, close the connection and delete the JavaScript object. If no new connection request was detected, the method returns null.
 
 Returns a `Socket` object or `null`.
 
@@ -96,10 +90,10 @@ Returns a `Socket` object or `null`.
 |-----------|---------------------------------------------------------------------------------------------------------------------------|
 
 Reads up to the specified number of characters from the connection, waiting if necessary.
+
 Ignores CR characters unless encoding is set to `BINARY`.
 
-Returns a string that contains up to the number of characters that were supposed to be read, or the
-number of characters read before the connection closed or timed out.
+Returns a string that contains up to the number of characters that were supposed to be read, or the number of characters read before the connection closed or timed out.
 
 ---
 
@@ -107,8 +101,7 @@ number of characters read before the connection closed or timed out.
 
 `socketObj.readln ();`
 
-Reads one line of text up to the next line feed. Line feeds are recognized as LF or CRLF pairs.
-CR characters are ignored.
+Reads one line of text up to the next line feed. Line feeds are recognized as LF or CRLF pairs. CR characters are ignored.
 
 Returns a string.
 
@@ -121,8 +114,7 @@ Returns a string.
 | `text`   | String. Any number of string values. All arguments are concatenated to form the<br/>string to be written.   |
 |----------|-------------------------------------------------------------------------------------------------------------|
 
-Concatenates all arguments into a single string and writes that string to the connection.
-CRLF sequences are converted to LFs unless encoding is set to `BINARY.`
+Concatenates all arguments into a single string and writes that string to the connection. CRLF sequences are converted to LFs unless encoding is set to `BINARY.`
 
 Returns `true` on success.
 
@@ -135,7 +127,6 @@ Returns `true` on success.
 | `text`   | String. Any number of string values. All arguments are concatenated to form the<br/>string to be written.   |
 |----------|-------------------------------------------------------------------------------------------------------------|
 
-Concatenates all arguments into a single string, appends a Line Feed character,
-and writes that string to the connection.
+Concatenates all arguments into a single string, appends a Line Feed character, and writes that string to the connection.
 
 Returns `true` on success.

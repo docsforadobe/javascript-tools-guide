@@ -39,24 +39,22 @@ To use the extension, you need to create a debug task for VS Code to run when yo
 
 In your project directory:
 
-> - create a folder called .vscode (with the period)
-> - in that folder, create a file launch.json
-> - paste in the following code:
+- create a folder called .vscode (with the period)
+- in that folder, create a file launch.json
+- paste in the following code:
 
-> {
-> : "version": "0.2.0",
->   "configurations": [
->   <br/>
->   > {
->   > : "type": "extendscript-debug",
->   >   "request": "attach",
->   >   "name": "extendScript-Debug attach",
->   <br/>
->   > }
->   <br/>
->   ]
-
-> }
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "extendscript-debug",
+            "request": "attach",
+            "name": "extendScript-Debug attach",
+        }
+    ]
+}
+```
 
 This creates a config for VSCode's debugger that attaches to the host app of your choice.
 

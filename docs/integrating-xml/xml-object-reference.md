@@ -1,7 +1,6 @@
 # XML Object Reference
 
-This section provides reference details for the properties and methods of the XML object itself, and for the
-related utility objects and global functions that you use to work with namespaces:
+This section provides reference details for the properties and methods of the XML object itself, and for the related utility objects and global functions that you use to work with namespaces:
 
 - [XML object](#xml-object)
 - [Namespace object](#namespace-object)
@@ -12,13 +11,11 @@ related utility objects and global functions that you use to work with namespace
 
 ## XML object
 
-The `XML` object provides both static properties and functions, available through the `XML` class,
-and dynamic properties and functions available through each instance.
+The `XML` object provides both static properties and functions, available through the `XML` class, and dynamic properties and functions available through each instance.
 
 ### XML object constructor
 
-The constructor returns the XML object representing the root node of an XML tree, which contains
-additional XML objects for all contained elements.
+The constructor returns the XML object representing the root node of an XML tree, which contains additional XML objects for all contained elements.
 
 `[new] XML (xmlCode);`
 
@@ -31,19 +28,18 @@ additional XML objects for all contained elements.
 
 These static properties are available through the XML class. They control how XML is parsed and generated:
 
-| **ignoreComments**               | Boolean   | When true, comments are stripped from the XML<br/>during parsing. Default is false.                                         |
+| **ignoreComments**               | Boolean   | When `true`, comments are stripped from the XML<br/>during parsing. Default is false.                                         |
 |----------------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------|
-| **ignoreProcessingInstructions** | Boolean   | When true, processing instructions (`<?xxx?>`<br/>elements) are stripped from the XML during<br/>parsing. Default is false. |
-| **ignoreWhitespace**             | Boolean   | When true, white-space characters are stripped<br/>from the XML during parsing. Default is true.                            |
+| **ignoreProcessingInstructions** | Boolean   | When `true`, processing instructions (`<?xxx?>`<br/>elements) are stripped from the XML during<br/>parsing. Default is false. |
+| **ignoreWhitespace**             | Boolean   | When `true`, white-space characters are stripped<br/>from the XML during parsing. Default is true.                            |
 | **prettyIndent**                 | Number    | The number of spaces to use for indenting when<br/>pretty-printing. Default is 2.                                           |
-| **prettyPrinting**               | Boolean   | When true, `toXMLString()` uses indenting and<br/>line feeds to create the XML string. Default is true.                     |
+| **prettyPrinting**               | Boolean   | When `true`, `toXMLString()` uses indenting and<br/>line feeds to create the XML string. Default is true.                     |
 
 ---
 
 ### XML class functions
 
-These static functions are available through the XML class, and provide information about the global
-settings of the XML parser.
+These static functions are available through the XML class, and provide information about the global settings of the XML parser.
 
 #### defaultSettings()
 
@@ -72,8 +68,7 @@ Returns a JavaScript object containing five properties, which correspond to the 
 | object   | A JavaScript object containing five properties, which correspond to the five [XML class properties](#xml-class-properties)   |
 |----------|------------------------------------------------------------------------------------------------------------------------------|
 
-Sets the global option settings that control how XML is parsed and generated. You can use this to
-restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xml-defaultsettings).
+Sets the global option settings that control how XML is parsed and generated. You can use this to restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xml-defaultsettings).
 
 Returns `undefined`.
 
@@ -81,8 +76,7 @@ Returns `undefined`.
 
 ### XML object properties
 
-The properties of the XML object are named for and contain the values of the child elements and attributes
-of the element that the object represents.
+The properties of the XML object are named for and contain the values of the child elements and attributes of the element that the object represents.
 
 | *childElementName*   | [XML object](#xml-object)   | Child-element properties are named with the child element name.                      |
 |----------------------|-----------------------------|--------------------------------------------------------------------------------------|
@@ -112,9 +106,7 @@ Returns this [XML object](#xml-object).
 | child   | An [XML object](#xml-object) or any value that can be converted to a String with `toString()`.   |
 |---------|--------------------------------------------------------------------------------------------------|
 
-Appends a child element to this node, after any existing children. If the argument is not XML,
-creates a new XML element that contains the string as its text value, using the same element name
-as the last element currently contained in this object's node.
+Appends a child element to this node, after any existing children. If the argument is not XML, creates a new XML element that contains the string as its text value, using the same element name as the last element currently contained in this object's node.
 
 Returns this [XML object](#xml-object).
 
@@ -206,8 +198,7 @@ Returns the new XML object.
 | name   | Optional. A String, the element name to match. If not provided, matches all<br/>elements.   |
 |--------|---------------------------------------------------------------------------------------------|
 
-Retrieves all descendent elements of this node of a given element type, or all XML-valued
-descendants, at any level of nesting. Includes text elements.
+Retrieves all descendent elements of this node of a given element type, or all XML-valued descendants, at any level of nesting. Includes text elements.
 
 Returns an [XML object](#xml-object) containing properties for each descendant element.
 
@@ -220,8 +211,7 @@ Returns an [XML object](#xml-object) containing properties for each descendant e
 | name   | Optional. A String, the element name to match. If not provided, matches all<br/>elements.   |
 |--------|---------------------------------------------------------------------------------------------|
 
-Retrieves all of the immediate child elements of this node of the given type, or of all types. Does not
-include text elements.
+Retrieves all of the immediate child elements of this node of the given type, or of all types. Does not include text elements.
 
 Returns an [XML object](#xml-object) containing properties for each child element.
 
@@ -231,9 +221,7 @@ Returns an [XML object](#xml-object) containing properties for each child elemen
 
 `xmlObj.hasComplexContent ();`
 
-Reports whether this node has complex content; that is, whether it contains child elements.
-Disregards contents of other kinds, including attributes, comments, processing instructions and
-text nodes.
+Reports whether this node has complex content; that is, whether it contains child elements. Disregards contents of other kinds, including attributes, comments, processing instructions and text nodes.
 
 Returns `true` if this node contains child elements.
 
@@ -243,9 +231,7 @@ Returns `true` if this node contains child elements.
 
 `xmlObj.hasSimpleContent ();`
 
-Reports whether this node has simple content; that is, whether it represents a text node, an
-attribute node, or an element without child elements (regardless of whether it also contains
-attributes, comments, processing instructions or text).
+Reports whether this node has simple content; that is, whether it represents a text node, an attribute node, or an element without child elements (regardless of whether it also contains attributes, comments, processing instructions or text).
 
 Object representing comments and processing instructions do not have simple content.
 
@@ -271,8 +257,7 @@ Returns an Array of [Namespace object](#namespace-object), in which the last mem
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | child2   | An [XML object](#xml-object), the new child element, or any value that can be converted to a String<br/>with `toString()`.                           |
 
-Inserts a new child element or text node into this node, after another existing child element. If the
-relative element is not currently in this node, does not insert the new child.
+Inserts a new child element or text node into this node, after another existing child element. If the relative element is not currently in this node, does not insert the new child.
 
 Returns this [XML object](#xml-object).
 
@@ -286,8 +271,7 @@ Returns this [XML object](#xml-object).
 |----------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | child2   | An [XML object](#xml-object), the new child element, or any value that can be converted to a String<br/>with `toString()`.                      |
 
-Inserts a new child element or text node into this node, before another existing child element. If the
-relative element is not currently in this node, does not insert the new child.
+Inserts a new child element or text node into this node, before another existing child element. If the relative element is not currently in this node, does not insert the new child.
 
 Returns this [XML object](#xml-object).
 
@@ -297,8 +281,7 @@ Returns this [XML object](#xml-object).
 
 `xmlObj.length ();`
 
-Reports the number of child elements contained in this node. The minimum number is 1, the
-element that this object represents.
+Reports the number of child elements contained in this node. The minimum number is 1, the element that this object represents.
 
 Returns a Number.
 
@@ -364,8 +347,7 @@ Returns an Array of [Namespace object](#namespace-object).
 
 `xmlObj.normalize ();`
 
-Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent
-text nodes and eliminating empty text nodes.
+Puts all text nodes in this and all descendant XML objects into a normal form by merging adjacent text nodes and eliminating empty text nodes.
 
 Returns this [XML object](#xml-object).
 
@@ -388,9 +370,7 @@ Returns an [XML object](#xml-object), or `null` for the root element.
 | child   | An [XML object](#xml-object) or string.   |
 |---------|-------------------------------------------|
 
-Prepends a child element to this node, before any existing children. If you prepend a string to a text
-element, the result is two text elements; call [normalize()](#xml-object-normalize) to concatenate them into a single text
-string.
+Prepends a child element to this node, before any existing children. If you prepend a string to a text element, the result is two text elements; call [normalize()](#xml-object-normalize) to concatenate them into a single text string.
 
 Returns this [XML object](#xml-object).
 
@@ -401,13 +381,11 @@ Returns this [XML object](#xml-object).
 `xmlObj.processingInstructions ([name]);`
 name
 
-A String, the name of a processing instruction, or null to get all processing
-instructions.
+A String, the name of a processing instruction, or null to get all processing instructions.
 
 Retrieves processing instructions contained in this node.
 
-Returns an [XML object](#xml-object) containing the children of this object that are processing instructions,
-matching the name if supplied.
+Returns an [XML object](#xml-object) containing the children of this object that are processing instructions, matching the name if supplied.
 
 ---
 
@@ -434,8 +412,7 @@ Returns this [XML object](#xml-object).
 | value   | An [XML object](#xml-object) or any value that can be converted to a String with `toString()`.   |
 |---------|--------------------------------------------------------------------------------------------------|
 
-Replaces all of the XML-valued properties in this object with a new value, which can be a simple text
-element, or can contain another set of XML properties.
+Replaces all of the XML-valued properties in this object with a new value, which can be a simple text element, or can contain another set of XML properties.
 
 Returns this [XML object](#xml-object).
 
@@ -474,8 +451,7 @@ Returns this [XML object](#xml-object).
 | ns   | A Namespace object for a namespace that has been declared in the tree above this element.   |
 |------|---------------------------------------------------------------------------------------------|
 
-Sets the namespace for this XML element. If the namespace has not been declared in the tree above
-this element, add a namespace declaration instead.
+Sets the namespace for this XML element. If the namespace has not been declared in the tree above this element, add a namespace declaration instead.
 
 Returns this [XML object](#xml-object).
 
@@ -525,10 +501,7 @@ Returns a String.
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | variables    | Optional. A JavaScript object containing variable definitions. The properties are used<br/>to look up XPath variables contained in the expression. For example, if the<br/>expression contains the variable `$abc`, the value is in the object's `abc` property.                                 |
 
-Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML
-object as the context node. The context position and size are set to 1, and all variables are initially
-unbound. If this XML object is a list, evaluates all contained XML element nodes (not comments or
-other node types) and return the results in a list in the order of execution.
+Evaluates an XPath expression in accordance with the W3C XPath recommendation, using this XML object as the context node. The context position and size are set to 1, and all variables are initially unbound. If this XML object is a list, evaluates all contained XML element nodes (not comments or other node types) and return the results in a list in the order of execution.
 
 If the XPath expression does not evaluate to a node list, throws a JavaScript exception.
 
@@ -550,9 +523,9 @@ These functions are available in the JavaScript global namespace.
 Reports whether a string contains a name that conforms to valid XML syntax.
 
 !!! note
-    This implementation uses the same rules as for a JavaScript name, except for the '$' character,
-which is disallowed, and the '-' character, which as added. It does not follow the W3C definition of an
-XML name, which adds more Unicode characters to the valid set of characters.
+    This implementation uses the same rules as for a JavaScript name, except for the '$' character, which is disallowed, and the '-' character, which as added.
+
+    It does not follow the W3C definition of an XML name, which adds more Unicode characters to the valid set of characters.
 
 Returns `true` if the name is a valid XML name, `false` otherwise.
 
@@ -565,8 +538,7 @@ Returns `true` if the name is a valid XML name, `false` otherwise.
 | ns   | A Namespace object. Any prefix is ignored.   |
 |------|----------------------------------------------|
 
-Sets the default namespace for XML objects. You can also set the default namespace using this
-syntax:
+Sets the default namespace for XML objects. You can also set the default namespace using this syntax:
 
 ```default
 default xml namespace = Namespace object
@@ -579,8 +551,7 @@ Returns `undefined`.
 
 ## QName object
 
-This object encapsulates a fully qualified XML name, the combination of a local XML name and its
-namespace URI.
+This object encapsulates a fully qualified XML name, the combination of a local XML name and its namespace URI.
 
 ---
 
@@ -615,10 +586,7 @@ When no arguments are supplies, creates a `QName` object with an empty local nam
 
 ## Namespace object
 
-This object encapsulates the definition of an XML namespace. A namespace associates an XML-name
-prefix with a complete URI. The prefix is a string that precedes the local name of an XML element or
-attribute and identifies the namespace, while the URI points to the actual location where the definition of
-the namespace is found.
+This object encapsulates the definition of an XML namespace. A namespace associates an XML-name prefix with a complete URI. The prefix is a string that precedes the local name of an XML element or attribute and identifies the namespace, while the URI points to the actual location where the definition of the namespace is found.
 
 For example, this XML definition contains a namespace declaration:
 

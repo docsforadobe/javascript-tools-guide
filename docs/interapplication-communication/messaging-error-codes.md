@@ -1,8 +1,6 @@
 # Messaging error codes
 
-The interapplication messaging protocol defines the following error codes, which are compatible with
-ExtendScript error codes. Negative values indicate unrecoverable errors that cause ExtendScript to
-terminate a running script.
+The interapplication messaging protocol defines the following error codes, which are compatible with ExtendScript error codes. Negative values indicate unrecoverable errors that cause ExtendScript to terminate a running script.
 
 |   1 | General error                   |
 |-----|---------------------------------|

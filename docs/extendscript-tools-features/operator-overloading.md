@@ -25,9 +25,18 @@ Result: 15
 
 You can override the following operators:
 
-| Unary   | `+, ~`                                                            |
-|---------|-------------------------------------------------------------------|
-| Binary  | `+, *, /, %, ^`<br/>`<, <=, ==`<br/>`<<, >>, >>>`<br/>`&, |, ===` |
+
++----------+-------------------+
+| Category |     Operators     |
++==========+===================+
+| Unary    | `+, ~`            |
++----------+-------------------+
+| Binary   | - `+, *, /, %, ^` |
+|          | - `<, <=, ==`     |
+|          | - `<<, >>, >>>`   |
+|          | - `&, \|, ===`    |
++----------+-------------------+
+
 - The operators `>` and `>=` are implemented by executing NOT operator `<=` and NOT operator `<`.
 - Combined assignment operators such as `*=` are not supported.
 

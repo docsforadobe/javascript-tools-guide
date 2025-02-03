@@ -18,23 +18,23 @@ myVal = new UnitValue (value, "unit");
 
 The value is a number, and the unit is specified with a string in abbreviated, singular, or plural form, as shown in the following table.
 
-| Abbreviation   | Singular          | Plural             | Comments             |
-|----------------|-------------------|--------------------|----------------------|
-| in             | inch              | inches             | 2.54 cm              |
-| ft             | foot              | feet               | 30.48 cm             |
-| yd             | yard              | yards              | 91.44 cm             |
-| mi             | mile              | miles              | 1609.344 m           |
-| mm             | millimeter        | millimeters        |                      |
-| cm             | centintimeter     | centimeters        |                      |
-| m              | meter             | meters             |                      |
-| km             | kilometer         | kilometers         |                      |
-| pt             | point             | points             | inches / 72          |
-| pc             | pica              | picas              | points \* 12         |
-| tpt            | traditional point | traditional points | inches / 72.27       |
-| tpc            | traditional pica  | traditional picas  | 12 tpt               |
-| ci             | cicero            | ciceros            | 12.7872 pt           |
-| px             | pixel             | pixels             | baseless (see below) |
-| %              | percent           | percent            | baseless (see below) |
+| Abbreviation |       Singular        |         Plural         |       Comments       |
+| ------------ | --------------------- | ---------------------- | -------------------- |
+| `"in"`       | `"inch"`              | `"inches"`             | 2.54 cm              |
+| `"ft"`       | `"foot"`              | `"feet"`               | 30.48 cm             |
+| `"yd"`       | `"yard"`              | `"yards"`              | 91.44 cm             |
+| `"mi"`       | `"mile"`              | `"miles"`              | 1609.344 m           |
+| `"mm"`       | `"millimeter"`        | `"millimeters"`        |                      |
+| `"cm"`       | `"centintimeter"`     | `"centimeters"`        |                      |
+| `"m"`        | `"meter"`             | `"meters"`             |                      |
+| `"km"`       | `"kilometer"`         | `"kilometers"`         |                      |
+| `"pt"`       | `"point"`             | `"points"`             | inches / 72          |
+| `"pc"`       | `"pica"`              | `"picas"`              | points \* 12         |
+| `"tpt"`      | `"traditional point"` | `"traditional points"` | inches / 72.27       |
+| `"tpc"`      | `"traditional pica"`  | `"traditional picas"`  | 12 tpt               |
+| `"ci"`       | `"cicero"`            | `"ciceros"`            | 12.7872 pt           |
+| `"px"`       | `"pixel"`             | `"pixels"`             | baseless (see below) |
+| `"%" `       | `"percent"`           | `"percent"`            | baseless (see below) |
 
 If an unknown unit type is supplied, the type is set to `"?"`, and the `UnitValue` object prints as "UnitValue 0.00000".
 
@@ -48,38 +48,98 @@ myVal = UnitValue ("12 centimeters");
 
 ---
 
-### UnitValue object properties
+## Attributes
 
-| `baseUnit`   | UnitValue   | A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a<br/>base for percentage values. This is used as the base conversion unit for pixels<br/>and percentages; see [Converting pixel and percentage values](#converting-pixel-and-percentage-values).<br/><br/>Default is 0.013889 inches (1/72 in), which is the base conversion unit for<br/>pixels at 72 dpi. Set to null to restore the default.   |
-|--------------|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`       | String      | The unit type in abbreviated form; for example, "cm" or "in".                                                                                                                                                                                                                                                                                                                                                                                            |
-| `value`      | Number      | The numeric measurement value.                                                                                                                                                                                                                                                                                                                                                                                                                           |
+### UnitValue.baseUnit
+
+`unitValueObj.baseUnit`
+
+#### Description
+
+A [UnitValue object](#unitvalue-object) that defines the size of one pixel, or a total size to use as a base for percentage values.
+
+This is used as the base conversion unit for pixels and percentages; see [Converting pixel and percentage values](#converting-pixel-and-percentage-values).
+
+Default is 0.013889 inches (1/72 in), which is the base conversion unit for pixels at 72 dpi. Set to null to restore the default.
+
+#### Type
+
+UnitValue
 
 ---
 
-### UnitValue object functions
+### UnitValue.type
 
-#### as()
+`unitValueObj.type`
 
-`unitValueObj.as (unit)`
+#### Description
 
-| *unit*   | The unit type in abbreviated form; for example, "cm" or "in".   |
-|----------|-----------------------------------------------------------------|
+The unit type in abbreviated form; for example, "cm" or "in".
+
+#### Type
+
+String
+
+---
+
+### UnitValue.value
+
+`unitValueObj.value`
+
+#### Description
+
+The numeric measurement value.
+
+#### Type
+
+Number
+
+---
+
+
+---
+
+## Methods
+
+### UnitValue.as()
+
+`unitValueObj.as(unit)`
+
+#### Description
 
 Returns the numeric value of this object in the given unit. If the unit is unknown or cannot be computed, generates a run-time error.
 
+#### Parameter
+
+| Parameter |  Type  |                            Description                            |
+| --------- | ------ | ----------------------------------------------------------------- |
+| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+
+#### Returns
+
+Number
+
 ---
 
-#### convert()
+### UnitValue.convert()
 
-`unitValueObj.convert (unit)`
+`unitValueObj.convert(unit)`
 
-| *unit*   | The unit type in abbreviated form; for example, "cm" or "in".   |
-|----------|-----------------------------------------------------------------|
+#### Description
 
 Converts this object to the given unit, resetting the type and value accordingly.
 
 Returns `true` if the conversion is successful. If the unit is unknown or the object cannot be converted, generates a run-time error and returns `false`.
+
+#### Parameter
+
+| Parameter |  Type  |                            Description                            |
+| --------- | ------ | ----------------------------------------------------------------- |
+| `unit`    | String | The unit type in abbreviated form; for example, `"cm"` or `"in"`. |
+
+#### Returns
+
+Boolean
 
 ---
 
@@ -147,45 +207,52 @@ myVal.convert ("px"); // => value=72 type=px
 
 UnitValue objects can be used in computational JavaScript expressions. The way the value is used depends on the type of operator.
 
-- Unary operators `(~, !, +, -)`
-  ==========  ======================================================================
-  ~unitValue  The numeric value is converted to a 32-bit integer with inverted bits.
-  !unitValue  Result is true if the numeric value is nonzero, false if it is not.
-  +unitValue  Result is the numeric value.
-  -unitValue  Result is the negated numeric value.
-  ==========  ======================================================================
-- Binary operators `(+, -, *, /, %)`
-  If one operand is unitValue object and the other is a number, the operation is applied to the number
-  and the numeric value of the object. The expression returns a new unitValue object with the result as
-  its value. For example:
-  ```javascript
-  val = new UnitValue ("10 cm");
-  res = val * 20;
-  // res is a UnitValue (200, "cm");
-  ```
+### Unary operators `(~, !, +, -)`
 
-  If both operands are unitValue objects, JavaScript converts the right operand to the same unit as the
-  left operand and applies the operation to the resulting values. The expression returns a new
-  unitValue object with the unit of the left operand, and the result value. For example:
-  ```javascript
-  a = new UnitValue ("1 m");
-  b = new UnitValue ("10 cm");
-  a + b;
-  // res is a UnitValue (1.1, "m");
-  b + a;
-  // res is a UnitValue (110, "cm");
-  ```
-- Comparisons (=, ==, <, >, <=, >=)
-  If one operand is a unitValue object and the other is a number, JavaScript compares the number with
-  the unitValue's numeric value.
+|   Operator   |                                Behaviour                                |
+| ------------ | ----------------------------------------------------------------------- |
+| `~unitValue` | The numeric value is converted to a 32-bit integer with inverted bits.  |
+| `!unitValue` | Result is `true` if the numeric value is nonzero, `false` if it is not. |
+| `+unitValue` | Result is the numeric value.                                            |
+| `-unitValue` | Result is the negated numeric value.                                    |
 
-  If both operands are unitValue objects, JavaScript converts both objects to the same unit, and
-  compares the converted numeric values.
-  For example:
-  ```javascript
-  a = new UnitValue ("98 cm");
-  b = new UnitValue ("1 m");
-  a < b;   // => true
-  a < 1;   // => false
-  a == 98; // => true
-  ```
+### Binary operators `(+, -, *, /, %)`
+
+If one operand is unitValue object and the other is a number, the operation is applied to the number and the numeric value of the object. The expression returns a new unitValue object with the result as its value.
+
+For example:
+
+```javascript
+val = new UnitValue ("10 cm");
+res = val * 20;
+// res is a UnitValue (200, "cm");
+```
+
+If both operands are unitValue objects, JavaScript converts the right operand to the same unit as the left operand and applies the operation to the resulting values. The expression returns a new unitValue object with the unit of the left operand, and the result value.
+
+For example:
+
+```javascript
+a = new UnitValue ("1 m");
+b = new UnitValue ("10 cm");
+a + b;
+// res is a UnitValue (1.1, "m");
+b + a;
+// res is a UnitValue (110, "cm");
+```
+
+### Comparisons (=, ==, <, >, <=, >=)
+
+If one operand is a unitValue object and the other is a number, JavaScript compares the number with the unitValue's numeric value.
+
+If both operands are unitValue objects, JavaScript converts both objects to the same unit, and compares the converted numeric values.
+
+For example:
+
+```javascript
+a = new UnitValue ("98 cm");
+b = new UnitValue ("1 m");
+a < b;   // => true
+a < 1;   // => false
+a == 98; // => true
+```

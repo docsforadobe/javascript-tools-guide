@@ -2,21 +2,36 @@
 
 This global ExtendScript object provides a number of debugging facilities and informational methods. The properties of the $ object allow you to get global information such as the most recent run-time error, and set flags that control debugging and localization behavior. The methods allow you to output text to the JavaScript Console during script execution, control execution and other ExtendScript behavior programmatically, and gather statistics on object use.
 
-## Dollar ($) object properties
+---
 
-### appEncoding
+## Attributes
 
-`String`
+### $.appEncoding
+
+`$.appEncoding`
+
+#### Description
 
 The Internet name of the application's default character encoding, such as "CP1252" or "X-SHIFT-JIS". Valid values are implementation- and OS-dependent.
 
 Set to change the default encoding for the application. The returned value can differ from the value set. In Windows, for example, if set to "x-latin1", the returned value is the synonymous "ISO-8859-1".
 
+#### Type
+
+String
+
+
 ---
 
-### build
+### $.build
 
-`String`
+`$.build`
+
+#### Description
+
+#### Type
+
+String
 
 The version information for the current ExtendScript build.
 
@@ -24,7 +39,13 @@ Read only.
 
 ---
 
-### buildDate
+### $.buildDate
+
+`$.buildDate`
+
+#### Description
+
+#### Type
 
 `Date`
 
@@ -34,9 +55,15 @@ Read only.
 
 ---
 
-### decimalPoint
+### $.decimalPoint
 
-`String`
+`$.decimalPoint`
+
+#### Description
+
+#### Type
+
+String
 
 The character used in formatted numeric output for a decimal point, for the current locale.
 
@@ -44,9 +71,15 @@ Read only.
 
 ---
 
-### engineName
+### $.engineName
 
-`String`
+`$.engineName`
+
+#### Description
+
+#### Type
+
+String
 
 The name of the current JavaScript engine, if set.
 
@@ -54,10 +87,17 @@ Read only.
 
 ---
 
-### error
+### $.error
+
+`$.error`
+
+#### Description
+
+#### Type
 
 `Error`
-`String`
+
+String
 
 The most recent run-time error information, contained in a JavaScript Error object.
 
@@ -65,9 +105,15 @@ Assigning error text to this property generates a run-time error; however, the p
 
 ---
 
-### fileName
+### $.fileName
 
-`String`
+`$.fileName`
+
+#### Description
+
+#### Type
+
+String
 
 The file name of the current script.
 
@@ -75,7 +121,13 @@ Read only.
 
 ---
 
-### flags
+### $.flags
+
+`$.flags`
+
+#### Description
+
+#### Type
 
 Number
 
@@ -92,271 +144,409 @@ Gets or sets low-level debug output flags. A logical AND of the following bit fl
 
 ---
 
-### global
+### $.global
 
-`Global`
+`$.global`
+
+#### Description
 
 Provides access to the Global object, which contains the JavaScript global namespace.
 
+#### Type
+
+Global
+
 ---
 
-### hiresTimer
+### $.hiresTimer
 
-`Number`
+`$.hiresTimer`
+
+#### Description
 
 A high-resolution timer that measures the number of microseconds since this property was last accessed. Value is initialized as early as possible, so the first access returns the startup time for ExtendScript. The property is thread-local; that is, the first access on a thread returns the time needed to create and initialize that thread.
 
-Read only.
+#### Type
+
+Number. Read only.
 
 ---
 
-### includePath
+### $.includePath
 
-`String`
+`$.includePath`
+
+#### Description
 
 The path for include files for the current script.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### level
+### $.level
 
-`Number`
+`$.level`
 
-The current debugging level, which enables or disables the JavaScript debugger. One of:
+#### Description
+
+The current debugging level, which enables or disables the JavaScript debugger.
+
+#### Type
+
+Number. Read only. One of:
 
 - `0`: No debugging
 - `1`: Break on runtime errors
 - `2`: Full debug mode
 
-Read only.
-
 ---
 
-### line
+### $.line
 
-`Number`
+`$.line`
+
+#### Description
 
 The current line of the currently executing script; the first line is number 1.
 
-Read only.
+#### Type
+
+Number. Read only.
 
 ---
 
-### locale
+### $.locale
 
-`String`
+`$.locale`
+
+#### Description
 
 Gets or sets the current locale. The string contains five characters in the form LL_RR, where LL is an ISO 639 language specifier, and RR is an ISO 3166 region specifier.
 
-Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to `undefined`, `null`, or the empty string.
+Initially, this is the value that the application or the platform returns for the current user. You can set it to temporarily change the locale for testing. To return to the application or platform setting, set to Nothing, `null`, or the empty string.
+
+#### Type
+
+String
 
 ---
 
-### localize
+### $.localize
 
-`Boolean`
+`$.localize`
+
+#### Description
 
 Enable or disable the extended localization features of the built-in `toString()` method.
 
 See [Localizing ExtendScript strings](./localizing-extendscript-strings.md).
 
+#### Type
+
+Boolean
+
 ---
 
-### memCache
+### $.memCache
 
-`Number`
+`$.memCache`
+
+#### Description
 
 Gets or sets the ExtendScript memory cache size in bytes.
 
+#### Type
+
+Number
+
+
 ---
 
-### os
+### $.os
 
-`String`
+`$.os`
+
+#### Description
 
 The current operating system version information.
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-### screens
+### $.screens
 
-`Array`
+`$.screens`
+
+#### Description
 
 An array of objects containing information about the display screens attached to your computer.
 
-Each object has the properties left, top, right, and bottom, which contain the four corners of the drawable area of each screen in global coordinates.
+#### Type
 
-A property primary is true if that object describes the primary display.
+Array of objects
+
+#### Properties
+
+| Property  |    Type    |                    Description                     |
+| --------- | ---------- | -------------------------------------------------- |
+| `left`    | Coordinate | The left corner of the drawable area               |
+| `top`     | Coordinate | The top corner of the drawable area                |
+| `right`   | Coordinate | The right corner of the drawable area              |
+| `bottom`  | Coordinate | The bottom corner of the drawable area             |
+| `primary` | Boolean    | `true` if the object describes the primary display |
 
 ---
 
-### stack
+### $.stack
 
-`String`
+`$.stack`
+
+#### Description
 
 The current stack trace.
 
+#### Type
+
+String
+
 ---
 
-### strict
+### $.strict
 
-`Boolean`
+`$.strict`
+
+#### Description
 
 When `true`, any attempt to write to a read-only property causes a runtime error.
 
 Some objects do not permit the creation of new properties when true.
 
+#### Type
+
+Boolean
+
 ---
 
-### version
+### $.version
 
-`String`
+`$.version`
+
+#### Description
 
 The version number of the JavaScript engine as a three-part number and description; for example: "3.92.95 (debug)"
 
-Read only.
+#### Type
+
+String. Read only.
 
 ---
 
-## Dollar ($) object functions
+## Methods
 
-### about()
+### $.about()
 
 `$.about()`
 
+#### Description
+
 Displays the About box for the ExtendScript component, and returns the text of the About box as a string.
 
-returns: `String`
+#### Returns
+
+String
 
 ---
 
-### bp()
+### $.bp()
 
 `$.bp([condition])`
 
-| `condition`   | Optional. A string containing a JavaScript statement to be used as a<br/>condition. If the statement evaluates to true or nonzero when this point is reached,<br/>execution stops.   |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Executes a breakpoint at the current position.
 
-If no condition is needed, it is recommended that you use the JavaScript debugger statement in the script, rather than this method.
+If no condition is needed, it is recommended that you use the JavaScript `debugger;` statement in the script, rather than this method.
 
-returns: `undefined`
+#### Parameters
+
+|  Parameter  |  Type  |                                                                        Description                                                                         |
+| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `condition` | String | Optional. The JavaScript statement to be used as a condition. If the statement evaluates to `true` or nonzero when this point is reached, execution stops. |
+
+#### Returns
+
+Nothing
 
 ---
 
-### colorPicker()
+### $.colorPicker()
 
 `$.colorPicker(name)`
 
-| `name`   | The color to be preselected in the dialog, as a hexadecimal RGB value<br/>(`0xRRGGBB`), or `-1` for the platform default.   |
-|----------|-----------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
-Invokes the platform-specific color selection dialog, and returns the selected color as a hexadecimal RGB value: `0xRRGGBB`.
+Invokes the platform-specific color selection dialog
 
-Returns: `Number`
+#### Parameters
+
+| Parameter |                Type                |                                 Description                                  |
+| --------- | ---------------------------------- | ---------------------------------------------------------------------------- |
+| `name`    | Hexadecimal RGB value (`0xRRGGBB`) | The color to be preselected in the dialog, or `-1` for the platform default. |
+
+
+#### Returns
+
+Hexadecimal RGB value, e.g. `0xRRGGBB`.
 
 ---
 
-### evalFile()
+### $.evalFile()
 
-`$.evalFile(path[, timeout])`
+`$.evalFile(path[, timeout=10000])`
 
-| `path`    | The name and location of the file.                                                                                                           |
-|-----------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `timeout` | Optional. A number of milliseconds to wait before returning undefined, if<br/>the script cannot be evaluated. Default is 10000 milliseconds. |
+#### Description
 
 Loads a JavaScript script file from disk, evaluates it, and returns the result of evaluation.
 
-Returns: Any type
+#### Parameters
+
+| Parameter |  Type  |                                                          Description                                                           |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `path`    | String | The name and location of the file.                                                                                             |
+| `timeout` | Number | Optional. A number of milliseconds to wait before returning undefined, if the script cannot be evaluated. Defaults to `10000`. |
+
+#### Returns
+
+Any type
 
 ---
 
-### gc()
+### $.gc()
 
 `$.gc()`
 
+#### Description
+
 Initiates garbage collection in the JavaScript engine.
 
-Returns: `undefined`
+#### Returns
+
+Nothing
 
 ---
 
-### getenv()
+### $.getenv()
 
 `$.getenv(envname)`
 
-| `envname`   | The name of the environment variable.   |
-|-------------|-----------------------------------------|
+#### Description
 
 Retrieves the value of the specified environment variable, or null if no such variable is defined.
 
 !!! note
     On MacOS the only env vars that will be accessible are:
 
-- System default environment variables
-- Custom environment variables created by the `$.setenv()` method
-- Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
+    - System default environment variable
+    - Custom environment variables created by the `$.setenv()` metho
+    - Custom environment variables created with `launchctl setenv CUSTOM_VAR "custom_value"`
 
 Any env vars set in .bash_profile, .bashrc, .profile, .zshenv, or .zshrc will be ignored.
 
-Returns: `String`
+#### Parameters
+
+| Parameter |  Type  |              Description              |
+| --------- | ------ | ------------------------------------- |
+| `envname` | String | The name of the environment variable. |
+
+#### Returns
+
+String
 
 ---
 
-### setenv()
+### $.setenv()
 
 `$.setenv(envname, value)`
 
-| `envname`   | The name of the environment variable.   |
-|-------------|-----------------------------------------|
-| `value`     | The new value, a string.                |
+#### Description
 
 Sets the value of the specified environment variable, if no such variable is defined.
 
-Returns: `undefined`
+#### Parameters
+
+| Parameter |  Type  |              Description              |
+| --------- | ------ | ------------------------------------- |
+| `envname` | String | The name of the environment variable. |
+| `value`   | String | The new value, a string.              |
+
+#### Returns
+
+Nothing
 
 ---
 
-### sleep()
+### $.sleep()
 
 `$.sleep(milliseconds)`
 
-| `milliseconds`   | The number of milliseconds to wait.   |
-|------------------|---------------------------------------|
+#### Description
 
 Suspends the calling thread for the given number of milliseconds.
 
-During a sleep period, checks at 100 millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.
+During a sleep period, checks at `100` millisecond intervals to see whether the sleep should be terminated. This can happen if there is a break request, or if the script timeout has expired.
 
-Returns: `undefined`
+#### Parameters
+
+|   Parameter    |  Type  |             Description             |
+| -------------- | ------ | ----------------------------------- |
+| `milliseconds` | Number | The number of milliseconds to wait. |
+
+#### Returns
+
+Nothing
 
 ---
 
-### write()
+### $.write()
 
 `$.write(text[, text...]...)`
 
-| `text`   | One or more strings to write, which are concatenated to form a single string.   |
-|----------|---------------------------------------------------------------------------------|
+#### Description
 
 Writes the specified text to the JavaScript Console.
 
-Returns: `undefined`
+#### Parameters
+
+| Parameter |  Type  |                                  Description                                  |
+| --------- | ------ | ----------------------------------------------------------------------------- |
+| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+
+#### Returns
+
+Nothing
 
 ---
 
-### writeln()
+### $.writeln()
 
 `$.writeln (text[, text...]...)`
 
-| `text`   | One or more strings to write, which are concatenated to form a single string.   |
-|----------|---------------------------------------------------------------------------------|
+#### Description
 
 Writes the specified text to the JavaScript Console and appends a linefeed sequence.
 
-Returns: `undefined`
+#### Parameters
+
+| Parameter |  Type  |                                  Description                                  |
+| --------- | ------ | ----------------------------------------------------------------------------- |
+| `text`    | String | One or more strings to write, which are concatenated to form a single string. |
+
+#### Returns
+
+Nothing

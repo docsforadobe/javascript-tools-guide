@@ -51,11 +51,11 @@ As a fallback, ExtendScript also uses the contents of the environment variable `
 
 Some engines can have a predefined set of include paths. If so, the path provided by `#includepath` is tried before the predefined paths. If, for example, the engine has a predefined path set to `predef;predef/include`, the preceding example causes the following lookup sequence:
 
-> `file.jsxinc`                literal lookup
-> `include/file.jsxinc`        first #includepath path
-> `../include/file.jsxinc`     second #includepath path
-> `predef/file.jsxinc`         first predefined engine path
-> `predef/include/file.jsxinc` second predefined engine path
+- `file.jsxinc`                literal lookup
+- `include/file.jsxinc`        first #includepath path
+- `../include/file.jsxinc`     second #includepath path
+- `predef/file.jsxinc`         first predefined engine path
+- `predef/include/file.jsxinc` second predefined engine path
 
 ---
 

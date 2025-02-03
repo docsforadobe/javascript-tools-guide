@@ -1,10 +1,12 @@
-# ExtendScript reflection interface
+# ExtendScript Reflection Interface
 
 ExtendScript provides a reflection interface that allows you to find out everything about an object, including its name, a description, the expected data type for properties, the arguments and return value for methods, and any default values or limitations to the input values.
 
-## Reflection object
+---
 
-Every object has a reflect property that returns a reflection object that reports the contents of the object. You can, for example, show the values of all the properties of an object with code like this:
+## ReflectionObject
+
+Every object has a reflect property that returns a Reflection Object that reports the contents of the object. You can, for example, show the values of all the properties of an object with code like this:
 
 ```javascript
 var f = new File ("myfile");
@@ -14,33 +16,99 @@ for (var i = 0; i < props.length; i++) {
 }
 ```
 
----
-
-### Reflection object properties
+### ReflectionObject Attributes
 
 All properties are read only.
 
-| description   | String                  | Short text describing the reflected object, or undefined if no<br/>description is available.                                                                                                                                                                                                                                                                                                                                                              |
-|---------------|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| help          | String                  | Longer text describing the reflected object more completely, or<br/>`undefined` if no description is available.                                                                                                                                                                                                                                                                                                                                           |
-| methods       | Array of ReflectionInfo | An Array of [ReflectionInfo object](#reflectioninfo-object) containing all methods of the<br/>reflected object, defined in the class or in the specific instance.                                                                                                                                                                                                                                                                                         |
-| name          | String                  | The class name of the reflected object.                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| properties    | Array of ReflectionInfo | An Array of [ReflectionInfo object](#reflectioninfo-object) containing all properties of the<br/>reflected object, defined in the class or in the specific instance. For<br/>objects with dynamic properties (defined at runtime) the list contains<br/>only those dynamic properties that have already been accessed by<br/>the script. For example, in an object wrapping an HTML tag, the<br/>names of the HTML attributes are determined at run time. |
+#### description
+
+`reflect.description`
+
+##### Description
+
+Short text describing the reflected object, or undefined if no description is available.
+
+##### Type
+
+String
 
 ---
 
-### Reflection object functions
+#### help
+
+`reflect.help`
+
+##### Description
+
+Longer text describing the reflected object more completely, or `undefined` if no description is available.
+
+##### Type
+
+String
+
+---
+
+#### methods
+
+`reflect.methods`
+
+##### Description
+
+An Array of [ReflectionInfo object](#reflectioninfo-object) containing all methods of the reflected object, defined in the class or in the specific instance.
+
+##### Type
+
+Array of [ReflectionInfo objects](#reflection-object)
+
+---
+
+#### name
+
+`reflect.name`
+
+##### Description
+
+The class name of the reflected object.
+
+##### Type
+
+String
+
+---
+
+#### properties
+
+`reflect.properties`
+
+##### Description
+
+An Array of [ReflectionInfo object](#reflectioninfo-object) containing all properties of the reflected object, defined in the class or in the specific instance. For objects with dynamic properties (defined at runtime) the list contains only those dynamic properties that have already been accessed by the script.
+
+For example, in an object wrapping an HTML tag, the names of the HTML attributes are determined at run time.
+
+##### Type
+
+Array of [ReflectionInfo objects](#reflection-object)
+
+---
+
+### ReflectionObject Methods
 
 #### find()
 
-`reflectionObj.find (name)`
+`reflectionObj.find(name)`
 
-| name   | The property for which to retrieve information.   |
-|--------|---------------------------------------------------|
+##### Description
 
 Returns the [ReflectionInfo object](#reflectioninfo-object) for the named property of the reflected object, or null if no such property exists.
 
 Use this method to get information about dynamic properties that have not yet been accessed, but that are known to exist.
+
+##### Parameters
+
+| Parameter |  Type  |                   Description                   |
+| --------- | ------ | ----------------------------------------------- |
+| name      | String | The property for which to retrieve information. |
 
 #### Examples
 
@@ -73,7 +141,7 @@ Math.reflect.find ("PI").type; // => number
 
 ---
 
-## ReflectionInfo object
+## ReflectionInfo Object
 
 This object contains information about a property, a method, or a method argument.
 
@@ -94,16 +162,160 @@ obj.reflect.methods.indexOf.arguments[0];
 
 ---
 
-## ReflectionInfo object properties
+### ReflectionInfo Attributes
 
-| arguments    | Array of<br/>ReflectionInfo   | For a reflected method, an array of ReflectionInfo objects describing<br/>each method argument.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-|--------------|-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| dataType     | String                        | The data type of the reflected element. One of:<br/><br/>- `boolean`<br/>- `number`<br/>- `string`<br/>- `Classname`: The class name of an object.<br/><br/>  #### NOTE<br/>  Class names start with a capital letter. Thus, the value<br/>  `string` stands for a JavaScript string, while `String` is a<br/>  JavaScript `String` wrapper object.<br/>- `*`: Any type. This is the default.<br/>- `null`<br/>- `undefined`: Return data type for a function that does not return<br/>  any value.<br/>- `unknown` |
-| defaultValue | any                           | The default value for a reflected property or method argument, or<br/>`undefined` if there is no default value, if the property is undefined, or<br/>if the element is a method.                                                                                                                                                                                                                                                                                                                                    |
-| description  | String                        | Short text describing the reflected object, or `undefined` if no<br/>description is available.                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| help         | String                        | Longer text describing the reflected object more completely, or<br/>`undefined` if no description is available.                                                                                                                                                                                                                                                                                                                                                                                                     |
-| isCollection | Boolean                       | When `true`, the reflected property or method returns a collection;<br/>otherwise, `false`.                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| max          | Number                        | The maximum numeric value for the reflected element, or<br/>`undefined` if there is no maximum or if the element is a method.                                                                                                                                                                                                                                                                                                                                                                                       |
-| min          | Number                        | The minimum numeric value for the reflected element, or `undefined`<br/>if there is no minimum or if the element is a method.                                                                                                                                                                                                                                                                                                                                                                                       |
-| name         | String<br/>Number             | The name of the reflected element. A string, or a number for an array<br/>index.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| type         | String                        | The type of the reflected element. One of:<br/><br/>- `readonly`: A Read only property.<br/>- `readwrite`: A read-write property.<br/>- `createonly`: A property that is valid only during creation of an<br/>  object.<br/>- `method`: A method.                                                                                                                                                                                                                                                                   |
+#### arguments
+
+`obj.reflect.methods[0].arguments`
+
+##### Description
+
+For a reflected method, an array of [ReflectionInfo objects](#reflectioninfo-object) describing each method argument.
+
+##### Type
+
+Array of [ReflectionInfo objects](#reflectioninfo-object)
+
+---
+
+#### dataType
+
+`obj.reflect.methods[0].dataType`
+
+##### Description
+
+The data type of the reflected element.
+
+##### Type
+
+String. One of:
+
+- `"boolean"`
+- `"number"`
+- `"string"`
+- `"Classname"`: The class name of an object.
+    !!! note
+        Class names start with a capital letter. Thus, the value `String` stands for a JavaScript string, while String is a JavaScript String wrapper object.
+- `*`: Any type. This is the default.
+- `null`
+- `undefined`: Return data type for a function that does not return any value.
+- `unknown`
+
+---
+
+#### defaultValue
+
+`obj.reflect.methods[0].defaultValue`
+
+##### Description
+
+The default value for a reflected property or method argument, or `undefined` if there is no default value, if the property is undefined, or if the element is a method.
+
+##### Type
+
+Any
+
+---
+
+#### description
+
+`obj.reflect.methods[0].description`
+
+##### Description
+
+Short text describing the reflected object, or `undefined` if no description is available.
+
+##### Type
+
+String
+
+---
+
+#### help
+
+`obj.reflect.methods[0].help`
+
+##### Description
+
+Longer text describing the reflected object more completely, or `undefined` if no description is available.
+
+##### Type
+
+String
+
+---
+
+#### isCollection
+
+`obj.reflect.methods[0].isCollection`
+
+##### Description
+
+When `true`, the reflected property or method returns a collection; otherwise, `false`.
+
+##### Type
+
+Boolean
+
+---
+
+#### max
+
+`obj.reflect.methods[0].max`
+
+##### Description
+
+The maximum numeric value for the reflected element, or `undefined` if there is no maximum or if the element is a method.
+
+##### Type
+
+Number
+
+---
+
+#### min
+
+`obj.reflect.methods[0].min`
+
+##### Description
+
+The minimum numeric value for the reflected element, or `undefined` if there is no minimum or if the element is a method.
+
+##### Type
+
+Number
+
+---
+
+#### name
+
+`obj.reflect.methods[0].name`
+
+##### Description
+
+The name of the reflected element. A string, or a number for an array index.
+
+##### Type
+
+String or Number
+
+---
+
+#### type
+
+`obj.reflect.methods[0].type`
+
+##### Description
+
+The type of the reflected element.
+
+##### Type
+
+String. One of:
+
+- `readonly`: A Read only property.
+- `readwrite`: A read-write property.
+- `createonly`: A property that is valid only during creation of an object.
+- `method`: A method.
+
+---

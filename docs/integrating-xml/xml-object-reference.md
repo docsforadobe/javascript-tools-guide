@@ -33,13 +33,13 @@ The constructor returns the XML object representing the root node of an XML tree
 
 These static properties are available through the XML class. They control how XML is parsed and generated:
 
-|            Property            |  Type   |                                                            Description                                                            |
-| ------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `ignoreComments`               | Boolean | Description When `true`, comments are stripped from the XML during parsing. Default is false.                                     |
-| `ignoreProcessingInstructions` | Boolean | Description When `true`, processing instructions (`<?xxx?>` elements) are stripped from the XML during parsing. Default is false. |
-| `ignoreWhitespace`             | Boolean | Description When `true`, white-space characters are stripped from the XML during parsing. Default is true.                        |
-| `prettyIndent`                 | Number  | Description The number of spaces to use for indenting when pretty-printing. Default is 2.                                         |
-| `prettyPrinting`               | Boolean | Description When `true`, `toXMLString()` uses indenting and line feeds to create the XML string. Default is true.                 |
+|            Property            |  Type   |                                                             Description                                                             |
+| ------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `ignoreComments`               | Boolean | Description When `true`, comments are stripped from the XML during parsing. Default is `false`.                                     |
+| `ignoreProcessingInstructions` | Boolean | Description When `true`, processing instructions (`<?xxx?>` elements) are stripped from the XML during parsing. Default is `false`. |
+| `ignoreWhitespace`             | Boolean | Description When `true`, white-space characters are stripped from the XML during parsing. Default is `true`.                        |
+| `prettyIndent`                 | Number  | Description The number of spaces to use for indenting when pretty-printing. Default is 2.                                           |
+| `prettyPrinting`               | Boolean | Description When `true`, `toXMLString()` uses indenting and line feeds to create the XML string. Default is `true`.                 |
 
 ---
 

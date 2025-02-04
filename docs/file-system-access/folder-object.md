@@ -627,9 +627,9 @@ Retrieves the path for this folder relative to the specified base path or the cu
 
 #### Parameters
 
-| Parameter  |  Type  |                                   Description                                    |
-| ---------- | ------ | -------------------------------------------------------------------------------- |
-| `basePath` | String | Optional. The base path for the relative URI.<br/>Default is the current folder. |
+| Parameter  |  Type  |                                 Description                                  |
+| ---------- | ------ | ---------------------------------------------------------------------------- |
+| `basePath` | String | Optional. The base path for the relative URI. Default is the current folder. |
 
 #### Returns
 

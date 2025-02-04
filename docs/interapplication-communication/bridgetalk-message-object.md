@@ -261,9 +261,9 @@ This allows you to send multiple responses to messages.
 
 #### Parameters
 
-| Parameter | Type |                                                                                                                                                       Description                                                                                                                                                        |
-| --------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string<br/>which it stores in the body of that message. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications). |
+| Parameter | Type |                                                                                                                                                     Description                                                                                                                                                      |
+| --------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `result`  | Any  | You can send data of any type as the result value. The messaging framework creates a BridgeTalk message object, and flattens this value into a string which it stores in the body of that message. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications). |
 
 #### Returns
 

@@ -4,14 +4,14 @@ ScriptUI allows you to draw directly on controls to customize their appearance. 
 
 These methods take as parameters a number of helper objects that encapsulate drawing information, including the following:
 
-|                                     Object                                     |                                                                  Description                                                                  |
-| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ScriptUIGraphics](./graphic-customization-objects.md#scriptuigraphics-object) | Encapsulates the drawing methods. The graphics object is associated with each<br/>control is found in the control object's graphics property. |
-| [ScriptUIBrush](./graphic-customization-objects.md#scriptuibrush-object)       | Describes the brush used to paint textures in a control.                                                                                      |
-| [ScriptUIFont](./graphic-customization-objects.md#scriptuifont-object)         | Describes the font used to write text into a control.                                                                                         |
-| [ScriptUIImage](./graphic-customization-objects.md#scriptuiimage-object)       | Describes an image to be drawn in a control.                                                                                                  |
-| [ScriptUIPath](./graphic-customization-objects.md#scriptuipath-object)         | Describes a drawing path for a figure to be drawn into a control.                                                                             |
-| [ScriptUIPen](./graphic-customization-objects.md#scriptuipen-object)           | Describes the pen used to draw lines in a control.                                                                                            |
+|                                     Object                                     |                                                                Description                                                                |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| [ScriptUIGraphics](./graphic-customization-objects.md#scriptuigraphics-object) | Encapsulates the drawing methods. The graphics object is associated with each control is found in the control object's graphics property. |
+| [ScriptUIBrush](./graphic-customization-objects.md#scriptuibrush-object)       | Describes the brush used to paint textures in a control.                                                                                  |
+| [ScriptUIFont](./graphic-customization-objects.md#scriptuifont-object)         | Describes the font used to write text into a control.                                                                                     |
+| [ScriptUIImage](./graphic-customization-objects.md#scriptuiimage-object)       | Describes an image to be drawn in a control.                                                                                              |
+| [ScriptUIPath](./graphic-customization-objects.md#scriptuipath-object)         | Describes a drawing path for a figure to be drawn into a control.                                                                         |
+| [ScriptUIPen](./graphic-customization-objects.md#scriptuipen-object)           | Describes the pen used to draw lines in a control.                                                                                        |
 
 For details of these objects, see [Graphic customization objects](./graphic-customization-objects.md).
 

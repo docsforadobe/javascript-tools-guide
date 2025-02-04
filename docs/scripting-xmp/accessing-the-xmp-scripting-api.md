@@ -11,10 +11,10 @@ if ( ExternalObject.AdobeXMPScript == undefined ) {
 
 After the library has been loaded, these primary XMP classes are available in the global JavaScript namespace:
 
-|                             Object                             |                                                                                            Description                                                                                             |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) | Provides the core services of the XMP Toolkit. Allows you to create and delete<br/>metadata properties, and to retrieve and modify property values.                                                |
-| [XMPFile object](xmpscript-object-reference.md#xmpfile-object) | Provides convenient I/O access to the main, or document level, XMP for a file. Allows<br/>you to retrieve existing metadata from a file, update file metadata, and add new<br/>metadata to a file. |
+|                             Object                             |                                                                                        Description                                                                                         |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) | Provides the core services of the XMP Toolkit. Allows you to create and delete metadata properties, and to retrieve and modify property values.                                            |
+| [XMPFile object](xmpscript-object-reference.md#xmpfile-object) | Provides convenient I/O access to the main, or document level, XMP for a file. Allows you to retrieve existing metadata from a file, update file metadata, and add new metadata to a file. |
 
 Additional top-level objects include array-handling utilities, a date-time object, and constant definitions that include namespace constants. The top-level objects provide access to additional support classes that encapsulate individual metadata properties, file information, and XMP packet information, and a utility that allows iteration through properties.
 

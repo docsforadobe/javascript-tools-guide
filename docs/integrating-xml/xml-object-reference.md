@@ -732,10 +732,16 @@ If the XPath expression does not evaluate to a node list, throws a JavaScript ex
 
 #### Parameters
 
-|  Parameter   |  Type  |                                                                                                                                          Description                                                                                                                                           |
-| ------------ | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `expression` | String | A String containing an XPath expression.<br/><br/>#### NOTE<br/>In this context, include the actual top level element. For example, an<br/>expression for the example XML must start with "/bookstore". This is unlike<br/>JavaScript property access, where the top level element is implied. |
-| `variables`  | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property.                                       |
++--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|  Parameter   |  Type  |                                                                                                                       Description                                                                                                                        |
++==============+========+==========================================================================================================================================================================================================================================================+
+| `expression` | String | A String containing an XPath expression.                                                                                                                                                                                                                 |
+|              |        |                                                                                                                                                                                                                                                          |
+|              |        | !!! note                                                                                                                                                                                                                                                 |
+|              |        |     In this context, include the actual top level element. For example, an expression for the example XML must start with "/bookstore". This is unlike JavaScript property access, where the top level element is implied.                               |
++--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `variables`  | Object | Optional. A JavaScript object containing variable definitions. The properties are used to look up XPath variables contained in the expression. For example, if the expression contains the variable `$abc`, the value is in the object's `abc` property. |
++--------------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 

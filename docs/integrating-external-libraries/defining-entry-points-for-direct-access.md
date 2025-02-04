@@ -126,14 +126,14 @@ For each function, the string begins with the function name, followed by an unde
 
 The characters that indicate data types are:
 
-| Characeter |                                                         Description                                                         |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type<br/>code is unrecognized. |
-| `b`        | Boolean                                                                                                                     |
-| `d`        | signed 32 bit integer                                                                                                       |
-| `u`        | unsigned 32 bit integer                                                                                                     |
-| `f`        | 64 bit floating point                                                                                                       |
-| `s`        | String                                                                                                                      |
+| Characeter |                                                       Description                                                       |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `a`        | Any type. The argument is not converted. This is the default, if no type is supplied or if a type code is unrecognized. |
+| `b`        | Boolean                                                                                                                 |
+| `d`        | signed 32 bit integer                                                                                                   |
+| `u`        | unsigned 32 bit integer                                                                                                 |
+| `f`        | 64 bit floating point                                                                                                   |
+| `s`        | String                                                                                                                  |
 
 For example, suppose your library defines these two entry points:
 

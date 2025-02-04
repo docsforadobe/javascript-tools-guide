@@ -18,12 +18,12 @@ Creates and returns a new control or container object and adds it to the childre
 
 #### Parameters
 
-|    Parameter     |                         Type                         |                                                                                                                                      Description                                                                                                                                       |
-| ---------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`           | String                                               | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                                 |
-| `bounds`         | [Bounds object](size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and<br/>position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned to the new object's `bounds` property. |
-| `text`           | String                                               | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property.                                                                                        |
-| `creation_props` | Object                                               | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                      |
+|    Parameter     |                         Type                         |                                                                                                                                    Description                                                                                                                                     |
+| ---------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `type`           | String                                               | The control type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                                                                                                             |
+| `bounds`         | [Bounds object](size-and-location-objects.md#bounds) | Optional. A bounds specification that describes the size and position of the new control or container, relative to its parent. If supplied, this value creates a new [Bounds](size-and-location-objects.md#bounds) object which is assigned to the new object's `bounds` property. |
+| `text`           | String                                               | Optional. Initial text to be displayed in the control as the title, label, or contents, depending on the control type. If supplied, this value is assigned to the new object's `text` property.                                                                                    |
+| `creation_props` | Object                                               | Optional. The properties of this object specify creation parameters, which are specific to each object type. See [Control types and creation parameters](#control-types-and-creation-parameters).                                                                                  |
 
 #### Returns
 
@@ -397,11 +397,11 @@ A list box with zero or more items. Calls the [onChange](#onchange) callback if 
 
 #### Parameters
 
-|       Parameter       |                         Type                         |                                                                                                                                                                     Description                                                                                                                                                                      |     |
-| --------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                           |     |
-| `items`               | Array of Strings                                     | Optional. The text of each list item.<br/>A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument,<br/>or the items property in `creation_properties`, not both. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
-| `creation_properties` | Object                                               | Optional. An object that contains any of the properties below.                                                                                                                                                                                                                                                                                       |     |
+|       Parameter       |                         Type                         |                                                                                                                                                                 Description                                                                                                                                                                  |     |
+| --------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `bounds`              | [Bounds object](size-and-location-objects.md#bounds) | Optional. The control's position and size.                                                                                                                                                                                                                                                                                                   |     |
+| `items`               | Array of Strings                                     | Optional. The text of each list item. A [ListItem](types-of-controls.md#listitem) object is created for each item. Supply this argument, or the items property in `creation_properties`, not both. A [ListItem](types-of-controls.md#listitem) object is created for each item. An item with the text string `"-"` creates a separator item. |     |
+| `creation_properties` | Object                                               | Optional. An object that contains any of the properties below.                                                                                                                                                                                                                                                                               |     |
 
 #### Creation Properties
 
@@ -2153,17 +2153,17 @@ There is no object constructor.
 
 The object contains the following read-only properties:
 
-|       Property        |  Type   |                                             Behaviour                                             |
-| --------------------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `altKeyPressed`       | Boolean | When `true`, the ALT key was pressed. (In Windows OS only.)                                       |
-| `capsLockKeyPressed`  | Boolean | When `true`, the CAPSLOCK key was pressed.                                                        |
-| `cmdKeyPressed`       | Boolean | When `true`, the CMD key was pressed. (In Mac OS only.)                                           |
-| `ctrlKeyPressed`      | Boolean | When `true`, the CTRL key was pressed.                                                            |
-| `hasFocus`            | Boolean | When `true`, the control containing this object has the input focus.                              |
-| `leftButtonPressed`   | Boolean | When `true`, the left mouse button was pressed.                                                   |
-| `middleButtonPressed` | Boolean | When `true`, the middle mouse button was pressed.                                                 |
-| `mouseOver`           | Boolean | When `true`, the cursor position was within the bounds of the<br/>control containing this object. |
-| `numLockKeyPressed`   | Boolean | When `true`, the NUMLOCK key was pressed.                                                         |
-| `optKeyPressed`       | Boolean | When `true`, the OPT key was pressed. (In Mac OS only.)                                           |
-| `rightButtonPressed`  | Boolean | When `true`, the right mouse button was pressed.                                                  |
-| `shiftKeyPressed`     | Boolean | When `true`, the SHIFT key was pressed.                                                           |
+|       Property        |  Type   |                                           Behaviour                                           |
+| --------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| `altKeyPressed`       | Boolean | When `true`, the ALT key was pressed. (In Windows OS only.)                                   |
+| `capsLockKeyPressed`  | Boolean | When `true`, the CAPSLOCK key was pressed.                                                    |
+| `cmdKeyPressed`       | Boolean | When `true`, the CMD key was pressed. (In Mac OS only.)                                       |
+| `ctrlKeyPressed`      | Boolean | When `true`, the CTRL key was pressed.                                                        |
+| `hasFocus`            | Boolean | When `true`, the control containing this object has the input focus.                          |
+| `leftButtonPressed`   | Boolean | When `true`, the left mouse button was pressed.                                               |
+| `middleButtonPressed` | Boolean | When `true`, the middle mouse button was pressed.                                             |
+| `mouseOver`           | Boolean | When `true`, the cursor position was within the bounds of the control containing this object. |
+| `numLockKeyPressed`   | Boolean | When `true`, the NUMLOCK key was pressed.                                                     |
+| `optKeyPressed`       | Boolean | When `true`, the OPT key was pressed. (In Mac OS only.)                                       |
+| `rightButtonPressed`  | Boolean | When `true`, the right mouse button was pressed.                                              |
+| `shiftKeyPressed`     | Boolean | When `true`, the SHIFT key was pressed.                                                       |

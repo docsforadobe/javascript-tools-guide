@@ -36,11 +36,14 @@ Returns nothing
 
 This figure shows simple alert dialogs in Windows and in Mac OS.
 
-![Windows Alert](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_alert_win1.jpg)![Windows Alert](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_alert_win2.jpg)![MacOS Alert](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_alert_macos.jpg)
+![Windows Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_win1.jpg)
+![Windows Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_win2.jpg)
+![MacOS Alert](./_static/08_extendscript-tools_user-notification-dialogs_alert_macos.jpg)
 
 This figure shows alert dialogs with error icons.
 
-![Windows Alert w/ Icon](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_alert_win-icon.jpg)![MacOS Alert w/ Icon](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_alert_macos-icon.jpg)
+![Windows Alert w/ Icon](./_static/08_extendscript-tools_user-notification-dialogs_alert_win-icon.jpg)
+![MacOS Alert w/ Icon](./_static/08_extendscript-tools_user-notification-dialogs_alert_macos-icon.jpg)
 
 ---
 
@@ -68,11 +71,13 @@ Returns `true` if the user clicked **Yes**, `false` if the user clicked **No**.
 
 This figure shows simple confirmation dialogs on Windows and Mac OS.
 
-![Windows Confirmation](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_win.jpg)![MacOS Confirmation](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos.jpg)
+![Windows Confirmation](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_win.jpg)
+![MacOS Confirmation](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos.jpg)
 
 This figure shows confirmation dialogs with No as the default button.
 
-![Windows Confirmation w/ 'No' as default](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_win-no-default.jpg)![MacOS Confirmation w/ 'No' as default](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos-no-default.jpg)
+![Windows Confirmation w/ 'No' as default](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_win-no-default.jpg)
+![MacOS Confirmation w/ 'No' as default](./_static/08_extendscript-tools_user-notification-dialogs_confirmation_macos-no-default.jpg)
 
 ---
 
@@ -100,8 +105,10 @@ Returns the value of the text edit field if the user clicked **OK**, `null` if t
 
 This figure shows simple prompt dialogs on Windows and Mac OS.
 
-![Windows prompt](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_prompt_win.jpg)![MacOS prompt](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_prompt_macos.jpg)
+![Windows prompt](./_static/08_extendscript-tools_user-notification-dialogs_prompt_win.jpg)
+![MacOS prompt](./_static/08_extendscript-tools_user-notification-dialogs_prompt_macos.jpg)
 
 This figure shows confirmation dialogs with a title value specified.
 
-![Windows prompt w/ title](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_prompt_win-title.jpg)![MacOS prompt w/ title](extendscript-tools-features/_static/08_extendscript-tools_user-notification-dialogs_prompt_macos-title.jpg)
+![Windows prompt w/ title](./_static/08_extendscript-tools_user-notification-dialogs_prompt_win-title.jpg)
+![MacOS prompt w/ title](./_static/08_extendscript-tools_user-notification-dialogs_prompt_macos-title.jpg)

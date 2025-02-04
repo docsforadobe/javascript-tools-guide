@@ -1721,7 +1721,7 @@ String
 Creates and returns a string containing the path expression to select an alternate item by a field's value, using the registered prefixes for the namespaces, in the form:
 
 ```javascript
-schemaNS:arrayName[fieldNS:fieldName='fieldValue']
+schemaNS:arrayName[fieldNS:fieldName="fieldValue"]
 ```
 
 ##### Parameters
@@ -1749,7 +1749,7 @@ String
 Creates and returns a string containing the path expression to select an alternate item in an alt text array by language, using the registered prefix for the namespace, in the form:
 
 ```javascript
-schemaNS:arrayName[@xml:lang='langName']
+schemaNS:arrayName[@xml:lang="langName"]
 ```
 
 !!! note

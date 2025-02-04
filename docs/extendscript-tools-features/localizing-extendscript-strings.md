@@ -109,7 +109,7 @@ All these identifiers are case sensitive; for example, `EN_US` is not valid.
 
 ExtendScript stores the current locale in the variable `$.locale`. This variable is updated whenever the locale of the hosting application changes.
 
-To test your localized strings, you can temporarily reset the locale. To restore the original behavior, set the variable to `null`, false, 0, or the empty string. An example:
+To test your localized strings, you can temporarily reset the locale. To restore the original behavior, set the variable to `null`, `false`, `0`, or the empty string. An example:
 
 ```javascript
 $.locale = "ru"; // try your Russian messages

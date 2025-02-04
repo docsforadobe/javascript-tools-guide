@@ -197,7 +197,7 @@ A response message can be:
 - The result of an error in processing the message. This is handled by the [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback.
     - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
 - A notification of receipt of the message. This is handled by the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback.
-    - Message sending is asynchronous. Getting a true result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
+    - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
 - The result of a time-out. This is handled by the [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback.
     - You can specify a number of seconds in a message object's [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback for the message, the target application sends a time-out message back to the sender.
 - Intermediate responses. These are handled by the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
@@ -275,7 +275,7 @@ BridgeTalk.onReceive = function (message){
       while (!done) {
         // the message.body uses "i" to produce different results
         // for each execution of the message.
-        // when done, the message.body sets "done" to true
+        // when done, the message.body sets "done" to `true`
         // so this onReceive method breaks out of the loop.
         message.sendResult(eval(message.body));
         i++;

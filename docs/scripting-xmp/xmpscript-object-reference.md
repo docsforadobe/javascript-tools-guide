@@ -1586,7 +1586,7 @@ This object is returned by [XMPFile.getPacketInfo()](#getpacketinfo). The read-o
 +-------------+---------+---------------------------------------------------------------------+
 | `padSize`   | Number  | The packet's padding size in bytes, 0 if unknown.                   |
 +-------------+---------+---------------------------------------------------------------------+
-| `writeable` | Boolean | If true, the packet is writeable.                                   |
+| `writeable` | Boolean | If `true`, the packet is writeable.                                 |
 +-------------+---------+---------------------------------------------------------------------+
 
 ---

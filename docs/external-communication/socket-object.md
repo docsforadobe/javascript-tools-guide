@@ -61,7 +61,7 @@ if (conn.listen (80)) {
 }
 ```
 
-Often, the remote endpoint terminates the connection after transmitting data. Therefore, there is a connected property that contains true as long as the connection still exists. If the connected property returns false, the connection is closed automatically.
+Often, the remote endpoint terminates the connection after transmitting data. Therefore, there is a connected property that contains `true` as long as the connection still exists. If the connected property returns `false`, the connection is closed automatically.
 
 On errors, the [`error`](./socket-object-reference.md#socketerror) property of the Socket object contains a short message describing the type of the error.
 

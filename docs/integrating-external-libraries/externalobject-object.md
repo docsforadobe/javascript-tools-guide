@@ -49,7 +49,7 @@ The ExternalObject class provides these static properties:
 
 #### Description
 
-Set to true to write status information to standard output (the JavaScript Console in the ExtendScript Toolkit).
+Set to `true` to write status information to standard output (the JavaScript Console in the ExtendScript Toolkit).
 
 Set to `false` to turn logging off. Default is `false`.
 

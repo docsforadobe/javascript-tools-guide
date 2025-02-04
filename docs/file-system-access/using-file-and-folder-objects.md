@@ -123,7 +123,7 @@ To access a remote volume, use a uniform naming convention (UNC) path name of th
 
 ### Aliases
 
-When you access an alias, the operation is transparently forwarded to the real file. The only operations that affect the alias are calls to `rename` and `remove`, and setting properties `readonly` and `hidden`. When a File object represents an alias, the `alias` property of the object returns true, and the `resolve` method returns the File or Folder object for the target of the alias.
+When you access an alias, the operation is transparently forwarded to the real file. The only operations that affect the alias are calls to `rename` and `remove`, and setting properties `readonly` and `hidden`. When a File object represents an alias, the `alias` property of the object returns `true`, and the `resolve` method returns the File or Folder object for the target of the alias.
 
 On Windows, all file system aliases (called shortcuts) are actual files whose names end with the extension `.lnk`. Never use this extension directly; the File and Folder objects work without it.
 

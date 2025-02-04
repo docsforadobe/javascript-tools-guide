@@ -182,7 +182,7 @@ myBase = UnitValue (10, "ft")
 myPctVal.baseUnit = myBase;
 ```
 
-Use the [as()](#unitvalue-object-as) method to get to a percentage value as a unit value:
+Use the [as()](#unitvalueas) method to get to a percentage value as a unit value:
 
 ```javascript
 myFootVal = myPctVal.as ("ft"); // => 4

@@ -1,6 +1,6 @@
 # VS Code Extension Features
 
-Once you have the Extendscript VS Code Extension up and running, there are a few other things you can do; [export to jsxbin](#exporting-as-binary), [use breakpoints in your code](#using-breakpoint), and more.
+Once you have the Extendscript VS Code Extension up and running, there are a few other things you can do; [export to jsxbin](#exporting-as-binary), [use breakpoints in your code](#using-breakpoints), and more.
 
 !!! note
     This guide is meant to give insight on how to use specific Extendscript for VS Code features.
@@ -25,7 +25,7 @@ You can add in `$.bp()` anywhere in your source file, and the debugger will catc
 
 This works identically to the `debugger;` method in browser-based Javascript.
 
-See [bp()](../extendscript-tools-features/dollar-object.md#dollar-bp) for more info.
+See [bp()](../extendscript-tools-features/dollar-object.md#bp) for more info.
 
 ---
 

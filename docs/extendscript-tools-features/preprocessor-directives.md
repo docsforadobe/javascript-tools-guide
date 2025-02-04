@@ -74,7 +74,7 @@ The `name` value is displayed in the Toolkit Editor tab. An unnamed script is as
 
 ## #strict on
 
-Turns on strict error checking. See the [Dollar ($) object](dollar-object.md)'s [strict](dollar-object.md#dollar-strict) property.
+Turns on strict error checking. See the [Dollar ($) object](dollar-object.md)'s [strict](dollar-object.md#strict) property.
 
 ---
 

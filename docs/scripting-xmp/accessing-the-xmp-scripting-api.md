@@ -28,9 +28,9 @@ The [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) is the primar
 
 You can obtain or create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) in several ways:
 
-- You can use an [XMPFile object](xmpscript-object-reference.md#xmpfile-object) to retrieve existing metadata directly from a file. The `XMPFile.`[getXMP()](xmpscript-object-reference.md#xmpfile-getxmp) method creates an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), which you can use to examine or modify the properties and their values. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfile-putxmp) to write the modified metadata back to the file.
+- You can use an [XMPFile object](xmpscript-object-reference.md#xmpfile-object) to retrieve existing metadata directly from a file. The `XMPFile.`[getXMP()](xmpscript-object-reference.md#xmpfilegetxmp) method creates an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object), which you can use to examine or modify the properties and their values. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp) to write the modified metadata back to the file.
 - You can create an [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) with the constructor, initializing it with an XMP packet created or obtained elsewhere.
-- You can create a new, empty [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) with the constructor, and use its methods to create entirely new namespaces and properties. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfile-putxmp) to inject the new metadata into a file.
+- You can create a new, empty [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) with the constructor, and use its methods to create entirely new namespaces and properties. You can then use `XMPFile.`[putXMP()](xmpscript-object-reference.md#xmpfileputxmp) to inject the new metadata into a file.
 
 In Adobe Bridge, you can pass XMP metadata between the built-in `Metadata` object and the XMPScript [XMPMeta object](xmpscript-object-reference.md#xmpmeta-object) using serialized XMP.
 

@@ -42,7 +42,7 @@ When the Flash Player executes the ExternalInterface call, ScriptUI looks for a 
 
 ## Calling ActionScript functions from a ScriptUI script
 
-From the ExtendScript side, use the `FlashPlayer` method [invokePlayerFunction()](control-objects.md#flashplayerobj-invokeplayerfunction) to call ActionScript methods that have been defined within the Flash application:
+From the ExtendScript side, use the `FlashPlayer` method [invokePlayerFunction()](control-objects.md#invokeplayerfunction) to call ActionScript methods that have been defined within the Flash application:
 
 ```javascript
 var result = flashElement.invokePlayerFunction( "ActionScript_function_name", [ arg1, ..., argN ] );

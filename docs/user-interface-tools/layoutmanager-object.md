@@ -10,7 +10,7 @@ Create an instance of the `AutoLayoutManager` class with the new operator:
 myWin.layout = new AutoLayoutManager( myWin );
 ```
 
-An instance is automatically created when you create a `Window` or container (`group` or `panel`) object, and referenced by the container's [layout](window-object.md#container-properties-layout) property. This instance implements the default layout behavior unless you override it.
+An instance is automatically created when you create a `Window` or container (`group` or `panel`) object, and referenced by the container's [layout](window-object.md#layout) property. This instance implements the default layout behavior unless you override it.
 
 ## AutoLayoutManager object properties
 

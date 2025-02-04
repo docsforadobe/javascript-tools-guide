@@ -94,7 +94,7 @@ The variant data does not support JavaScript objects. The following data types a
 - `undefined`
 - Boolean
 - `double`
-- String - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#externalobject-functions-esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
+- String - Must be UTF-8 encoded. The library must define an entry point [ESFreeMem()](#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data.
 - `Script` - A string to be evaluated by ExtendScript. Use to return small JavaScript scripts that define arbitrarily complex data.
 
 If, when a function is invoked, a supplied parameter is undefined, ExtendScript sets the data type to `undefined` and does not attempt to convert the data to the requested type.
@@ -108,7 +108,7 @@ If, when a function is invoked, a supplied parameter is undefined, ExtendScript 
 
 ## Library initialization
 
-ExtendScript calls [ESInitialize()](#externalobject-functions-esinitialize) to initialize the library.
+ExtendScript calls [ESInitialize()](#esinitialize) to initialize the library.
 
 The function receives an argument vector containing the additional arguments passed in to the ExternalObject constructor.
 
@@ -153,6 +153,6 @@ The signature strings for these two functions would be `"One_ds"`, `"Two"`.
 
 ## Library termination
 
-Define the entry point [ESInitialize()](#externalobject-functions-esinitialize) to free any memory you have allocated when your library is unloaded.
+Define the entry point [ESInitialize()](#esinitialize) to free any memory you have allocated when your library is unloaded.
 
 Whenever a JavaScript function makes a call to a library function, it increments a reference count for that library. When the reference count for a library reaches 0, the library is automatically unloaded; your termination function is called, and the `ExternalObject` instance is deleted. Note that deleting the `ExternalObject` instance does not unload the library if there are remaining references.

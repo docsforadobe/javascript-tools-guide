@@ -420,7 +420,7 @@ Sends a message to another application to determine whether it can be contacted.
 +---------------+------------------------------------------------------------------------------------------+----------------------------------------+
 | `pingRequest` | Identifying key string, one of:                                                          | Specific type of return value.         |
 |               |                                                                                          |                                        |
-|               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalk-getstatus).     |                                        |
+|               | - `STATUS`: Returns the processing status; see [getStatus()](#bridgetalkgetstatus).      |                                        |
 |               | - `DIAGNOSTICS`: Returns a diagnostic report that includes a list of valid ping keys.    |                                        |
 |               | - `ECHO_REQUEST`: Returns `ECHO_RESPONSE` for a simple ping request.                     |                                        |
 +---------------+------------------------------------------------------------------------------------------+----------------------------------------+

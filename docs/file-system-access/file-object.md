@@ -841,7 +841,7 @@ The new [File object](#file-object), or `null` if this object does not reference
 
 Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.
 
-Differs from the class method [saveDialog()](#file-savedialog) in that it presets the current folder to this File object's parent folder and the file to this object's associated file.
+Differs from the class method [saveDialog()](#filesavedialog) in that it presets the current folder to this File object's parent folder and the file to this object's associated file.
 
 #### Parameters
 

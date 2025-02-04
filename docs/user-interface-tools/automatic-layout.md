@@ -186,7 +186,7 @@ You can set just one of the dimensions using the preferredSize; a value of -1 fo
 
 You can also set a maximum and/or minimum size value for a control, that limit how it can be resized. There is a default maximum size that prevents automatic layout from creating elements larger than the screen.
 
-You can explicitly resize the controls in a window to fit the current text contents, or after the window is resized by the user, using the [resize()](layoutmanager-object.md#autolayoutmanager-object-resize) method of the layout object.
+You can explicitly resize the controls in a window to fit the current text contents, or after the window is resized by the user, using the [resize()](layoutmanager-object.md#resize) method of the layout object.
 
 ---
 

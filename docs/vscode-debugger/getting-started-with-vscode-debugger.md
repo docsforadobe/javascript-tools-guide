@@ -10,11 +10,11 @@ If you're looking on how to use specific features of the extension, see [VS Code
 Generally, you'll need to follow these steps:
 
 - [Installing the extension](#installing-the-extension)
-- [Opening a project directory](#opening-a-project)
+- [Opening a project directory](#opening-a-project-directory)
 - [Creating a debug launch task](#creating-a-debug-launch-task)
 - [Attaching the debugger](#attaching-the-debugger)
 - [Running the debugger](#running-the-debugger)
-- [Futher reading](#further-reading)
+- [Futher reading](#futher-reading)
 
 ---
 

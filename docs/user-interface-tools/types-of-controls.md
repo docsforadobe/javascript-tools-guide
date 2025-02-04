@@ -303,7 +303,7 @@ If a script does not explicitly set the `preferredSize` or `size` property of an
 
 ## Creating multi-column lists
 
-In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#text) and [image](control-objects.md#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
+In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-and-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#text) and [image](control-objects.md#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
 
 You can define a [ListBox](control-objects.md#listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
 

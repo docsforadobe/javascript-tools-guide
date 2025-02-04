@@ -133,7 +133,7 @@ To access the shortcut from a File object, specify the path `/folder2/some.txt`.
 
 However, Windows permits a file and its shortcut to reside in the same folder. In this case, the File object always accesses the original file. You cannot create a File object to access the shortcut when it is in the same folder as its linked file.
 
-A script can create a file alias by creating a File object for a file that does not yet exist on disk, and using its [`createAlias`](../file-system-access/file-object.md#createalias) method to specify the target of the alias.
+A script can create a file alias by creating a File object for a file that does not yet exist on disk, and using its [`createAlias`](../file-system-access/file-object.md#filecreatealias) method to specify the target of the alias.
 
 ### Portability issues
 

@@ -1,6 +1,6 @@
 # ExternalObject object
 
-You specify the name of the library in the constructor. The constructor searches for the named library using the paths defined in the static property [ExternalObject.searchFolders](#externalobject-class-properties).
+You specify the name of the library in the constructor. The constructor searches for the named library using the paths defined in the static property [ExternalObject.searchFolders](#externalobjectsearchfolders).
 
 If you are having difficulty loading your library as an ExternalObject, set the property `ExternalObject.log` to `true`, then call `ExternalObject.search('lib:myLibrary')`. This function performs the search, and the log reports the paths that have been searched to the ExtendScript Toolkit Console.
 
@@ -67,7 +67,7 @@ Boolean
 
 A set of alternate paths in which to search for the shared library files, a single string with multiple path specifications delimited by semicolons (;).
 
-Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folder-class-properties) location.
+Paths can be absolute or relative to the [Folder.startup](../file-system-access/folder-object.md#folderstartup) location.
 
 Default value is:
 
@@ -87,7 +87,7 @@ String
 
 #### Description
 
-The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#externalobject-functions-esgetversion).
+The version of the library, as returned by [ESGetVersion()](defining-entry-points-for-direct-access.md#esgetversion).
 
 #### Type
 

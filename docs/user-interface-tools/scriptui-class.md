@@ -10,11 +10,11 @@ The globally available ScriptUI class provides central information about the Scr
 
 `ScriptUI.Alignment`
 
-Collects the enumerated values that can be used in the [alignment](window-object.md#container-properties-alignment) and [alignChildren](window-object.md#container-properties-alignchildren) properties of controls and containers, and in the alignment property used to set a control's [titleLayout](control-objects.md#titlelayout) property.
+Collects the enumerated values that can be used in the [alignment](window-object.md#alignment) and [alignChildren](window-object.md#alignchildren) properties of controls and containers, and in the alignment property used to set a control's [titleLayout](control-objects.md#titlelayout) property.
 
 Use these constants to set the alignment.
 
-When you query the [alignment](window-object.md#container-properties-alignment) property, it returns index values that correspond to the constants as shown. Constant values are:
+When you query the [alignment](window-object.md#alignment) property, it returns index values that correspond to the constants as shown. Constant values are:
 
 - `ScriptUI.Alignment.TOP` (1)
 - `ScriptUI.Alignment.BOTTOM` (2)
@@ -99,7 +99,7 @@ A JavaScript object that provides access to attributes of the ScriptUI environme
 
 #### Description
 
-A JavaScript object that contains one function, [ScriptUI.events.createEvent()](#scriptui-events-createevent), which allows you to create event objects in order to simulate user-interaction events.
+A JavaScript object that contains one function, [ScriptUI.events.createEvent()](#scriptuieventscreateevent), which allows you to create event objects in order to simulate user-interaction events.
 
 #### Type
 
@@ -113,7 +113,7 @@ Object
 
 #### Description
 
-Collects the enumerated values that can be used as the style argument to the [ScriptUI.newFont()](#scriptui-newfont) method. For example:
+Collects the enumerated values that can be used as the style argument to the [ScriptUI.newFont()](#scriptuinewfont) method. For example:
 
 ```javascript
 var font = ScriptUI.newFont( "Helvetica", ScriptUI.FontStyle.BOLD )
@@ -168,7 +168,7 @@ String. Read only.
 
 #### Description
 
-This function is in the JavaScript object contained in the [events](#scriptui-events) property.
+This function is in the JavaScript object contained in the [events](#scriptuievents) property.
 
 This object is passed to a function that you register to respond to events of a certain type that occur in a window or control. Use [windowObj.addEventListener()](window-object.md#addeventlistener) or [controlObj.addEventListener()](control-objects.md#addeventlistener) to register a handler function.
 
@@ -225,11 +225,11 @@ Creates a new font object for use in text controls and titles.
 
 #### Parameters
 
-| Parameter |  Type  |                                         Description                                         |
-| --------- | ------ | ------------------------------------------------------------------------------------------- |
-| `name`    | String | The font or font family name string.                                                        |
-| `style`   | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptui-fontstyle) |
-| `size`    | Number | The font size in points, a number.                                                          |
+| Parameter |  Type  |                                        Description                                         |
+| --------- | ------ | ------------------------------------------------------------------------------------------ |
+| `name`    | String | The font or font family name string.                                                       |
+| `style`   | String | The font style string or an enumerated value from [ScriptUI.FontStyle](#scriptuifontstyle) |
+| `size`    | Number | The font size in points, a number.                                                         |
 
 #### Returns
 

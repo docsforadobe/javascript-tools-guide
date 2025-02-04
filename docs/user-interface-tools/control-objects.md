@@ -57,9 +57,9 @@ A pushbutton containing a mouse-sensitive text string. Calls the [onClick](#oncl
 
 #### Creation Properties
 
-| Property |  Type  |                                                                                                                               Description                                                                                                                               |
-| -------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](window-object.md#window-defaultelement), and the special name "cancel" makes this the [cancelElement](window-object.md#window-cancelelement) of the parent dialog. |
+| Property |  Type  |                                                                                                                        Description                                                                                                                        |
+| -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`   | String | A unique name for the control. For a modal dialog, the special name "ok" makes this [defaultElement](window-object.md#defaultelement), and the special name "cancel" makes this the [cancelElement](window-object.md#cancelelement) of the parent dialog. |
 
 #### Example
 
@@ -267,7 +267,7 @@ Class Name: `Group`
 
 #### Description
 
-A container for other controls. Containers have additional properties that control the children; see [Container properties](window-object.md#container-properties).
+A container for other controls. Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes).
 
 Hiding a group hides all its children. Making it visible makes visible those children that are not individually hidden.
 
@@ -434,7 +434,7 @@ Class Name: `Panel`
 
 A container for other types of controls, with an optional frame.
 
-Containers have additional properties that control the children; see [Container properties](window-object.md#container-properties). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 #### Parameters
 
@@ -682,7 +682,7 @@ Class Name: `Tab`
 
 A container for other types of controls. Differs from a [panel](#panel) element in that is must be a direct child of a [tabbedpanel](#tabbedpanel) element, the title is shown in the selection tab, and it does not have a script-definable border. The currently active tab is the value of the parent's `selection` property.
 
-Containers have additional properties that control the children; see [Container properties](window-object.md#container-properties). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 #### Parameters
 
@@ -716,7 +716,7 @@ Class Name: `TabbedPanel`
 
 A container for selectable [tab](#tab) containers. Differs from a [panel](#panel) element in that it can contain only [tab](#tab) elements as direct children.
 
-Containers have additional properties that control the children; see [Container properties](window-object.md#container-properties). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
+Containers have additional properties that control the children; see [Container Attributes](window-object.md#container-attributes). Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
 
 The selected tab child is the value of the parent's `selection` property. One and only one of the `tab` children must be selected; selecting one deselects the others. When the value of the `selection` property changes, either by a user selecting a different tab, or by a script setting the property, the `tabbedpanel` receives an [onChange](#onchange) notification.
 
@@ -781,7 +781,7 @@ w.add("treeview"[, bounds, items, {creation_properties}])
 
 The following table shows the properties of ScriptUI control elements. Some values apply only to controls of particular types, as indicated.
 
-See [Container properties](./window-object.md#container-properties) for properties that apply to container elements (controls of type panel, tabbedpanel, tab, and group).
+See [Container Attributes](./window-object.md#container-attributes) for properties that apply to container elements (controls of type panel, tabbedpanel, tab, and group).
 
 ### active
 

@@ -5,7 +5,7 @@ This section provides reference details for the properties and methods of the XM
 - [XML object](#xml-object)
 - [Namespace object](#namespace-object)
 - [QName object](#qname-object)
-- [Global functions](#xml-global-functions)
+- [Global functions](#global-functions)
 
 ## XML Object
 
@@ -81,7 +81,7 @@ Returns a JavaScript object containing five properties, which correspond to the 
 
 #### Description
 
-Sets the global option settings that control how XML is parsed and generated. You can use this to restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xml-defaultsettings).
+Sets the global option settings that control how XML is parsed and generated. You can use this to restore settings retrieved with [settings()](#xml-settings) or [defaultSettings()](#xmldefaultsettings).
 
 #### Parameters
 
@@ -535,7 +535,7 @@ An [XML object](#xml-object), or `null` for the root element.
 
 #### Description
 
-Prepends a child element to this node, before any existing children. If you prepend a string to a text element, the result is two text elements; call [normalize()](#xml-object-normalize) to concatenate them into a single text string.
+Prepends a child element to this node, before any existing children. If you prepend a string to a text element, the result is two text elements; call [normalize()](#xmlnormalize) to concatenate them into a single text string.
 
 #### Parameters
 
@@ -695,7 +695,7 @@ An [XML object](#xml-object) containing all properties of this object that repre
 Creates a string representation of this object.
 
 - For text and attribute nodes, this is the textual value of the node.
-- For other elements, it is the result of [toXMLString()](#xml-object-toxmlstring).
+- For other elements, it is the result of [toXMLString()](#xmltoxmlstring).
 - If this XML object is a list, concatenates the result of calling the function on each contained element.
 
 #### Returns
@@ -712,7 +712,7 @@ String
 
 Creates an XML-encoded string representation of this [XML object](#xml-object).
 
-This result includes the start tag, attributes and end tag of the XML object, regardless of its content. Formats the string as specified by the global settings [XML.prettyPrinting](#xml-class-properties) and [XML.prettyIndent](#xml-class-properties).
+This result includes the start tag, attributes and end tag of the XML object, regardless of its content. Formats the string as specified by the global settings [XML.prettyPrinting](#xml-settings) and [XML.prettyIndent](#xml-settings).
 
 #### Returns
 

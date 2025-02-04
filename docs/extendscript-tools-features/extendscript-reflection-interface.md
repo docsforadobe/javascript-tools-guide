@@ -12,7 +12,7 @@ Every object has a reflect property that returns a Reflection Object that report
 var f = new File ("myfile");
 var props = f.reflect.properties;
 for (var i = 0; i < props.length; i++) {
-  $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
+    $.writeln('this property ' + props[i].name + ' is ' + f[props[i].name]);
 }
 ```
 
@@ -59,7 +59,7 @@ An Array of [ReflectionInfo object](#reflectioninfo-object) containing all metho
 
 ##### Type
 
-Array of [ReflectionInfo objects](#reflection-object)
+Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 ---
 
@@ -89,7 +89,7 @@ For example, in an object wrapping an HTML tag, the names of the HTML attributes
 
 ##### Type
 
-Array of [ReflectionInfo objects](#reflection-object)
+Array of [ReflectionInfo objects](#reflectioninfo-object)
 
 ---
 

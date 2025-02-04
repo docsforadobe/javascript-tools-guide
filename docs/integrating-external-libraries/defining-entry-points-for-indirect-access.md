@@ -18,22 +18,22 @@ Your library must define this global function in order to use the object interfa
 
 #### Parameters
 
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |                                                                                                                              Description                                                                                                                               |
-+===========+========================================================================================================================================================================================================================================================================+
-| `kReason` | The reason for this call, one of these constants:                                                                                                                                                                                                                      |
-|           |                                                                                                                                                                                                                                                                        |
-|           | - `kSoCClient_init`: The function is being called for initialization upon load.                                                                                                                                                                                        |
-|           | - `kSoCClient_term`.: The function is being called for termination upon unload.                                                                                                                                                                                        |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `pServer` | A pointer to an [SoServerInterface](#shared-library-soserverinterface) containing function pointers for the entry points, which enable the shared-library code to call into JavaScript to create and access JavaScript classes and objects.                            |
-|           |                                                                                                                                                                                                                                                                        |
-|           | The shared-library code is responsible for storing this structure between the initialization and termination call, and retrieving it to access the functions.                                                                                                          |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `hServer` | An [Support structures](#sohserver) reference for this shared library. The server is an object factory that creates and manages [Support structures](#sohobject) objects.                                                                                              |
-|           |                                                                                                                                                                                                                                                                        |
-|           | The shared-library code is responsible for storing this structure between the initialization and termination calls. You must pass it to [taggedDataInit()](#externalobject-functions-taggeddatainit) and [taggedDataFree()](#externalobject-functions-taggeddatafree). |
-+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |                                                                                                         Description                                                                                                          |
++===========+==============================================================================================================================================================================================================================+
+| `kReason` | The reason for this call, one of these constants:                                                                                                                                                                            |
+|           |                                                                                                                                                                                                                              |
+|           | - `kSoCClient_init`: The function is being called for initialization upon load.                                                                                                                                              |
+|           | - `kSoCClient_term`.: The function is being called for termination upon unload.                                                                                                                                              |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `pServer` | A pointer to an [SoServerInterface](#soserverinterface) containing function pointers for the entry points, which enable the shared-library code to call into JavaScript to create and access JavaScript classes and objects. |
+|           |                                                                                                                                                                                                                              |
+|           | The shared-library code is responsible for storing this structure between the initialization and termination call, and retrieving it to access the functions.                                                                |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hServer` | An [Support structures](#support-structures) reference for this shared library. The server is an object factory that creates and manages [Support structures](#support-structures) objects.                                  |
+|           |                                                                                                                                                                                                                              |
+|           | The shared-library code is responsible for storing this structure between the initialization and termination calls. You must pass it to [taggedDataInit()](#taggeddatainit) and [taggedDataFree()](#taggeddatafree).         |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 
@@ -63,7 +63,7 @@ A pointer to the allocated block of memory.
 
 ## Shared-library function API
 
-Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in [SoServerInterface](#shared-library-soserverinterface) and [SoObjectInterface](#shared-library-soobjectinterface) function-pointer structures.
+Your shared-library C/C++ code defines its interface to JavaScript in two sets of functions, collected in [SoServerInterface](#soserverinterface) and [SoObjectInterface](#soobjectinterface) function-pointer structures.
 
 Return values from most functions are integer constants. The error code `kESErrOK == 0` indicates success.
 
@@ -130,9 +130,9 @@ Prints the contents of this server to the JavaScript Console in the ExtendScript
 
 ##### Parameters
 
-| Parameter |                                                                                           Description                                                                                           |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer` | The [Support structures](#sohserver) reference for this shared library, as passed to your global [ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization. |
+| Parameter |                                                                                   Description                                                                                   |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hServer` | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
 
 
 ##### Returns
@@ -151,9 +151,9 @@ Prints the contents of this object to the JavaScript Console in the ExtendScript
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 
 
 ##### Returns
@@ -172,11 +172,11 @@ Creates a new JavaScript class.
 
 ##### Parameters
 
-|     Parameter      |                                                                                           Description                                                                                           |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`          | The [Support structures](#sohserver) reference for this shared library, as passed to your global [ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization. |
-| `name`             | String. The unique name of the new class. The name must begin with an uppercase alphabetic character.                                                                                           |
-| `pObjectInterface` | A pointer to an [SoObjectInterface](#shared-library-soobjectinterface). A structure containing pointers to the object interface methods for instances of this class.                            |
+|     Parameter      |                                                                                   Description                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hServer`          | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
+| `name`             | String. The unique name of the new class. The name must begin with an uppercase alphabetic character.                                                                           |
+| `pObjectInterface` | A pointer to an [SoObjectInterface](#soobjectinterface). A structure containing pointers to the object interface methods for instances of this class.                           |
 
 ##### Returns
 
@@ -194,12 +194,12 @@ Adds new method to an instance.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `name`    | String. The unique name of the new method.                                    |
-| `id`      | Number. The unique identifier for the new method.                             |
-| `desc`    | String. A descriptive string for the new method.                              |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `name`    | String. The unique name of the new method.                                             |
+| `id`      | Number. The unique identifier for the new method.                                      |
+| `desc`    | String. A descriptive string for the new method.                                       |
 
 ##### Returns
 
@@ -219,7 +219,7 @@ Adds a set of new methods to an instance.
 
 | Parameter  |                                                Description                                                |
 | ---------- | --------------------------------------------------------------------------------------------------------- |
-| `hObject`  | The [Support structures](#sohobject) reference for an instance of this class.                             |
+| `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                    |
 | `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of methods to be added. |
 
 ##### Returns
@@ -238,12 +238,12 @@ Adds new property to an instance.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `name`    | String. The unique name of the new property.                                  |
-| `id`      | Number. The unique identifier for the new property.                           |
-| `desc`    | String. Optional. A descriptive string for the new property, or null.         |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `name`    | String. The unique name of the new property.                                           |
+| `id`      | Number. The unique identifier for the new property.                                    |
+| `desc`    | String. Optional. A descriptive string for the new property, or null.                  |
 
 ##### Returns
 
@@ -263,7 +263,7 @@ Adds a set of new properties to an instance.
 
 | Parameter  |                                                 Description                                                  |
 | ---------- | ------------------------------------------------------------------------------------------------------------ |
-| `hObject`  | The [Support structures](#sohobject) reference for an instance of this class.                                |
+| `hObject`  | The [Support structures](#support-structures) reference for an instance of this class.                       |
 | `pNames[]` | [SoCClientName](#socclientname). A structure containing the names and identifiers of properties to be added. |
 
 ##### Returns
@@ -282,11 +282,11 @@ Retrieves this object's parent class name.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `name`    | String. A buffer in which to return the unique name of the class.             |
-| `name_1`  | Number. The size of the name buffer.                                          |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `name`    | String. A buffer in which to return the unique name of the class.                      |
+| `name_1`  | Number. The size of the name buffer.                                                   |
 
 ##### Returns
 
@@ -304,11 +304,11 @@ Retrieves the interface methods for this object, and the server object that mana
 
 ##### Parameters
 
-|      Parameter      |                                                    Description                                                    |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `hObject`           | The [Support structures](#sohobject) reference for an instance of this class.                                     |
-| `phServer`          | A buffer in which to return the [Support structures](#sohserver) reference for this object.                       |
-| `ppServerInterface` | A buffer in which to return the [SoObjectInterface](#shared-library-soobjectinterface) reference for this object. |
+|      Parameter      |                                             Description                                              |
+| ------------------- | ---------------------------------------------------------------------------------------------------- |
+| `hObject`           | The [Support structures](#support-structures) reference for an instance of this class.               |
+| `phServer`          | A buffer in which to return the [Support structures](#support-structures) reference for this object. |
+| `ppServerInterface` | A buffer in which to return the [SoObjectInterface](#soobjectinterface) reference for this object.   |
 
 ##### Returns
 
@@ -326,10 +326,10 @@ Sets your own data to be stored with an object.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `pData`   | A pointer to the library-defined data.                                        |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `pData`   | A pointer to the library-defined data.                                                 |
 
 ##### Returns
 
@@ -343,14 +343,14 @@ Returns an error code, `kESErrOK` on success.
 
 ##### Description
 
-Retrieves data that was stored with [setClientData()](#externalobject-functions-setclientdata).
+Retrieves data that was stored with [setClientData()](#setclientdata).
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `pData`   | A buffer in which to return a pointer to the library-defined data.            |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `pData`   | A buffer in which to return a pointer to the library-defined data.                     |
 
 ##### Returns
 
@@ -368,11 +368,11 @@ Calls the JavaScript interpreter to evaluate a JavaScript expression.
 
 ##### Parameters
 
-|   Parameter   |                                                                                           Description                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#sohserver) reference for this shared library, as passed to your global [ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization. |
-| String        | A string containing the JavaScript expression to evaluate.                                                                                                                                      |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata) object in which to return the result of evaluation.                                                                                                    |
+|   Parameter   |                                                                                   Description                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
+| String        | A string containing the JavaScript expression to evaluate.                                                                                                                      |
+| `pTaggedData` | A pointer to a [TaggedData](#taggeddata) object in which to return the result of evaluation.                                                                                    |
 
 
 ##### Returns
@@ -391,10 +391,10 @@ Initializes a TaggedData structure.
 
 ##### Parameters
 
-|   Parameter   |                                                                                           Description                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#sohserver) reference for this shared library, as passed to your global [ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization. |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                                       |
+|   Parameter   |                                                                                   Description                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
+| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
 
 ##### Returns
 
@@ -412,10 +412,10 @@ Frees memory being used by a TaggedData structure.
 
 ##### Parameters
 
-|   Parameter   |                                                                                           Description                                                                                           |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hServer`     | The [Support structures](#sohserver) reference for this shared library, as passed to your global [ESClientInterface()](#externalobject-functions-esclientinterface) function on initialization. |
-| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                                       |
+|   Parameter   |                                                                                   Description                                                                                   |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hServer`     | The [Support structures](#support-structures) reference for this shared library, as passed to your global [ESClientInterface()](#esclientinterface) function on initialization. |
+| `pTaggedData` | A pointer to a [TaggedData](#taggeddata).                                                                                                                                       |
 
 ##### Returns
 
@@ -455,13 +455,13 @@ Required. Called when JavaScript code instantiates this class with the new opera
 var xx = New MyClass(arg1, ...)
 ```
 
-The initialization function typically adds properties and methods to the object. Objects of the same class can offer different properties and methods, which you can add with the [addMethod()](#externalobject-functions-addmethod) and [addProperty()](#externalobject-functions-addproperty) functions in the stored SoServerInterface.
+The initialization function typically adds properties and methods to the object. Objects of the same class can offer different properties and methods, which you can add with the [addMethod()](#addmethod) and [addProperty()](#addproperty) functions in the stored SoServerInterface.
 
 ##### Parameters
 
 |  Parameter   |                                                 Description                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
-| `hObject`    | The [Support structures](#sohobject) reference for an instance of this class.                               |
+| `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.                      |
 | `argc, argv` | The number of and pointer to arguments passed to the constructor, in the form of [TaggedData](#taggeddata). |
 
 ##### Returns
@@ -486,11 +486,11 @@ If you provide `NULL` for this function, the JavaScript object is read-only.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).    |
-| `pValue`  | The new value, a pointer to a [TaggedData](#taggeddata).                      |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
+| `pValue`  | The new value, a pointer to a [TaggedData](#taggeddata).                               |
 
 ##### Returns
 
@@ -512,11 +512,11 @@ alert(xx.myproperty);
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
-| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).    |
-| `pValue`  | A buffer in which to return the property value, a [TaggedData](#taggeddata).  |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
+| `name`    | The name of the property, a pointer to an [SoCClientName](#socclientname).             |
+| `pValue`  | A buffer in which to return the property value, a [TaggedData](#taggeddata).           |
 
 ##### Returns
 
@@ -542,7 +542,7 @@ Required in order for JavaScript to call any methods of this class.
 
 |  Parameter   |                                           Description                                            |
 | ------------ | ------------------------------------------------------------------------------------------------ |
-| `hObject`    | The [Support structures](#sohobject) reference for an instance of this class.                    |
+| `hObject`    | The [Support structures](#support-structures) reference for an instance of this class.           |
 | `name`       | The name of the property, a pointer to an [SoCClientName](#socclientname).                       |
 | `argc, argv` | The number and pointer to arguments passed to the call, in the form of [TaggedData](#taggeddata) |
 | `pResult`    | A buffer in which to return the result of the call, in the form of [TaggedData](#taggeddata)     |
@@ -565,7 +565,7 @@ Creates and returns the value of the object, with no type conversion.
 
 | Parameter |                                          Description                                          |
 | --------- | --------------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class.                 |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class.        |
 | `pResult` | A buffer in which to return the result of the value, in the form of [TaggedData](#taggeddata) |
 
 ##### Returns
@@ -586,7 +586,7 @@ Creates and returns a string representing the value of this object.
 
 | Parameter |                                          Description                                           |
 | --------- | ---------------------------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class.                  |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class.         |
 | `pResult` | A buffer in which to return the result of the string, in the form of [TaggedData](#taggeddata) |
 
 
@@ -608,9 +608,9 @@ Use this function to free any memory you have allocated.
 
 ##### Parameters
 
-| Parameter |                                  Description                                  |
-| --------- | ----------------------------------------------------------------------------- |
-| `hObject` | The [Support structures](#sohobject) reference for an instance of this class. |
+| Parameter |                                      Description                                       |
+| --------- | -------------------------------------------------------------------------------------- |
+| `hObject` | The [Support structures](#support-structures) reference for an instance of this class. |
 
 ##### Returns
 
@@ -672,34 +672,34 @@ typedef struct {
 
 #### Parameters
 
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |                                                                                                                                               Description                                                                                                                                                |
-+===========+==========================================================================================================================================================================================================================================================================================================+
-| `intval`  | Integer and boolean data values. Type is `kTypeInteger`, `kTypeUInteger`, or `kTypeBool`.                                                                                                                                                                                                                |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `fltval`  | Floating-point numeric data values. Type is `kTypeDouble`.                                                                                                                                                                                                                                               |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| String    | String data values. All strings are UTF-8 encoded and null-terminated. Type is `kTypeString` or `kTypeScript`.                                                                                                                                                                                           |
-|           |                                                                                                                                                                                                                                                                                                          |
-|           | - The library must define an entry point [ESFreeMem()](defining-entry-points-for-direct-access.md#externalobject-functions-esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data. |
-|           | - When a function returns a string of type kTypeScript, ExtendScript evaluates the script and returns the result of evaluation as the result of the function call.                                                                                                                                       |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `hObject` | A C/C++ representation of a JavaScript object data value. Type is `kTypeLiveObject` or `kTypeLiveObjectRelease`.                                                                                                                                                                                         |
-|           |                                                                                                                                                                                                                                                                                                          |
-|           | - When a function returns an object of type kTypeLiveObject, ExtendScript does not release the object.                                                                                                                                                                                                   |
-|           | - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript releases the object.                                                                                                                                                                                                    |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `type`    | The data type tag. One of:                                                                                                                                                                                                                                                                               |
-|           |                                                                                                                                                                                                                                                                                                          |
-|           | - `kTypeUndefined`: a null value, equivalent of JavaScript `undefined`. The return value for a function is always set to this by default.                                                                                                                                                                |
-|           | - `kTypeBool`: a boolean value, 0 for `false`, 1 for `true`.                                                                                                                                                                                                                                             |
-|           | - `kTypeDouble`: a 64-bit floating-point number.                                                                                                                                                                                                                                                         |
-|           | - `kTypeString`: a character string.                                                                                                                                                                                                                                                                     |
-|           | - `kTypeLiveObject`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                                                   |
-|           | - `kTypeLiveObjectRelease`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                                            |
-|           | - `kTypeInteger`: a 32-bit signed integer value.                                                                                                                                                                                                                                                         |
-|           | - `kTypeUInteger`: a 32-bit unsigned integer value.                                                                                                                                                                                                                                                      |
-|           | - `kTypeScript`: a string containing an executable JavaScript script.                                                                                                                                                                                                                                    |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `filler`  | A 4-byte filler for 8-byte alignment.                                                                                                                                                                                                                                                                    |
-+-----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |                                                                                                                                   Description                                                                                                                                   |
++===========+=================================================================================================================================================================================================================================================================================+
+| `intval`  | Integer and boolean data values. Type is `kTypeInteger`, `kTypeUInteger`, or `kTypeBool`.                                                                                                                                                                                       |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `fltval`  | Floating-point numeric data values. Type is `kTypeDouble`.                                                                                                                                                                                                                      |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| String    | String data values. All strings are UTF-8 encoded and null-terminated. Type is `kTypeString` or `kTypeScript`.                                                                                                                                                                  |
+|           |                                                                                                                                                                                                                                                                                 |
+|           | - The library must define an entry point [ESFreeMem()](defining-entry-points-for-direct-access.md#esfreemem), which ExtendScript calls to release a returned string pointer. If this entry point is missing, ExtendScript does not attempt to release any returned string data. |
+|           | - When a function returns a string of type kTypeScript, ExtendScript evaluates the script and returns the result of evaluation as the result of the function call.                                                                                                              |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `hObject` | A C/C++ representation of a JavaScript object data value. Type is `kTypeLiveObject` or `kTypeLiveObjectRelease`.                                                                                                                                                                |
+|           |                                                                                                                                                                                                                                                                                 |
+|           | - When a function returns an object of type kTypeLiveObject, ExtendScript does not release the object.                                                                                                                                                                          |
+|           | - When a function returns an object of type kTypeLiveObjectRelease, ExtendScript releases the object.                                                                                                                                                                           |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `type`    | The data type tag. One of:                                                                                                                                                                                                                                                      |
+|           |                                                                                                                                                                                                                                                                                 |
+|           | - `kTypeUndefined`: a null value, equivalent of JavaScript `undefined`. The return value for a function is always set to this by default.                                                                                                                                       |
+|           | - `kTypeBool`: a boolean value, 0 for `false`, 1 for `true`.                                                                                                                                                                                                                    |
+|           | - `kTypeDouble`: a 64-bit floating-point number.                                                                                                                                                                                                                                |
+|           | - `kTypeString`: a character string.                                                                                                                                                                                                                                            |
+|           | - `kTypeLiveObject`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                          |
+|           | - `kTypeLiveObjectRelease`: a pointer to an internal representation of an object (SoHObject).                                                                                                                                                                                   |
+|           | - `kTypeInteger`: a 32-bit signed integer value.                                                                                                                                                                                                                                |
+|           | - `kTypeUInteger`: a 32-bit unsigned integer value.                                                                                                                                                                                                                             |
+|           | - `kTypeScript`: a string containing an executable JavaScript script.                                                                                                                                                                                                           |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `filler`  | A 4-byte filler for 8-byte alignment.                                                                                                                                                                                                                                           |
++-----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

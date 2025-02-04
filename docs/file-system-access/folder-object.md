@@ -315,7 +315,7 @@ Boolean. `true` if your system supports the specified encoding, `false` otherwis
 
 #### Description
 
-Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder. Differs from the object method [selectDlg()](#folder-selectdlg) in that it does not preselect a folder.
+Opens the built-in platform-specific file-browsing dialog, and creates a new File or Folder object for the selected file or folder. Differs from the object method [selectDlg()](#folderselectdlg) in that it does not preselect a folder.
 
 #### Parameters
 

@@ -16,7 +16,7 @@ This simple example walks through the steps of sending a script from Adobe Bridg
 
 ### Step 1: Check that the target application is installed
 
-Before you can actually send a message, you must check that the required version of the target application is installed. The function [getSpecifier()](bridgetalk-class.md#bridgetalk-getspecifier), available in the global namespace through the [BridgeTalk class](bridgetalk-class.md), provides this information.
+Before you can actually send a message, you must check that the required version of the target application is installed. The function [getSpecifier()](bridgetalk-class.md#bridgetalkgetspecifier), available in the global namespace through the [BridgeTalk class](bridgetalk-class.md), provides this information.
 
 For example, this code, which will send a message to Adobe Bridge CS5 as part of a script being executed by Photoshop CS5, checks that the required version of Adobe Bridge is installed:
 
@@ -49,7 +49,7 @@ bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length
 
 ### Step 3: Specify how to handle a response
 
-If you want to handle a response for this message, or use the data that is returned from the script's evaluation, you must set up the response-handling mechanism before you send the message. You do this by defining the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback in the message object.
+If you want to handle a response for this message, or use the data that is returned from the script's evaluation, you must set up the response-handling mechanism before you send the message. You do this by defining the [onResult()](bridgetalk-message-object.md#onresult) callback in the message object.
 
 !!! note
     The message callbacks are optional, and are not implemented by all message-enabled applications. The response to a message is, by default, the result of evaluation of the script contained in that message's body property. The target application might define some different kind of response; see [Receiving messages](#receiving-messages).
@@ -64,7 +64,7 @@ bt.onResult = function(returnBtObj) {
 }
 ```
 
-If you want to handle errors that might arise during script processing, you can define an [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback in the message object. Similarly, you can define a [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) value and [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback to handle the case where the target cannot process the message within a given time. For more information, see [Handling responses from the message target](#handling-responses-from-the-message-target).
+If you want to handle errors that might arise during script processing, you can define an [onError()](bridgetalk-message-object.md#onerror) callback in the message object. Similarly, you can define a [timeout](bridgetalk-message-object.md#timeout) value and [onTimeout()](bridgetalk-message-object.md#ontimeout) callback to handle the case where the target cannot process the message within a given time. For more information, see [Handling responses from the message target](#handling-responses-from-the-message-target).
 
 !!! note
     If you define callbacks to handle a response, you must store the message in a variable that still exists when the response is received. Otherwise, JavaScript might garbage-collect the message object, and the response would be lost.
@@ -113,7 +113,7 @@ if( targetApp ) {
 
 ## Receiving messages
 
-An application can be the target of a message; that is, it receives an unsolicited message from another application. An unsolicited message is handled by the static [BridgeTalk.onReceive](bridgetalk-class.md#bridgetalk-onreceive) callback function in the target application. See [Handling unsolicited messages](#handling-unsolicited-messages).
+An application can be the target of a message; that is, it receives an unsolicited message from another application. An unsolicited message is handled by the static [BridgeTalk.onReceive](bridgetalk-class.md#bridgetalkonreceive) callback function in the target application. See [Handling unsolicited messages](#handling-unsolicited-messages).
 
 An application that sends a message can receive response messages; that is, messages that come as the result of requesting a response when a message was sent. These can be:
 
@@ -129,11 +129,11 @@ All of these response messages are sent automatically by the target application,
 
 ## Handling unsolicited messages
 
-To specify how the application should handle unsolicited incoming messages, define a callback handler function in the static [onReceive](bridgetalk-class.md#bridgetalk-onreceive) property of the `BridgeTalk` class. This function takes a single argument, a [BridgeTalk message object](bridgetalk-message-object.md).
+To specify how the application should handle unsolicited incoming messages, define a callback handler function in the static [onReceive](bridgetalk-class.md#bridgetalkonreceive) property of the `BridgeTalk` class. This function takes a single argument, a [BridgeTalk message object](bridgetalk-message-object.md).
 
-The default behavior of the `onReceive` handler is to evaluate the body of the received message with JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last line of the script.) To return the result, it creates a new message object, encapsulates the result in a string in the body property of that object, and passes that object to the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback defined in the original message.
+The default behavior of the `onReceive` handler is to evaluate the body of the received message with JavaScript, and return the result of that evaluation. (The result of evaluating a script is the result of the last line of the script.) To return the result, it creates a new message object, encapsulates the result in a string in the body property of that object, and passes that object to the [onResult()](bridgetalk-message-object.md#onresult) callback defined in the original message.
 
-If an error occurs on evaluation, the default `onReceive` handler returns the error information using a similar mechanism. It creates a new message object, encapsulates the error information in a string in the body property of that object, and passes that object to the [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback defined in the original message.
+If an error occurs on evaluation, the default `onReceive` handler returns the error information using a similar mechanism. It creates a new message object, encapsulates the error information in a string in the body property of that object, and passes that object to the [onError()](bridgetalk-message-object.md#onerror) callback defined in the original message.
 
 To change the default behavior set the `BridgeTalk.onReceive` property to a function definition in the following form:
 
@@ -192,16 +192,16 @@ When your message is received by its target, the target application's static Bri
 
 A response message can be:
 
-- The result of an error in processing the message. This is handled by the [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback.
-    - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](bridgetalk-message-object.md#bridgetalk-message-object-onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
-- A notification of receipt of the message. This is handled by the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback.
-    - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](bridgetalk-message-object.md#bridgetalk-message-object-onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
-- The result of a time-out. This is handled by the [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback.
-    - You can specify a number of seconds in a message object's [timeout](bridgetalk-message-object.md#bridgetalk-message-object-timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](bridgetalk-message-object.md#bridgetalk-message-object-ontimeout) callback for the message, the target application sends a time-out message back to the sender.
-- Intermediate responses. These are handled by the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
-    - The script that you send can send back intermediate responses by invoking the original message object's [sendResult()](bridgetalk-message-object.md#bridgetalk-message-object-sendresult) method. It can send data of any type, but that data is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
-- The final result of processing the message. This is handled by the [onResult()](bridgetalk-message-object.md#bridgetalk-message-object-onresult) callback.
-    - When it finishes processing your message, the target application can send back a result of any type. If you have sent a script, and the target application is using the default BridgeTalk [onReceive](bridgetalk-class.md#bridgetalk-onreceive) callback to process messages, the return value is the final result of evaluating that script. In any case, the return value is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
+- The result of an error in processing the message. This is handled by the [onError()](bridgetalk-message-object.md#onerror) callback.
+    - If an error occurs in processing the message body (as the result of a JavaScript syntax error, for instance), the target application invokes the [onError()](bridgetalk-message-object.md#onerror) callback, passing a response message that contains the error code and error message. If you do not have an [onError()](bridgetalk-message-object.md#onerror) callback defined, the error is completely transparent. It can appear that the message has not been processed, since no result is ever returned to the [onResult()](bridgetalk-message-object.md#onresult) callback.
+- A notification of receipt of the message. This is handled by the [onReceived()](bridgetalk-message-object.md#onreceived) callback.
+    - Message sending is asynchronous. Getting a `true` result from the send method does not guarantee that your message was actually received by the target application. If you want to be notified of the receipt of your message, define the [onReceived()](bridgetalk-message-object.md#onreceived) callback in the message object. The target sends back the original message object to this callback, first replacing the body value with an empty string.
+- The result of a time-out. This is handled by the [onTimeout()](bridgetalk-message-object.md#ontimeout) callback.
+    - You can specify a number of seconds in a message object's [timeout](bridgetalk-message-object.md#timeout) property. If the message is not removed from the input queue for processing before the time elapses, it is discarded. If the sender has defined an [onTimeout()](bridgetalk-message-object.md#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
+- Intermediate responses. These are handled by the [onResult()](bridgetalk-message-object.md#onresult) callback.
+    - The script that you send can send back intermediate responses by invoking the original message object's [sendResult()](bridgetalk-message-object.md#sendresult) method. It can send data of any type, but that data is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
+- The final result of processing the message. This is handled by the [onResult()](bridgetalk-message-object.md#onresult) callback.
+    - When it finishes processing your message, the target application can send back a result of any type. If you have sent a script, and the target application is using the default BridgeTalk [onReceive](bridgetalk-class.md#bridgetalkonreceive) callback to process messages, the return value is the final result of evaluating that script. In any case, the return value is packaged into a body string in a new message object, which is passed to your callback. See [Passing values between applications](#passing-values-between-applications).
 
 The following examples demonstrate how to handle simple responses and multiple responses, and how to integrate error handling with response handling.
 

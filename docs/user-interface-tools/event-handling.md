@@ -363,7 +363,7 @@ In addition to the functions defined for [UIEvent base class](#uievent-base-clas
 Get the current modifier keys being used in this event.
 
 !!! note
-    If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#environment-keyboard-state).
+    If you're trying to check whether keyboard modifier keys (alt/ctrl/meta/shift) are held down at any time in your script, not just in an event, see [Keyboard state object](environment.md#keyboard-state-object).
 
 ##### Parameters
 

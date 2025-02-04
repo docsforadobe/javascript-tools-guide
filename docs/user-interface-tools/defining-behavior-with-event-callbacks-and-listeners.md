@@ -116,7 +116,7 @@ You can register:
     myButton.addEventListener( "click", "function( e ) { /*handler code*/ }" );
     ```
 
-The handler or registered code statement is executed when the specified event occurs in the target. A script can programmatically simulate an event by creating an event objects with [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and passing it to an event target's [dispatchEvent()](control-objects.md#dispatchevent) function.
+The handler or registered code statement is executed when the specified event occurs in the target. A script can programmatically simulate an event by creating an event objects with [ScriptUI.events.createEvent()](scriptui-class.md#scriptuieventscreateevent), and passing it to an event target's [dispatchEvent()](control-objects.md#dispatchevent) function.
 
 You can remove a handler that has been previously registered by calling the event target's [removeEventListener()](control-objects.md#removeeventlistener) function. The parameters you pass to this function must be identical to those passed to the [addEventListener()](control-objects.md#addeventlistener) call that registered the handler. Typically, a script would register all event handlers during initialization, and unregister them during termination; however, unregistering handlers on termination is not required.
 
@@ -131,11 +131,11 @@ The predefined types of `UIEvent` correspond to the event callbacks, as follows:
 | [`"onClick"`](./control-objects.md#onclick)             | `"click"` (detail = 1) |
 | [`"onDoubleClick"`](./control-objects.md#ondoubleclick) | `"click"` (detail = 2) |
 | [`"onEnterKey"`](./control-objects.md#onenterkey)       | `"enterKey"`           |
-| [`"onMove"`](./control-objects.md#onmove)               | `"move"`               |
-| [`"onMoving"`](./control-objects.md#onmoving)           | `"moving"`             |
-| [`"onResize"`](./control-objects.md#onresize)           | `"resize"`             |
-| [`"onResizing"`](./control-objects.md#onresizing)       | `"resizing"`           |
-| [`"onShow"`](./control-objects.md#onshow)               | `"show"`               |
+| [`"onMove"`](./window-object.md#onmove)                 | `"move"`               |
+| [`"onMoving"`](./window-object.md#onmoving)             | `"moving"`             |
+| [`"onResize"`](./window-object.md#onresize)             | `"resize"`             |
+| [`"onResizing"`](./window-object.md#onresizing)         | `"resizing"`           |
+| [`"onShow"`](./window-object.md#onshow)                 | `"show"`               |
 | [`"onActivate"`](./control-objects.md#onactivate)       | `"focus"`              |
 | [`"onDeactivate"`](./control-objects.md#ondeactivate)   | `"blur"`               |
 

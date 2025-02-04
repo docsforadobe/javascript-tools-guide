@@ -108,7 +108,7 @@ String
 
 The number of seconds before the message times out.
 
-If a message has not been removed from the input queue for processing before this time elapses, the message is discarded. If the sender has defined an [onTimeout()](#bridgetalk-message-object-ontimeout) callback for the message, the target application sends a time-out message back to the sender.
+If a message has not been removed from the input queue for processing before this time elapses, the message is discarded. If the sender has defined an [onTimeout()](#ontimeout) callback for the message, the target application sends a time-out message back to the sender.
 
 #### Type
 
@@ -198,7 +198,7 @@ bridgeTalkObj.onResult = function( responseMsgObject ) {
 
 The target passes a new message object, with the body property set to the result string.
 
-This is the result of the target application's static BridgeTalk [onReceive](bridgetalk-class.md#bridgetalk-onreceive) method, packaged as a UTF-8-encoded string. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications).
+This is the result of the target application's static BridgeTalk [onReceive](bridgetalk-class.md#bridgetalkonreceive) method, packaged as a UTF-8-encoded string. See [Passing values between applications](communicating-through-messages.md#passing-values-between-applications).
 
 ---
 

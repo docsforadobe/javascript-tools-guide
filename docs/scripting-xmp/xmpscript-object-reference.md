@@ -26,7 +26,7 @@ These top-level objects provide access to additional support classes:
 
 ## XMPAliasInfo object
 
-This object is returned by [XMPMeta.resolveAlias](#resolvealias). The read-only properties describe an XMP metadata alias.
+This object is returned by [XMPMeta.resolveAlias](#xmpmetaresolvealias). The read-only properties describe an XMP metadata alias.
 
 ### XMPAliasInfo object properties
 
@@ -395,7 +395,7 @@ A logical OR of bit-flag constants, or 0 if the format is not handled. Constants
 
 Reports whether XMP metadata of a given size can be updated for this file. This is particularly important if the packet size is increased.
 
-Considers only the length of the serialized packet; does not keep the provided XMP. Use [putXMP()](#xmpfile-putxmp) to actually update the XMP in the open file.
+Considers only the length of the serialized packet; does not keep the provided XMP. Use [putXMP()](#xmpfileputxmp) to actually update the XMP in the open file.
 
 ##### Parameters
 
@@ -494,7 +494,7 @@ An [XMPFileInfo object](#xmpfileinfo-object).
 | `xmpPacket` | String           | The XMP metadata as a String containing an XMP packet.                 |
 | `xmpBuffer` | Array of Numbers | The XMP metadata as an Array of Number containing raw XMP packet data. |
 
-Supplies new XMP metadata for this file. The file is not actually written until [closeFile()](#xmpfile-closefile) is called. The options provided when the file was opened determine whether that function reconciles the XMP with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent with the XMP metadata.
+Supplies new XMP metadata for this file. The file is not actually written until [closeFile()](#xmpfileclosefile) is called. The options provided when the file was opened determine whether that function reconciles the XMP with other forms of metadata; that is, whether any legacy metadata is also updated to be consistent with the XMP metadata.
 
 ##### Returns
 
@@ -504,7 +504,7 @@ Nothing
 
 ## XMPFileInfo object
 
-This object is returned by [XMPFile.getFileInfo](#getfileinfo). The read-only properties describe the file represented by the [XMPFile object](#xmpfile-object).
+This object is returned by [XMPFile.getFileInfo](#xmpfilegetfileinfo). The read-only properties describe the file represented by the [XMPFile object](#xmpfile-object).
 
 !!! note
     This object is not related to the XMP File Info dialog that Adobe Creative Suite 4 applications use to display metadata.
@@ -548,7 +548,7 @@ This object is returned by [XMPFile.getFileInfo](#getfileinfo). The read-only pr
 
 ## XMPIterator object
 
-Created by a call to [XMPMeta.iterator](#iterator). Walks recursively through the properties and qualifiers of an [XMPMeta object](#xmpmeta-object), and returns them as [XMPProperty object](#xmpproperty-object).
+Created by a call to [XMPMeta.iterator](#xmpmetaiterator). Walks recursively through the properties and qualifiers of an [XMPMeta object](#xmpmeta-object), and returns them as [XMPProperty object](#xmpproperty-object).
 
 The object has no JavaScript properties.
 
@@ -576,7 +576,7 @@ An [XMPProperty object](#xmpproperty-object), or null if there are no more items
 
 ##### Description
 
-Skips the subtree below and the siblings of the current node on the subsequent call to [next()](#xmpiterator-next).
+Skips the subtree below and the siblings of the current node on the subsequent call to [next()](#xmpiteratornext).
 
 ##### Returns
 
@@ -590,7 +590,7 @@ Nothing
 
 ##### Description
 
-Skips the subtree below the current node on the subsequent call to [next()](#xmpiterator-next).
+Skips the subtree below the current node on the subsequent call to [next()](#xmpiteratornext).
 
 ##### Returns
 
@@ -604,7 +604,7 @@ This class provides the core services of the XMP Toolkit. The functions provide 
 
 There is one static property on the class that provides XMP version information; there are no JavaScript properties in the instance. The object encapsulates a set of metadata properties, which you access through the object functions.
 
-The generic functions [getProperty()](#xmpmetaobj-getproperty), [setProperty()](#xmpmetaobj-setproperty), and [deleteProperty()](#xmpmetaobj-deleteproperty) allow you to manipulate all types of properties, when used with appropriately composed path expressions. For convenience, the object also provides more specific functions for use with specific types of properties, such as arrays.
+The generic functions [getProperty()](#xmpmetagetproperty), [setProperty()](#xmpmetasetproperty), and [deleteProperty()](#xmpmetadeleteproperty) allow you to manipulate all types of properties, when used with appropriately composed path expressions. For convenience, the object also provides more specific functions for use with specific types of properties, such as arrays.
 
 ---
 
@@ -622,10 +622,10 @@ new XMPMeta ( buffer );
 
 ##### Parameters
 
-| Parameter |       Type       |                                                                  Description                                                                  |
-| --------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `packet`  | String           | An XML file or an XMP packet.                                                                                                                 |
-| `buffer`  | Array of Numbers | The UTF-8 or UTF-16 encoded bytes of an XML file or an XMP packet. This array is the result of [XMPMeta.serializeToArray](#serializetoarray). |
+| Parameter |       Type       |                                                                     Description                                                                      |
+| --------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `packet`  | String           | An XML file or an XMP packet.                                                                                                                        |
+| `buffer`  | Array of Numbers | The UTF-8 or UTF-16 encoded bytes of an XML file or an XMP packet. This array is the result of [XMPMeta.serializeToArray](#xmpmetaserializetoarray). |
 
 ---
 
@@ -1375,7 +1375,7 @@ An Array of Numbers.
 
 ##### Description
 
-Replaces an item within an array, or appends an item. The array must exist. To create an item, [appendArrayItem()](#xmpmetaobj-appendarrayitem) and [insertArrayItem()](#xmpmetaobj-insertarrayitem) are preferred.
+Replaces an item within an array, or appends an item. The array must exist. To create an item, [appendArrayItem()](#xmpmetaappendarrayitem) and [insertArrayItem()](#xmpmetainsertarrayitem) are preferred.
 
 ##### Parameters
 
@@ -1506,7 +1506,7 @@ Nothing
 
 ##### Description
 
-Sets the value of a simple metadata property, creating the property if necessary, or creates a new array or structure property. For creating array and structure properties, [setArrayItem()](#xmpmetaobj-setarrayitem) and [setStructField()](#xmpmetaobj-setstructfield) are preferred. Use this call to create or set top-level, simple properties, or after using the path-composition functions in the [XMPUtils object](#xmputils-object).
+Sets the value of a simple metadata property, creating the property if necessary, or creates a new array or structure property. For creating array and structure properties, [setArrayItem()](#xmpmetasetarrayitem) and [setStructField()](#xmpmetasetstructfield) are preferred. Use this call to create or set top-level, simple properties, or after using the path-composition functions in the [XMPUtils object](#xmputils-object).
 
 ##### Parameters
 
@@ -1562,7 +1562,7 @@ Nothing
 
 ## XMPPacketInfo object
 
-This object is returned by [XMPFile.getPacketInfo()](#getpacketinfo). The read-only properties describe the XMP packet for the file represented by the [XMPFile object](#xmpfile-object).
+This object is returned by [XMPFile.getPacketInfo()](#xmpfilegetpacketinfo). The read-only properties describe the XMP packet for the file represented by the [XMPFile object](#xmpfile-object).
 
 ---
 
@@ -1593,29 +1593,29 @@ This object is returned by [XMPFile.getPacketInfo()](#getpacketinfo). The read-o
 
 ## XMPProperty object
 
-This object is returned by various property accessor functions of the [XMPMeta object](#xmpmeta-object), such as
-[getProperty](#getproperty). The read-only properties describe a metadata property.
+This object is returned by various property accessor functions of the [XMPMeta object](#xmpfile-object), such as
+[getProperty](#xmpmetagetproperty). The read-only properties describe a metadata property.
 
 ---
 
 ### XMPProperty object properties
 
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type   |                                                                                                       Description                                                                                                        |
-+===========+=========+==========================================================================================================================================================================================================================+
-| locale    | String  | The language of the property value. This value is set by calls to [getLocalizedText()](#xmpmetaobj-getlocalizedtext), which assigns the language of the selected alternative text item, if an appropriate item is found. |
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| namespace | String  | The namespace of the property; see [Schema namespace string constants](#schema-namespace-string-constants). Typically used when browsing metadata with an [XMPIterator object](#xmpiterator-object).                     |
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| options   | Number  | A constant that describes the property type, 0 for a simple property. Constants are:                                                                                                                                     |
-|           |         |                                                                                                                                                                                                                          |
-|           |         | - `XMPConst.PROP_IS_ARRAY` - The property is an array (of type alt, bag, or seq).                                                                                                                                        |
-|           |         | - `XMPConst.PROP_IS_STRUCT` - The property is a structure with nested fields.                                                                                                                                            |
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| path      | String  | The property path, including the property name. For a simple property, the entire path is the property name.                                                                                                             |
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| value     | Variant | The value of the property, if any. Arrays and non-leaf levels of structures do not have values.                                                                                                                          |
-+-----------+---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |  Type   |                                                                                                     Description                                                                                                      |
++===========+=========+======================================================================================================================================================================================================================+
+| locale    | String  | The language of the property value. This value is set by calls to [getLocalizedText()](#xmpmetagetlocalizedtext), which assigns the language of the selected alternative text item, if an appropriate item is found. |
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| namespace | String  | The namespace of the property; see [Schema namespace string constants](#schema-namespace-string-constants). Typically used when browsing metadata with an [XMPIterator object](#xmpiterator-object).                 |
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| options   | Number  | A constant that describes the property type, 0 for a simple property. Constants are:                                                                                                                                 |
+|           |         |                                                                                                                                                                                                                      |
+|           |         | - `XMPConst.PROP_IS_ARRAY` - The property is an array (of type alt, bag, or seq).                                                                                                                                    |
+|           |         | - `XMPConst.PROP_IS_STRUCT` - The property is a structure with nested fields.                                                                                                                                        |
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| path      | String  | The property path, including the property name. For a simple property, the entire path is the property name.                                                                                                         |
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| value     | Variant | The value of the property, if any. Arrays and non-leaf levels of structures do not have values.                                                                                                                      |
++-----------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ---
 
@@ -1623,7 +1623,7 @@ This object is returned by various property accessor functions of the [XMPMeta o
 
 This class provides additional utility functions for the XMP Toolkit, layered upon the functionality of the [XMPMeta object](#xmpmeta-object). It has only static functions, you cannot create an instance.
 
-Path-composition functions such as [composeArrayItemPath()](#xmputils-composearrayitempath), provide support for composing path expressions to deeply nested properties, which you can then pass to the accessor functions in XMPMeta object, such as xmpmetaobj-getProperty.
+Path-composition functions such as [composeArrayItemPath()](#xmputilscomposearrayitempath), provide support for composing path expressions to deeply nested properties, which you can then pass to the accessor functions in XMPMeta object, such as xmpmetaobj-getProperty.
 
 Higher-level functions such as xmputils-duplicateSubtree allow you to manipulate the metadata tree in an XMPMeta object.
 
@@ -1667,18 +1667,18 @@ Nothing
 
 ##### Description
 
-Concatenates a set of array item values into a single string. The resulting string can be separated back out into array items using [separateArrayItems()](#xmputils-separatearrayitems).
+Concatenates a set of array item values into a single string. The resulting string can be separated back out into array items using [separateArrayItems()](#xmputilsseparatearrayitems).
 
 ##### Parameters
 
-|  Parameter  |                                  Type                                   |                                                                                                                                                              Description                                                                                                                                                              |
-| ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `xmpObj`    | [XMPMeta Object](#xmpmeta-object)                                       | The XMPMeta object containing the array.                                                                                                                                                                                                                                                                                              |
-| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                                                                                                                                                                                                                             |
-| `arrayName` | String                                                                  | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.                                                                                                                                                                                                               |
-| `separator` | String                                                                  | The string used to separate the items in the result string. Default is '; ', an ASCII semicolon and space (U+003B,U+0020).                                                                                                                                                                                                            |
-| `quotes`    | String                                                                  | The character used to quote items that contain a separator. Default is '"', an ASCII double quote (U+0022).                                                                                                                                                                                                                           |
-| `options`   | Constant value                                                          | Option flag that controls the concatenation. The constant value `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such as "LastName, FirstName"). This option must be set the same way in this function and in [separateArrayItems()](#xmputils-separatearrayitems) to reconstruct the items correctly. Default is `0`. |
+|  Parameter  |                                  Type                                   |                                                                                                                                                             Description                                                                                                                                                              |
+| ----------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `xmpObj`    | [XMPMeta Object](#xmpmeta-object)                                       | The XMPMeta object containing the array.                                                                                                                                                                                                                                                                                             |
+| `schemaNS`  | [Schema namespace string constants](#schema-namespace-string-constants) | The namespace URI string.                                                                                                                                                                                                                                                                                                            |
+| `arrayName` | String                                                                  | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.                                                                                                                                                                                                              |
+| `separator` | String                                                                  | The string used to separate the items in the result string. Default is '; ', an ASCII semicolon and space (U+003B,U+0020).                                                                                                                                                                                                           |
+| `quotes`    | String                                                                  | The character used to quote items that contain a separator. Default is '"', an ASCII double quote (U+0022).                                                                                                                                                                                                                          |
+| `options`   | Constant value                                                          | Option flag that controls the concatenation. The constant value `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values (such as "LastName, FirstName"). This option must be set the same way in this function and in [separateArrayItems()](#xmputilsseparatearrayitems) to reconstruct the items correctly. Default is `0`. |
 
 ##### Returns
 
@@ -1906,28 +1906,28 @@ Nothing
 
 ##### Description
 
-Updates individual array item strings in the XMPMeta object from a concatenated string returned by [catenateArrayItems()](#xmputils-catenatearrayitems). Recognizes a large set of separator characters, including semicolons, commas, tab, return, linefeed, and multiple spaces.
+Updates individual array item strings in the XMPMeta object from a concatenated string returned by [catenateArrayItems()](#xmputilscatenatearrayitems). Recognizes a large set of separator characters, including semicolons, commas, tab, return, linefeed, and multiple spaces.
 
 ##### Parameters
 
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-|   Parameter    |                                                                                                            Type                                                                                                            |                                                        Description                                                        |
-+================+============================================================================================================================================================================================================================+===========================================================================================================================+
-| `xmpObj`       | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The object to separate items from                                                                                         |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| `schemaNS`     | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                     |                                                                                                                           |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| `arrayName`    | String                                                                                                                                                                                                                     | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.   |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| `arrayOptions` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control how the array property is updated from the separated string. Default is `0`.                    |
-|                |                                                                                                                                                                                                                            |                                                                                                                           |
-|                | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                                                                           |
-|                | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                                                                           |
-|                | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                                                                           |
-|                | - `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not specified, an item containing a comma (such as "LastName, FirstName") is separated into two array items.                                          |                                                                                                                           |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| `concatString` | String                                                                                                                                                                                                                     | The string containing the concatenated array values, as returned by [catenateArrayItems()](#xmputils-catenatearrayitems). |
-+----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+|   Parameter    |                                                                                                            Type                                                                                                            |                                                       Description                                                        |
++================+============================================================================================================================================================================================================================+==========================================================================================================================+
+| `xmpObj`       | [XMPMeta Object](#xmpmeta-object)                                                                                                                                                                                          | The object to separate items from                                                                                        |
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| `schemaNS`     | The namespace URI string. See [Schema namespace string constants](#schema-namespace-string-constants).                                                                                                                     |                                                                                                                          |
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| `arrayName`    | String                                                                                                                                                                                                                     | The array property name string. Can be a general path expression. Each item in the array must be a simple string value.  |
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| `arrayOptions` | A logical OR of these bit-flag constants:                                                                                                                                                                                  | Option flags that control how the array property is updated from the separated string. Default is `0`.                   |
+|                |                                                                                                                                                                                                                            |                                                                                                                          |
+|                | - `XMPConst.APPEND_ALL_PROPERTIES` - Include both internal and external properties. By default, copies only external properties. This applies only to top-level properties.                                                |                                                                                                                          |
+|                | - `XMPConst.APPEND_REPLACE_OLD_VALUES` - Replace the values of existing properties with the value from the source object. By default, existing values are retained. This applies to properties at all levels of hierarchy. |                                                                                                                          |
+|                | - `XMPConst.APPEND_DELETE_EMPTY_VALUES` - Delete properties if the new value is empty.                                                                                                                                     |                                                                                                                          |
+|                | - `XMPConst.SEPARATE_ALLOW_COMMAS` - Allow commas in item values. If not specified, an item containing a comma (such as "LastName, FirstName") is separated into two array items.                                          |                                                                                                                          |
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| `concatString` | String                                                                                                                                                                                                                     | The string containing the concatenated array values, as returned by [catenateArrayItems()](#xmputilscatenatearrayitems). |
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 ##### Returns
 

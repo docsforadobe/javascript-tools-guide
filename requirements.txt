@@ -1,4 +1,5 @@
-sphinx==5.0
-sphinx_rtd_theme
-sphinx_rtd_dark_mode
-docutils<0.18
+markdown_grid_tables
+mkdocs
+mkdocs-git-revision-date-localized-plugin
+mkdocs-material
+mkdocs-print-site-plugin

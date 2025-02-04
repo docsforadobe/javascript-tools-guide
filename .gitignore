@@ -1,5 +1,6 @@
 *.sublime-project
 *.sublime-workspace
-.vscode
-build/
-docs/_build/
+.DS_Store
+.vscode/
+site/
+venv/

@@ -8,11 +8,47 @@ The following sections introduce the types of controls you can add to a `Window`
 
 These are types of `Control` objects which are contained in windows, and which contain and group other controls.
 
-| **Panel**       | Typically used to visually organize related controls.<br/><br/>- Set the text property to define a title that appears at the top of the panel.<br/>- An optional borderStyle creation property controls the appearance of the border<br/>  drawn around the panel.<br/><br/>You can use panels as separators: those with width of 0 appear as vertical lines and<br/>those with height of 0 appear as horizontal lines:<br/><br/>```javascript<br/>var dlg = new Window( "dialog", "Alert Box Builder" );<br/>dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );<br/>```   |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Group**       | Used to visually organize related controls. Unlike `Panels`, `Groups` have no title or<br/>visible border. You can use them to create hierarchies of controls, and for fine control<br/>over layout attributes of certain groups of controls within a larger panel. For examples,<br/>see [Creating more complex arrangements](automatic-layout.md#creating-more-complex-arrangements).                                                                                                                                                                                                 |
-| **TabbedPanel** | A panel that contains only Tab objects as its immediate children. It has a selection<br/>property that contains the currently active Tab child. When the value of the selection<br/>property changes, either by a user selecting a different tab, or by a script setting the<br/>property, the TabbedPanel receives an onChange notification.<br/><br/>The title property provides an optional label; the titleLayout property places the<br/>label within the panel.                                                                                                                   |
-| **Tab**         | A general container whose parent is a TabbedPanel, with a selectable tab showing a<br/>localizable text value. Its size and position are determined by the parent.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+### Panel
+
+Typically used to visually organize related controls.
+
+- Set the text property to define a title that appears at the top of the panel.
+- An optional borderStyle creation property controls the appearance of the border drawn around the panel.
+
+You can use panels as separators: those with width of 0 appear as vertical lines and those with height of 0 appear as horizontal lines:
+
+```javascript
+var dlg = new Window( "dialog", "Alert Box Builder" );
+dlg.msgPnl = dlg.add( "panel", [ 25, 15, 355, 130 ], "Messages" );
+```
+
+---
+
+### Group
+
+Used to visually organize related controls.
+
+Unlike `Panels`, `Groups` have no title or visible border.
+
+You can use them to create hierarchies of controls, and for fine control over layout attributes of certain groups of controls within a larger panel. For examples, see [Creating more complex arrangements](automatic-layout.md#creating-more-complex-arrangements).
+
+---
+
+### TabbedPanel
+
+A panel that contains only Tab objects as its immediate children. It has a selection property that contains the currently active Tab child.
+
+When the value of the selection property changes, either by a user selecting a different tab, or by a script setting the property, the TabbedPanel receives an `onChange` notification.
+
+The title property provides an optional label; the titleLayout property places the label within the panel.
+
+---
+
+### Tab
+
+A general container whose parent is a TabbedPanel, with a selectable tab showing a localizable text value.
+
+Its size and position are determined by the parent.
 
 ---
 
@@ -38,20 +74,26 @@ dlg.btnPnl.cancelBtn = dlg.btnPnl.add( "button", undefined, "Cancel", { name: "c
 dlg.show();
 ```
 
+---
+
 ### IconButton
 
 A button that displays an icon, with or without a text label. Like a text button, typically initiates an action in response to a click.
 
 - The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` or `text` property provides an optional label; the [titleLayout](control-objects.md#controlobj-titlelayout) property places the label with respect to the image.
+- The `title` or `text` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
 - The `onClick` callback method provides behavior.
+
+---
 
 ### Image
 
 Displays an iconic image.
 
 - The `image` property identifies the icon image; see [Displaying images](#displaying-images).
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#controlobj-titlelayout) property places the label with respect to the image.
+- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the image.
+
+---
 
 ### StaticText
 
@@ -66,6 +108,8 @@ dlg.msgPnl.titleSt = dlg.msgPnl.add( "statictext", undefined, "Alert box title:"
 dlg.msgPnl.msgSt = dlg.msgPnl.add( "statictext", undefined, "Alert message:" );
 dlg.show();
 ```
+
+---
 
 ### EditText
 
@@ -87,7 +131,9 @@ dlg.show();
 ```
 
 !!! note
-    the creation property on the second EditText field, where `multiline: true` indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
+    The creation property on the second EditText field, `multiline: true`, indicates a field in which a long text string can be entered. The text wraps to appear as multiple lines.
+
+---
 
 ### EditNumber
 
@@ -114,12 +160,14 @@ dlg.show();
 !!! note
     Decimal numbers like `2.5` are accepted for minimum and maximum values.
 
+---
+
 ### Checkbox
 
 Allows the user to set a boolean state.
 
 - Set the `text` property to assign an identifying text string that appears next to the clickable box.
-- The user can click to select or deselect the box, which shows a checkmark when selected. The `value` is true when it is selected (checked) and false when it is not.
+- The user can click to select or deselect the box, which shows a checkmark when selected. The `value` is `true` when it is selected (checked) and `false` when it is not.
 
 When you create a Checkbox, you can set its value property to specify its initial state and appearance.
 
@@ -129,14 +177,16 @@ dlg.hasBtnsCb = dlg.add( "checkbox", undefined, "Should there be alert buttons?"
 dlg.hasBtnsCb.value = true;
 ```
 
+---
+
 ### RadioButton
 
 Allows the user to select one choice among several.
 
 - Set the text property to assign an identifying text string that appears next to the clickable button.
-- The `value` is true when the button is selected. The button shows the state in a platform-specific manner, with a filled or empty dot, for example.
+- The `value` is `true` when the button is selected. The button shows the state in a platform-specific manner, with a filled or empty dot, for example.
 
-You group a related set of radio buttons by creating all the related elements one after another. When any button's value becomes true, the value of all other buttons in the group becomes false. When you create a group of radio buttons, you should set the state of one of them true:
+You group a related set of radio buttons by creating all the related elements one after another. When any button's value becomes `true`, the value of all other buttons in the group becomes `false`. When you create a group of radio buttons, you should set the state of one of them `true`:
 
 ```javascript
 var dlg = new Window( "dialog", "Alert Box Builder" );
@@ -148,13 +198,27 @@ dlg.alertBtnsPnl.alignCenterRb.value = true;
 dlg.show();
 ```
 
+---
+
 ### Progressbar
 
-Typically used to display the progress of a time-consuming operation. A colored bar covers a percentage of the area of the control, representing the percentage completion of the operation. The `value` property reflects and controls how much of the visible area is colored, relative to the maximum value (`maxvalue`). By default the range is 0 to 100, so the `value = 50` when the operation is half done.
+Typically used to display the progress of a time-consuming operation. A colored bar covers a percentage of the area of the control, representing the percentage completion of the operation.
+
+The `value` property reflects and controls how much of the visible area is colored, relative to the maximum value (`maxvalue`).
+
+By default the range is `[0..100]`, so the `value = 50` when the operation is half done.
+
+---
 
 ### Slider
 
-Typically used to select within a range of values. The slider is a horizontal bar with a draggable indicator, and you can click a point on the slider bar to jump the indicator to that location. The `value` property reflects and controls the position of the indicator, within the range determined by `minvalue` and `maxvalue`. By default the range is 0 to 100, so setting `value = 50` moves the indicator to the middle of the bar.
+Typically used to select within a range of values. The slider is a horizontal bar with a draggable indicator, and you can click a point on the slider bar to jump the indicator to that location.
+
+The `value` property reflects and controls the position of the indicator, within the range determined by `minvalue` and `maxvalue`.
+
+By default the range is 0 to 100, so setting `value = 50` moves the indicator to the middle of the bar.
+
+---
 
 ### Scrollbar
 
@@ -173,6 +237,8 @@ dlg.sizePnl.widthScrl = dlg.sizePnl.add( "scrollbar", undefined, 300, 300, 800 )
 dlg.sizePnl.widthEt = dlg.sizePnl.add( "edittext" );
 ```
 
+---
+
 ### ListBox, DropDownList and TreeView
 
 These controls display lists of items, which are represented by `ListItem` objects in the `items` property. You can access the items in this array using a 0-based index.
@@ -180,18 +246,23 @@ These controls display lists of items, which are represented by `ListItem` objec
 - A `ListBox` control displays a list of choices. When you create the object, you specify whether it allows the user to select only one or multiple items. If a list contains more items than can be displayed in the available area, a scrollbar may appear that allows the user to scroll through all the list items. A list box can display items in multiple columns; see [Creating multi-column lists](#creating-multi-column-lists).
 - A `DropDownList` control displays a single visible item. When you click the control, a list drops down and allows you to select one of the other items in the list. Drop-down lists can have nonselectable separator items for visually separating groups of related items, as in a menu.
 - A `TreeView` control is similar to a ListBox, except that the items can have child items. Items with children can be expanded or collapsed to show or hide the child items. Child items can in turn contain children.
-- The `title` property provides an optional label; the [titleLayout](control-objects.md#controlobj-titlelayout) property places the label with respect to the list.
+- The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the list.
 
 You can specify the choice items on creation of the list object, or afterward using the list object's `add()` method. You can remove items programmatically with the list object's `remove()` and `removeAll()` methods.
+
+---
 
 ### ListItem
 
 Items added to or inserted into any type of list control are `ListItem` objects, with properties that can be manipulated from a script. ListItem elements can be of the following types:
 
-| `item`      | The typical item in any type of list. It displays text or an image, and can be<br/>selected. To display an image, set the item object's image property; [Displaying images](#displaying-images).   |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `separator` | A separator is a nonselectable visual element in a drop-down list.<br/>Although it has a text property, the value is ignored, and the item is displayed as<br/>a horizontal line.                  |
-| `node`      | A displayable and selectable item in a `TreeView` control which can contain<br/>other `ListItem` objects, including other items of type node.                                                      |
+|    Type     |                                                                                         Description                                                                                          |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `item`      | The typical item in any type of list. It displays text or an image, and can be selected. To display an image, set the item object's image property; [Displaying images](#displaying-images). |
+| `separator` | A separator is a nonselectable visual element in a drop-down list. Although it has a text property, the value is ignored, and the item is displayed as a horizontal line.                    |
+| `node`      | A displayable and selectable item in a `TreeView` control which can contain other `ListItem` objects, including other items of type node.                                                    |
+
+---
 
 ### FlashPlayer
 
@@ -199,7 +270,7 @@ Runs a Flash movie within a ScriptUI window. Its control's methods allow you to 
 
 You can also use the control object to communicate with the Flash application, calling ActionScript methods, and making JavaScript methods defined in your Adobe application script available to the Flash ActionScript code. See [Calling ActionScript functions from a ScriptUI script](communicating-with-the-flash-application.md#calling-actionscript-functions-from-a-scriptui-script).
 
-The `title` property provides an optional label; the [titleLayout](control-objects.md#controlobj-titlelayout) property places the label with respect to the player.
+The `title` property provides an optional label; the [titleLayout](control-objects.md#titlelayout) property places the label with respect to the player.
 
 ---
 
@@ -232,13 +303,13 @@ If a script does not explicitly set the `preferredSize` or `size` property of an
 
 ## Creating multi-column lists
 
-In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#controlobj-text) and [image](control-objects.md#controlobj-image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
+In list controls ([ListBox, DropDownList and TreeView](#listbox-dropdownlist-treeview)), a set of [ListItem](#listitem) objects represents the individual choices in the list. Each choice can be labeled with a localizable string, an image, or both, as specified by the [text](control-objects.md#text) and [image](control-objects.md#image) properties of the [ListItem](#listitem) (see [Displaying images](#displaying-images)).
 
-You can define a [ListBox](control-objects.md#control-type-listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
+You can define a [ListBox](control-objects.md#listbox) to have multiple columns, by specifying the `numberOfColumns` creation parameter. By default, the number of columns is 1. If you specify multiple columns, you can also use the creation parameters to specify whether headers are shown, and the header text for each column.
 
-If you specify more than one column, each [ListItem]() object that you add to the box specifies one selectable row. The `text` and `image` of the [ListItem]() object specifies the label in the first column, and the [subitems](control-objects.md#controlobj-subitems) property specifies labels that appear in that row for the remaining columns.
+If you specify more than one column, each [ListItem](#listitem) object that you add to the box specifies one selectable row. The `text` and `image` of the [ListItem]() object specifies the label in the first column, and the [subitems](control-objects.md#subitems) property specifies labels that appear in that row for the remaining columns.
 
-The [subitems](control-objects.md#controlobj-subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
+The [subitems](control-objects.md#subitems) value is an array, whose length is one less than the number of columns. That is, the first member, `ListItem.subitems[0]`, specifies the label in the second column. Each member specifies one label, as a JavaScript object with two properties:
 
 ```javascript
 { text : displayString , image : imageFileReference }
@@ -249,24 +320,24 @@ For example, the following fragment defines a list box with two columns, and spe
 ```javascript
 ...
 // create list box with two titled columns
-var list = dlg.add ('ListBox', [0, 0, 150, 75], 'asd',
+var list = dlg.add ("ListBox", [0, 0, 150, 75], "asd",
 {numberOfColumns: 2, showHeaders: true,
-columnTitles: ['First Name', 'Last Name']});
+columnTitles: ["First Name", "Last Name"]});
 // add an item for the first row, with the label value for the first column
-var item1 = list.add ('item', 'John');
+var item1 = list.add ("item", "John");
 // add the label value for the second column in that row.
-item1.subItems[0].text = 'Doe';
+item1.subItems[0].text = "Doe";
 // add an item for the second row, with the text for the first column label
-var item2 = list.add ('item', 'Jane');
+var item2 = list.add ("item", "Jane");
 // add the label text and image for the second column in the second row
-item2.subItems[0].text = 'Doe';
+item2.subItems[0].text = "Doe";
 item2.subItems[0].image = File ("~/Desktop/Step1.png");
 ...
 ```
 
 This creates a control that looks like this:
 
-![Multi-Column Lists](user-interface-tools/_static/04_user-interface-tools_types-of-controls_multi-column-lists.jpg)
+![Multi-Column Lists](./_static/04_user-interface-tools_types-of-controls_multi-column-lists.jpg)
 
 Notice that the columns have headers, and the label in the second column of the second row has both text and an image.
 

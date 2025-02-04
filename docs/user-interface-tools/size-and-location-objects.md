@@ -25,7 +25,7 @@ You can access the resulting object as an array with values in the order defined
 
 ## Size and location object types
 
-The following table shows the property-value object types, the element properties that create and contain them, and their array and object-property formats.
+The following objects are the property-value object types, the element properties that create and contain them, and their array and object-property formats.
 
 ### Bounds
 
@@ -36,6 +36,8 @@ A `Bounds` object is created when you set an element's `bounds` property, and th
 - An object must contain properties named `left`, `top`, `right`, `bottom`, or `x`, `y`, `width`, `height`.
 - An array must have values in the order [left, top, right, bottom].
 
+---
+
 ### Dimension
 
 Defines the size of a Window or user-interface element. Contains an array, `[ width, height ]`, that defines the element's size in pixels.
@@ -44,6 +46,8 @@ A `Dimension` object is created when you set an element's size or `preferredSize
 
 - An object must contain properties named `width` and `height`.
 - An array must have values in the order `[ width, height ]`.
+
+---
 
 ### Margins
 
@@ -55,6 +59,8 @@ A `Margins` object is created when you set an element's `margins` property.
 - An array must have values in the order [ `left`, `top`, `right`, `bottom` ].
 
 You can also set the margins property to a number; all of the array values are then set to this number.
+
+---
 
 ### Point
 

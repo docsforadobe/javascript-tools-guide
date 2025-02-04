@@ -1,6 +1,6 @@
 # Environment object
 
-This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) property.
+This global object is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) property.
 
 It defines attributes of the ScriptUI environment, and only contains one property.
 
@@ -18,7 +18,7 @@ This JavaScript object reports the active state of the keyboard at any time; tha
 
 This is independent of the event-handling system, which means that at any time in your script, you can use this object to check whether specific keys (such as keyboard modifiers) are pressed, and trigger alternative actions as a result.
 
-It is available through the [ScriptUI.environment](scriptui-class.md#scriptui-environment) object:
+It is available through the [ScriptUI.environment](scriptui-class.md#scriptuienvironment) object:
 
 ```javascript
 var myKeyState = ScriptUI.environment.keyboardState;
@@ -30,7 +30,7 @@ The Keyboard State object contains the following properties:
 
 ### keyName
 
-Type: `String`
+`ScriptUI.environment.keyboardState.keyName`
 
 The name of the key currently pressed. This is the JavaScript name, a string such as `"A"` or `"a"`.
 
@@ -38,6 +38,12 @@ The name of the key currently pressed. This is the JavaScript name, a string suc
     This only works for single keys being pressed; holding multiple will report `undefined`.
 
     Modifier keys will report `undefined`; to get those, see [shiftKey, ctrlKey, altKey, metaKey](#keyboard-state-metakeys)
+
+#### Type
+
+String
+
+#### Example
 
 For example, with 'a' pressed:
 
@@ -51,14 +57,26 @@ alert(currentPressedKey); // "A"
 
 ### shiftKey, ctrlKey, altKey, metaKey
 
-Type: `Boolean`
+`ScriptUI.environment.keyboardState.shiftKey`
+
+`ScriptUI.environment.keyboardState.ctrlKey`
+
+`ScriptUI.environment.keyboardState.altKey`
+
+`ScriptUI.environment.keyboardState.metaKey`
+
+#### Description
 
 `true` if the named modifier key is currently active.
 
 !!! note
     `metaKey` captures both the `META` and `COMMAND` keys.
 
-#### Examples
+#### Type
+
+Boolean
+
+#### Example
 
 For example, checking whether a modifier key is held during script execution:
 

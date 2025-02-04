@@ -22,14 +22,21 @@ The default object has no predefined properties, but a script can assign arbitra
 
 `windowObj.layout.layout( recalculate )`
 
-| `recalculate`   | Optional. When `true`, forces the layout manager to recalculate the container size for<br/>this and any child containers. Default is false.   |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+#### Description
 
 Invokes the automatic layout behavior for the managed container. Adjusts sizes and positions of the child elements of this window or container according to the placement and alignment property values in the parent and children.
 
 Invoked automatically the first time the window is displayed. Thereafter, the script must invoke it explicitly to change the layout in case of changes in the size or position of the parent or children.
 
-Returns `undefined`
+#### Parameters
+
+|   Parameter   |  Type   |                                                                Description                                                                |
+| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `recalculate` | Boolean | Optional. When `true`, forces the layout manager to recalculate the container size for this and any child containers. Default is `false`. |
+
+#### Returns
+
+Nothing
 
 ---
 
@@ -37,8 +44,12 @@ Returns `undefined`
 
 `windowObj.layout.resize()`
 
+#### Description
+
 Resizes and moves the child elements of the managed container, according to the alignment values for each child of the container, after the container has been resized by the user or by a script.
 
 See [Automatic layout](automatic-layout.md) for details of how alignment affects an element's size and location.
 
-Returns `undefined`.
+#### Returns
+
+Nothing

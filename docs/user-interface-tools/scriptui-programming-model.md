@@ -50,14 +50,14 @@ When a script creates a `Window` and adds various user-interface elements to it,
 
 Your script can access these values, and (if not using auto-layout) set them as follows:
 
-- The `location` of a window is defined by a `Point` object containing a pair of coordinates (`x` and `y`) for the top left corner (the origin), specified in the screen coordinate system. The location of an element within a window or other container is defined as the origin point specified in the container's coordinate system. That is, the x and y values are relative to the origin of the container.
+- The `location` of a window is defined by a [Point](./size-and-location-objects.md#point) object containing a pair of coordinates (`x` and `y`) for the top left corner (the origin), specified in the screen coordinate system. The location of an element within a window or other container is defined as the origin point specified in the container's coordinate system. That is, the x and y values are relative to the origin of the container.
     - The following examples show equivalent ways of placing the content region of an existing window at screen coordinates [10, 50]:
         ```javascript
         win.location = [ 10, 50 ];
         win.location = { x: 10, y: 50 };
         win.location = "x:10, y:50";
         ```
-- The `size` of an element's region is defined by a `Dimension` object containing a `width` and `height` in pixels.
+- The `size` of an element's region is defined by a [Dimension](./size-and-location-objects.md#dimension) object containing a `width` and `height` in pixels.
     - The following examples show equivalent ways of changing an existing window's width and height to 200 and 100:
         ```javascript
         win.size = [ 200, 100 ];
@@ -99,8 +99,8 @@ You can specify the initial size and position of any new element relative to the
 The order of optional parameters must be maintained. Use the value `undefined` for a parameter you do not wish to set. For example, if you want to use automatic layout to determine the bounds, but still set the title and text in a panel and button, the following creates `Panel` and `Button` elements with an initial `text` value, but no `bounds` value:
 
 ```javascript
-dlg.btnPnl = dlg.add('panel', undefined, 'Build it');
-dlg.btnPnl.testBtn = dlg.btnPnl.add('button', undefined, 'Test');
+dlg.btnPnl = dlg.add("panel", undefined, "Build it");
+dlg.btnPnl.testBtn = dlg.btnPnl.add("button", undefined, "Test");
 ```
 
 A new element is initially set to be visible, but is not shown unless its parent object is shown.
@@ -116,7 +116,7 @@ You can also specify the creation properties for new objects using the resource 
 All user-interface elements have an optional creation property called name, which assigns a name for identifying that element. For example, the following creates a new Button element with the name ok:
 
 ```javascript
-dlg.btnPnl.buildBtn = dlg.btnPnl.add('button', undefined, 'Build', {name:'ok'});
+dlg.btnPnl.buildBtn = dlg.btnPnl.add("button", undefined, "Build", {name: "ok"});
 ```
 
 !!! note

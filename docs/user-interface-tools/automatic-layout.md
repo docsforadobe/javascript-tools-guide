@@ -57,14 +57,17 @@ Each example shows the effects of setting particular layout properties in variou
 
 The `orientation` property of a container specifies the organization of child elements within it. It can have these values:
 
-| `row`    | Child elements are arranged next to each other, in a single row from left to right across the<br/>container. The height of the container is based on the height of the tallest child element in the row,<br/>and the width of the container is based on the combined widths of all the child elements.                                                                                 |
-|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `column` | Child elements are arranged above and below each other, in a single column from top to<br/>bottom across the container. The height of the container is based on the combined heights of all the<br/>child elements, and the width of the container is based on the widest child element in the column.                                                                                 |
-| `stack`  | Child elements are arranged overlapping one another, as in a stack of papers. The elements<br/>overlie one another in the same region of the container. Only the top element is fully visible. The<br/>height of the container is based on the height of the tallest child element in the stack, and the width of<br/>the container is based on the widest child element in the stack. |
+|  Value   |                                                                                                                                                                                    Behavior                                                                                                                                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `row`    | Child elements are arranged next to each other, in a single row from left to right across the container. The height of the container is based on the height of the tallest child element in the row, and the width of the container is based on the combined widths of all the child elements.                                                                                 |
+| `column` | Child elements are arranged above and below each other, in a single column from top to bottom across the container. The height of the container is based on the combined heights of all the child elements, and the width of the container is based on the widest child element in the column.                                                                                 |
+| `stack`  | Child elements are arranged overlapping one another, as in a stack of papers. The elements overlie one another in the same region of the container. Only the top element is fully visible. The height of the container is based on the height of the tallest child element in the stack, and the width of<br/>the container is based on the widest child element in the stack. |
 
 The following figure shows the results of laying out the sample window with each of these orientations:
 
-![Orientation = Row](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg)![Orientation = Column](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg)![Orientation = Stack](user-interface-tools/_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg)
+![Orientation = Row](./_static/04_user-interface-tools_automatic-layout_container-orientation_row.jpg)
+![Orientation = Column](./_static/04_user-interface-tools_automatic-layout_container-orientation_column.jpg)
+![Orientation = Stack](./_static/04_user-interface-tools_automatic-layout_container-orientation_stack.jpg)
 
 ---
 
@@ -84,41 +87,47 @@ If you set the `alignment` value using a constant and then query the property, i
 
 Elements in a row can be aligned along the vertical axis, in these ways:
 
-| `top`    | The element's top edge is located at the top margin of its container.                                        |
-|----------|--------------------------------------------------------------------------------------------------------------|
-| `bottom` | The element's bottom edge is located at the bottom margin of its container.                                  |
-| `center` | The element is centered within the top and bottom margins of its container.                                  |
-| `fill`   | The element's height is adjusted to fill the height of the container<br/>between the top and bottom margins. |
+|  Value   |                                                 Behavior                                                 |
+| -------- | -------------------------------------------------------------------------------------------------------- |
+| `top`    | The element's top edge is located at the top margin of its container.                                    |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container.                              |
+| `center` | The element is centered within the top and bottom margins of its container.                              |
+| `fill`   | The element's height is adjusted to fill the height of the container between the top and bottom margins. |
 
 Elements in a column can be aligned along the horizontal axis, in these ways:
 
-| `left`   | The element's left edge is located at the left margin of its container.                                    |
-|----------|------------------------------------------------------------------------------------------------------------|
-| `right`  | The element's right edge is located at the right margin of its container.                                  |
-| `center` | The element is centered within the right and left margins of its container.                                |
-| `fill`   | The element's width is adjusted to fill the width of the container<br/>between the right and left margins. |
+|  Value   |                                                Behavior                                                |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| `left`   | The element's left edge is located at the left margin of its container.                                |
+| `right`  | The element's right edge is located at the right margin of its container.                              |
+| `center` | The element is centered within the right and left margins of its container.                            |
+| `fill`   | The element's width is adjusted to fill the width of the container between the right and left margins. |
 
 Elements in a stack can be aligned along either the vertical or the horizontal axis, in these ways:
 
-| `top`    | The element's top edge is located at the top margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                                    |
-|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bottom` | The element's bottom edge is located at the bottom margin of its container, and the element is<br/>centered within the right and left margins of its container.                                                              |
-| `left`   | The element's left edge is located at the left margin of its container, and the element is centered<br/>within the top and bottom margins of its container.                                                                  |
-| `right`  | The element's right edge is located at the right margin of its container, and the element is<br/>centered within the top and bottom margins of its container.-                                                               |
-| `center` | The element is centered within the top, bottom, right and left margins of its container.                                                                                                                                     |
-| `fill`   | The element's height is adjusted to fill the height of the container between the top and<br/>bottom margins., and the element's width is adjusted to fill the width of the container between the<br/>right and left margins. |
+|  Value   |                                                                                                         Behavior                                                                                                         |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `top`    | The element's top edge is located at the top margin of its container, and the element is centered within the right and left margins of its container.                                                                    |
+| `bottom` | The element's bottom edge is located at the bottom margin of its container, and the element is centered within the right and left margins of its container.                                                              |
+| `left`   | The element's left edge is located at the left margin of its container, and the element is centered within the top and bottom margins of its container.                                                                  |
+| `right`  | The element's right edge is located at the right margin of its container, and the element is centered within the top and bottom margins of its container.-                                                               |
+| `center` | The element is centered within the top, bottom, right and left margins of its container.                                                                                                                                 |
+| `fill`   | The element's height is adjusted to fill the height of the container between the top and bottom margins., and the element's width is adjusted to fill the width of the container between the<br/>right and left margins. |
 
 The following figure shows the results of creating the sample window with row orientation and the `bottom` and `top` alignment settings in the parent's `alignChildren` property:
 
-![alignChildren = bottom](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg)![alignChildren = top](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg)
+![alignChildren = bottom](./_static/04_user-interface-tools_automatic-layout_aligning-children_bottom.jpg)
+![alignChildren = top](./_static/04_user-interface-tools_automatic-layout_aligning-children_top.jpg)
 
 The following figure shows the results of creating the sample window with column orientation and the right, left, and fill alignment settings in the parent's alignChildren property. Notice how in the fill case, each element is made as wide as the widest element in the container:
 
-![alignChildren = left](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg)![alignChildren = right](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg)![alignChildren = fill](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg)
+![alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_left.jpg)
+![alignChildren = right](./_static/04_user-interface-tools_automatic-layout_aligning-children_right.jpg)
+![alignChildren = fill](./_static/04_user-interface-tools_automatic-layout_aligning-children_fill.jpg)
 
 You can override the container's child alignment, as specified by `alignChildren`, by setting the alignment property of a particular child element. The following diagram shows the result of setting alignment to right for the EditText element, when the parent's `alignChildren` value is left:
 
-![override alignChildren = left](user-interface-tools/_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg)
+![override alignChildren = left](./_static/04_user-interface-tools_automatic-layout_aligning-children_override-left.jpg)
 
 ---
 
@@ -128,10 +137,10 @@ You can set the alignment property with a two-string array instead of a single s
 
 The following figures show the results of the sample script [SnpAlignElements.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/SnpAlignElements.jsx), that demonstrates how to specify alignment in two dimensions.
 
-- In the first, each control is centered vertically within its row, and placed at a specific horizontal position, using an alignment value such as ['left', 'center'] for each element:
-    ![Horizontal Alignment](user-interface-tools/_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
-- The vertical alignment example creates four columns, and places the controls within each column along the vertical axis. It uses alignment values such as ['fill', 'top'] to distribute controls within the column, while still controlling the relative vertical positions:
-    ![Vertical Alignment](user-interface-tools/_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
+- In the first, each control is centered vertically within its row, and placed at a specific horizontal position, using an alignment value such as `["left", "center"]` for each element:
+    ![Horizontal Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_horizontal.jpg)
+- The vertical alignment example creates four columns, and places the controls within each column along the vertical axis. It uses alignment values such as `["fill", "top"]` to distribute controls within the column, while still controlling the relative vertical positions:
+    ![Vertical Alignment](./_static/04_user-interface-tools_automatic-layout_alignment-in-2d_vertical.jpg)
 
 ---
 
@@ -141,11 +150,12 @@ The margins property of a container specifies the number of pixels between the e
 
 The following figure shows the results of creating the sample window with row orientation and margins of 5 and 15 pixels:
 
-![margins = 5](user-interface-tools/_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg)![margins = 15](user-interface-tools/_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg)
+![margins = 5](./_static/04_user-interface-tools_automatic-layout_margins_margin5.jpg)
+![margins = 15](./_static/04_user-interface-tools_automatic-layout_margins_margin15.jpg)
 
 This figure shows the results of creating the sample window with column orientation, a top margin of 0 pixels, a bottom margin of 20 pixels, and left and right margins of 15 pixels:
 
-![margins = 15,0,15,20](user-interface-tools/_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg)
+![margins = 15,0,15,20](./_static/04_user-interface-tools_automatic-layout_margins_mixed.jpg)
 
 ---
 
@@ -155,11 +165,12 @@ The spacing property of a container specifies the number of pixels separating on
 
 This figure shows the results of creating the sample window with row orientation, and spacing of 15 and 5 pixels, respectively:
 
-![spacing = 5](user-interface-tools/_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg)![spacing = 15](user-interface-tools/_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg)
+![spacing = 5](./_static/04_user-interface-tools_automatic-layout_spacing_spacing5.jpg)
+![spacing = 15](./_static/04_user-interface-tools_automatic-layout_spacing_spacing15.jpg)
 
 This figure shows the results of creating the sample window with column orientation, and spacing of 20 pixels:
 
-![spacing = 20](user-interface-tools/_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg)
+![spacing = 20](./_static/04_user-interface-tools_automatic-layout_spacing_spacing20.jpg)
 
 ---
 
@@ -208,7 +219,7 @@ win.center();
 win.show();
 ```
 
-![Unaligned](user-interface-tools/_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg)
+![Unaligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_unaligned.jpg)
 
 In this simplest example, the columns are not vertically aligned. When you are using fixed-width controls in your rows, a simple way to get an attractive alignment of the StaticText labels for your EditText fields is to align the child rows in the Panel to the right of the panel. In the example, add the following to the Panel specification:
 
@@ -218,9 +229,9 @@ info: Panel { orientation: 'column', alignChildren:'right', \
 
 This creates the following result:
 
-![Aligned](user-interface-tools/_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg)
+![Aligned](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_aligned.jpg)
 
-Suppose now that you need two panels, and want each panel to have the same width in the dialog. You can specify this at the level of the dialog window object, the parent of both panels. Specify alignChildren='fill', which makes each child of the dialog match its width to the widest child.
+Suppose now that you need two panels, and want each panel to have the same width in the dialog. You can specify this at the level of the dialog window object, the parent of both panels. Specify `alignChildren="fill"`, which makes each child of the dialog match its width to the widest child.
 
 ```javascript
 var res = "dialog { alignChildren: 'fill', \
@@ -248,9 +259,9 @@ win.center();
 win.show();
 ```
 
-![Groups](user-interface-tools/_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg)
+![Groups](./_static/04_user-interface-tools_automatic-layout_complex-arrangements_groups.jpg)
 
-To make the buttons to appear at the right of the dialog, the `buttons` group overrides the `fill` alignment of its parent (the dialog), and specifies `alignment='right'`.
+To make the buttons to appear at the right of the dialog, the `buttons` group overrides the `fill` alignment of its parent (the dialog), and specifies `alignment="right"`.
 
 ---
 
@@ -262,7 +273,8 @@ A `stack` orientation of a container places child elements so they are centered 
 
 For example, this dialog changes dynamically according to the user's choice in the `DropDownList`.
 
-![Personal Info](user-interface-tools/_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg)![Work Info](user-interface-tools/_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg)
+![Personal Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_personalInfo.jpg)
+![Work Info](./_static/04_user-interface-tools_automatic-layout_dynamic-content_workInfo.jpg)
 
 The following script creates this dialog. It compresses the "Personal Info" and "Work Info" panels from the previous example into a single `Panel` that has two `Groups` arranged in a stack. A `DropDownList` allows the user to choose which set of information to view. When the user makes a choice in the list, its `onChange` function shows one group, and hides the other.
 
@@ -320,7 +332,7 @@ This script creates a dialog almost identical to the one in the previous example
 
 This script-defined layout manager positions elements in its container in a stair-step fashion, so that the buttons are staggered rather than in a straight line.
 
-![Custom layout-manager example](user-interface-tools/_static/04_user-interface-tools_automatic-layout_custom-layoutmanager-example.jpg)
+![Custom layout-manager example](./_static/04_user-interface-tools_automatic-layout_custom-layoutmanager-example.jpg)
 
 ```javascript
 // Define a custom layout manager that arranges the children
@@ -438,4 +450,4 @@ The default AutoLayoutManager's layout method performs these steps when invoked 
 The following restrictions apply to the automatic layout mechanism:
 
 - The default layout manager does not attempt to lay out a container that has a defined `bounds` property. The script programmer can override this behavior by defining a custom layout manager for the container.
-- The layout mechanism does not track changes to element sizes after the initial layout has occurred. The script can initiate another layout by calling the layout manager's `layout` method, and can force the manager to recalculate the sizes of all child containers by passing the optional argument as true.
+- The layout mechanism does not track changes to element sizes after the initial layout has occurred. The script can initiate another layout by calling the layout manager's `layout` method, and can force the manager to recalculate the sizes of all child containers by passing the optional argument as `true`.

@@ -5,14 +5,14 @@ You must define the behavior of your controls in order for them to respond to us
 - Windows generate events when the user moves or resizes the window. To handle these events, define callback functions for `onMove`, `onMoving`, `onResize`, `onResizing`.
     - To respond to the user opening or closing the window, define callback functions for `onShow` and `onClose`.
 - Button, RadioButton, and Checkbox controls generate events when the user clicks within the control bounds.
-    - To handle the event, define a callback function for [onClick](control-objects.md#control-event-onclick).
-- EditNumber, EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is, when the user types into an edit field, or moves the scroll or slider indicator. To handle these events, define callback functions for [onChange](control-objects.md#control-event-onchange) and [onChanging](control-objects.md#control-event-onchanging).
-- ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list changes. To handle the event, define a callback function for [onChange](control-objects.md#control-event-onchange).
-    - The TreeView control also generates events when the user expands or collapses a node, handled by the [onExpand](control-objects.md#control-event-onexpand) and [onCollapse](control-objects.md#control-event-oncollapse) callback functions.
-- The ListBox also generates an event when the user double-clicks an item. To handle it, define a callback function for the [onDoubleClick](control-objects.md#control-event-ondoubleclick) event.
-- Both containers and controls generate events just before they are drawn, that allow you to customize their appearance. To handle these events, define callback functions for [onDraw](control-objects.md#control-event-ondraw).
+    - To handle the event, define a callback function for [onClick](control-objects.md#onclick).
+- EditNumber, EditText, Scrollbar, and Slider controls generate events when the content or value changes-that is, when the user types into an edit field, or moves the scroll or slider indicator. To handle these events, define callback functions for [onChange](control-objects.md#onchange) and [onChanging](control-objects.md#onchanging).
+- ListBox, DropDownList, and TreeView controls generate events whenever the selection in the list changes. To handle the event, define a callback function for [onChange](control-objects.md#onchange).
+    - The TreeView control also generates events when the user expands or collapses a node, handled by the [onExpand](control-objects.md#onexpand) and [onCollapse](control-objects.md#oncollapse) callback functions.
+- The ListBox also generates an event when the user double-clicks an item. To handle it, define a callback function for the [onDoubleClick](control-objects.md#ondoubleclick) event.
+- Both containers and controls generate events just before they are drawn, that allow you to customize their appearance. To handle these events, define callback functions for [onDraw](control-objects.md#ondraw).
     - Your handler can modify or control how the container or control is drawn using the methods defined in the control's associated [ScriptUIGraphics object](graphic-customization-objects.md#scriptuigraphics-object).
-- In [Windows](./window-object.md) only, you can register a key sequence as a [shortcutKey](control-objects.md#controlobj-shortcutkey) for a window or for most types of controls. To handle the key sequence, define a callback function for [onShortcutKey](control-objects.md#control-event-onshortcutkey) in that control.
+- In [Windows](./window-object.md) only, you can register a key sequence as a [shortcutKey](control-objects.md#shortcutkey) for a window or for most types of controls. To handle the key sequence, define a callback function for [onShortcutKey](control-objects.md#onshortcutkey) in that control.
 
 ---
 
@@ -62,35 +62,37 @@ The notify method takes an optional argument that specifies which event it shoul
 
 The following controls generate the `onClick` event:
 
-- `Button`
-- `Checkbox`
-- `IconButton`
-- `RadioButton`
+- [`Button`](./control-objects.md#button)
+- [`Checkbox`](./control-objects.md#checkbox)
+- [`IconButton`](./control-objects.md#iconbutton)
+- [`RadioButton`](./control-objects.md#radiobutton)
 
 The following controls generate the `onChange` event:
 
-- `DropDownList`
-- `EditNumber`
-- `EditText`
-- `ListBox`
-- `Scrollbar`
-- `Slider`
-- `TreeView`
+- [`DropDownList`](./control-objects.md#dropdownlist)
+- [`EditNumber`](./control-objects.md#editnumber)
+- [`EditText`](./control-objects.md#edittext)
+- [`ListBox`](./control-objects.md#listbox)
+- [`Scrollbar`](./control-objects.md#scrollbar)
+- [`Slider`](./control-objects.md#slider)
+- [`TreeView`](./control-objects.md#treeview)
 
 The following controls generate the `onChanging` event:
 
-- `EditNumber`
-- `EditText`
-- `Scrollbar`
-- `Slider`
+- [`EditNumber`](./control-objects.md#editnumber)
+- [`EditText`](./control-objects.md#edittext)
+- [`Scrollbar`](./control-objects.md#scrollbar)
+- [`Slider`](./control-objects.md#slider)
 
-In the ListBox, double-clicking an item generates the `onDoubleClick` event.
+In the [ListBox](./control-objects.md#listbox), double-clicking an item generates the `onDoubleClick` event.
 
-In RadioButton and Checkbox controls, the boolean value property automatically changes when the user clicks the control. If you use `notify()` to simulate a click, the value changes just as if the user had clicked. For example, if the value of a checkbox `hasBtnsCb` is true, this code changes the value to false:
+In [`RadioButton`](./control-objects.md#radiobutton) and [`Checkbox`](./control-objects.md#checkbox) controls, the boolean value property automatically changes when the user clicks the control. If you use `notify()` to simulate a click, the value changes just as if the user had clicked.
+
+For example, if the value of a checkbox `hasBtnsCb` is `true`, this code changes the value to `false`:
 
 ```javascript
 if ( dlg.hasBtnsCb.value == true ) {
-  dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now false
+  dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now `false`
 }
 ```
 
@@ -100,7 +102,7 @@ if ( dlg.hasBtnsCb.value == true ) {
 
 Another way to define the behavior of your windows and controls is register a handler function that responds to a specific type of event in that window or control. This technique allows you to respond to the cascading of an event through a hierarchy of containers and controls.
 
-Use [addEventListener()](window-object.md#window-object-functions-addeventlistener) or [addEventListener()](control-objects.md#controlobj-addeventlistener) to register a handler. The function you register receives an event object (from the [UIEvent base class](event-handling.md#uievent-base-class)) that encapsulates the event information. As an event cascades down through a hierarchy and back up through the hierarchy, your handler can respond at any level, or use the UIEvent object's [stopPropagation()](event-handling.md#eventobj-stoppropagation) method to stop the event propagation at some level.
+Use [addEventListener()](window-object.md#addeventlistener) or [addEventListener()](control-objects.md#addeventlistener) to register a handler. The function you register receives an event object (from the [UIEvent base class](event-handling.md#uievent-base-class)) that encapsulates the event information. As an event cascades down through a hierarchy and back up through the hierarchy, your handler can respond at any level, or use the UIEvent object's [stopPropagation()](event-handling.md#stoppropagation) method to stop the event propagation at some level.
 
 You can register:
 
@@ -114,28 +116,28 @@ You can register:
     myButton.addEventListener( "click", "function( e ) { /*handler code*/ }" );
     ```
 
-The handler or registered code statement is executed when the specified event occurs in the target. A script can programmatically simulate an event by creating an event objects with [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and passing it to an event target's [dispatchEvent()](control-objects.md#controlobj-dispatchevent) function.
+The handler or registered code statement is executed when the specified event occurs in the target. A script can programmatically simulate an event by creating an event objects with [ScriptUI.events.createEvent()](scriptui-class.md#scriptui-events-createevent), and passing it to an event target's [dispatchEvent()](control-objects.md#dispatchevent) function.
 
-You can remove a handler that has been previously registered by calling the event target's [removeEventListener()](control-objects.md#controlobj-removeeventlistener) function. The parameters you pass to this function must be identical to those passed to the [addEventListener()](control-objects.md#controlobj-addeventlistener) call that registered the handler. Typically, a script would register all event handlers during initialization, and unregister them during termination; however, unregistering handlers on termination is not required.
+You can remove a handler that has been previously registered by calling the event target's [removeEventListener()](control-objects.md#removeeventlistener) function. The parameters you pass to this function must be identical to those passed to the [addEventListener()](control-objects.md#addeventlistener) call that registered the handler. Typically, a script would register all event handlers during initialization, and unregister them during termination; however, unregistering handlers on termination is not required.
 
 You can register for an event in a parent or ancestor object of the actual target; see the following section.
 
 The predefined types of `UIEvent` correspond to the event callbacks, as follows:
 
-| Callback      | UIEvent type       |
-|---------------|--------------------|
-| onChange      | change             |
-| onChanging    | changing           |
-| onClick       | click (detail = 1) |
-| onDoubleClick | click (detail = 2) |
-| onEnterKey    | enterKey           |
-| onMove        | move               |
-| onMoving      | moving             |
-| onResize      | resize             |
-| onResizing    | resizing           |
-| onShow        | show               |
-| onActivate    | focus              |
-| onDeactivate  | blur               |
+|                        Callback                         |      UIEvent type      |
+| ------------------------------------------------------- | ---------------------- |
+| [`"onChange"`](./control-objects.md#onchange)           | `"change"`             |
+| [`"onChanging"`](./control-objects.md#onchanging)       | `"changing"`           |
+| [`"onClick"`](./control-objects.md#onclick)             | `"click"` (detail = 1) |
+| [`"onDoubleClick"`](./control-objects.md#ondoubleclick) | `"click"` (detail = 2) |
+| [`"onEnterKey"`](./control-objects.md#onenterkey)       | `"enterKey"`           |
+| [`"onMove"`](./control-objects.md#onmove)               | `"move"`               |
+| [`"onMoving"`](./control-objects.md#onmoving)           | `"moving"`             |
+| [`"onResize"`](./control-objects.md#onresize)           | `"resize"`             |
+| [`"onResizing"`](./control-objects.md#onresizing)       | `"resizing"`           |
+| [`"onShow"`](./control-objects.md#onshow)               | `"show"`               |
+| [`"onActivate"`](./control-objects.md#onactivate)       | `"focus"`              |
+| [`"onDeactivate"`](./control-objects.md#ondeactivate)   | `"blur"`               |
 
 In addition, ScriptUI implements all types of W3C events according to the W3C DOM level 3 functional specification [for UI events](https://www.w3.org/TR/uievents/), with these modifications and exceptions:
 
@@ -172,12 +174,12 @@ For example, suppose a dialog window contains a group which contains a button. A
 
 When the user clicks the button, the Window object's handler is called first (during the capture phase), then the button object's handler (during the at-target phase). Finally, ScriptUI calls the handler registered with the group object (during the bubble phase).
 
-If you register a handler at an ancestor object of the actual event target, you can specify the third argument to [addEventListener()](control-objects.md#controlobj-addeventlistener), so that the ancestor's handler responds only in the capture phase, not in the bubbling phase. For example, the following click handler, registered with the parent dialog object, responds only in the capture phase:
+If you register a handler at an ancestor object of the actual event target, you can specify the third argument to [addEventListener()](control-objects.md#addeventlistener), so that the ancestor's handler responds only in the capture phase, not in the bubbling phase. For example, the following click handler, registered with the parent dialog object, responds only in the capture phase:
 
 ```javascript
 myDialog.addEventListener( "click", handleAllItems, true );
 ```
 
-This value is false by default, so if it is not supplied, the handler can respond only in the bubbling phase when the object's descendent is the target, or when the object is itself the target of the event (the at-target phase).
+This value is `false` by default, so if it is not supplied, the handler can respond only in the bubbling phase when the object's descendent is the target, or when the object is itself the target of the event (the at-target phase).
 
-To distinguish which of multiple registered handlers is being executed at any given time, the event object provides the [eventPhase](event-handling.md#eventobj-eventphase), and the [currentTarget](event-handling.md#eventobj-currenttarget), which In the capture and bubbling phases contains the ancestor of the target object at which the currently executing handler was registered.
+To distinguish which of multiple registered handlers is being executed at any given time, the event object provides the [eventPhase](event-handling.md#eventphase), and the [currentTarget](event-handling.md#currenttarget), which In the capture and bubbling phases contains the ancestor of the target object at which the currently executing handler was registered.

@@ -4,11 +4,11 @@ ScriptUI is a component that works with the ExtendScript JavaScript interpreter 
 
 This section provides the details of the ScriptUI classes and objects with their properties, methods, and creation parameters.
 
-- [ScriptUI class](scriptui-class.md)
-- [Common properties](common-properties.md)
-- [Window class](window-class.md)
-- [Window object](window-object.md)
-- [Control objects](control-objects.md)
-- [UIEvent base class](event-handling.md#uievent-base-class)
-- [Graphic customization objects](graphic-customization-objects.md)
-- [LayoutManager object](layoutmanager-object.md)
+- [ScriptUI class](./scriptui-class.md)
+- [Common properties](./common-properties.md)
+- [Window class](./window-class.md)
+- [Window object](./window-object.md)
+- [Control objects](./control-objects.md)
+- [UIEvent base class](./event-handling.md#uievent-base-class)
+- [Graphic customization objects](./graphic-customization-objects.md)
+- [LayoutManager object](./layoutmanager-object.md)

@@ -34,7 +34,7 @@ The following resource string specifies a panel that contains grouped `StaticTex
 
 The property with name properties specifies creation `properties`; see [Creation properties](scriptui-programming-model.md#creation-properties).
 
-A property value can be specified as `null`, true, false, a string, a number, an inline array, or an object.
+A property value can be specified as `null`, `true`, `false`, a String, a Number, an inline Array, or an Object.
 
 - An inline array contains one or more values in the form:
     ```javascript
@@ -63,7 +63,7 @@ These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-
 
 The two Alert Box Builder examples create the same dialog to collect values from the user.
 
-![Resource Strings Window](user-interface-tools/_static/04_user-interface-tools_defining-behavior_resource-strings.jpg)
+![Resource Strings Window](./_static/04_user-interface-tools_defining-behavior_resource-strings.jpg)
 
 The Build button event handler builds a resource string from the collected values, and returns it from the dialog invocation function; the script then saves the resource string to a file. That resource string can later be used to create and display the user-configured alert box.
 

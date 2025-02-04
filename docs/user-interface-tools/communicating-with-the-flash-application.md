@@ -6,13 +6,13 @@ To open a Flash Player, add a control of type [FlashPlayer](types-of-controls.md
 
 A limited set of data types can be passed between the two scripting environments:
 
-- `Number`
-- `String`
-- `Boolean`
-- `Null`
+- Number
+- String
+- Boolean
+- `null`
 - `undefined`
-- `Object`
-- `Array`
+- Object
+- Array
 
 The ActionScript `class` and `date` objects are not supported as parameter values.
 
@@ -68,6 +68,7 @@ ExternalInterface.addCallback( "getActionScriptArray", this, getActionScriptArra
 
 These examples in the [Adobe ExtendScript SDK](https://github.com/Adobe-CEP/CEP-Resources/tree/master/ExtendScript-Toolkit) demonstrate how to use the Flash Player:
 
-| [UsingFlashPlayer.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx)   | Shows how to create a Flash® Player, and use it to load a play back a movie defined in an SWF file.                                           |
-|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| [ActionScriptDemo.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ActionScriptDemo.jsx)   | Shows how to communicate between the Adobe application scripting environment and the ActionScript™ scripting environment of the Flash Player. |
+|                                                                   Example                                                                   |                                                                  Description                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| [UsingFlashPlayer.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/UsingFlashPlayer.jsx) | Shows how to create a Flash® Player, and use it to load a play back a movie defined in an SWF file.                                           |
+| [ActionScriptDemo.jsx](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ExtendScript-Toolkit/Samples/javascript/ActionScriptDemo.jsx) | Shows how to communicate between the Adobe application scripting environment and the ActionScript™ scripting environment of the Flash Player. |

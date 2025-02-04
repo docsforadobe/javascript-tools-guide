@@ -2,29 +2,29 @@
 
 User interface elements often need a title or label to identify their purpose, with the title placed near the element it identifies. As shown by examples in [Automatic layout](automatic-layout.md), you can use a `statictext` element as a title or label, and use the automatic layout mechanism to control the placement of such a title relative to the element it identifies.
 
-The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It allows you to define an element's title and its spacial relationship with the graphic representation of the object it identifies, without the need for additional `statictext` and container elements. Title layout operates on an element's optional [title](control-objects.md#controlobj-title) and [titleLayout](control-objects.md#controlobj-titlelayout) properties.
+The title-layout mechanism provides a simpler way to accomplish this task for many common cases. It allows you to define an element's title and its spacial relationship with the graphic representation of the object it identifies, without the need for additional `statictext` and container elements. Title layout operates on an element's optional [title](control-objects.md#title) and [titleLayout](control-objects.md#titlelayout) properties.
 
 It treats this title and the element's graphic representation as two separate objects whose relative positions are controlled according to layout rules within a virtual container that encloses both objects. This is similar to the operation of the automatic layout mechanism, but within a more limited scope.
 
 Title layout is available for these types of UI elements:
 
-- [dropdownlist](control-objects.md#control-type-dropdownlist)
-- [flashplayer](control-objects.md#control-type-flashplayer)
+- [DropDownList](control-objects.md#dropdownlist)
+- [FlashPlayer](control-objects.md#flashplayer)
 - [IconButton](types-of-controls.md#iconbutton)
 - [Image](types-of-controls.md#image)
-- [tabbedpanel](control-objects.md#control-type-tabbedpanel)
+- [TabbedPanel](control-objects.md#tabbedpanel)
 
 For most of these element types, the title typically appears outside the element itself, and the virtual container is an imaginary line surrounding the title and the separate element. For the IconButton, the title appears inside the bounds of the button, and the virtual container is defined by the outer bounds of the element. The same principles apply in both cases.
 
-- The [title](control-objects.md#controlobj-title) property is a String that defines a text label for a UI element. The title can appear to the left or right of the graphic element, above or below it, or superimposed over the center of the graphic element; the placement is controlled by the [titleLayout](control-objects.md#controlobj-titlelayout) property.
-- The [titleLayout](control-objects.md#controlobj-titlelayout) property is an Object containing properties that specify:
+- The [title](control-objects.md#title) property is a String that defines a text label for a UI element. The title can appear to the left or right of the graphic element, above or below it, or superimposed over the center of the graphic element; the placement is controlled by the [titleLayout](control-objects.md#titlelayout) property.
+- The [titleLayout](control-objects.md#titlelayout) property is an Object containing properties that specify:
     - The title's character width;
     - The title's justification within the character width;
     - How the title should be truncated if necessary;
     - The orientation, alignment, and spacing of the title with respect to the object it identifies;
     - The margins within the virtual container that surrounds the title and its related object.
 
-All `titleLayout` properties are optional; the element types that use this mechanism have default values for each property. Complete details are provided in the reference section; see [titleLayout](control-objects.md#controlobj-titlelayout).
+All `titleLayout` properties are optional; the element types that use this mechanism have default values for each property. Complete details are provided in the reference section; see [titleLayout](control-objects.md#titlelayout).
 
 The following sections provide examples that show how to use title layout to achieve many different layouts.
 
@@ -32,40 +32,40 @@ The following sections provide examples that show how to use title layout to ach
 
 ## Title alignment and orientation
 
-Unlike automatic layout, title layout uses the [alignment](control-objects.md#controlobj-alignment) property to specify the orientation of the title and graphic element, and how the title aligns to the graphic element. This property contains a 2-element array, where the first element specifies horizontal alignment and the second specifies vertical alignment. The allowed values for these are the same as those used by automatic layout (see [Aligning children](automatic-layout.md#aligning-children)), except that the `fill` value is not allowed.
+Unlike automatic layout, title layout uses the [alignment](control-objects.md#alignment) property to specify the orientation of the title and graphic element, and how the title aligns to the graphic element. This property contains a 2-element array, where the first element specifies horizontal alignment and the second specifies vertical alignment. The allowed values for these are the same as those used by automatic layout (see [Aligning children](automatic-layout.md#aligning-children)), except that the `fill` value is not allowed.
 
 - To achieve a row orientation where the title appears to the left or right of the graphic element, define horizontal alignment as left or right and vertical alignment as `center`, `top`, or `bottom`:
     ```javascript
-    button.titleLayout = { alignment: ['right', 'center'] };
+    button.titleLayout = { alignment: ["right", "center"] };
     ```
 
-    ![Row orientation: title aligned right](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg)
+    ![Row orientation: title aligned right](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row.jpg)
 - To achieve a column orientation where the title appears above or below the graphic element, define vertical alignment as `top` or `bottom`, and horizontal alignment as `center`:
     ```javascript
-    image.titleLayout = { alignment: ['center', 'bottom'] };
+    image.titleLayout = { alignment: ["center", "bottom"] };
     ```
 
-    ![Column orientation: center / bottom alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg)
-- To achieve a stack orientation where the title appears superimposed upon the graphic element, define both vertical and horizontal alignment as `center`. This orientation is mainly useful with the `iconbutton` or `image` element types; it does not make sense to superimpose a title over a dropdownlist, for instance. In this example, the button's title is centered over its iconic image:
+    ![Column orientation: center / bottom alignment](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column.jpg)
+- To achieve a stack orientation where the title appears superimposed upon the graphic element, define both vertical and horizontal alignment as `center`. This orientation is mainly useful with the `iconbutton` or `image` element types; it does not make sense to superimpose a title over a dropdownlist, for instance. In this example, the button"s title is centered over its iconic image:
     ```javascript
-    button.title = 'Get information';
-    button.titleLayout = { alignment: ['center', 'center'] };
+    button.title = "Get information";
+    button.titleLayout = { alignment: ["center", "center"] };
     ```
 
-    ![Stack orientation: center / center alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg)
+    ![Stack orientation: center / center alignment](./_static/04_user-interface-tools_managing-control-titles_title-alignment_stack.jpg)
 - With row orientation, you can control whether the title aligns to the top, center, or bottom of the graphic element. In this example, the title is placed to the left of the image, aligned at the top edge:
     ```javascript
-    image.titleLayout = { alignment: ['left', 'top'] };
+    image.titleLayout = { alignment: ["left", "top"] };
     ```
 
-    ![Row orientation: top left alignment](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg)
+    ![Row orientation: top left alignment](./_static/04_user-interface-tools_managing-control-titles_title-alignment_row-top-left.jpg)
 - Use `spacing` to override the default number of pixels separating the title from the graphic element. In this example, titleLayout is configured to place the title 15 pixels above the panel:
     ```javascript
-    panel.title = 'Image format';
-    panel.titleLayout = { alignment: ['center', 'top'], spacing: 15 };
+    panel.title = "Image format";
+    panel.titleLayout = { alignment: ["center", "top"], spacing: 15 };
     ```
 
-    ![Column orientation: title offset by 15px](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-alignment_column-offset.jpg)
+    ![Column orientation: title offset by 15px](./_static/04_user-interface-tools_managing-control-titles_title-alignment_column-offset.jpg)
 
 ---
 
@@ -73,32 +73,32 @@ Unlike automatic layout, title layout uses the [alignment](control-objects.md#co
 
 - To override the automatically calculated title width, define a positive non-zero value for the `characters` property. This reserves enough space in the title area to hold the specified number of "X" characters. This is useful when an element's title can change (for localized values, for instance) and you want to reserve enough space to fit all the expected values without truncation or affecting the overall layout.
     ```javascript
-    droplist.titleLayout = { alignment: ['left', 'center'], characters: 20 };
+    droplist.titleLayout = { alignment: ["left", "center"], characters: 20 };
     ```
 
-    ![Wider character width: left justified](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg)
+    ![Wider character width: left justified](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_left-justified.jpg)
 - When a `characters` value specifies a width greater than the default title width, you can set the `justify` property to control how the text of the title is justified within the space reserved for it. The value `left` places the text at the left end of the space, leaving blank space on the right; `right` places the text at the right end of the space, leaving blank space on the left; and `center` places the text in the middle of the space, dividing any blank space evenly on both sides of the text.
     ```javascript
-    droplist.titleLayout = { alignment: ['left', 'center'],
+    droplist.titleLayout = { alignment: ["left", "center"],
                              characters: 20,
-                             justify: 'right' };
+                             justify: "right" };
     ```
 
-    ![Wider character width: right justified](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
-- This example demonstrates using `characters` and `justify` to vertically align the colons at the ends of all the dropdownlist control titles in a group. The same `characters` value is used for each element's `title`, and all are right-justified:
+    ![Wider character width: right justified](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_right-justified.jpg)
+- This example demonstrates using `characters` and `justify` to vertically align the colons at the ends of all the dropdownlist control titles in a group. The same `characters` value is used for each element"s `title`, and all are right-justified:
     ```javascript
-    w.ddl1 = w.add("dropdownlist { title: 'Image format:' }");
-    w.ddl2 = w.add("dropdownlist { title: 'Background color:' }");
-    w.ddl3 = w.add("dropdownlist { title: 'Text color:' }");
-    w.ddl1.titleLayout = { alignment: ['left', 'center'], spacing: 3,
-                           characters: 16, justify: 'right' };
-    w.ddl2.titleLayout = { alignment: ['left', 'center'], spacing: 3,
-                           characters: 16, justify: 'right' };
-    w.ddl3.titleLayout = { alignment: ['left', 'center'], spacing: 3,
-                           characters: 16, justify: 'right' };
+    w.ddl1 = w.add("dropdownlist { title: "Image format:" }");
+    w.ddl2 = w.add("dropdownlist { title: "Background color:" }");
+    w.ddl3 = w.add("dropdownlist { title: "Text color:" }");
+    w.ddl1.titleLayout = { alignment: ["left", "center"], spacing: 3,
+                           characters: 16, justify: "right" };
+    w.ddl2.titleLayout = { alignment: ["left", "center"], spacing: 3,
+                           characters: 16, justify: "right" };
+    w.ddl3.titleLayout = { alignment: ["left", "center"], spacing: 3,
+                           characters: 16, justify: "right" };
     ```
 
-    ![Using characters and justify to align titles](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-width-justification_align-titles.jpg)
+    ![Using characters and justify to align titles](./_static/04_user-interface-tools_managing-control-titles_title-width-justification_align-titles.jpg)
 
 ---
 
@@ -117,7 +117,7 @@ w.btn2.titleLayout = { characters: 8, truncate: 'end' };
 w.btn3.titleLayout = { characters: 8, truncate: 'none' };
 ```
 
-![Show effect of truncate options](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_title-truncation.jpg)
+![Show effect of truncate options](./_static/04_user-interface-tools_managing-control-titles_title-truncation.jpg)
 
 ---
 
@@ -144,4 +144,4 @@ w.panel2 = w.add("panel { margins: 0, ddl2: DropDownList { title: 'Extra L/R mar
 w.panel2.ddl2.titleLayout = { margins: [15, 0, 15, 0] };
 ```
 
-![Show effect of changing default margins](user-interface-tools/_static/04_user-interface-tools_managing-control-titles_margins-around-title.jpg)
+![Show effect of changing default margins](./_static/04_user-interface-tools_managing-control-titles_margins-around-title.jpg)

@@ -72,7 +72,7 @@ Paths can be absolute or relative to the [Folder.startup](../file-system-access/
 Default value is:
 
 - In Windows, `"Plugins;Plug-Ins;."`
-- In Mac OS, `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;<br/>  ../../../Plug-ins;../../../Frameworks;../../..;"`
+- In Mac OS, `"Plugins;Plug-Ins;Frameworks;.;../../../Plugins;../../../Plug-ins;../../../Frameworks;../../..;"`
 - In UNIX, `"Plugins;Plug-Ins;plugins;."`
 
 #### Type

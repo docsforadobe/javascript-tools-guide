@@ -297,19 +297,19 @@ Retrieves a list of messaging-enabled applications installed on this computer.
 
 #### Parameters
 
-+-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Parameter |  Type  |                                                                                                     Description                                                                                                      |
-+===========+========+======================================================================================================================================================================================================================+
-| `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                 |
-|           |        |                                                                                                                                                                                                                      |
-|           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                   |
-|           |        |                                                                                                                                                                                                                      |
-|           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed: <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>  => [photoshop-9.5]</pre>                                                               |
-|           |        |                                                                                                                                                                                                                      |
-|           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example: <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>  => [photoshop-9.0, photoshop-9.5]</pre>    |
-+-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information.  If not supplied when version is supplied, returns specifiers with version information only. |
-+-----------+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Parameter |  Type  |                                                                                                     Description                                                                                                     |
++===========+========+=====================================================================================================================================================================================================================+
+| `version` | Number | Optional. The specific version number to search for, or `null` to return the most appropriate version (matching, most recent, or running), with version information.                                                |
+|           |        |                                                                                                                                                                                                                     |
+|           |        | Specify only a major version number to return the highest minor-version variation.                                                                                                                                  |
+|           |        |                                                                                                                                                                                                                     |
+|           |        | For example, if Photoshop CS versions 9, 9.5, and 10 are installed: <pre lang="javascript">BridgeTalk.getTargets( "9" )<br/>=> [photoshop-9.5]</pre>                                                                |
+|           |        |                                                                                                                                                                                                                     |
+|           |        | Specify a negative value to return all versions up to the absolute value of the version number. For example: <pre lang="javascript">BridgeTalk.getTargets( "-9.9" )<br/>=> [photoshop-9.0, photoshop-9.5]</pre>     |
++-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `locale`  | String | Optional. The specific locale to search for, or null to `return` applications for all locales, with locale information. If not supplied when version is supplied, returns specifiers with version information only. |
++-----------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 #### Returns
 

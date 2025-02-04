@@ -213,7 +213,7 @@ The full path name for the referenced file in URI notation.
 
 #### Type
 
-String.  Read only.
+String. Read only.
 
 ---
 

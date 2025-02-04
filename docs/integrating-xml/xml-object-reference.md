@@ -17,14 +17,14 @@ The constructor returns the XML object representing the root node of an XML tree
 
 `[new] XML (xmlCode);`
 
-+-----------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| Property  |     Type      |                                                                     Description                                                                     |
-+===========+===============+=====================================================================================================================================================+
-| `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object.                                                                                      |
-|           |               |                                                                                                                                                     |
-|           |               | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed,  throws a JavaScript error. |
-|           |               | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself.             |
-+-----------+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Property  |     Type      |                                                                    Description                                                                     |
++===========+===============+====================================================================================================================================================+
+| `xmlCode` | String or XML | A string containing valid XML code, or an existing XML object.                                                                                     |
+|           |               |                                                                                                                                                    |
+|           |               | - If a valid string is supplied, returns a new XML object encapsulating the XML code. If the XML code cannot be parsed, throws a JavaScript error. |
+|           |               | - If an existing object is supplied and the `new` operator is used, returns a copy of the object; otherwise, returns the object itself.            |
++-----------+---------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 ---
@@ -883,12 +883,12 @@ When no argument is supplied, creates a namespace with an empty prefix and URI.
 
 #### Parameters
 
-|   Parameter   |   Type    |                                                                                                                         Description                                                                                                                          |
-| ------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `uri`         | String    | Creates a Namespace object with an empty prefix and the given URI.                                                                                                                                                                                           |
-| `prefix`      | QName     | Creates a namespace with an empty prefix and the URI set to the URI of the [QName object](#qname-object) (if the QName object contains a URI).                                                                                                               |
-| `ns`          | Namespace | Creates a copy of the given [Namespace object](#namespace-object).  If the `Namespace()` function is called without the `new` operator, and the only argument is a `Namespace` object, the function simply returns that object, rather than creating a copy. |
-| `prefix, uri` | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                        |
+|   Parameter   |   Type    |                                                                                                                         Description                                                                                                                         |
+| ------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `uri`         | String    | Creates a Namespace object with an empty prefix and the given URI.                                                                                                                                                                                          |
+| `prefix`      | QName     | Creates a namespace with an empty prefix and the URI set to the URI of the [QName object](#qname-object) (if the QName object contains a URI).                                                                                                              |
+| `ns`          | Namespace | Creates a copy of the given [Namespace object](#namespace-object). If the `Namespace()` function is called without the `new` operator, and the only argument is a `Namespace` object, the function simply returns that object, rather than creating a copy. |
+| `prefix, uri` | String    | Creates a `Namespace` object with the given prefix and the given URI.                                                                                                                                                                                       |
 
 ---
 

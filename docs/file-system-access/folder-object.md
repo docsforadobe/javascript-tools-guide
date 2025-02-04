@@ -245,7 +245,7 @@ These functions are available as a static methods of the Folder class. It is not
 
 Decodes the specified string as required by RFC 2396.
 
-All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`.  Special characters are those with a numeric value greater than 127, except the following:
+All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`. Special characters are those with a numeric value greater than 127, except the following:
 
 ```javascript
 ``/ - _ . ! ~ * ' ( )``
@@ -271,7 +271,7 @@ String
 
 Encodes the specified string as required by RFC 2396.
 
-All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`.  Special characters are those with a numeric value greater than 127, except the following:
+All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string `"my%20file"` is decoded as `"my file"`. Special characters are those with a numeric value greater than 127, except the following:
 
 ```javascript
 ``/ - _ . ! ~ * ' ( )``

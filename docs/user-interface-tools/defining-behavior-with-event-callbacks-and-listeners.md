@@ -36,7 +36,7 @@ For example, the following sets the onClick property of the hasBtnsCb checkbox t
 
 ```javascript
 hasBtnsCb.onClick = function () {
-  this.parent.alertBtnsPnl.enabled = this.value;
+    this.parent.alertBtnsPnl.enabled = this.value;
 };
 ```
 
@@ -44,11 +44,11 @@ The following statements set the `onClick` event handlers for buttons that close
 
 ```javascript
 buildBtn.onClick = function() {
-  this.parent.parent.close( 1 );
+    this.parent.parent.close( 1 );
 };
 
 cancelBtn.onClick = function() {
-  this.parent.parent.close( 2 );
+    this.parent.parent.close( 2 );
 };
 ```
 
@@ -92,7 +92,7 @@ For example, if the value of a checkbox `hasBtnsCb` is `true`, this code changes
 
 ```javascript
 if ( dlg.hasBtnsCb.value == true ) {
-  dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now `false`
+    dlg.hasBtnsCb.notify(); // dlg.hasBtnsCb.value is now `false`
 }
 ```
 

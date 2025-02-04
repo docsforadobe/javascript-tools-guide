@@ -270,10 +270,10 @@ The `XML` object provides methods that allow you to retrieve elements contained 
 - `XML.`[children()](xml-object-reference.md#xml-object-children) gets the direct child elements, including text elements.
 - `XML.`[elements()](xml-object-reference.md#xml-object-elements) gets the direct child elements that are XML tags, but does not get text.
 - `XML.`[descendants()](xml-object-reference.md#xml-object-descendants) allows you to match a specific tag, and gets all matching elements at any level of nesting. You can also use a "double dot" notation to access descendants of an element. For example, these statements are equivalent:
-  ```javascript
-  xml..title
-  xml.descendants("title")
-  ```
+    ```javascript
+    xml..title
+    xml.descendants("title")
+    ```
 
 For example, consider this XML code loaded into a top-level `XML` object named `x`:
 
@@ -291,45 +291,45 @@ For example, consider this XML code loaded into a top-level `XML` object named `
 Here are the results of the different calls.
 
 - The result of `XML.`[children()](xml-object-reference.md#xml-object-children) contains 3 elements, the direct child tags `<one>` and `<two>`, and the directly contained text of the `<top>` tag:
-  ```xml
-  **> x.children()**
-      <one>one text</one>
-      <two>
-      two text
-      <inside>inside text</inside>
-      </two>
-      top text
+    ```xml
+    **> x.children()**
+        <one>one text</one>
+        <two>
+        two text
+        <inside>inside text</inside>
+        </two>
+        top text
 
-  **> x.children().length()**
-      3
-  ```
+    **> x.children().length()**
+        3
+    ```
 - The result of `XML.`[elements()](xml-object-reference.md#xml-object-elements) contains 2 elements, the direct child tags `<one>` and `<two>`:
-  ```xml
-  **> x.elements()**
-      <one>one text</one>
-      <two>
-          two text
-          <inside>inside text</inside>
-      </two>
-  **> x.elements().length()**
-      2
-  ```
+    ```xml
+    **> x.elements()**
+        <one>one text</one>
+        <two>
+            two text
+            <inside>inside text</inside>
+        </two>
+    **> x.elements().length()**
+        2
+    ```
 - The result of `XML.`[descendants()](xml-object-reference.md#xml-object-descendants) contains 7 elements, the direct child tags `<one>` and `<two>`, the `<inside>` tag one level down, and the text contents of all the tags:
-  ```xml
-  **> x.descendants()**
-      <one>one text</one>
-      one text
-      <two>
-          two text
-          <inside>inside text</inside>
-      </two>
-      two text
-      <inside>inside text</inside>
-      inside text
-      top text
-  **> x.descendants().length()**
-      7
-  ```
+    ```xml
+    **> x.descendants()**
+        <one>one text</one>
+        one text
+        <two>
+            two text
+            <inside>inside text</inside>
+        </two>
+        two text
+        <inside>inside text</inside>
+        inside text
+        top text
+    **> x.descendants().length()**
+        7
+    ```
 
 ---
 

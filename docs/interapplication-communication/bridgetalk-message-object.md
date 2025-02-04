@@ -152,7 +152,7 @@ To define error-response behavior, set this to a function definition in the foll
 
 ```javascript
 bridgeTalkObj.onError = function( errorMsgObject ) {
-  // error handler defined here
+    // error handler defined here
 };
 ```
 
@@ -172,7 +172,7 @@ To define a response to receipt notification, set this to a function definition 
 
 ```javascript
 bridgeTalkObj.onReceived = function( origMsgObject ) {
-  // handler defined here
+    // handler defined here
 };
 ```
 
@@ -192,7 +192,7 @@ To handle the response, set this to a function definition in the following form:
 
 ```javascript
 bridgeTalkObj.onResult = function( responseMsgObject ) {
-  // handler defined here
+    // handler defined here
 };
 ```
 
@@ -216,7 +216,7 @@ To define a response to the timeout event, set this to a function definition in 
 
 ```javascript
 bridgeTalkObj.onTimeout = function( timeoutMsgObject ) {
-  // handler defined here
+    // handler defined here
 };
 ```
 

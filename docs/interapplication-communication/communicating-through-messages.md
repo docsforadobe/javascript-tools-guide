@@ -23,7 +23,7 @@ For example, this code, which will send a message to Adobe Bridge CS5 as part of
 ```javascript
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 if( targetApp ) {
-  // construct and send message
+    // construct and send message
 }
 ```
 
@@ -44,8 +44,7 @@ var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 bt.target = targetApp;
 
 // the script to evaluate is contained in a string in the "body" property
-bt.body = "new Document('C:\\BridgeScripts');
-app.document.target.children.length;"
+bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 ```
 
 ### Step 3: Specify how to handle a response
@@ -59,9 +58,9 @@ When the target has finished processing this message, it looks for an onResult c
 
 This handler, for example, processes the returned result using a script-defined processResult function:
 
-```javascript
+```javascript`
 bt.onResult = function(returnBtObj) {
-  processResult(returnBtObj.body);
+    processResult(returnBtObj.body);
 }
 ```
 
@@ -92,22 +91,21 @@ The complete script looks like this:
 var targetApp = BridgeTalk.getSpecifier( "bridge-3.0");
 
 if( targetApp ) {
-  // construct a message object
-  var bt = new BridgeTalk;
+    // construct a message object
+    var bt = new BridgeTalk;
 
-  // the message is intended for Adobe Bridge CS4
-  bt.target = targetApp;
+    // the message is intended for Adobe Bridge CS4
+    bt.target = targetApp;
 
-  // the script to evaluate is contained in a string in the "body" property
-  bt.body = "new Document('C:\\BridgeScripts');
-  app.document.target.children.length;"
+    // the script to evaluate is contained in a string in the "body" property
+    bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 
-  // define result handler callback
-  bt.onResult = function(returnBtObj) {
-  processResult(returnBtObj.body); } //fn defined elsewhere
+    // define result handler callback
+    bt.onResult = function(returnBtObj) {
+    processResult(returnBtObj.body); } //fn defined elsewhere
 
-  // send the message asynchronously
-  bt.send();
+    // send the message asynchronously
+    bt.send();
 }
 ```
 
@@ -141,7 +139,7 @@ To change the default behavior set the `BridgeTalk.onReceive` property to a func
 
 ```javascript
 BridgeTalk.onReceive = function( bridgeTalkObject ) {
-  // callback definition here
+    // callback definition here
 };
 ```
 
@@ -163,7 +161,7 @@ This example shows the default mechanism for handling unsolicited messages recei
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-  return eval( message.body );
+    return eval( message.body );
 }
 ```
 
@@ -171,13 +169,13 @@ This example shows how you might extend the receive handler to process a new typ
 
 ```javascript
 BridgeTalk.onReceive = function (message) {
-  switch (message.type) {
-    case "Data":
-      return processData( message );
-      break;
-    default: //"ExtendScript"
-      return eval( mesage.body );
-  }
+    switch (message.type) {
+        case "Data":
+            return processData( message );
+            break;
+        default: //"ExtendScript"
+            return eval( mesage.body );
+    }
 }
 ```
 
@@ -216,10 +214,9 @@ The `onResult` method saves that number in `fileCountResult`, a script-defined p
 ```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
-bt.body = "new Document('C:\\BridgeScripts');
-app.document.target.children.length;"
+bt.body = "new Document('C:\\BridgeScripts');app.document.target.children.length;"
 bt.onResult = function( retObj ) {
-  processFileCount(retObj.body);
+    processFileCount(retObj.body);
 }
 
 bt.send();
@@ -232,8 +229,8 @@ In this example, the onError handler re-throws the error message within the send
 ```javascript
 var bt = new BridgeTalk;
 bt.onError = function (btObj) {
-  var errorCode = parseInt (btObj.headers ["Error-Code"]);
-  throw new Error (errorCode, btObj.body);
+    var errorCode = parseInt (btObj.headers ["Error-Code"]);
+    throw new Error (errorCode, btObj.body);
 }
 ```
 
@@ -244,15 +241,14 @@ This example creates a message that asks Adobe Bridge to return XMP metadata for
 ```javascript
 var bt = new BridgeTalk;
 bt.target = "bridge-3.0";
-bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif');
-tn.core.immediate.size;"
+bt.body = "var tn = new Thumbnail('C/MyPhotos/temp.gif'); tn.core.immediate.size;"
 bt.onResult = function( resultMsg ) {
-  processFileSize(resultMsg.body);
+    processFileSize(resultMsg.body);
 }
 
 bt.onError = function( errorMsg ) {
-  var errCode = parseInt (errorMsg.headers ["Error-Code"]);
-  throw new Error (errCode, errorMsg.body);
+    var errCode = parseInt (errorMsg.headers ["Error-Code"]);
+    throw new Error (errCode, errorMsg.body);
 }
 
 bt.send();
@@ -268,22 +264,22 @@ The target application (Adobe Bridge) defines a static onReceive method to allow
 // Code for processing the message and sending intermediate responses
 // in the target application (Adobe Bridge)
 BridgeTalk.onReceive = function (message){
-  switch (message.type) {
-    case "iterator":
-      done = false;
-      i = 0;
-      while (!done) {
-        // the message.body uses "i" to produce different results
-        // for each execution of the message.
-        // when done, the message.body sets "done" to `true`
-        // so this onReceive method breaks out of the loop.
-        message.sendResult(eval(message.body));
-        i++;
-      }
-      break;
-    default: //"ExtendScript"
-      return eval( message.body );
-  }
+    switch (message.type) {
+        case "iterator":
+            done = false;
+            i = 0;
+            while (!done) {
+                // the message.body uses "i" to produce different results
+                // for each execution of the message.
+                // when done, the message.body sets "done" to `true`
+                // so this onReceive method breaks out of the loop.
+                message.sendResult(eval(message.body));
+                i++;
+            }
+            break;
+        default: //"ExtendScript"
+            return eval( message.body );
+    }
 }
 ```
 
@@ -317,13 +313,13 @@ else md = -1;
 
 // store intermediate results
 bt.onResult = function(rObj) {
-  resArr[idx] = rObj.body;
-  processInterResult(resArr[idx]);
-  idx++;
+    resArr[idx] = rObj.body;
+    processInterResult(resArr[idx]);
+    idx++;
 };
 
 bt.onError = function(eObj) {
-  bt.error = eObj.body
+    bt.error = eObj.body
 };
 
 bt.send();
@@ -365,16 +361,15 @@ bt.target = "bridge-3.0";
 
 // the script passed to the target application
 // needs to return the array using "toSource"
-bt.body = "var arr = [10, "this string", 324];
-arr.toSource();"
+bt.body = "var arr = [10, this string, 324]; arr.toSource()";
 
 bt.onResult = function(resObj) {
-  // use eval to reconstruct the array
-  arr = eval(resObj.body);
+    // use eval to reconstruct the array
+    arr = eval(resObj.body);
 
-  // now you can access the returned array
-  for (i=0; i< arr.length(); i++)
-  doSomething(arr[i]);
+    // now you can access the returned array
+    for (i=0; i< arr.length(); i++)
+        doSomething(arr[i]);
 }
 
 // send the message
@@ -398,9 +393,9 @@ md.toSource();"
 
 //For the result, use eval to reconstruct the object
 bt.onResult = function(resObj) {
-  md = bt.result = eval(resObj.body);
-  // now you can access fname and fsize properties
-  doSomething (md.fname, md.fsize);
+    md = bt.result = eval(resObj.body);
+    // now you can access fname and fsize properties
+    doSomething (md.fname, md.fsize);
 }
 
 // send the message
@@ -423,11 +418,11 @@ tn.toSource();"
 
 //For the result, use eval to reconstruct the object
 bt.onResult = function(resObj) {
-  // use eval to reconstruct the object
-  tn = eval(resObj.body);
-  // now the script can access tn.path and tn.uri,
-  // but no other properties of the Adobe Bridge DOM Thumbnail object
-  doSomething (tn.path, tn.uri);
+    // use eval to reconstruct the object
+    tn = eval(resObj.body);
+    // now the script can access tn.path and tn.uri,
+    // but no other properties of the Adobe Bridge DOM Thumbnail object
+    doSomething (tn.path, tn.uri);
 }
 
 // send the message

@@ -243,19 +243,19 @@ For example, assuming installed applications include Photoshop CS4 11.0 `en_us`,
 
 ```javascript
 BridgeTalk.getSpecifier ("photoshop");
- => ["photoshop-11.0-en_us"]
+    => ["photoshop-11.0-en_us"]
 
 BridgeTalk.getSpecifier ("photoshop", 0, "en_us");
-  => ["photoshop-11.0-en_us"]
+    => ["photoshop-11.0-en_us"]
 
 BridgeTalk.getSpecifier ("photoshop", 0, "de_de");
-  => ["photoshop-9.5-de_de"]
+    => ["photoshop-9.5-de_de"]
 
 BridgeTalk.getSpecifier ("photoshop", -9.2, "de_de");
-  => ["photoshop-9.0-de_de"]
+    => ["photoshop-9.0-de_de"]
 
 BridgeTalk.getSpecifier ("photoshop", 8);
- => ["photoshop-8.5-de_de"]
+    => ["photoshop-8.5-de_de"]
 ```
 
 ---
@@ -325,19 +325,19 @@ For example, assuming installed applications include Photoshop CS3 10.0 `en_US`,
 
 ```javascript
 BridgeTalk.getTargets();
-  => [photoshop,illustrator]
+    => [photoshop,illustrator]
 
 BridgeTalk.getTargets( "10.0" );
-  => [photoshop-10.0]
+    => [photoshop-10.0]
 
 BridgeTalk.getTargets( null );
-  => [photoshop-11.0, illustrator-14.0]
+    => [photoshop-11.0, illustrator-14.0]
 
 BridgeTalk.getTargets( null, "en_US" );
-  => [photoshop-10.0-en_US, photoshop-11.0-en_US]
+    => [photoshop-10.0-en_US, photoshop-11.0-en_US]
 
 BridgeTalk.getTargets( null, null );
-  => [photoshop-10.0-en_US, photoshop-11.0-en_us, illustrator-14.0-de_de]
+    => [photoshop-10.0-en_US, photoshop-11.0-en_us, illustrator-14.0-de_de]
 ```
 
 ---

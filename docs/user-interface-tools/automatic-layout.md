@@ -39,11 +39,11 @@ Your script establishes rules for the layout manager by setting the values of ce
 
 ```javascript
 var w = new Window( "window { \
-  orientation: 'row', \
-  st: StaticText { }, \
-  pb: Button { text: 'OK' }, \
+    orientation: 'row', \
+    st: StaticText { }, \
+    pb: Button { text: 'OK' }, \
 
-  et: EditText { characters:4, justify:'right' } \
+    et: EditText { characters:4, justify:'right' } \
 }");
 
 w.show();

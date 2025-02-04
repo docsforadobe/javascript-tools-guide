@@ -18,7 +18,8 @@ for (var i = 0; i < props.length; i++) {
 
 ### ReflectionObject Attributes
 
-All properties are read only.
+!!! info
+    All properties are read only.
 
 #### description
 

@@ -47,9 +47,15 @@ This property is available as a static property of the File class. It is not nec
 
 The name of the file system.
 
+One of:
+
+- `Windows`
+- `Macintosh`
+- `Unix`
+
 #### Type
 
-String. Read only. One of `Windows`, `Macintosh`, or `Unix`.
+String. Read only.
 
 ---
 

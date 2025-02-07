@@ -410,7 +410,7 @@ To add to a window ``w``::
 
                            - ``name``: A unique name for the control.
                            - ``multiselect``: When false (the default), only one item can be
-                           - ``selected``. When true, multiple items can be selected.
+                             selected. When true, multiple items can be selected.
                            - ``items``: An array of strings for the text of each list item. A
                              :ref:`listitem` object is created for each item. An item with the
                              text string ``"-"`` creates a separator item. Supply this

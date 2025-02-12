@@ -1,0 +1,3577 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://extendscript.docsforadobe.dev/interapplication-communication/bridgetalk-class/">
+      
+      
+        <link rel="prev" href="../messaging-framework-api-reference/">
+      
+      
+        <link rel="next" href="../bridgetalk-message-object/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>BridgeTalk class - Adobe Extendscript Scripting Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global-syntax-highlight.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bridgetalk-class" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Welcome to the new docsforadobe guide!
+
+  This is a work in progress.
+
+  Please provide all feedback via
+  <a ref="me" href="https://github.com/orgs/docsforadobe/discussions">
+    <span class="twemoji">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1M1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z"/></svg>
+    </span>
+    <strong>the org's discussion forum</strong>
+  </a>.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-header__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adobe Extendscript Scripting Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              BridgeTalk class
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-nav__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Adobe Extendscript Scripting Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/extendscript-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/scripting-for-specific-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting for specific applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The VS Code ExtendScript Debugger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            The VS Code ExtendScript Debugger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/getting-started-with-vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with the VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/vscode-extension-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code Extension Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The ExtendScript Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/configuring-the-toolkit-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Toolkit window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/selecting-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/the-script-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Script Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/debugging-in-the-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/code-profiling-for-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code profiling for optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/inspecting-object-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspecting object models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            File System Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/using-file-and-folder-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using File and Folder objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-access-error-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File access error messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-and-folder-supported-encoding-names/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File- and Folder-supported encoding names
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/folder-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Folder object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User-Interface Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/code-examples-for-scriptui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples for ScriptUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-programming-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI programming model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/types-of-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types of controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/size-and-location-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Size and location objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/drawing-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/resource-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/defining-behavior-with-event-callbacks-and-listeners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining behavior with event callbacks and listeners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/communicating-with-the-flash-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating with the Flash application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/automatic-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/managing-control-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing control titles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/localization-in-scriptui-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization in ScriptUI objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/common-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/control-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/event-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/graphic-customization-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/layoutmanager-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LayoutManager object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interapplication Communication with Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communications-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communications overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cross-dom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-DOM functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communicating-through-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating through messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messaging-framework-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging framework API reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappinstance" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appInstance
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkapplocale" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appLocale
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappname" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappspecifier" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appSpecifier
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappstatus" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appStatus
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappversion" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appVersion
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkonreceive" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.onReceive
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkbringtofront" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.bringToFront()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetapppath" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getAppPath()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetdisplayname" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getDisplayName()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetspecifier" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getSpecifier()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetstatus" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getStatus()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgettargets" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getTargets()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkisrunning" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.isRunning()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalklaunch" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.launch()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkloadappscript" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.loadAppScript()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkping" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.ping()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkpump" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.pump()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bridgetalk-message-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk message object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messaging-error-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging error codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application-and-namespace-specifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application and namespace specifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            External Communication Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating External Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/loading-and-using-shared-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and using shared libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/externalobject-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExternalObject object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-direct-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for direct access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-indirect-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for indirect access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ExtendScript Tools and Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/dollar-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dollar ($) object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/extendscript-reflection-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript reflection interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/localizing-extendscript-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localizing ExtendScript strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/user-notification-dialogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User notification dialogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/specifying-measurement-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifying measurement values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/preprocessor-directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preprocessor directives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/operator-overloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating XML into JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/the-xml-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/xml-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML Object Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting Access to XMP Metadata
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/accessing-the-xmp-scripting-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing the XMP scripting API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/xmpscript-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XMPScript object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappinstance" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appInstance
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkapplocale" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appLocale
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappname" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappspecifier" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appSpecifier
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappstatus" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appStatus
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkappversion" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.appVersion
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkonreceive" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.onReceive
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkbringtofront" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.bringToFront()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetapppath" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getAppPath()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetdisplayname" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getDisplayName()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetspecifier" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getSpecifier()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgetstatus" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getStatus()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkgettargets" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.getTargets()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkisrunning" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.isRunning()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalklaunch" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.launch()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkloadappscript" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.loadAppScript()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkping" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.ping()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#bridgetalkpump" class="md-nav__link">
+		<span class="md-ellipsis">
+			BridgeTalk.pump()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/edit/master/docs/interapplication-communication/bridgetalk-class.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/raw/master/docs/interapplication-communication/bridgetalk-class.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="bridgetalk-class">BridgeTalk class<a class="headerlink" href="#bridgetalk-class" title="Permanent link">&para;</a></h1>
+<p>Static properties and methods of this class provide a way for your script to determine basic messaging system information before you create any specific message objects. Static methods allow you to check if an application is installed and is already running, and to launch the application. A callback defined on the class determines how the application processes incoming messages.</p>
+<p>You can access static properties and methods in the BridgeTalk class, which is available in the global namespace. For example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="kd">var</span><span class="w"> </span><span class="nx">thisApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">appName</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You must instantiate the BridgeTalk class to create the BridgeTalk message object, which is used to send message packets between applications. Dynamic properties and methods can be accessed only in instances.</p>
+</div>
+<hr />
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<p>The BridgeTalk class provides these static properties, which are available in the global namespace:</p>
+<h3 id="bridgetalkappinstance">BridgeTalk.appInstance<a class="headerlink" href="#bridgetalkappinstance" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appInstance</code></p>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>The instance identifier of an application launched by the messaging framework, the instance portion of an application specifier; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>.</p>
+<p>Used only for those applications, such as InDesign, that support launching and running multiple instances.</p>
+<h4 id="type">Type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="bridgetalkapplocale">BridgeTalk.appLocale<a class="headerlink" href="#bridgetalkapplocale" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appLocale</code></p>
+<h4 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h4>
+<p>The locale of this application, the locale portion of an application specifier; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>. When a message is sent, this is the locale of the sending application.</p>
+<h4 id="type_1">Type<a class="headerlink" href="#type_1" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="bridgetalkappname">BridgeTalk.appName<a class="headerlink" href="#bridgetalkappname" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appName</code></p>
+<h4 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h4>
+<p>The name of this application, the appname portion of an application specifier; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>. When a message is sent, this is the name of the sending application.</p>
+<h4 id="type_2">Type<a class="headerlink" href="#type_2" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="bridgetalkappspecifier">BridgeTalk.appSpecifier<a class="headerlink" href="#bridgetalkappspecifier" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appSpecifier</code></p>
+<h4 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h4>
+<p>A lower-case string containing the complete specifier for this application; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>.</p>
+<h4 id="type_3">Type<a class="headerlink" href="#type_3" title="Permanent link">&para;</a></h4>
+<p>String.</p>
+<hr />
+<h3 id="bridgetalkappstatus">BridgeTalk.appStatus<a class="headerlink" href="#bridgetalkappstatus" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appStatus</code></p>
+<h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
+<p>The current processing status of this application. One of:</p>
+<ul>
+<li><code>busy</code>: The application is currently busy, but not processing messages. This is the case, for example, when a modal dialog is shown.</li>
+<li><code>idle</code>: The application is currently idle, but processes messages regularly.</li>
+<li><code>not installed</code>: The application is not installed.</li>
+</ul>
+<h4 id="type_4">Type<a class="headerlink" href="#type_4" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="bridgetalkappversion">BridgeTalk.appVersion<a class="headerlink" href="#bridgetalkappversion" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.appVersion</code></p>
+<h4 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h4>
+<p>The version number of this application, the version portion of an application specifier; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>. When a message is sent, this is the version of the sending application.</p>
+<h4 id="type_5">Type<a class="headerlink" href="#type_5" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="bridgetalkonreceive">BridgeTalk.onReceive<a class="headerlink" href="#bridgetalkonreceive" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.onReceive</code></p>
+<h4 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">&para;</a></h4>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>callback function that this application applies to unsolicited incoming messages. The default function evaluates the body of the received message and returns the result of evaluation. To change the default behavior, set this to a function definition in the following form:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">onReceive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="w"> </span><span class="nx">bridgeTalkObject</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="c1">// act on received message</span>
+</span><span id="__span-1-3"><span class="p">};</span>
+</span></code></pre></div>
+<p>The body property of the received message object contains the received data. The function can return any type. See <a href="../communicating-through-messages/#handling-unsolicited-messages">Handling unsolicited messages</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not applied to a message that is received in response to a message sent from this application. Response messages are processed by the onResult, onReceived, or onError callbacks associated with the sent message.</p>
+</div>
+<h4 id="type_6">Type<a class="headerlink" href="#type_6" title="Permanent link">&para;</a></h4>
+<p>Function</p>
+<hr />
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
+<p>The BridgeTalk class provides these static methods, which are available in the global namespace:</p>
+<h3 id="bridgetalkbringtofront">BridgeTalk.bringToFront()<a class="headerlink" href="#bridgetalkbringtofront" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.bringToFrontapp)</code></p>
+<h4 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h4>
+<p>Brings all windows of the specified application to the front of the screen.</p>
+<p>In Mac OS, an application can be running but have no windows open. In this case, calling this function might or might not open a new window, depending on the application. For Adobe Bridge, it opens a new browser window.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>Nothing</p>
+<hr />
+<h3 id="bridgetalkgetapppath">BridgeTalk.getAppPath()<a class="headerlink" href="#bridgetalkgetapppath" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.getAppPathapp)</code></p>
+<h4 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">&para;</a></h4>
+<p>Retrieves the full path of the executable file for a specified application.</p>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="bridgetalkgetdisplayname">BridgeTalk.getDisplayName()<a class="headerlink" href="#bridgetalkgetdisplayname" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.getDisplayNameapp)</code></p>
+<h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h4>
+<p>Returns a localized display name for an application, or <code>null</code> if the application is not installed. For example:</p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getDisplayName</span><span class="p">(</span><span class="s2">&quot;photoshop-10.0&quot;</span><span class="p">);</span>
+</span><span id="__span-2-2"><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Adobe</span><span class="w"> </span><span class="nx">Photoshop</span><span class="w"> </span><span class="nx">CS4</span>
+</span></code></pre></div>
+<hr />
+<h3 id="bridgetalkgetspecifier">BridgeTalk.getSpecifier()<a class="headerlink" href="#bridgetalkgetspecifier" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.getSpecifierappName[, version][, locale])</code></p>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<p>Retrieves a complete application specifier.</p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>appName</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The base name of the application to search for.</p>
+</td>
+<td colspan="1" rowspan="1"></td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>version</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The specific version number to search for.
+If <code>0</code> or not supplied, returns the most recent version.
+If negative, returns the highest version up to and including the absolute value.</p>
+<p>If a major version is specified, returns the highest minor-version variation. For example, if Photoshop CS versions 9, 9.1, and 10 are installed:</p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">Specifier</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;photoshop&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-2"><span class="w"> </span><span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-9.1&quot;</span><span class="p">]</span>
+</span></code></pre></div></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>locale</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The specific locale to search for. If not supplied and multiple language versions are installed, prefers the version for the current locale.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifier</a> for a messaging-enabled application version installed on this computer, or <code>null</code> if the requested version of the application is not installed.</p>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<p>For example, assuming installed applications include Photoshop CS4 11.0 <code>en_us</code>, Photoshop CS2 8.5 <code>de_de</code>, Photoshop CS2 9.0 <code>de_de</code>, and Photoshop CS2 9.5 <code>de_de</code>, and that the current locale is <code>en_US</code></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getSpecifier</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;photoshop&quot;</span><span class="p">);</span>
+</span><span id="__span-3-2"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-11.0-en_us&quot;</span><span class="p">]</span>
+</span><span id="__span-3-3">
+</span><span id="__span-3-4"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getSpecifier</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;photoshop&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;en_us&quot;</span><span class="p">);</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-11.0-en_us&quot;</span><span class="p">]</span>
+</span><span id="__span-3-6">
+</span><span id="__span-3-7"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getSpecifier</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;photoshop&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_de&quot;</span><span class="p">);</span>
+</span><span id="__span-3-8"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-9.5-de_de&quot;</span><span class="p">]</span>
+</span><span id="__span-3-9">
+</span><span id="__span-3-10"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getSpecifier</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;photoshop&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">9.2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;de_de&quot;</span><span class="p">);</span>
+</span><span id="__span-3-11"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-9.0-de_de&quot;</span><span class="p">]</span>
+</span><span id="__span-3-12">
+</span><span id="__span-3-13"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getSpecifier</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;photoshop&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+</span><span id="__span-3-14"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;photoshop-8.5-de_de&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<h3 id="bridgetalkgetstatus">BridgeTalk.getStatus()<a class="headerlink" href="#bridgetalkgetstatus" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.getStatus(targetSpec)</code></p>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<p>Retrieves the processing status of an application.</p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>targetSpec</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>Optional. A specifier for the target application. If not supplied, returns the processing status of the current application.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>String, one of:</p>
+<ul>
+<li><code>BUSY</code>: The application is currently busy, but not processing messages. This is the case, for example, when a modal dialog is shown.</li>
+<li><code>IDLE</code>: The application is currently idle, but processes messages regularly.</li>
+<li><code>PUMPING</code>: The application is currently processing messages.</li>
+<li><code>ISNOTRUNNING</code>: The application is installed but not running.</li>
+<li><code>ISNOTINSTALLED</code>: The application is not installed.</li>
+<li><code>UNDEFINED</code>: The application is running but not responding to ping requests. This can be true of a CS2 application that uses an earlier version of the messaging framework.</li>
+</ul>
+<hr />
+<h3 id="bridgetalkgettargets">BridgeTalk.getTargets()<a class="headerlink" href="#bridgetalkgettargets" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.getTargets([version],[locale])</code></p>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<p>Retrieves a list of messaging-enabled applications installed on this computer.</p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>version</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The specific version number to search for, or <code>null</code> to return the most appropriate version (matching, most recent, or running), with version information.</p>
+<p>Specify only a major version number to return the highest minor-version variation.</p>
+<p>For example, if Photoshop CS versions 9, 9.5, and 10 are installed</p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-2"><span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">9.5</span><span class="p">]</span>
+</span></code></pre></div></p>
+<p>Specify a negative value to return all versions up to the absolute value of the version number. For example</p>
+<p><div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;-9.9&quot;</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-2"><span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">9.0</span><span class="p">,</span><span class="w"> </span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">9.5</span><span class="p">]</span>
+</span></code></pre></div></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>locale</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The specific locale to search for, or null to <code>return</code> applications for all locales, with locale information. If not supplied when version is supplied, returns specifiers with version information only.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>Returns an array of <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>.</p>
+<ul>
+<li>If version is supplied, specifiers include the base name plus the version information.</li>
+<li>If locale is supplied, specifiers include the full name, with both version and locale information.</li>
+<li>If neither version nor locale is supplied, returns base specifiers with neither version nor locale information, but tries to find the most appropriate version and locale; see <a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a>.</li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<p>For example, assuming installed applications include Photoshop CS3 10.0 <code>en_US</code>, Photoshop CS4 11.0 <code>en_us</code>, and Illustrator CS4 14.0 <code>de_de</code></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-4-1"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">();</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="p">,</span><span class="nx">illustrator</span><span class="p">]</span>
+</span><span id="__span-4-3">
+</span><span id="__span-4-4"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;10.0&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-5"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">10.0</span><span class="p">]</span>
+</span><span id="__span-4-6">
+</span><span id="__span-4-7"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-8"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">11.0</span><span class="p">,</span><span class="w"> </span><span class="nx">illustrator</span><span class="o">-</span><span class="mf">14.0</span><span class="p">]</span>
+</span><span id="__span-4-9">
+</span><span id="__span-4-10"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;en_US&quot;</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-11"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">10.0</span><span class="o">-</span><span class="nx">en_US</span><span class="p">,</span><span class="w"> </span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">11.0</span><span class="o">-</span><span class="nx">en_US</span><span class="p">]</span>
+</span><span id="__span-4-12">
+</span><span id="__span-4-13"><span class="nx">BridgeTalk</span><span class="p">.</span><span class="nx">getTargets</span><span class="p">(</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-14"><span class="w">    </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">10.0</span><span class="o">-</span><span class="nx">en_US</span><span class="p">,</span><span class="w"> </span><span class="nx">photoshop</span><span class="o">-</span><span class="mf">11.0</span><span class="o">-</span><span class="nx">en_us</span><span class="p">,</span><span class="w"> </span><span class="nx">illustrator</span><span class="o">-</span><span class="mf">14.0</span><span class="o">-</span><span class="nx">de_de</span><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<h3 id="bridgetalkisrunning">BridgeTalk.isRunning()<a class="headerlink" href="#bridgetalkisrunning" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.isRunning(specifier)</code></p>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<p>Checks whether a given application is running and active on the local computer.</p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>specifier</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>Boolean</p>
+<hr />
+<h3 id="bridgetalklaunch">BridgeTalk.launch()<a class="headerlink" href="#bridgetalklaunch" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.launch(specifier[, where])</code></p>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
+<p>Launches the given application on the local computer. It is not necessary to launch an application explicitly in order to send it a message; sending a message to an application that is not running automatically launches it.</p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>specifier</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+<tr>
+<td><code>where</code></td>
+<td>Unknown.</td>
+<td>Optional. If the value "background" is specified, the application's main window is not brought to the front of the screen.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the application has already been launched, <code>false</code> if it was launched by this call.</p>
+<hr />
+<h3 id="bridgetalkloadappscript">BridgeTalk.loadAppScript()<a class="headerlink" href="#bridgetalkloadappscript" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.loadAppScript(specifier)</code></p>
+<h4 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h4>
+<p>Loads the startup script for an application from the common StartupScripts folders. Use to implement late loading of startup scripts.</p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>specifier</code></td>
+<td><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></td>
+<td>A specifier for the target application</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the script was successfully loaded.</p>
+<hr />
+<h3 id="bridgetalkping">BridgeTalk.ping()<a class="headerlink" href="#bridgetalkping" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.ping(specifier, pingRequest)</code></p>
+<h4 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h4>
+<p>Sends a message to another application to determine whether it can be contacted.</p>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>specifier</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="../application-and-namespace-specifiers/#application-specifiers">Application specifiers</a></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>A specifier for the target application</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>pingRequest</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Identifying key string, one of:</p>
+<ul>
+<li><code>STATUS</code>: Returns the processing status; see <a href="#bridgetalkgetstatus">getStatus()</a>.</li>
+<li><code>DIAGNOSTICS</code>: Returns a diagnostic report that includes a list of valid ping keys.</li>
+<li><code>ECHO_REQUEST</code>: Returns <code>ECHO_RESPONSE</code> for a simple ping request.</li>
+</ul>
+</td>
+<td colspan="1" rowspan="1">
+<p>Specific type of return value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="bridgetalkpump">BridgeTalk.pump()<a class="headerlink" href="#bridgetalkpump" title="Permanent link">&para;</a></h3>
+<p><code>BridgeTalk.pump()</code></p>
+<h4 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h4>
+<p>Checks all active messaging interfaces for outgoing and incoming messages, and processes them if there are any.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most applications have a message processing loop that continually checks the message queues, so use of this method is rarely required.</p>
+</div>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if any messages have been processed, <code>false</code> otherwise.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is copyright Adobe Systems Incorporated.
+    </div>
+  
+  
+    Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+  
+</div>
+
+<!-- Print button -->
+<div class="md-copyright">
+  
+  <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.copy", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/extra.js"></script>
+      
+        <script src="../../docs/_global/js/global.js"></script>
+      
+    
+  </body>
+</html>

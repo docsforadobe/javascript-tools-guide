@@ -1,0 +1,3088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://extendscript.docsforadobe.dev/extendscript-toolkit/debugging-in-the-toolkit/">
+      
+      
+        <link rel="prev" href="../the-script-editor/">
+      
+      
+        <link rel="next" href="../code-profiling-for-optimization/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Debugging in the Toolkit - Adobe Extendscript Scripting Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global-syntax-highlight.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#debugging-in-the-toolkit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Welcome to the new docsforadobe guide!
+
+  This is a work in progress.
+
+  Please provide all feedback via
+  <a ref="me" href="https://github.com/orgs/docsforadobe/discussions">
+    <span class="twemoji">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1M1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z"/></svg>
+    </span>
+    <strong>the org's discussion forum</strong>
+  </a>.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-header__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adobe Extendscript Scripting Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Debugging in the Toolkit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-nav__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Adobe Extendscript Scripting Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/extendscript-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/scripting-for-specific-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting for specific applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The VS Code ExtendScript Debugger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            The VS Code ExtendScript Debugger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/getting-started-with-vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with the VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/vscode-extension-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code Extension Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The ExtendScript Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuring-the-toolkit-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Toolkit window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selecting-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../the-script-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Script Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#selecting-a-debugging-target" class="md-nav__link">
+		<span class="md-ellipsis">
+			Selecting a debugging target
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#the-javascript-console" class="md-nav__link">
+		<span class="md-ellipsis">
+			The JavaScript console
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#controlling-code-execution" class="md-nav__link">
+		<span class="md-ellipsis">
+			Controlling code execution
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#visual-indication-of-execution-states" class="md-nav__link">
+		<span class="md-ellipsis">
+			Visual indication of execution states
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#setting-breakpoints" class="md-nav__link">
+		<span class="md-ellipsis">
+			Setting breakpoints
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Setting breakpoints">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#the-breakpoints-panel" class="md-nav__link">
+		<span class="md-ellipsis">
+			The Breakpoints panel
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#breakpoint-icons" class="md-nav__link">
+		<span class="md-ellipsis">
+			Breakpoint icons
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#evaluation-in-help-tips" class="md-nav__link">
+		<span class="md-ellipsis">
+			Evaluation in help tips
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#tracking-data" class="md-nav__link">
+		<span class="md-ellipsis">
+			Tracking data
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#the-call-stack" class="md-nav__link">
+		<span class="md-ellipsis">
+			The call stack
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-profiling-for-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code profiling for optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inspecting-object-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspecting object models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            File System Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/using-file-and-folder-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using File and Folder objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-access-error-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File access error messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-and-folder-supported-encoding-names/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File- and Folder-supported encoding names
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/folder-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Folder object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User-Interface Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/code-examples-for-scriptui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples for ScriptUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-programming-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI programming model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/types-of-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types of controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/size-and-location-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Size and location objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/drawing-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/resource-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/defining-behavior-with-event-callbacks-and-listeners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining behavior with event callbacks and listeners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/communicating-with-the-flash-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating with the Flash application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/automatic-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/managing-control-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing control titles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/localization-in-scriptui-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization in ScriptUI objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/common-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/control-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/event-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/graphic-customization-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/layoutmanager-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LayoutManager object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interapplication Communication with Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communications-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communications overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/cross-dom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-DOM functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communicating-through-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating through messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-framework-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging framework API reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-message-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk message object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-error-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging error codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/application-and-namespace-specifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application and namespace specifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            External Communication Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating External Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/loading-and-using-shared-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and using shared libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/externalobject-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExternalObject object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-direct-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for direct access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-indirect-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for indirect access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ExtendScript Tools and Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/dollar-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dollar ($) object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/extendscript-reflection-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript reflection interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/localizing-extendscript-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localizing ExtendScript strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/user-notification-dialogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User notification dialogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/specifying-measurement-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifying measurement values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/preprocessor-directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preprocessor directives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/operator-overloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating XML into JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/the-xml-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/xml-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML Object Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting Access to XMP Metadata
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/accessing-the-xmp-scripting-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing the XMP scripting API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/xmpscript-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XMPScript object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#selecting-a-debugging-target" class="md-nav__link">
+		<span class="md-ellipsis">
+			Selecting a debugging target
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#the-javascript-console" class="md-nav__link">
+		<span class="md-ellipsis">
+			The JavaScript console
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#controlling-code-execution" class="md-nav__link">
+		<span class="md-ellipsis">
+			Controlling code execution
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#visual-indication-of-execution-states" class="md-nav__link">
+		<span class="md-ellipsis">
+			Visual indication of execution states
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#setting-breakpoints" class="md-nav__link">
+		<span class="md-ellipsis">
+			Setting breakpoints
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Setting breakpoints">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#the-breakpoints-panel" class="md-nav__link">
+		<span class="md-ellipsis">
+			The Breakpoints panel
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#breakpoint-icons" class="md-nav__link">
+		<span class="md-ellipsis">
+			Breakpoint icons
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#evaluation-in-help-tips" class="md-nav__link">
+		<span class="md-ellipsis">
+			Evaluation in help tips
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#tracking-data" class="md-nav__link">
+		<span class="md-ellipsis">
+			Tracking data
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#the-call-stack" class="md-nav__link">
+		<span class="md-ellipsis">
+			The call stack
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/edit/master/docs/extendscript-toolkit/debugging-in-the-toolkit.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/raw/master/docs/extendscript-toolkit/debugging-in-the-toolkit.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="debugging-in-the-toolkit">Debugging in the Toolkit<a class="headerlink" href="#debugging-in-the-toolkit" title="Permanent link">&para;</a></h1>
+<p>You can debug the code in the currently active document window. Select one of the debugging commands to either run or to single-step through the program.</p>
+<p>When you run code from the document window, it runs in the current target application's selected JavaScript engine. The Toolkit itself runs an independent JavaScript engine, so you can quickly edit and run a script without connecting to a target application.</p>
+<hr />
+<h2 id="selecting-a-debugging-target">Selecting a debugging target<a class="headerlink" href="#selecting-a-debugging-target" title="Permanent link">&para;</a></h2>
+<p>The Toolkit can debug multiple applications at one time. If you have more than one Adobe application installed, use the drop-down list at the upper left of a document window to select the target application for that window. All installed applications that support JavaScript are shown in this list. If you try to run a script in an application that is not running, the Toolkit prompts for permission to run it.</p>
+<p>Some applications use multiple JavaScript engines; all available engines in the selected target application are shown in a drop-down list to the right of the application list, with an icon that shows the current debugging status of that engine. A target application can have more than one JavaScript engine, and more than one engine can be active, although only one is current. An active engine is one that is currently executing code, is halted at a breakpoint, or, having executed all scripts, is waiting to receive events.</p>
+<p>An icon by each engine name indicates whether it is running, halted, or waiting for input:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="running" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_running.jpg" /></td>
+<td>running</td>
+</tr>
+<tr>
+<td><img alt="halted" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_halted.jpg" /></td>
+<td>halted</td>
+</tr>
+<tr>
+<td><img alt="waiting" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_waiting.jpg" /></td>
+<td>waiting</td>
+</tr>
+</tbody>
+</table>
+<p>The current engine is the one whose data and state is displayed in the Toolkit's panes. If an application has only one engine, its engine becomes current when you select the application as the target. If there is more than one engine available in the target application, you can select an engine in the list to make it current.</p>
+<p>When you open the Toolkit, the Toolkit itself is the default target application. When you select another target, if the target application that you select is not running, the Toolkit prompts for permission and launches the application. Similarly, if you run a script that specifies a target application that is not running (using the #target directive), the Toolkit prompts for permission to launch it. If the application is running but not selected as the current target, the Toolkit prompts you to switch to it.</p>
+<p>If you select an application that cannot be debugged in the Toolkit, an error dialog reports that the Toolkit cannot connect to the selected application.</p>
+<p>The ExtendScript Toolkit is the default editor for JSX files. If you double-click a JSX file in a file browser, the Toolkit looks for a #target directive in the file and launches that application to run the script; however, it first checks for syntax errors in the script.</p>
+<p>If any are found, the Toolkit displays the error in a message box and quits silently, rather than launching the target application. For example:</p>
+<p><img alt="Script Error" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_selecting-a-target_script-error.jpg" /></p>
+<hr />
+<h2 id="the-javascript-console">The JavaScript console<a class="headerlink" href="#the-javascript-console" title="Permanent link">&para;</a></h2>
+<p>The JavaScript console is a command shell and output window for the currently selected JavaScript engine. It connects you to the global namespace of that engine.</p>
+<p><img alt="JavaScript Console" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_js-console.jpg" /></p>
+<p>The console is a JavaScript listener, that expects input text to be JavaScript code.</p>
+<p>You can use the console to evaluate expressions or call functions. Enter any JavaScript statement and execute it by pressing ENTER. The statement executes within the stack scope of the line highlighted in the Call Stack panel, and the result appears in the next line.</p>
+<ul>
+<li>You can use the up- and down-arrow keys to scroll through previous entries, or place the cursor with the mouse. Pressing ENTER executes the line that contains the cursor, or all selected lines.</li>
+<li>The right-click context menu provides the same editing commands as that of the document window.</li>
+<li>You can copy, cut, and paste text, and undo and redo previous actions.</li>
+<li>You can select text with the mouse, and use the normal copy and paste shortcuts.</li>
+<li>The flyout menu allows you to clear the current content.</li>
+<li>Commands entered in the console execute with a timeout of one second. If a command takes longer than one second to execute, the Toolkit generates a timeout error and terminates the attempt.</li>
+<li>The console is the standard output location for JavaScript execution. If any script generates a syntax error, the error is displayed here along with the file name and the line number. The Toolkit displays errors here during its own startup phase.</li>
+</ul>
+<hr />
+<h2 id="controlling-code-execution">Controlling code execution<a class="headerlink" href="#controlling-code-execution" title="Permanent link">&para;</a></h2>
+<p>The debugging commands are available from the <strong>Debug</strong> menu, from the document window's right-click context menu, through keyboard shortcuts, and from the toolbar buttons. Use these menu commands and buttons to control the execution of code when the JavaScript Debugger is active.</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Icon</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Action</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Hotkey</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="run-continue" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_run-continue.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Run/Continue</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>F5 (Windows)</p>
+<p>Ctrl R (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Starts or resumes execution of a script.</p>
+<p>Disabled when script is executing.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="break" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_break.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Break</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Ctrl F5 (Windows)</p>
+<p>Cmd . (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Halts the currently executing script temporarily and reactivates the JavaScript Debugger.</p>
+<p>Enabled when a script is executing.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="stop" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_stop.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stop</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Shift F5 (Windows)</p>
+<p>Ctrl K (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Stops execution of the script and generates a runtime error.</p>
+<p>Enabled when a script is executing.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="step-over" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-over.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Step Over</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>F10 (Windows)</p>
+<p>Ctrl S (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Halts after executing a single JavaScript line in the script. If the statement calls a JavaScript function, executes the function in its entirety before stopping (do not step into the function).</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="step-into" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-into.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Step Into</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>F11 (Windows)</p>
+<p>Ctrl T (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Halts after executing a single JavaScript line statement in the script or after executing a single statement in any JavaScript function that the script calls.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><img alt="step-out" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_controlling-code-execution_step-out.jpg" /></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Step Out</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Shift F11 (Windows)</p>
+<p>Ctrl U (Mac OS)</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>When paused within the body of a JavaScript function, resumes script execution until the function returns.</p>
+<p>When paused outside the body of a function, resumes script execution until the script terminates.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="visual-indication-of-execution-states">Visual indication of execution states<a class="headerlink" href="#visual-indication-of-execution-states" title="Permanent link">&para;</a></h2>
+<p>When the execution of a script halts because the script reached a breakpoint, or when the script reaches the next line when stepping line by line, the document window displays the current script with the current line highlighted in yellow.</p>
+<p><img alt="Execution States" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states.png" /></p>
+<p>If the script encounters a runtime error, the Toolkit halts the execution of the script, displays the current script with the current line highlighted in orange, and displays the error message in the status line. Use the Data Browser to get further details of the current data assignments.</p>
+<p><img alt="Runtime Error" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_execution-states_runtime-error.png" /></p>
+<p>Scripts often use a try/catch clause to execute code that may cause a runtime error, in order to catch the error programmatically rather than have the script terminate. You can choose to allow regular processing of such errors using the catch clause, rather than breaking into the debugger. To set this behavior, choose <strong>Debug &gt; Don't Break On Guarded Exceptions</strong>. Some runtime errors, such as Out Of Memory, always cause the termination of the script, regardless of this setting.</p>
+<hr />
+<h2 id="setting-breakpoints">Setting breakpoints<a class="headerlink" href="#setting-breakpoints" title="Permanent link">&para;</a></h2>
+<p>When debugging a script, it is often helpful to make it stop at certain lines so that you can inspect the state of the environment, whether function calls are nested properly, or whether all variables contain the expected data.</p>
+<ul>
+<li>To stop execution of a script at a given line, click to the left of the line number to set a breakpoint. A red dot indicates the breakpoint.</li>
+<li>Click a second time to temporarily disable the breakpoint; the icon changes color.</li>
+<li>Click a third time to delete the breakpoint. The icon is removed.</li>
+</ul>
+<p>Some breakpoints need to be conditional. For example, if you set a breakpoint in a loop that is executed several thousand times, you would not want to have the program stop each time through the loop, but only on each 1000th iteration.</p>
+<p>You can attach a condition to a breakpoint, in the form of a JavaScript expression. Every time execution reaches the breakpoint, it runs the JavaScript expression. If the expression evaluates to a nonzero number or <code>true</code>, execution stops.</p>
+<p>To set a conditional breakpoint in a loop, for example, the conditional expression could be <code>"i &gt;= 1000"</code>, which means that the program execution halts if the value of the iteration variable i is equal to or greater than 1000.</p>
+<h3 id="the-breakpoints-panel">The Breakpoints panel<a class="headerlink" href="#the-breakpoints-panel" title="Permanent link">&para;</a></h3>
+<p>The Breakpoints panel displays all breakpoints set in the current document window. You can use the panel's flyout menu to add, change, or remove a breakpoint.</p>
+<p><img alt="Breakpoints Panel" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoints-panel.jpg" /></p>
+<p>You can edit a breakpoint by double-clicking it, or by selecting it and choosing <strong>Add</strong> or <strong>Modify</strong> from the panel menu. A dialog allows you to change the line number, the breakpoint's enabled state, and the condition statement. You can also specify a hit count, which allows you to skip the breakpoint some number of times before entering the debugger. The default is 1, which breaks at the first execution.</p>
+<p><img alt="Modify Breakpoints" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_modify-breakpoints.png" /></p>
+<p>When execution reaches this breakpoint after the specified number of hits, the debugger evaluates this condition. If it does not evaluate to <code>true</code>, the breakpoint is ignored and execution continues. This allows you to break only when certain conditions are met, such as a variable having a particular value.</p>
+<h3 id="breakpoint-icons">Breakpoint icons<a class="headerlink" href="#breakpoint-icons" title="Permanent link">&para;</a></h3>
+<p>Each breakpoint is indicated by an icon to the left of the line number in the document window, and an icon and line number in the Breakpoints panel. Different icons are used in the document window and in the Breakpoints panel.</p>
+<table>
+<thead>
+<tr>
+<th>Document window</th>
+<th>Breakpoints panel</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="unconditional-document" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-document.jpg" /></td>
+<td><img alt="unconditional-bppanel" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-bppanel.jpg" /></td>
+<td>Unconditional breakpoint. Execution stops here.</td>
+</tr>
+<tr>
+<td><img alt="unconditional-disabled-document" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-document.jpg" /></td>
+<td><img alt="unconditional-disabled-bppanel" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_unconditional-disabled-bppanel.jpg" /></td>
+<td>Unconditional breakpoint, disabled. Execution does not stop.</td>
+</tr>
+<tr>
+<td><img alt="conditional-document" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-document.jpg" /></td>
+<td><img alt="conditional-bppanel" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-bppanel.jpg" /></td>
+<td>Conditional breakpoint. Execution stops if the attached JavaScript expression evaluates to <code>true</code>.</td>
+</tr>
+<tr>
+<td><img alt="conditional-disabled-document" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-document.jpg" /></td>
+<td><img alt="conditional-disabled-bppanel" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_setting-breakpoints_breakpoint-icons_conditional-disabled-bppanel.jpg" /></td>
+<td>Conditional breakpoint, disabled. Execution does not stop.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="evaluation-in-help-tips">Evaluation in help tips<a class="headerlink" href="#evaluation-in-help-tips" title="Permanent link">&para;</a></h2>
+<p>If you let your mouse pointer rest over a variable or function in a document window, the result of evaluating that variable or function is displayed as a help tip. When you are not debugging the program, this is helpful only if the variables and functions are already known to the JavaScript engine. During debugging, however, this is an extremely useful way to display the current value of a variable, along with its current data type.</p>
+<hr />
+<h2 id="tracking-data">Tracking data<a class="headerlink" href="#tracking-data" title="Permanent link">&para;</a></h2>
+<p>The Data Browser panel is your window into the JavaScript engine. It displays all live data defined in the current context, as a list of variables with their current values. If execution has stopped at a breakpoint, it shows variables that have been defined using var in the current function, and the function arguments. To show variables defined in the global or calling scope, use the Call Stack to change the context (see <a href="#the-call-stack">The call stack</a>).</p>
+<p>You can use the Data Browser to examine and set variable values.
+- Click a variable name to show its current value in the edit field at the top of the panel.
+- To change the value, enter a new value and press ENTER. If a variable is Read only, the edit field is disabled.</p>
+<p><img alt="Tracking Data" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data.png" /></p>
+<p>The flyout menu for this panel lets you control the amount of data displayed:</p>
+<ul>
+<li><strong>Undefined Variables</strong> toggles the display of variables whose value is undefined (as opposed to null).</li>
+<li><strong>Functions toggles</strong> the display of all functions that are attached to objects. Most often, the interesting data in an object are its callable methods.</li>
+<li><strong>Core JavaScript Elements</strong> toggles the display of all data that is part of the JavaScript language standard, such as the Array constructor or the Math object.</li>
+<li><strong>Prototype Elements</strong> toggles the display of the JavaScript object prototype chain.</li>
+</ul>
+<p>Each variable has a small icon that indicates the data type. An invalid object (that is, a reference to an object that has been deleted) shows the object icon crossed out in red. An undefined value has no icon.</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Boolean" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_boolean.jpg" /></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><img alt="Number" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_number.jpg" /></td>
+<td>Number</td>
+</tr>
+<tr>
+<td><img alt="String" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_string.jpg" /></td>
+<td>String</td>
+</tr>
+<tr>
+<td><img alt="Object" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_object.jpg" /></td>
+<td>Object</td>
+</tr>
+<tr>
+<td><img alt="Method" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_method.jpg" /></td>
+<td>Method</td>
+</tr>
+<tr>
+<td><img alt="Null" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_tracking-data_null.jpg" /></td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>You can inspect the contents of an object by clicking its icon. The list expands to show the object's properties (and methods, if Functions display is enabled), and the triangle points down to indicate that the object is open.</p>
+<hr />
+<h2 id="the-call-stack">The call stack<a class="headerlink" href="#the-call-stack" title="Permanent link">&para;</a></h2>
+<p>The Call Stack panel is active while debugging a program. When an executing program stops because of a breakpoint or runtime error, the panel displays the sequence of function calls that led to the current execution point. The Call Stack panel shows the names of the active functions, along with the actual arguments passed in to that function.</p>
+<p>For example, this panel shows a break occurring at a breakpoint in a function RGBColorPicker():</p>
+<p><img alt="Call Stack Break" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-break.jpg" /></p>
+<p>The function containing the breakpoint is highlighted in the Call Stack panel. The line containing the breakpoint is highlighted in the Document Window.</p>
+<p>You can click any function in the call hierarchy to inspect it. In the document window, the line containing the function call that led to that point of execution is marked with a green background. In the example, when you select the run() function in the call stack, the Document Window highlights the line in that function where the RGBColorPicker() function was called.</p>
+<p><img alt="Call Stack Inspect" src="../_static/02_the-extendscript-toolkit_debugging-in-the-toolkit_call-stack-inspect.jpg" /></p>
+<p>Switching between the functions in the call hierarchy allows you to trace how the current function was called. The Console and Data Browser panels coordinate with the Call Stack panel. When you select a function in the Call Stack:</p>
+<ul>
+<li>The Console panel switches its scope to the execution context of that function, so you can inspect and modify its local variables. These would otherwise be inaccessible to the running JavaScript program from within a called function.</li>
+<li>The Data Browser panel displays all data defined in the selected context.</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is copyright Adobe Systems Incorporated.
+    </div>
+  
+  
+    Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+  
+</div>
+
+<!-- Print button -->
+<div class="md-copyright">
+  
+  <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.copy", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/extra.js"></script>
+      
+        <script src="../../docs/_global/js/global.js"></script>
+      
+    
+  </body>
+</html>

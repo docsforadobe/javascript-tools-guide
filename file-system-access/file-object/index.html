@@ -1,0 +1,4889 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://extendscript.docsforadobe.dev/file-system-access/file-object/">
+      
+      
+        <link rel="prev" href="../file-and-folder-supported-encoding-names/">
+      
+      
+        <link rel="next" href="../folder-object/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>File object - Adobe Extendscript Scripting Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global-syntax-highlight.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-object" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Welcome to the new docsforadobe guide!
+
+  This is a work in progress.
+
+  Please provide all feedback via
+  <a ref="me" href="https://github.com/orgs/docsforadobe/discussions">
+    <span class="twemoji">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1M1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z"/></svg>
+    </span>
+    <strong>the org's discussion forum</strong>
+  </a>.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-header__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adobe Extendscript Scripting Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File object
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-nav__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Adobe Extendscript Scripting Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/extendscript-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/scripting-for-specific-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting for specific applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The VS Code ExtendScript Debugger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            The VS Code ExtendScript Debugger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/getting-started-with-vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with the VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/vscode-extension-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code Extension Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The ExtendScript Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/configuring-the-toolkit-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Toolkit window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/selecting-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/the-script-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Script Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/debugging-in-the-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/code-profiling-for-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code profiling for optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/inspecting-object-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspecting object models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            File System Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-file-and-folder-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using File and Folder objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-access-error-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File access error messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-and-folder-supported-encoding-names/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File- and Folder-supported encoding names
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-constructors" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Constructors
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-class-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Class Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Class Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefs" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fs
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-class-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Class Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Class Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filedecode" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.decode()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileencode" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.encode()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileisencodingavailable" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.isEncodingAvailable()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopendialog" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.openDialog()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filesavedialog" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.saveDialog()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Object Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileabsoluteuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.absoluteURI
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filealias" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.alias
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreated" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.created
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreator" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.creator
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filedisplayname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.displayName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileencoding" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.encoding
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileeof" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.eof
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileerror" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.error
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileexists" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.exists
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefsname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fsName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefullname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fullName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filehidden" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.hidden
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelength" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.length
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelinefeed" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.lineFeed
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelocalizedname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.localizedName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filemodified" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.modified
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filename" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.name
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileparent" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.parent
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filepath" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.path
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadonly" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readonly
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filerelativeuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.relativeURI
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filetype" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.type
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Object Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filechangepath" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.changePath()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileclose" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.close()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecopy" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.copy()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreatealias" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.createAlias()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileexecute" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.execute()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filegetrelativeuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.getRelativeURI()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopen" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.open()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopendlg" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.openDlg()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileread" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.read()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadch" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readch()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadln" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readln()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileremove" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.remove()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filerename" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.rename()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileresolve" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.resolve()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filesavedlg" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.saveDlg()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileseek" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.seek()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filetell" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.tell()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filewrite" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.write()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filewriteln" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.writeln()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../folder-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Folder object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User-Interface Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/code-examples-for-scriptui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples for ScriptUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-programming-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI programming model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/types-of-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types of controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/size-and-location-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Size and location objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/drawing-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/resource-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/defining-behavior-with-event-callbacks-and-listeners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining behavior with event callbacks and listeners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/communicating-with-the-flash-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating with the Flash application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/automatic-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/managing-control-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing control titles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/localization-in-scriptui-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization in ScriptUI objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/common-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/control-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/event-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/graphic-customization-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/layoutmanager-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LayoutManager object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interapplication Communication with Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communications-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communications overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/cross-dom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-DOM functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communicating-through-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating through messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-framework-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging framework API reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-message-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk message object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-error-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging error codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/application-and-namespace-specifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application and namespace specifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            External Communication Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating External Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/loading-and-using-shared-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and using shared libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/externalobject-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExternalObject object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-direct-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for direct access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-indirect-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for indirect access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ExtendScript Tools and Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/dollar-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dollar ($) object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/extendscript-reflection-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript reflection interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/localizing-extendscript-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localizing ExtendScript strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/user-notification-dialogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User notification dialogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/specifying-measurement-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifying measurement values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/preprocessor-directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preprocessor directives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/operator-overloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating XML into JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/the-xml-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/xml-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML Object Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting Access to XMP Metadata
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/accessing-the-xmp-scripting-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing the XMP scripting API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/xmpscript-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XMPScript object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-constructors" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Constructors
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-class-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Class Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Class Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefs" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fs
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-class-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Class Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Class Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filedecode" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.decode()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileencode" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.encode()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileisencodingavailable" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.isEncodingAvailable()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopendialog" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.openDialog()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filesavedialog" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.saveDialog()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Object Attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileabsoluteuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.absoluteURI
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filealias" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.alias
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreated" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.created
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreator" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.creator
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filedisplayname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.displayName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileencoding" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.encoding
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileeof" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.eof
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileerror" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.error
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileexists" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.exists
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefsname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fsName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filefullname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.fullName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filehidden" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.hidden
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelength" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.length
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelinefeed" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.lineFeed
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filelocalizedname" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.localizedName
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filemodified" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.modified
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filename" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.name
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileparent" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.parent
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filepath" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.path
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadonly" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readonly
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filerelativeuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.relativeURI
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filetype" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.type
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#file-object-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			File Object Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="File Object Methods">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#filechangepath" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.changePath()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileclose" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.close()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecopy" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.copy()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filecreatealias" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.createAlias()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileexecute" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.execute()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filegetrelativeuri" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.getRelativeURI()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopen" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.open()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileopendlg" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.openDlg()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileread" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.read()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadch" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readch()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filereadln" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.readln()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileremove" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.remove()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filerename" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.rename()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileresolve" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.resolve()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filesavedlg" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.saveDlg()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#fileseek" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.seek()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filetell" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.tell()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filewrite" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.write()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#filewriteln" class="md-nav__link">
+		<span class="md-ellipsis">
+			File.writeln()
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/edit/master/docs/file-system-access/file-object.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/raw/master/docs/file-system-access/file-object.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="file-object">File Object<a class="headerlink" href="#file-object" title="Permanent link">&para;</a></h1>
+<p>Represents a file in the local file system in a platform-independent manner. All properties and methods resolve file system aliases automatically and act on the original file unless otherwise noted.</p>
+<hr />
+<h2 id="file-object-constructors">File Object Constructors<a class="headerlink" href="#file-object-constructors" title="Permanent link">&para;</a></h2>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="nx">File</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w">    </span><span class="c1">// Can return a Folder object</span>
+</span><span id="__span-0-2"><span class="ow">new</span><span class="w"> </span><span class="nx">File</span><span class="w"> </span><span class="p">([</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">// Always returns a File object</span>
+</span></code></pre></div>
+<p>To create a File object, use the File function or the new operator. The constructor accepts full or partial path names, and returns the new object.</p>
+<p>The CRLF sequence for the file is preset to the system default, and the encoding is preset to the default system encoding.</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>path</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The absolute or relative path to the file associated with this object, specified in platform-specific or URI format; see <a href="../using-file-and-folder-objects/#specifying-paths">Specifying paths</a>. The value stored in the object is the absolute path.</p>
+<p>The path need not refer to an existing file. If not supplied, a temporary name is generated.</p>
+<p>If the path refers to an existing folder:</p>
+<ul>
+<li>The File function returns a Folder object instead of a File object.</li>
+<li>The new operator returns a File object for a nonexisting file with the same name.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In After Effects on MacOS, if <code>path.length</code> is more than 1002, After Effects crashes.</p>
+<p>This has been reported on MacOS 10.11.6 and After Effects 13.8 and 14.0.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="file-class-attributes">File Class Attributes<a class="headerlink" href="#file-class-attributes" title="Permanent link">&para;</a></h2>
+<p>This property is available as a static property of the File class. It is not necessary to create an instance to access it.</p>
+<h3 id="filefs">File.fs<a class="headerlink" href="#filefs" title="Permanent link">&para;</a></h3>
+<p><code>File.fs</code></p>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>The name of the file system.</p>
+<p>One of:</p>
+<ul>
+<li><code>Windows</code></li>
+<li><code>Macintosh</code></li>
+<li><code>Unix</code></li>
+</ul>
+<h4 id="type">Type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h2 id="file-class-methods">File Class Methods<a class="headerlink" href="#file-class-methods" title="Permanent link">&para;</a></h2>
+<p>These functions are available as static methods of the File class. It is not necessary to create an instance to call them.</p>
+<h3 id="filedecode">File.decode()<a class="headerlink" href="#filedecode" title="Permanent link">&para;</a></h3>
+<p><code>File.decode(uri)</code></p>
+<h4 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h4>
+<p>Decodes the specified string as required by RFC 2396.</p>
+<p>All special characters must be encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. Special characters are those with a numeric value greater than 127, except the following:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><span class="err">/ - _ . ! ~ * &#39; ( )</span>
+</span></code></pre></div>
+<p>For example, the string <code>"my%20file"</code> is decoded as <code>"my&lt;br/&gt;file"</code>.</p>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uri</code></td>
+<td>String</td>
+<td>The encoded string to decode.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileencode">File.encode()<a class="headerlink" href="#fileencode" title="Permanent link">&para;</a></h3>
+<p><code>File.encode(name)</code></p>
+<h4 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h4>
+<p>Encodes the specified string as required by RFC 2396.</p>
+<p>All special characters are encoded in UTF-8 and stored as escaped characters starting with the percent sign followed by two hexadecimal digits. For example, the string "my file" is encoded as "my%20file". Special characters are those with a numeric value greater than 127, except the following:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><span class="err">/ - _ . ! ~ * &#39; ( )</span>
+</span></code></pre></div>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The string to encode.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileisencodingavailable">File.isEncodingAvailable()<a class="headerlink" href="#fileisencodingavailable" title="Permanent link">&para;</a></h3>
+<p><code>File.isEncodingAvailable( name)</code></p>
+<h4 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h4>
+<p>Checks whether a given encoding is available.</p>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The encoding name. Typical values are <code>"ASCII"</code>, <code>"binary"</code>, or <code>"UTF-8"</code>. See <a href="../file-and-folder-supported-encoding-names/">File- and Folder-supported encoding names</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Boolean. <code>true</code> if your system supports the specified encoding, <code>false</code> otherwise.</p>
+<hr />
+<h3 id="fileopendialog">File.openDialog()<a class="headerlink" href="#fileopendialog" title="Permanent link">&para;</a></h3>
+<p><code>File.openDialog([prompt="", filter="", multiSelect=false])</code></p>
+<h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
+<p>Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file or multiple files, and creates new File objects to represent the selected files.</p>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>prompt</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The prompt text, if the dialog allows a prompt.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>filter</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String or Function</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. A filter that limits the types of files displayed in the dialog.</p>
+<p>In Windows, a filter expression, such as <code>"JavaScript:*.jsx;All files:*.*"</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Separate expression with a semicolon (<code>;</code>) to filter by all these types at once; (show <code>jsx</code> AND <code>all</code>)</li>
+<li>Separate with a comma (<code>,</code>) to populate the filter dropdown, to select one type at a time (show <code>jsx</code> OR <code>all</code>)</li>
+</ul>
+</div>
+<p>In Mac OS, a filter function that takes a File instance and returns <code>true</code> if the file should be included in the display, <code>false</code> if it should not.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>multiSelect</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Boolean</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. When <code>true</code>, the user can select multiple files and the return value is an array. Default is <code>false</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h4>
+<p>The <a href="#file-object">File</a> for the selected file, or an array of File Objects if multiple files are selected.</p>
+<p>If the user cancels, returns <code>null</code>.</p>
+<hr />
+<h3 id="filesavedialog">File.saveDialog()<a class="headerlink" href="#filesavedialog" title="Permanent link">&para;</a></h3>
+<p><code>File.saveDialog(prompt[, preset=""])</code></p>
+<h4 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h4>
+<p>Opens the built-in platform-specific file-browsing dialog in which a user can select an existing file location to which to save information, and creates a new <a href="#file-object">File object</a> to represent the selected file location.</p>
+<h4 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>prompt</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>A string containing the prompt text, if the dialog allows a prompt.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>filter</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String or Function</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. <a href="../../user-interface-tools/window-object/">Windows</a> only. A filter that limits the types of files displayed in the dialog.</p>
+<p>A filter expression, such as <code>"JavaScript:*.jsx;All files:*.*"</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Separate expression with a semicolon (<code>;</code>) to filter by all these types at once; (show <code>jsx</code> AND <code>all</code>)</li>
+<li>Separate with a comma (<code>,</code>) to populate the filter dropdown, to select one type at a time (show <code>jsx</code> OR <code>all</code>)</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h4>
+<p>A <a href="#file-object">File</a> for the the selected file location.</p>
+<p>If the user cancels, returns <code>null</code>.</p>
+<hr />
+<h2 id="file-object-attributes">File Object Attributes<a class="headerlink" href="#file-object-attributes" title="Permanent link">&para;</a></h2>
+<p>These properties are available for <code>File</code> objects.</p>
+<hr />
+<h3 id="fileabsoluteuri">File.absoluteURI<a class="headerlink" href="#fileabsoluteuri" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.absoluteURI</code></p>
+<h4 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">&para;</a></h4>
+<p>The full path name for the referenced file in URI notation.</p>
+<h4 id="type_1">Type<a class="headerlink" href="#type_1" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filealias">File.alias<a class="headerlink" href="#filealias" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.alias</code></p>
+<h4 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h4>
+<p>When <code>true</code>, the object refers to a file system alias or shortcut.</p>
+<h4 id="type_2">Type<a class="headerlink" href="#type_2" title="Permanent link">&para;</a></h4>
+<p>Boolean. Read only.</p>
+<hr />
+<h3 id="filecreated">File.created<a class="headerlink" href="#filecreated" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.created</code></p>
+<h4 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">&para;</a></h4>
+<p>The creation date of the referenced file, or <code>null</code> if the object does not refer to a file on disk.</p>
+<h4 id="type_3">Type<a class="headerlink" href="#type_3" title="Permanent link">&para;</a></h4>
+<p>Date. Read only.</p>
+<hr />
+<h3 id="filecreator">File.creator<a class="headerlink" href="#filecreator" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.creator</code></p>
+<h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h4>
+<p>In Mac OS, the file creator as a four-character string. In Windows or UNIX, value is <code>"????"</code>.</p>
+<h4 id="type_4">Type<a class="headerlink" href="#type_4" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filedisplayname">File.displayName<a class="headerlink" href="#filedisplayname" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.displayName</code></p>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<p>The localized name of the referenced file, without the path.</p>
+<h4 id="type_5">Type<a class="headerlink" href="#type_5" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="fileencoding">File.encoding<a class="headerlink" href="#fileencoding" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.encoding</code></p>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<p>Gets or sets the encoding for subsequent read/write operations. One of the encoding constants listed in <a href="../file-and-folder-supported-encoding-names/">File- and Folder-supported encoding names</a>.</p>
+<p>If the value is not recognized, uses the system default encoding.</p>
+<p>A special encoder, <code>"BINARY"</code>, is used to read binary files. It stores each byte of the file as one Unicode character regardless of any encoding. When writing, the lower byte of each Unicode character is treated as a single byte to write.</p>
+<h4 id="type_6">Type<a class="headerlink" href="#type_6" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileeof">File.eof<a class="headerlink" href="#fileeof" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.eof</code></p>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<p>When <code>true</code>, a read attempt caused the current position to be at the end of the file, or the file is not open.</p>
+<h4 id="type_7">Type<a class="headerlink" href="#type_7" title="Permanent link">&para;</a></h4>
+<p>Boolean. Read only.</p>
+<hr />
+<h3 id="fileerror">File.error<a class="headerlink" href="#fileerror" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.error</code></p>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<p>A message describing the last file system error; see <a href="../file-access-error-messages/">File access error messages</a>.</p>
+<p>Typically set by the file system, but a script can set it. Setting this value clears any error message and resets the error bit for opened files.</p>
+<p>Contains the empty string if there is no error.</p>
+<h4 id="type_8">Type<a class="headerlink" href="#type_8" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileexists">File.exists<a class="headerlink" href="#fileexists" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.exists</code></p>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
+<p>When <code>true</code>, this object refers to a file or file-system alias that actually exists in the file system.</p>
+<h4 id="type_9">Type<a class="headerlink" href="#type_9" title="Permanent link">&para;</a></h4>
+<p>Boolean. Read only.</p>
+<hr />
+<h3 id="filefsname">File.fsName<a class="headerlink" href="#filefsname" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.fsName</code></p>
+<h4 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h4>
+<p>The platform-specific full path name for the referenced file.</p>
+<h4 id="type_10">Type<a class="headerlink" href="#type_10" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filefullname">File.fullName<a class="headerlink" href="#filefullname" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.fullName</code></p>
+<h4 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h4>
+<p>The full path name for the referenced file in URI notation.</p>
+<h4 id="type_11">Type<a class="headerlink" href="#type_11" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filehidden">File.hidden<a class="headerlink" href="#filehidden" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.hidden</code></p>
+<h4 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h4>
+<p>When <code>true</code>, the file is not shown in the platform-specific file browser. Read/write. If the object references a file-system alias or shortcut, the flag is altered on the alias, not on the original file.</p>
+<h4 id="type_12">Type<a class="headerlink" href="#type_12" title="Permanent link">&para;</a></h4>
+<p>Boolea</p>
+<hr />
+<h3 id="filelength">File.length<a class="headerlink" href="#filelength" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.length</code></p>
+<h4 id="description_18">Description<a class="headerlink" href="#description_18" title="Permanent link">&para;</a></h4>
+<p>The size of the file in bytes. Can be set only for a file that is not open, in which case it truncates or pads the file with 0-bytes to the new length.</p>
+<h4 id="type_13">Type<a class="headerlink" href="#type_13" title="Permanent link">&para;</a></h4>
+<p>Number</p>
+<hr />
+<h3 id="filelinefeed">File.lineFeed<a class="headerlink" href="#filelinefeed" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.lineFeed</code></p>
+<h4 id="description_19">Description<a class="headerlink" href="#description_19" title="Permanent link">&para;</a></h4>
+<p>How line feed characters are written in the file system.</p>
+<p>One of:</p>
+<ul>
+<li><code>Windows</code> - Windows style</li>
+<li><code>Macintosh</code> - Mac OS style</li>
+<li><code>Unix</code> - UNIX style</li>
+</ul>
+<h4 id="type_14">Type<a class="headerlink" href="#type_14" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="filelocalizedname">File.localizedName<a class="headerlink" href="#filelocalizedname" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.localizedName</code></p>
+<h4 id="description_20">Description<a class="headerlink" href="#description_20" title="Permanent link">&para;</a></h4>
+<p>A localized version of the file name portion of the absolute URI for the referenced file, without the path specification.</p>
+<h4 id="type_15">Type<a class="headerlink" href="#type_15" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filemodified">File.modified<a class="headerlink" href="#filemodified" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.modified</code></p>
+<h4 id="description_21">Description<a class="headerlink" href="#description_21" title="Permanent link">&para;</a></h4>
+<p>The date of the referenced file's last modification, or null if the object does not refer to a file on disk.</p>
+<h4 id="type_16">Type<a class="headerlink" href="#type_16" title="Permanent link">&para;</a></h4>
+<p>Date. Read only.</p>
+<hr />
+<h3 id="filename">File.name<a class="headerlink" href="#filename" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.name</code></p>
+<h4 id="description_22">Description<a class="headerlink" href="#description_22" title="Permanent link">&para;</a></h4>
+<p>The file name portion of the absolute URI for the referenced file, without the path specification.</p>
+<h4 id="type_17">Type<a class="headerlink" href="#type_17" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="fileparent">File.parent<a class="headerlink" href="#fileparent" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.parent</code></p>
+<h4 id="description_23">Description<a class="headerlink" href="#description_23" title="Permanent link">&para;</a></h4>
+<p>The Folder object for the folder that contains this file.</p>
+<h4 id="type_18">Type<a class="headerlink" href="#type_18" title="Permanent link">&para;</a></h4>
+<p>Folder. Read only.</p>
+<hr />
+<h3 id="filepath">File.path<a class="headerlink" href="#filepath" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.path</code></p>
+<h4 id="description_24">Description<a class="headerlink" href="#description_24" title="Permanent link">&para;</a></h4>
+<p>The path portion of the absolute URI for the referenced file, without the file name.</p>
+<h4 id="type_19">Type<a class="headerlink" href="#type_19" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filereadonly">File.readonly<a class="headerlink" href="#filereadonly" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.readonly</code></p>
+<h4 id="description_25">Description<a class="headerlink" href="#description_25" title="Permanent link">&para;</a></h4>
+<p>When <code>true</code>, prevents the file from being altered or deleted. If the referenced file is a file-system alias or shortcut, the flag is altered on the alias, not on the original file.</p>
+<h4 id="type_20">Type<a class="headerlink" href="#type_20" title="Permanent link">&para;</a></h4>
+<p>Boolean</p>
+<hr />
+<h3 id="filerelativeuri">File.relativeURI<a class="headerlink" href="#filerelativeuri" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.relativeURI</code></p>
+<h4 id="description_26">Description<a class="headerlink" href="#description_26" title="Permanent link">&para;</a></h4>
+<p>The path name for the referenced file in URI notation, relative to the current folder.</p>
+<h4 id="type_21">Type<a class="headerlink" href="#type_21" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h3 id="filetype">File.type<a class="headerlink" href="#filetype" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.type</code></p>
+<h4 id="description_27">Description<a class="headerlink" href="#description_27" title="Permanent link">&para;</a></h4>
+<p>The file type as a four-character string.</p>
+<ul>
+<li>In Mac OS, the Mac OS file type.</li>
+<li>
+<ul>
+<li>In Windows, <code>"appl"</code> for <code>.EXE</code> files, <code>"shlb"</code> for <code>.DLL</code> files and <code>"TEXT"</code> for any other file.</li>
+</ul>
+</li>
+</ul>
+<p>If the file does not exist, the value is <code>"????"</code>.</p>
+<h4 id="type_22">Type<a class="headerlink" href="#type_22" title="Permanent link">&para;</a></h4>
+<p>String. Read only.</p>
+<hr />
+<h2 id="file-object-methods">File Object Methods<a class="headerlink" href="#file-object-methods" title="Permanent link">&para;</a></h2>
+<p>These functions are available for File objects.</p>
+<h3 id="filechangepath">File.changePath()<a class="headerlink" href="#filechangepath" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.changePath(path)</code></p>
+<h4 id="description_28">Description<a class="headerlink" href="#description_28" title="Permanent link">&para;</a></h4>
+<p>Changes the path specification of the referenced file.</p>
+<h4 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>String</td>
+<td>The new path, absolute or relative to the current folder.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> on success.</p>
+<hr />
+<h3 id="fileclose">File.close()<a class="headerlink" href="#fileclose" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.close()</code></p>
+<h4 id="description_29">Description<a class="headerlink" href="#description_29" title="Permanent link">&para;</a></h4>
+<p>Closes this open file.</p>
+<h4 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> on success, <code>false</code> if there are I/O errors.</p>
+<hr />
+<h3 id="filecopy">File.copy()<a class="headerlink" href="#filecopy" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.copy(target)</code></p>
+<h4 id="description_30">Description<a class="headerlink" href="#description_30" title="Permanent link">&para;</a></h4>
+<p>Copies this object's referenced file to the specified target location.</p>
+<p>Resolves any aliases to find the source file. If a file exists at the target location, it is overwritten.</p>
+<h4 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target</code></td>
+<td>String or <a href="#file-object">File object</a></td>
+<td>The URI path to the target location, or a File that references the target location.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the copy was successful, <code>false</code> otherwise.</p>
+<hr />
+<h3 id="filecreatealias">File.createAlias()<a class="headerlink" href="#filecreatealias" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.createAlias( [path])</code></p>
+<h4 id="description_31">Description<a class="headerlink" href="#description_31" title="Permanent link">&para;</a></h4>
+<p>Makes this file a file-system alias or shortcut to the specified file. The referenced file for this object must not yet exist on disk.</p>
+<h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>String</td>
+<td>The path of the target file.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the operation was successful, <code>false</code> otherwise.</p>
+<hr />
+<h3 id="fileexecute">File.execute()<a class="headerlink" href="#fileexecute" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.execute()</code></p>
+<h4 id="description_32">Description<a class="headerlink" href="#description_32" title="Permanent link">&para;</a></h4>
+<p>Opens this file using the appropriate application, as if it had been double-clicked in a file browser.</p>
+<p>You can use this method to run scripts, launch applications, and so on.</p>
+<h4 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> immediately if the application launch was successful.</p>
+<hr />
+<h3 id="filegetrelativeuri">File.getRelativeURI()<a class="headerlink" href="#filegetrelativeuri" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.getRelativeURI([basePath])</code></p>
+<h4 id="description_33">Description<a class="headerlink" href="#description_33" title="Permanent link">&para;</a></h4>
+<p>Retrieves the URI for this file, relative to the specified base path, in URI notation. If no base path is supplied, the URI is relative to the path of the current folder.</p>
+<h4 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>basePath</code></td>
+<td>String</td>
+<td>Optional. A string containing the base path for the relative URI. Default is the current folder.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileopen">File.open()<a class="headerlink" href="#fileopen" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.open(mode[, type][, creator])</code></p>
+<h4 id="description_34">Description<a class="headerlink" href="#description_34" title="Permanent link">&para;</a></h4>
+<p>Opens the referenced file for subsequent read/write operations. The method resolves any aliases to find the file.</p>
+<p>The method attempts to detect the encoding of the open file. It reads a few bytes at the current location and tries to detect the Byte Order Mark character 0xFFFE. If found, the current position is advanced behind the detected character and the encoding property is set to one of the strings UCS-2BE, UCS-2LE, UCS4-BE, UCS-4LE, or UTF-8. If the marker character is not found, it checks for zero bytes at the current location and makes an assumption about one of the above formats (except UTF-8). If everything fails, the encoding property is set to the system encoding.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful about opening a file more than once. The operating system usually permits you to do so, but if you start writing to the file using two different File objects, you can destroy your data.</p>
+</div>
+<h4 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>mode</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>A string indicating the read/write mode. One of:</p>
+<ul>
+<li><code>r</code>: (read) Opens for reading. If the file does not exist or cannot be found, the call fails.</li>
+<li><code>w</code>: (write) Opens a file for writing. If the file exists, its contents are destroyed. If the file does not exist, creates a new, empty file.</li>
+<li><code>e</code>: (edit) Opens an existing file for reading and writing.</li>
+<li><code>a</code>: (append) Opens the file in Append mode, and moves the current position to the end of the file.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>type</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. In Mac OS, the type of a newly created file, a 4-character string. Ignored in Windows and UNIX.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>creator</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. In Mac OS, the creator of a newly created file, a 4-character string. Ignored in Windows and UNIX.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the file has been opened successfully, <code>false</code> otherwise.</p>
+<hr />
+<h3 id="fileopendlg">File.openDlg()<a class="headerlink" href="#fileopendlg" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.openDlg([prompt=""][, filter=""][, multiSelect=false])</code></p>
+<h4 id="description_35">Description<a class="headerlink" href="#description_35" title="Permanent link">&para;</a></h4>
+<p>Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file or files, and creates new File objects to represent the selected files. Differs from the class method openDialog() in that it presets the current folder to this File object's parent folder and the current file to this object's associated file.</p>
+<h4 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>prompt</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The prompt text, if the dialog allows a prompt.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>filter</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String or Function</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. A filter that limits the types of files displayed in the dialog.</p>
+<p>In Windows, a filter expression, such as <code>"JavaScript:*.jsx;All files:*.*"</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Separate expression with a semicolon (<code>;</code>) to filter by all these types at once; (show <code>jsx</code> AND <code>all</code>)</li>
+<li>Separate with a comma (<code>,</code>) to populate the filter dropdown, to select one type at a time (show <code>jsx</code> OR <code>all</code>)</li>
+</ul>
+</div>
+<p>In Mac OS, a filter function that takes a File instance and returns <code>true</code> if the file should be included in the display, <code>false</code> if it should not.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>multiSelect</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Boolean.</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. When <code>true</code>, the user can select multiple files and the return value is an array. Default is <code>false</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h4>
+<p>If the user clicks <strong>OK</strong>, returns a <a href="#file-object">File</a> or <a href="../folder-object/">Folder object</a> for the selected file or folder, or an array of objects.</p>
+<p>If the user cancels, returns <code>null</code>.</p>
+<hr />
+<h3 id="fileread">File.read()<a class="headerlink" href="#fileread" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.read([chars])</code></p>
+<h4 id="description_36">Description<a class="headerlink" href="#description_36" title="Permanent link">&para;</a></h4>
+<p>Reads the contents of the file starting at the current position.</p>
+<p>Returns a string that contains up to the specified number of characters.</p>
+<h4 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chars</code></td>
+<td>Number</td>
+<td>Optional. An integer specifying the number of characters to read. By default, reads from the current position to the end of the file. If the file is encoded, multiple bytes might be read to create single Unicode characters.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="filereadch">File.readch()<a class="headerlink" href="#filereadch" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.readch()</code></p>
+<h4 id="description_37">Description<a class="headerlink" href="#description_37" title="Permanent link">&para;</a></h4>
+<p>Reads a single text character from the file at the current position. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.</p>
+<p>Returns a string that contains the character.</p>
+<h4 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="filereadln">File.readln()<a class="headerlink" href="#filereadln" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.readln()</code></p>
+<h4 id="description_38">Description<a class="headerlink" href="#description_38" title="Permanent link">&para;</a></h4>
+<p>Reads a single line of text from the file at the current position, and returns it in a string. Line feeds are recognized as CR, LF, CRLF, or LFCR pairs. If the file is encoded, multiple bytes might be read to create single Unicode characters.</p>
+<p>Returns a string that contains the text.</p>
+<h4 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h4>
+<p>String</p>
+<hr />
+<h3 id="fileremove">File.remove()<a class="headerlink" href="#fileremove" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.remove()</code></p>
+<h4 id="description_39">Description<a class="headerlink" href="#description_39" title="Permanent link">&para;</a></h4>
+<p>Deletes the file associated with this object from disk, immediately, without moving it to the system trash.</p>
+<p>Does not resolve aliases; instead, deletes the referenced alias or shortcut file itself.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Cannot be undone. It is recommended that you prompt the user for permission before deleting.</p>
+</div>
+<h4 id="returns_15">Returns<a class="headerlink" href="#returns_15" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the file is deleted successfully.</p>
+<hr />
+<h3 id="filerename">File.rename()<a class="headerlink" href="#filerename" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.rename(newName)</code></p>
+<h4 id="description_40">Description<a class="headerlink" href="#description_40" title="Permanent link">&para;</a></h4>
+<p>Renames the associated file.</p>
+<p>Does not resolve aliases, but renames the referenced alias or shortcut file itself.</p>
+<h4 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>newName</code></td>
+<td>String</td>
+<td>The new file name, with no path.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_16">Returns<a class="headerlink" href="#returns_16" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> on success.</p>
+<hr />
+<h3 id="fileresolve">File.resolve()<a class="headerlink" href="#fileresolve" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.resolve()</code></p>
+<h4 id="description_41">Description<a class="headerlink" href="#description_41" title="Permanent link">&para;</a></h4>
+<p>If this object references an alias or shortcut, this method resolves that alias and returns a new File object that references the file-system element to which the alias resolves.</p>
+<h4 id="returns_17">Returns<a class="headerlink" href="#returns_17" title="Permanent link">&para;</a></h4>
+<p>The new <a href="#file-object">File object</a>, or <code>null</code> if this object does not reference an alias, or if the alias cannot be resolved.</p>
+<hr />
+<h3 id="filesavedlg">File.saveDlg()<a class="headerlink" href="#filesavedlg" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.saveDlg([prompt=""][, preset=""])</code></p>
+<h4 id="description_42">Description<a class="headerlink" href="#description_42" title="Permanent link">&para;</a></h4>
+<p>Opens the built-in platform-specific file-browsing dialog, in which the user can select an existing file location to which to save information, and creates a new File object to represent the selected file.</p>
+<p>Differs from the class method <a href="#filesavedialog">saveDialog()</a> in that it presets the current folder to this File object's parent folder and the file to this object's associated file.</p>
+<h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>prompt</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The prompt text, if the dialog allows a prompt.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>filter</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String or Function</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. A filter that limits the types of files displayed in the dialog.</p>
+<p>In Windows, a filter expression, such as <code>"JavaScript:*.jsx;All files:*.*"</code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Separate expression with a semicolon (<code>;</code>) to filter by all these types at once; (show <code>jsx</code> AND <code>all</code>)</li>
+<li>Separate with a comma (<code>,</code>) to populate the filter dropdown, to select one type at a time (show <code>jsx</code> OR <code>all</code>)</li>
+</ul>
+</div>
+<p>Not used in MacOS</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_18">Returns<a class="headerlink" href="#returns_18" title="Permanent link">&para;</a></h4>
+<p>The <a href="#file-object">File object</a> for the selected file.</p>
+<p>If the user cancels, returns <code>null</code>.</p>
+<hr />
+<h3 id="fileseek">File.seek()<a class="headerlink" href="#fileseek" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.seek(pos[, mode=0])</code></p>
+<h4 id="description_43">Description<a class="headerlink" href="#description_43" title="Permanent link">&para;</a></h4>
+<p>Seeks to the specified position in the file. The new position cannot be less than 0 or greater than the current file size.</p>
+<h4 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>pos</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The new current position in the file as an offset in bytes from the start, current position, or end, depending on the mode.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>mode</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Optional. The seek mode, one of:</p>
+<ul>
+<li><code>0</code>: Seek to absolute position, where pos=0 is the first byte of the file. This is the default.</li>
+<li><code>1</code>: Seek relative to the current position.</li>
+<li><code>2</code>: Seek backward from the end of the file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_19">Returns<a class="headerlink" href="#returns_19" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> if the position was changed.</p>
+<hr />
+<h3 id="filetell">File.tell()<a class="headerlink" href="#filetell" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.tell()</code></p>
+<h4 id="description_44">Description<a class="headerlink" href="#description_44" title="Permanent link">&para;</a></h4>
+<p>Retrieves the current position index as a byte offset from the start of the file.</p>
+<h4 id="returns_20">Returns<a class="headerlink" href="#returns_20" title="Permanent link">&para;</a></h4>
+<p>Number</p>
+<hr />
+<h3 id="filewrite">File.write()<a class="headerlink" href="#filewrite" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.write( text[, text...]...)</code></p>
+<h4 id="description_45">Description<a class="headerlink" href="#description_45" title="Permanent link">&para;</a></h4>
+<p>Writes the specified text to the file at the current position. For encoded files, writing a single Unicode character may write multiple bytes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.</p>
+</div>
+<h4 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>String</td>
+<td>One or more strings to write, which are concatenated to form a single string.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_21">Returns<a class="headerlink" href="#returns_21" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> on success.</p>
+<hr />
+<h3 id="filewriteln">File.writeln()<a class="headerlink" href="#filewriteln" title="Permanent link">&para;</a></h3>
+<p><code>fileObj.writeln (text[, text...]...)</code></p>
+<h4 id="description_46">Description<a class="headerlink" href="#description_46" title="Permanent link">&para;</a></h4>
+<p>Writes the specified text to the file at the current position, and appends a Line Feed sequence in the style specified by the linefeed property.For encoded files, writing a single Unicode character may write multiple bytes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful not to write to a file that is open in another application or object, as this can overwrite existing data.</p>
+</div>
+<h4 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>String</td>
+<td>One or more strings to write, which are concatenated to form a single string.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns_22">Returns<a class="headerlink" href="#returns_22" title="Permanent link">&para;</a></h4>
+<p>Boolean. <code>true</code> on success.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is copyright Adobe Systems Incorporated.
+    </div>
+  
+  
+    Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+  
+</div>
+
+<!-- Print button -->
+<div class="md-copyright">
+  
+  <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.copy", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/extra.js"></script>
+      
+        <script src="../../docs/_global/js/global.js"></script>
+      
+    
+  </body>
+</html>

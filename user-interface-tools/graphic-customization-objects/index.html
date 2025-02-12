@@ -1,0 +1,3859 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://extendscript.docsforadobe.dev/user-interface-tools/graphic-customization-objects/">
+      
+      
+        <link rel="prev" href="../event-handling/">
+      
+      
+        <link rel="next" href="../layoutmanager-object/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>Graphic customization objects - Adobe Extendscript Scripting Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global-syntax-highlight.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#graphic-customization-objects" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Welcome to the new docsforadobe guide!
+
+  This is a work in progress.
+
+  Please provide all feedback via
+  <a ref="me" href="https://github.com/orgs/docsforadobe/discussions">
+    <span class="twemoji">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1M1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z"/></svg>
+    </span>
+    <strong>the org's discussion forum</strong>
+  </a>.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-header__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adobe Extendscript Scripting Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Graphic customization objects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-nav__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Adobe Extendscript Scripting Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/extendscript-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/scripting-for-specific-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting for specific applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The VS Code ExtendScript Debugger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            The VS Code ExtendScript Debugger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/getting-started-with-vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with the VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/vscode-extension-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code Extension Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The ExtendScript Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/configuring-the-toolkit-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Toolkit window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/selecting-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/the-script-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Script Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/debugging-in-the-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/code-profiling-for-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code profiling for optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/inspecting-object-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspecting object models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            File System Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/using-file-and-folder-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using File and Folder objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-access-error-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File access error messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-and-folder-supported-encoding-names/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File- and Folder-supported encoding names
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/folder-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Folder object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User-Interface Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-examples-for-scriptui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples for ScriptUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scriptui-programming-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI programming model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../types-of-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types of controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../size-and-location-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Size and location objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../drawing-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resource-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../defining-behavior-with-event-callbacks-and-listeners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining behavior with event callbacks and listeners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../communicating-with-the-flash-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating with the Flash application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automatic-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../managing-control-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing control titles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../localization-in-scriptui-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization in ScriptUI objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scriptui-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scriptui-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../common-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../window-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../window-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuigraphics-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIGraphics Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-class-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Class Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-object-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuibrush-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIBrush Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIBrush Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuibrush-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIBrush Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuifont-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIFont Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIFont Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuifont-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIFont Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuiimage-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIImage Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIImage Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuiimage-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIImage Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuipath-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPath Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuipen-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPen Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIPen Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuipen-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPen Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#custom-element-class" class="md-nav__link">
+		<span class="md-ellipsis">
+			Custom element class
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layoutmanager-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LayoutManager object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interapplication Communication with Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communications-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communications overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/cross-dom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-DOM functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communicating-through-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating through messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-framework-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging framework API reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-message-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk message object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-error-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging error codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/application-and-namespace-specifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application and namespace specifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            External Communication Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating External Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/loading-and-using-shared-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and using shared libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/externalobject-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExternalObject object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-direct-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for direct access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-indirect-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for indirect access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ExtendScript Tools and Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/dollar-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dollar ($) object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/extendscript-reflection-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript reflection interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/localizing-extendscript-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localizing ExtendScript strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/user-notification-dialogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User notification dialogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/specifying-measurement-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifying measurement values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/preprocessor-directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preprocessor directives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/operator-overloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating XML into JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/the-xml-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-xml/xml-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML Object Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting Access to XMP Metadata
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/accessing-the-xmp-scripting-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing the XMP scripting API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/xmpscript-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XMPScript object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuigraphics-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIGraphics Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-class-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Class Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuigraphics-object-methods" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIGraphics Object Methods
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuibrush-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIBrush Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIBrush Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuibrush-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIBrush Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuifont-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIFont Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIFont Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuifont-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIFont Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuiimage-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIImage Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIImage Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuiimage-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIImage Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuipath-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPath Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#scriptuipen-object" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPen Object
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="ScriptUIPen Object">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#scriptuipen-object-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			ScriptUIPen Object Attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#custom-element-class" class="md-nav__link">
+		<span class="md-ellipsis">
+			Custom element class
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/edit/master/docs/user-interface-tools/graphic-customization-objects.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/raw/master/docs/user-interface-tools/graphic-customization-objects.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="graphic-customization-objects">Graphic customization objects<a class="headerlink" href="#graphic-customization-objects" title="Permanent link">&para;</a></h1>
+<p>These objects provide the ability to customize the appearance of user-interface controls before they are drawn:</p>
+<ul>
+<li><a href="#scriptuigraphics-object">ScriptUIGraphics object</a></li>
+<li><a href="#scriptuibrush-object">ScriptUIBrush object</a></li>
+<li><a href="#scriptuifont-object">ScriptUIFont object</a></li>
+<li><a href="#scriptuiimage-object">ScriptUIImage object</a></li>
+<li><a href="#scriptuipath-object">ScriptUIPath object</a></li>
+<li><a href="#scriptuipen-object">ScriptUIPen object</a></li>
+</ul>
+<p>In addition, the Custom element class (if supported by the Adobe application you are using) allows you to define completely customized UI elements that are rendered by the application in a manner you define.</p>
+<hr />
+<h2 id="scriptuigraphics-object">ScriptUIGraphics Object<a class="headerlink" href="#scriptuigraphics-object" title="Permanent link">&para;</a></h2>
+<p>Most types of user-interface elements have a graphics property which contains an object of this type, which allows you to customize aspects of the element's appearance, such as the color and font. Use an onDraw callback function to set these properties or call the functions.</p>
+<p>All measurements are in pixels.</p>
+<h3 id="scriptuigraphics-class-attributes">ScriptUIGraphics Class Attributes<a class="headerlink" href="#scriptuigraphics-class-attributes" title="Permanent link">&para;</a></h3>
+<p>These static properties provide color type constants with which to create Pen and Brush objects.</p>
+<h4 id="brushtype">BrushType<a class="headerlink" href="#brushtype" title="Permanent link">&para;</a></h4>
+<h5 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h5>
+<p>Contains the enumerated constants for the type argument of <code>newBrush()</code>. Types are:</p>
+<ul>
+<li><code>SOLID_COLOR</code></li>
+<li><code>THEME_COLOR</code></li>
+</ul>
+<h5 id="type">Type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h5>
+<p>Object</p>
+<hr />
+<h4 id="pentype">PenType<a class="headerlink" href="#pentype" title="Permanent link">&para;</a></h4>
+<h5 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h5>
+<p>Contains the enumerated constants for the type argument of <code>newPen()</code>. Types are:</p>
+<ul>
+<li><code>SOLID_COLOR</code></li>
+<li><code>THEME_COLOR</code></li>
+</ul>
+<h5 id="type_1">Type<a class="headerlink" href="#type_1" title="Permanent link">&para;</a></h5>
+<p>Object</p>
+<hr />
+<h3 id="scriptuigraphics-object-attributes">ScriptUIGraphics Object Attributes<a class="headerlink" href="#scriptuigraphics-object-attributes" title="Permanent link">&para;</a></h3>
+<p>The object contains the following properties:</p>
+<h4 id="backgroundcolor">backgroundColor<a class="headerlink" href="#backgroundcolor" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.backgroundColor</code></p>
+<h5 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h5>
+<p>The background color of a container, or the parent background color for a control element.</p>
+<h5 id="type_2">Type<a class="headerlink" href="#type_2" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuibrush-object">ScriptUIBrush object</a></p>
+<hr />
+<h4 id="currentpath">currentPath<a class="headerlink" href="#currentpath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.currentPath</code></p>
+<h5 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h5>
+<p>The current drawing path for this object.</p>
+<h5 id="type_3">Type<a class="headerlink" href="#type_3" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuipath-object">ScriptUIPath object</a></p>
+<hr />
+<h4 id="currentpoint">currentPoint<a class="headerlink" href="#currentpoint" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.currentPoint</code></p>
+<h5 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h5>
+<p>The current position in the drawing path for this object</p>
+<h5 id="type_4">Type<a class="headerlink" href="#type_4" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#point">Point object</a></p>
+<hr />
+<h4 id="disabledbackgroundcolor">disabledBackgroundColor<a class="headerlink" href="#disabledbackgroundcolor" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.disabledBackgroundColor</code></p>
+<h5 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h5>
+<p>The background color for the disabled state of a container, or the parent background color for the disabled state of a control element.</p>
+<h5 id="type_5">Type<a class="headerlink" href="#type_5" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuibrush-object">ScriptUIBrush object</a></p>
+<hr />
+<h4 id="disabledforegroundcolor">disabledForegroundColor<a class="headerlink" href="#disabledforegroundcolor" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.disabledForegroundColor</code></p>
+<h5 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">&para;</a></h5>
+<p>The foreground color for the disabled state of a container, or the parent foreground color for the disabled state of a control element.</p>
+<h5 id="type_6">Type<a class="headerlink" href="#type_6" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuipen-object">ScriptUIPen object</a></p>
+<hr />
+<h4 id="font">font<a class="headerlink" href="#font" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.font</code></p>
+<h5 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h5>
+<p>The default font to use in writing text.</p>
+<h5 id="type_7">Type<a class="headerlink" href="#type_7" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuifont-object">ScriptUIFont object</a></p>
+<hr />
+<h4 id="foregroundcolor">foregroundColor<a class="headerlink" href="#foregroundcolor" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.foregroundColor</code></p>
+<h5 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">&para;</a></h5>
+<p>The foreground color for a container, or the parent foreground color of a control element.</p>
+<h5 id="type_8">Type<a class="headerlink" href="#type_8" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuipen-object">ScriptUIPen object</a></p>
+<hr />
+<h3 id="scriptuigraphics-object-methods">ScriptUIGraphics Object Methods<a class="headerlink" href="#scriptuigraphics-object-methods" title="Permanent link">&para;</a></h3>
+<p>These functions directly customize the appearance of the associated element by drawing on the screen, or create the Pen and Brush objects used to populate the graphics object or pass to the drawing methods:</p>
+<hr />
+<h4 id="closepath">closePath()<a class="headerlink" href="#closepath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.closePath()</code></p>
+<h5 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h5>
+<p>Defines a line from the current position to the start point of the current path (the value of <a href="#currentpath"><code>currentPath</code></a>), which closes the path.</p>
+<h5 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="drawfocusring">drawFocusRing()<a class="headerlink" href="#drawfocusring" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.drawFocusRing(left, top[, width, height])</code></p>
+<h5 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h5>
+<p>Draws a focus ring within the given rectangular region. This is a visual indicator showing that a given control has the keyboard focus (accepts keyboard input).</p>
+<p>In Mac OS, this is typically a light blue ring around the control.</p>
+<p>In Windows, it is typically a dashed-line rectangle around some part of the control.</p>
+<h5 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>left</code>, <code>top</code></td>
+<td>Number</td>
+<td>Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td>Number</td>
+<td>Optional. The width and height of the region in pixels.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="drawimage">drawImage()<a class="headerlink" href="#drawimage" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.drawImage(image, left, top[, width, height])</code></p>
+<h5 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h5>
+<p>Draws an image within the given rectangular region, using the image file from the given image object that is appropriate to the control's current state.</p>
+<h5 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td><a href="#scriptuiimage-object">ScriptUIImage object</a></td>
+<td>The ScriptUIImage object containing the images to be drawn.</td>
+</tr>
+<tr>
+<td><code>left</code>, <code>top</code></td>
+<td>Number</td>
+<td>Defines the top left corner of the drawing region, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td>Number</td>
+<td>Optional. The width and height of the drawing region in pixels. If specified, the image is stretched or shrunk to fit into the given rectangular area. If omitted, the image's original width or height is used.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="drawoscontrol">drawOSControl()<a class="headerlink" href="#drawoscontrol" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.drawOSControl()</code></p>
+<h5 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h5>
+<p>Draws the platform-specific control associated with this element.</p>
+<h5 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="drawstring">drawString()<a class="headerlink" href="#drawstring" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.drawString(text, pen, x, y, font)</code></p>
+<h5 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h5>
+<p>Draws a string of text starting at a given point, using the given pen and font.</p>
+<h5 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>String</td>
+<td>The text string.</td>
+</tr>
+<tr>
+<td><code>pen</code></td>
+<td><a href="#scriptuipen-object">ScriptUIPen object</a></td>
+<td>The <a href="#scriptuipen-object">ScriptUIPen object</a> for the drawing pen to use.</td>
+</tr>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Number</td>
+<td>The origin point of the drawn text, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+<tr>
+<td><code>font</code></td>
+<td><a href="#scriptuifont-object">ScriptUIFont object</a></td>
+<td>Optional. The <a href="#scriptuifont-object">ScriptUIFont object</a> for the font to use. Default is the font value in this object.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_4">Returns<a class="headerlink" href="#returns_4" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="ellipsepath">ellipsePath()<a class="headerlink" href="#ellipsepath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.ellipsePath(left, top[, width, height])</code></p>
+<h5 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h5>
+<p>Defines an elliptical path within a given rectangular area in the currentPath object, which can be filled using <a href="#fillpath"><code>fillPath()</code></a> or stroked using <a href="#strokepath"><code>strokePath()</code></a>.</p>
+<p>Returns a <a href="../size-and-location-objects/#point">Point object</a> for the upper left corner of the area, which is the new <a href="#currentpoint"><code>currentPoint</code></a>.</p>
+<h5 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>left</code>, <code>top</code></td>
+<td>Number</td>
+<td>Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td>Number</td>
+<td>The width and height of the region in pixels.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_5">Returns<a class="headerlink" href="#returns_5" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#point">Point object</a></p>
+<hr />
+<h4 id="fillpath">fillPath()<a class="headerlink" href="#fillpath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.fillPath(brush[, path])</code></p>
+<h5 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h5>
+<p>Fills a path using a given painting brush.</p>
+<h5 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>brush</code></td>
+<td><a href="#scriptuibrush-object">ScriptUIBrush object</a></td>
+<td>The ScriptUIBrush object that defines the fill color.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><a href="#scriptuipath-object">ScriptUIPath object</a></td>
+<td>Optional, the <a href="#scriptuipath-object">ScriptUIPath object</a> for the path. If not supplied, operates on the currentPath.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_6">Returns<a class="headerlink" href="#returns_6" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h4 id="lineto">lineto()<a class="headerlink" href="#lineto" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.lineto(x, y)</code></p>
+<h5 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h5>
+<p>Adds a path segment to the <code>currentPath</code>, from the <code>currentPoint</code> to the specified point.</p>
+<p>Returns a <a href="../size-and-location-objects/#point">Point object</a> for the upper left corner of the area, which is the new <a href="#currentpoint"><code>currentPoint</code></a>.</p>
+<h5 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Number</td>
+<td>The destination point of the line, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_7">Returns<a class="headerlink" href="#returns_7" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#point">Point object</a></p>
+<hr />
+<h4 id="measurestring">measureString()<a class="headerlink" href="#measurestring" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.measureString(text, font[, boundingWidth])</code></p>
+<h5 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h5>
+<p>Calculates the size needed to draw a text string in a given font.</p>
+<p>Returns a <a href="../size-and-location-objects/#dimension">Dimension object</a> object containing the height and width of the string in pixels.</p>
+<h5 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>Text</td>
+<td>The text string to measure.</td>
+</tr>
+<tr>
+<td><code>font</code></td>
+<td><a href="#scriptuifont-object">ScriptUIFont object</a></td>
+<td>Optional. The <a href="#scriptuifont-object">ScriptUIFont object</a> for the font to use. Default is the font value in this object.</td>
+</tr>
+<tr>
+<td><code>boundingWidth</code></td>
+<td>Number</td>
+<td>Optional. A number that specifies the maximum width in pixels of the area in which the text might be placed. Use when wrapping a long string of text across multiple lines.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_8">Returns<a class="headerlink" href="#returns_8" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#dimension">Dimension object</a></p>
+<hr />
+<h4 id="moveto">moveto()<a class="headerlink" href="#moveto" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.moveto(x, y)</code></p>
+<h5 id="description_18">Description<a class="headerlink" href="#description_18" title="Permanent link">&para;</a></h5>
+<p>Adds a given point to the <a href="#currentpath"><code>currentPath</code></a>, and makes it the <a href="#currentpoint"><code>currentPoint</code></a>.</p>
+<h5 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code>, <code>y</code></td>
+<td>Number</td>
+<td>The new coordinates, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_9">Returns<a class="headerlink" href="#returns_9" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#point">Point object</a></p>
+<hr />
+<h4 id="newbrush">newBrush()<a class="headerlink" href="#newbrush" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.newBrush(type, color);</code></p>
+<h5 id="description_19">Description<a class="headerlink" href="#description_19" title="Permanent link">&para;</a></h5>
+<p>Creates a new painting brush.</p>
+<h5 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p>type</p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="#brushtype">BrushType</a></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The brush type, one of these constants:</p>
+<ul>
+<li><code>ScriptUIGraphics.BrushType.SOLID_COLOR</code></li>
+<li><code>ScriptUIGraphics.BrushType.THEME_COLOR</code></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>color</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Array of Numbers</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The brush color. If type is <code>SOLID_COLOR</code>, the color expressed as an array of three or four values, in the form <code>[R, B, G, A]</code> specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel).</p>
+<p>All values are numbers in the range <code>[0.0...1.0]</code>.
+An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.
+If the type is <code>THEME_COLOR</code>, the name string of the theme.
+Theme colors are defined by the host application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_10">Returns<a class="headerlink" href="#returns_10" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuibrush-object">ScriptUIBrush object</a>.</p>
+<hr />
+<h4 id="newpath">newPath()<a class="headerlink" href="#newpath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.newPath();</code></p>
+<h5 id="description_20">Description<a class="headerlink" href="#description_20" title="Permanent link">&para;</a></h5>
+<p>Creates a new, empty drawing path in <code>currentPath</code>, replacing any existing path.</p>
+<h5 id="returns_11">Returns<a class="headerlink" href="#returns_11" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuipath-object">ScriptUIPath object</a>.</p>
+<hr />
+<h4 id="newpen">newPen()<a class="headerlink" href="#newpen" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.newPen(type, color, lineWidth);</code></p>
+<h5 id="description_21">Description<a class="headerlink" href="#description_21" title="Permanent link">&para;</a></h5>
+<p>Creates a new drawing pen.</p>
+<h5 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Parameter</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p>type</p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="#pentype">PenType</a></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The pen type, one of these constants:</p>
+<ul>
+<li><code>ScriptUIGraphics.PenType.SOLID_COLOR</code></li>
+<li><code>ScriptUIGraphics.PenType.THEME_COLOR</code></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>color</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Array of Numbers</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The pen color. If type is SOLID_COLOR, the color expressed as an array of three or four values, in the form <code>[R, B, G, A]</code> specifying the red, green, and blue values of the color and, optionally, the opacity (alpha channel).</p>
+<p>All values are numbers in the range <code>[0.0...1.0]</code>.
+An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.
+If the type is <code>THEME_COLOR</code>, the name string of the theme.
+Theme colors are defined by the host application.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>lineWidth</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Pixels</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The width in pixels of the line this pen will draw. The line is centered around the current point. For example, if lineWidth is 2, drawing a line from (0, 10) to (5, 10) paints the two rows of pixels directly above and below y-position 10.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_12">Returns<a class="headerlink" href="#returns_12" title="Permanent link">&para;</a></h5>
+<p><a href="#scriptuipen-object">ScriptUIPen object</a>.</p>
+<hr />
+<h4 id="rectpath">rectPath()<a class="headerlink" href="#rectpath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.rectPath(left, top[, width, height])</code></p>
+<h5 id="description_22">Description<a class="headerlink" href="#description_22" title="Permanent link">&para;</a></h5>
+<p>Defines a rectangular path in the currentPath object, which can be filled using <a href="#fillpath"><code>fillPath()</code></a> or stroked using <a href="#strokepath"><code>strokePath()</code></a>.</p>
+<p>Returns a <a href="../size-and-location-objects/#point">Point object</a> for the upper left corner of the rectangle, which is the new currentPoint.</p>
+<h5 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>left</code>, <code>top</code></td>
+<td>Number</td>
+<td>Defines the top left corner of the region, in the coordinate system of the control that contains this graphics object.</td>
+</tr>
+<tr>
+<td><code>width</code>, <code>height</code></td>
+<td>Number</td>
+<td>The width and height of the region in pixels.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_13">Returns<a class="headerlink" href="#returns_13" title="Permanent link">&para;</a></h5>
+<p><a href="../size-and-location-objects/#point">Point object</a></p>
+<hr />
+<h4 id="strokepath">strokePath()<a class="headerlink" href="#strokepath" title="Permanent link">&para;</a></h4>
+<p><code>controlObj.graphics.fillPath(pen[, path])</code></p>
+<h5 id="description_23">Description<a class="headerlink" href="#description_23" title="Permanent link">&para;</a></h5>
+<p>Strokes the path segments of a path with a given drawing pen.</p>
+<h5 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pen</code></td>
+<td><a href="#scriptuipen-object">ScriptUIPen object</a></td>
+<td>The <a href="#scriptuipen-object">ScriptUIPen object</a> that defines the color and line width.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><a href="#scriptuipath-object">ScriptUIPath object</a></td>
+<td>Optional, the <a href="#scriptuipath-object">ScriptUIPath object</a> for the path. If not supplied, operates on the currentPath.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="returns_14">Returns<a class="headerlink" href="#returns_14" title="Permanent link">&para;</a></h5>
+<p>Nothing</p>
+<hr />
+<h2 id="scriptuibrush-object">ScriptUIBrush Object<a class="headerlink" href="#scriptuibrush-object" title="Permanent link">&para;</a></h2>
+<p>A helper object that encapsulates the qualities of a brush used to paint fill into a path in a control. Create with the <code>newBrush()</code> method of the <code>ScriptUIGraphics</code> object.</p>
+<p>Used as a value of <code>backgroundColor</code> and <code>disabledBackgroundColor</code>.</p>
+<p>Passed as an argument to <code>fillPath()</code>.</p>
+<h3 id="scriptuibrush-object-attributes">ScriptUIBrush Object Attributes<a class="headerlink" href="#scriptuibrush-object-attributes" title="Permanent link">&para;</a></h3>
+<p>The object contains the following properties:</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Property</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>color</code>
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Array of Number
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The paint color to use when the type is <code>SOLID_COLOR</code>. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0].
+An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>theme</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The name of a color theme to use as a painting texture when the type is <code>THEME_COLOR</code>. Theme colors are defined by the host application.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>type</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The brush type, one of these constants:</p>
+<ul>
+<li><code>ScriptUIGraphics.BrushType.SOLID_COLOR</code></li>
+<li><code>ScriptUIGraphics.BrushType.THEME_COLOR</code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="scriptuifont-object">ScriptUIFont Object<a class="headerlink" href="#scriptuifont-object" title="Permanent link">&para;</a></h2>
+<p>A helper object that encapsulates the qualities of a font used to draw text into a control. Create with the <a href="../scriptui-class/#scriptuinewfont"><code>newFont()</code></a> method of the <code>ScriptUI</code> class.</p>
+<p>Used as a value of font.</p>
+<p>Passed as an argument to <a href="#drawstring"><code>drawString()</code></a> and <a href="#measurestring"><code>measureString()</code></a>.</p>
+<h3 id="scriptuifont-object-attributes">ScriptUIFont Object Attributes<a class="headerlink" href="#scriptuifont-object-attributes" title="Permanent link">&para;</a></h3>
+<p>The object contains the following properties:</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Property</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>family</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The font family name.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>name</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The complete font name, consisting of the family and style, if specified.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>size</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The font point size.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>style</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Object</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The font style. One of these constants:</p>
+<ul>
+<li><code>ScriptUI.FontStyle.REGULAR</code></li>
+<li><code>ScriptUI.FontStyle.BOLD</code></li>
+<li><code>ScriptUI.FontStyle.ITALIC</code></li>
+<li><code>ScriptUI.FontStyle.BOLDITALIC</code></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>substitute</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The name of a substitution font, a fallback font to substitute for this font if the requested font family or style is not available.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="scriptuiimage-object">ScriptUIImage Object<a class="headerlink" href="#scriptuiimage-object" title="Permanent link">&para;</a></h2>
+<p>A helper object that encapsulates a set of images that can be drawn into a control. Alternate versions of an image can reflect the state, such as a dimmed version for a disabled control.</p>
+<p>An object of this type is created automatically when a script uses a pathname or File object to set the image property of an Image, IconButton, or ListItem object; the new object becomes the value of that property.</p>
+<p>You can create this object explicitly using the <a href="../scriptui-class/#scriptuinewimage"><code>newImage()</code></a> method of the <code>ScriptUI</code> class. When you do this, you can specify alternate versions of the image to be used for different control states, such as enabled, disabled, and rollover.</p>
+<p>This object is passed as an argument to <a href="#drawimage"><code>drawImage()</code></a>.</p>
+<h3 id="scriptuiimage-object-attributes">ScriptUIImage Object Attributes<a class="headerlink" href="#scriptuiimage-object-attributes" title="Permanent link">&para;</a></h3>
+<p>The object contains the following read-only properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>format</code></td>
+<td>String</td>
+<td>The image format. Scripts can define images in <code>JPEG</code> and <code>PNG</code> format. Applications can define images in the <code>resource</code> format.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The image name, either a file name or resource name.</td>
+</tr>
+<tr>
+<td><code>pathname</code></td>
+<td>String</td>
+<td>The full path to the file that contains the image.</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>Dimension</td>
+<td>A Dimension object that defines the size of the image in pixels.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="scriptuipath-object">ScriptUIPath Object<a class="headerlink" href="#scriptuipath-object" title="Permanent link">&para;</a></h2>
+<p>A helper object that encapsulates a drawing path for a figure to be drawn into a control. Create the object the <a href="#newpath"><code>newPath()</code></a> method and define path segments with the <code>moveto()</code>, <code>lineto()</code>, <code>rectPath()</code>, and <code>ellipsePath()</code> methods of the <code>ScriptUIGraphics</code> object.</p>
+<p>Used as a value of currentPath, where it is acted upon by <a href="#closepath"><code>closePath()</code></a> and other methods.</p>
+<p>Can be passed as an optional argument to <a href="#fillpath"><code>fillPath()</code></a> and <a href="#strokepath"><code>strokePath()</code></a> (which otherwise act upon the <a href="#currentpath"><code>currentPath</code></a>).</p>
+<p>The class defines no properties or methods.</p>
+<hr />
+<h2 id="scriptuipen-object">ScriptUIPen Object<a class="headerlink" href="#scriptuipen-object" title="Permanent link">&para;</a></h2>
+<p>A helper object that encapsulates the qualities of a pen used to stroke path segments in a control. Create with the <a href="#newpen"><code>newPen()</code></a> method of the <code>ScriptUIGraphics</code> object.</p>
+<p>Used as a value of <a href="#foregroundcolor"><code>foregroundColor</code></a> and <a href="#disabledforegroundcolor"><code>disabledForegroundColor</code></a>.</p>
+<p>Passed as an argument to <a href="#drawstring"><code>drawString()</code></a> and <a href="#strokepath"><code>strokePath()</code></a>.</p>
+<h3 id="scriptuipen-object-attributes">ScriptUIPen Object Attributes<a class="headerlink" href="#scriptuipen-object-attributes" title="Permanent link">&para;</a></h3>
+<p>The object contains the following properties:</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Property</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Type</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>color</code>
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Array of Number
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0...1.0].
+An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>lineWidth</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The pixel width of the drawing line.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>theme</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>String</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The name of a color theme to use for drawing when the type is <code>THEME_COLOR</code>. Theme colors are defined by the host application.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>type</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Number</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The pen type, one of these constants:</p>
+<ul>
+<li><code>ScriptUIGraphics.PenType.SOLID_COLOR</code></li>
+<li><code>ScriptUIGraphics.PenType.THEME_COLOR</code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="custom-element-class">Custom element class<a class="headerlink" href="#custom-element-class" title="Permanent link">&para;</a></h2>
+<p>Elements of the Custom class differ from typical UI elements in that they have no default appearance; the script which creates a custom element is responsible for drawing it by defining the element's onDraw event handler function. This allows scripts to create any appearance for custom elements that can be rendered via the drawing functions defined for a UI element's graphics object.</p>
+<p>Custom elements have the same common properties that other types of control elements have (see <a href="../common-properties/">Common properties</a>). The different types of custom elements have additional properties.</p>
+<p>The Custom element class has the following types of elements:</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Element</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+<th colspan="1" rowspan="1"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>customBoundedValue</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Can be used to implement controls whose 'value' can vary within minimum and maximum bounds, like the Progressbar, Slider, and Scrollbar. Has the same additional properties as those controls:</p>
+<ul>
+<li><code>value</code></li>
+<li><code>minvalue</code></li>
+<li><code>maxvalue</code></li>
+<li><code>shortcutKey</code></li>
+</ul>
+<p>If the value property is changed, the control receives an onChange event notification, followed by an onDraw event notification, so the element can redraw itself with the changed state.</p>
+</td>
+<td colspan="1" rowspan="1"></td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>customButton</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Can be used to implement various types of button controls, like the <code>Button</code>, <code>IconButton</code> with text, <code>Checkbox</code>, and so on. Additional properties are:</p>
+<ul>
+<li><code>image</code></li>
+<li><code>shortcutKey</code></li>
+<li><code>text</code></li>
+<li><code>value</code></li>
+</ul>
+</td>
+<td colspan="1" rowspan="1"></td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>customView</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Has an <code>image</code> property that allows a script to define an image to display.</p>
+<p>If no <code>onDraw</code> function is defined and the image property is set, the default appearance is simply the specified image, rendered centered in the bounds of the element.</p>
+</td>
+<td colspan="1" rowspan="1"></td>
+</tr>
+</tbody>
+</table>
+<p>A custom element's onDraw event handler function is not called when the mouse enters or leaves the screen region occupied by the element.</p>
+<p>If you need to force a drawing update in such cases, you must call <code>notify("onDraw")</code> for the element, in response to a mouseOver or mouseout event for the element.</p>
+<p>In the following example, the script forces a visual update for a customButton element when the mouse enters or leaves the button, by handling mouseover or mouseout events for the custom button:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><span class="kd">var</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-0-2"><span class="s2">&quot;&quot;&quot;palette {</span>
+</span><span id="__span-0-3"><span class="s2">    text:&#39;Custom elements demo&#39;,</span>
+</span><span id="__span-0-4"><span class="s2">    properties:{ closeOnKey:&#39;OSCmnd+W&#39;, resizeable:true },</span>
+</span><span id="__span-0-5"><span class="s2">    customBtn: Custom {</span>
+</span><span id="__span-0-6"><span class="s2">        type:&#39;customButton&#39;,</span>
+</span><span id="__span-0-7"><span class="s2">        text:&#39;Redraw original image&#39;</span>
+</span><span id="__span-0-8"><span class="s2">    },</span>
+</span><span id="__span-0-9"><span class="s2">    customImageViewer: Custom {</span>
+</span><span id="__span-0-10"><span class="s2">        type:&#39;customView&#39;,</span>
+</span><span id="__span-0-11"><span class="s2">        alignment:[&#39;fill&#39;,&#39;fill&#39;]</span>
+</span><span id="__span-0-12"><span class="s2">    }</span>
+</span><span id="__span-0-13"><span class="s2">}&quot;&quot;&quot;</span><span class="p">;</span>
+</span><span id="__span-0-14">
+</span><span id="__span-0-15"><span class="kd">var</span><span class="w"> </span><span class="nx">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Window</span><span class="w"> </span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+</span><span id="__span-0-16"><span class="nx">w</span><span class="p">.</span><span class="nx">customBtn</span><span class="p">.</span><span class="nx">onDraw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">drawButton</span><span class="p">;</span>
+</span><span id="__span-0-17"><span class="nx">w</span><span class="p">.</span><span class="nx">customBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;mouseover&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">btnMouseEventHandler</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</span><span id="__span-0-18"><span class="nx">w</span><span class="p">.</span><span class="nx">customBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;mouseout&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">btnMouseEventHandler</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+</span><span id="__span-0-19">
+</span><span id="__span-0-20"><span class="c1">// ...</span>
+</span><span id="__span-0-21">
+</span><span id="__span-0-22"><span class="kd">function</span><span class="w"> </span><span class="nx">btnMouseEventHandler</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-24"><span class="w">        </span><span class="c1">//</span>
+</span><span id="__span-0-25"><span class="w">        </span><span class="nx">Redraw</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="nx">mouseover</span><span class="w"> </span><span class="nx">and</span><span class="w"> </span><span class="nx">mouseout</span>
+</span><span id="__span-0-26"><span class="w">        </span><span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">notify</span><span class="p">(</span><span class="s2">&quot;onDraw&quot;</span><span class="p">);</span>
+</span><span id="__span-0-27"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-28"><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-0-29"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-30"><span class="p">}</span>
+</span><span id="__span-0-31">
+</span><span id="__span-0-32"><span class="kd">function</span><span class="w"> </span><span class="nx">drawButton</span><span class="w"> </span><span class="p">(</span><span class="nx">drawingState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-33"><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-0-34"><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is copyright Adobe Systems Incorporated.
+    </div>
+  
+  
+    Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+  
+</div>
+
+<!-- Print button -->
+<div class="md-copyright">
+  
+  <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.copy", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/extra.js"></script>
+      
+        <script src="../../docs/_global/js/global.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3246 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://extendscript.docsforadobe.dev/integrating-xml/the-xml-object/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../xml-object-reference/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>The XML Object - Adobe Extendscript Scripting Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings4.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings5.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings6.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../../_static/extra.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global.css">
+    
+      <link rel="stylesheet" href="../../docs/_global/css/global-syntax-highlight.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-xml-object" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+  Welcome to the new docsforadobe guide!
+
+  This is a work in progress.
+
+  Please provide all feedback via
+  <a ref="me" href="https://github.com/orgs/docsforadobe/discussions">
+    <span class="twemoji">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 1h8.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 10.25 10H7.061l-2.574 2.573A1.458 1.458 0 0 1 2 11.543V10h-.25A1.75 1.75 0 0 1 0 8.25v-5.5C0 1.784.784 1 1.75 1M1.5 2.75v5.5c0 .138.112.25.25.25h1a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.75.75 0 0 1 .53-.22h3.5a.25.25 0 0 0 .25-.25v-5.5a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13 2a.25.25 0 0 0-.25-.25h-.5a.75.75 0 0 1 0-1.5h.5c.966 0 1.75.784 1.75 1.75v5.5A1.75 1.75 0 0 1 14.25 12H14v1.543a1.458 1.458 0 0 1-2.487 1.03L9.22 12.28a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l2.22 2.22v-2.19a.75.75 0 0 1 .75-.75h1a.25.25 0 0 0 .25-.25Z"/></svg>
+    </span>
+    <strong>the org's discussion forum</strong>
+  </a>.
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-header__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Adobe Extendscript Scripting Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The XML Object
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://docsforadobe.dev" title="Adobe Extendscript Scripting Guide" class="md-nav__button md-logo" aria-label="Adobe Extendscript Scripting Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Adobe Extendscript Scripting Guide
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/docsforadobe/javascript-tools-guide/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    javascript-tools-guide
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introduction
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/extendscript-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/scripting-for-specific-applications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting for specific applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The VS Code ExtendScript Debugger
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            The VS Code ExtendScript Debugger
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/getting-started-with-vscode-debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with the VS Code Debugger
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vscode-debugger/vscode-extension-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code Extension Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            The ExtendScript Toolkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The ExtendScript Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/configuring-the-toolkit-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuring the Toolkit window
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/selecting-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selecting Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/the-script-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Script Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/debugging-in-the-toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging in the Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/code-profiling-for-optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code profiling for optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-toolkit/inspecting-object-models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inspecting object models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            File System Access
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/using-file-and-folder-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using File and Folder objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-access-error-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File access error messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-and-folder-supported-encoding-names/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File- and Folder-supported encoding names
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/file-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-system-access/folder-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Folder object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            User-Interface Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User-Interface Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/code-examples-for-scriptui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code examples for ScriptUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-programming-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI programming model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/types-of-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types of controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/size-and-location-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Size and location objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/drawing-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Drawing objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/resource-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/defining-behavior-with-event-callbacks-and-listeners/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining behavior with event callbacks and listeners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/communicating-with-the-flash-application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating with the Flash application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/automatic-layout/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic layout
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/managing-control-titles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing control titles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/localization-in-scriptui-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localization in ScriptUI objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/scriptui-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScriptUI class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/environment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Environment object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/common-properties/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common properties
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/window-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Window object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/control-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/event-handling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Event handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/graphic-customization-objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphic customization objects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-interface-tools/layoutmanager-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LayoutManager object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interapplication Communication with Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interapplication Communication with Scripts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communications-overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communications overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/cross-dom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-DOM functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/communicating-through-messages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Communicating through messages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-framework-api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging framework API reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk class
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/bridgetalk-message-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BridgeTalk message object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/messaging-error-codes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Messaging error codes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interapplication-communication/application-and-namespace-specifiers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application and namespace specifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            External Communication Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Communication Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../external-communication/socket-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating External Libraries
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating External Libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/loading-and-using-shared-libraries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading and using shared libraries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/externalobject-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExternalObject object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-direct-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for direct access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrating-external-libraries/defining-entry-points-for-indirect-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Defining entry points for indirect access
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            ExtendScript Tools and Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript Tools and Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/dollar-object/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dollar ($) object
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/extendscript-reflection-interface/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ExtendScript reflection interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/localizing-extendscript-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Localizing ExtendScript strings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/user-notification-dialogs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User notification dialogs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/specifying-measurement-values/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Specifying measurement values
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/preprocessor-directives/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preprocessor directives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extendscript-tools-features/operator-overloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operator overloading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Integrating XML into JavaScript
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrating XML into JavaScript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    The XML Object
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#accessing-xml-elements" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing XML elements
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#accessing-xml-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing XML attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#viewing-xml-objects" class="md-nav__link">
+		<span class="md-ellipsis">
+			Viewing XML objects
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#modifying-xml-elements-and-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Modifying XML elements and attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Modifying XML elements and attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#modification-examples" class="md-nav__link">
+		<span class="md-ellipsis">
+			Modification examples
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#deleting-elements-and-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Deleting elements and attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Deleting elements and attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#deletion-examples" class="md-nav__link">
+		<span class="md-ellipsis">
+			Deletion examples
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#retrieving-contained-elements" class="md-nav__link">
+		<span class="md-ellipsis">
+			Retrieving contained elements
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#creating-and-accessing-namespaces" class="md-nav__link">
+		<span class="md-ellipsis">
+			Creating and accessing namespaces
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Creating and accessing namespaces">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#defining-a-namespace-within-the-tree" class="md-nav__link">
+		<span class="md-ellipsis">
+			Defining a namespace within the tree
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#setting-a-default-namespace" class="md-nav__link">
+		<span class="md-ellipsis">
+			Setting a default namespace
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#accessing-elements-in-namespaces" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing elements in namespaces
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#mixing-xml-and-javascript" class="md-nav__link">
+		<span class="md-ellipsis">
+			Mixing XML and JavaScript
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#xml-lists" class="md-nav__link">
+		<span class="md-ellipsis">
+			XML lists
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XML Object Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripting Access to XMP Metadata
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scripting Access to XMP Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/accessing-the-xmp-scripting-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing the XMP scripting API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripting-xmp/xmpscript-object-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    XMPScript object reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Page Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Page Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+	<a href="#accessing-xml-elements" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing XML elements
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#accessing-xml-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing XML attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#viewing-xml-objects" class="md-nav__link">
+		<span class="md-ellipsis">
+			Viewing XML objects
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#modifying-xml-elements-and-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Modifying XML elements and attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Modifying XML elements and attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#modification-examples" class="md-nav__link">
+		<span class="md-ellipsis">
+			Modification examples
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#deleting-elements-and-attributes" class="md-nav__link">
+		<span class="md-ellipsis">
+			Deleting elements and attributes
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Deleting elements and attributes">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#deletion-examples" class="md-nav__link">
+		<span class="md-ellipsis">
+			Deletion examples
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#retrieving-contained-elements" class="md-nav__link">
+		<span class="md-ellipsis">
+			Retrieving contained elements
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#creating-and-accessing-namespaces" class="md-nav__link">
+		<span class="md-ellipsis">
+			Creating and accessing namespaces
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+		<nav class="md-nav" aria-label="Creating and accessing namespaces">
+			<ul class="md-nav__list">
+				
+				
+					<li class="md-nav__item">
+	<a href="#defining-a-namespace-within-the-tree" class="md-nav__link">
+		<span class="md-ellipsis">
+			Defining a namespace within the tree
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#setting-a-default-namespace" class="md-nav__link">
+		<span class="md-ellipsis">
+			Setting a default namespace
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+				
+					<li class="md-nav__item">
+	<a href="#accessing-elements-in-namespaces" class="md-nav__link">
+		<span class="md-ellipsis">
+			Accessing elements in namespaces
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+				
+				
+			</ul>
+		</nav>
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#mixing-xml-and-javascript" class="md-nav__link">
+		<span class="md-ellipsis">
+			Mixing XML and JavaScript
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+        <li class="md-nav__item">
+	<a href="#xml-lists" class="md-nav__link">
+		<span class="md-ellipsis">
+			XML lists
+		</span>
+	</a>
+
+	<!-- Table of contents list -->
+	
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/edit/master/docs/integrating-xml/the-xml-object.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/docsforadobe/javascript-tools-guide/raw/master/docs/integrating-xml/the-xml-object.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="the-xml-object">The XML Object<a class="headerlink" href="#the-xml-object" title="Permanent link">&para;</a></h1>
+<p>The XML object represents an XML element node in an XML tree. The topmost <code>XML</code> object for an XML file represents the root node. It acts as a list, which contains additional <code>XML</code> objects for each element. These in turn contain XML objects for their own member elements, and so on.</p>
+<p>The child elements of an element tree are available as properties of the <code>XML</code> object for the parent. The name of the property corresponds to the name of the element. Each property contains an array of <code>XML</code> objects, each of which represents one element of the named type.</p>
+<p>For example, suppose you have the following, minimal XML code:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><span class="nt">&lt;rootElement&gt;</span>
+</span><span id="__span-0-2"><span class="w">    </span><span class="nt">&lt;elementA&gt;</span>
+</span><span id="__span-0-3"><span class="w">        </span><span class="nt">&lt;elementB&gt;&lt;/elementB&gt;</span>
+</span><span id="__span-0-4"><span class="w">    </span><span class="nt">&lt;/elementA&gt;</span>
+</span><span id="__span-0-5"><span class="w">    </span><span class="nt">&lt;elementA&gt;</span>
+</span><span id="__span-0-6"><span class="w">        </span><span class="nt">&lt;elementB&gt;&lt;/elementB&gt;</span>
+</span><span id="__span-0-7"><span class="w">    </span><span class="nt">&lt;/elementA&gt;</span>
+</span><span id="__span-0-8"><span class="nt">&lt;/rootElement&gt;</span>
+</span></code></pre></div>
+<p>In a JavaScript script, the XML object that you create from this XML code represents the root element:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><span class="kd">var</span><span class="w"> </span><span class="nx">myRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XML</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;&lt;rootElement&gt; &lt;elementA&gt; &lt;elementB&gt;&lt;/elementB&gt; &lt;/elementA&gt; &lt;elementA&gt; &lt;elementB&gt;&lt;/elementB&gt; &lt;/elementA&gt; &lt;/rootElement&gt;&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>You can assign a constant to an XML value directly. The following implicitly creates the XML object assigned to <code>myRoot</code>:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><span class="kd">var</span><span class="w"> </span><span class="nx">myRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">rootElement</span><span class="o">&gt;</span>
+</span><span id="__span-2-2"><span class="w">    </span><span class="o">&lt;</span><span class="nx">elementA</span><span class="o">&gt;</span>
+</span><span id="__span-2-3"><span class="w">        </span><span class="o">&lt;</span><span class="nx">elementB</span><span class="o">&gt;&lt;</span><span class="err">/elementB&gt;</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="o">&lt;</span><span class="err">/elementA&gt;</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="o">&lt;</span><span class="nx">elementA</span><span class="o">&gt;</span>
+</span><span id="__span-2-6"><span class="w">        </span><span class="o">&lt;</span><span class="nx">elementB</span><span class="o">&gt;&lt;</span><span class="err">/elementB&gt;</span>
+</span><span id="__span-2-7"><span class="w">    </span><span class="o">&lt;</span><span class="err">/elementA&gt;</span>
+</span><span id="__span-2-8"><span class="o">&lt;</span><span class="err">/rootElement&gt;;</span>
+</span></code></pre></div>
+<p>The object <code>myRoot</code> contains a property named <code>elementA</code>, which contains two <code>XML</code> objects for the two instances of that element. Each of these, in turn, contains an <code>elementB</code> property, which contains one empty <code>XML</code> object:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-3-1"><span class="kd">var</span><span class="w"> </span><span class="nx">elemB1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myRoot</span><span class="p">.</span><span class="nx">elementA</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">elementB</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+</span></code></pre></div>
+<p>If an element is empty in the XML, the corresponding property exists and contains an empty XML object; it is never <code>null</code> or <code>undefined</code>.</p>
+<hr />
+<h2 id="accessing-xml-elements">Accessing XML elements<a class="headerlink" href="#accessing-xml-elements" title="Permanent link">&para;</a></h2>
+<p>This sample XML code is used for examples throughout this chapter:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><span class="nt">&lt;bookstore&gt;</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;COOKING&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-3"><span class="w">        </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Boston<span class="w"> </span>Cooking-School<span class="w"> </span>Cookbook<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-4-4"><span class="w">        </span><span class="nt">&lt;author&gt;</span>Fannie<span class="w"> </span>Merrit<span class="w"> </span>Farmer<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-5"><span class="w">        </span><span class="nt">&lt;year&gt;</span>1896<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-4-6"><span class="w">        </span><span class="nt">&lt;price&gt;</span>49.99<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-4-7"><span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</span><span id="__span-4-8"><span class="w">    </span><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;CHILDREN&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-9"><span class="w">        </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Wonderful<span class="w"> </span>Wizard<span class="w"> </span>of<span class="w"> </span>Oz<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-4-10"><span class="w">        </span><span class="nt">&lt;author&gt;</span>L.<span class="w"> </span>Frank<span class="w"> </span>Baum<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-11"><span class="w">        </span><span class="nt">&lt;year&gt;</span>1900<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-4-12"><span class="w">        </span><span class="nt">&lt;price&gt;</span>39.95<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-4-13"><span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</span><span id="__span-4-14"><span class="w">    </span><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;CHILDREN&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-15"><span class="w">        </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Alice&#39;s<span class="w"> </span>Adventures<span class="w"> </span>in<span class="w"> </span>Wonderland<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-4-16"><span class="w">        </span><span class="nt">&lt;author&gt;</span>Charles<span class="w"> </span>&quot;Lewis<span class="w"> </span>Carroll&quot;<span class="w"> </span>Dodgeson<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-17"><span class="w">        </span><span class="nt">&lt;author&gt;</span>Charles<span class="w"> </span>Dodgeson<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-18"><span class="w">        </span><span class="nt">&lt;author&gt;</span>Lewis<span class="w"> </span>Carroll<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-19"><span class="w">        </span><span class="nt">&lt;year&gt;</span>1865<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-4-20"><span class="w">        </span><span class="nt">&lt;price&gt;</span>29.99<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-4-21"><span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</span><span id="__span-4-22"><span class="w">    </span><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;MUSIC&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-23"><span class="w">        </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Gilbert<span class="w"> </span>and<span class="w"> </span>Sullivan<span class="w"> </span>Opera;<span class="w"> </span>A<span class="w"> </span>History<span class="w"> </span>and<span class="w"> </span>a<span class="w"> </span>Comment<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-4-24"><span class="w">        </span><span class="nt">&lt;author&gt;</span>H.<span class="w"> </span>M.<span class="w"> </span>Walbrook<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-4-25"><span class="w">        </span><span class="nt">&lt;year&gt;</span>1922<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-4-26"><span class="w">        </span><span class="nt">&lt;price&gt;</span>30.00<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-4-27"><span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</span><span id="__span-4-28"><span class="nt">&lt;/bookstore&gt;</span>
+</span></code></pre></div>
+<p>To encapsulate this code in an XML object, serialize it into a string and pass that string to the constructor:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-5-1"><span class="kd">var</span><span class="w"> </span><span class="nx">bookXmlStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="p">;</span>
+</span><span id="__span-5-2"><span class="kd">var</span><span class="w"> </span><span class="nx">bookstoreXML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XML</span><span class="w"> </span><span class="p">(</span><span class="nx">bookXmlStr</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Using this example, the root element <code>&lt;bookstore&gt;</code>, is represented by the XML object returned from the constructor. Each of the <code>&lt;book&gt;</code> elements is available as a member of the book property of the XML object.</p>
+<ul>
+<li>The Javascript statement <code>bookstoreXML.book;</code> returns the entire list of books.</li>
+<li>The statement <code>bookstoreXML.book[0];</code> returns the <code>XML</code> object for the first book.</li>
+<li>The statement <code>bookstoreXML.book[0].author;</code> returns all authors of the first book.</li>
+</ul>
+<p>For additional ways of accessing elements in the tree, see <a href="#retrieving-contained-elements">Retrieving contained elements</a>, and <a href="#creating-and-accessing-namespaces">Creating and accessing namespaces</a></p>
+<hr />
+<h2 id="accessing-xml-attributes">Accessing XML attributes<a class="headerlink" href="#accessing-xml-attributes" title="Permanent link">&para;</a></h2>
+<p>Attribute are properties of their parent elements. In ExtendScript, access an attribute name by using a preceding at-sign (<code>@</code>). An attribute property is a one-element list, which contains an XML object for the value of the attribute. For example:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1">bookstoreXML.book<span class="w"> </span>[0].@category;
+</span></code></pre></div>
+<p>This returns the category attribute of the first book, whose value is the string <code>"COOKING"</code>.</p>
+<p>To access all category attributes of all books, use this statement:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1">bookstoreXML.book.@category
+</span></code></pre></div>
+<p>You can reference a set of elements with a particular attribute value, using a predicate in this form:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1">element.(@attribute<span class="w"> </span>==<span class="w"> </span>value)
+</span></code></pre></div>
+<p>For example, this statement returns only book elements that have a category attribute with the value <code>"CHILDREN"</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1">bookstoreXML.book.(@category<span class="w"> </span>==<span class="w"> </span>&quot;CHILDREN&quot;);
+</span></code></pre></div>
+<hr />
+<h2 id="viewing-xml-objects">Viewing XML objects<a class="headerlink" href="#viewing-xml-objects" title="Permanent link">&para;</a></h2>
+<p>The XML object, like all ExtendScript objects, has a ref:controlobj-toString method that serializes the contents into a string. In this case, the string contains only the text content of the element, not the tags. For example, for the element <code>&lt;x&gt;text&lt;/x&gt;</code>, the <code>toString()</code> method returns <code>"text"</code>.</p>
+<p>This method is called when you evaluate the object in the JavaScript Console of the ExtendScript Toolkit. It recreates the XML text that the object encapsulates. Thus, if you evaluate the object <code>bookstoreXML.book[1]</code> in the Console, you see the XML text for the encapsulated tree, formatted with line feeds and spaces:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1">&gt;<span class="w"> </span>bookstoreXML.book[1];
+</span><span id="__span-10-2"><span class="w">    </span><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;CHILDREN&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-10-3"><span class="w">        </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Wonderful<span class="w"> </span>Wizard<span class="w"> </span>of<span class="w"> </span>Oz<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-10-4"><span class="w">        </span><span class="nt">&lt;author&gt;</span>L.<span class="w"> </span>Frank<span class="w"> </span>Baum<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-10-5"><span class="w">        </span><span class="nt">&lt;year&gt;</span>1900<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-10-6"><span class="w">        </span><span class="nt">&lt;price&gt;</span>39.95<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-10-7"><span class="w">    </span><span class="nt">&lt;/book&gt;</span>
+</span></code></pre></div>
+<p>If you evaluate an object with a text value, you see the text value. For example:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-11-1">&gt;<span class="w"> </span>bookstoreXML.book[1].@category;
+</span><span id="__span-11-2"><span class="w">    </span>CHILDREN
+</span></code></pre></div>
+<p>If you access multiple values, the values are concatenated:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1">&gt;<span class="w"> </span>bookstoreXML.book.@category
+</span><span id="__span-12-2"><span class="w">    </span>COOKINGCHILDRENCHILDRENMUSIC
+</span></code></pre></div>
+<p>The <a href="../xml-object-reference/#xmltoxmlstring">toXMLString()</a> method serializes the entire element, including the tags, into a string.</p>
+<p>For example, for the element <code>&lt;x&gt;text&lt;/x&gt;</code>, the method returns <code>"&lt;x&gt;text&lt;/x&gt;"</code>.</p>
+<hr />
+<h2 id="modifying-xml-elements-and-attributes">Modifying XML elements and attributes<a class="headerlink" href="#modifying-xml-elements-and-attributes" title="Permanent link">&para;</a></h2>
+<p>You can change an element by assigning a value to the corresponding property.</p>
+<ul>
+<li>If the value assigned is an XML element, the element is simply replaced. If there are multiple elements of the same type, the first element is replaced, and all other elements are deleted.</li>
+<li>If the value assigned is not XML, it is converted to a string, and the content of the element is replaced with that string.</li>
+<li>If no element of this type is present, a new element is appended to the XML.</li>
+</ul>
+<p>You can change the values of attributes using the same technique.</p>
+<h3 id="modification-examples">Modification examples<a class="headerlink" href="#modification-examples" title="Permanent link">&para;</a></h3>
+<p><strong>In the sample XML, the third book has several <author> elements. This statement replaces all of them with a single element, containing a new string:</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">book</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Charles &#39;Lewis Carroll&#39; Dodgeson&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>The result is this XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;CHILDREN&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-14-2"><span class="w">    </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>Alice&#39;s<span class="w"> </span>Adventures<span class="w"> </span>in<span class="w"> </span>Wonderland<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-14-3"><span class="w">    </span><span class="nt">&lt;author&gt;</span>Charles<span class="w"> </span>&#39;Lewis<span class="w"> </span>Carroll&#39;<span class="w"> </span>Dodgeson<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-14-4"><span class="w">    </span><span class="nt">&lt;year&gt;</span>1865<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-14-5"><span class="w">    </span><span class="nt">&lt;price&gt;</span>29.99<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-14-6"><span class="nt">&lt;/book&gt;</span>
+</span></code></pre></div>
+<p><strong>To replace just the first author, leaving all the other authors in place, use this statement:</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-15-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">book</span><span class="p">[</span><span class="mf">2</span><span class="p">].</span><span class="nx">author</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Charles Dodgeson, aka Lewis Carroll&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<p><strong>This statement changes the content of the <year> element in the second book. ExtendScript automatically converts the numeric value to a string:</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-16-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">book</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1901</span><span class="p">;</span>
+</span></code></pre></div>
+<p><strong>This following statement adds a new <rating> element to the second book:</strong></p>
+<p><code>&gt; bookstoreXML.book[1].rating = "**\***";</code></p>
+<p>The result is this XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-17-1"><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;CHILDREN&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-17-2"><span class="w">    </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Wonderful<span class="w"> </span>Wizard<span class="w"> </span>of<span class="w"> </span>Oz<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-17-3"><span class="w">    </span><span class="nt">&lt;author&gt;</span>L.<span class="w"> </span>Frank<span class="w"> </span>Baum<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-17-4"><span class="w">    </span><span class="nt">&lt;year&gt;</span>1900<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-17-5"><span class="w">    </span><span class="nt">&lt;price&gt;</span>39.95<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-17-6"><span class="w">    </span><span class="nt">&lt;rating&gt;</span>*****<span class="nt">&lt;/rating&gt;</span>
+</span><span id="__span-17-7"><span class="nt">&lt;/book&gt;</span>
+</span></code></pre></div>
+<p><strong>This statement changes the value of the category attribute of the second book:</strong></p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-18-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">book</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="err">@</span><span class="nx">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;LITERATURE, FANTASY&quot;</span>
+</span></code></pre></div>
+<p>The result is this XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-19-1"><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;LITERATURE, FANTASY&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-19-2"><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Wonderful<span class="w"> </span>Wizard<span class="w"> </span>of<span class="w"> </span>Oz<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-19-3">...
+</span></code></pre></div>
+<hr />
+<h2 id="deleting-elements-and-attributes">Deleting elements and attributes<a class="headerlink" href="#deleting-elements-and-attributes" title="Permanent link">&para;</a></h2>
+<p>To delete an element or attribute in the XML, use the JavaScript <code>delete</code> operator to delete the corresponding element or attribute property. If there are multiple instances of an element, you can delete all, or refer to a single one by its index.</p>
+<h3 id="deletion-examples">Deletion examples<a class="headerlink" href="#deletion-examples" title="Permanent link">&para;</a></h3>
+<p>This statement deletes all authors from the third book:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1">delete<span class="w"> </span>bookstoreXML.book[2].author;
+</span></code></pre></div>
+<p>This statement deletes only the second author from the third book:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-21-1">delete<span class="w"> </span>bookstoreXML.book[2].author[1];
+</span></code></pre></div>
+<p>This statement deletes the category attribute from the third book:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-22-1">delete<span class="w"> </span>bookstoreXML.book[2].@category;
+</span></code></pre></div>
+<hr />
+<h2 id="retrieving-contained-elements">Retrieving contained elements<a class="headerlink" href="#retrieving-contained-elements" title="Permanent link">&para;</a></h2>
+<p>The <code>XML</code> object provides methods that allow you to retrieve elements contained at various levels of the tree:</p>
+<ul>
+<li><code>XML.</code><a href="../xml-object-reference/#xmlchildren">children()</a> gets the direct child elements, including text elements.</li>
+<li><code>XML.</code><a href="../xml-object-reference/#xmlelements">elements()</a> gets the direct child elements that are XML tags, but does not get text.</li>
+<li><code>XML.</code><a href="../xml-object-reference/#xmldescendants">descendants()</a> allows you to match a specific tag, and gets all matching elements at any level of nesting. You can also use a "double dot" notation to access descendants of an element. For example, these statements are equivalent:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-23-1"><span class="nx">xml</span><span class="p">..</span><span class="nx">title</span>
+</span><span id="__span-23-2"><span class="nx">xml</span><span class="p">.</span><span class="nx">descendants</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">)</span>
+</span></code></pre></div></li>
+</ul>
+<p>For example, consider this XML code loaded into a top-level <code>XML</code> object named <code>x</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><span class="nt">&lt;top&gt;</span>
+</span><span id="__span-24-2"><span class="w">    </span><span class="nt">&lt;one&gt;</span>one<span class="w"> </span>text<span class="nt">&lt;/one&gt;</span>
+</span><span id="__span-24-3"><span class="w">    </span><span class="nt">&lt;two&gt;</span>
+</span><span id="__span-24-4"><span class="w">        </span>two<span class="w"> </span>text
+</span><span id="__span-24-5"><span class="w">        </span><span class="nt">&lt;inside&gt;</span>inside<span class="w"> </span>text<span class="nt">&lt;/inside&gt;</span>
+</span><span id="__span-24-6"><span class="w">    </span><span class="nt">&lt;/two&gt;</span>
+</span><span id="__span-24-7"><span class="w">    </span>top<span class="w"> </span>text
+</span><span id="__span-24-8"><span class="nt">&lt;/top&gt;</span>
+</span></code></pre></div>
+<p>Here are the results of the different calls.</p>
+<ul>
+<li>The result of <code>XML.</code><a href="../xml-object-reference/#xmlchildren">children()</a> contains 3 elements, the direct child tags <code>&lt;one&gt;</code> and <code>&lt;two&gt;</code>, and the directly contained text of the <code>&lt;top&gt;</code> tag:
+    <div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1">**&gt;<span class="w"> </span>x.children()**
+</span><span id="__span-25-2"><span class="w">    </span><span class="nt">&lt;one&gt;</span>one<span class="w"> </span>text<span class="nt">&lt;/one&gt;</span>
+</span><span id="__span-25-3"><span class="w">    </span><span class="nt">&lt;two&gt;</span>
+</span><span id="__span-25-4"><span class="w">    </span>two<span class="w"> </span>text
+</span><span id="__span-25-5"><span class="w">    </span><span class="nt">&lt;inside&gt;</span>inside<span class="w"> </span>text<span class="nt">&lt;/inside&gt;</span>
+</span><span id="__span-25-6"><span class="w">    </span><span class="nt">&lt;/two&gt;</span>
+</span><span id="__span-25-7"><span class="w">    </span>top<span class="w"> </span>text
+</span><span id="__span-25-8">
+</span><span id="__span-25-9">**&gt;<span class="w"> </span>x.children().length()**
+</span><span id="__span-25-10"><span class="w">    </span>3
+</span></code></pre></div></li>
+<li>The result of <code>XML.</code><a href="../xml-object-reference/#xmlelements">elements()</a> contains 2 elements, the direct child tags <code>&lt;one&gt;</code> and <code>&lt;two&gt;</code>:
+    <div class="language-xml highlight"><pre><span></span><code><span id="__span-26-1">**&gt;<span class="w"> </span>x.elements()**
+</span><span id="__span-26-2"><span class="w">    </span><span class="nt">&lt;one&gt;</span>one<span class="w"> </span>text<span class="nt">&lt;/one&gt;</span>
+</span><span id="__span-26-3"><span class="w">    </span><span class="nt">&lt;two&gt;</span>
+</span><span id="__span-26-4"><span class="w">        </span>two<span class="w"> </span>text
+</span><span id="__span-26-5"><span class="w">        </span><span class="nt">&lt;inside&gt;</span>inside<span class="w"> </span>text<span class="nt">&lt;/inside&gt;</span>
+</span><span id="__span-26-6"><span class="w">    </span><span class="nt">&lt;/two&gt;</span>
+</span><span id="__span-26-7">**&gt;<span class="w"> </span>x.elements().length()**
+</span><span id="__span-26-8"><span class="w">    </span>2
+</span></code></pre></div></li>
+<li>The result of <code>XML.</code><a href="../xml-object-reference/#xmldescendants">descendants()</a> contains 7 elements, the direct child tags <code>&lt;one&gt;</code> and <code>&lt;two&gt;</code>, the <code>&lt;inside&gt;</code> tag one level down, and the text contents of all the tags:
+    <div class="language-xml highlight"><pre><span></span><code><span id="__span-27-1">**&gt;<span class="w"> </span>x.descendants()**
+</span><span id="__span-27-2"><span class="w">    </span><span class="nt">&lt;one&gt;</span>one<span class="w"> </span>text<span class="nt">&lt;/one&gt;</span>
+</span><span id="__span-27-3"><span class="w">    </span>one<span class="w"> </span>text
+</span><span id="__span-27-4"><span class="w">    </span><span class="nt">&lt;two&gt;</span>
+</span><span id="__span-27-5"><span class="w">        </span>two<span class="w"> </span>text
+</span><span id="__span-27-6"><span class="w">        </span><span class="nt">&lt;inside&gt;</span>inside<span class="w"> </span>text<span class="nt">&lt;/inside&gt;</span>
+</span><span id="__span-27-7"><span class="w">    </span><span class="nt">&lt;/two&gt;</span>
+</span><span id="__span-27-8"><span class="w">    </span>two<span class="w"> </span>text
+</span><span id="__span-27-9"><span class="w">    </span><span class="nt">&lt;inside&gt;</span>inside<span class="w"> </span>text<span class="nt">&lt;/inside&gt;</span>
+</span><span id="__span-27-10"><span class="w">    </span>inside<span class="w"> </span>text
+</span><span id="__span-27-11"><span class="w">    </span>top<span class="w"> </span>text
+</span><span id="__span-27-12">**&gt;<span class="w"> </span>x.descendants().length()**
+</span><span id="__span-27-13"><span class="w">    </span>7
+</span></code></pre></div></li>
+</ul>
+<hr />
+<h2 id="creating-and-accessing-namespaces">Creating and accessing namespaces<a class="headerlink" href="#creating-and-accessing-namespaces" title="Permanent link">&para;</a></h2>
+<p>Simple access statements access elements in the default namespace. If you need to define elements in more than one namespace, you must use a <a href="../xml-object-reference/#namespace-object">Namespace object</a> to access any elements that are NOT in the default namespace.</p>
+<h3 id="defining-a-namespace-within-the-tree">Defining a namespace within the tree<a class="headerlink" href="#defining-a-namespace-within-the-tree" title="Permanent link">&para;</a></h3>
+<p>You can define a namespace within an XML element using the xmlns attribute, and define elements within the schema as belonging to that namespace. For example, these additions to the example XML add a namespace that maps the prefix "kids" to the namespace "<a href="http://kids.mybookstore.com">http://kids.mybookstore.com</a>", and then uses the prefix to place a particular book element in that namespace:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-28-1"><span class="nt">&lt;bookstore</span><span class="w"> </span><span class="err">**</span><span class="na">xmlns:kids=</span><span class="s">&quot;http://kids.mybookstore.com&quot;</span><span class="err">**</span><span class="nt">&gt;</span>
+</span><span id="__span-28-2">
+</span><span id="__span-28-3"><span class="nt">&lt;book</span><span class="w"> </span><span class="na">category=</span><span class="s">&quot;COOKING&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-28-4"><span class="w">    </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Boston<span class="w"> </span>Cooking-School<span class="w"> </span>Cookbook<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-28-5"><span class="w">    </span><span class="nt">&lt;author&gt;</span>Fannie<span class="w"> </span>Merrit<span class="w"> </span>Farmer<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-28-6"><span class="w">    </span><span class="nt">&lt;year&gt;</span>1896<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-28-7"><span class="w">    </span><span class="nt">&lt;price&gt;</span>49.99<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-28-8"><span class="nt">&lt;/book&gt;</span>
+</span><span id="__span-28-9">
+</span><span id="__span-28-10"><span class="err">&lt;</span>**kids:**book<span class="w"> </span>category=&quot;CHILDREN&quot;&gt;
+</span><span id="__span-28-11"><span class="w">    </span><span class="nt">&lt;title</span><span class="w"> </span><span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>The<span class="w"> </span>Wonderful<span class="w"> </span>Wizard<span class="w"> </span>of<span class="w"> </span>Oz<span class="nt">&lt;/title&gt;</span>
+</span><span id="__span-28-12"><span class="w">    </span><span class="nt">&lt;author&gt;</span>L.<span class="w"> </span>Frank<span class="w"> </span>Baum<span class="nt">&lt;/author&gt;</span>
+</span><span id="__span-28-13"><span class="w">    </span><span class="nt">&lt;year&gt;</span>1900<span class="nt">&lt;/year&gt;</span>
+</span><span id="__span-28-14"><span class="w">    </span><span class="nt">&lt;price&gt;</span>39.95<span class="nt">&lt;/price&gt;</span>
+</span><span id="__span-28-15"><span class="err">&lt;</span>/**kids:**book&gt;
+</span><span id="__span-28-16">...
+</span></code></pre></div>
+<p>When this namespace is defined, the simple statement <code>bookstoreXML.book</code> no longer returns "The Wonderful Wizard of Oz", because that book is no longer in the default namespace. To access that book, you must define a <a href="../xml-object-reference/#namespace-object">Namespace object</a> for the namespace, and use it to access the element.</p>
+<p>For example, this JavaScript code creates a <a href="../xml-object-reference/#namespace-object">Namespace object</a> for the namespace defined in the <bookstore> element, and accesses the books in the namespace through that object:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-29-1"><span class="kd">var</span><span class="w"> </span><span class="nx">ns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Namespace</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;http://kids.mybookstore.com&quot;</span><span class="p">);</span>
+</span><span id="__span-29-2"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">ns</span><span class="o">::</span><span class="nx">book</span><span class="p">;</span>
+</span></code></pre></div>
+<hr />
+<h3 id="setting-a-default-namespace">Setting a default namespace<a class="headerlink" href="#setting-a-default-namespace" title="Permanent link">&para;</a></h3>
+<p>By default, the default namespace is a namespace whose URI is the empty string. It is possible to set the default namespace; in this case, simple accessors access elements that are in that namespace.</p>
+<p>To set the default namespace, use the global function <a href="../xml-object-reference/#setdefaultxmlnamespace">setDefaultXMLNamespace()</a>, or this syntax:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-30-1"><span class="k">default</span><span class="w"> </span><span class="nx">xml</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">namespace_specifier</span><span class="p">;</span>
+</span></code></pre></div>
+<p>The namespace specifier can be either a <a href="../xml-object-reference/#namespace-object">Namespace object</a>, or a URL string. For example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-31-1"><span class="k">default</span><span class="w"> </span><span class="nx">xml</span><span class="w"> </span><span class="nx">namespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://books.mybookstore.com&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Once you have set the default namespace:</p>
+<ul>
+<li>Elements that are meant to be in the default namespace (and thus accessible with simple accessors) must use the namespace prefix.</li>
+<li>All elements that do not have a specific namespace assignment are in the empty namespace, rather than the default namespace. In order to access them, you must use a <a href="../xml-object-reference/#namespace-object">Namespace object</a> with the empty string as the URI.</li>
+</ul>
+<hr />
+<h3 id="accessing-elements-in-namespaces">Accessing elements in namespaces<a class="headerlink" href="#accessing-elements-in-namespaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You can access elements that are in the default namespace directly, without using a <a href="../xml-object-reference/#namespace-object">Namespace object</a>.<ul>
+<li>If you have not set a default, you can use direct access for elements with no namespace specifier.</li>
+<li>If you have set a default, you can use direct access for elements in that namespace.</li>
+</ul>
+</li>
+<li>
+<p>If you have assigned an element to a namespace, and have not made it the default, you must use a <a href="../xml-object-reference/#namespace-object">Namespace object</a> to access those elements. For example:
+    <div class="language-javascript highlight"><pre><span></span><code><span id="__span-32-1"><span class="kd">var</span><span class="w"> </span><span class="nx">ns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Namespace</span><span class="w"> </span><span class="p">(</span><span class="o">**</span><span class="s2">&quot;http://kids.mybookstore.com&quot;</span><span class="o">**</span><span class="p">);</span>
+</span><span id="__span-32-2"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="o">**</span><span class="nx">ns</span><span class="o">::</span><span class="nx">book</span><span class="o">**</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>This returns all books that have been assigned to the "kids" namespace.
+- If you have set a default namespace, you can still access all objects that do not have any specific namespace assignment by using a <a href="../xml-object-reference/#namespace-object">Namespace object</a> for the empty string, which is the default creation case:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-33-1"><span class="kd">var</span><span class="w"> </span><span class="nx">emptyNS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Namespace</span><span class="w"> </span><span class="p">();</span>
+</span><span id="__span-33-2"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">emptyNS</span><span class="o">::</span><span class="nx">book</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>This returns all books that have not been assigned to any namespace.
+- To access all elements, regardless of the namespace assignment, you can use an asterisk (*) wild-card
+character or null as the namespace name:
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-34-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="o">*::</span><span class="nx">book</span><span class="p">;</span>
+</span></code></pre></div></p>
+<p>or
+<div class="language-js highlight"><pre><span></span><code><span id="__span-35-1"><span class="kd">var</span><span class="w"> </span><span class="nx">nullNS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+</span><span id="__span-35-2"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">nullNS</span><span class="o">::</span><span class="nx">book</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+</ul>
+<hr />
+<h2 id="mixing-xml-and-javascript">Mixing XML and JavaScript<a class="headerlink" href="#mixing-xml-and-javascript" title="Permanent link">&para;</a></h2>
+<p>You can enclose JavaScript statements in curly brackets, and embed them into XML. The JavaScript part is evaluated during the construction of the XML.</p>
+<p>For example, this function returns an XML value, in which embedded JavaScript variables will be evaluated and included:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-36-1"><span class="kd">function</span><span class="w"> </span><span class="nx">makeXML</span><span class="w"> </span><span class="p">(</span><span class="nx">first</span><span class="p">,</span><span class="w"> </span><span class="nx">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-36-2"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">person</span><span class="w"> </span><span class="nx">first</span><span class="o">=</span><span class="p">{</span><span class="nx">first</span><span class="p">}</span><span class="w"> </span><span class="nx">last</span><span class="o">=</span><span class="p">{</span><span class="nx">last</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">first</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">last</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/person&gt;;</span>
+</span><span id="__span-36-3"><span class="p">}</span>
+</span></code></pre></div>
+<p>Calling this function:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-37-1"><span class="nx">makeXML</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;Jane&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="w"> </span><span class="p">);</span>
+</span></code></pre></div>
+<p>results in this XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-38-1"><span class="nt">&lt;person</span><span class="w"> </span><span class="na">first=</span><span class="s">&quot;Jane&quot;</span><span class="w"> </span><span class="na">last=</span><span class="s">&quot;Doe&quot;</span><span class="nt">&gt;</span>Jane<span class="w"> </span>Doe<span class="nt">&lt;/person&gt;</span>
+</span></code></pre></div>
+<p>You can also use these operators on XML elements:</p>
+<ul>
+<li>Use the plus operator, +, to combine XML elements into a list.</li>
+<li>Use the == operator to make an in-depth comparison of two XML trees.</li>
+</ul>
+<hr />
+<h2 id="xml-lists">XML lists<a class="headerlink" href="#xml-lists" title="Permanent link">&para;</a></h2>
+<p>ExtendScript defines an <code>XMLList</code> object, which is identical to the <a href="../xml-object-reference/#xml-object">XML object</a> except that you can create it by passing it an XML list, and it creates an XML list rather than an XML tag.</p>
+<p>All XML statements and functions that collect XML return the result as an <code>XMLList</code>, which can be empty if there is no match. For example, the following statement returns an empty list:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-39-1"><span class="nx">bookstoreXML</span><span class="p">.</span><span class="nx">magazine</span><span class="p">;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2025</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is copyright Adobe Systems Incorporated.
+    </div>
+  
+  
+    Made with
+    <a
+      href="https://squidfunk.github.io/mkdocs-material/"
+      target="_blank" rel="noopener"
+    >
+      Material for MkDocs
+    </a>
+  
+</div>
+
+<!-- Print button -->
+<div class="md-copyright">
+  
+  <a href="../../print_page/" title="Print Site" class="md-content__button md-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 3H6v4h12m1 5a1 1 0 0 1-1-1 1 1 0 0 1 1-1 1 1 0 0 1 1 1 1 1 0 0 1-1 1m-3 7H8v-5h8m3-6H5a3 3 0 0 0-3 3v6h4v4h12v-4h4v-6a3 3 0 0 0-3-3"/></svg>
+  </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.copy", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../_static/extra.js"></script>
+      
+        <script src="../../docs/_global/js/global.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,124 @@
+# Do not modify below line! Inherits common components.
+INHERIT: ./docs/_global/mkdocs.yml
+
+#### Site metadata & nav - update these!
+
+site_name: Adobe Extendscript Scripting Guide
+site_url: https://extendscript.docsforadobe.dev/
+repo_url: https://github.com/docsforadobe/javascript-tools-guide/
+repo_name: "javascript-tools-guide"
+
+nav:
+    - Home: index.md
+    - Introduction:
+        - ExtendScript overview: introduction/extendscript-overview.md
+        - Scripting for specific applications: introduction/scripting-for-specific-applications.md
+    - The VS Code ExtendScript Debugger:
+        - The VS Code Debugger: vscode-debugger/index.md
+        - Getting Started with the VS Code Debugger: vscode-debugger/getting-started-with-vscode-debugger.md
+        - VS Code Extension Features: vscode-debugger/vscode-extension-features.md
+    - The ExtendScript Toolkit:
+        - The ExtendScript Toolkit: extendscript-toolkit/index.md
+        - Configuring the Toolkit window: extendscript-toolkit/configuring-the-toolkit-window.md
+        - Selecting Scripts: extendscript-toolkit/selecting-scripts.md
+        - The Script Editor: extendscript-toolkit/the-script-editor.md
+        - Debugging in the Toolkit: extendscript-toolkit/debugging-in-the-toolkit.md
+        - Code profiling for optimization: extendscript-toolkit/code-profiling-for-optimization.md
+        - Inspecting object models: extendscript-toolkit/inspecting-object-models.md
+    - File System Access:
+        - File System Access: file-system-access/index.md
+        - Using File and Folder objects: file-system-access/using-file-and-folder-objects.md
+        - File access error messages: file-system-access/file-access-error-messages.md
+        - File- and Folder-supported encoding names: file-system-access/file-and-folder-supported-encoding-names.md
+        - File object: file-system-access/file-object.md
+        - Folder object: file-system-access/folder-object.md
+    - User-Interface Tools:
+        - User-Interface Tools: user-interface-tools/index.md
+        - Code examples for ScriptUI: user-interface-tools/code-examples-for-scriptui.md
+        - ScriptUI programming model: user-interface-tools/scriptui-programming-model.md
+        - Types of controls: user-interface-tools/types-of-controls.md
+        - Size and location objects: user-interface-tools/size-and-location-objects.md
+        - Drawing objects: user-interface-tools/drawing-objects.md
+        - Resource specifications: user-interface-tools/resource-specifications.md
+        - Defining behavior with event callbacks and listeners: user-interface-tools/defining-behavior-with-event-callbacks-and-listeners.md
+        - Communicating with the Flash application: user-interface-tools/communicating-with-the-flash-application.md
+        - Automatic layout: user-interface-tools/automatic-layout.md
+        - Managing control titles: user-interface-tools/managing-control-titles.md
+        - Localization in ScriptUI objects: user-interface-tools/localization-in-scriptui-objects.md
+        - ScriptUI object reference: user-interface-tools/scriptui-object-reference.md
+        - ScriptUI class: user-interface-tools/scriptui-class.md
+        - Environment object: user-interface-tools/environment.md
+        - Common properties: user-interface-tools/common-properties.md
+        - Window class: user-interface-tools/window-class.md
+        - Window object: user-interface-tools/window-object.md
+        - Control objects: user-interface-tools/control-objects.md
+        - Event handling: user-interface-tools/event-handling.md
+        - Graphic customization objects: user-interface-tools/graphic-customization-objects.md
+        - LayoutManager object: user-interface-tools/layoutmanager-object.md
+    - Interapplication Communication with Scripts:
+        - Interapplication Communication with Scripts: interapplication-communication/index.md
+        - Communications overview: interapplication-communication/communications-overview.md
+        - Cross-DOM functions: interapplication-communication/cross-dom-functions.md
+        - Communicating through messages: interapplication-communication/communicating-through-messages.md
+        - Messaging framework API reference: interapplication-communication/messaging-framework-api-reference.md
+        - BridgeTalk class: interapplication-communication/bridgetalk-class.md
+        - BridgeTalk message object: interapplication-communication/bridgetalk-message-object.md
+        - Messaging error codes: interapplication-communication/messaging-error-codes.md
+        - Application and namespace specifiers: interapplication-communication/application-and-namespace-specifiers.md
+    - External Communication Tools:
+        - External Communication Tools: external-communication/index.md
+        - Socket object: external-communication/socket-object.md
+        - Socket object reference: external-communication/socket-object-reference.md
+    - Integrating External Libraries:
+        - Integrating External Libraries: integrating-external-libraries/index.md
+        - Loading and using shared libraries: integrating-external-libraries/loading-and-using-shared-libraries.md
+        - ExternalObject object: integrating-external-libraries/externalobject-object.md
+        - Defining entry points for direct access: integrating-external-libraries/defining-entry-points-for-direct-access.md
+        - Defining entry points for indirect access: integrating-external-libraries/defining-entry-points-for-indirect-access.md
+    - ExtendScript Tools and Features:
+        - ExtendScript Tools and Features: extendscript-tools-features/index.md
+        - Dollar ($) object: extendscript-tools-features/dollar-object.md
+        - ExtendScript reflection interface: extendscript-tools-features/extendscript-reflection-interface.md
+        - Localizing ExtendScript strings: extendscript-tools-features/localizing-extendscript-strings.md
+        - User notification dialogs: extendscript-tools-features/user-notification-dialogs.md
+        - Specifying measurement values: extendscript-tools-features/specifying-measurement-values.md
+        - Preprocessor directives: extendscript-tools-features/preprocessor-directives.md
+        - Operator overloading: extendscript-tools-features/operator-overloading.md
+    - Integrating XML into JavaScript:
+        - Integrating XML into JavaScript: integrating-xml/index.md
+        - The XML Object: integrating-xml/the-xml-object.md
+        - XML Object Reference: integrating-xml/xml-object-reference.md
+    - Scripting Access to XMP Metadata:
+        - Scripting Access to XMP Metadata: scripting-xmp/index.md
+        - Accessing the XMP scripting API: scripting-xmp/accessing-the-xmp-scripting-api.md
+        - XMPScript object reference: scripting-xmp/xmpscript-object-reference.md
+
+#### Additional config below - modify sparingly!
+
+extra:
+    # Custom guide-specific overrides
+    #
+    # Valid keys are:
+    #     custom_dir: str
+    #     hooks:
+    #         - path/to/hook.py
+    #     not_in_nav:
+    #         - gitignore_style/path/to/exclude
+    #     theme_features:
+    #         - theme.feature
+    overrides: {}
+
+# CSS for this guide
+extra_css:
+    - _static/extra.css
+
+# JS for this guide
+extra_javascript:
+    - _static/extra.js
+
+markdown_extensions:
+    pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins: {}

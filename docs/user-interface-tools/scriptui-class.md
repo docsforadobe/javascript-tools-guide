@@ -176,14 +176,12 @@ See [Registering event listeners for windows or controls](defining-behavior-with
 
 #### Parameters
 
-+-------------+--------+----------------------------+
 |  Parameter  |  Type  |        Description         |
-+=============+========+============================+
+| --------- | ------ | ------------------ |
 | `eventType` | String | The type of event, one of: |
 |             |        | - `UIEvent`                |
 |             |        | - `KeyboardEvent`          |
 |             |        | - `MouseEvent`             |
-| ----------- | ------ | -------------------------- |
 
 #### Returns
 
